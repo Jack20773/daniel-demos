@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>股癌回測併站 demo 入口</title>
+<title>股癌訊號勝率追蹤（demo C 回測獨立分頁）</title>
 <style>
   body{margin:0;padding:0;background:#f4f6f9;font-family:Arial,Helvetica,sans-serif;color:#333;}
   *{box-sizing:border-box;}
@@ -71,28 +71,31 @@
   .ai-box{margin-top:6px;padding:6px 10px;border-left:3px solid #c7d7ea;background:#f4f8fc;font-size:13px;line-height:1.6;color:#4a5157;}
   .ai-box .who{display:inline-block;font-size:11px;color:#2b6cb0;font-weight:bold;margin-right:6px;}
 
-  .opt{display:block;margin:12px 16px;padding:14px 16px;border:1px solid #dce9f7;border-radius:8px;text-decoration:none;color:#333;background:#fafcff;}
-  .opt:hover{background:#eef4fb;}
-  .opt .t{font-size:16px;font-weight:bold;color:#1a252f;}
-  .opt .g{font-size:13px;color:#555;margin-top:6px;line-height:1.7;}
-  .opt .g b{color:#2b6cb0;}
-  .opt .u{font-size:11px;color:#aaa;margin-top:4px;word-break:break-all;}
+  .back{display:block;padding:9px 16px;background:#eef4fb;border-bottom:1px solid #dce9f7;font-size:13px;color:#2b6cb0;font-weight:bold;text-decoration:none;}
+  .back:hover{background:#e2ecf8;}
+  iframe#bt{display:block;width:100%;border:0;min-height:600px;}
+  .open-new{padding:8px 16px;font-size:12px;color:#999;text-align:center;border-top:1px solid #eee;}
+  .open-new a{color:#2b6cb0;}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<div class="hdr"><h1>股癌訊號勝率追蹤</h1><div class="sub">三種「回測併進原站」的長相 · demo 入口</div></div>
-<div class="demo-banner"><b>🧪 這裡是 demo 入口</b>。三個版本用的都是同一批真資料（gooaye-site 2026-09-15 算的 992 筆、股價到 2026-09-09），差別只在「回測放在哪裡」。手機直接點開看，選一個順眼的，或講哪裡不對。</div>
-<a class="opt" href="demo-a-inline.html"><div class="t">A · 貼在訊號旁</div><div class="g"><b>這版猜的是：</b>你不想多一個地方看——回測要出現在你本來就在看的那一行旁邊。長得就是原本首頁，每筆訊號多一行「講完 30 天／90 天」，頁首多一條準度計分板。</div><div class="u">demo-a-inline.html</div></a>
-<a class="opt" href="demo-b-picks-first.html"><div class="t">B · 規律與名單在最前面</div><div class="g"><b>這版猜的是：</b>你要的是「AI 從他的話裡挖出的隱藏勝率規律」＋由規律生出的「接下來看哪些」，其餘都是證據。第一屏上段是規律（每條附 n）、下段是名單（每支標觸發了哪條規律＋原話），往下才是計分板與每筆回測，原本報告放最下面。</div><div class="u">demo-b-picks-first.html</div></a>
-<a class="opt" href="demo-c-tab.html"><div class="t">C · 獨立分頁</div><div class="g"><b>這版猜的是：</b>回測是另一種看法，跟每日報告分開、各看各的。導覽列多一個「回測」分頁，內容就是現在 gooaye-site 那整頁，加一個「← 回股癌報告」。</div><div class="u">demo-c-tab.html</div></a>
-<div class="foot">三版共用資料：gooaye-site out/mainline.json、scoreboard.json · 建於 2026-09-15 · 挑法／導覽皆暫定，頁首黃條有寫哪些是真的哪些是假的</div>
+<div class="hdr"><h1>股癌訊號勝率追蹤</h1><div class="sub">全集匯總 · 2026-09-15 · 最新分析至 EP693</div></div>
+<div class="nav-tabs"><a href="#" class="nav-tab" onclick="return false" title="demo：導覽連結不會動">📊 訊號報告</a><a href="#" class="nav-tab" onclick="return false" title="demo：導覽連結不會動">🔥 目前關注度</a><a href="#" class="nav-tab" onclick="return false" title="demo：導覽連結不會動">📄 逐字稿</a><a href="#" class="nav-tab nav-tab-active" onclick="return false" title="demo：導覽連結不會動">🧪 回測</a></div>
+<div class="demo-banner"><b>🧪 這是 demo（版本 C：獨立分頁）</b>，給丹尼爾比較「回測要怎麼併進原本網站」用，不是正式頁。<br><b>真的：</b>「回測」分頁裡的整頁內容＝gooaye-site 現在真的產出的那一頁（2026-09-15 算的，一字未改，直接嵌入）。<br><b>假的／暫定：</b>導覽列另外三個分頁點不動；「← 回股癌報告」在 demo 裡只回到入口頁；嵌入頁本身有自己的字型與配色，正式版要不要統一成原站那套，等丹尼爾定。</div>
+<a class="back" href="index.html">← 回股癌報告（demo 裡＝回入口頁）</a>
+<iframe id="bt" src="_embed/backtest.html" title="股癌回測站（嵌入）"></iframe>
+<div class="open-new">嵌入頁若顯示不全，<a href="_embed/backtest.html" target="_blank" rel="noopener">在新分頁單獨打開</a></div>
+<div class="foot">demo C · 嵌入來源：gooaye-site site/index.html（原樣複製）· <a href="index.html">← 回三版入口</a></div>
 
 </div>
 <script>
 function toggleLed(i, el){var b=document.getElementById('lgd-'+i);if(!b)return;var o=b.style.display!=='block';b.style.display=o?'block':'none';if(el)el.setAttribute('aria-expanded',o?'true':'false');}
 function toggleSec(id, el){var b=document.getElementById(id);var o=b.style.display==='none';b.style.display=o?'block':'none';var a=el.querySelector('.arrow');if(a)a.textContent=o?'▾':'▸';}
+
+(function(){var f=document.getElementById('bt');function fit(){try{var d=f.contentDocument||f.contentWindow.document;if(d&&d.body){f.style.height=(d.documentElement.scrollHeight+20)+'px';}}catch(e){}}
+f.addEventListener('load',function(){fit();setTimeout(fit,300);setTimeout(fit,1500);});window.addEventListener('resize',fit);})();
 
 </script>
 </body>

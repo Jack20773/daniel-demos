@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>股癌訊號勝率追蹤（demo B 規律與名單在最前面）</title>
+<style>
+  body{margin:0;padding:0;background:#f4f6f9;font-family:Arial,Helvetica,sans-serif;color:#333;}
+  *{box-sizing:border-box;}
+  .wrap{max-width:920px;margin:20px auto;background:#fff;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.07);overflow-x:clip;}
+  @media(max-width:600px){.wrap{margin:0;border-radius:0;}}
+  .hdr{background:#1a252f;padding:20px;text-align:center;color:#fff;border-radius:8px 8px 0 0;}
+  .hdr h1{font-size:22px;font-weight:bold;margin:0;}
+  .hdr .sub{color:#b3c1cd;font-size:13px;margin-top:4px;}
+  @media(max-width:600px){.hdr{border-radius:0;}}
+  .nav-tabs{display:flex;gap:6px;padding:8px 12px;background:#14202b;}
+  .nav-tab{flex:1;text-align:center;padding:8px 4px;border-radius:6px;font-size:13px;
+    color:#b3c1cd;text-decoration:none;background:rgba(255,255,255,.06);white-space:nowrap;}
+  .nav-tab:hover{background:rgba(255,255,255,.12);}
+  .nav-tab-active{background:#2b6cb0;color:#fff;font-weight:bold;}
+  @media(max-width:600px){.nav-tab{font-size:11px;padding:7px 2px;}}
+  .demo-banner{background:#fff3cd;border-bottom:2px solid #ffe08a;padding:9px 14px;font-size:12px;line-height:1.7;color:#5c4b00;}
+  .demo-banner b{color:#3d3200;}
+  .lead-note{padding:11px 16px;background:#fffdf3;border-bottom:1px solid #eee;font-size:12.5px;line-height:1.75;color:#5f5a45;}
+  .lead-note b{color:#1a252f;}
+  @media(max-width:600px){.lead-note{padding:9px 12px;font-size:12px;line-height:1.65;}}
+  .stats{display:flex;text-align:center;border-bottom:1px solid #eee;}
+  .stats>div{flex:1;padding:14px 4px;border-left:1px solid #eee;}
+  .stats>div:first-child{border-left:none;}
+  .st-l{font-size:12px;color:#999;}
+  .st-v{font-size:24px;font-weight:bold;color:#2c3e50;}
+  .st-v.red{color:#d9534f;}
+  .st-f{font-size:11px;color:#bbb;margin-top:2px;}
+  @media(max-width:600px){.st-v{font-size:20px;}.st-l{font-size:11px;}}
+  .calc-note{padding:6px 20px 10px;background:#fafcff;font-size:11px;color:#aaa;border-bottom:1px solid #eee;line-height:1.6;}
+  .sec-bar{padding:10px 16px;border-bottom:1px solid #eee;background:#fafafa;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .sec-bar .t{font-size:13px;font-weight:bold;color:#1a252f;}
+  .sec-bar .d{font-size:12px;color:#999;}
+  .sec-head{padding:10px 16px;border-top:1px solid #eee;border-bottom:1px solid #eee;background:#f7f8fa;cursor:pointer;font-size:13px;color:#555;font-weight:bold;}
+  .adv{padding:10px 20px;border-bottom:1px solid #dce9f7;background:#eef4fb;cursor:pointer;font-size:13px;color:#2b6cb0;font-weight:bold;}
+  .adv span{color:#8fb3dc;font-size:12px;margin-left:6px;font-weight:normal;}
+  /* 訊號帳本卡（stock-signal 首頁同款） */
+  .led{border-bottom:1px solid #eee;padding:13px 16px;cursor:pointer;}
+  .led:hover{background:#fbfcfd;}
+  .led-r1{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .led-nm{font-size:16px;font-weight:700;color:#1a252f;}
+  .led-cd{font-size:12px;color:#9aa4ad;}
+  .led-dir{margin-left:auto;font-size:13px;font-weight:700;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+  .led-dir.bull{color:#8a8f94;background:#f2f4f6;}
+  .led-dir.bear{color:#0d5c8a;background:#e2f1fb;border:1px solid #b9dcf2;}
+  .led-dir.neu{color:#7a6a00;background:#fdf6dd;border:1px solid #ecdfa0;}
+  .led-r2{font-size:12.5px;color:#7b858e;margin-top:3px;}
+  .led-q{margin:8px 0 6px;padding:6px 10px;border-left:3px solid #dfe3e6;background:#fafbfc;font-size:14px;line-height:1.6;color:#4a5157;}
+  .led-st{font-size:16px;font-weight:700;}
+  .led-st.win{color:#c0392b;} .led-st.lose{color:#2b8a3e;} .led-st.pend{color:#8a8f94;}
+  .led-nums{font-size:13.5px;color:#3d4650;margin-top:2px;}
+  .led-nums .sep{color:#ccc;margin:0 6px;}
+  .led-hist{margin-top:7px;font-size:12.5px;color:#6c757d;}
+  .led-detail{display:none;background:#f8f9fa;border:1px solid #eee;border-radius:8px;padding:10px 14px;margin-top:9px;font-size:13px;color:#555;line-height:1.75;}
+  .led-detail b{color:#1a252f;}
+  .led-dt-head{font-weight:bold;color:#1a252f;font-size:13.5px;margin-bottom:5px;}
+  .fld-note{font-size:11px;color:#a6adb4;margin-top:2px;line-height:1.5;}
+  @media(max-width:600px){.led{padding:12px 12px;}.led-nm{font-size:15px;}.led-q{font-size:13.5px;}}
+  /* 新增：固定天期回測那一行（demo A 的重點） */
+  .bt-line{margin-top:6px;font-size:13px;color:#3d4650;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center;}
+  .bt-line .lab{font-size:11px;font-weight:bold;color:#2b6cb0;background:#eef4fb;border:1px solid #dce9f7;border-radius:4px;padding:1px 6px;white-space:nowrap;}
+  .bt-line .w{color:#c0392b;font-weight:700;} .bt-line .l{color:#2b8a3e;font-weight:700;} .bt-line .p{color:#8a8f94;}
+  .empty-state{text-align:center;padding:30px 10px;color:#888;font-size:13px;}
+  .foot{padding:14px 16px 28px;font-size:11px;color:#aaa;line-height:1.7;text-align:center;}
+  .foot a{color:#2b6cb0;}
+  .ai-box{margin-top:6px;padding:6px 10px;border-left:3px solid #c7d7ea;background:#f4f8fc;font-size:13px;line-height:1.6;color:#4a5157;}
+  .ai-box .who{display:inline-block;font-size:11px;color:#2b6cb0;font-weight:bold;margin-right:6px;}
+
+  .pick{border-bottom:1px solid #eee;padding:13px 16px;}
+  .pk-r1{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .pk-n{font-size:12px;font-weight:bold;color:#fff;background:#2b6cb0;border-radius:50%;width:20px;height:20px;line-height:20px;text-align:center;flex:none;}
+  .pk-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;}
+  .pk-grid>div{background:#f8f9fa;border:1px solid #eee;border-radius:6px;padding:7px 8px;}
+  .pk-grid .k{font-size:11px;color:#999;margin-bottom:2px;}
+  .pk-grid .v{font-size:12.5px;color:#3d4650;line-height:1.6;}
+  .pk-grid .v.big{font-size:20px;font-weight:800;}
+  .pk-grid .w{color:#c0392b;} .pk-grid .l{color:#2b8a3e;} .pk-grid .p{color:#8a8f94;}
+  @media(max-width:600px){.pick{padding:12px 12px;}}
+  .hits{margin-top:6px;font-size:12.5px;color:#3d4650;line-height:1.9;}
+  .chip{display:inline-block;font-size:11px;font-weight:bold;color:#fff;background:#2b6cb0;border-radius:4px;padding:0 5px;margin-right:3px;}
+  .hit-rate{display:inline-block;margin-left:6px;color:#c0392b;font-weight:700;}
+  .rule-row{padding:9px 16px;border-bottom:1px solid #eee;font-size:13px;line-height:1.7;}
+  .rule-row.weak{background:#fafafa;color:#777;}
+  .rule-h{color:#1a252f;}
+  .rid{display:inline-block;font-size:11px;font-weight:bold;color:#fff;background:#1a252f;border-radius:4px;padding:0 5px;margin-right:6px;}
+  .rule-row.weak .rid{background:#999;}
+  .rule-n{color:#3d4650;margin-top:2px;}
+  .rule-n .hi{color:#c0392b;font-size:15px;}
+  .rule-n .vs{color:#8a8f94;font-size:12px;}
+  @media(max-width:600px){.rule-row{padding:9px 12px;}}
+  .rule{padding:8px 16px;background:#fffdf3;border-bottom:1px solid #eee;font-size:12px;color:#7a6a00;line-height:1.7;}
+  .rule b{color:#5c4b00;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hdr"><h1>股癌訊號勝率追蹤</h1><div class="sub">全集匯總 · 2026-09-15 · 最新分析至 EP693</div></div>
+<div class="nav-tabs"><a href="#" class="nav-tab nav-tab-active" onclick="return false" title="demo：導覽連結不會動">📊 訊號報告</a><a href="#" class="nav-tab" onclick="return false" title="demo：導覽連結不會動">🔥 目前關注度</a><a href="#" class="nav-tab" onclick="return false" title="demo：導覽連結不會動">📄 逐字稿</a></div>
+<div class="demo-banner"><b>🧪 這是 demo（版本 B：規律與名單在最前面）</b>，給丹尼爾比較「回測要怎麼併進原本網站」用，不是正式頁。<br><b>真的：</b>每條規律的百分比與 n、名單裡每檔的原話、日期、這檔過去準度、講完到現在的漲跌，以及下方計分板與每筆回測，都是從 gooaye-site 2026-09-15 的 992 筆真算的（股價到 2026-09-09）。<br><b>假的／暫定：</b>規律 R1～R5 是 AI 從資料裡挖的、還沒經丹尼爾看過；R6 是關鍵字粗配對、R7 是示意（算不出來）；「名單」＝規律自動生出來的，不是投資建議；導覽列點不動；原本報告內容用連結代替。</div>
+
+<div class="sec-bar" style="background:#1a252f;border-bottom:none;"><span class="t" style="color:#fff;font-size:15px;">🔍 AI 從他的話裡找到的規律</span><span class="d" style="color:#b3c1cd;">全站基準：30 天 66.5%（456/686）· 90 天 69.8%（439/629）</span></div>
+<div class="rule"><b>怎麼讀：</b>每條規律＝「他講話時有某個特徵 → 之後 30／90 天有賺錢的比例」，後面括號是分子／分母；比全站基準高的才算規律。<b>這些是 AI 挖的，不是丹尼爾定的；他要做的是看這些規律像不像真的。</b></div>
+<div class="rule-row"><div class="rule-h"><span class="rid">R1</span><b>規律：兩集內連著講同一檔</b></div><div class="rule-n">→ 90 天有賺 <b class="hi">79.3%（134/169）</b>、30 天 <b>69.5%（130/187）</b>　<span class="vs">對照「只講一次沒再提」：90 天 66.3%（305/460）、30 天 65.3%（326/499）</span></div><div class="fld-note">怎麼算：同一檔在前 1～2 集也出現過（依 episode_id 差距算）；母體＝有方向＋已滿期＋查得到價</div></div><div class="rule-row"><div class="rule-h"><span class="rid">R2</span><b>規律：講過 6 次以上的老面孔</b></div><div class="rule-n">→ 90 天有賺 <b class="hi">75.5%（222/294）</b>、30 天 <b>66.6%（223/335）</b>　<span class="vs">對照「第一次講的股票」：90 天 64.4%（85/132）、30 天 63.7%（86/135）</span></div><div class="fld-note">怎麼算：這句之前，同一檔已經被講過幾次（不分方向）；母體＝有方向＋已滿期＋查得到價</div></div><div class="rule-row"><div class="rule-h"><span class="rid">R3</span><b>規律：講的是結構（產能／籌碼／估值），不是講財報數字</b></div><div class="rule-n">→ 90 天有賺 <b class="hi">76.3%（103/135）</b>、30 天 <b>71.2%（104/146）</b>　<span class="vs">對照「講營收動能／熱度結束」：90 天 60.6%（94/155）、30 天 61.1%（107/175）</span></div><div class="fld-note">怎麼算：用來源資料的 primary_tag 分：#產能擴充 #籌碼面 #估值過低 算「結構」；母體＝有方向＋已滿期＋查得到價</div></div><div class="rule-row"><div class="rule-h"><span class="rid">R4</span><b>規律：看多＋信心 High＋兩集內連講（最強組合）</b></div><div class="rule-n">→ 90 天有賺 <b class="hi">82.4%（84/102）</b>、30 天 <b>69.3%（79/114）</b>　<span class="vs">對照「其他看多」：90 天 70.5%（340/482）、30 天 67.2%（351/522）</span></div><div class="fld-note">怎麼算：R1 再加上信心等級 High；母體＝有方向＋已滿期＋查得到價</div></div><div class="rule-row"><div class="rule-h"><span class="rid">R5</span><b>規律：他唱衰的不要跟著看空</b></div><div class="rule-n">→ 看空 90 天只有 <b class="hi">33.3%（15/45）</b>、台股看空 13.3%（2/15）（30 天 52.0%（26/50））　<span class="vs">對照看多：90 天 72.6%（424/584）</span></div><div class="fld-note">母體只有 50 幾筆，只能當觀察；名單因此只收看多。來源的「看空」＝他唱衰，不是他真的放空</div></div><div class="rule-row weak"><div class="rule-h"><span class="rid">R6</span><b>規律（關鍵字粗配對，n 小）：原話出現「便宜／估值／本益比」</b></div><div class="rule-n">→ 30 天 <b>84.0%（21/25）</b>、90 天 79.2%（19/24）；反過來原話講「財報／guidance」只有 30 天 45.2%（14/31）</div><div class="fld-note">只是字串比對，沒有讀語意；母體 30 筆上下，先當線索不當結論</div></div><div class="rule-row weak"><div class="rule-h"><span class="rid">R7</span><b>示意（未驗證）：他說「盤面不對、降主動部位」之後那幾集，看多訊號準度會掉</b></div><div class="rule-n">→ 算不出來：第 3 層「何時該停」目前 992 筆幾乎全空（還沒做語意配對），這條只是示意正式版要驗的方向</div></div>
+
+<div class="sec-bar" style="background:#1a252f;border-bottom:none;margin-top:6px;"><span class="t" style="color:#fff;font-size:15px;">👀 由規律生出的名單（9 檔）</span><span class="d" style="color:#b3c1cd;">最近 30 天（2026-08-10 起）講看多、且至少觸發 R1～R4 一條</span></div>
+<div class="rule"><b>名單怎麼生：</b>最近 30 天講過 → 只留看多（R5）→ 至少觸發 R1～R4 其中一條 → 同一檔只留最新一句、規律合併 → 觸發越強的排越前（R4＞R1＞R3＞R2）。</div>
+<div class="pick">
+  <div class="pk-r1"><span class="pk-n">1</span><span class="led-nm">Marvell</span><span class="led-cd">MRVL · 美股</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP692 · 2026-08-29（11 天前）· 信心 High · #營收動能 · 之前講過 27 次</div>
+  <div class="hits">觸發：<span class="chip">R1</span>兩集內連著講同一檔、<span class="chip">R2</span>講過 6 次以上的老面孔、<span class="chip">R4</span>看多＋信心 High＋兩集內連講（最強組合）<span class="hit-rate">→ 最強那條 90 天 82.4%（84/102）</span></div>
+  <blockquote class="led-q">「他提到說他的一個很大的推力，是來自於 scale up 的光互聯交換晶片，那這一塊是這個 Matt Murphy，也就是 CEO 所提到的，在後面的一個很強大的成長動能。」</blockquote>
+  <div class="pk-grid">
+    <div><div class="k">這檔本身過去準度</div><div class="v">30 天 74%（14/19）<br>90 天 71%（12/17）</div></div>
+    <div><div class="k">講完到現在漲跌</div><div class="v big w">+4.06%</div><div class="fld-note">至 2026-09-09 收盤</div></div>
+  </div>
+</div><div class="pick">
+  <div class="pk-r1"><span class="pk-n">2</span><span class="led-nm">Google</span><span class="led-cd">GOOGL · 美股</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP687 · 2026-08-12（28 天前）· 信心 High · #技術創新 · 之前講過 15 次</div>
+  <div class="hits">觸發：<span class="chip">R1</span>兩集內連著講同一檔、<span class="chip">R2</span>講過 6 次以上的老面孔、<span class="chip">R4</span>看多＋信心 High＋兩集內連講（最強組合）<span class="hit-rate">→ 最強那條 90 天 82.4%（84/102）</span></div>
+  <blockquote class="led-q">「對於 Buffett 來講，它可以確定的東西是什麼？它可以確定的東西是，Google 現在它加碼下去的東西，簡單來講，它就是變成是某個程度上的房東，房東租房子的對象就是這些 AI 模型商。」</blockquote>
+  <div class="pk-grid">
+    <div><div class="k">這檔本身過去準度</div><div class="v">30 天 50%（6/12）<br>90 天 67%（6/9）</div></div>
+    <div><div class="k">講完到現在漲跌</div><div class="v big l">-1.51%</div><div class="fld-note">至 2026-09-09 收盤</div></div>
+  </div>
+</div><div class="pick">
+  <div class="pk-r1"><span class="pk-n">3</span><span class="led-nm">台積電</span><span class="led-cd">2330.TW · 台股</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP693 · 2026-09-02（7 天前）· 信心 Medium · #產能擴充 · 之前講過 129 次</div>
+  <div class="hits">觸發：<span class="chip">R1</span>兩集內連著講同一檔、<span class="chip">R2</span>講過 6 次以上的老面孔、<span class="chip">R3</span>講的是結構（產能／籌碼／估值），不是講財報數字<span class="hit-rate">→ 最強那條 90 天 79.3%（134/169）</span></div>
+  <blockquote class="led-q">「它應該就不會是給記憶體三大廠，應該就是還是交給台積電去做。」</blockquote>
+  <div class="pk-grid">
+    <div><div class="k">這檔本身過去準度</div><div class="v">30 天 73%（76/104）<br>90 天 87%（83/95）</div></div>
+    <div><div class="k">講完到現在漲跌</div><div class="v big w">+3.56%</div><div class="fld-note">至 2026-09-09 收盤</div></div>
+  </div>
+</div><div class="pick">
+  <div class="pk-r1"><span class="pk-n">4</span><span class="led-nm">聯發科</span><span class="led-cd">2454.TW · 台股</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP693 · 2026-09-02（7 天前）· 信心 High · #籌碼面 · 之前講過 31 次</div>
+  <div class="hits">觸發：<span class="chip">R2</span>講過 6 次以上的老面孔、<span class="chip">R3</span>講的是結構（產能／籌碼／估值），不是講財報數字<span class="hit-rate">→ 最強那條 90 天 76.3%（103/135）</span></div>
+  <blockquote class="led-q">「那這次聯發科可能有直接先送一根漲停，那當然像今天就是有回到平盤了，所以就是一根漲停的一個消息機率，那也算是蠻不錯的。」</blockquote>
+  <div class="pk-grid">
+    <div><div class="k">這檔本身過去準度</div><div class="v">30 天 60%（12/20）<br>90 天 71%（12/17）</div></div>
+    <div><div class="k">講完到現在漲跌</div><div class="v big w">+10.18%</div><div class="fld-note">至 2026-09-09 收盤</div></div>
+  </div>
+</div><div class="pick">
+  <div class="pk-r1"><span class="pk-n">5</span><span class="led-nm">博通</span><span class="led-cd">AVGO · 美股</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP693 · 2026-09-02（7 天前）· 信心 Medium · #估值過低 · 之前講過 22 次</div>
+  <div class="hits">觸發：<span class="chip">R2</span>講過 6 次以上的老面孔、<span class="chip">R3</span>講的是結構（產能／籌碼／估值），不是講財報數字<span class="hit-rate">→ 最強那條 90 天 76.3%（103/135）</span></div>
+  <blockquote class="led-q">「先講結論，我認為它還是會有點類似就前陣子的光銅之爭。那時候確實是銅相關的類股直接被打到爆掉，就如果你用股價的角度來看的話；那確實你從它的營收去看，它是沒有被打掉的，它還是持續的有開出來，那最終股價是也還公道，就是那時候被打下去的銅類股後來一堆都新高了，只是那時候被打得很慘，然後市場都說它不行。我覺得有點類似這樣的一個情形。」</blockquote>
+  <div class="pk-grid">
+    <div><div class="k">這檔本身過去準度</div><div class="v">30 天 63%（12/19）<br>90 天 39%（7/18）</div></div>
+    <div><div class="k">講完到現在漲跌</div><div class="v big w">+0.36%</div><div class="fld-note">至 2026-09-09 收盤</div></div>
+  </div>
+</div><div class="pick">
+  <div class="pk-r1"><span class="pk-n">6</span><span class="led-nm">NVIDIA</span><span class="led-cd">NVDA · 美股</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP692 · 2026-08-29（11 天前）· 信心 High · #產能擴充 · 之前講過 79 次</div>
+  <div class="hits">觸發：<span class="chip">R2</span>講過 6 次以上的老面孔、<span class="chip">R3</span>講的是結構（產能／籌碼／估值），不是講財報數字<span class="hit-rate">→ 最強那條 90 天 76.3%（103/135）</span></div>
+  <blockquote class="led-q">「他確實是把這些供應鏈全部都牢牢的攔在手上，所以其他人想要去跟他競爭，或許是一個非常有挑戰性的事情，我自己也這樣相信。」</blockquote>
+  <div class="pk-grid">
+    <div><div class="k">這檔本身過去準度</div><div class="v">30 天 69%（35/51）<br>90 天 80%（39/49）</div></div>
+    <div><div class="k">講完到現在漲跌</div><div class="v big w">+3.76%</div><div class="fld-note">至 2026-09-09 收盤</div></div>
+  </div>
+</div><div class="pick">
+  <div class="pk-r1"><span class="pk-n">7</span><span class="led-nm">蘋果</span><span class="led-cd">AAPL · 美股</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP687 · 2026-08-12（28 天前）· 信心 Medium · #籌碼面 · 之前講過 24 次</div>
+  <div class="hits">觸發：<span class="chip">R2</span>講過 6 次以上的老面孔、<span class="chip">R3</span>講的是結構（產能／籌碼／估值），不是講財報數字<span class="hit-rate">→ 最強那條 90 天 76.3%（103/135）</span></div>
+  <blockquote class="led-q">「嘴巴上大家爭論都說 Apple 輸了，但錢的部分沒有啊，就是錢是往 Apple 的方向去跑，那反而是其他那些 frontier labs、或是大型投入的 cloud service provider，他的績效是跑輸的。」</blockquote>
+  <div class="pk-grid">
+    <div><div class="k">這檔本身過去準度</div><div class="v">30 天 81%（17/21）<br>90 天 75%（15/20）</div></div>
+    <div><div class="k">講完到現在漲跌</div><div class="v big w">+4.62%</div><div class="fld-note">至 2026-09-09 收盤</div></div>
+  </div>
+</div><div class="pick">
+  <div class="pk-r1"><span class="pk-n">8</span><span class="led-nm">SpaceX</span><span class="led-cd">SPCX · 美股</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP688 · 2026-08-15（25 天前）· 信心 Medium · #籌碼面 · 之前講過 2 次</div>
+  <div class="hits">觸發：<span class="chip">R3</span>講的是結構（產能／籌碼／估值），不是講財報數字<span class="hit-rate">→ 最強那條 90 天 76.3%（103/135）</span></div>
+  <blockquote class="led-q">「當這個股票解禁開始外流之後，那就立刻的會造成整個股價的打擊，就 surprise motherfucker，剛好就是在解禁之後，反而就是打底在往上衝了」</blockquote>
+  <div class="pk-grid">
+    <div><div class="k">這檔本身過去準度</div><div class="v">30 天 100%（1/1）<br>90 天 無資料</div></div>
+    <div><div class="k">講完到現在漲跌</div><div class="v big w">+9.62%</div><div class="fld-note">至 2026-09-09 收盤</div></div>
+  </div>
+</div><div class="pick">
+  <div class="pk-r1"><span class="pk-n">9</span><span class="led-nm">Meta</span><span class="led-cd">META · 美股</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP687 · 2026-08-12（28 天前）· 信心 Medium · #技術創新 · 之前講過 6 次</div>
+  <div class="hits">觸發：<span class="chip">R2</span>講過 6 次以上的老面孔<span class="hit-rate">→ 最強那條 90 天 75.5%（222/294）</span></div>
+  <blockquote class="led-q">「Meta 的做法是怎麼樣的？就是我們認為，雖然它在這次的 earnings call 裡面還是講說這個算力能夠自己用就自己用，可是它的各項布局跟我們最近看到的拉貨……它其實都是為了租賃去做的事情。」</blockquote>
+  <div class="pk-grid">
+    <div><div class="k">這檔本身過去準度</div><div class="v">30 天 50%（2/4）<br>90 天 50%（1/2）</div></div>
+    <div><div class="k">講完到現在漲跌</div><div class="v big w">+5.98%</div><div class="fld-note">至 2026-09-09 收盤</div></div>
+  </div>
+</div>
+<div class="sec-head" onclick="toggleSec('excl', this)"><span class="arrow">▸</span> 最近 30 天講過但沒進名單的 4 筆（為什麼）</div>
+<div id="excl" style="display:none;padding:8px 16px;font-size:12.5px;color:#666;line-height:1.8;border-bottom:1px solid #eee;"><div>Salesforce CRM（EP692 2026-08-29）— 看多但沒觸發任何規律（不連講、非老面孔、講的是營收／熱度）</div><div>台灣積體電路製造 2330.TW（EP692 2026-08-29）— 同一檔已有更新一句（規律已併入）</div><div>Marvell MRVL（EP690 2026-08-22）— 同一檔已有更新一句（規律已併入）</div><div>美光 MU（EP690 2026-08-22）— 看空（R5：他唱衰的不跟）</div></div>
+
+<div class="sec-bar" style="margin-top:6px;"><span class="t">證據 1：他準不準</span><span class="d">全部 992 筆訊號的計分板</span></div>
+
+  <div class="stats">
+    <div><div class="st-l">講完 30 天準度</div><div class="st-v red">66.5%</div><div class="st-f">456/686 · 另 13 筆未滿期</div></div>
+    <div><div class="st-l">講完 90 天準度</div><div class="st-v red">69.8%</div><div class="st-f">439/629 · 另 70 筆未滿期</div></div>
+    <div><div class="st-l">最後更新</div><div class="st-v" style="font-size:17px;padding-top:6px;">2026-09-15</div><div class="st-f">股價至 2026-09-09</div></div>
+  </div>
+  <div class="calc-note">準度＝「有賺錢就算贏」：看多要漲、看空要跌，講出來後抱固定 30／90 個自然日；沒方向的 288 筆不計、未滿期不進分母。
+  對照：抱到今天有賺錢 81.3%（568/699），持有期不固定、僅供參考。</div>
+<div style="padding:10px 16px;border-bottom:1px solid #eee;font-size:13px;line-height:1.9;">
+<div>台股：30 天 <b>65.3%</b>（220/337）｜90 天 <b>68.7%</b>（215/313）</div><div>美股：30 天 <b>67.6%</b>（236/349）｜90 天 <b>70.9%</b>（224/316）</div><div>看多：30 天 <b>67.6%</b>（430/636）｜90 天 <b>72.6%</b>（424/584）</div><div>看空：30 天 <b>52.0%</b>（26/50）｜90 天 <b>33.3%</b>（15/45）</div>
+<div style="margin-top:6px;"><b>依類型（90 天）</b>：#技術創新 72%（153/213）　#營收動能 66%（83/126）　#總經趨勢 71%（89/126）　#估值過低 75%（53/71）　#產能擴充 77%（27/35）　#熱度結束 38%（11/29）　#籌碼面 79%（23/29）</div>
+<div class="fld-note">看空只有 50 幾筆，只能當觀察。類型準度是 demo 自己從 992 筆算的，母體＝有方向＋已滿期＋查得到價。</div>
+</div>
+
+<div class="sec-bar"><span class="t">證據 2：每一筆回測</span><span class="d">最新 40 筆，點開看原話與 AI 解讀</span></div>
+<div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(0, this)">
+  <div class="led-r1"><span class="led-nm">聯發科</span><span class="led-cd">2454.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP693 · 上架於 2026-09-02（7 天前） · 台股 · #籌碼面</div>
+  <blockquote class="led-q">「那這次聯發科可能有直接先送一根漲停，那當然像今天就是有回到平盤了，所以就是一根漲停的一個消息機率，那也算是蠻不錯的。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+10.18%</b><span class="sep">｜</span>同期 0050.TW <b>+2.90%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>12/20</b> · 90 天 <b>12/17</b></div>
+  <div class="led-detail" id="lgd-0">
+    <div class="led-dt-head">聯發科（2454.TW）· EP693</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「那這次聯發科可能有直接先送一根漲停，那當然像今天就是有回到平盤了，所以就是一根漲停的一個消息機率，那也算是蠻不錯的。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>聯發科獲輝達史上最大 ECB（35億美元）投資並與 Alphabet 策略夥伴合作，屬上游 IC 設計廠獲得重量級客戶/夥伴插旗，依 Rule 5 判定為明確利多。講者明確評論『整體看下來是一個我覺得蠻不錯的消息』，且描述股價已反應（送一根漲停），同集另有提及市場消息但整體語氣一致偏多，依 Rule 6 輸出唯一淨訊號 +1。claim_type：所引原話是描述已發生的股價反應（漲停、後續回平盤），屬回顧而非預測，填 notfwd。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 7 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 7 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#籌碼面 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #995 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(1, this)">
+  <div class="led-r1"><span class="led-nm">台積電</span><span class="led-cd">2330.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP693 · 上架於 2026-09-02（7 天前） · 台股 · #產能擴充</div>
+  <blockquote class="led-q">「它應該就不會是給記憶體三大廠，應該就是還是交給台積電去做。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+3.56%</b><span class="sep">｜</span>同期 0050.TW <b>+2.90%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>76/104</b> · 90 天 <b>83/95</b></div>
+  <div class="led-detail" id="lgd-1">
+    <div class="led-dt-head">台積電（2330.TW）· EP693</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「它應該就不會是給記憶體三大廠，應該就是還是交給台積電去做。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者分析輝達 NVHBM 特規記憶體若普及，base die 設計代工可能不會交給記憶體三大廠，而是回流台積電，屬上游晶圓代工訂單增加的利多推論，依 Rule 5 判定 +1。這是對未來訂單歸屬的推測，非已發生事實，claim_type 填 forward。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 7 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 7 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#產能擴充 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #996 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(2, this)">
+  <div class="led-r1"><span class="led-nm">博通</span><span class="led-cd">AVGO</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP693 · 上架於 2026-09-02（7 天前） · 美股 · #估值過低</div>
+  <blockquote class="led-q">「先講結論，我認為它還是會有點類似就前陣子的光銅之爭。那時候確實是銅相關的類股直接被打到爆掉，就如果你用股價的角度來看的話；那確實你從它的營收去看，它是沒有被打掉…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+0.36%</b><span class="sep">｜</span>同期 SPY <b>+0.11%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>12/19</b> · 90 天 <b>7/18</b></div>
+  <div class="led-detail" id="lgd-2">
+    <div class="led-dt-head">博通（AVGO）· EP693</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「先講結論，我認為它還是會有點類似就前陣子的光銅之爭。那時候確實是銅相關的類股直接被打到爆掉，就如果你用股價的角度來看的話；那確實你從它的營收去看，它是沒有被打掉的，它還是持續的有開出來，那最終股價是也還公道，就是那時候被打下去的銅類股後來一堆都新高了，只是那時候被打得很慘，然後市場都說它不行。我覺得有點類似這樣的一個情形。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>市場因 XPU 競爭故事（Marvell、MediaTek 與輝達合作等）持續挑戰博通，股價承壓，但講者類比先前『光銅之爭』——當時銅類股被錯殺後多數股價創新高，判斷博通目前遭遇的情形類似，屬於『市場過度反應、基本面未受損』的估值認知，依 Rule 5/2 判定講者整體看法偏多（+1）。這是對博通未來能否如銅類股般走出低谷的預測，claim_type 填 forward。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 7 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 7 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#估值過低 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #997 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(3, this)">
+  <div class="led-r1"><span class="led-nm">NVIDIA</span><span class="led-cd">NVDA</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP692 · 上架於 2026-08-29（11 天前） · 美股 · #產能擴充</div>
+  <blockquote class="led-q">「他確實是把這些供應鏈全部都牢牢的攔在手上，所以其他人想要去跟他競爭，或許是一個非常有挑戰性的事情，我自己也這樣相信。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+3.76%</b><span class="sep">｜</span>同期 SPY <b>-0.44%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>35/51</b> · 90 天 <b>39/49</b></div>
+  <div class="led-detail" id="lgd-3">
+    <div class="led-dt-head">NVIDIA（NVDA）· EP692</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「他確實是把這些供應鏈全部都牢牢的攔在手上，所以其他人想要去跟他競爭，或許是一個非常有挑戰性的事情，我自己也這樣相信。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者花大量篇幅論證 NVIDIA 靠一次性大量、不計代價採購光通/雷射元件及台積電產能，把供應鏈牢牢鎖住，形成競爭對手難以複製的護城河；並提到 Vera Rubin ramp 速度是過往最快、CPU 與 connectivity 業務也都給出 bullish 訊號，即便 ASIC（如 Jalapeño）表現亮眼也不改其長期看法。整段淨情緒明確偏多，依 Rule 6 輸出唯一 +1。claim_type：『其他人想要去跟他競爭，或許是一個非常有挑戰性的事情，我自己也這樣相信』是對未來競爭格局的預測與個人信念，判定 forward。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 11 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 11 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#產能擴充 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #990 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(4, this)">
+  <div class="led-r1"><span class="led-nm">Marvell</span><span class="led-cd">MRVL</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP692 · 上架於 2026-08-29（11 天前） · 美股 · #營收動能</div>
+  <blockquote class="led-q">「他提到說他的一個很大的推力，是來自於 scale up 的光互聯交換晶片，那這一塊是這個 Matt Murphy，也就是 CEO 所提到的，在後面的一個很強大的…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+4.06%</b><span class="sep">｜</span>同期 SPY <b>-0.44%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>14/19</b> · 90 天 <b>12/17</b></div>
+  <div class="led-detail" id="lgd-4">
+    <div class="led-dt-head">Marvell（MRVL）· EP692</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「他提到說他的一個很大的推力，是來自於 scale up 的光互聯交換晶片，那這一塊是這個 Matt Murphy，也就是 CEO 所提到的，在後面的一個很強大的成長動能。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>屬上游 ASIC／光通晶片供應商，符合 Rule 5 上游邏輯：公司實際上修財測，講者解讀為 XPU 出貨放量、且 CEO 點名 scale up 光互聯交換晶片是後續強大成長動能，加上光通族群整體轉強，明確偏多，無反串跡象，判定 +1。claim_type：『在後面的一個很強大的成長動能』是對尚未完全兌現之未來成長的預測，判定 forward。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 11 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 11 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #991 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(5, this)">
+  <div class="led-r1"><span class="led-nm">Salesforce</span><span class="led-cd">CRM</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP692 · 上架於 2026-08-29（11 天前） · 美股 · #營收動能</div>
+  <blockquote class="led-q">「那這件事情給我們的一個啟示，就是我覺得 Salesforce 真的是一個蠻厲害的企業。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-2.66%</b><span class="sep">｜</span>同期 SPY <b>-0.44%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>0/1</b> · 90 天 <b>0/1</b></div>
+  <div class="led-detail" id="lgd-5">
+    <div class="led-dt-head">Salesforce（CRM）· EP692</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「那這件事情給我們的一個啟示，就是我覺得 Salesforce 真的是一個蠻厲害的企業。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者稱讚 Salesforce 掌握大量企業數據與經營 know-how，形成信賴基礎與進入門檻，且提到其營收獲利增長速度佳、run rate 漂亮；雖然對 Anthropic/Salesforce 兩者定價權分配略有猶豫（認為 Anthropic 可能拿多一點），但整體對 Salesforce 商業模式與轉型能力（founder mode、快速放棄介面層轉攻行動層）評價正面，淨情緒偏多，依 Rule 6 輸出 +1。claim_type：『掌握了大量的企業數據跟過往在經營上的一些 know-how』是描述其現有優勢，不是對未來股價的預測，判定 notfwd。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 11 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 11 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #992 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(6, this)">
+  <div class="led-r1"><span class="led-nm">台灣積體電路製造</span><span class="led-cd">2330.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP692 · 上架於 2026-08-29（11 天前） · 台股 · #產能擴充</div>
+  <blockquote class="led-q">「它在台積電這邊可能是下的量直接嚇到爆掉，所以你們要去跟它搶這些東西算是非常的困難。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>+2.07%</b><span class="sep">｜</span>同期 0050.TW <b>+2.76%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>76/104</b> · 90 天 <b>83/95</b></div>
+  <div class="led-detail" id="lgd-6">
+    <div class="led-dt-head">台灣積體電路製造（2330.TW）· EP692</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「它在台積電這邊可能是下的量直接嚇到爆掉，所以你們要去跟它搶這些東西算是非常的困難。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>屬上游晶圓代工廠，依 Rule 5 上游邏輯，NVIDIA 在台積電下的採購量『直接嚇到爆掉』代表客戶大量追單、產能滿載，對台積電為明確利多，判定 +1。此為講者對 NVIDIA 供應鏈策略的觀察推論，非直接對台積電股價的主觀操作宣示，故信心設為 Medium。claim_type：描述的是 NVIDIA 目前已經下的採購量（既成事實），非對未來的預測，判定 notfwd。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 11 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 11 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#產能擴充 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #993 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(7, this)">
+  <div class="led-r1"><span class="led-nm">Marvell</span><span class="led-cd">MRVL</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP690 · 上架於 2026-08-22（18 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「Marvell 牽手 Google：COT 化的路線圖... 這個事件確實可以拿來當成是普通的利空，我覺得是 OK；就是如果你要拿來當其他 IC design …」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-4.91%</b><span class="sep">｜</span>同期 SPY <b>+0.04%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>14/19</b> · 90 天 <b>12/17</b></div>
+  <div class="led-detail" id="lgd-7">
+    <div class="led-dt-head">Marvell（MRVL）· EP690</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「Marvell 牽手 Google：COT 化的路線圖... 這個事件確實可以拿來當成是普通的利空，我覺得是 OK；就是如果你要拿來當其他 IC design partners 的一個利空，有點像說他是跳一步去想，你未來可能的市場就少了一點。但有時候市場會太過專注短期的東西，他會忘記說其實就要嘛就是我沒有全部都給你、我只是給你其中一塊，你就可以賺到死掉... 所以除了就是博通以外的其他人，我會覺得說有可能是反應太多了。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者分析 Marvell 與 Google 簽署客製化半導體商業協議（涵蓋 AI inference chip、memory controller、NIC 等），代表 Google 轉向 COT 路線。雖然市場有人短線解讀為利空，但講者認為這並非搶奪既有玩家份額，而是 Google 開出全新案子，且顯示硬體需求強勁，對 IC design 領域偏多。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 18 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 18 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #987 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(8, this)">
+  <div class="led-r1"><span class="led-nm">美光</span><span class="led-cd">MU</span><span class="led-dir bear">↓ 看空</span></div>
+  <div class="led-r2">EP690 · 上架於 2026-08-22（18 天前） · 美股 · #營收動能</div>
+  <blockquote class="led-q">「後來是有蠻多美光的朋友後來證實，就是這真的蠻小氣加摳門。我的印象是停留在好像是上一次、去年還是什麼時候，那次還不錯；今年那個數字我聽到我也是傻眼，因為跟同業比起…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>+3.46%</b><span class="sep">｜</span>同期 SPY <b>+0.04%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>9/10</b> · 90 天 <b>10/10</b></div>
+  <div class="led-detail" id="lgd-8">
+    <div class="led-dt-head">美光（MU）· EP690</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「後來是有蠻多美光的朋友後來證實，就是這真的蠻小氣加摳門。我的印象是停留在好像是上一次、去年還是什麼時候，那次還不錯；今年那個數字我聽到我也是傻眼，因為跟同業比起來是真的非常小氣。我是想說這時候怎麼敢小氣，你懂嗎？因為現在是大家都在搶人的時候」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>聽眾留言反映美光分紅非常摳門且上限遭砍，講者亦直接證實該決策非常小氣、對留才與搶人不理智，基本面與公司內部激勵政策存在隱憂，判定為偏空 -1。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 18 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 18 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #989 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(9, this)">
+  <div class="led-r1"><span class="led-nm">SpaceX</span><span class="led-cd">SPCX</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP688 · 上架於 2026-08-15（25 天前） · 美股 · #籌碼面</div>
+  <blockquote class="led-q">「當這個股票解禁開始外流之後，那就立刻的會造成整個股價的打擊，就 surprise motherfucker，剛好就是在解禁之後，反而就是打底在往上衝了」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+9.62%</b><span class="sep">｜</span>同期 SPY <b>-1.33%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>1/1</b> · 90 天 <b>0/0</b></div>
+  <div class="led-detail" id="lgd-9">
+    <div class="led-dt-head">SpaceX（SPCX）· EP688</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「當這個股票解禁開始外流之後，那就立刻的會造成整個股價的打擊，就 surprise motherfucker，剛好就是在解禁之後，反而就是打底在往上衝了」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>SpaceX 雖然面臨解禁股票陸續流入市場的賣壓，但講者分析初期的衝擊過後，隨著流動性增加與多人承接，後續影響會越來越小，且「剛好就是在解禁之後，反而就是打底在往上衝了」，整體情緒偏多，判定為 +1。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 25 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 25 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#籌碼面 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #984 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(10, this)">
+  <div class="led-r1"><span class="led-nm">蘋果</span><span class="led-cd">AAPL</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP687 · 上架於 2026-08-12（28 天前） · 美股 · #籌碼面</div>
+  <blockquote class="led-q">「嘴巴上大家爭論都說 Apple 輸了，但錢的部分沒有啊，就是錢是往 Apple 的方向去跑，那反而是其他那些 frontier labs、或是大型投入的 clo…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+4.62%</b><span class="sep">｜</span>同期 SPY <b>-0.84%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>17/21</b> · 90 天 <b>15/20</b></div>
+  <div class="led-detail" id="lgd-10">
+    <div class="led-dt-head">蘋果（AAPL）· EP687</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「嘴巴上大家爭論都說 Apple 輸了，但錢的部分沒有啊，就是錢是往 Apple 的方向去跑，那反而是其他那些 frontier labs、或是大型投入的 cloud service provider，他的績效是跑輸的。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者指出市場本來認為 Apple 是 AI 輸家，但實際資本市場買單，今年至今（year to date）表現最好，錢往 Apple 方向跑，證明市場正面看待，雖個人未直接投 AI 但在資本市場與績效上獲勝。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 28 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 28 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#籌碼面 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #981 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(11, this)">
+  <div class="led-r1"><span class="led-nm">Google</span><span class="led-cd">GOOGL</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP687 · 上架於 2026-08-12（28 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「對於 Buffett 來講，它可以確定的東西是什麼？它可以確定的東西是，Google 現在它加碼下去的東西，簡單來講，它就是變成是某個程度上的房東，房東租房子的…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-1.51%</b><span class="sep">｜</span>同期 SPY <b>-0.84%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>6/12</b> · 90 天 <b>6/9</b></div>
+  <div class="led-detail" id="lgd-11">
+    <div class="led-dt-head">Google（GOOGL）· EP687</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「對於 Buffett 來講，它可以確定的東西是什麼？它可以確定的東西是，Google 現在它加碼下去的東西，簡單來講，它就是變成是某個程度上的房東，房東租房子的對象就是這些 AI 模型商。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>波克夏大舉買進 Google（巴菲特與 Abel 持續加碼），且講者認為 Google 將重心轉往雲端與算力（數位時代的鐵路與電網/房東角色），將風險（frontier AI）外包或與內部重組並持續收租，雖短期有敘事改變的震盪風險，但長期看好其基建供應商定位與現金流轉正的潛力。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 28 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 28 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #982 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(12, this)">
+  <div class="led-r1"><span class="led-nm">Meta</span><span class="led-cd">META</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP687 · 上架於 2026-08-12（28 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「Meta 的做法是怎麼樣的？就是我們認為，雖然它在這次的 earnings call 裡面還是講說這個算力能夠自己用就自己用，可是它的各項布局跟我們最近看到的拉…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="p">未滿期</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+5.98%</b><span class="sep">｜</span>同期 SPY <b>-0.84%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>2/4</b> · 90 天 <b>1/2</b></div>
+  <div class="led-detail" id="lgd-12">
+    <div class="led-dt-head">Meta（META）· EP687</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「Meta 的做法是怎麼樣的？就是我們認為，雖然它在這次的 earnings call 裡面還是講說這個算力能夠自己用就自己用，可是它的各項布局跟我們最近看到的拉貨……它其實都是為了租賃去做的事情。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者提到 Meta 的佈局和最近的拉貨與 Google 類似，都是朝向算力租賃與當房東的方向前進，且從廣告收入支撐與 TPU/採購指標來看，是持續往這個方向加速的雙雄之一。</div>
+    <div><b>30 天</b>：未滿期（講出來到 2026-09-09 才 28 天，未滿 30 天），不進勝率分母</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 28 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #983 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(13, this)">
+  <div class="led-r1"><span class="led-nm">群聯</span><span class="led-cd">8299.TWO</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP686 · 上架於 2026-08-08（32 天前） · 台股 · #技術創新</div>
+  <blockquote class="led-q">「我跟你講，我們跟群聯的關係是還蠻不錯的，不管是什麼電腦展會去，然後再來就是也去他們公司去看過，那時候我去看他的 aiDAPTIV+。其實我非常喜歡這家公司跟裡面…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+3.7% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>+3.22%</b><span class="sep">｜</span>同期 0050.TW <b>+6.85%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>6/8</b> · 90 天 <b>4/7</b></div>
+  <div class="led-detail" id="lgd-13">
+    <div class="led-dt-head">群聯（8299.TWO）· EP686</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「我跟你講，我們跟群聯的關係是還蠻不錯的，不管是什麼電腦展會去，然後再來就是也去他們公司去看過，那時候我去看他的 aiDAPTIV+。其實我非常喜歡這家公司跟裡面的很多大大們」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者在 Q&amp;A 回應聽眾提問時提到該公司有 aiDAPTIV+ 等產品，並表示『我非常喜歡這家公司跟裡面的很多大大們』，且聽眾求職 Phison 時講者給予正面祝福與肯定，顯示主觀偏多態度，依淨情緒判定 +1。</div>
+    <div><b>30 天</b>：2026-08-07 進 2020.00 → 2026-09-07 出 2095.00，報酬 +3.71%；同期 0050.TW +6.85%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 32 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）G23, G24</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #979 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(14, this)">
+  <div class="led-r1"><span class="led-nm">健策</span><span class="led-cd">3653.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP686 · 上架於 2026-08-08（32 天前） · 台股 · #技術創新</div>
+  <blockquote class="led-q">「這支我也非常喜歡，這我們林口之光，健策是一個非常屌炮的公司。那當然前面因為 MC 被人家放一些利空……這些優質的公司很多時候被放利空的時候，就是一個蠻不錯的機會…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+29.1% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+26.71%</b><span class="sep">｜</span>同期 0050.TW <b>+6.85%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>4/4</b> · 90 天 <b>3/3</b></div>
+  <div class="led-detail" id="lgd-14">
+    <div class="led-dt-head">健策（3653.TW）· EP686</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「這支我也非常喜歡，這我們林口之光，健策是一個非常屌炮的公司。那當然前面因為 MC 被人家放一些利空……這些優質的公司很多時候被放利空的時候，就是一個蠻不錯的機會。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者針對聽眾提及該檔散熱股票表現及拉升進行回應，明確表示『這支我也非常喜歡，這我們林口之光，健策是一個非常屌炮的公司』，且分析其雖受利空放話但優質公司遇利空是好機會，符合加碼或看好邏輯，判定 +1。</div>
+    <div><b>30 天</b>：2026-08-07 進 4380.00 → 2026-09-07 出 5655.00，報酬 +29.11%；同期 0050.TW +6.85%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 32 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）G23, G24</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #980 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(15, this)">
+  <div class="led-r1"><span class="led-nm">台積電</span><span class="led-cd">2330.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP685 · 上架於 2026-08-05（35 天前） · 台股 · #營收動能</div>
+  <blockquote class="led-q">「從上禮拜五開始，大家也看到台積電漲停非常誇張，各式各樣的標的都直接從谷底彈上來」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+0.2% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>+2.70%</b><span class="sep">｜</span>同期 0050.TW <b>+9.19%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>76/104</b> · 90 天 <b>83/95</b></div>
+  <div class="led-detail" id="lgd-15">
+    <div class="led-dt-head">台積電（2330.TW）· EP685</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「從上禮拜五開始，大家也看到台積電漲停非常誇張，各式各樣的標的都直接從谷底彈上來」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者提到『從上禮拜五開始，大家也看到台積電漲停非常誇張』、『在下跌的過程之中你就已經有試著去抄底...平均下來，你的成本就會在 5 日線左右』，且整體盤面估值修復迅速，對上游半導體/AI基礎設施維持看多態度。</div>
+    <div><b>30 天</b>：2026-08-05 進 2405.00 → 2026-09-04 出 2410.00，報酬 +0.21%；同期 0050.TW +3.95%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 35 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #969 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(16, this)">
+  <div class="led-r1"><span class="led-nm">台達電</span><span class="led-cd">2308.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP685 · 上架於 2026-08-05（35 天前） · 台股 · #技術創新</div>
+  <blockquote class="led-q">「像最近台達電、或是光寶出來講，基本上他們的說法，你就不會去質疑說 800V 這個東西不會出現，它就只是可能現在中繼先用 400V」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+10.6% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+9.39%</b><span class="sep">｜</span>同期 0050.TW <b>+9.19%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>7/9</b> · 90 天 <b>7/7</b></div>
+  <div class="led-detail" id="lgd-16">
+    <div class="led-dt-head">台達電（2308.TW）· EP685</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「像最近台達電、或是光寶出來講，基本上他們的說法，你就不會去質疑說 800V 這個東西不會出現，它就只是可能現在中繼先用 400V」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者提到台達電或光寶針對 800V 相關技術的說法，證明該規格終究會出現，雖然中繼可能 400V 用比較久，但整體產業趨勢明確，不隨市場雜音恐慌。</div>
+    <div><b>30 天</b>：2026-08-05 進 1650.00 → 2026-09-04 出 1825.00，報酬 +10.61%；同期 0050.TW +3.95%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 35 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #970 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(17, this)">
+  <div class="led-r1"><span class="led-nm">光寶科</span><span class="led-cd">2301.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP685 · 上架於 2026-08-05（35 天前） · 台股 · #技術創新</div>
+  <blockquote class="led-q">「像最近台達電、或是光寶出來講，基本上他們的說法，你就不會去質疑說 800V 這個東西不會出現」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+24.8% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+16.87%</b><span class="sep">｜</span>同期 0050.TW <b>+9.19%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>2/2</b> · 90 天 <b>1/1</b></div>
+  <div class="led-detail" id="lgd-17">
+    <div class="led-dt-head">光寶科（2301.TW）· EP685</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「像最近台達電、或是光寶出來講，基本上他們的說法，你就不會去質疑說 800V 這個東西不會出現」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>與台達電同理，講者提及光寶等大廠在電源/800V 的說法證實了長線需求不變，不受短線市場雜音影響。</div>
+    <div><b>30 天</b>：2026-08-05 進 246.72 → 2026-09-04 出 308.00，報酬 +24.84%；同期 0050.TW +3.95%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 35 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #971 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(18, this)">
+  <div class="led-r1"><span class="led-nm">聯發科</span><span class="led-cd">2454.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP685 · 上架於 2026-08-05（35 天前） · 台股 · #營收動能</div>
+  <blockquote class="led-q">「不管是在 MTK 這裡、或者在博通這裡，大家的 Roadmap 都還是一樣，那就算有一些時程上的調整，它應該也不是什麼大不了的事情」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+10.4% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+17.75%</b><span class="sep">｜</span>同期 0050.TW <b>+9.19%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>12/20</b> · 90 天 <b>12/17</b></div>
+  <div class="led-detail" id="lgd-18">
+    <div class="led-dt-head">聯發科（2454.TW）· EP685</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「不管是在 MTK 這裡、或者在博通這裡，大家的 Roadmap 都還是一樣，那就算有一些時程上的調整，它應該也不是什麼大不了的事情」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者提及『不管是在 MTK 這裡、或者在博通這裡，大家的 Roadmap 都還是一樣』，顯示 ASIC 與相關晶片時程雖有彈性調整但大方向不變，逢低具吸引力。</div>
+    <div><b>30 天</b>：2026-08-05 進 4000.00 → 2026-09-04 出 4415.00，報酬 +10.38%；同期 0050.TW +3.95%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 35 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #972 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(19, this)">
+  <div class="led-r1"><span class="led-nm">博通</span><span class="led-cd">AVGO</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP685 · 上架於 2026-08-05（35 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「不管是在 MTK 這裡、或者在博通這裡，大家的 Roadmap 都還是一樣，那就算有一些時程上的調整，它應該也不是什麼大不了的事情」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="l">-14.4% ✕</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-11.89%</b><span class="sep">｜</span>同期 SPY <b>-0.49%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>12/19</b> · 90 天 <b>7/18</b></div>
+  <div class="led-detail" id="lgd-19">
+    <div class="led-dt-head">博通（AVGO）· EP685</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「不管是在 MTK 這裡、或者在博通這裡，大家的 Roadmap 都還是一樣，那就算有一些時程上的調整，它應該也不是什麼大不了的事情」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者指出博通在 ASIC 的 Roadmap 穩定，不受短線傳言影響，屬於 AI 基礎設施核心受惠者。</div>
+    <div><b>30 天</b>：2026-08-05 進 418.28 → 2026-09-04 出 357.90，報酬 -14.44%；同期 SPY +0.05%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 35 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #973 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(20, this)">
+  <div class="led-r1"><span class="led-nm">Palantir</span><span class="led-cd">PLTR</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP685 · 上架於 2026-08-05（35 天前） · 美股 · #營收動能</div>
+  <blockquote class="led-q">「我們最近看到 Palantir 直接整個跳上去，我覺得就是一掃過去的陰霾…… Palantir 這個財報數字，當然我覺得已經是沒有意外，它本身就是開一個好的數字…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+10.0% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+7.49%</b><span class="sep">｜</span>同期 SPY <b>-0.49%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>13/18</b> · 90 天 <b>9/15</b></div>
+  <div class="led-detail" id="lgd-20">
+    <div class="led-dt-head">Palantir（PLTR）· EP685</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「我們最近看到 Palantir 直接整個跳上去，我覺得就是一掃過去的陰霾…… Palantir 這個財報數字，當然我覺得已經是沒有意外，它本身就是開一個好的數字，但是重點是什麼？重點是市場願意去反映它」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者明確讚賞 Palantir 開出非常不錯的財報，且市場願意給予兩三成的漲幅來反映，證明軟體公司不會被 AI 幹掉，高估值精品股能撐住代表市場沒大問題。</div>
+    <div><b>30 天</b>：2026-08-05 進 158.43 → 2026-09-04 出 174.33，報酬 +10.04%；同期 SPY +0.05%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 35 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #974 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(21, this)">
+  <div class="led-r1"><span class="led-nm">Cloudflare</span><span class="led-cd">NET</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP685 · 上架於 2026-08-05（35 天前） · 美股 · #營收動能</div>
+  <blockquote class="led-q">「有些像是資安，過去一直被誤會的，其實很多都跑去新高、都是持續地越漲越多……或者像像是 Palantir、或是像 Cloudflare，之前也有一個論述是講說他們…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="l">-4.8% ✕</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-3.01%</b><span class="sep">｜</span>同期 SPY <b>-0.49%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>10/17</b> · 90 天 <b>11/15</b></div>
+  <div class="led-detail" id="lgd-21">
+    <div class="led-dt-head">Cloudflare（NET）· EP685</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「有些像是資安，過去一直被誤會的，其實很多都跑去新高、都是持續地越漲越多……或者像像是 Palantir、或是像 Cloudflare，之前也有一個論述是講說他們也都會被擊敗……後來發現說沒有辦法」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者提到資安與特定軟體公司（如 Cloudflare、Palantir）先前被謠傳會被 AI 擊敗，後來證明沒有辦法，股價反而在創新高，顯示軟體防禦力強。</div>
+    <div><b>30 天</b>：2026-08-05 進 292.96 → 2026-09-04 出 278.92，報酬 -4.79%；同期 SPY +0.05%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 35 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #975 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(22, this)">
+  <div class="led-r1"><span class="led-nm">Google</span><span class="led-cd">GOOGL</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP685 · 上架於 2026-08-05（35 天前） · 美股 · #營收動能</div>
+  <blockquote class="led-q">「Google 前面開財報的時候不是跌嗎？然後跌完之後，很多人就想說因為怎麼樣怎麼樣嘛，結果後來又再漲回去，那請問前面的人是不是就把自己臉打爆了？」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="l">-6.6% ✕</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-6.64%</b><span class="sep">｜</span>同期 SPY <b>-0.49%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>6/12</b> · 90 天 <b>6/9</b></div>
+  <div class="led-detail" id="lgd-22">
+    <div class="led-dt-head">Google（GOOGL）· EP685</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「Google 前面開財報的時候不是跌嗎？然後跌完之後，很多人就想說因為怎麼樣怎麼樣嘛，結果後來又再漲回去，那請問前面的人是不是就把自己臉打爆了？」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者指出 Google 前面開財報下跌後又漲回去，且在 AI 競賽與光通/光纖資源爭奪中扮演關鍵角色，證明市場願意修正並給予肯定。</div>
+    <div><b>30 天</b>：2026-08-05 進 362.20 → 2026-09-04 出 338.46，報酬 -6.55%；同期 SPY +0.05%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 35 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #977 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(23, this)">
+  <div class="led-r1"><span class="led-nm">微軟</span><span class="led-cd">MSFT</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP685 · 上架於 2026-08-05（35 天前） · 美股 · #營收動能</div>
+  <blockquote class="led-q">「微軟算是一個分界點，所以微軟的這份財報，他開完之後他上去，其實在我們的判讀裡面，他也是一個非常重要的指標」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+2.7% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+1.33%</b><span class="sep">｜</span>同期 SPY <b>-0.49%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>4/7</b> · 90 天 <b>4/6</b></div>
+  <div class="led-detail" id="lgd-23">
+    <div class="led-dt-head">微軟（MSFT）· EP685</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「微軟算是一個分界點，所以微軟的這份財報，他開完之後他上去，其實在我們的判讀裡面，他也是一個非常重要的指標」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者明確指出微軟的財報是市場情緒轉變的「分界點」，開完之後往上衝，成為帶動盤面止跌回升的重要指標。</div>
+    <div><b>30 天</b>：2026-08-05 進 486.54 → 2026-09-04 出 499.70，報酬 +2.70%；同期 SPY +0.05%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 35 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #978 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(24, this)">
+  <div class="led-r1"><span class="led-nm">聯發科</span><span class="led-cd">2454.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP684 · 上架於 2026-08-01（39 天前） · 台股 · #營收動能</div>
+  <blockquote class="led-q">「外加其實發哥在禮拜五又給了一個非常好的 guidance，上修了他的 forecast，所以就是初判，下禮拜還是有蠻多新的動能，有可能把這個盤帶上去。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+10.4% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+32.49%</b><span class="sep">｜</span>同期 0050.TW <b>+6.85%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>12/20</b> · 90 天 <b>12/17</b></div>
+  <div class="led-detail" id="lgd-24">
+    <div class="led-dt-head">聯發科（2454.TW）· EP684</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「外加其實發哥在禮拜五又給了一個非常好的 guidance，上修了他的 forecast，所以就是初判，下禮拜還是有蠻多新的動能，有可能把這個盤帶上去。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>發哥（聯發科）在禮拜五給了非常好的 guidance，上修了 forecast，講者據此初判下禮拜有蠻多新的動能，可把盤帶上去，屬明顯的營收利多與加碼訊號。</div>
+    <div><b>30 天</b>：2026-07-31 進 3555.00 → 2026-08-31 出 3925.00，報酬 +10.41%；同期 0050.TW +3.31%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 39 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）G15 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #966 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(25, this)">
+  <div class="led-r1"><span class="led-nm">力積電</span><span class="led-cd">6770.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP684 · 上架於 2026-08-01（39 天前） · 台股 · #估值過低</div>
+  <blockquote class="led-q">「黃崇仁對我的影響就是，他的力積電、愛普我都是賺錢的。... 那個力積電早日破百，對，希望這個——也不要只有說力積電，就所有這一波遭受到重擊的股票，希望大家都可以…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+34.4% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+32.84%</b><span class="sep">｜</span>同期 0050.TW <b>+6.85%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>3/3</b> · 90 天 <b>1/1</b></div>
+  <div class="led-detail" id="lgd-25">
+    <div class="led-dt-head">力積電（6770.TW）· EP684</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「黃崇仁對我的影響就是，他的力積電、愛普我都是賺錢的。... 那個力積電早日破百，對，希望這個——也不要只有說力積電，就所有這一波遭受到重擊的股票，希望大家都可以盡快早日回到前高」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者提到黃崇仁的力積電與愛普，過去都是一年做一兩次、氣氛對了上去就會賺錢的標的，且在黃崇仁逝世新聞後表達感謝與懷念，並希望力積電能早日破百，整體立場偏向看好與支持。</div>
+    <div><b>30 天</b>：2026-07-31 進 54.32 → 2026-08-31 出 73.00，報酬 +34.39%；同期 0050.TW +3.31%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 39 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#估值過低 · 第 2 層（心法）G15 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #967 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(26, this)">
+  <div class="led-r1"><span class="led-nm">愛普*</span><span class="led-cd">6531.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP684 · 上架於 2026-08-01（39 天前） · 台股 · #估值過低</div>
+  <blockquote class="led-q">「黃崇仁對我的影響就是，他的力積電、愛普我都是賺錢的。... 所以黃崇仁的股票呢，就是氣氛對了上去就會賺錢，所以有時候會洗比較久，像那時候愛普就洗了好久好久。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+39.0% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+39.58%</b><span class="sep">｜</span>同期 0050.TW <b>+6.85%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>3/4</b> · 90 天 <b>1/3</b></div>
+  <div class="led-detail" id="lgd-26">
+    <div class="led-dt-head">愛普*（6531.TW）· EP684</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「黃崇仁對我的影響就是，他的力積電、愛普我都是賺錢的。... 所以黃崇仁的股票呢，就是氣氛對了上去就會賺錢，所以有時候會洗比較久，像那時候愛普就洗了好久好久。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者提及黃崇仁旗下的力積電與愛普過去自己都是賺錢的，雖然洗比較久但氣氛對了就會上去，整體對該標的持正面評價。</div>
+    <div><b>30 天</b>：2026-07-31 進 667.00 → 2026-08-31 出 927.00，報酬 +38.98%；同期 0050.TW +3.31%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 39 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#估值過低 · 第 2 層（心法）G15 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #968 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(27, this)">
+  <div class="led-r1"><span class="led-nm">台積電</span><span class="led-cd">2330.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP683 · 上架於 2026-07-29（42 天前） · 台股 · #估值過低</div>
+  <blockquote class="led-q">「因為前面已經是把絕大多數的部位都換去盛虧股，也就是我把台積電戲稱為盛虧股，反正就是多軍最後堡壘。那大家事後看也發現說台積電真的跌最少，其他中小跌要爆掉，所以我已…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+10.0% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>+12.27%</b><span class="sep">｜</span>同期 0050.TW <b>+17.29%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>76/104</b> · 90 天 <b>83/95</b></div>
+  <div class="led-detail" id="lgd-27">
+    <div class="led-dt-head">台積電（2330.TW）· EP683</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「因為前面已經是把絕大多數的部位都換去盛虧股，也就是我把台積電戲稱為盛虧股，反正就是多軍最後堡壘。那大家事後看也發現說台積電真的跌最少，其他中小跌要爆掉，所以我已經有一大堆的台積電加台指期」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者提到自己前面把絕大多數部位換到台積電與台指期（盛虧股），並指出在這次大屠殺中台積電跌最少，是市場上的贏家。雖然短期被當作 parking 的避風港，但綜合其抗跌與作為防守底倉的地位，維持多方看法。</div>
+    <div><b>30 天</b>：2026-07-29 進 2200.00 → 2026-08-28 出 2420.00，報酬 +10.00%；同期 0050.TW +14.14%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 42 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#估值過低 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #965 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(28, this)">
+  <div class="led-r1"><span class="led-nm">AMD</span><span class="led-cd">AMD</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP682 · 上架於 2026-07-25（46 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「像我可能在本週就是有看到說 AMD 有一個 Advancing AI 嘛，那我就往 AMD 的一些相關概念股去壓，它們是帶來一些正報酬」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="l">-12.5% ✕</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-3.11%</b><span class="sep">｜</span>同期 SPY <b>+3.66%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>13/16</b> · 90 天 <b>13/14</b></div>
+  <div class="led-detail" id="lgd-28">
+    <div class="led-dt-head">AMD（AMD）· EP682</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「像我可能在本週就是有看到說 AMD 有一個 Advancing AI 嘛，那我就往 AMD 的一些相關概念股去壓，它們是帶來一些正報酬」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者提到本週看到 AMD 有 Advancing AI，往其相關概念股去壓，並且帶來一些正報酬，判定 +1。</div>
+    <div><b>30 天</b>：2026-07-24 進 521.95 → 2026-08-24 出 456.75，報酬 -12.49%；同期 SPY +3.32%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 46 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #960 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(29, this)">
+  <div class="led-r1"><span class="led-nm">Google</span><span class="led-cd">GOOGL</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP682 · 上架於 2026-07-25（46 天前） · 美股 · #營收動能</div>
+  <blockquote class="led-q">「Google 的財報我們只幫它去評論，我們覺得是非常好，而且已經證明說 AI 就是可以賺錢的東西。... Google 這次的數字，你可以知道說它的雲就是獲得了…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+8.9% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+5.82%</b><span class="sep">｜</span>同期 SPY <b>+3.66%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>6/12</b> · 90 天 <b>6/9</b></div>
+  <div class="led-detail" id="lgd-29">
+    <div class="led-dt-head">Google（GOOGL）· EP682</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「Google 的財報我們只幫它去評論，我們覺得是非常好，而且已經證明說 AI 就是可以賺錢的東西。... Google 這次的數字，你可以知道說它的雲就是獲得了一個我認為算是巨大的成功，然後 AI 證實了就是可以賺錢的東西」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者認為 Google 財報非常正面，證明 AI 可以賺錢，且不投資就會輸，強調 CSP 巨頭花錢投資是合理的、獲得巨大成功，判定 +1。</div>
+    <div><b>30 天</b>：2026-07-24 進 319.53 → 2026-08-24 出 347.84，報酬 +8.86%；同期 SPY +3.32%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 46 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #961 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(30, this)">
+  <div class="led-r1"><span class="led-nm">德州儀器</span><span class="led-cd">TXN</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP682 · 上架於 2026-07-25（46 天前） · 美股 · #營收動能</div>
+  <blockquote class="led-q">「Texas Instrument，就是德州儀器 TXN 或是 TI... 它在這次的電話會，基本上釋出一個超級好的訊號，就是告訴大家說它就是看到一個全面性的復甦…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="l">-6.9% ✕</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-6.92%</b><span class="sep">｜</span>同期 SPY <b>+3.66%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>0/2</b> · 90 天 <b>0/0</b></div>
+  <div class="led-detail" id="lgd-30">
+    <div class="led-dt-head">德州儀器（TXN）· EP682</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「Texas Instrument，就是德州儀器 TXN 或是 TI... 它在這次的電話會，基本上釋出一個超級好的訊號，就是告訴大家說它就是看到一個全面性的復甦，東西都上來，車用中心的表現很好，他們開始漲價。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者指出德州儀器（TXN）電話會釋出超級好訊號，看到全面性復甦、車用表現好並開始漲價，判定 +1。</div>
+    <div><b>30 天</b>：2026-07-24 進 278.16 → 2026-08-24 出 258.94，報酬 -6.91%；同期 SPY +3.32%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 46 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#營收動能 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #963 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(31, this)">
+  <div class="led-r1"><span class="led-nm">Palantir</span><span class="led-cd">PLTR</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP682 · 上架於 2026-07-25（46 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「那它算不算黃金料理？我覺得算欸，就是 Palantir 的應用，你可以很明確地在市場上就知道說它沒有太多的競品啊，... 產品好不好，那個肯定是好的。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+43.1% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+38.55%</b><span class="sep">｜</span>同期 SPY <b>+3.66%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>13/18</b> · 90 天 <b>9/15</b></div>
+  <div class="led-detail" id="lgd-31">
+    <div class="led-dt-head">Palantir（PLTR）· EP682</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「那它算不算黃金料理？我覺得算欸，就是 Palantir 的應用，你可以很明確地在市場上就知道說它沒有太多的競品啊，... 產品好不好，那個肯定是好的。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>聽眾提問 Palantir 是否為黃金料理，講者回應『我覺得算欸』，並肯定其產品無競品且國防部案子等利基應用非常好，判定 +1。</div>
+    <div><b>30 天</b>：2026-07-24 進 122.92 → 2026-08-24 出 175.89，報酬 +43.09%；同期 SPY +3.32%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 46 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #964 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(32, this)">
+  <div class="led-r1"><span class="led-nm">台積電</span><span class="led-cd">2330.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP681 · 上架於 2026-07-22（49 天前） · 台股 · #總經趨勢</div>
+  <blockquote class="led-q">「反正就是在大跌的時候先把錢閃進去指數、閃進去台積電，然後等到大盤回穩之後，就開始從指數跟台積電拿錢出來，看去買東西。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+0.4% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>+2.92%</b><span class="sep">｜</span>同期 0050.TW <b>+5.83%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>76/104</b> · 90 天 <b>83/95</b></div>
+  <div class="led-detail" id="lgd-32">
+    <div class="led-dt-head">台積電（2330.TW）· EP681</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「反正就是在大跌的時候先把錢閃進去指數、閃進去台積電，然後等到大盤回穩之後，就開始從指數跟台積電拿錢出來，看去買東西。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>大資在盤勢震盪下跌時，會先把錢閃進去指數與台積電避險，在大盤回穩後再拿出來買東西。講者提到這類大型股、相對便宜且可防守，且台股有漲破季線。綜合評估其防守性與資金流入行為，判定為正面操作 (+1)。</div>
+    <div><b>30 天</b>：2026-07-22 進 2400.00 → 2026-08-21 出 2410.00，報酬 +0.42%；同期 0050.TW +0.77%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 49 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#總經趨勢 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #956 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(33, this)">
+  <div class="led-r1"><span class="led-nm">AMD</span><span class="led-cd">AMD</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP681 · 上架於 2026-07-22（49 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「所以 Venice 它提早去誕生，會為 AMD 帶來蠻大的一個優勢... CPU 相關的 supply chain，我會認為就是在 AMD 的 Keynote …」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="l">-14.3% ✕</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-8.44%</b><span class="sep">｜</span>同期 SPY <b>+2.49%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>13/16</b> · 90 天 <b>13/14</b></div>
+  <div class="led-detail" id="lgd-33">
+    <div class="led-dt-head">AMD（AMD）· EP681</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「所以 Venice 它提早去誕生，會為 AMD 帶來蠻大的一個優勢... CPU 相關的 supply chain，我會認為就是在 AMD 的 Keynote 之後，有可能會再一次被關注。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>AMD 即將舉辦 Advancing AI 2026，推出 Venice（SP7 平台的 CPU）且獲 Microsoft 等大單支持。CPU 在 AI 代理（agentic AI）應用中用量大增，供不應求，具備成為市場領頭羊的潛力。</div>
+    <div><b>30 天</b>：2026-07-22 進 552.33 → 2026-08-21 出 473.25，報酬 -14.32%；同期 SPY +2.45%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 49 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #958 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(34, this)">
+  <div class="led-r1"><span class="led-nm">SpaceX</span><span class="led-cd">SPCX</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP680 · 上架於 2026-07-18（53 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「那這禮拜看到 SpaceX 的股價又繼續落地，但我還是非常勇敢的在持續去加，後來就真的越來越喜歡這家公司。...那就是跟可能在裡面工作的一些朋友聊天完之後，就會…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+17.9% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+23.78%</b><span class="sep">｜</span>同期 SPY <b>+3.06%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>1/1</b> · 90 天 <b>0/0</b></div>
+  <div class="led-detail" id="lgd-34">
+    <div class="led-dt-head">SpaceX（SPCX）· EP680</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「那這禮拜看到 SpaceX 的股價又繼續落地，但我還是非常勇敢的在持續去加，後來就真的越來越喜歡這家公司。...那就是跟可能在裡面工作的一些朋友聊天完之後，就會覺得應該要再買更多。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者明確表示對 SpaceX 非常喜歡且持續加碼，認為其公司文化極度追求速度與彈性，並說『應該要再買更多』，屬主動加碼動作。</div>
+    <div><b>30 天</b>：2026-07-17 進 123.99 → 2026-08-17 出 146.23，報酬 +17.94%；同期 SPY +3.95%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 53 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）G27</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #953 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(35, this)">
+  <div class="led-r1"><span class="led-nm">台積電</span><span class="led-cd">2330.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP680 · 上架於 2026-07-18（53 天前） · 台股 · #總經趨勢</div>
+  <blockquote class="led-q">「台積電，我覺得他根本就不應該是在 2300 塊這個價格，我覺得他根本就是在更上面的價格」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+4.8% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>+7.86%</b><span class="sep">｜</span>同期 0050.TW <b>+10.40%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>76/104</b> · 90 天 <b>83/95</b></div>
+  <div class="led-detail" id="lgd-35">
+    <div class="led-dt-head">台積電（2330.TW）· EP680</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「台積電，我覺得他根本就不應該是在 2300 塊這個價格，我覺得他根本就是在更上面的價格」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>2026-08-02 經 Gemini/DeepSeek 交叉分析出現分歧（原Gemini判-1），送Codex(gpt-5.6-terra)仲裁：法說會全篇正面(capex上修/毛利優於財測上緣/營收展望30%→40%)，講者也在Q&amp;A明確表態台積電被低估。原判-1是把「股價短期跌6%後轉防守模式」誤當成對台積電基本面看空，但講者從未表示看壞台積電本身，只是部位風控。淨情緒應為+1。</div>
+    <div><b>30 天</b>：2026-07-17 進 2290.00 → 2026-08-17 出 2400.00，報酬 +4.80%；同期 0050.TW +6.94%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 53 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#總經趨勢 · 第 2 層（心法）還沒判 · 第 3 層（何時停）G27</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #954 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(36, this)">
+  <div class="led-r1"><span class="led-nm">Tesla</span><span class="led-cd">TSLA</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP680 · 上架於 2026-07-18（53 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「那總之就是我對 SpaceX，或是像是 Tesla 都是非常喜歡，因為我本身算是馬斯克的一個粉絲，也算是媽咪啦。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="l">-10.9% ✕</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-3.33%</b><span class="sep">｜</span>同期 SPY <b>+3.06%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>27/48</b> · 90 天 <b>30/45</b></div>
+  <div class="led-detail" id="lgd-36">
+    <div class="led-dt-head">Tesla（TSLA）· EP680</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「那總之就是我對 SpaceX，或是像是 Tesla 都是非常喜歡，因為我本身算是馬斯克的一個粉絲，也算是媽咪啦。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者明確表示『對 SpaceX，或是像是 Tesla 都是非常喜歡，因為我本身算是馬斯克的一個粉絲』，且其長期立場與周邊支持度極高，判定多方態度 +1。</div>
+    <div><b>30 天</b>：2026-07-17 進 380.84 → 2026-08-17 出 339.30，報酬 -10.91%；同期 SPY +3.95%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 53 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）G27</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #955 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(37, this)">
+  <div class="led-r1"><span class="led-nm">力積電</span><span class="led-cd">6770.TW</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP679 · 上架於 2026-07-15（56 天前） · 台股 · #產能擴充</div>
+  <blockquote class="led-q">「像昨天力積電就開了一場會嘛，那它裡面算是幫蠻多人開了法說會，把整個很多產業的東西都講出來了，那就是有提到說，像是這個功率的封裝，他們目前也是處在一個非常緊繃的狀…」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+3.0% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-4.86%</b><span class="sep">｜</span>同期 0050.TW <b>+4.02%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>3/3</b> · 90 天 <b>1/1</b></div>
+  <div class="led-detail" id="lgd-37">
+    <div class="led-dt-head">力積電（6770.TW）· EP679</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「像昨天力積電就開了一場會嘛，那它裡面算是幫蠻多人開了法說會，把整個很多產業的東西都講出來了，那就是有提到說，像是這個功率的封裝，他們目前也是處在一個非常緊繃的狀態，他們有去生產這個功率MOSFET，然後就說其實已經滿很久了，客人都一直在催貨或什麼的」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者提到力積電開會時說明功率MOSFET等功率封裝狀態非常緊繃、滿很久、客人在催貨，供不應求且持續拉動，整體基本面展望良好。</div>
+    <div><b>30 天</b>：2026-07-15 進 75.85 → 2026-08-14 出 78.14，報酬 +3.02%；同期 0050.TW +0.70%（實跨 22 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 56 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 Medium · 第 1 層（產業結構）#產能擴充 · 第 2 層（心法）還沒判 · 第 3 層（何時停）G28</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #952 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(38, this)">
+  <div class="led-r1"><span class="led-nm">NVIDIA</span><span class="led-cd">NVDA</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP678 · 上架於 2026-07-11（60 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「NVIDIA 的話是直接再次的攻到 200 美元大關了，就很久沒有看到 NVIDIA 連續出這種紅 K，然後重新的爬上季線，這個長得還蠻好看的」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="w">+3.1% ✓</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st win" style="margin-top:6px;">✓ 跑贏大盤</div>
+  <div class="led-nums">個股 <b>+7.00%</b><span class="sep">｜</span>同期 SPY <b>+1.46%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>35/51</b> · 90 天 <b>39/49</b></div>
+  <div class="led-detail" id="lgd-38">
+    <div class="led-dt-head">NVIDIA（NVDA）· EP678</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「NVIDIA 的話是直接再次的攻到 200 美元大關了，就很久沒有看到 NVIDIA 連續出這種紅 K，然後重新的爬上季線，這個長得還蠻好看的」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者明確指出 NVIDIA 股價『再次的攻到 200 美元大關了』、『重新的爬上季線，這個長得還蠻好看的』，並在後續探討算力定價與 Meta 滿倉買進時，顯示對其需求極具信心，判定為 +1。</div>
+    <div><b>30 天</b>：2026-07-10 進 210.96 → 2026-08-10 出 217.55，報酬 +3.12%；同期 SPY +2.39%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 60 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #949 · 算於 2026-09-15T00:42</div>
+  </div>
+</div><div class="led" role="button" tabindex="0" aria-expanded="false" onclick="toggleLed(39, this)">
+  <div class="led-r1"><span class="led-nm">Meta</span><span class="led-cd">META</span><span class="led-dir bull">↑ 看多</span></div>
+  <div class="led-r2">EP678 · 上架於 2026-07-11（60 天前） · 美股 · #技術創新</div>
+  <blockquote class="led-q">「祖克柏的訪問裡面，好像是昨天還前天他出來證實了，就是我們這邊的意見才是對的，就是他並沒有要退出，他甚至是要滿倉殺進去，然後更加用力的做多。」</blockquote>
+  <div class="bt-line"><span class="lab">講完之後</span><span>30 天 <span class="l">-11.1% ✕</span></span><span>90 天 <span class="p">未滿期</span></span></div>
+  <div class="led-st lose" style="margin-top:6px;">✕ 落後大盤</div>
+  <div class="led-nums">個股 <b>-8.33%</b><span class="sep">｜</span>同期 SPY <b>+1.46%</b> <span style="color:#aaa;font-size:11px;">（播出日→2026-09-09）</span></div>
+  <div class="led-hist">本檔歷史：講完 30 天賺錢 <b>2/4</b> · 90 天 <b>1/2</b></div>
+  <div class="led-detail" id="lgd-39">
+    <div class="led-dt-head">Meta（META）· EP678</div>
+    <div>原話（逐字，來源聽打稿、未經人工核對）：「祖克柏的訪問裡面，好像是昨天還前天他出來證實了，就是我們這邊的意見才是對的，就是他並沒有要退出，他甚至是要滿倉殺進去，然後更加用力的做多。」</div>
+    <div class="ai-box"><span class="who">AI 解讀</span>講者指出 Meta 祖克柏證實沒有要退出算力競賽，反而是『滿倉殺進去，然後更加用力的做多』，且其基礎設施採購與數據中心 booking 數非常高，屬於非常 bullish 的訊號，判定 +1。</div>
+    <div><b>30 天</b>：2026-07-10 進 669.21 → 2026-08-10 出 594.92，報酬 -11.10%；同期 SPY +2.39%（實跨 21 個交易日）</div><div><b>90 天</b>：未滿期（講出來到 2026-09-09 才 60 天，未滿 90 天），不進勝率分母</div>
+    <div>信心等級 High · 第 1 層（產業結構）#技術創新 · 第 2 層（心法）還沒判 · 第 3 層（何時停）還沒判</div>
+    <div class="fld-note">來源列：stock-signal:public.signals #950 · 算於 2026-09-15T00:42</div>
+  </div>
+</div></div>
+<div class="empty-state">已顯示最新 40 筆，全部共 992 筆</div>
+
+<div class="sec-head" style="text-align:center;cursor:default;">📊 原本的每日訊號報告、🔥 關注度、📄 逐字稿 → <a href="https://jack20773.github.io/stock-signal/" style="color:#2b6cb0;">放在原站（開新頁）</a>　<span style="font-weight:normal;color:#999;">（正式版會是同一站的分頁；demo 先用連結代替）</span></div>
+<div class="foot">demo B · 資料：gooaye-site out/mainline.json、scoreboard.json（computed_at 2026-09-15T00:42:17+08:00）· <a href="index.html">← 回三版入口</a></div>
+
+</div>
+<script>
+function toggleLed(i, el){var b=document.getElementById('lgd-'+i);if(!b)return;var o=b.style.display!=='block';b.style.display=o?'block':'none';if(el)el.setAttribute('aria-expanded',o?'true':'false');}
+function toggleSec(id, el){var b=document.getElementById(id);var o=b.style.display==='none';b.style.display=o?'block':'none';var a=el.querySelector('.arrow');if(a)a.textContent=o?'▾':'▸';}
+
+</script>
+</body>
+</html>
