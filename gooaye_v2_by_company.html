@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>股癌週報・按公司</title><meta name="description" content="股癌 EP695／EP696 有認真講到的公司，每家一張病歷卡：本週講法、歷次提到的重點、當天股價到今天的漲跌。"><style>
+  :root { --bg:#f6f4ef; --card:#fff; --ink:#1f2328; --muted:#6b7280; --line:#e5e1d8; --accent:#b45309; --accent-soft:#fdf3e4;
+          --tag:#eef2f7; --tag-ink:#334155; --quote-bar:#d6cfc2; --up:#b91c1c; --down:#15803d; --theme:#f1ece2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#15171a; --card:#1e2126; --ink:#e8e6e1; --muted:#9aa3ad;
+          --line:#2c3138; --accent:#f0a35a; --accent-soft:#2a2218; --tag:#262b33; --tag-ink:#c9d1da; --quote-bar:#3a3f47; --up:#f87171; --down:#4ade80; --theme:#25292f; } }
+  :root[data-theme="dark"] { --bg:#15171a; --card:#1e2126; --ink:#e8e6e1; --muted:#9aa3ad; --line:#2c3138; --accent:#f0a35a; --accent-soft:#2a2218;
+          --tag:#262b33; --tag-ink:#c9d1da; --quote-bar:#3a3f47; --up:#f87171; --down:#4ade80; --theme:#25292f; }
+  * { box-sizing:border-box; } html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,"PingFang TC","Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;
+         font-size:17px; line-height:1.75; overflow-x:hidden; overflow-wrap:anywhere; }
+  .wrap { max-width:720px; margin:0 auto; padding:20px 16px 48px; }
+  a { color:var(--accent); }
+  .switch { display:flex; gap:10px; flex-wrap:wrap; align-items:center; font-size:15px; margin-bottom:12px; }
+  .switch .cur { font-weight:700; }
+  .switch a.btn { display:inline-block; border:1px solid var(--accent); border-radius:999px; padding:4px 14px; text-decoration:none; font-weight:600; }
+  header h1 { font-size:25px; line-height:1.3; margin:0 0 4px; }
+  header .sub { color:var(--muted); font-size:14px; margin-bottom:14px; }
+  .intro { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .intro p { margin:0; } .intro p + p { margin-top:8px; } .intro b { color:var(--accent); }
+  .themes { background:var(--theme); border-radius:12px; padding:12px 16px 12px 16px; margin:12px 0 16px; }
+  .themes .h { font-size:13px; font-weight:700; color:var(--muted); letter-spacing:.04em; margin-bottom:4px; }
+  .themes ol { margin:0; padding-left:22px; } .themes li { margin:4px 0; font-size:16px; }
+  .themes .extra { color:var(--muted); font-size:14px; margin:6px 0 0; }
+  .episode { margin-top:30px; }
+  .ep-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; padding-bottom:8px; border-bottom:2px solid var(--accent); }
+  .ep-head .ep { font-weight:800; font-size:20px; color:var(--accent); } .ep-head .date { color:var(--muted); font-size:14px; }
+  .ep-head .title { font-size:18px; font-weight:600; width:100%; }
+  .company { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 16px 12px; margin-bottom:14px; }
+  .company h3 { margin:0 0 2px; font-size:21px; line-height:1.3; }
+  .company h3 .code { font-size:14px; font-weight:500; color:var(--muted); margin-left:8px; letter-spacing:.02em; }
+  .ctx { color:var(--muted); font-size:14px; margin:0 0 8px; }
+  .sum { margin:0 0 10px; font-size:16.5px; }
+  .px { font-size:15px; background:var(--accent-soft); border-radius:8px; padding:6px 10px; margin:8px 0; }
+  .px.na { background:var(--tag); color:var(--muted); }
+  .px .lbl { color:var(--muted); font-size:13px; }
+  .chg.up { color:var(--up); } .chg.down { color:var(--down); }
+  .pxnote { display:block; color:var(--muted); font-size:12.5px; }
+  details.q { margin:6px 0 0; } details.q summary { cursor:pointer; color:var(--muted); font-size:14px; }
+  details.q blockquote { margin:6px 0 0; padding:4px 0 4px 12px; border-left:3px solid var(--quote-bar); font-size:15.5px; color:var(--ink); }
+  details.tl { margin-top:10px; border-top:1px dashed var(--line); padding-top:8px; }
+  details.tl summary { cursor:pointer; font-size:15px; color:var(--accent); font-weight:600; }
+  .tl ul { list-style:none; padding:0; margin:8px 0 0; }
+  .tl li { display:grid; grid-template-columns:auto 1fr; gap:4px 10px; padding:6px 0; border-bottom:1px solid var(--line); font-size:15px; }
+  .tl li:last-child { border-bottom:0; }
+  .tl .when { color:var(--muted); font-size:13px; white-space:nowrap; }
+  .tl .what { } .tl .what .chg { font-size:13px; margin-left:6px; }
+  .tag { display:inline-block; background:var(--tag); color:var(--tag-ink); font-size:12.5px; font-weight:600; padding:1px 8px; border-radius:999px; vertical-align:middle; }
+  .tag.light { font-weight:500; }
+  /* 版型 B */
+  .weekline { font-size:16.5px; margin:4px 0 10px; padding:8px 12px; border-left:3px solid var(--accent); background:var(--accent-soft); border-radius:0 8px 8px 0; }
+  .hist { margin:0; padding:0; list-style:none; }
+  .hist li { position:relative; padding:10px 0 12px 22px; border-left:2px solid var(--line); margin-left:6px; }
+  .hist li::before { content:""; position:absolute; left:-7px; top:16px; width:12px; height:12px; border-radius:50%; background:var(--bg); border:2px solid var(--accent); }
+  .hist li.now::before { background:var(--accent); }
+  .hist .when { font-size:14px; color:var(--muted); } .hist .when b { color:var(--accent); font-size:16px; }
+  .hist .ttl { font-size:13.5px; color:var(--muted); }
+  .hist .sum { margin:4px 0 6px; }
+  .hist .sum.empty { color:var(--muted); font-style:italic; }
+  footer { margin-top:36px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px; line-height:1.7; }
+  footer ul { padding-left:18px; margin:6px 0; }
+  footer code { font-family:ui-monospace,Menlo,Consolas,monospace; font-size:12.5px; background:var(--tag); padding:1px 5px; border-radius:4px; }
+  @media (min-width:600px) { body { font-size:18px; } }
+</style></head><body><div class="wrap">
+<div class="switch"><span class="cur">現在是：按公司</span><a class="btn" href="gooaye_v2_by_episode.html">換成「按集數」看 →</a></div>
+<header>
+  <h1>股癌・本週公司重點（第二版）</h1>
+  <div class="sub">demo・EP695（9/9）與 EP696（9/12）・一家一張病歷卡，由新到舊</div>
+  <div class="intro">
+    <p><b>這是什麼：</b>股癌最新兩集裡，主持人有「認真講到」的公司，每家用 2～3 句人話說他講了什麼、為什麼；原話收起來備查。</p>
+    <p><b>怎麼判斷：</b>不放「看好／看壞／信心度」這些 AI 幫他下的結論；改放事實——他講的那天股價、到今天漲跌多少，讓你自己看。</p>
+    <p><b>跟上一版差在哪：</b>順口帶過的公司不列（Intel、台積電／NVIDIA 對比那段拿掉）；每家公司往回串他之前怎麼講的，像看病歷。</p>
+  </div>
+</header><div style="margin-top:14px"><div class="themes"><div class="h">EP695・2026-09-09（三）原來印這麼快・主軸</div><ol><li>盤面已經震盪一個多月：鎖漲停的股票隔天常被倒貨、追強就被「上課」，他自己把部位縮小、改成等拉回再買。</li><li>Google Cloud 在高盛會議的分享：新客與大單都翻倍、自研 TPU 一年就回本；他認為這解釋了 Google 為什麼敢一直加大資本支出。</li><li>AI 這條鏈誰在出錢：晶片與零件廠出貨就收錢、雲端商先墊錢靠合約慢慢收、模型商燒股東的錢；他覺得這一輪還會跑很久，但總有一天供需平衡會反噬。</li></ol><p class="extra">開場閒聊：他的遊戲創投「校南資本」要去東京電玩展找海外團隊（他一直以為 TGS 是台北電玩展）。</p></div><div class="themes"><div class="h">EP696・2026-09-12（六）考驗接著考驗・主軸</div><ol><li>他抱怨市場「人與人的信任不見了」：鎖漲停隔天不跑、公司派配合利多出貨；連他自己現實中買酒也被當盤子。</li><li>Apple 發表會：iPhone Duo 摺疊機定價比市場預期低，他會第一時間買；順帶講到鉸鏈供應商新日興，但他說消費性題材現在打不贏 AI。</li><li>Oracle 財報：客戶預付、供應商融資的「不用出錢魔術」，電力與許可變成瓶頸、AI 資料中心進入地方政治；加上 Broadcom 哈克說閉源模型只有寡頭會贏，他打問號。</li></ol><p class="extra">Q&amp;A 裡聽眾問到群聯 aiDAPTIV+，他多講了幾句。</p></div></div><article class="company" id="co-GOOGL"><h3>Alphabet<span class="code">GOOGL</span></h3><div class="weekline">本週：高盛會議上的數字讓他說這是「市場裡超巨型的利多」——TPU 一年回本，所以 Google 越買越多。</div><p class="ctx">資料庫裡最近 6 次提到（由新到舊）</p><ul class="hist"><li class="now"><div class="when"><b>EP695</b>・2026-09-09（三）</div>
+  <div class="ttl">原來印這麼快・市場話題主段：Google Cloud 在高盛會議的分享</div>
+  <p class="sum">他轉述 Google Cloud 主管在高盛會議講的數字：新客戶取得速度是一年前的兩倍、超過一億美元的大單也翻倍、客戶說要買 100 最後都花到 150 以上。最讓他震撼的是 AI 伺服器不到兩年回本、自研 TPU 只要一年，所以 Google 加大採購、自由現金流轉負在他看來「很正常」。他把這件事叫做「市場裡面超巨型的利多」，但也說目前盤面還在震盪，不確定是在醞釀力量還是泡沫要破。</p>
+  <div class="px"><span class="lbl">提到當天</span> 330.65 美元 → <span class="lbl">今天</span> 342.87 美元 <b class="chg up">+3.7%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>「最近 Google Cloud 在 Goldman Sachs 這邊有辦一場會議，派出的是 Thomas Kurian……他們家新客獲取速度是一年前的兩倍，再來大型交易、也就是超過 1 億美元的，都是兩倍以上的成長。客戶 commit 說我要買 100 美元的東西，最終幾乎都會花到 150 美元以上。」「AI 伺服器目前在他們公司來看，整體的回收期是不到兩年……自研晶片回收期在減半，就是它自己的 ASIC TPU，只需要一年的時間就可以把它收回來，這其實是一個超級變態恐怖的事情。」「Google 會做什麼事情很合理嘛？就是繼續加大採購……我們去看資料是看到 Google 真的是越買越多東西。」「所以稍微的講一下這次的事件，然後為什麼我覺得它應該算是市場裡面超巨型的一個利多。只是當然，目前就是一個震盪的盤子。」</blockquote></details>
+</li><li class=""><div class="when"><b>EP692</b>・2026-08-29（六）<span class="tag light">順帶提到</span></div>
+  <div class="ttl">玩具多巴胺論與供應鏈卡位戰・NVIDIA／OpenAI 晶片段落，順帶舉例</div>
+  <p class="sum">他在講 NVIDIA 跟 OpenAI 晶片誰比較強時，順帶拿 Google 當例子。他說現在模型界大家都覺得 Google 不行，但 Google 的 Flash 模型表現其實還不錯。他說搞不好 Gemini 跳代（3.5 到 4）又交出很強的成績，大家就會忘記之前怎麼唱衰它。</p>
+  <div class="px"><span class="lbl">提到當天</span> 339.13 美元 → <span class="lbl">今天</span> 342.87 美元 <b class="chg up">+1.1%</b><span class="pxnote">（2026-08-29 未開盤，取 2026-08-31 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>就不要去看低一些就是當下好像是在跑分上面跑輸的，就要說像現在在模型界，就是大家就是看 Google 沒有，但其實 Google 在 Flash 的模型上面表現都還是蠻不錯的，說不定它跳代，3.5 到 4，然後接著又繳出一個很暴力的成績，大家又忘記前面是怎麼樣唱衰 Google 的。</blockquote></details>
+</li><li class=""><div class="when"><b>EP687</b>・2026-08-12（三）</div>
+  <div class="ttl">峇里島下單記與Google房東論・主題段落：Google 人事大搬風＋波克夏買 Google</div>
+  <p class="sum">他說 Google 高層大搬風（Hassabis 交出 DeepMind CEO、Jeff Dean 出走創 Discovery Loop），很多人問 Google 是不是輸了 AI 競賽。他把這件事跟波克夏大買 Google 股票加私募 100 億美元連起來看：Google 是把最燒錢、最賭的前緣模型放到體外，自己專心當雲端算力的「房東」，租給 AI 模型商。他說這是敘事改變、本益比有機會下修，但他不認為是利空，現金流反而可能更快轉正。</p>
+  <div class="px"><span class="lbl">提到當天</span> 343.32 美元 → <span class="lbl">今天</span> 342.87 美元 <b class="chg down">-0.1%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>但對於 Buffett 來講，它可以確定的東西是什麼？它可以確定的東西是，Google 現在它加碼下去的東西，簡單來講，它就是變成是某個程度上的房東，房東租房子的對象就是這些 AI 模型商。……也就是我要做新時代的鐵路跟能源的供應商，我是基建的供應商。……所以如果說把波克夏然後跟 Google 的最近的事件把它合併在一起看的話，我覺得事情就變得很明瞭，就是我不會認為說它是 Google 的一個利空。</blockquote></details>
+</li><li class=""><div class="when"><b>EP685</b>・2026-08-05（三）<span class="tag light">順帶提到</span></div>
+  <div class="ttl">奧德賽觀影與幸福無聊論・Q&amp;A 回答聽眾問題，舉例帶到</div>
+  <p class="sum">他在回答聽眾問題時拿 Google 當例子：Google 前面開財報時股價跌，很多人幫跌找理由，結果後來又漲回去，他說那些人等於自打臉。他用這個說明市場情緒會動態變化，微軟財報是市場態度轉變的分界點。同集另提到有報導說 TPU 出貨可能延後，他說這是小事、各家路線圖都沒變。</p>
+  <div class="px"><span class="lbl">提到當天</span> 362.20 美元 → <span class="lbl">今天</span> 342.87 美元 <b class="chg down">-5.3%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>微軟算是一個分界點，所以微軟的這份財報，他開完之後他上去，其實在我們的判讀裡面，他也是一個非常重要的指標，因為前面的人都是你開財報你是會被懲罰的，那只是後來就市場情緒變了嘛。所以像 Google 前面開財報的時候不是跌嗎？然後跌完之後，很多人就想說因為怎麼樣怎麼樣嘛，結果後來又再漲回去，那請問前面的人是不是就把自己臉打爆了？所以市場本來就是會有點動態地去做這樣子的調整。</blockquote></details>
+</li><li class=""><div class="when"><b>EP682</b>・2026-07-25（六）</div>
+  <div class="ttl">紅眼路比與魂系股災・財報段落：好財報照樣被殺</div>
+  <p class="sum">他說 Google 這次財報非常好，雲端業務大成功，證明 AI 是可以賺錢的東西，但股價還是跌。很多人說跌是因為現金流轉負，他反駁：幾個月前節目就講過會轉負，市場早就知道。他說 Google 是雲端服務商，不投資就會輸，現在投越多後面越可能是贏家，像大富翁一開始拼命買房的人最後收過路費收到爆。</p>
+  <div class="px"><span class="lbl">提到當天</span> 326.35 美元 → <span class="lbl">今天</span> 342.87 美元 <b class="chg up">+5.1%</b><span class="pxnote">（2026-07-25 未開盤，取 2026-07-27 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>Google 的財報開出來，Google 的財報我們只幫它去評論，我們覺得是非常好，而且已經證明說 AI 就是可以賺錢的東西。那很多人就講說它現金流轉負……幾個月前我們就跟大家說會有這個事情，因為市場充分預期。……特別是在 Google 這次的數字，你可以知道說它的雲就是獲得了一個我認為算是巨大的成功，然後 AI 證實了就是可以賺錢的東西，那只是為了去持續地獲得更多的優勢，它必須要花更多錢。</blockquote></details>
+</li><li class=""><div class="when"><b>EP681</b>・2026-07-22（三）</div>
+  <div class="ttl">人道走廊與沙沙西瓜・盤前展望：本週財報與事件</div>
+  <p class="sum">他說這週 Google 要開財報，大家對它的預期不高，只要不是負面消息就用中性態度看。他提到新聞裡的 Frozen V2 晶片，他認為就是 Marvell 幫 Google 設計的推論加速晶片 TIA，但這是 Google 自用的，該關注的是做晶片的人不是 Google。他說 Google 最近模型偏軟又被大家笑，但他覺得只是在深蹲階段，整個生態系很有機會。</p>
+  <div class="px"><span class="lbl">提到當天</span> 341.87 美元 → <span class="lbl">今天</span> 342.87 美元 <b class="chg up">+0.3%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>首先大家都非常期待，Google 的財報會怎麼樣開。……這一次我覺得大家對於 Google 財報的預期其實並沒有到很高，只要它不是開負面的消息，那應該就是用一個 neutral 的態度去看它。……所以以 Google 最近來講，因為它在模型方面又稍微軟掉一點，那一樣大家又開始去罵說 Google 沒有東西。……所以我覺得它可能就是在一個深蹲的階段，那還是蠻相信它整個目前 ecosystem 做起來是非常非常有機會的。</blockquote></details>
+</li></ul></article><article class="company" id="co-AAPL"><h3>蘋果<span class="code">AAPL</span></h3><div class="weekline">本週：iPhone Duo 摺疊機定價比預期低，他會第一時間買；記憶體漲價反而變成蘋果的優勢。</div><p class="ctx">資料庫裡最近 6 次提到（由新到舊）</p><ul class="hist"><li class="now"><div class="when"><b>EP696</b>・2026-09-12（六）</div>
+  <div class="ttl">考驗接著考驗・Apple 發表會、iPhone Duo 摺疊機</div>
+  <p class="sum">iPhone Duo 摺疊機的價格只比三星 Fold 貴一點點、比市場原本預估低很多，他說自己會第一時間買一台，銷量應該會超出大家預期。要驗證的是中國市場，因為摺疊機在中國很重要、但中國消費明顯在降級。他還說這波記憶體漲價反而變成蘋果的優勢：別人漲價會賠錢、蘋果毛利守得住，還能用實惠價格搶新客。</p>
+  <div class="px"><span class="lbl">提到當天</span> 333.08 美元 → <span class="lbl">今天</span> 332.41 美元 <b class="chg down">-0.2%</b><span class="pxnote">（2026-09-12 未開盤，取 2026-09-14 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>「這次我對於 Apple 的 iPhone Duo 我覺得非常的感興趣，沒有意外的話也會第一時間去入手一台。令我非常驚訝的是它的價格其實就是比 Fold 再稍微貴一點點而已，大家本來估計的價格應該是高蠻多的，所以理論上這一台摺疊機應該會賣得比想像中好。」「只是它會有一個蠻主要的需要驗證的點，摺疊手機目前看起來在中國算是一個非常重要的市場，只是中國最近的消費是很明顯有降級。」「特別是在這一波的記憶體漲價裡面，它反而產生巨大的一個優勢，因為別人可能漲價就賠錢了，它漲價不一定會賠錢，毛利還是可以守得相當不錯。」「我覺得像蘋果應該就是有機會會再有，也不敢講說它股價一定會漲多少。」</blockquote></details>
+</li><li class=""><div class="when"><b>EP687</b>・2026-08-12（三）<span class="tag light">順帶提到</span></div>
+  <div class="ttl">峇里島下單記與Google房東論・Google 人事大搬風段落，拿蘋果當對照例</div>
+  <p class="sum">他說之前大家都在爭論 Apple 是 AI 輸家、沒做 AI 投資，結果它今年以來表現最好，資本市場買單。他拿這件事當例子，說嘴上辯贏不等於賺到錢，反而是砸大錢的 frontier labs 和雲端業者績效跑輸。後面談 Google 時又拿蘋果對照，說市場現在給「AI 投資最憨慢的 Apple」正面肯定。</p>
+  <div class="px"><span class="lbl">提到當天</span> 302.25 美元 → <span class="lbl">今天</span> 332.41 美元 <b class="chg up">+10.0%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>前面大家辯論了半天，說什麼 Apple 是一個共識上的、在 AI 的輸家，都沒有做投資，就 surprise motherfucker，他的 year to date 表現最好的，就資本市場是買單的嘛。嘴巴上大家爭論都說 Apple 輸了，但錢的部分沒有啊，就是錢是往 Apple 的方向去跑，那反而是其他那些 frontier labs、或是大型投入的 cloud service provider，他的績效是跑輸的。那當然這可能是一個短期的現象。</blockquote></details>
+</li><li class=""><div class="when"><b>EP674</b>・2026-06-27（六）</div>
+  <div class="ttl">上半年高光總結與蘋果漲價論・上半年持股回顧＋獨立段落「蘋果漲價論」</div>
+  <p class="sum">他在上半年回顧裡說，自己滿手蘋果產品，相信蘋果在 Edge 端有機會維持領導地位，但一直沒找到切入點，想等它轉強再把錢移過去。另外用一大段講蘋果因記憶體漲價把 MacBook 等產品調漲 10 幾到 20%，他自己身為果粉覺得貴但還是會買，並說蘋果漲價是把記憶體成本加上毛利與品牌價值。他說最後要看銷量，消費端漲價要比供應鏈漲價更小心。</p>
+  <div class="px"><span class="lbl">提到當天</span> 281.50 美元 → <span class="lbl">今天</span> 332.41 美元 <b class="chg up">+18.1%</b><span class="pxnote">（2026-06-27 未開盤，取 2026-06-29 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>我們自己滿手都還是蘋果的產品，所以就還是會相信這家公司有機會為我們帶來一些驚喜。只是一直沒有找到比較合適的切入點，我自己會覺得說可能等到它稍微轉強一點——像禮拜五有注意到已經跌深的微軟或是蘋果，他們反而是在大家很不好的時候跳起來。那如果在接下來注意到他們持續上去的話，那我就有可能把一些錢移到這些地方來。……蘋果終於是撐不住了，也在記憶體的價格高漲的狀況之下，他們去上修了……像是 MacBook 或是一些產品線的價格，拉了大概 10 幾到 20% 左右。</blockquote></details>
+</li><li class=""><div class="when"><b>EP669</b>・2026-06-10（三）</div>
+  <div class="ttl">三十四歲感懷與市場信仰考・節目尾段「Apple WWDC」專門段落</div>
+  <p class="sum">他講 Apple WWDC 沒什麼新亮點，蘋果選擇聚焦把手機做好，一部分模型自己做（有自己的伺服器）、一部分跟 Google 合作，走折衷路線，他說這看起來保守但或許是正確的路。他認為蘋果最大亮點是螢幕感知功能，配合 Agentic AI 會讓用戶跟手機綁更緊，加上記憶體大漲價下蘋果出貨量會贏同業很多。他原話說「對蘋果是非常看好」，但資金沒往消費性跑，所以要等資金回來才會想進去。</p>
+  <div class="px"><span class="lbl">提到當天</span> 291.33 美元 → <span class="lbl">今天</span> 332.41 美元 <b class="chg up">+14.1%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>整體來看，我認為沒有什麼太多新的亮點，反正 Apple 就是更加的聚焦去要把手機做好這件事情上面，同時跟 Google 合作去做一些模型……它看起來是一個保守牌，但它或許是選擇一個正確的路線……特別是在這一波記憶體的大漲價之下，我們目前還是期待說蘋果的出貨量還是會越來越好，至少會贏過它同業非常多……我覺得這是蘋果後面的一個殺手鐧……我覺得這在 AI 時代對他來說是站在一個很好的位置……就是我對蘋果是非常看好，那只是目前你很明顯可以看得出來說，資金沒有往消費性跑。</blockquote></details>
+</li><li class=""><div class="when"><b>EP654</b>・2026-04-18（六）<span class="tag light">順帶提到</span></div>
+  <div class="ttl">送別小徐與AI產出價值反思・AI 產出價值反思段落，順帶提到</div>
+  <p class="sum">他在講「燒很多 token 不代表有產出」時順帶提到蘋果：因為它不像其他 CSP 要投入那麼多資源，現金流非常強勁，說不定會變成市場特別喜歡的東西。他說這是他接下來審視美股會看的指標，現在燒很多 AI 錢的公司，某天可能反而變成賣出理由。</p>
+  <div class="px"><span class="lbl">提到當天</span> 272.56 美元 → <span class="lbl">今天</span> 332.41 美元 <b class="chg up">+22.0%</b><span class="pxnote">（2026-04-18 未開盤，取 2026-04-20 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>這個是我自己在接下來我要去審視一些美股我可能會想要看的指標。甚至像那種蘋果的論述——因為它可能沒有像其他的 CSP 需要投入這麼多的一個資源，所以它的現金流是非常的強勁，說不定它就變成是市場裡面特別喜歡的一個東西。所以一樣的道理，就是現在看起來燒很多 AI 讓你想去做多的公司，或許在某個時間點它會是一個你想要去大力賣出它的理由。</blockquote></details>
+</li><li class=""><div class="when"><b>EP651</b>・2026-04-08（三）</div>
+  <div class="ttl">林哲瑄引退與蘋果搶市策略・獨立段落「蘋果搶市與中國手機砍單」</div>
+  <p class="sum">他說有聽眾透露手機廠下修訂單很恐怖，全年手機出貨預估下修約 20%，中國廠商甚至到 -40%。他認為蘋果的策略是「趁你病要你命」：在記憶體又貴又難拿的環境下，直接接受漲價、擴大經營，有些產品記憶體升級卻不漲價，犧牲毛利換市佔。所以他預期蘋果出貨會是零成長、小增或小衰，比同業都好；中低階手機和平價零組件相對危險。</p>
+  <div class="px"><span class="lbl">提到當天</span> 258.44 美元 → <span class="lbl">今天</span> 332.41 美元 <b class="chg up">+28.6%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>他做了一個蠻屌砲的策略，就是趁你病要你命。他在大家可能目前都是卡記憶體的高成本、以及可能比較難取得的一個整個大環境之下，他選擇直接去接受這些廠商的漲價，並且擴大經營，他趁這個時間要去拉市佔。所以他可能在一些產品線上即便他的記憶體是實質升級了，可是他並沒有去漲價……目前大家對於全年手機的預估量是下修，大概是 20% 左右的出貨量……蘋果它不會是什麼負 20%……它可能是零、或者甚至是增長，或是說小衰退一點點，但總之就是它會比它的 Peer 都來得好。</blockquote></details>
+</li></ul></article><article class="company" id="co-3376-TW"><h3>新日興<span class="code">3376.TW</span></h3><div class="weekline">本週：iPhone Duo 鉸鏈的主要供應商之一，但要跟鴻海拆帳、第一代毛利被蘋果壓得嚴。</div><p class="ctx">資料庫裡最近 2 次提到（由新到舊）</p><ul class="hist"><li class="now"><div class="when"><b>EP696</b>・2026-09-12（六）</div>
+  <div class="ttl">考驗接著考驗・iPhone Duo 摺疊機的零組件供應鏈</div>
+  <p class="sum">他說 iPhone Duo 的鉸鏈，台廠新日興是最主要的供應商之一（另一家是美系 Amphenol），確定有大份額、鉸鏈做得不錯。但新日興要跟鴻海拆帳，股價相對難掌握；業界朋友也告訴他第一代產品毛利沒想像中好，蘋果壓得很嚴。他最後說自己現在不想看消費性題材，因為「再怎麼成長都打不贏 AI」，資金應該不會想來賭。</p>
+  <div class="px"><span class="lbl">提到當天</span> 181.0 元 → <span class="lbl">今天</span> 175.5 元 <b class="chg down">-3.0%</b><span class="pxnote">（2026-09-12 未開盤，取 2026-09-14 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>「令我比較意外的是相關的一些 components，像鉸鏈的話，台系的廠商 3376 新日興它就是裡面最主要的一個 player 之一，還有美系的像是安芬（逐字稿原字，應為 Amphenol）。只是在 3376 這邊會稍微複雜一點，因為它畢竟要去跟鴻海拆帳，所以這個股價還是屬於相對難掌握的東西。但是我們蠻確定這個產品它是有 major share。」「我本來以為像這種第一代的產品剛推出，它應該會有很好的 margin 或是獲利，只是後來在業界的朋友是講說好像沒有，就是蘋果還是壓制得蠻嚴格的。」「我現在自己的感受是我不會想要去看消費性的題材，因為消費性的題材你再怎麼樣成長你都打不贏 AI。」</blockquote></details>
+</li><li class=""><div class="when"><b>EP591</b>・2025-09-10（三）</div>
+  <div class="ttl">兒子住院與NVIDIA新品CPX解析・Q&amp;A 回答聽眾問題</div>
+  <p class="sum">聽眾問打入蘋果摺疊機的鉸鏈廠為何股價低迷。他說牌已開，出給蘋果的是新日興和另一家（逐字稿寫「安東(3376)」）。他說他的看法是「不知道」，蘋果會不會準時推出沒人能保證。但看到試產與防摔測試，他相信蘋果七八成會做。</p>
+  <div class="px"><span class="lbl">提到當天</span> 225.5 元 → <span class="lbl">今天</span> 175.5 元 <b class="chg down">-22.2%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>如果是蘋果的話應該是安東 (3376) 跟新日興，就是這兩家。我的看法是什麼？我的看法就是不知道。蘋果股票沒有那麼好掌握，你也不知道它會不會真的到那個時間點一定會推出這個手機，或是它會遞延，或是會 cancel……特別是它出了那個 Air 之後，我覺得現在它的心中大概有七八成的把握，那個摺疊機就一定會出來……其實應該要聚焦的就是 3376 跟新日興這兩家公司。</blockquote></details>
+</li></ul></article><article class="company" id="co-ORCL"><h3>Oracle<span class="code">ORCL</span></h3><div class="weekline">本週：數字很好（營收年增 30%、RPO 六千六百多億），但他點出需求有融資撐出來的「虛胖」，電力與許可是瓶頸。</div><p class="ctx">資料庫裡最近 3 次提到（由新到舊）</p><ul class="hist"><li class="now"><div class="when"><b>EP696</b>・2026-09-12（六）</div>
+  <div class="ttl">考驗接著考驗・Oracle 這季財報與說法</div>
+  <p class="sum">他點出 Oracle「不用出錢的魔術」：客戶預付、客戶自帶硬體只收代管費、再向 NVIDIA 等供應商借錢，所以需求有可能被融資放大、有點「虛胖」。電力和許可是瓶頸：一條 17 英里管線被否決兩次，選民和 Bernie Sanders 等政治人物反對 AI 資料中心，這是他提醒要注意的利空。這季數字本身不錯：營收年增 30%、未履約合約 RPO 六千六百多億、上修全年，但他說現在的盤利多也不一定漲。</p>
+  <div class="px"><span class="lbl">提到當天</span> 144.79 美元 → <span class="lbl">今天</span> 143.16 美元 <b class="chg down">-1.1%</b><span class="pxnote">（2026-09-12 未開盤，取 2026-09-14 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>「首先不用出錢的魔術，現在就是由客戶預付、包含去借客戶的錢，跟 BYOH 也就是客戶自帶硬體、Oracle 收代管費，以及供應商融資、借 NVIDIA 或是裝置商的錢……一筆生意收兩次錢。在擴張時期沒有太大的問題，但如果說後面要扭轉的話，這個需求是有可能會被自己的融資而放大，有一個虛胖的現象。」「他們也提到說目前電力跟許可會是關鍵的瓶頸，有一個 17 英里的管線被否決了兩次……大家最近該有看到 Bernie Sanders 去反 AI Data Center 跟 AOC，所以這是後面可能也要稍微注意的一個利空。」「Oracle 這季的表現其實都還蠻好的，營收年增了 30%，未履約的合約 RPO 有 6600 多億，所以上修全年。但一樣，整體市場環境有點偏向說利多也不一定會漲。」</blockquote></details>
+</li><li class=""><div class="when"><b>EP643</b>・2026-03-11（三）<span class="tag light">順帶提到</span></div>
+  <div class="ttl">關掉風扇的頓悟與盤面修正檢討・盤面修正檢討段落順帶提到</div>
+  <p class="sum">他在檢討台股這波急跌，說產業和趨勢面沒看到要整體反轉的跡象。市場擔心的 Oracle 財報他覺得也還 OK，所以沒注意到特別大的警訊。要複製 2022 得先看到油價續漲、需求被破壞，在那之前先且戰且走。</p>
+  <div class="px"><span class="lbl">提到當天</span> 161.99 美元 → <span class="lbl">今天</span> 143.16 美元 <b class="chg down">-11.6%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>整體來看，目前沒有在產業方面或是趨勢方面注意到那種要整體扭轉的傾向，包含市場上面比較擔心的 Oracle，其實我覺得他開財報的成績也還 OK，所以目前整體來說我不覺得有注意到特別大的警訊。有些人講說這會不會像 2022 一開始一樣，大家可能本來覺得沒事，然後後來有事？……我們都只能夠見招拆招。</blockquote></details>
+</li><li class=""><div class="when"><b>EP566</b>・2025-06-14（六）</div>
+  <div class="ttl">_ 🌵・主題段落：專講 Oracle</div>
+  <p class="sum">他說 Oracle 漲很多，看點是 RPO 越開越高。RPO 就是簽了約、還沒收錢的訂單。RPO 還沒算進 Stargate，所以 Larry Ellison 這麼樂觀不是吹牛。供應鏈查訪顯示 Oracle 的 GB200/300 訂單量排前一二名。OCI 市佔僅約 5%，他相信之後會拉高。後面關鍵看 Stargate 和 OpenAI 主權 AI 會不會選它。</p>
+  <div class="px"><span class="lbl">提到當天</span> 208.28 美元 → <span class="lbl">今天</span> 143.16 美元 <b class="chg down">-31.3%</b><span class="pxnote">（2025-06-14 未開盤，取 2025-06-16 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>因為它在 Earnings 裡面會公布一個數字叫 RPO……就是已經簽下去還沒有 invoice……那這個 RPO 的數字是越開越高，但要知道這個 RPO 的數字裡面，目前是還沒有包含了 Stargate 的一個訂單。那我覺得這也是為什麼 Larry Ellison 跟公司派他們可以在 Earnings Call 裡面或 QA 裡面表現得非常非常的樂觀的一個最主要的原因，就是他掌握在手的訂單的數量是還蠻驚人的。這個數字也確實不是膨風。</blockquote></details>
+</li></ul></article><article class="company" id="co-8299-TWO"><h3>群聯<span class="code">8299.TWO</span></h3><div class="weekline">本週：聽眾問 aiDAPTIV+ 降本，他說概念一兩年前就聊過、很好，關鍵還是看多少客戶採用。</div><p class="ctx">資料庫裡最近 6 次提到（由新到舊）</p><ul class="hist"><li class="now"><div class="when"><b>EP696</b>・2026-09-12（六）</div>
+  <div class="ttl">考驗接著考驗・Q&amp;A：聽眾問潘董說 aiDAPTIV+ 降本效果極佳</div>
+  <p class="sum">聽眾問潘董說 aiDAPTIV+ 降本效果極佳，他說一兩年前就去群聯參訪過、當時節目就聊過這個解方。概念是用群聯自己的 NAND 顆粒和控制器，幫企業在地端做模型微調和推論，省錢又比較不卡供應鏈。重點跟一兩年前一樣：要看多少客戶採用、曲線爬升需要時間；他猜群聯不會自己當 SI，會找夥伴去推、自己專心做裝置。</p>
+  <div class="px"><span class="lbl">提到當天</span> 1,935 元 → <span class="lbl">今天</span> 1,970 元 <b class="chg up">+1.8%</b><span class="pxnote">（2026-09-12 未開盤，取 2026-09-14 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>「那時候 Adaptive 剛出的時候我就已經去群聯參訪，在一兩年前的節目就有跟大家聊到這樣的一個解方。」「他們就是做 NAND Flash 起家的公司，做那個 controller，自己又有很多顆粒，所以就丟出一個問題：有沒有可能我們用自己手邊的產品去幫大家做到地端模型的 fine-tune 或是推論，幫大家省下很多錢，你也比較不會卡供應鏈。」「重點就是還是回到一兩年前的說法，要看有多少客戶會去採用，因為有時候你走太前面的話，那個曲線 ramp 上還是需要一點時間，但我覺得整個概念是蠻好的……你說會不會像 SI 也不一定，應該會找一個夥伴去幫他推，他就負責做裝置。」</blockquote></details>
+</li><li class=""><div class="when"><b>EP686</b>・2026-08-08（六）<span class="tag light">順帶提到</span></div>
+  <div class="ttl">爸爸節告白與保本重於賺錢・Q&amp;A 回答聽眾問題，開頭順帶提到</div>
+  <p class="sum">有聽眾要去群聯面試，順便求保佑。他說自己跟群聯關係不錯，電腦展會碰面、也去過他們公司看 aiDAPTIV+，很喜歡這家公司和裡面的人。他說群聯有不少人是聽眾，但聽到也不一定會錄取你，只是祝你順利。</p>
+  <div class="px"><span class="lbl">提到當天</span> 2,040 元 → <span class="lbl">今天</span> 1,970 元 <b class="chg down">-3.4%</b><span class="pxnote">（2026-08-08 未開盤，取 2026-08-10 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>拜託 Phison 錄取我啊！——我跟你講，我們跟群聯的關係是還蠻不錯的，不管是什麼電腦展會去，然後再來就是也去他們公司去看過，那時候我去看他的 aiDAPTIV+。其實我非常喜歡這家公司跟裡面的很多大大們，那我們就不要去點名人家，但他們有蠻多真的是我們的地方聽眾。所以他聽到這他也不一定會錄取你，我的意思只是跟你講說，我也很喜歡這家公司，那我希望你可以上。</blockquote></details>
+</li><li class=""><div class="when"><b>EP640</b>・2026-02-28（六）</div>
+  <div class="ttl">AI裁員迷思與被動元件新局・Q&amp;A 回答聽眾問題</div>
+  <p class="sum">聽眾問群聯改付款條件、開始收預收款，是不是預測要跌先收錢。他說那是一封給客戶的通知，一般收預收款代表東西不夠賣、要先付訂金，像台積電要先付錢才給產能，所以通常往好的方向解釋。但他提醒，股價已漲很多，高檔一直丟好消息卻不漲時要警覺；過去簽長約鎖價格的時候，回頭看常是相對高點。</p>
+  <div class="px"><span class="lbl">提到當天</span> 1,906 元 → <span class="lbl">今天</span> 1,970 元 <b class="chg up">+3.4%</b><span class="pxnote">（2026-02-28 未開盤，取 2026-03-02 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>群聯那個是一封給客戶的 notice，我相信市場圈的人士都有收到……提到要開始收預收款。一般來說我們看到預收款，解釋是供不應求——你必須先付定金，像台積電你要付定金他才給你產能……所以一般往利多方向解釋……至於一個利多會不會促進股價進一步往上？不一定，因為很多東西已經漲很多了。高檔一直丟利多然後沒漲的時候，我們會相對警覺。……像一些 LTA 過去看到突然間要鎖價格的時候，很多回頭看那個地方就是相對高檔。</blockquote></details>
+</li><li class=""><div class="when"><b>EP639</b>・2026-02-25（三）</div>
+  <div class="ttl">台股萬箭齊發與太陽能翻身契機・Q&amp;A 回答聽眾問題</div>
+  <p class="sum">聽眾問群聯的 aiDAPTIV 解方在記憶體缺貨下會不會被大量採用。他說一兩年前去群聯時就分享過這個解方，但到現在沒看到被擴大應用，只能期待潘董之後真的切進特殊市場。他強調群聯這波股價大漲的原因不是 aiDAPTIV，而是手上有很多 NAND 庫存。</p>
+  <div class="px"><span class="lbl">提到當天</span> 1,911 元 → <span class="lbl">今天</span> 1,970 元 <b class="chg up">+3.1%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>目前我們沒有看到這樣子的一個狀態。雖然大概在一兩年前我那時候去群聯的時候，我就有跟大家分享說這個 aiDAPTIV 的解方。只是目前我們是沒有看到這個解方被擴大應用。當然我們是期待，我們也相信說搞不好潘董有機會讓這個東西最後面就真的切入一些特別的市場。可是其實他最後面噴的故事並不是這個 aiDAPTIV，而是因為他手上有很多的 NAND 的庫存。至於未來有沒有機會被大規模採用，目前還沒有看到。</blockquote></details>
+</li><li class=""><div class="when"><b>EP626</b>・2026-01-10（六）</div>
+  <div class="ttl">酒精成癮者的投資哲學・Q&amp;A 回答聽眾問題</div>
+  <p class="sum">聽眾問為什麼只講群聯不講競爭對手慧榮（SIMO）。他說因為他只去過群聯、高層帶他看東西對他不錯，所以他就是喜歡群聯、多講一點，跟台積電的道理一樣。他也講一個現實面：這波漲價漲的是 NAND 顆粒不是控制晶片，慧榮做的是控制晶片，群聯手上有三四百億的庫存，所以兩家有差，要自己比較庫存。</p>
+  <div class="px"><span class="lbl">提到當天</span> 1,762 元 → <span class="lbl">今天</span> 1,970 元 <b class="chg up">+11.8%</b><span class="pxnote">（2026-01-10 未開盤，取 2026-01-12 收盤）</span></div>
+  <details class="q"><summary>原話備查</summary><blockquote>因為我沒有去過慧榮，沒有去過 SIMO，我只有去過群聯。群聯的這些高層們，當時帶我去看東西的時候，都對我不錯，所以我很喜歡他們。……在這一波的漲價，那不是 controller 在漲，你講的 SIMO 是做 controller……它其實是你要有顆粒，你要夠多庫存，Phison 手上不知道三四百億的庫存，所以還是有差啦。……就是在漲的東西不是 controller，是那些顆粒啦，所以這個自己要稍微去比較一下。</blockquote></details>
+</li><li class=""><div class="when"><b>EP625</b>・2026-01-07（三）</div>
+  <div class="ttl">從跨年手遊到NVIDIA存儲革命・主題段落：NVIDIA ICMS 與存儲架構</div>
+  <p class="sum">有人在 CES 現場拍到 NVIDIA 的 Switch Tray 裡有一塊 SSD，控制晶片是群聯的，他們去挖後發現群聯已經做進 NVIDIA 裡面。那顆 SSD 把 TLC 顆粒當成 pSLC 用，犧牲三分之二容量換取快速存取和耐用，他推測這跟 NVIDIA 要把 KV cache 下放到 SSD 的 ICMS 架構有關。他說目前只是展示群聯的方案、未必由群聯獨家供應，他自己會把它當「KV cache 下放」的新題材繼續研究、找機會介入。</p>
+  <div class="px"><span class="lbl">提到當天</span> 1,663 元 → <span class="lbl">今天</span> 1,970 元 <b class="chg up">+18.5%</b></div>
+  <details class="q"><summary>原話備查</summary><blockquote>眼尖的台灣人們就發現了，奇怪了，它那個 Switch Tray 左下角有一塊板子……它中間有一塊 SSD，那這個 SSD 的 Controller 是 Phison，他們那個取名就是群聯。群聯的 Controller 怎麼會出現在 NVIDIA 的 Switch Tray 裡面呢？……那這個 Controller 就是由群聯所出貨，那後面那兩塊 NAND，我們不知道是哪個廠商所提供，但是因為群聯自己沒有做顆粒，所以應該是群聯去做採購的……那當然這個對群聯來說，就是一個非常大的利多，就代表說它自己已經做進去 NVIDIA 裡面了嘛。……當然它不是可能未來是群聯 Solo 去 Supply，它目前只是去展群聯的一個 Solution。</blockquote></details>
+</li></ul></article>
+<footer>
+  <div><b>資料來源</b></div>
+  <ul>
+    <li>資料庫訊號表 <code>signals</code>（欄位用到 id / episode_id / stock_name / stock_code / exact_quote，條件 invalid_reason IS NULL）：本週 EP695＋EP696 有效訊號 8 筆，本頁採 5 家 5 筆；加上這 5 家往回最近幾次提到，共用到 23 筆。同一集同一家多筆已合併。</li>
+    <li>逐字稿共 19 個檔（<code>transcripts/</code>）：EP566__ 🌵.md、EP591_兒子住院與NVIDIA新品CPX解析.md、EP625_從跨年手遊到NVIDIA存儲革命.md、EP626_酒精成癮者的投資哲學.md、EP639_台股萬箭齊發與太陽能翻身契機.md、EP640_AI裁員迷思與被動元件新局.md、EP643_關掉風扇的頓悟與盤面修正檢討.md、EP651_林哲瑄引退與蘋果搶市策略.md、EP654_送別小徐與AI產出價值反思.md、EP669_三十四歲感懷與市場信仰考.md、EP674_上半年高光總結與蘋果漲價論.md、EP681_人道走廊與沙沙西瓜.md、EP682_紅眼路比與魂系股災.md、EP685_奧德賽觀影與幸福無聊論.md、EP686_爸爸節告白與保本重於賺錢.md、EP687_峇里島下單記與Google房東論.md、EP692_玩具多巴胺論與供應鏈卡位戰.md、EP695_原來印這麼快.md、EP696_考驗接著考驗.md。重點句與原話都回到逐字稿補前後文；語音辨識錯字修正：利多出鏡→利多出盡、新日行→新日興、安芬→（保留原字，應為 Amphenol）、Goldman Sachs／Thomas Kurian 等英文專名依原音補齊，以及分身各集另列的修正（殺手鍵→殺手鐧、Phyzen→Phison、Adaptive→aiDAPTIV）。</li>
+    <li>集數上架日期來自節目 RSS（<code>_cache/gooaye_rss.xml</code> pubDate 換算台灣時間）。</li>
+    <li>股價：yfinance（還原權息後收盤，與專案 <code>prices.py</code> 同一設定）。「提到當天」＝上架日當天收盤，上架日未開盤則取下一個交易日；「今天」＝最新收盤（美股 2026-09-16、台股 2026-09-17）。抓取時間 2026-09-17 14:13（台北）。23 個價位全部抓到（23/23）。</li>
+    <li>已依既有廣告閘門（<code>ad_guard.screen_signals</code>）檢查這 23 筆，排除 0 筆。本頁不含任何看好／看壞、信心度、勝率欄位。</li>
+    <li>剔除的公司：Intel（EP695）— Q&amp;A 回答「美股怎麼開槓桿」時順口舉自己 call option 賺到的例子，一句帶過，沒有講 Intel 公司本身。；台積電・NVIDIA（EP696）— 在抱怨「有些公司拿利多出貨」時被拿來當對比（「他們利多發幾次也沒出盡」），同一句話帶過，沒有論述。</li>
+    <li>時間軸裡標「順帶提到」的，是那一集只把這家公司當例子帶過、沒有專門論述；照樣列出，讓你看得到他每次怎麼提。EP697（9/16 上架）尚未進資料庫。</li>
+  </ul>
+  <div>產生時間：2026-09-17 14:19（台北）・此頁為新格式 demo，正式週報流程未更動。</div>
+</footer>
+</div></body></html>
