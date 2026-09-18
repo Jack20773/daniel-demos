@@ -99,7 +99,7 @@
   .gridtable .row-toggle .lbl{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   tr.grid-explain td{text-align:left;white-space:normal;word-break:break-word;overflow-wrap:anywhere;font-weight:400;font-size:12px;color:var(--ink-2);background:var(--card);padding:8px 10px}
 
-  /* ---- 專案×日期格子表：手機（≤600px）縮欄位塞進 390 寬、不橫捲，最新在最左 ---- */
+  /* ---- 專案×日期格子表：手機（≤600px）縮欄位塞進 390 寬、不橫捲，最新在最右 ---- */
   @media(max-width:600px){
     table.heat{font-size:11px}
     table.heat th,table.heat td{padding:6px 2px}
@@ -137,8 +137,7 @@
   <div class="legend" id="proj-legend"></div>
   <div class="chartbox"><div id="today-bar"></div></div>
 
-  <h2 id="grid-h2">各專案近 14 天做了多少件 <a href="javascript:void(0)" id="grid-toggle-all" class="grid-toggle-all">全部展開</a></h2>
-  <div class="caption"><p class="lead">列＝專案，欄＝日期，格內數字＝那天那個專案算進來的件數，有件數才上色（用專案自己的顏色，跟上面「今天按專案」同一套）。點專案名稱前面的箭頭，可以展開看這個專案在做什麼。想看某一天某個專案的細節，展開下面的清單。</p></div>
+  <h2 id="grid-h2">各專案近 14 天做了多少件 <a href="javascript:void(0)" id="grid-toggle-all" class="grid-toggle-all">顯示各專案說明</a></h2>
   <div class="chartbox"><div class="gridwrap"><table class="gridtable" id="grid-table"></table></div></div>
 
   <details class="toggle bigtoggle">
@@ -326,7 +325,7 @@ fetch('./proof.json').then(r=>r.json()).then(data=>{
   const gridRows=Object.keys(rowTotals).sort((a,b)=>rowTotals[b]-rowTotals[a]);
   let maxGridCell=1;
   gridRows.forEach(p=>days.forEach(d=>{maxGridCell=Math.max(maxGridCell,(gridCounts[p]&&gridCounts[p][d.date])||0);}));
-  const gridDays=[...days].reverse(); // 5c：最新在前（最左／最上，桌機、手機皆同）
+  const gridDays=days; // 5c4：最舊在前（最左），最新在後（最右＝今天，桌機、手機皆同）
   let gridHtml='<thead><tr><th><span class="d-full">專案 ＼ 日期</span><span class="d-short">專案</span></th>'+gridDays.map(d=>`<th><span class="d-full">${fmtDate(d.date)}</span><span class="d-short">${d.date.slice(8,10)}</span></th>`).join('')+'</tr></thead><tbody>';
   const gridColspan=gridDays.length+1;
   gridRows.forEach((p,ri)=>{
@@ -357,7 +356,7 @@ fetch('./proof.json').then(r=>r.json()).then(data=>{
   function syncToggleAllLabel(){
     const allBtns=gridTableEl.querySelectorAll('.row-toggle');
     const openCount=gridTableEl.querySelectorAll('.row-toggle[aria-expanded="true"]').length;
-    toggleAllLink.textContent=(allBtns.length>0&&openCount===allBtns.length)?'全部收起':'全部展開';
+    toggleAllLink.textContent=(allBtns.length>0&&openCount===allBtns.length)?'隱藏各專案說明':'顯示各專案說明';
   }
   gridTableEl.querySelectorAll('.row-toggle').forEach(btn=>{
     btn.addEventListener('click',()=>{
