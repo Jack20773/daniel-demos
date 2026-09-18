@@ -163,7 +163,7 @@
   </div>
 
   <div class="footnote">
-    <p><b>這頁證明什麼：</b>每天做了幾件、給哪幾個專案，點開看每一件的證據連結；額度看是不是都叫主帳號、都叫貴的模型做；分數是你自己打的滿意度。</p>
+    <p><b>這頁證明什麼：</b>每天做了幾件、給哪幾個專案，點開看每一件的證據連結；額度看是不是都叫主帳號、都叫貴的模型做；每件花多少額度＝今天 token 除以件數，越小越省。</p>
     <p><b>「一件」怎麼算：</b>只算有驗證＋有證據連結的（commit／票／日誌對得上的），AI 自己寫「做完了」不算。</p>
     <p><b>怎麼自己驗：</b>展開「看每天清單」再點「看每一件」，數清單行數＝標題上的數字；連結點得開才算數。</p>
     <p>每一件下面那句白話說明<span class="demo-tag">示意</span>：只有「今天（09-18）」是手寫示意文字，其餘天數是程式套版文字。正式版會由程式對每天都自動產生。「件」的口徑是 demo 版（verified＋有證據連結），正式版依規則 v3。</p>
@@ -291,14 +291,35 @@ fetch('./proof.json').then(r=>r.json()).then(data=>{
   const today=days[days.length-1];
   const {map:projMap,rgbMap:projRgbMap,top:projTop}=buildProjectColorMap(days);
 
-  // ---- 三張大數字卡（維持 4b 原樣）----
+  // ---- 三張大數字卡 ----
   const todayItems=countedItems(today);
   const todayTot=(today.tokens_main_wan||0)+(today.tokens_sub_wan||0);
-  const todayHigh=today.score_high||0, todayLow=today.score_low||0;
+  const todayRatio=todayItems.length>0?todayTot/todayItems.length:null;
+  const prevRatios=[];
+  days.slice(-8,-1).forEach(d=>{
+    const it=countedItems(d);
+    if(it.length>0)prevRatios.push(((d.tokens_main_wan||0)+(d.tokens_sub_wan||0))/it.length);
+  });
+  let card3Num, card3Lbl, card3Cmp='';
+  if(todayRatio===null){
+    card3Num='—';
+    card3Lbl='今天還沒有一件';
+  } else {
+    card3Num=todayRatio.toFixed(1);
+    card3Lbl='每件花多少額度';
+    if(prevRatios.length>0){
+      const avgRatio=prevRatios.reduce((a,b)=>a+b,0)/prevRatios.length;
+      const pct=(avgRatio-todayRatio)/avgRatio*100;
+      const isSave=pct>=0;
+      card3Cmp=`<div class="cmp" style="font-size:11px;margin-top:4px;color:var(${isSave?'--good':'--bad'})">比前 7 天平均 ${isSave?'省':'貴'} ${Math.abs(pct).toFixed(0)}%</div>`;
+    } else {
+      card3Cmp=`<div class="cmp" style="font-size:11px;margin-top:4px;color:var(--ink-3)">沒有前 7 天可比</div>`;
+    }
+  }
   document.getElementById('cards').innerHTML=`
     <div class="card"><div class="num">${todayItems.length}</div><div class="unit">件</div><div class="lbl">今天做了幾件</div></div>
     <div class="card"><div class="num">${todayTot.toFixed(0)}</div><div class="unit">萬 token</div><div class="lbl">今天花了多少額度</div></div>
-    <div class="card"><div class="num" style="color:var(--good)">${todayHigh}<span style="color:var(--ink-3);font-size:16px"> / </span><span style="color:var(--bad)">${todayLow}</span></div><div class="unit">高分 / 低分</div><div class="lbl">今天的滿意度</div></div>
+    <div class="card"><div class="num">${card3Num}</div><div class="unit">萬 token／件</div><div class="lbl">${card3Lbl}</div>${card3Cmp}</div>
   `;
   document.getElementById('today-proj-title').textContent=`今天（${today.date}）按專案`;
 
