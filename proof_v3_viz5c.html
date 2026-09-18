@@ -80,6 +80,8 @@
   table.heat th{color:var(--ink-2);font-weight:600;font-size:12px;background:var(--muted-bg)}
   table.heat th:first-child,table.heat td.rowlbl{text-align:left;padding-left:8px;font-weight:700;background:var(--muted-bg)}
   table.heat td.cell{font-variant-numeric:tabular-nums;font-weight:600}
+  table.heat td.cell .cu{font-size:10px;font-weight:400;color:currentColor;opacity:.65;margin-left:1px}
+  @media(max-width:420px){table.heat td.cell .cu{font-size:9px}}
   table.gridtable{width:100%;border-collapse:collapse;font-size:11px}
   table.gridtable th,table.gridtable td{text-align:center;padding:5px 2px;border:1px solid var(--line)}
   table.gridtable th{color:var(--ink-2);font-weight:600;font-size:10px;background:var(--muted-bg);white-space:nowrap}
@@ -137,7 +139,7 @@
   <div class="legend" id="proj-legend"></div>
   <div class="chartbox"><div id="today-bar"></div></div>
 
-  <h2 id="grid-h2">各專案近 14 天做了多少件 <a href="javascript:void(0)" id="grid-toggle-all" class="grid-toggle-all">顯示各專案說明</a></h2>
+  <h2 id="grid-h2">各專案近 14 天做了多少件（格內數字＝件數，顏色越深越多） <a href="javascript:void(0)" id="grid-toggle-all" class="grid-toggle-all">顯示各專案說明</a></h2>
   <div class="chartbox"><div class="gridwrap"><table class="gridtable" id="grid-table"></table></div></div>
 
   <details class="toggle bigtoggle">
@@ -145,21 +147,23 @@
     <div id="days"></div>
   </details>
 
-  <h2>花了多少額度（帳號 × 模型熱圖）</h2>
+  <h2>花了多少額度（帳號 × 模型熱圖，單位：萬 token，顏色越深花越多）</h2>
+  <div class="legend" id="heat-legend">
+    <span><span class="sw" style="background:var(--good)"></span>綠＝花得剛好</span>
+    <span><span class="sw" style="background:var(--bad)"></span>紅＝可能沒必要花這麼多</span>
+    <span><span class="sw" style="background:var(--zero)"></span>其他（不分好壞）</span>
+  </div>
   <div class="caption">
-    <p class="lead">顏色像紅綠燈：紅＝可能沒必要花這麼多錢（分身做雜事卻用了貴模型、或主帳號做正事卻只捨得用便宜模型）；綠＝花得剛好（正事用好模型、雜事用便宜模型）。深淺代表用量多少，「其他」欄不分好壞、一律灰色。</p>
-    <p>想確認分身是不是都用便宜模型，看「分身」那一列哪一欄顏色最深。數字是近 14 天加總（萬 token），從我電腦裡的對話紀錄算出來的，跟 claude.ai 額度頁對不起來，只能看比例。</p>
+    <p class="lead">紅或綠要配帳號看：分身做雜事卻用貴模型、或主帳號做正事卻只捨得用便宜模型＝紅；正事用好模型、雜事用便宜模型＝綠。想確認分身是不是都用便宜模型，看「分身」那一列哪一欄顏色最深。</p>
+    <p>數字是近 14 天加總，從我電腦裡的對話紀錄算出來的，跟 claude.ai 額度頁對不起來，只能看比例。</p>
   </div>
   <div class="chartbox"><table class="heat" id="heat-table"></table></div>
 
-  <h2>你打的分數（一點一筆，顏色跟著分數變）</h2>
-  <div class="caption">
-    <p class="lead">一點＝你打的一筆分數，顏色由紅到綠對應 1～5 分：1 分最紅、3 分黃、5 分最綠。</p>
-  </div>
+  <h2>你打的分數（1–5 分，一點＝一次評分）</h2>
   <div class="legend" id="score-legend"></div>
   <div class="chartbox"><div class="scoregrid" id="score-grid"></div></div>
   <div class="caption">
-    <p>縱軸（由上到下）＝日期，最新一天在最上面；橫軸（同一列由左到右）＝那天打分的時間先後，最左邊是當天最早打的一筆。點的顏色＝分數（1～5 分，紅色最低、綠色最高）；同一天出現好幾個點＝那天打了不只一次分。</p>
+    <p>同一列由左到右＝當天打分的時間先後，最左邊最早；同一天出現好幾個點＝那天打了不只一次分。</p>
   </div>
 
   <div class="footnote">
@@ -468,9 +472,9 @@ fetch('./proof.json').then(r=>r.json()).then(data=>{
     MODEL_KEYS.forEach(k=>{
       const v=vals[k];
       const {bg,fg}=heatCellStyle(key,k,v,maxCell);
-      heatHtml+=`<td class="cell" style="background:${bg};color:${fg}">${v>0?v.toFixed(0):'0'}</td>`;
+      heatHtml+=`<td class="cell" style="background:${bg};color:${fg}">${v>0?v.toFixed(0):'0'}<span class="cu">萬</span></td>`;
     });
-    heatHtml+=`<td class="cell">${tot.toFixed(0)}</td></tr>`;
+    heatHtml+=`<td class="cell">${tot.toFixed(0)}<span class="cu">萬</span></td></tr>`;
   });
   heatHtml+='</tbody>';
   document.getElementById('heat-table').innerHTML=heatHtml;
