@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T15:42+08:00",
+  "generated_at": "2026-09-18T16:12+08:00",
   "days": [
     {
       "date": "2026-09-05",
@@ -35,6 +35,7 @@
       },
       "score_avg": 3.44,
       "score_low": 4,
+      "score_high": 8,
       "corrections_new": 9,
       "highlights": [
         "票 gold-standard-offsite 驗完送關單",
@@ -320,6 +321,7 @@
       },
       "score_avg": 3.75,
       "score_low": 1,
+      "score_high": 5,
       "corrections_new": 5,
       "highlights": [
         "line-booking UI 自評 17 條上線（三批，每批 curl 正式站驗新版）",
@@ -405,6 +407,7 @@
       },
       "score_avg": 3.71,
       "score_low": 2,
+      "score_high": 5,
       "corrections_new": 6,
       "highlights": [
         "只改註解：19 句「叉叉」過期敘述改回中文「刪除」，並修正一句寫反的",
@@ -590,6 +593,7 @@
       },
       "score_avg": 2.0,
       "score_low": 1,
+      "score_high": 0,
       "corrections_new": 3,
       "highlights": [
         "Fable 5.1 功課交付＋N6 規則修訂（他打 2 分：訂閱制不是 API 額度）",
@@ -725,6 +729,7 @@
       },
       "score_avg": 4.0,
       "score_low": 0,
+      "score_high": 1,
       "corrections_new": 0,
       "highlights": [
         "他確認：回測（非回撤）＋股癌；要修的是回測母體那一邊",
@@ -850,6 +855,7 @@
       },
       "score_avg": 4.22,
       "score_low": 0,
+      "score_high": 6,
       "corrections_new": 1,
       "highlights": [
         "當場 commit 兩個：8da50f1（line-booking 超框 171→0＋商品刪除）、171aa04（transcribe.py CPU 防護），點名檔案加入、確認 10 個暫存檔沒混進去。",
@@ -1305,6 +1311,7 @@
       },
       "score_avg": 5.0,
       "score_low": 0,
+      "score_high": 1,
       "corrections_new": 1,
       "highlights": [
         "遠端 9/10 晚棒：主人頻道搬新伺服器、紅線 N11/N12/N18 依裁決拔除、Discord 刪訊工具、「教 A…",
@@ -1620,6 +1627,7 @@
       },
       "score_avg": 4.0,
       "score_low": 0,
+      "score_high": 1,
       "corrections_new": 2,
       "highlights": [
         "動手全集：白話主頁全展開＋原文另頁（他 03:14 三題裁決），刪手風琴／目錄／tab",
@@ -1825,6 +1833,7 @@
       },
       "score_avg": 4.0,
       "score_low": 0,
+      "score_high": 1,
       "corrections_new": 1,
       "highlights": [],
       "items": [],
@@ -1865,6 +1874,7 @@
       },
       "score_avg": null,
       "score_low": 0,
+      "score_high": 0,
       "corrections_new": 1,
       "highlights": [],
       "items": [],
@@ -1905,6 +1915,7 @@
       },
       "score_avg": 4.0,
       "score_low": 0,
+      "score_high": 3,
       "corrections_new": 0,
       "highlights": [
         "本機每日排程週日/四自動寄信（丹尼爾 2026-09-15 裁決「打開」）",
@@ -2040,6 +2051,7 @@
       },
       "score_avg": 4.0,
       "score_low": 0,
+      "score_high": 1,
       "corrections_new": 1,
       "highlights": [
         "backtest.html: daily refresh 2026-09-16 (auto, run_daily_an…",
@@ -2155,6 +2167,7 @@
       },
       "score_avg": 5.0,
       "score_low": 0,
+      "score_high": 1,
       "corrections_new": 0,
       "highlights": [
         "股癌週報新格式樣本：公司重點節錄頁（EP695/EP696，拿掉看好看壞，只節錄原話）",
@@ -2198,38 +2211,39 @@
     },
     {
       "date": "2026-09-18",
-      "commits": 23,
+      "commits": 26,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 20,
-      "discord_replies": 61,
-      "tokens_main_wan": 87.6,
-      "tokens_sub_wan": 160.0,
-      "tokens_sessions": 24,
-      "tokens_msgs": 1066,
+      "subagent_runs": 21,
+      "discord_replies": 67,
+      "tokens_main_wan": 98.4,
+      "tokens_sub_wan": 191.9,
+      "tokens_sessions": 26,
+      "tokens_msgs": 1160,
       "tokens_by_model": {
-        "opus": 159.2,
-        "sonnet": 74.2,
+        "opus": 187.5,
+        "sonnet": 88.6,
         "haiku": 6.3,
         "fable": 7.9,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 87.6,
+        "opus": 98.4,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 71.6,
-        "sonnet": 74.2,
+        "opus": 89.1,
+        "sonnet": 88.6,
         "haiku": 6.3,
         "fable": 7.9,
         "other": 0.0
       },
       "score_avg": 2.62,
       "score_low": 5,
+      "score_high": 2,
       "corrections_new": 0,
       "highlights": [
         "11:08 週報分身收工，commit ff4d520（未 push）：weekly_review.py（--dry-run/--week/--post，送 Discord 走 007_dashboard/discord_say.py，失敗",
@@ -2428,6 +2442,26 @@
           "time": "15:27"
         },
         {
+          "kind": "commit",
+          "text": "proof_table：items 加 project／by、每日 tokens_by_model（main／sub）",
+          "project": "會計部",
+          "by": "未對",
+          "evidence_url": null,
+          "evidence_label": "commit 3e90beb",
+          "verified": true,
+          "time": "15:49"
+        },
+        {
+          "kind": "note",
+          "text": "v3.1 兩版上線（daniel-demos 05a5ae5）：3a 按專案／3b 按交辦 vs 自主（示意）；每天一句話＋分專案橫條、額度加各模型堆疊、分數週趨勢表；proof_table.py 加 project／by／tokens_b",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/05a5ae50d52a28b9cd1ac0f6f9d15e8c21db1668",
+          "evidence_label": "commit 05a5ae5",
+          "verified": true,
+          "time": "15:49"
+        },
+        {
           "kind": "note",
           "text": "會計部流程優化分身收工（16 分鐘）：audit.py v3 message.id 去重（×1.89 對上）、quota_report.py 5.7 秒 69 行（實跑驗過）、加 5h／7d 窗口＋撞牆校準點、SKILL.md 418→16",
           "project": "會計部",
@@ -2436,10 +2470,20 @@
           "evidence_label": "日誌記載",
           "verified": false,
           "time": null
+        },
+        {
+          "kind": "note",
+          "text": "15:35 他打 5 分（1550410006795522129）：V1 方向對；三段判語（做了什麼太細沒人看／額度最好用能看主帳號比例、要加各模型／分數圖不知有何用）→ 15:38 改口分數要留、做「週滿意度趨勢表」。判語寫進 feedb",
+          "project": "其他",
+          "by": "未對",
+          "evidence_url": null,
+          "evidence_label": "日誌記載",
+          "verified": false,
+          "time": null
         }
       ],
-      "items_count": 20,
-      "notes": "另有 5 筆收工紀錄 commit 未列"
+      "items_count": 23,
+      "notes": "另有 6 筆收工紀錄 commit 未列"
     }
   ]
 }
