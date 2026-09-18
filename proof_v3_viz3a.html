@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>AI 每天做了什麼（V3.1 分專案）</title>
+<style>
+  :root{color-scheme:light;--bg:#fcfcfb;--card:#fff;--ink:#0b0b0b;--ink-2:#52514e;--ink-3:#898781;--line:#e6e5e1;--accent:#2a78d6;--accent-bg:#e9f1fb;--warn:#a05a00;--warn-bg:#fff3e0;--muted-bg:#f3f2ee;
+    --grid:#e1e0d9;--zero:#c3c2b7;
+    --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--s6:#008300;--s7:#4a3aa7;--s8:#e34948;
+    --good:#006300;--bad:#d03b3b}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
+    --grid:#2c2c2a;--zero:#383835;
+    --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;--s8:#e66767;
+    --good:#0ca30c;--bad:#e66767}}
+  :root[data-theme="dark"]{color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
+    --grid:#2c2c2a;--zero:#383835;
+    --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;--s8:#e66767;
+    --good:#0ca30c;--bad:#e66767}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Noto Sans TC","PingFang TC",system-ui,sans-serif}
+  main{max-width:720px;margin:0 auto;padding:20px 16px 60px}
+  h1{font-size:22px;margin:0 0 6px}
+  .banner{background:var(--warn-bg);color:var(--warn);border-radius:8px;padding:8px 12px;font-size:14px;margin:12px 0}
+  .intro{color:var(--ink-2);font-size:15px;margin:0 0 18px}
+  .intro p{margin:4px 0}
+  h2{font-size:17px;margin:26px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+  h3{font-size:14px;color:var(--ink-2);margin:14px 0 6px;font-weight:600}
+  .chartbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 12px 6px;margin:8px 0 16px}
+  svg{width:100%;height:auto;display:block;overflow:visible}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--ink-2);margin:0 0 8px}
+  .legend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+  .note-line{font-size:12px;color:var(--ink-3);margin:0 0 10px}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+  .day-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .headline{font-weight:700;font-size:15px}
+  .rule{font-size:12px;color:var(--ink-3)}
+  .segbar{display:flex;width:100%;height:14px;border-radius:4px;overflow:hidden;margin:8px 0 2px;background:var(--muted-bg)}
+  .segbar .seg{height:100%;margin-right:2px}
+  .segbar .seg:last-child{margin-right:0}
+  .toggle{margin-top:8px}
+  .toggle > summary{cursor:pointer;color:var(--accent);font-size:14px;list-style:none;user-select:none}
+  .toggle > summary::-webkit-details-marker{display:none}
+  .toggle > summary::before{content:"▸ ";display:inline-block}
+  .toggle[open] > summary::before{content:"▾ "}
+  ul.items{list-style:none;margin:8px 0 0;padding:0}
+  ul.items li{padding:8px 0 8px 2px;border-top:1px dashed var(--line);display:grid;grid-template-columns:44px 12px 1fr;gap:6px 8px;align-items:start}
+  .empty{color:var(--ink-3);font-size:14px;padding:8px 0}
+  .t{color:var(--ink-3);font-variant-numeric:tabular-nums;font-size:14px;padding-top:2px}
+  .dot{width:10px;height:10px;border-radius:50%;margin-top:5px}
+  .kind{display:inline-block;font-size:12px;padding:1px 7px;border-radius:999px;background:var(--accent-bg);color:var(--accent);margin-right:6px}
+  .ev{display:block;font-size:14px;margin-top:3px;word-break:break-word}
+  .ev a{color:var(--accent);text-decoration:none}
+  .ev a:hover{text-decoration:underline}
+  .caption{font-size:14px;color:var(--ink-2);background:var(--muted-bg);border-radius:8px;padding:10px 12px;margin:0 0 10px}
+  .caption p{margin:4px 0}
+  .caption p.lead{font-weight:700;color:var(--ink)}
+  .dualwrap{display:flex;gap:16px;flex-wrap:wrap}
+  .dualwrap > div{flex:1 1 260px;min-width:0}
+  table.trend{width:100%;border-collapse:collapse;font-size:13px}
+  table.trend th,table.trend td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line)}
+  table.trend th{color:var(--ink-3);font-weight:600;font-size:12px}
+  table.trend td.num{font-variant-numeric:tabular-nums}
+  .arrow-up{color:var(--good);font-weight:700}
+  .arrow-down{color:var(--bad);font-weight:700}
+  .arrow-flat{color:var(--ink-3);font-weight:700}
+</style>
+</head>
+<body>
+<main>
+  <h1>AI 每天做了什麼（V3.1：分專案）</h1>
+  <div class="banner">示意版：圖表用真數字畫，不是裝飾——看一眼就知道哪天多、哪天少、時間都花在哪個專案。「件」的算法＝有驗證＋有證據連結的項目（demo 口徑，正式版依規則 v3）。你選定這版才做成每天自動更新的正式版。</div>
+  <div class="intro">
+    <p><b>每天一句話：</b>做了幾件、給哪幾個專案，點開才看每一件的細節。</p>
+    <p><b>「一件」怎麼算：</b>只算有驗證＋有證據連結的（commit／票／日誌），AI 自己寫「做完了」不算。</p>
+    <p><b>怎麼自己驗：</b>點「看每一件」展開，數清單行數＝標題上的數字；滿意度趨勢表在最下面，那是你打的分數彙整。</p>
+  </div>
+
+  <h2>總覽：近 14 天件數</h2>
+  <div class="chartbox"><div id="ov-chart"></div></div>
+
+  <h2>一、做了什麼（按專案分組）</h2>
+  <div class="legend" id="proj-legend"></div>
+  <div id="days"></div>
+
+  <h2>二、花了多少額度</h2>
+  <div class="caption">
+    <p class="lead">左邊看是不是都叫主帳號做，右邊看是不是都叫最貴的模型做。</p>
+    <p>這個數字是從我電腦裡的對話紀錄加總來的（主帳號＋所有分身）。跟你在 claude.ai 看到的額度對不起來，只能看它每天的高低。</p>
+  </div>
+  <div class="dualwrap">
+    <div>
+      <h3>主帳號／分身</h3>
+      <div class="legend" id="tok-legend"></div>
+      <div class="chartbox"><div id="tok-chart"></div></div>
+    </div>
+    <div>
+      <h3>各模型（Opus／Sonnet／Haiku／Fable／其他）</h3>
+      <div class="legend" id="model-legend"></div>
+      <div class="chartbox"><div id="model-chart"></div></div>
+    </div>
+  </div>
+
+  <h2>三、滿意度趨勢表</h2>
+  <div class="caption"><p>這是你對我回答的滿意度，往上代表越來越合你的意。</p></div>
+  <div class="chartbox">
+    <table class="trend" id="trend-table"></table>
+  </div>
+</main>
+<script>
+const NS="http://www.w3.org/2000/svg";
+function svgEl(tag,attrs){const el=document.createElementNS(NS,tag);for(const k in attrs)el.setAttribute(k,attrs[k]);return el;}
+function fmtDate(s){return s.slice(5).replace('-','/');}
+function countedItems(day){return (day.items||[]).filter(i=>i.verified&&i.evidence_url);}
+function esc(s){const d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+
+// ---- 專案顏色：全 14 天最常出現的前 7 個專案各配一色，其餘一律用中性灰「其他」----
+const PROJ_SLOTS=['var(--s1)','var(--s2)','var(--s3)','var(--s4)','var(--s5)','var(--s6)','var(--s7)'];
+function buildProjectColorMap(days){
+  const counts={};
+  days.forEach(d=>countedItems(d).forEach(it=>{
+    const p=it.project||'其他';
+    if(p==='其他')return;
+    counts[p]=(counts[p]||0)+1;
+  }));
+  const top=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]).slice(0,7);
+  const map={};
+  top.forEach((p,i)=>map[p]=PROJ_SLOTS[i]);
+  return {map,top};
+}
+function projColor(map,p){return map[p&&p!=='其他'?p:'__x__']||'var(--zero)';}
+
+fetch('./proof.json').then(r=>r.json()).then(data=>{
+  const days=[...data.days].sort((a,b)=>a.date<b.date?-1:1);
+  const counts=days.map(d=>countedItems(d).length);
+  const maxCount=Math.max(...counts,1);
+  const {map:projMap,top:projTop}=buildProjectColorMap(days);
+
+  // ---- 總覽：14 天件數橫條圖（今天最上，原樣保留）----
+  const W=340, rowH=24, topPad=6;
+  const H=topPad*2+rowH*days.length;
+  const svg=svgEl('svg',{viewBox:`0 0 ${W} ${H}`});
+  const labelW=52, numW=32, barX0=labelW, barMaxW=W-labelW-numW;
+  const rev=[...days].reverse();
+  rev.forEach((d,i)=>{
+    const y=topPad+i*rowH;
+    const c=countedItems(d).length;
+    const w=c===0?2:Math.max(3,c/maxCount*barMaxW);
+    const isToday=d.date===days[days.length-1].date;
+    const dl=svgEl('text',{x:0,y:y+rowH/2+4,'font-size':11,fill:isToday?'var(--ink)':'var(--ink-2)','font-weight':isToday?700:400});
+    dl.textContent=fmtDate(d.date)+(isToday?' 今天':'');
+    svg.appendChild(dl);
+    const bar=svgEl('rect',{x:barX0,y:y+3,width:w,height:rowH-10,rx:4,fill:c===0?'var(--zero)':'var(--accent)'});
+    const title=svgEl('title',{});title.textContent=`${fmtDate(d.date)}：${c} 件`;
+    bar.appendChild(title);
+    svg.appendChild(bar);
+    const numT=svgEl('text',{x:barX0+w+4,y:y+rowH/2+4,'font-size':12,fill:'var(--ink-2)','font-variant-numeric':'tabular-nums'});
+    numT.textContent=c;
+    svg.appendChild(numT);
+  });
+  document.getElementById('ov-chart').appendChild(svg);
+
+  // ---- 一、每天卡片（分專案彩色橫條＋收合清單）----
+  document.getElementById('proj-legend').innerHTML=
+    projTop.map((p,i)=>`<span><span class="sw" style="background:${PROJ_SLOTS[i]}"></span>${esc(p)}</span>`).join('')+
+    `<span><span class="sw" style="background:var(--zero)"></span>其他</span>`;
+  const daysDiv=document.getElementById('days');
+  rev.forEach(d=>{
+    const items=countedItems(d);
+    const n=items.length;
+    const byProj={};
+    items.forEach(it=>{const p=it.project||'其他';byProj[p]=(byProj[p]||0)+1;});
+    const order=Object.keys(byProj).sort((a,b)=>byProj[b]-byProj[a]);
+    const headline=n===0?`今天做了 0 件：—`:
+      `今天做了 ${n} 件：`+order.map(p=>`${esc(p)} ${byProj[p]}`).join('、');
+
+    const card=document.createElement('div');card.className='day';
+    const head=document.createElement('div');head.className='day-head';
+    head.innerHTML=`<span class="headline">${headline}</span><span class="rule">${esc(d.date)}・規則 v3.1</span>`;
+    card.appendChild(head);
+
+    const bar=document.createElement('div');bar.className='segbar';
+    if(n===0){
+      const seg=document.createElement('div');seg.className='seg';seg.style.background='var(--zero)';seg.style.width='100%';
+      bar.appendChild(seg);
+    }else{
+      order.forEach(p=>{
+        const seg=document.createElement('div');seg.className='seg';
+        seg.style.background=projColor(projMap,p);
+        seg.style.width=(byProj[p]/n*100)+'%';
+        seg.title=`${p}：${byProj[p]} 件（${Math.round(byProj[p]/n*100)}%）`;
+        bar.appendChild(seg);
+      });
+    }
+    card.appendChild(bar);
+
+    const det=document.createElement('details');det.className='toggle';
+    const sum=document.createElement('summary');sum.textContent='看每一件';
+    det.appendChild(sum);
+    if(n===0){
+      const e=document.createElement('div');e.className='empty';e.textContent='這天沒有算進來的項目。';
+      det.appendChild(e);
+    }else{
+      const ul=document.createElement('ul');ul.className='items';
+      for(const it of items){
+        const li=document.createElement('li');
+        const t=document.createElement('span');t.className='t';t.textContent=it.time||'';
+        const dot=document.createElement('span');dot.className='dot';dot.style.background=projColor(projMap,it.project);
+        const cont=document.createElement('div');
+        const kd=document.createElement('span');kd.className='kind';
+        kd.textContent={commit:'commit',ticket:'票',note:'日誌'}[it.kind]||it.kind;
+        cont.appendChild(kd);
+        cont.appendChild(document.createTextNode(it.text||''));
+        const ev=document.createElement('span');ev.className='ev';
+        if(it.evidence_url){const a=document.createElement('a');a.href=it.evidence_url;a.textContent='證據：'+(it.evidence_label||'連結');ev.appendChild(a);}
+        else{ev.textContent=it.evidence_label||'';}
+        cont.appendChild(ev);
+        li.appendChild(t);li.appendChild(dot);li.appendChild(cont);
+        ul.appendChild(li);
+      }
+      det.appendChild(ul);
+    }
+    card.appendChild(det);
+    daysDiv.appendChild(card);
+  });
+
+  // ---- 二之一、主帳號／分身堆疊橫條（原樣保留）----
+  document.getElementById('tok-legend').innerHTML=
+    `<span><span class="sw" style="background:var(--s1)"></span>主帳號</span>`+
+    `<span><span class="sw" style="background:var(--s2)"></span>分身</span>`;
+  const totals=days.map(d=>(d.tokens_main_wan||0)+(d.tokens_sub_wan||0));
+  const maxTot=Math.max(...totals,1);
+  const W2=300, rowH2=24, topPad2=6;
+  const H2=topPad2*2+rowH2*days.length;
+  const svg2=svgEl('svg',{viewBox:`0 0 ${W2} ${H2}`});
+  const labelW2=48, numW2=52, barX02=labelW2, barMaxW2=W2-labelW2-numW2;
+  const rev2=[...days].reverse();
+  rev2.forEach((d,i)=>{
+    const y=topPad2+i*rowH2;
+    const main=d.tokens_main_wan||0, sub=d.tokens_sub_wan||0, tot=main+sub;
+    const isToday=d.date===days[days.length-1].date;
+    const dl=svgEl('text',{x:0,y:y+rowH2/2+4,'font-size':11,fill:isToday?'var(--ink)':'var(--ink-2)','font-weight':isToday?700:400});
+    dl.textContent=fmtDate(d.date);
+    svg2.appendChild(dl);
+    const mw=tot===0?0:main/maxTot*barMaxW2;
+    const sw=tot===0?0:sub/maxTot*barMaxW2;
+    if(tot===0){
+      const z=svgEl('rect',{x:barX02,y:y+3,width:2,height:rowH2-10,rx:2,fill:'var(--zero)'});
+      svg2.appendChild(z);
+    }else{
+      const rMain=svgEl('rect',{x:barX02,y:y+3,width:Math.max(mw-1,0),height:rowH2-10,rx:3,fill:'var(--s1)'});
+      const tMain=svgEl('title',{});tMain.textContent=`主帳號 ${main.toFixed(1)} 萬`;rMain.appendChild(tMain);
+      svg2.appendChild(rMain);
+      const rSub=svgEl('rect',{x:barX02+mw+2,y:y+3,width:Math.max(sw-1,0),height:rowH2-10,rx:3,fill:'var(--s2)'});
+      const tSub=svgEl('title',{});tSub.textContent=`分身 ${sub.toFixed(1)} 萬`;rSub.appendChild(tSub);
+      svg2.appendChild(rSub);
+    }
+    const numT=svgEl('text',{x:barX02+barMaxW2+6,y:y+rowH2/2+4,'font-size':11,fill:'var(--ink-2)','font-variant-numeric':'tabular-nums'});
+    numT.textContent=tot.toFixed(0)+'萬';
+    svg2.appendChild(numT);
+  });
+  document.getElementById('tok-chart').appendChild(svg2);
+
+  // ---- 二之二、各模型堆疊橫條（新增）----
+  const MODEL_KEYS=['opus','sonnet','haiku','fable','other'];
+  const MODEL_LABEL={opus:'Opus',sonnet:'Sonnet',haiku:'Haiku',fable:'Fable',other:'其他'};
+  const MODEL_COLOR={opus:'var(--s3)',sonnet:'var(--s4)',haiku:'var(--s5)',fable:'var(--s6)',other:'var(--s7)'};
+  document.getElementById('model-legend').innerHTML=
+    MODEL_KEYS.map(k=>`<span><span class="sw" style="background:${MODEL_COLOR[k]}"></span>${MODEL_LABEL[k]}</span>`).join('');
+  const modelTotals=days.map(d=>{const m=d.tokens_by_model||{};return MODEL_KEYS.reduce((s,k)=>s+(m[k]||0),0);});
+  const maxModelTot=Math.max(...modelTotals,1);
+  const svg3b=svgEl('svg',{viewBox:`0 0 ${W2} ${H2}`});
+  rev2.forEach((d,i)=>{
+    const y=topPad2+i*rowH2;
+    const m=d.tokens_by_model||{};
+    const tot=MODEL_KEYS.reduce((s,k)=>s+(m[k]||0),0);
+    const isToday=d.date===days[days.length-1].date;
+    const dl=svgEl('text',{x:0,y:y+rowH2/2+4,'font-size':11,fill:isToday?'var(--ink)':'var(--ink-2)','font-weight':isToday?700:400});
+    dl.textContent=fmtDate(d.date);
+    svg3b.appendChild(dl);
+    if(tot===0){
+      const z=svgEl('rect',{x:barX02,y:y+3,width:2,height:rowH2-10,rx:2,fill:'var(--zero)'});
+      svg3b.appendChild(z);
+    }else{
+      let x=barX02;
+      MODEL_KEYS.forEach(k=>{
+        const v=m[k]||0;
+        if(v<=0)return;
+        const w=Math.max(v/maxModelTot*barMaxW2-1,0);
+        const r=svgEl('rect',{x,y:y+3,width:w,height:rowH2-10,rx:3,fill:MODEL_COLOR[k]});
+        const t=svgEl('title',{});t.textContent=`${MODEL_LABEL[k]} ${v.toFixed(1)} 萬`;r.appendChild(t);
+        svg3b.appendChild(r);
+        x+=v/maxModelTot*barMaxW2+2;
+      });
+    }
+    const numT=svgEl('text',{x:barX02+barMaxW2+6,y:y+rowH2/2+4,'font-size':11,fill:'var(--ink-2)','font-variant-numeric':'tabular-nums'});
+    numT.textContent=tot.toFixed(0)+'萬';
+    svg3b.appendChild(numT);
+  });
+  document.getElementById('model-chart').appendChild(svg3b);
+
+  // ---- 三、滿意度週趨勢表 ----
+  function mondayOf(dateStr){
+    const d=new Date(dateStr+'T00:00:00');
+    const dow=(d.getDay()+6)%7;
+    d.setDate(d.getDate()-dow);
+    return d;
+  }
+  function fmtMD(d){return (d.getMonth()+1)+'/'+d.getDate();}
+  const weeks={};
+  days.forEach(d=>{
+    if(d.score_avg==null)return;
+    const mon=mondayOf(d.date);
+    const key=mon.toISOString().slice(0,10);
+    if(!weeks[key])weeks[key]={monday:mon,sum:0,count:0,low:0};
+    weeks[key].sum+=d.score_avg;
+    weeks[key].count+=1;
+    weeks[key].low+=(d.score_low||0);
+  });
+  const weekKeys=Object.keys(weeks).sort();
+  const table=document.getElementById('trend-table');
+  let html='<thead><tr><th>週次</th><th>平均分</th><th>≤2分次數</th><th>有分數天數</th><th>跟上週比</th></tr></thead><tbody>';
+  let prevAvg=null;
+  weekKeys.forEach(k=>{
+    const w=weeks[k];
+    const avg=w.sum/w.count;
+    const sunday=new Date(w.monday);sunday.setDate(w.monday.getDate()+6);
+    const range=fmtMD(w.monday)+'–'+fmtMD(sunday);
+    let arrowHtml='<span class="arrow-flat">—</span>';
+    if(prevAvg!=null){
+      const diff=avg-prevAvg;
+      if(diff>=0.3)arrowHtml='<span class="arrow-up">↑ 變好</span>';
+      else if(diff<=-0.3)arrowHtml='<span class="arrow-down">↓ 變差</span>';
+      else arrowHtml='<span class="arrow-flat">→ 持平</span>';
+    }
+    html+=`<tr><td>${esc(range)}</td><td class="num">${avg.toFixed(1)}</td><td class="num">${w.low}</td><td class="num">${w.count}</td><td>${arrowHtml}</td></tr>`;
+    prevAvg=avg;
+  });
+  if(weekKeys.length===0){
+    html+='<tr><td colspan="5" class="empty">這 14 天沒有打分紀錄。</td></tr>';
+  }
+  html+='</tbody>';
+  table.innerHTML=html;
+});
+</script>
+</body>
+</html>

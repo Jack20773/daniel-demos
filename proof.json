@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T14:27+08:00",
+  "generated_at": "2026-09-18T15:42+08:00",
   "days": [
     {
       "date": "2026-09-05",
@@ -10,6 +10,29 @@
       "discord_replies": 142,
       "tokens_main_wan": 432.5,
       "tokens_sub_wan": 688.0,
+      "tokens_sessions": 60,
+      "tokens_msgs": 3785,
+      "tokens_by_model": {
+        "opus": 832.2,
+        "sonnet": 288.3,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 432.5,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 399.7,
+        "sonnet": 288.3,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
       "score_avg": 3.44,
       "score_low": 4,
       "corrections_new": 9,
@@ -22,6 +45,8 @@
         {
           "kind": "ticket",
           "text": "票 gold-standard-offsite 驗完送關單",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "看板 changelog",
           "verified": true,
@@ -30,6 +55,8 @@
         {
           "kind": "ticket",
           "text": "票 stock-signal-ad-misread 驗完送關單",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "看板 changelog",
           "verified": true,
@@ -38,6 +65,8 @@
         {
           "kind": "ticket",
           "text": "票 dividend-adjusted-price 驗完送關單",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "看板 changelog",
           "verified": true,
@@ -46,6 +75,8 @@
         {
           "kind": "commit",
           "text": "line-booking P3-B4：報表未知狀態不再靜默吞掉，匯出不再猜值",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ac90f69bace4192168b302a260dc9c16a6c24711",
           "evidence_label": "commit ac90f69",
           "verified": true,
@@ -54,6 +85,8 @@
         {
           "kind": "commit",
           "text": "line-booking 方案 B：內部 import 統一帶 .ts，並補上 Fable 5.1 外審抓到的四件",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cb89404f876190555712ec5f934e915a66f448eb",
           "evidence_label": "commit cb89404",
           "verified": true,
@@ -62,6 +95,8 @@
         {
           "kind": "note",
           "text": "commit 95c4057 並 push（48002b4..95c4057 master）。只挑 public/b8q3mk7v/index.html 與 test/names.test.mjs 兩檔。",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/95c4057992d844cdd940c5375e0ea9d8ac5617cc",
           "evidence_label": "commit 95c4057",
           "verified": true,
@@ -70,6 +105,8 @@
         {
           "kind": "commit",
           "text": "看門狗改量 token 不量檔案 MB（丹尼爾裁決）＋附故意違規自測",
+          "project": "遠端",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/93bcfc4c4bc3cc072720536426406f61c57df0e3",
           "evidence_label": "commit 93bcfc4",
           "verified": true,
@@ -78,6 +115,8 @@
         {
           "kind": "commit",
           "text": "記下他兩個裁決：信心度固定格式［信心度8/10］、改完直推不等驗證",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e6a2cf148e60e3daa9def85ae02a385bd3d1b496",
           "evidence_label": "commit e6a2cf1",
           "verified": true,
@@ -86,6 +125,8 @@
         {
           "kind": "commit",
           "text": "查證他的「重申」屬實：9/02 就講過，並記下真正的根因（記錯地方）",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/fc7c460cff4affcf2db82dfd04bacc50b3b961d4",
           "evidence_label": "commit fc7c460",
           "verified": true,
@@ -94,6 +135,8 @@
         {
           "kind": "commit",
           "text": "看門狗補對抗審查打出的 6 個洞＋修好 113 個殭屍行程的根因",
+          "project": "遠端",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/478f360c7574b557cf466019c5c0b1dcf3d4133b",
           "evidence_label": "commit 478f360",
           "verified": true,
@@ -102,6 +145,8 @@
         {
           "kind": "commit",
           "text": "自我指涉審查規則追加 2026-09-05 案例：對抗審查在我宣告改好之後才回來",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/9c7109cf44c838c4231fc8690d8a1382f94a1666",
           "evidence_label": "commit 9c7109c",
           "verified": true,
@@ -110,6 +155,8 @@
         {
           "kind": "commit",
           "text": "daily 續記＋開票 correction-push-directly-no-ask",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b21ee43ef8ca23c0e9165c19a7b3ce8323b78c19",
           "evidence_label": "commit b21ee43",
           "verified": true,
@@ -118,6 +165,8 @@
         {
           "kind": "commit",
           "text": "修排程靜默死亡（無BOM+中文→PS5.1 GBK 解碼爆）；補 SCHED 偵測器；context-watchdog…",
+          "project": "看板",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ee83902ab325a3f74563f4d6b884372e95b3f1a5",
           "evidence_label": "commit ee83902",
           "verified": true,
@@ -126,6 +175,8 @@
         {
           "kind": "commit",
           "text": "daily 交接補：賈維斯打回的三條＋exit 0 與 count==0 是獨立事實",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/84777d224c59d9d71d1462024f12d187cff68213",
           "evidence_label": "commit 84777d2",
           "verified": true,
@@ -134,6 +185,8 @@
         {
           "kind": "commit",
           "text": "又仟諮詢選項上線+curl驗證；preflight BOARD 八格自測（守 GetString 不准簡化成 Read…",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/03b929903d73f4ef12b978534fedae4323adf25b",
           "evidence_label": "commit 03b9299",
           "verified": true,
@@ -142,6 +195,8 @@
         {
           "kind": "commit",
           "text": "取消納管 wrangler.jsonc.bak（上一個 commit 的 ^A 檢查抓到：備份檔不該進版控）",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/24b54205c07b0223c10e1de082f65642161499cf",
           "evidence_label": "commit 24b5420",
           "verified": true,
@@ -150,6 +205,8 @@
         {
           "kind": "commit",
           "text": "備份輪替上線（424MB→23MB，實測兩輪份數停37）；19張糾正票投信被機制擋下＝AI不准改自己糾正票關單條件；l…",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7b150e14ec320a8e5083cc5cebf46d1740daa077",
           "evidence_label": "commit 7b150e1",
           "verified": true,
@@ -158,6 +215,8 @@
         {
           "kind": "note",
           "text": "帳務結案：claude auth status 回 authMethod=claude.ai／apiProvider=firstParty／subscriptionType=max，ANTHROPIC_API_KEY 未設，官方文件佐證 →",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -166,6 +225,8 @@
         {
           "kind": "note",
           "text": "又仟那件根因查明（唯讀分身）：不是查詢被過濾，是渲染漏畫——public/b8q3mk7v/index.html:1923 renderCalendar() 的 for (t=day.open_min; t<day.close_min; t",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -174,6 +235,8 @@
         {
           "kind": "note",
           "text": "前端兩改完成＋自己多找到第三個洞：界外預約補畫卡片（迴圈不動，insertBefore／append，outsideBefore.sort().reverse() 是必要的、有註解）＋每列可見編輯鈕（stopPropagation→open",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -182,6 +245,8 @@
         {
           "kind": "note",
           "text": "上線前工作日誌三則已補（correction-devlog-must-accompany-deploy 那張票要防的二犯行為，這次沒犯）：營業時間外看得到／編輯鈕／不再亂問同名。結構檢查 li/details/summary/div 各 2",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -190,6 +255,8 @@
         {
           "kind": "note",
           "text": "重跑 npm run deploy 完整閘門並部署成功：tsc --noEmit 0 → check:schema 無漂移 → test:all 兩輪（原始順序 454s ＋打散順序 448s）母體 25 支、PASS 1397×2、FAI",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -198,6 +265,8 @@
         {
           "kind": "note",
           "text": "上線驗證用內容比對不看綠燈：把線上 /b8q3mk7v/index.html 抓下來與本機檔 md5sum 完全相同（15faa1d56d4f04f559de7ebe6f6a4eca）；「營業時間外」推前 2 → 推後 12；/api/he",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -206,12 +275,15 @@
         {
           "kind": "note",
           "text": "已告知又仟（1545713621038927963，白話三點＋叫她關掉分頁重開）與丹尼爾（1545713668753330236）。",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
           "time": null
         }
       ],
+      "items_count": 24,
       "notes": "另有 18 筆收工紀錄 commit 未列"
     },
     {
@@ -223,6 +295,29 @@
       "discord_replies": 110,
       "tokens_main_wan": 247.8,
       "tokens_sub_wan": 394.9,
+      "tokens_sessions": 38,
+      "tokens_msgs": 2310,
+      "tokens_by_model": {
+        "opus": 552.7,
+        "sonnet": 77.2,
+        "haiku": 12.8,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 247.8,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 304.9,
+        "sonnet": 77.2,
+        "haiku": 12.8,
+        "fable": 0.0,
+        "other": 0.0
+      },
       "score_avg": 3.75,
       "score_low": 1,
       "corrections_new": 5,
@@ -235,6 +330,8 @@
         {
           "kind": "commit",
           "text": "line-booking UI 自評 17 條上線（三批，每批 curl 正式站驗新版）",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0e00a27014e0ce9aaf365d9a2052e408c74b4d7c",
           "evidence_label": "commit 0e00a27",
           "verified": true,
@@ -243,6 +340,8 @@
         {
           "kind": "ticket",
           "text": "票 correction-images-via-cheap-subagent 驗完送關單",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "看板 changelog",
           "verified": true,
@@ -251,6 +350,8 @@
         {
           "kind": "commit",
           "text": "line-booking 後台報表：砍掉四項功能（店主 2026-09-06 裁決「砍」）",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/311f0ddcec88a8d717c060455fbb1bc18ab53804",
           "evidence_label": "commit 311f0dd",
           "verified": true,
@@ -259,12 +360,15 @@
         {
           "kind": "commit",
           "text": "後台推播三則改名：早上/中午/晚上 → 今天的預約/今天剩下的預約/明天的預約",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8cc651d3f9d7d8d4daa712234243b955dc7a1aed",
           "evidence_label": "commit 8cc651d",
           "verified": true,
           "time": "23:50"
         }
       ],
+      "items_count": 4,
       "notes": "另有 9 筆收工紀錄 commit 未列"
     },
     {
@@ -276,6 +380,29 @@
       "discord_replies": 118,
       "tokens_main_wan": 253.9,
       "tokens_sub_wan": 557.0,
+      "tokens_sessions": 41,
+      "tokens_msgs": 3014,
+      "tokens_by_model": {
+        "opus": 532.2,
+        "sonnet": 236.7,
+        "haiku": 11.8,
+        "fable": 30.2,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 253.9,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 278.3,
+        "sonnet": 236.7,
+        "haiku": 11.8,
+        "fable": 30.2,
+        "other": 0.0
+      },
       "score_avg": 3.71,
       "score_low": 2,
       "corrections_new": 6,
@@ -288,6 +415,8 @@
         {
           "kind": "commit",
           "text": "只改註解：19 句「叉叉」過期敘述改回中文「刪除」，並修正一句寫反的",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a126e4c54f50ceb415bec2c356a8e93fcbd8b654",
           "evidence_label": "commit a126e4c",
           "verified": true,
@@ -296,6 +425,8 @@
         {
           "kind": "commit",
           "text": "紅線 19→20 同步：N20 上三份 harness 檔＋檢查器母數更新＋白工台帳補兩筆",
+          "project": "制度",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7b1a901d87b89006e1372366190ef837b63372f7",
           "evidence_label": "commit 7b1a901",
           "verified": true,
@@ -304,6 +435,8 @@
         {
           "kind": "commit",
           "text": "line-booking：課程刪除四件套上線（刪前擋／刪後標記不改值／一鍵改諮詢／大類快照）",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/76f66f7c1cd25e9b21eb2e1d0aef028bf0cf069b",
           "evidence_label": "commit 76f66f7",
           "verified": true,
@@ -312,6 +445,8 @@
         {
           "kind": "commit",
           "text": "修 review_batch 回傳順序錯位：風控決策會配到別筆訂單，真的送錯單",
+          "project": "交易機器人",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit 961b70c",
           "verified": true,
@@ -320,6 +455,8 @@
         {
           "kind": "commit",
           "text": "daily_run：敲不到 Gateway 改成每 15 分鐘重試到 23:30，且一天只跑一次",
+          "project": "交易機器人",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit 1bff60d",
           "verified": true,
@@ -328,6 +465,8 @@
         {
           "kind": "commit",
           "text": "探測 log：任何非真實探測的行都標 simulated=，不准冒充成真的「幾點通」",
+          "project": "交易機器人",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit c918464",
           "verified": true,
@@ -336,6 +475,8 @@
         {
           "kind": "commit",
           "text": "殘留物盤點收尾：漏 commit 的 13 份產出入版控＋.gitignore 補五個洞",
+          "project": "遠端",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b367c6eb8b83e293448ca8c27be2a82b93bb946f",
           "evidence_label": "commit b367c6e",
           "verified": true,
@@ -344,6 +485,8 @@
         {
           "kind": "commit",
           "text": "折扣 demo：三個裝一頁可比較＋砍到只剩折扣、預設結帳畫面",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2cfc2cb2a2f7620d2bba2a7882720ac169e4ed83",
           "evidence_label": "commit 2cfc2cb",
           "verified": true,
@@ -352,6 +495,8 @@
         {
           "kind": "commit",
           "text": "折扣 demo：拿掉比較表、切換器移到最上面、順序改儲值方案優先",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/9fdb914c2ab252112f028a320c393b31feb1a29b",
           "evidence_label": "commit 9fdb914",
           "verified": true,
@@ -360,6 +505,8 @@
         {
           "kind": "commit",
           "text": "demo 頂端橫條：深色改淺色 sticky（他 23:27 抱怨的那條）",
+          "project": "報告站",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cbacfdf62a8810f8ef408dd61dacfdb8e0c3dcfe",
           "evidence_label": "commit cbacfdf",
           "verified": true,
@@ -368,6 +515,8 @@
         {
           "kind": "commit",
           "text": "D 案：結帳自由填折數＋可自設的常用折扣（他 23:10 點頭的規格）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7febfc78a5b94d023b9b34aad447c5149769554c",
           "evidence_label": "commit 7febfc7",
           "verified": true,
@@ -376,6 +525,8 @@
         {
           "kind": "note",
           "text": "正式庫 migration 0021 已套（17 queries／425 rows written）：47→47 筆、service_id notnull=0、on_delete=SET NULL、7 個索引逐名確認、無殘留輔助表；動刀前已",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -384,6 +535,8 @@
         {
           "kind": "note",
           "text": "兩道閘門各擋一次且都擋對：①schema 漂移（程式已改、正式庫未改）②路由契約測試（新開 POST /:secret/api/services/:id/delete 未登記凍結清單，58→59 已補登記＋理由）。第三次部署跑中。",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -392,12 +545,15 @@
         {
           "kind": "note",
           "text": "daily/ 全目錄錨點掃描本棒已做：62 檔、零檔案有多組活錨點（上一棒交接記載的「7 檔違規」已不存在，該敘述過期）。今天這檔活錨點 1/1。",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
           "time": null
         }
       ],
+      "items_count": 14,
       "notes": "另有 7 筆收工紀錄 commit 未列"
     },
     {
@@ -409,6 +565,29 @@
       "discord_replies": 21,
       "tokens_main_wan": 118.6,
       "tokens_sub_wan": 203.6,
+      "tokens_sessions": 37,
+      "tokens_msgs": 837,
+      "tokens_by_model": {
+        "opus": 252.3,
+        "sonnet": 24.1,
+        "haiku": 3.5,
+        "fable": 42.4,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 118.6,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 133.7,
+        "sonnet": 24.1,
+        "haiku": 3.5,
+        "fable": 42.4,
+        "other": 0.0
+      },
       "score_avg": 2.0,
       "score_low": 1,
       "corrections_new": 3,
@@ -421,6 +600,8 @@
         {
           "kind": "commit",
           "text": "Fable 5.1 功課交付＋N6 規則修訂（他打 2 分：訂閱制不是 API 額度）",
+          "project": "看板",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e6d51ce9ac446be9e3390b81c7ecff322e0d10ab",
           "evidence_label": "commit e6d51ce",
           "verified": true,
@@ -429,6 +610,8 @@
         {
           "kind": "commit",
           "text": "派工器根因 2：正常 stderr 被當成終止性錯誤（已用對照組實測）",
+          "project": "看板",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/fb820827ffba0623eb67383f6ace502c9cd0da4d",
           "evidence_label": "commit fb82082",
           "verified": true,
@@ -437,6 +620,8 @@
         {
           "kind": "commit",
           "text": "折扣 demo：版面改成一張網頁＋新增 E/F/G 三個不同思路",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/d1d51e248877a25823c2afe32baac3979425e164",
           "evidence_label": "commit d1d51e2",
           "verified": true,
@@ -445,6 +630,8 @@
         {
           "kind": "commit",
           "text": "派工器根因 1：寫入口忙碌被誤判成「lease 被別人搶走」，改為退避重試",
+          "project": "看板",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6bab11cf1fdb532dbd59011554c3f311ed3e19b1",
           "evidence_label": "commit 6bab11c",
           "verified": true,
@@ -453,6 +640,8 @@
         {
           "kind": "commit",
           "text": "派工器根因 3：預算閘門 fail-open（usage.jsonl 讀不到＝無限預算），改成 fail-closed",
+          "project": "看板",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3a1efcacae2f9044feb8edf58899a79ad6cf2f77",
           "evidence_label": "commit 3a1efca",
           "verified": true,
@@ -461,6 +650,8 @@
         {
           "kind": "commit",
           "text": ".gitignore：linechat-digest-site 比照 linechat-digest 不進母 repo",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8aeae39274cd70afc3581af32cf518265c7e5078",
           "evidence_label": "commit 8aeae39",
           "verified": true,
@@ -469,6 +660,8 @@
         {
           "kind": "commit",
           "text": "派工器待辦①：read_usage_window() 靜默跳壞行，改成不准無聲",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a92f892e566e50974d0b9b74ede5c7e6a019a65b",
           "evidence_label": "commit a92f892",
           "verified": true,
@@ -477,6 +670,8 @@
         {
           "kind": "commit",
           "text": "派工器待辦①下半：read_state_changes() 的四種靜默，含最陰險的那種",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a2fcef22fb2e08868fede0fd7677b52608977b96",
           "evidence_label": "commit a2fcef2",
           "verified": true,
@@ -485,12 +680,15 @@
         {
           "kind": "note",
           "text": "已確認跑的是 paper（4002）不是真錢——scheduled_daily_run.ps1:211 寫明偵測到 live Gateway 就拒絕開跑；因此補跑不屬於「要花錢／不可逆」，我可自行執行。",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
           "time": null
         }
       ],
+      "items_count": 9,
       "notes": "另有 3 筆收工紀錄 commit 未列"
     },
     {
@@ -502,6 +700,29 @@
       "discord_replies": 86,
       "tokens_main_wan": 244.3,
       "tokens_sub_wan": 218.6,
+      "tokens_sessions": 21,
+      "tokens_msgs": 1078,
+      "tokens_by_model": {
+        "opus": 294.2,
+        "sonnet": 84.6,
+        "haiku": 0.0,
+        "fable": 84.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 187.4,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 56.8,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 106.8,
+        "sonnet": 84.6,
+        "haiku": 0.0,
+        "fable": 27.2,
+        "other": 0.0
+      },
       "score_avg": 4.0,
       "score_low": 0,
       "corrections_new": 0,
@@ -514,6 +735,8 @@
         {
           "kind": "commit",
           "text": "他確認：回測（非回撤）＋股癌；要修的是回測母體那一邊",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/527b5290fce8862891e4a166f3081b83508480fb",
           "evidence_label": "commit 527b529",
           "verified": true,
@@ -522,6 +745,8 @@
         {
           "kind": "note",
           "text": "e484cc5 驗收過關（21:30 正式跑批，非測試）：帳本 190→204 筆；對照組舊 190 筆＝38 單 to_state 全 acknowledged、broker_execution_reported 0 筆（死碼）；新 14",
+          "project": "交易機器人",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit e484cc5",
           "verified": true,
@@ -530,6 +755,8 @@
         {
           "kind": "commit",
           "text": "回測輸出帶進股癌原話（exact_quote/reasoning）——但盲測未證明它有用",
+          "project": "serenity-clone",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1bf5d103ccaee8178153678b3366b8468484c4a8",
           "evidence_label": "commit 1bf5d10",
           "verified": true,
@@ -538,6 +765,8 @@
         {
           "kind": "note",
           "text": "紅線副本走鐘修掉並 commit 97dd95f：查證 CLAUDE.md 無未提交改動、第 6 條源自 e6d51ce（他 9/8 打 2 分裁決）→ 舊的是副本（還留著被推翻的「Claude…先報費用」，Codex 讀 AGENTS.m",
+          "project": "制度",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/97dd95f1a100863be821a5943c6df8e49d5775a3",
           "evidence_label": "commit 97dd95f",
           "verified": true,
@@ -546,6 +775,8 @@
         {
           "kind": "note",
           "text": "沒有給他任何手機畫面步驟——照 03_judgment 七之5 先重讀 feedback_no_guessing_external_systems.md；判定「@ 修法」與「改走 Email」兩條都不依賴 UI 佈局，所以根本不需要猜他畫面",
+          "project": "制度",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -554,6 +785,8 @@
         {
           "kind": "note",
           "text": "@ 有效已由他親口確認（「至少我看手機的當下是可以收到」）；三步的帳＝猜對→測錯→重測確認。主人頻道此後每則都 <@id>。",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -562,6 +795,8 @@
         {
           "kind": "note",
           "text": "01:11 他親口確認：「回測沒錯，股癌」——兩題歧義都解除。要修的是回測那一邊，不是實際交易的虧損。 對應證據：回測 08-24～09-02 一直在同一批母體（662／451／314／237）上重跑，換的是算法不是資料；而母體凍住的原因是",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -570,12 +805,15 @@
         {
           "kind": "note",
           "text": "21:00 第 1 段 demo 交付：分身（16.5 萬 token、10.4 分鐘）產出 100_Todo/drafts/gooaye_library_draft/{entries.json,verify.py,verify_outpu",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
           "time": null
         }
       ],
+      "items_count": 8,
       "notes": "另有 4 筆收工紀錄 commit 未列"
     },
     {
@@ -587,6 +825,29 @@
       "discord_replies": 86,
       "tokens_main_wan": 223.2,
       "tokens_sub_wan": 889.8,
+      "tokens_sessions": 41,
+      "tokens_msgs": 2634,
+      "tokens_by_model": {
+        "opus": 799.8,
+        "sonnet": 16.4,
+        "haiku": 0.0,
+        "fable": 296.7,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 194.4,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 28.7,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 605.4,
+        "sonnet": 16.4,
+        "haiku": 0.0,
+        "fable": 268.0,
+        "other": 0.0
+      },
       "score_avg": 4.22,
       "score_low": 0,
       "corrections_new": 1,
@@ -599,6 +860,8 @@
         {
           "kind": "note",
           "text": "當場 commit 兩個：8da50f1（line-booking 超框 171→0＋商品刪除）、171aa04（transcribe.py CPU 防護），點名檔案加入、確認 10 個暫存檔沒混進去。",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8da50f13a7cd0577152ebf469b882bbe31f10f72",
           "evidence_label": "commit 8da50f1",
           "verified": true,
@@ -607,6 +870,8 @@
         {
           "kind": "commit",
           "text": "翻譯開跑前擋掉「模型被別人載成純 CPU」的狀態",
+          "project": "video-transcribe",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit 171aa04",
           "verified": true,
@@ -615,6 +880,8 @@
         {
           "kind": "commit",
           "text": "line-booking：CRUD 全檢（刪不掉 2→0 處）＋常駐掃描器 ops/check_crud.mjs",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/828e47ae13263c711543c43821d84d669ce18975",
           "evidence_label": "commit 828e47a",
           "verified": true,
@@ -623,6 +890,8 @@
         {
           "kind": "commit",
           "text": "line-booking：lifecycle 任務書回報節補 Version ID 與 commit hash",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cf2fecc6c95349c4fd547105988226d349552598",
           "evidence_label": "commit cf2fecc",
           "verified": true,
@@ -631,6 +900,8 @@
         {
           "kind": "commit",
           "text": "line-booking：資料生命週期第 0＋1 批——清場 8 處過期文件、代客登記姓名欄即搜尋（同名交店主點、後端…",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/373abd6c3251bd5851d30983ed3723e184360ed6",
           "evidence_label": "commit 373abd6",
           "verified": true,
@@ -639,6 +910,8 @@
         {
           "kind": "commit",
           "text": "line-booking：第 2 批「客人的桶」＋分頁列「甲」（檢查點：20:38 改規格前）",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a9808cb55b465c6fa4ebf1ef2d83a12b8a054e61",
           "evidence_label": "commit a9808cb",
           "verified": true,
@@ -647,6 +920,8 @@
         {
           "kind": "commit",
           "text": "video-transcribe：第 1 批 GUI——「進階」摺疊區貼串流網址（4d），失敗訊息顯示人話＋下一步（4…",
+          "project": "video-transcribe",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit 2969319",
           "verified": true,
@@ -655,6 +930,8 @@
         {
           "kind": "note",
           "text": "第 1 批 21:38 交件（40 分鐘，de16a0e＋2969319；15 passed 我親跑）：合成站新舊對照過（progressive／DASH 舊版抓不到→新版抓到、HLS 回歸、無影片頁負對照）；yt-dlp 停滯 20s 判",
+          "project": "video-transcribe",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit de16a0e",
           "verified": true,
@@ -663,6 +940,8 @@
         {
           "kind": "commit",
           "text": "video-transcribe：第 1 批補遺 1b 嗅探器候選數 0 時自動按播放（video→iframe→頁面…",
+          "project": "video-transcribe",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit 18c2538",
           "verified": true,
@@ -671,6 +950,8 @@
         {
           "kind": "commit",
           "text": "video-transcribe：第 2 批 5.0 共用小模組 vt_common.py（無 CUDA 依賴）",
+          "project": "video-transcribe",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit ec98ead",
           "verified": true,
@@ -679,6 +960,8 @@
         {
           "kind": "commit",
           "text": "video-transcribe：第 2 批 5.1 拆鎖——下載鎖＋可等待的 GPU 鎖，publish 移到鎖外",
+          "project": "video-transcribe",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit 4d7834e",
           "verified": true,
@@ -687,6 +970,8 @@
         {
           "kind": "note",
           "text": "股癌回測改固定天期已派工（他拍板走我推薦的）：30 天／90 天兩組、基準同天期（0050.TW／SPY）、未滿期訊號排除且單獨報數（不准用現價硬湊）、看多 return>0／看空 return<0 分方向判。根因：來源資料是「抱到今天」，",
+          "project": "股癌回測",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -695,6 +980,8 @@
         {
           "kind": "note",
           "text": "line-booking 兩件已派工（他 00:09 交辦）：①商品刪不掉 ②課程頁超框，他明講「不要每次看到哪裡超框就修一次，已經修好幾次了」→ 任務書要求先做自動掃描器（375/390/414 三寬度量 scrollWidth>clie",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -703,6 +990,8 @@
         {
           "kind": "note",
           "text": "他 00:32 核准兩件並已交付：①打分訊號接起來（005_scripts/harvest_scores.py，母體 273 份逐字稿→512 候選→命中 76 筆，低分 25/76＝32.9%、均 3.95；低分率沒下降 31.0→33.",
+          "project": "會計部",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -711,6 +1000,8 @@
         {
           "kind": "note",
           "text": "打分報表已上線並自驗：https://daniel-reports.vercel.app/scores-2026-09-10-80a57b.html （curl 200／76561 bytes，關鍵字串實查命中）。刻意不做 artifact",
+          "project": "報告站",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -719,6 +1010,8 @@
         {
           "kind": "note",
           "text": "開機五步照 BOOT.md 跑完。BOOT_BRIEF ① 生效：4b 戰情室 Monitor 不掛（8/30 叫停仍有效），queue.log 有掛。三頻道各拉一次皆無新訊息。四件中斷分身的落地狀況已用 git status＋mtime ",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -727,6 +1020,8 @@
         {
           "kind": "note",
           "text": "修復已上線並實測：video-transcribe/transcribe.py +45 行（_ollama_loaded_device()／_ollama_evict_cpu_resident()，掛在 ollama_preflight()",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -735,6 +1030,8 @@
         {
           "kind": "note",
           "text": "殘留程序清掉：上一個 session（db2149f6）死後，它的 timeout 3000 python exp.py 還活著並持續打 Ollama。session 被強制重開不會帶走它派出去的背景程序——下次開機盤點要把「上一棒留下的背",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -743,6 +1040,8 @@
         {
           "kind": "note",
           "text": "另外三件分身回報：①寄信瘦身：寄信點盤點完（4 個 SMTP 出口＋5 個會寄信的排程），回放 25 天 46 封 → 11 封，含負對照與測試信實測；修掉上一棒一個實質 bug（NO_RUN／GATEWAY_DOWN 標籤互相覆蓋使閘門形",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -751,6 +1050,8 @@
         {
           "kind": "note",
           "text": "line-booking 完成並已部署（Version 1628f8d4-867f-431d-b32e-dde11b4feefd）：超框 171 處 → 0 處，正式站實測 27 次掃描／5,637 個可見元素／0 處。按根因分三堆且每堆做",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -759,6 +1060,8 @@
         {
           "kind": "note",
           "text": "商品刪不掉的根因＝這個功能從來沒做過（後端無路由、前端刪除鈕只畫給 kind==='svc'），已補 POST /:secret/api/products/:id/delete（稽核 INSERT 與 DELETE 同 batch、寫不進去",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -767,6 +1070,8 @@
         {
           "kind": "note",
           "text": "vikg-051 重跑全階段完成，修復端到端證實：37 批、每批中位數 6.1s（最慢 13.1s），對照 CPU 時 103～147s ＝ 快約 17～24 倍；退化逐句 0 批、未翻譯 0 句、整個 translate 階段 4 分 0",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -775,6 +1080,8 @@
         {
           "kind": "note",
           "text": "糾正寫進兩個既有正本（沒開第 83 個檔）：feedback_ship_when_done.md 新增「第四次犯」節——機制改成送出報告前掃自己的問句，防的是「放了一個不需要他回答的問句」而非「部署」這個詞；feedback_design_",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -783,6 +1090,8 @@
         {
           "kind": "note",
           "text": "CRUD 全檢已派工，並主動加一條他沒講但會踩到的護欄：不是每種資料都該能硬刪（預約／客人有帳務法律意義 → 封存＋清單不顯示；純設定類才該真刪），已先在 Discord 告知因可能與他原意不同。",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -791,6 +1100,8 @@
         {
           "kind": "note",
           "text": "兩張票落地並實讀 plans.json 驗證（母體 156→157）：correction-design-whole-not-piecemeal 新開、correction-ship-when-done 掛 note（第四次犯，「連續 3 ",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -799,6 +1110,8 @@
         {
           "kind": "note",
           "text": "CRUD 全檢完成並部署（1628f8d4 → 69c9f11c，兩輪各 PASS 1730 / FAIL 0）：母體 25 張表 / 72 條路由 / 60 處前端呼叫點，掃出缺陷 2 種（加購、儲值方案 delete 404 → 200",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -807,6 +1120,8 @@
         {
           "kind": "note",
           "text": "開機五步照 BOOT 跑完：4b 不掛（8/30 叫停仍有效）、queue.log 有掛、三頻道無欠回、Discord 報到 1547430210876481587。",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -815,6 +1130,8 @@
         {
           "kind": "note",
           "text": "任務書 300_Projects/line-booking/LINEBOOKING_TASK_2026-09-10_customer_archive.md，分身已派；主體是「全 repo 讀 customers 的位置全檢表」，封存 UI ",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -823,6 +1140,8 @@
         {
           "kind": "note",
           "text": "Fable 5.1 唯讀體檢交付 line-booking/docs/PRODUCT_AUDIT_2026-09-10.md：病根＝代客登記每次新生客人（56 位／54 walkin／53 無手機／8 組同名）；三種桶規則；19 條結構債；",
+          "project": "預約系統",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -831,6 +1150,8 @@
         {
           "kind": "note",
           "text": "第 0＋1 批已派工（LINEBOOKING_TASK_2026-09-10_lifecycle.md：清場＋代客沿用既有客人＋no_show 計數＋黑名單鈕；正式庫本輪零結構變更）。",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -839,6 +1160,8 @@
         {
           "kind": "note",
           "text": "他 13:06 要客人資料庫＋問放哪裡：做了三放法可點 demo（daniel-reports/line-booking-nav-demo-2026-09-10.html），推薦甲（時段設定＋服務管理併「設定」，空格給「客人」），等他回甲／",
+          "project": "報告站",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -847,6 +1170,8 @@
         {
           "kind": "note",
           "text": "查證：匯出 Excel 早已存在（index.html:1128 報表右上角小鈕，8/31 做、9/6 又仟要求縮小，一檔三表）；「同名要確認」卡存在但放在商品分頁（:1226）——demo 把它搬到客人頁最上面、改成「這兩位是同一個人嗎？",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -855,6 +1180,8 @@
         {
           "kind": "note",
           "text": "demo v2 兩連結已送（1547495305493221438）：daniel-reports/line-booking-nav-demo-v2-2026-09-10.html＋line-booking-merge-b-2026-09-",
+          "project": "報告站",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -863,6 +1190,8 @@
         {
           "kind": "note",
           "text": "新版規格已傳分身（不部署不 commit 等他一字）：登記姓名欄邊打邊找、一位自動帶入且顯示上次來／餘額／備註＋「不是她？新建一位」鈕（賈維斯：第二位同名第一次來時「剛好一位」＝靜默併）、多位讓她點、尊重 name_conflict_res",
+          "project": "橋樑",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -871,6 +1200,8 @@
         {
           "kind": "note",
           "text": "第 0＋1 批交件（回報節在 LINEBOOKING_TASK_2026-09-10_lifecycle.md）：閘門三關全綠（兩輪 32 支 PASS 1798／FAIL 0，1471s）、新測 test/customer_lifecyc",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -879,6 +1210,8 @@
         {
           "kind": "note",
           "text": "分身自決我認可：「新建」用前端明講 new_customer:true（與 409 needs_pick 不衝突）；auto_match 稽核隨自動沿用一起拿掉。待裁決①「同名即列」與又仟 9/5「沒填電話不問」的關係→我對他講「列出但不彈",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -887,6 +1220,8 @@
         {
           "kind": "note",
           "text": "開機：BOOT 步驟 1–5 完成，戰情室 Monitor 照 8/30 叫停未掛；三頻道拉過，他未貼 video-transcribe 的網址（1547558017648562248 仍未回）。模型：system prompt 報 Opu",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -895,6 +1230,8 @@
         {
           "kind": "note",
           "text": "第 2 批任務書 LINEBOOKING_TASK_2026-09-10_batch2_customers.md（分身起草 278 行 → 5.1 審 → 寫回 311 行）。5.1 抓到兩個高嚴重度洞：①mergeStmts／CUSTOM",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -903,6 +1240,8 @@
         {
           "kind": "note",
           "text": "開機：BOOT 1–5 完成，戰情室 Monitor 照 8/30 叫停未掛；三頻道拉過，他 19:09 之後未回；主人頻道已報到（1547566894456774656）。",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -911,6 +1250,8 @@
         {
           "kind": "note",
           "text": "下載失敗根因查清（排除 19:09 拒修那站）：2026-08-03 同一支片換三站皆敗＝①yt-dlp 被 Cloudflare 403（它自己提示加 generic:impersonate）②嗅探器 M3U8_PATTERN 只認 .m",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -919,12 +1260,15 @@
         {
           "kind": "note",
           "text": "任務書 video-transcribe/VT_TASK_2026-09-10_pipeline.md（分身起草 385 行、我審過補 §3.5「GPU 被他佔著時」條款）：第 1 批下載路線（impersonate 自動重試、嗅探擴充 m",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
           "time": null
         }
       ],
+      "items_count": 41,
       "notes": ""
     },
     {
@@ -936,6 +1280,29 @@
       "discord_replies": 84,
       "tokens_main_wan": 224.4,
       "tokens_sub_wan": 487.1,
+      "tokens_sessions": 41,
+      "tokens_msgs": 1955,
+      "tokens_by_model": {
+        "opus": 579.7,
+        "sonnet": 106.6,
+        "haiku": 11.2,
+        "fable": 14.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 206.0,
+        "sonnet": 18.4,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 373.7,
+        "sonnet": 88.2,
+        "haiku": 11.2,
+        "fable": 14.0,
+        "other": 0.0
+      },
       "score_avg": 5.0,
       "score_low": 0,
       "corrections_new": 1,
@@ -948,6 +1315,8 @@
         {
           "kind": "commit",
           "text": "遠端 9/10 晚棒：主人頻道搬新伺服器、紅線 N11/N12/N18 依裁決拔除、Discord 刪訊工具、「教 A…",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ca07981445727c7666b28c1e52d9e0731c7022de",
           "evidence_label": "commit ca07981",
           "verified": true,
@@ -956,6 +1325,8 @@
         {
           "kind": "commit",
           "text": "遠端 9/11 凌晨棒：教學計畫改向「復刻整套系統」、合併搬家任務書落檔、派長工前先重開（二犯）教訓入記憶",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e4d86a8b1cc77e23b3eba30b6de6279486b22fa2",
           "evidence_label": "commit e4d86a8",
           "verified": true,
@@ -964,6 +1335,8 @@
         {
           "kind": "note",
           "text": "第 1 步合併搬家完成並 commit e2b4e47：27 課三格制、42 來源檔 100% 對帳、圖實際 55 張（任務書 60 是舊數）、_sources/原教材/＋site/ 不入庫。",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e2b4e4723646971bd8dddaef2561619d9522c8d6",
           "evidence_label": "commit e2b4e47",
           "verified": true,
@@ -972,6 +1345,8 @@
         {
           "kind": "note",
           "text": "第 2 步教學曲線重審報告 _review/02_curriculum.md commit 1b833fa：Git／Plan Mode 提前、每日筆記／MCP 延後、缺 4 課必要（065 交接、075 settings 分層、105 收工",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1b833fa0838b214b81fdb832e9db322595a33f27",
           "evidence_label": "commit 1b833fa",
           "verified": true,
@@ -980,6 +1355,8 @@
         {
           "kind": "commit",
           "text": "動手全集：.wrangler 快取不入庫",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8be675f80b7e4ac82bb587469b54c68a18761557",
           "evidence_label": "commit 8be675f",
           "verified": true,
@@ -988,6 +1365,8 @@
         {
           "kind": "note",
           "text": "第 2b 步套用重排 commit 96f3e14：54 格 md5 全同、site 改 ASCII 檔名；.wrangler/ 快取誤入庫已拔（8be675f）。",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/96f3e145d4fa4558b1ab2411324c6ac943a62e68",
           "evidence_label": "commit 96f3e14",
           "verified": true,
@@ -996,6 +1375,8 @@
         {
           "kind": "note",
           "text": "第 3 步名詞定位 commit 5c091aa：64 名詞／27 課 319 條進【助教】格、側欄改語意分組、assemble.py 保留助教格；分身對官方文件發現課文 3 處「查不到」其實官方有（.claude/rules、@impor",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/5c091aadc008bae485aaa722ceb2fa08969281b6",
           "evidence_label": "commit 5c091aa",
           "verified": true,
@@ -1004,6 +1385,8 @@
         {
           "kind": "commit",
           "text": "video-transcribe：第 2 批 5.4 階段級續跑＋5.5 片長與進度＋5.6 Ollama 生命週期",
+          "project": "video-transcribe",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit f16794d",
           "verified": true,
@@ -1012,6 +1395,8 @@
         {
           "kind": "note",
           "text": "第 2 批 02:45 交件（接棒分身 30 分鐘做完 5.2～5.6；commits 0a41d2c／f16794d／fd6f41d；pytest test_queue_and_resume.py test_download_routes",
+          "project": "video-transcribe",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit 0a41d2c",
           "verified": true,
@@ -1020,6 +1405,8 @@
         {
           "kind": "commit",
           "text": "video-transcribe：第 2 批 任務書 §10.2 回報寫齊（VT_TASK_2026-09-10_pi…",
+          "project": "video-transcribe",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit fd6f41d",
           "verified": true,
@@ -1028,6 +1415,8 @@
         {
           "kind": "note",
           "text": "第 5 步踩雷 commit b3cc3f1：86 檔 124 條盤點（_review/05_pitfalls_inventory.md）、22 課 68 條「我們踩過的雷」、3 頁 AI 草稿插頁 025 密鑰／045 糾正 AI／125",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b3cc3f1735007ce23ad55fed7805db565d2e6c8c",
           "evidence_label": "commit b3cc3f1",
           "verified": true,
@@ -1036,6 +1425,8 @@
         {
           "kind": "note",
           "text": "第 7 步唱反調審稿 commit 97a2438：53 條挑出 51 條改；_review/07_draft_review.md；分身用 pwsh 7／5.1 實跑兩支起手版 hook 腳本（四種邊界）。",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/97a243843c7db574f1e28e6e357ef12d8f7ff3bc",
           "evidence_label": "commit 97a2438",
           "verified": true,
@@ -1044,6 +1435,8 @@
         {
           "kind": "note",
           "text": "第 3 批 04:00 交件 commit fe7cbe4（36 格一格不缺、掃描 8 跑、10 段抽聽樣本 experiments/samples/{S,D}_.mp4 已 .gitignore；報表 experiments/result",
+          "project": "video-transcribe",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "commit fe7cbe4",
           "verified": true,
@@ -1052,6 +1445,8 @@
         {
           "kind": "note",
           "text": "第 8 步 F～L 七項補課進 070/080/110/120/130 助教格：分身 opus，commit f88e94a，md5 68 段全同、密鑰掃描 0、正式站五頁我自己 curl 各 1；已在主人頻道報一句（15476995992",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f88e94ae92ef54f949a4e5fd9d57372838833ac4",
           "evidence_label": "commit f88e94a",
           "verified": true,
@@ -1060,6 +1455,8 @@
         {
           "kind": "note",
           "text": "favicon 📘 inline SVG 進 build.py／build_single.py，commit e67a492，正式站 curl 有；沒單獨吵他。",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e67a4928e1c3485057f679bdf2484209fec21f8f",
           "evidence_label": "commit e67a492",
           "verified": true,
@@ -1068,6 +1465,8 @@
         {
           "kind": "commit",
           "text": "動手全集：格式保真——標題不降級、A 段改 GFM 渲染、admonition 內 fence 修復、alert 標籤…",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6bc77f353b10a99a401d8e1c366f18e18b0fcb07",
           "evidence_label": "commit 6bc77f3",
           "verified": true,
@@ -1076,6 +1475,8 @@
         {
           "kind": "commit",
           "text": "動手全集：圖片不撐版、側欄加新手骨架連結、第四格【白話】骨架（內容待補）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/01268a0ae7efebd29d8f156bafd6c9e3e8e8f93e",
           "evidence_label": "commit 01268a0",
           "verified": true,
@@ -1084,6 +1485,8 @@
         {
           "kind": "commit",
           "text": "動手全集：34 課【白話】格內容（AI 草稿，待審）——每課 6～7 條白話→譬喻→原文位置，fidelity 69/…",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2a679ad860ed1d53f1f558e9af67e7aa9897b159",
           "evidence_label": "commit 2a679ad",
           "verified": true,
@@ -1092,6 +1495,8 @@
         {
           "kind": "commit",
           "text": "動手全集：正文欄加寬 68ch→96ch（他 21:39 要字往寬延伸、少往下滑），正式站 style.css 已驗",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/46b08bbeb62f3d900a9dbde56896849664164646",
           "evidence_label": "commit 46b08bb",
           "verified": true,
@@ -1100,6 +1505,8 @@
         {
           "kind": "commit",
           "text": "動手全集：A 案——每課拆四分頁（課本／補充／白話／助教）＋頁頂頁底 tab bar，site 137 頁，fidel…",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3ab879cceae270cdc3bba5679d749cf16238e67f",
           "evidence_label": "commit 3ab879c",
           "verified": true,
@@ -1108,6 +1515,8 @@
         {
           "kind": "commit",
           "text": "動手全集：他 22:58 三件——滿版＋右欄本頁目錄＋每格手風琴（一次一段）；白話格改「AI 創作・經驗分享」、34 …",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0dd8384c381ef6b041e391b9fa9ca1a28e64ad65",
           "evidence_label": "commit 0dd8384",
           "verified": true,
@@ -1116,6 +1525,8 @@
         {
           "kind": "note",
           "text": "00:33 已在新主人頻道 1547587315956973588 回他停擺原因＋補列紅線 5～12。",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -1124,6 +1535,8 @@
         {
           "kind": "note",
           "text": "5.1 提問稿交付 100_Todo/projects/ai-teaches-ai_QUESTIONS_2026-09-11.md（27 題分 7 主題、全選擇題）；第一批 5 題已貼（1547649832863400056）等他回數字。5",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -1132,6 +1545,8 @@
         {
           "kind": "note",
           "text": "Discord 已講：第一課記憶（1547653379302498345）、對回教材 2-1／2-2 並附公司圖（1547653626183295036）、七角色各自「教材說＋我這套用在哪＋何時需要」（1547654471637667881",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -1140,6 +1555,8 @@
         {
           "kind": "note",
           "text": "第 6 步 commit 3a58b7b：4 頁交接主線插頁 065 交接／075 settings.json／105 收工循環／115 記憶自動載入 hook（各 1.7k～2.3k 字），35 頁上線同網址；115 用簡化版 Sessi",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -1148,6 +1565,8 @@
         {
           "kind": "note",
           "text": "7:30 驗收清單 03:45 已發主人頻道（1547693553059373206）：網址、六件做完的事、5 個要他回的編號題（①N1 ②115/105 範本版本 ③內部內容公開前過目 ④auto-memory 開或關 ⑤「豬肉」＝「不足",
+          "project": "記憶",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
@@ -1156,12 +1575,15 @@
         {
           "kind": "note",
           "text": "正式 App（port 5000）我直接重啟成新版（N20：他一眼看得到、錯了再啟一次；先確認 RUNNING []）：舊 pid 60256（9/9 起）→ 新 pid 60220，/api/queue 200。🔴 stop_app.ps",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
           "time": null
         }
       ],
+      "items_count": 27,
       "notes": "另有 5 筆收工紀錄 commit 未列"
     },
     {
@@ -1173,6 +1595,29 @@
       "discord_replies": 75,
       "tokens_main_wan": 204.4,
       "tokens_sub_wan": 553.5,
+      "tokens_sessions": 51,
+      "tokens_msgs": 1706,
+      "tokens_by_model": {
+        "opus": 397.1,
+        "sonnet": 15.6,
+        "haiku": 5.2,
+        "fable": 340.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 204.4,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 192.7,
+        "sonnet": 15.6,
+        "haiku": 5.2,
+        "fable": 340.0,
+        "other": 0.0
+      },
       "score_avg": 4.0,
       "score_low": 0,
       "corrections_new": 2,
@@ -1185,6 +1630,8 @@
         {
           "kind": "commit",
           "text": "動手全集：白話主頁全展開＋原文另頁（他 03:14 三題裁決），刪手風琴／目錄／tab",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2fe4a4fff15f787280ad7aafdd3edf6c0712a392",
           "evidence_label": "commit 2fe4a4f",
           "verified": true,
@@ -1193,6 +1640,8 @@
         {
           "kind": "commit",
           "text": "動手全集：34 課【白話】改成課本＋補充整課完整白話版（他 03:17 裁決「完整版、只是比較簡單的語言」），4 個 …",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1d6cf5c5373fec311f68d86085e8183db89f0f8a",
           "evidence_label": "commit 1d6cf5c",
           "verified": true,
@@ -1201,6 +1650,8 @@
         {
           "kind": "commit",
           "text": "動手全集：閱讀進度／全站搜尋／主題切換／閱讀時間／回頂端（他 03:45 要看得到的成果）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b85f5e018cdb977aaf8fe643c1916955a8f1de48",
           "evidence_label": "commit b85f5e0",
           "verified": true,
@@ -1209,6 +1660,8 @@
         {
           "kind": "commit",
           "text": "新手骨架站：進度條＋複製鈕＋手機抽屜（他 03:45 要看得到的成果；Vercel 登出未部署）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/757e925ed2117d28153a842b67e634c187e2e276",
           "evidence_label": "commit 757e925",
           "verified": true,
@@ -1217,6 +1670,8 @@
         {
           "kind": "commit",
           "text": "動手全集：首頁 34 張課程卡片＋原文頁跳段列（凌晨分身產出，本棒 Playwright 驗收通過）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/dcbe438c24d3bb3d999a2ae5fe5859588fc9e153",
           "evidence_label": "commit dcbe438",
           "verified": true,
@@ -1225,6 +1680,8 @@
         {
           "kind": "commit",
           "text": "動手全集：原文頁表格橫向捲動＋程式碼複製鈕（headless 驗收通過）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/426addb9e8dd2827a3a1b7ee7ee1bd1b88e1fb4e",
           "evidence_label": "commit 426addb",
           "verified": true,
@@ -1233,6 +1690,8 @@
         {
           "kind": "commit",
           "text": "動手全集：課末上一課／下一課導覽＋分享預覽 meta（headless 驗收通過）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/615ced839f6a27b16814ab5a43beccf87956d64f",
           "evidence_label": "commit 615ced8",
           "verified": true,
@@ -1241,6 +1700,8 @@
         {
           "kind": "commit",
           "text": "動手全集：字級鈕＋鍵盤 ←→ 翻課＋404 頁（headless 驗收通過）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ea541e585837906f9fa64fffc73591b9257ac0f1",
           "evidence_label": "commit ea541e5",
           "verified": true,
@@ -1249,6 +1710,8 @@
         {
           "kind": "commit",
           "text": "動手全集：原文頁 50 個 .md 交叉引用改連站內課／未收錄者去連結（掃描 0 壞連結）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f4e46ce5213d923c8146cd210c65c69d2be08325",
           "evidence_label": "commit f4e46ce",
           "verified": true,
@@ -1257,6 +1720,8 @@
         {
           "kind": "commit",
           "text": "動手全集：續讀位置橫幅＋列印／PDF 乾淨版（headless 驗收通過）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/9aa546617c21e1b979079fae19fb1d11d780759b",
           "evidence_label": "commit 9aa5466",
           "verified": true,
@@ -1265,6 +1730,8 @@
         {
           "kind": "commit",
           "text": "動手全集：整站視覺 QA 修 1 項（桌機側欄自動捲到目前課）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/97b8bbca02714d48465995ef7d85d1f54c2b128b",
           "evidence_label": "commit 97b8bbc",
           "verified": true,
@@ -1273,6 +1740,8 @@
         {
           "kind": "commit",
           "text": "動手全集：分享鈕＋搜尋落點高亮＋回頂端浮鈕不壓內文（headless 驗收通過）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/5a96a20758279e2db2bad1ba1a8382f6cae63785",
           "evidence_label": "commit 5a96a20",
           "verified": true,
@@ -1281,6 +1750,8 @@
         {
           "kind": "commit",
           "text": "動手全集：標題錨點加 scroll-margin，帶 # 開頁不貼視窗上緣／不被跳段列蓋住（headless 驗收通過）",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cc725e64497003dc4f2ffca9b8bb177e76be1694",
           "evidence_label": "commit cc725e6",
           "verified": true,
@@ -1289,6 +1760,8 @@
         {
           "kind": "commit",
           "text": "動手全集：每課改回一頁——課本原文（含 51 張圖）在前、補充、白話、助教依序同頁堆疊，不再產 -src 頁（他 12…",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/605e9dd1bc8d1cfa6187d2cfa2cb7bbc5c217f83",
           "evidence_label": "commit 605e9dd",
           "verified": true,
@@ -1297,6 +1770,8 @@
         {
           "kind": "commit",
           "text": "動手全集：新手版 demo（060 記憶）＋5.1 結構分析與全盤重設計規格；build.py 支援【新手版】格（有 …",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/80bdce9abead41f6c4d4fcfab77632c24a59b319",
           "evidence_label": "commit 80bdce9",
           "verified": true,
@@ -1305,12 +1780,15 @@
         {
           "kind": "commit",
           "text": "動手全集：34 課三合一成【新手版】上線（220／940 從目錄拿掉、920 改腳本彙整；12_checks FAIL…",
+          "project": "root",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8a920876506cdb92188f0f3ed72ae02dec0f5648",
           "evidence_label": "commit 8a92087",
           "verified": true,
           "time": "18:19"
         }
       ],
+      "items_count": 16,
       "notes": "另有 3 筆收工紀錄 commit 未列"
     },
     {
@@ -1322,11 +1800,35 @@
       "discord_replies": 71,
       "tokens_main_wan": 135.0,
       "tokens_sub_wan": 87.7,
+      "tokens_sessions": 19,
+      "tokens_msgs": 850,
+      "tokens_by_model": {
+        "opus": 212.5,
+        "sonnet": 10.1,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 135.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 77.5,
+        "sonnet": 10.1,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
       "score_avg": 4.0,
       "score_low": 0,
       "corrections_new": 1,
       "highlights": [],
       "items": [],
+      "items_count": 0,
       "notes": "另有 4 筆收工紀錄 commit 未列"
     },
     {
@@ -1338,11 +1840,35 @@
       "discord_replies": 17,
       "tokens_main_wan": 84.4,
       "tokens_sub_wan": 31.1,
+      "tokens_sessions": 7,
+      "tokens_msgs": 537,
+      "tokens_by_model": {
+        "opus": 84.4,
+        "sonnet": 31.1,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 84.4,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 31.1,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
       "score_avg": null,
       "score_low": 0,
       "corrections_new": 1,
       "highlights": [],
       "items": [],
+      "items_count": 0,
       "notes": "另有 4 筆收工紀錄 commit 未列"
     },
     {
@@ -1354,6 +1880,29 @@
       "discord_replies": 30,
       "tokens_main_wan": 50.7,
       "tokens_sub_wan": 93.3,
+      "tokens_sessions": 13,
+      "tokens_msgs": 528,
+      "tokens_by_model": {
+        "opus": 144.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 50.7,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 93.3,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
       "score_avg": 4.0,
       "score_low": 0,
       "corrections_new": 0,
@@ -1366,6 +1915,8 @@
         {
           "kind": "commit",
           "text": "本機每日排程週日/四自動寄信（丹尼爾 2026-09-15 裁決「打開」）",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/stock-signal/commit/be67ed523f521dd4afc9fdbaa90959748fe22c99",
           "evidence_label": "commit be67ed5",
           "verified": true,
@@ -1374,6 +1925,8 @@
         {
           "kind": "commit",
           "text": "業配關卡拿掉「合作」（丹尼爾 2026-09-15 裁決）",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/stock-signal/commit/609973b8170616f088b5c2d7b4d8dee243d1bd60",
           "evidence_label": "commit 609973b",
           "verified": true,
@@ -1382,6 +1935,8 @@
         {
           "kind": "commit",
           "text": "gooaye-site：股癌回測站主線 v1 首次進 git（骨架＋固定天期回測＋契約驗證；out/ 不入版）",
+          "project": "股癌回測",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0e19ec2ba44ad9778df785558bfa071259b8d890",
           "evidence_label": "commit 0e19ec2",
           "verified": true,
@@ -1390,6 +1945,8 @@
         {
           "kind": "commit",
           "text": "init",
+          "project": "工作證明頁",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/aa57942cc210ded0fc5f16b10b69462afab17855",
           "evidence_label": "commit aa57942",
           "verified": true,
@@ -1398,6 +1955,8 @@
         {
           "kind": "commit",
           "text": "加 .nojekyll：讓 _embed/_shots 底線目錄能被 Pages 服務",
+          "project": "工作證明頁",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/54c16c16f098cd89e32ec112678955715656b3f1",
           "evidence_label": "commit 54c16c1",
           "verified": true,
@@ -1406,6 +1965,8 @@
         {
           "kind": "commit",
           "text": "三份「回測併進股癌網站」demo：A 貼在訊號旁／B 規律與名單在最前面／C 獨立分頁",
+          "project": "工作證明頁",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/4c798fcca0ef7a8f451267afc37fd914384f595d",
           "evidence_label": "commit 4c798fc",
           "verified": true,
@@ -1414,6 +1975,8 @@
         {
           "kind": "commit",
           "text": "回測頁併進 GitHub Pages 站（backtest.html），每日排程自動更新",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/stock-signal/commit/e080abbe32bdbc7d003f23788c26950abd9859e7",
           "evidence_label": "commit e080abb",
           "verified": true,
@@ -1422,6 +1985,8 @@
         {
           "kind": "commit",
           "text": "gooaye-site：加規律挖掘＋留出驗證（patterns.py／pattern 契約／頁面第一屏改規律→名單→沒…",
+          "project": "股癌回測",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/558055e81bf5dea1f153810fd7c45f3cb438062a",
           "evidence_label": "commit 558055e",
           "verified": true,
@@ -1430,12 +1995,15 @@
         {
           "kind": "commit",
           "text": "backtest.html: 規律挖掘版（180 候選／1 通過／名單 0，含負對照說明）",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/stock-signal/commit/e2a2d2969145884f059ebecccc113bcd44a931dc",
           "evidence_label": "commit e2a2d29",
           "verified": true,
           "time": "01:21"
         }
       ],
+      "items_count": 9,
       "notes": "另有 3 筆收工紀錄 commit 未列"
     },
     {
@@ -1447,6 +2015,29 @@
       "discord_replies": 31,
       "tokens_main_wan": 85.2,
       "tokens_sub_wan": 32.7,
+      "tokens_sessions": 9,
+      "tokens_msgs": 630,
+      "tokens_by_model": {
+        "opus": 98.3,
+        "sonnet": 15.2,
+        "haiku": 4.3,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 85.2,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 13.1,
+        "sonnet": 15.2,
+        "haiku": 4.3,
+        "fable": 0.0,
+        "other": 0.0
+      },
       "score_avg": 4.0,
       "score_low": 0,
       "corrections_new": 1,
@@ -1459,6 +2050,8 @@
         {
           "kind": "commit",
           "text": "backtest.html: daily refresh 2026-09-16 (auto, run_daily_an…",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/stock-signal/commit/848cbb69b73b82a3650710c5ea5dcd39f5dbd866",
           "evidence_label": "commit 848cbb6",
           "verified": true,
@@ -1467,6 +2060,8 @@
         {
           "kind": "commit",
           "text": "demo D：規律第二輪（AI 讀理由）頁面 backtest_reasoning.html＋入口連結",
+          "project": "工作證明頁",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/23c7bf8387a2cf5ec7e34adb064786b45d6b6647",
           "evidence_label": "commit 23c7bf8",
           "verified": true,
@@ -1475,6 +2070,8 @@
         {
           "kind": "commit",
           "text": "gooaye-site：規律第二輪「理由層」接進 patterns（147 候選／通過 0）＋頁面理由分布表＋留出組覆…",
+          "project": "股癌回測",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a22df48b5ff6128a2586bcaafa625f38c5644c37",
           "evidence_label": "commit a22df48",
           "verified": true,
@@ -1483,6 +2080,8 @@
         {
           "kind": "commit",
           "text": "回測頁每日推站加 hold 旗標：ops/backtest_hold.flag 在就不 build 不 push（丹尼…",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/stock-signal/commit/defa23d855d3b1c52428a0a99f5c379570ce295a",
           "evidence_label": "commit defa23d",
           "verified": true,
@@ -1491,6 +2090,8 @@
         {
           "kind": "commit",
           "text": "理由特徵補標到 1006/1006（加 --safe-mode）；第二輪理由層真驗：147 候選 0 通過、打亂 p≈…",
+          "project": "股癌回測",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/019c4579d813d072b7f90965b8d614b148e34a7a",
           "evidence_label": "commit 019c457",
           "verified": true,
@@ -1499,6 +2100,8 @@
         {
           "kind": "commit",
           "text": "demo D 更新：第二輪理由層補標後真驗結果",
+          "project": "工作證明頁",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/823becbe901526ddaa2568645637a984c8fbe424",
           "evidence_label": "commit 823becb",
           "verified": true,
@@ -1507,12 +2110,15 @@
         {
           "kind": "ticket",
           "text": "票 transcribe-remodel-266 驗完送關單",
+          "project": "其他",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "看板 changelog",
           "verified": true,
           "time": "09:30"
         }
       ],
+      "items_count": 7,
       "notes": "另有 3 筆收工紀錄 commit 未列"
     },
     {
@@ -1524,6 +2130,29 @@
       "discord_replies": 17,
       "tokens_main_wan": 56.7,
       "tokens_sub_wan": 159.4,
+      "tokens_sessions": 21,
+      "tokens_msgs": 905,
+      "tokens_by_model": {
+        "opus": 216.1,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 56.7,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 159.4,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
       "score_avg": 5.0,
       "score_low": 0,
       "corrections_new": 0,
@@ -1536,6 +2165,8 @@
         {
           "kind": "commit",
           "text": "股癌週報新格式樣本：公司重點節錄頁（EP695/EP696，拿掉看好看壞，只節錄原話）",
+          "project": "工作證明頁",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/a7f6640e43db7ee873c7908e0aea0612e319747d",
           "evidence_label": "commit a7f6640",
           "verified": true,
@@ -1544,6 +2175,8 @@
         {
           "kind": "commit",
           "text": "股癌週報第二版 demo：按集數／按公司兩個版型（EP695/696，5 家公司＋跨集病歷＋當天股價到今天漲跌）",
+          "project": "工作證明頁",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/ef709ec88c94887011163182677a03950d94fcb3",
           "evidence_label": "commit ef709ec",
           "verified": true,
@@ -1552,25 +2185,51 @@
         {
           "kind": "note",
           "text": "熱度頁病歷卡上線：commit 17cedcd、publish run 35228032150 成功、正式站 Last-Modified 13:37Z；curl 實測「本週他怎麼講」24／「病歷時間軸」25。已回他（155014113453",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/stock-signal/commit/17cedcd53c658bad790b156b801e1301aedbfaad",
           "evidence_label": "commit 17cedcd",
           "verified": true,
           "time": "21:35"
         }
       ],
+      "items_count": 3,
       "notes": "另有 2 筆收工紀錄 commit 未列"
     },
     {
       "date": "2026-09-18",
-      "commits": 17,
+      "commits": 23,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 15,
-      "discord_replies": 35,
-      "tokens_main_wan": 60.9,
-      "tokens_sub_wan": 126.8,
-      "score_avg": 2.67,
-      "score_low": 2,
+      "subagent_runs": 20,
+      "discord_replies": 61,
+      "tokens_main_wan": 87.6,
+      "tokens_sub_wan": 160.0,
+      "tokens_sessions": 24,
+      "tokens_msgs": 1066,
+      "tokens_by_model": {
+        "opus": 159.2,
+        "sonnet": 74.2,
+        "haiku": 6.3,
+        "fable": 7.9,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 87.6,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 71.6,
+        "sonnet": 74.2,
+        "haiku": 6.3,
+        "fable": 7.9,
+        "other": 0.0
+      },
+      "score_avg": 2.62,
+      "score_low": 5,
       "corrections_new": 0,
       "highlights": [
         "11:08 週報分身收工，commit ff4d520（未 push）：weekly_review.py（--dry-run/--week/--post，送 Discord 走 007_dashboard/discord_say.py，失敗",
@@ -1581,6 +2240,8 @@
         {
           "kind": "note",
           "text": "11:08 週報分身收工，commit ff4d520（未 push）：weekly_review.py（--dry-run/--week/--post，送 Discord 走 007_dashboard/discord_say.py，失敗",
+          "project": "會計部",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ff4d520b1f2037e6ed4826d547058fe66daa77c8",
           "evidence_label": "commit ff4d520",
           "verified": true,
@@ -1589,6 +2250,8 @@
         {
           "kind": "note",
           "text": "11:28 日報分身收工 commit ee534ea：daily_review.py --daily（≤8 行；品質線＝分數／新糾正票／白工 vs 前 7 天日均）、排程 QuotaAudit_DailyReview 每天 09:00（N",
+          "project": "會計部",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ee534ea5d1fe606bd34f1be25e43b40b5c560980",
           "evidence_label": "commit ee534ea",
           "verified": true,
@@ -1597,6 +2260,8 @@
         {
           "kind": "commit",
           "text": "weekly_fixes：09-18 補 quality_note（2 分原因）與 next",
+          "project": "會計部",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/4257d39c38896ad99ec054f14529f8723e39241e",
           "evidence_label": "commit 4257d39",
           "verified": true,
@@ -1605,6 +2270,8 @@
         {
           "kind": "commit",
           "text": "harvest_scores：補抓 absorbed_mid_turn 的 Discord 訊息（attachment…",
+          "project": "工具",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/241bc3dd9e0e23ae3cd63ba7e7d7d09bbbfc6f03",
           "evidence_label": "commit 241bc3d",
           "verified": true,
@@ -1613,6 +2280,8 @@
         {
           "kind": "note",
           "text": "制度落地 commit 6279403：02_model_dispatch 新節「任務切小＋機械活 Sonnet」＋派工表改 Sonnet、04_task_templates 加【模型】欄。",
+          "project": "制度",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6279403856f5a7b9438959bc726df1c11ce9dba6",
           "evidence_label": "commit 6279403",
           "verified": true,
@@ -1621,6 +2290,8 @@
         {
           "kind": "note",
           "text": "根 repo 12 筆 commit 已 push；stock-signal 任務書補進版控 27a199b 已 push（workflows 全是 workflow_dispatch，push 不觸發）。",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/stock-signal/commit/27a199b62c6ec5cbc6476fc965d4927ea33c8c60",
           "evidence_label": "commit 27a199b",
           "verified": true,
@@ -1629,6 +2300,8 @@
         {
           "kind": "commit",
           "text": "stock_dict：鎖定「新日興」3376.TW／「兆利」3548.TWO（EP567 id=767 誤記已在 DB…",
+          "project": "股癌",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/stock-signal/commit/a37d35f4bfc3b9c5d0dfe9127517dc3218b49122",
           "evidence_label": "commit a37d35f",
           "verified": true,
@@ -1637,6 +2310,8 @@
         {
           "kind": "ticket",
           "text": "票 tw-backtest-project 驗完送關單",
+          "project": "股癌回測",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "看板 changelog",
           "verified": true,
@@ -1645,6 +2320,8 @@
         {
           "kind": "note",
           "text": "12:00 四支 Sonnet 分身全收工（各 1～4 分鐘、≤28 tool 次）：quota_report 補 queued_command 洞 8c2887f（其他六支不受影響）；tw-backtest-project 48 test",
+          "project": "會計部",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8c2887fc43440430ef2b9c929fecb4aae1eee91a",
           "evidence_label": "commit 8c2887f",
           "verified": true,
@@ -1653,6 +2330,8 @@
         {
           "kind": "commit",
           "text": "proof：AI 每日工作證明數據表 demo（proof.html＋proof.json 14 天真資料）",
+          "project": "工作證明頁",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/8fa3e9e0405f648fae31ae6b376f448d72e9bb99",
           "evidence_label": "commit 8fa3e9e",
           "verified": true,
@@ -1661,6 +2340,8 @@
         {
           "kind": "note",
           "text": "009_quota_audit/proof_table.py 6a6bdad（commit／票／分身／回覆／額度／分數／亮點，每日一列 JSON）；daniel-demos 8fa3e9e（proof.html＋proof.json）。",
+          "project": "會計部",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6a6bdad4ce3f97de61b01a1b7f72428ed6637b6f",
           "evidence_label": "commit 6a6bdad",
           "verified": true,
@@ -1669,6 +2350,8 @@
         {
           "kind": "commit",
           "text": "harvest_scores：task-notification／SYSTEM NOTIFICATION 走 queu…",
+          "project": "工具",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/14e9992c4fffee39f5efad4b16892adabfee114e",
           "evidence_label": "commit 14e9992",
           "verified": true,
@@ -1677,6 +2360,8 @@
         {
           "kind": "commit",
           "text": "proof v2：主角改為每日完成事項＋可點證據（未驗證項標示）、數字降為量尺列、額度產出比",
+          "project": "工作證明頁",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/115fe60d3836cf06b8ed6f8dc78e0d5d140fa06c",
           "evidence_label": "commit 115fe60",
           "verified": true,
@@ -1685,21 +2370,76 @@
         {
           "kind": "commit",
           "text": "proof：分數移出標題行，另立「回答被打分」一行（他 09-18 14:24 糾正：分數評回答不評產出）",
+          "project": "工作證明頁",
+          "by": "未對",
           "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/d89cd513a5f4876bdbaed8c6257bd04580a3fe73",
           "evidence_label": "commit d89cd51",
           "verified": true,
           "time": "14:25"
         },
         {
+          "kind": "commit",
+          "text": "proof_table：「回你幾則」只算他本人兩個頻道＋tool_use id 去重（09-18 14:26 他打 2…",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a20445e9853b57aa756daff59e7893ed3b084cbe",
+          "evidence_label": "commit a20445e",
+          "verified": true,
+          "time": "14:28"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json：回覆數改只算丹尼爾頻道",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/11d84acc411618046198a0c3b0af6ae4aa53adbc",
+          "evidence_label": "commit 11d84ac",
+          "verified": true,
+          "time": "14:28"
+        },
+        {
+          "kind": "commit",
+          "text": "proof v3 範本 A（卡片）／B（表格）：三段分開、N 由行數算、其他紀錄折疊（09-18 他要範本＋要能挑版本）",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/ec9310f85fbb5a7d207ecf9228fd153d11589ed8",
+          "evidence_label": "commit ec9310f",
+          "verified": true,
+          "time": "15:10"
+        },
+        {
+          "kind": "commit",
+          "text": "proof v3 範本 A1（emoji 圖示）／A2（細線圖示）：他選卡片式＋要圖示（15:16）",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/9380772a5f2cd022e3914e529f5f21c3d39c0228",
+          "evidence_label": "commit 9380772",
+          "verified": true,
+          "time": "15:16"
+        },
+        {
+          "kind": "commit",
+          "text": "proof v3 視覺化 demo V1 總覽在上／V2 每天帶迷你圖（09-18 15:21 他要視覺化資訊不是 e…",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/f39e2a3cd496df3456385e9665bbce0f0abafec1",
+          "evidence_label": "commit f39e2a3",
+          "verified": true,
+          "time": "15:27"
+        },
+        {
           "kind": "note",
           "text": "會計部流程優化分身收工（16 分鐘）：audit.py v3 message.id 去重（×1.89 對上）、quota_report.py 5.7 秒 69 行（實跑驗過）、加 5h／7d 窗口＋撞牆校準點、SKILL.md 418→16",
+          "project": "會計部",
+          "by": "未對",
           "evidence_url": null,
           "evidence_label": "日誌記載",
           "verified": false,
           "time": null
         }
       ],
-      "notes": "另有 4 筆收工紀錄 commit 未列"
+      "items_count": 20,
+      "notes": "另有 5 筆收工紀錄 commit 未列"
     }
   ]
 }
