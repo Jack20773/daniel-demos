@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>AI 每天做了什麼（視覺化 V2）</title>
+<style>
+  :root{color-scheme:light;--bg:#fcfcfb;--card:#fff;--ink:#0b0b0b;--ink-2:#52514e;--ink-3:#898781;--line:#e6e5e1;--accent:#2a78d6;--accent-bg:#e9f1fb;--warn:#a05a00;--warn-bg:#fff3e0;--muted-bg:#f3f2ee;
+    --k-commit:#2a78d6;--k-ticket:#eb6834;--k-note:#1baf7a;--tok-main:#2a78d6;--tok-sub:#eb6834;--score-ok:#2a78d6;--score-low:#d03b3b;--grid:#e1e0d9;--zero:#c3c2b7}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
+    --k-commit:#3987e5;--k-ticket:#d95926;--k-note:#199e70;--tok-main:#3987e5;--tok-sub:#d95926;--score-ok:#7fb0ef;--score-low:#e66767;--grid:#2c2c2a;--zero:#383835}}
+  :root[data-theme="dark"]{color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
+    --k-commit:#3987e5;--k-ticket:#d95926;--k-note:#199e70;--tok-main:#3987e5;--tok-sub:#d95926;--score-ok:#7fb0ef;--score-low:#e66767;--grid:#2c2c2a;--zero:#383835}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Noto Sans TC","PingFang TC",system-ui,sans-serif}
+  main{max-width:720px;margin:0 auto;padding:20px 16px 60px}
+  h1{font-size:22px;margin:0 0 6px}
+  .banner{background:var(--warn-bg);color:var(--warn);border-radius:8px;padding:8px 12px;font-size:14px;margin:12px 0}
+  .intro{color:var(--ink-2);font-size:15px;margin:0 0 18px}
+  .intro p{margin:4px 0}
+  h2{font-size:17px;margin:26px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+  .chartbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 12px 6px;margin:8px 0 16px}
+  svg{display:block;overflow:visible}
+  .legend{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;color:var(--ink-2);margin:0 0 8px}
+  .legend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+  .day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:0;margin:8px 0;overflow:hidden}
+  .day > summary{list-style:none;cursor:pointer;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+  .day > summary::-webkit-details-marker{display:none}
+  .day[open] > summary{border-bottom:1px solid var(--line)}
+  .s-left{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;min-width:0}
+  .date{font-weight:700;font-size:15px;white-space:nowrap}
+  .rule{font-size:11px;color:var(--ink-3);white-space:nowrap}
+  .s-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .n{font-size:16px;font-weight:800;color:var(--accent);white-space:nowrap}
+  .n small{font-size:11px;font-weight:500;color:var(--ink-2);margin-left:2px}
+  .mini-items{width:64px;height:14px}
+  .mini-tok{width:44px;height:14px}
+  .mini-score{width:14px;height:14px}
+  .daybody{padding:0 12px 12px}
+  ul.items{list-style:none;margin:6px 0 0;padding:0}
+  ul.items li{padding:8px 0 8px 10px;border-top:1px dashed var(--line);border-left:4px solid var(--k-commit);display:grid;grid-template-columns:44px 1fr;gap:6px 10px}
+  ul.items li.k-ticket{border-left-color:var(--k-ticket)}
+  ul.items li.k-note{border-left-color:var(--k-note)}
+  .empty{color:var(--ink-3);font-size:14px;padding:8px 0}
+  .t{color:var(--ink-3);font-variant-numeric:tabular-nums;font-size:14px;padding-top:2px}
+  .kind{display:inline-block;font-size:12px;padding:1px 7px;border-radius:999px;background:var(--accent-bg);color:var(--accent);margin-right:6px}
+  .ev{display:block;font-size:14px;margin-top:3px;word-break:break-word}
+  .ev a{color:var(--accent);text-decoration:none}
+  .ev a:hover{text-decoration:underline}
+  .caption{font-size:14px;color:var(--ink-2);background:var(--muted-bg);border-radius:8px;padding:10px 12px;margin:0 0 10px}
+  .caption p{margin:4px 0}
+  .spark-svg{width:100%;height:auto;display:block}
+</style>
+</head>
+<body>
+<main>
+  <h1>AI 每天做了什麼（視覺化 V2：每天一列全帶圖）</h1>
+  <div class="banner">示意版：每天卡片標題上就有件數／額度／分數三個迷你圖，不用展開也能一眼掃過 14 天。「件」的算法＝有驗證＋有證據連結的項目（demo 口徑，正式版依規則 v3）。你選定這版才做成每天自動更新的正式版。</div>
+  <div class="intro">
+    <p><b>這頁證明什麼：</b>AI 每天真的做完了哪些事，每一件都附證據，你不用信它，點開看。</p>
+    <p><b>「一件」怎麼算：</b>只算有驗證＋有證據連結的（commit／票／日誌），AI 自己寫「做完了」不算。</p>
+    <p><b>怎麼自己驗：</b>展開任一天，數清單行數＝卡片上的數字。</p>
+  </div>
+
+  <h2>一、每天（標題列自帶迷你圖：件數／額度／分數）</h2>
+  <div class="legend" id="kind-legend"></div>
+  <div id="days"></div>
+
+  <h2>二、花了多少額度（14 天 sparkline）</h2>
+  <div class="caption"><p>每天一根迷你堆疊條：主帳號＋分身。跟 claude.ai 看到的額度對不起來，只能看每天的高低。</p></div>
+  <div class="legend" id="tok-legend"></div>
+  <div class="chartbox"><div id="tok-chart"></div></div>
+
+  <h2>三、你打的分數（14 天 sparkline）</h2>
+  <div class="caption"><p>每天平均分（1–5），低分（≤2）用警示色；沒打分的日子不畫點。</p></div>
+  <div class="legend" id="score-legend"></div>
+  <div class="chartbox"><div id="score-chart"></div></div>
+</main>
+<script>
+const NS="http://www.w3.org/2000/svg";
+function svgEl(tag,attrs){const el=document.createElementNS(NS,tag);for(const k in attrs)el.setAttribute(k,attrs[k]);return el;}
+function fmtDate(s){return s.slice(5).replace('-','/');}
+function countedItems(day){return (day.items||[]).filter(i=>i.verified&&i.evidence_url);}
+
+fetch('proof.json').then(r=>r.json()).then(data=>{
+  const days=[...data.days].sort((a,b)=>a.date<b.date?-1:1);
+  const counts=days.map(d=>countedItems(d).length);
+  const maxCount=Math.max(...counts,1);
+  const totals=days.map(d=>(d.tokens_main_wan||0)+(d.tokens_sub_wan||0));
+  const maxTot=Math.max(...totals,1);
+  const todayDate=days[days.length-1].date;
+  const rev=[...days].reverse();
+
+  // ---- kind legend ----
+  document.getElementById('kind-legend').innerHTML=
+    `<span><span class="sw" style="background:var(--k-commit)"></span>commit</span>`+
+    `<span><span class="sw" style="background:var(--k-ticket)"></span>票</span>`+
+    `<span><span class="sw" style="background:var(--k-note)"></span>日誌</span>`;
+  const kindLabel={commit:'commit',ticket:'票',note:'日誌'};
+
+  // ---- 一、每天卡片（標題列帶迷你圖） ----
+  const daysDiv=document.getElementById('days');
+  rev.forEach((d)=>{
+    const c=countedItems(d).length;
+    const main=d.tokens_main_wan||0, sub=d.tokens_sub_wan||0, tot=main+sub;
+    const isToday=d.date===todayDate;
+
+    const det=document.createElement('details');det.className='day';if(isToday)det.open=true;
+    const sum=document.createElement('summary');
+
+    const sleft=document.createElement('div');sleft.className='s-left';
+    sleft.innerHTML=`<span class="date">${d.date}${isToday?' 今天':''}</span><span class="rule">規則 v3</span>`;
+
+    const sright=document.createElement('div');sright.className='s-right';
+    const nEl=document.createElement('span');nEl.className='n';nEl.innerHTML=`<span class="ncount"></span><small>件</small>`;
+    sright.appendChild(nEl);
+
+    // mini items bar
+    const miW=64, miH=14;
+    const svgI=svgEl('svg',{class:'mini-items',viewBox:`0 0 ${miW} ${miH}`});
+    const iw=c===0?2:Math.max(3,c/maxCount*(miW-2));
+    const barI=svgEl('rect',{class:'ov-bar',x:0,y:2,width:iw,height:10,rx:3,fill:c===0?'var(--zero)':'var(--accent)'});
+    const tI=svgEl('title',{});tI.textContent=`件數 ${c}（14 天最多 ${maxCount}）`;barI.appendChild(tI);
+    svgI.appendChild(barI);
+    sright.appendChild(svgI);
+
+    // mini token bar (stacked)
+    const mtW=44, mtH=14;
+    const svgT=svgEl('svg',{class:'mini-tok',viewBox:`0 0 ${mtW} ${mtH}`});
+    if(tot===0){
+      svgT.appendChild(svgEl('rect',{x:0,y:2,width:2,height:10,rx:2,fill:'var(--zero)'}));
+    }else{
+      const mw=main/maxTot*(mtW-2), sw=sub/maxTot*(mtW-2);
+      const rM=svgEl('rect',{x:0,y:2,width:Math.max(mw-0.5,0),height:10,rx:2,fill:'var(--tok-main)'});
+      const tM=svgEl('title',{});tM.textContent=`主帳號 ${main.toFixed(1)} 萬`;rM.appendChild(tM);svgT.appendChild(rM);
+      const rS=svgEl('rect',{x:mw+1,y:2,width:Math.max(sw-0.5,0),height:10,rx:2,fill:'var(--tok-sub)'});
+      const tS=svgEl('title',{});tS.textContent=`分身 ${sub.toFixed(1)} 萬`;rS.appendChild(tS);svgT.appendChild(rS);
+    }
+    sright.appendChild(svgT);
+
+    // mini score dot
+    const svgS=svgEl('svg',{class:'mini-score',viewBox:'0 0 14 14'});
+    if(d.score_avg!=null){
+      const low=d.score_avg<=2;
+      const dot=svgEl('circle',{cx:7,cy:7,r:5,fill:low?'var(--score-low)':'var(--score-ok)'});
+      const tS2=svgEl('title',{});tS2.textContent=`分數 ${d.score_avg}`;dot.appendChild(tS2);
+      svgS.appendChild(dot);
+    }else{
+      svgS.appendChild(svgEl('circle',{cx:7,cy:7,r:3,fill:'var(--zero)'}));
+    }
+    sright.appendChild(svgS);
+
+    sum.appendChild(sleft);sum.appendChild(sright);
+    det.appendChild(sum);
+
+    const body=document.createElement('div');body.className='daybody';
+    const ul=document.createElement('ul');ul.className='items';
+    const items=countedItems(d);
+    if(items.length===0){
+      const e=document.createElement('div');e.className='empty';e.textContent='這天沒有算進來的項目。';
+      body.appendChild(e);
+    }else{
+      for(const it of items){
+        const li=document.createElement('li');li.className='k-'+it.kind;
+        const t=document.createElement('span');t.className='t';t.textContent=it.time||'';
+        const cont=document.createElement('div');
+        const kd=document.createElement('span');kd.className='kind';kd.textContent=kindLabel[it.kind]||it.kind;
+        cont.appendChild(kd);
+        cont.appendChild(document.createTextNode(it.text||''));
+        const ev=document.createElement('span');ev.className='ev';
+        if(it.evidence_url){const a=document.createElement('a');a.href=it.evidence_url;a.textContent='證據：'+(it.evidence_label||'連結');ev.appendChild(a);}
+        else{ev.textContent=it.evidence_label||'';}
+        cont.appendChild(ev);
+        li.appendChild(t);li.appendChild(cont);
+        ul.appendChild(li);
+      }
+      body.appendChild(ul);
+    }
+    det.appendChild(body);
+    daysDiv.appendChild(det);
+    nEl.querySelector('.ncount').textContent=ul.children.length;
+  });
+
+  // ---- 二、額度 sparkline ----
+  document.getElementById('tok-legend').innerHTML=
+    `<span><span class="sw" style="background:var(--tok-main)"></span>主帳號</span>`+
+    `<span><span class="sw" style="background:var(--tok-sub)"></span>分身</span>`;
+  const W2=340, H2=60, gap=2;
+  const n=days.length;
+  const colW=(W2-gap*(n-1))/n;
+  const svg2=svgEl('svg',{class:'spark-svg',viewBox:`0 0 ${W2} ${H2}`});
+  days.forEach((d,i)=>{
+    const main=d.tokens_main_wan||0, sub=d.tokens_sub_wan||0, tot=main+sub;
+    const x=i*(colW+gap);
+    const barMaxH=H2-16;
+    if(tot===0){
+      svg2.appendChild(svgEl('rect',{x:x,y:H2-14-2,width:colW,height:2,fill:'var(--zero)'}));
+    }else{
+      const mh=main/maxTot*barMaxH, sh=sub/maxTot*barMaxH;
+      const yBase=H2-14;
+      const rSub=svgEl('rect',{x:x,y:yBase-sh,width:colW,height:sh,fill:'var(--tok-sub)'});
+      const tSub=svgEl('title',{});tSub.textContent=`${fmtDate(d.date)}：分身 ${sub.toFixed(1)} 萬`;rSub.appendChild(tSub);
+      svg2.appendChild(rSub);
+      const rMain=svgEl('rect',{x:x,y:yBase-sh-mh,width:colW,height:mh,fill:'var(--tok-main)'});
+      const tMain=svgEl('title',{});tMain.textContent=`${fmtDate(d.date)}：主帳號 ${main.toFixed(1)} 萬`;rMain.appendChild(tMain);
+      svg2.appendChild(rMain);
+    }
+    if(i%3===0||i===n-1){
+      const xl=svgEl('text',{x:x+colW/2,y:H2-3,'font-size':8,fill:'var(--ink-3)','text-anchor':'middle'});xl.textContent=fmtDate(d.date);
+      svg2.appendChild(xl);
+    }
+  });
+  document.getElementById('tok-chart').appendChild(svg2);
+
+  // ---- 三、分數 sparkline ----
+  document.getElementById('score-legend').innerHTML=
+    `<span><span class="sw" style="background:var(--score-ok)"></span>一般</span>`+
+    `<span><span class="sw" style="background:var(--score-low)"></span>低分（≤2）</span>`;
+  const W3=340, H3=70, padL=14, padR=6, padT=6, padB=16;
+  const plotW=W3-padL-padR, plotH=H3-padT-padB;
+  const svg3=svgEl('svg',{class:'spark-svg',viewBox:`0 0 ${W3} ${H3}`});
+  function yOf(s){return padT+plotH-(s-1)/4*plotH;}
+  [1,5].forEach(v=>{
+    const y=yOf(v);
+    svg3.appendChild(svgEl('line',{x1:padL,y1:y,x2:W3-padR,y2:y,stroke:'var(--grid)','stroke-width':1}));
+    const lb=svgEl('text',{x:1,y:y+3,'font-size':8,fill:'var(--ink-3)'});lb.textContent=v;
+    svg3.appendChild(lb);
+  });
+  const xOf=(i)=>padL+(n===1?plotW/2:i/(n-1)*plotW);
+  let pathD='';
+  days.forEach((d,i)=>{
+    if(d.score_avg==null)return;
+    const x=xOf(i), y=yOf(d.score_avg);
+    pathD+=(pathD===''?'M':'L')+x+' '+y+' ';
+  });
+  if(pathD){
+    svg3.appendChild(svgEl('path',{d:pathD.trim(),fill:'none',stroke:'var(--ink-3)','stroke-width':1.5,opacity:0.6}));
+  }
+  days.forEach((d,i)=>{
+    if(d.score_avg==null)return;
+    const x=xOf(i), y=yOf(d.score_avg);
+    const low=d.score_avg<=2;
+    const dot=svgEl('circle',{cx:x,cy:y,r:isNaN(x)?0:4,fill:low?'var(--score-low)':'var(--score-ok)'});
+    const t=svgEl('title',{});t.textContent=`${fmtDate(d.date)}：${d.score_avg}`;dot.appendChild(t);
+    svg3.appendChild(dot);
+    if(i%3===0||i===n-1){
+      const xl=svgEl('text',{x:x,y:H3-2,'font-size':8,fill:'var(--ink-3)','text-anchor':'middle'});xl.textContent=fmtDate(d.date);
+      svg3.appendChild(xl);
+    }
+  });
+  document.getElementById('score-chart').appendChild(svg3);
+});
+</script>
+</body>
+</html>
