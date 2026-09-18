@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>AI 儀表板（戰情室／今天 AI 使用分析）</title>
+<style>
+  :root{
+    --font-sans:"Segoe UI","Microsoft JhengHei","PingFang TC",sans-serif;
+    --bg:#f4f9f8; --surface:#ffffff;
+    --text:#24333b; --text-dim:#6b7f88;
+    --primary:#3f9184; --primary-text:#ffffff; --primary-soft:#d9ece8;
+    --border:#d5e4e1;
+    --radius-sm:10px;
+    --shadow:0 2px 12px rgba(63,145,132,.10);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#12191b; --surface:#1b2426;
+      --text:#e7f0ee; --text-dim:#93a8a4;
+      --primary:#4aa89a; --primary-text:#0b1413; --primary-soft:#20302d;
+      --border:#2b3b3a;
+      --shadow:0 2px 12px rgba(0,0,0,.35);
+    }
+  }
+  *{ box-sizing:border-box; }
+  html,body{ height:100%; margin:0; }
+  body{
+    font-family:var(--font-sans); background:var(--bg); color:var(--text);
+    display:flex; flex-direction:column; height:100vh; height:100dvh;
+    -webkit-font-smoothing:antialiased;
+  }
+  .tab-bar{
+    display:flex; gap:5px; position:sticky; top:0; z-index:40;
+    background:var(--bg); padding:8px 8px 6px; flex:0 0 auto; box-shadow:var(--shadow);
+  }
+  .tab-btn{
+    flex:1 1 0; min-width:0; text-align:center; padding:9px 6px; font-size:0.92rem;
+    border:1px solid var(--border); border-radius:var(--radius-sm); background:var(--surface);
+    color:var(--text-dim); cursor:pointer; font-family:var(--font-sans); font-weight:600;
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-height:44px;
+  }
+  .tab-btn.on{ background:var(--primary); color:var(--primary-text); border-color:var(--primary); font-weight:700; }
+  .frame-wrap{ flex:1 1 auto; min-height:0; display:flex; }
+  .hub-frame{ flex:1 1 auto; width:100%; height:100%; border:0; display:block; background:var(--surface); }
+  .hub-frame[hidden]{ display:none; }
+</style>
+</head>
+<body>
+<div class="tab-bar" role="tablist" aria-label="頁籤">
+  <button type="button" class="tab-btn" id="tabBtnWarroom" data-tab="warroom" role="tab">戰情室</button>
+  <button type="button" class="tab-btn" id="tabBtnProof" data-tab="proof" role="tab">今天 AI 使用分析</button>
+</div>
+<div class="frame-wrap">
+  <iframe id="frameWarroom" class="hub-frame" title="戰情室"></iframe>
+  <iframe id="frameProof" class="hub-frame" title="今天 AI 使用分析" hidden></iframe>
+</div>
+<script>
+(function(){
+  try{
+    var TABS = {
+      warroom: { btn: document.getElementById('tabBtnWarroom'), frame: document.getElementById('frameWarroom'), url: 'https://daniel-reports.vercel.app/warroom.html' },
+      proof:   { btn: document.getElementById('tabBtnProof'),   frame: document.getElementById('frameProof'),   url: 'proof_v3_viz5b.html' }
+    };
+    var loaded = {};
+
+    function activate(key){
+      if(!TABS[key]) key = 'warroom';
+      Object.keys(TABS).forEach(function(k){
+        var t = TABS[k];
+        var on = (k === key);
+        t.btn.classList.toggle('on', on);
+        t.btn.setAttribute('aria-selected', on ? 'true' : 'false');
+        t.frame.hidden = !on;
+        if(on && !loaded[k]){
+          t.frame.src = t.url;
+          loaded[k] = true;
+        }
+      });
+      try{
+        if(location.hash !== '#' + key) location.hash = key;
+      }catch(e){}
+    }
+
+    Object.keys(TABS).forEach(function(k){
+      TABS[k].btn.addEventListener('click', function(){ activate(k); });
+    });
+
+    var initial = 'warroom';
+    try{
+      var h = (location.hash || '').replace('#', '');
+      if(h && TABS[h]) initial = h;
+    }catch(e){}
+    activate(initial);
+
+    window.addEventListener('hashchange', function(){
+      try{
+        var h = (location.hash || '').replace('#', '');
+        if(h && TABS[h]) activate(h);
+      }catch(e){}
+    });
+  }catch(e){
+    console.error('hub_tabs_a init failed', e);
+  }
+})();
+</script>
+</body>
+</html>
