@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>hub_b：AI 每天做了什麼（按你要做的事）</title>
+<link rel="stylesheet" href="./hub_shared.css">
+</head>
+<body>
+<nav class="tabbar" role="tablist" aria-label="頁籤">
+  <button data-tab="today" role="tab"><span class="ic"></span>今天</button>
+  <button data-tab="decide" role="tab"><span class="ic"></span>要你決定</button>
+  <button data-tab="history" role="tab"><span class="ic"></span>歷史與趨勢</button>
+</nav>
+<main>
+  <h1>AI 每天做了什麼</h1>
+  <div class="topbar" id="topbar"><span class="pagename">hub_b · 按你要做的事分頁</span></div>
+
+  <!-- ========== 頁籤 1：今天 ========== -->
+  <section class="tabpanel" id="panel-today">
+    <div class="cards" id="cards"></div>
+    <div class="cards" style="grid-template-columns:1fr;margin-top:-4px" id="eff-card"></div>
+
+    <h3 id="today-proj-title">今天按專案</h3>
+    <div class="legend" id="proj-legend"></div>
+    <div class="chartbox"><div id="today-bar"></div></div>
+
+    <h2>今天的分數</h2>
+    <div class="caption"><p class="lead">低分的點有外框、點得開，會跳回你當時在 Discord 打的那則訊息<span class="demo-tag">示意</span>。</p></div>
+    <div class="legend" id="score-legend"></div>
+    <div class="chartbox"><div class="scoregrid" id="score-grid-today"></div></div>
+
+    <h2>今天等你回的事<span class="demo-tag">示意</span></h2>
+    <div class="waitlist" id="waiting-today"></div>
+
+    <details class="toggle bigtoggle" style="margin-top:14px">
+      <summary>看今天每一件（含證據連結、交辦／自主標）</summary>
+      <div id="days-today"></div>
+    </details>
+  </section>
+
+  <!-- ========== 頁籤 2：要你決定 ========== -->
+  <section class="tabpanel" id="panel-decide">
+    <h2>戰情室：他按同意的票＋他留的話<span class="demo-tag">示意</span></h2>
+    <div class="caption"><p class="lead">公開 demo 不放真票內容，標題已改寫成一般化、去掉個資，實際資料正本在 <code>000_Agent/007_dashboard/plans.json</code>。</p></div>
+    <div class="tickets" id="warroom-all"></div>
+
+    <h2>卡住的事<span class="demo-tag">示意</span></h2>
+    <div class="waitlist" id="waiting-all"></div>
+  </section>
+
+  <!-- ========== 頁籤 3：歷史與趨勢 ========== -->
+  <section class="tabpanel" id="panel-history">
+    <h2>各專案近 14 天做了多少件</h2>
+    <div class="caption"><p class="lead">列＝專案，欄＝日期，格內數字＝那天那個專案算進來的件數，有件數才上色。</p></div>
+    <div class="chartbox"><div class="gridwrap"><table class="gridtable" id="grid-table"></table></div></div>
+
+    <details class="toggle bigtoggle">
+      <summary>看每天清單（14 天，每天一份）</summary>
+      <div id="days-all"></div>
+    </details>
+
+    <h2>花了多少額度（帳號 × 模型熱圖）</h2>
+    <div class="caption">
+      <p class="lead">紅＝可能沒必要花這麼多錢，綠＝花得剛好（分身用便宜模型、主帳號用貴模型）。深淺代表用量，近 14 天加總（萬 token）。</p>
+    </div>
+    <div class="chartbox"><table class="heat" id="heat-table"></table></div>
+
+    <h2>14 天分數點</h2>
+    <div class="legend" id="score-legend-2"></div>
+    <div class="chartbox"><div class="scoregrid" id="score-grid-all"></div></div>
+  </section>
+
+  <div class="footnote">
+    <p><b>這頁證明什麼：</b>今天做了什麼、有沒有卡住等你決定的事、歷史怎麼變化——同一批資料，換成照「你要做的事」切頁籤。</p>
+    <p><b>「一件」怎麼算：</b>只算有驗證＋有證據連結的（commit／票／日誌對得上的），AI 自己寫「做完了」不算。</p>
+    <p><b>怎麼自己驗：</b>展開清單再點「看每一件」，數清單行數＝標題上的數字；連結點得開才算數。</p>
+    <p>每一件下面那句白話說明<span class="demo-tag">示意</span>：只有「今天（09-18）」是手寫示意文字，其餘天數是程式套版文字。「交辦／自主」欄第 1 階段全部「未對」，是真實現況、不是漏做。戰情室票、卡住的事清單、低分連回 Discord（除今天 3 筆真連結外）全部是示意資料，公開 repo 不放真內容。「件」的口徑依規則 v3。</p>
+  </div>
+</main>
+<script src="./hub_shared.js"></script>
+<script>
+console.log('viewport innerWidth =', window.innerWidth);
+loadProofAndRun(({data,days,today,projMap,projRgbMap,projTop})=>{
+  renderTopbar('topbar',data);
+  renderCards('cards',today);
+  renderEfficiencyCard('eff-card',days);
+  renderTodayBar('today-bar','proj-legend','today-proj-title',today,projMap,projTop);
+  renderScoreLegend('score-legend');
+  renderScoreLegend('score-legend-2');
+  renderScoreGrid('score-grid-today',[today],today.date);
+  renderScoreGrid('score-grid-all',days,today.date);
+  renderWaiting('waiting-today',{todayOnly:true});
+  renderWaiting('waiting-all',{todayOnly:false});
+  renderDaysList('days-today',[today],projMap,TODAY_DATE,TODAY_PLAIN_MAP);
+  renderDaysList('days-all',days,projMap,TODAY_DATE,TODAY_PLAIN_MAP);
+  renderGridTable('grid-table',days,projMap,projRgbMap);
+  renderHeatTable('heat-table',days);
+  renderWarroom('warroom-all',{onlyAgreed:false});
+});
+setupTabs('.tabbar');
+</script>
+</body>
+</html>
