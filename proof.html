@@ -3,541 +3,285 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
 <title>AI 每天做了什麼</title>
 <style>
   :root{
-    --bg:#f5f5f7;
+    color-scheme: light;
+    --bg:#fcfcfb;
     --card:#ffffff;
-    --text:#1c1c1e;
-    --sub:#6e6e73;
-    --line:#e5e5ea;
-    --accent:#0071e3;
-    --accent-bg:#eaf3ff;
-    --good:#1f8a3b;
-    --bad:#c62828;
-    --tip-bg:#1c1c1e;
-    --tip-text:#ffffff;
-    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+    --ink:#0b0b0b;
+    --ink-2:#52514e;
+    --ink-3:#8a8985;
+    --line:#e6e5e1;
+    --accent:#2a78d6;
+    --accent-bg:#e9f1fb;
+    --alert:#d03b3b;
+    --alert-bg:#fbeaea;
+    --pill-off-bg:#f0efeb;
   }
   @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#0e0e10;
-      --card:#1c1c1e;
-      --text:#f2f2f7;
-      --sub:#9a9a9e;
-      --line:#3a3a3c;
-      --accent:#4da3ff;
-      --accent-bg:#132339;
-      --good:#4cd964;
-      --bad:#ff6b6b;
-      --tip-bg:#f2f2f7;
-      --tip-text:#1c1c1e;
-      --shadow: 0 1px 3px rgba(0,0,0,0.4);
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --bg:#1a1a19;
+      --card:#232322;
+      --ink:#ffffff;
+      --ink-2:#c3c2b7;
+      --ink-3:#8d8c85;
+      --line:#3a3a38;
+      --accent:#3987e5;
+      --accent-bg:#1c2b3f;
+      --alert:#e66767;
+      --alert-bg:#3a2222;
+      --pill-off-bg:#2d2d2b;
     }
   }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --bg:#1a1a19; --card:#232322; --ink:#ffffff; --ink-2:#c3c2b7; --ink-3:#8d8c85;
+    --line:#3a3a38; --accent:#3987e5; --accent-bg:#1c2b3f; --alert:#e66767; --alert-bg:#3a2222;
+    --pill-off-bg:#2d2d2b;
+  }
+
   *{ box-sizing:border-box; }
-  html,body{
-    margin:0; padding:0;
-    background:var(--bg);
-    color:var(--text);
+  html,body{ margin:0; padding:0; background:var(--bg); color:var(--ink); }
+  body{
     font-family:-apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    font-size:15.5px; line-height:1.6;
     -webkit-text-size-adjust:100%;
     overflow-x:hidden;
-    max-width:100vw;
   }
-  .wrap{
-    max-width:960px;
-    margin:0 auto;
-    padding:16px 16px 48px;
-  }
-  header.top{
-    margin-bottom:14px;
-  }
-  .updated{
-    font-size:15px;
-    font-weight:600;
-    margin:0 0 4px;
-  }
-  .updated-sub{
-    font-size:13px;
-    color:var(--sub);
-    margin:0 0 16px;
-    line-height:1.5;
-  }
-  /* 7天合計卡 */
-  .compare{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    margin-bottom:20px;
-  }
-  .compare-card{
+  .wrap{ max-width:680px; margin:0 auto; padding:24px 16px 56px; }
+
+  /* ---- 頂部 ---- */
+  h1{ font-size:22px; font-weight:700; margin:0 0 8px; letter-spacing:.01em; }
+  .lede{ margin:0 0 6px; color:var(--ink-2); }
+  .updated{ margin:0 0 22px; font-size:13px; color:var(--ink-3); }
+
+  /* ---- 每天一段 ---- */
+  details.day{
     background:var(--card);
+    border:1px solid var(--line);
     border-radius:12px;
-    padding:12px 14px;
-    box-shadow:var(--shadow);
-  }
-  .compare-title{
-    font-size:12px;
-    color:var(--sub);
-    margin:0 0 8px;
-    font-weight:600;
-  }
-  .compare-row{
-    display:flex;
-    justify-content:space-between;
-    font-size:13px;
-    padding:3px 0;
-  }
-  .compare-row .label{ color:var(--sub); }
-  .compare-row .val{ font-weight:600; font-variant-numeric: tabular-nums; }
-  .trend{
-    font-size:12px;
-    margin-left:6px;
-    font-weight:700;
-  }
-  .trend.up{ color:var(--good); }
-  .trend.down{ color:var(--bad); }
-  .trend.flat{ color:var(--sub); }
-  .compare-note{
-    font-size:11px;
-    color:var(--sub);
-    margin-top:6px;
-  }
-
-  /* 欄名 + 說明按鈕 */
-  .qmark{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:15px; height:15px;
-    border-radius:50%;
-    border:1px solid var(--sub);
-    color:var(--sub);
-    font-size:10px;
-    line-height:1;
-    background:transparent;
-    cursor:pointer;
-    margin-left:4px;
-    padding:0;
-    vertical-align:middle;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .tip-pop{
-    position:fixed;
-    max-width:280px;
-    background:var(--tip-bg);
-    color:var(--tip-text);
-    font-size:13px;
-    line-height:1.5;
-    padding:10px 12px;
-    border-radius:10px;
-    box-shadow:0 4px 14px rgba(0,0,0,0.3);
-    z-index:999;
-    display:none;
-  }
-  .tip-pop.show{ display:block; }
-
-  /* 桌機表格 */
-  table.data{
-    width:100%;
-    border-collapse:collapse;
-    background:var(--card);
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
-    font-size:13px;
-    table-layout:fixed;
-  }
-  table.data th, table.data td{
-    padding:10px 8px;
-    text-align:left;
-    border-bottom:1px solid var(--line);
-    vertical-align:top;
-    word-break:break-word;
-    overflow-wrap:break-word;
-  }
-  table.data th{
-    font-size:12px;
-    color:var(--sub);
-    font-weight:600;
-  }
-  table.data td.num{ font-variant-numeric: tabular-nums; }
-  table.data tr:last-child td{ border-bottom:none; }
-
-  /* 手機卡片 */
-  .cards{ display:none; }
-  .day-card{
-    background:var(--card);
-    border-radius:14px;
-    box-shadow:var(--shadow);
-    padding:14px 16px;
-    margin-bottom:12px;
-  }
-  .day-card .date{
-    font-size:16px;
-    font-weight:700;
     margin:0 0 10px;
+    overflow:hidden;
   }
-  .field-row{
+  details.day summary{
+    list-style:none;
+    cursor:pointer;
+    padding:14px 14px 14px 16px;
+    display:flex; align-items:flex-start; gap:10px;
+    font-size:17px; font-weight:600; line-height:1.45;
+    -webkit-tap-highlight-color:transparent;
+  }
+  details.day summary::-webkit-details-marker{ display:none; }
+  details.day summary:focus-visible{ outline:2px solid var(--accent); outline-offset:-2px; border-radius:12px; }
+  .sum-body{ flex:1; min-width:0; }
+  .sum-date{ display:block; }
+  .sum-stats{ display:flex; flex-wrap:wrap; column-gap:.4em; row-gap:2px; font-weight:500; font-size:15px; color:var(--ink-2); margin-top:2px; }
+  .sum-stats .chunk{ white-space:nowrap; }
+  .sum-stats .chunk + .chunk::before{ content:'·'; color:var(--ink-3); margin-right:.4em; }
+  .sum-stats .chunk.burn{ flex-basis:100%; }
+  .sum-stats .chunk.burn::before{ content:none; }
+  @media (min-width:600px){
+    .sum-stats .chunk.burn{ flex-basis:auto; }
+    .sum-stats .chunk.burn::before{ content:'·'; }
+  }
+  .sum-stats .n{ color:var(--ink); font-weight:600; }
+  .sum-stats .alert{ color:var(--alert); font-weight:700; }
+  .chev{
+    flex:none; width:20px; height:20px; margin-top:4px;
+    color:var(--ink-3); transition:transform .18s ease;
+  }
+  details[open] .chev{ transform:rotate(180deg); }
+
+  .day-body{ padding:0 16px 14px; border-top:1px solid var(--line); }
+
+  /* ---- 事項清單 ---- */
+  ul.items{ list-style:none; margin:0; padding:6px 0 0; }
+  li.item{
     display:grid;
-    grid-template-columns: 1fr minmax(0, 60%);
+    grid-template-columns:22px 1fr auto;
+    column-gap:10px;
+    padding:10px 0;
+    border-bottom:1px solid var(--line);
     align-items:start;
-    padding:6px 0;
-    border-bottom:1px dashed var(--line);
-    gap:10px;
   }
-  .field-row:last-child{ border-bottom:none; }
-  .field-label{
-    font-size:13px;
-    color:var(--sub);
-    min-width:0;
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
+  li.item:last-child{ border-bottom:none; }
+  li.item.unverified{ opacity:.55; }
+  .k{ width:22px; height:22px; margin-top:2px; color:var(--ink-2); }
+  .k svg{ width:22px; height:22px; display:block; }
+  .txt{ min-width:0; }
+  .txt .t{ display:block; overflow-wrap:anywhere; }
+  .time{ font-size:12.5px; color:var(--ink-3); padding-top:3px; white-space:nowrap; font-variant-numeric:tabular-nums; }
+  .pill{
+    display:inline-block; margin-top:6px;
+    font-size:12.5px; line-height:1.3; padding:3px 9px; border-radius:999px;
+    text-decoration:none; font-weight:500;
   }
-  .field-val{
-    font-size:14px;
-    font-weight:600;
-    text-align:right;
-    font-variant-numeric: tabular-nums;
-    min-width:0;
-    word-break:break-word;
-    overflow-wrap:anywhere;
-    white-space:normal;
-  }
-  .field-val.highlight-text{
-    font-weight:400;
-    line-height:1.5;
-  }
+  .pill.link{ background:var(--accent-bg); color:var(--accent); }
+  .pill.link:hover{ text-decoration:underline; }
+  .pill.off{ background:var(--pill-off-bg); color:var(--ink-3); }
+  .pill.warn{ background:var(--alert-bg); color:var(--alert); }
+  .empty{ padding:12px 0 6px; color:var(--ink-3); }
+  .fallback-tag{ font-size:12.5px; color:var(--ink-3); padding:8px 0 0; }
 
-  .fallback{
-    background:var(--card);
-    border-radius:12px;
-    padding:24px 18px;
-    text-align:center;
-    color:var(--sub);
-    font-size:14px;
-    box-shadow:var(--shadow);
-  }
+  .detail{ margin:12px 0 0; font-size:13px; color:var(--ink-3); line-height:1.6; }
+  .notes{ margin:6px 0 0; font-size:14px; color:var(--ink-2); }
 
-  @media (max-width: 720px){
-    table.data{ display:none; }
-    .cards{ display:block; }
-  }
+  /* ---- 小結 ---- */
+  .sum14{ margin:22px 0 0; padding:14px 0 0; border-top:1px solid var(--line); font-size:14.5px; color:var(--ink-2); }
+  .sum14 .n{ color:var(--ink); font-weight:600; }
+  .sum14 .sep{ color:var(--ink-3); margin:0 .35em; }
+
+  .msg{ padding:24px 16px; text-align:center; color:var(--ink-2); background:var(--card); border:1px solid var(--line); border-radius:12px; }
+  .foot{ margin:28px 0 0; font-size:12.5px; color:var(--ink-3); }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header class="top">
-    <p class="updated" id="updatedLine">最近更新：讀取中…</p>
-    <p class="updated-sub">每格數字都是從紀錄自動算的，不是我自己填的。</p>
+  <header>
+    <h1>AI 每天做了什麼</h1>
+    <p class="lede">每一件都附證據，點得開才算；沒證據的會標「未驗證」。數字是程式算的，不是我填的。</p>
+    <p class="updated" id="updated">讀取中…</p>
   </header>
 
-  <section class="compare" id="compareBox" style="display:none;"></section>
-
-  <table class="data" id="dataTable" style="display:none;">
-    <colgroup>
-      <col style="width:8%">
-      <col style="width:9%">
-      <col style="width:7%">
-      <col style="width:7%">
-      <col style="width:8%">
-      <col style="width:7%">
-      <col style="width:13%">
-      <col style="width:13%">
-      <col style="width:7%">
-      <col style="width:21%">
-    </colgroup>
-    <thead>
-      <tr id="headRow"></tr>
-    </thead>
-    <tbody id="tableBody"></tbody>
-  </table>
-
-  <div class="cards" id="cardsBox"></div>
-
-  <div class="fallback" id="fallbackBox" style="display:none;">
-    資料檔還沒生出來
-  </div>
+  <main id="days"></main>
+  <section class="sum14" id="sum14" hidden></section>
+  <p class="foot">資料來源：<code>proof.json</code>（由 proof_table.py 每日產生）。「萬」＝萬個 token；「每 100 萬額度」＝完成件數 ÷（當天燒掉的萬 ÷ 100）。</p>
 </div>
-
-<div class="tip-pop" id="tipPop"></div>
 
 <script>
 (function(){
-  var COLS = [
-    { key:'date', label:'日期', tip:'那一天的日期，最新的一天放在最上面。' },
-    { key:'commits', label:'存檔次數(commit)', tip:'我把工作存檔的次數，類似你在 Word 按「儲存」的次數，越多代表當天改動越多。' },
-    { key:'tickets_done', label:'關掉的票', tip:'完成並結案的待辦事項數量，像手機備忘錄裡打勾劃掉的項目。' },
-    { key:'tickets_verify', label:'送驗的票', tip:'已經做完、但還在等你確認才能正式結案的待辦。' },
-    { key:'subagent_runs', label:'派出的分身', tip:'派出的分身＝我叫出去做事的小幫手數量，越多代表我把工作分出去，不是自己在主房間耗。' },
-    { key:'discord_replies', label:'回你幾則', tip:'我在 Discord 回覆你訊息的則數。' },
-    { key:'tokens', label:'額度：主線＋分身（萬）', tip:'用掉的運算額度，單位是萬，類似手機月租的用量條，數字越大代表當天花的資源越多。' },
-    { key:'score', label:'你打的分數(平均・≤2次)', tip:'你幫我打的分數平均值；後面是你打「2 分以下（不滿意）」的次數。' },
-    { key:'corrections_new', label:'新糾正票', tip:'你當天新指出我做錯、需要記住改進的地方。' },
-    { key:'highlights', label:'當天亮點', tip:'當天比較值得一提的幾件事，用「‧」隔開。' }
-  ];
+  const q = new URLSearchParams(location.search);
+  const SRC = q.get('data') || 'proof.json';
+  const WD = ['日','一','二','三','四','五','六'];
+  const ICON = {
+    commit:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v6.5M12 15.5V22"/></svg>',
+    ticket:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2.5a2 2 0 0 0 0 5V17a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2.5a2 2 0 0 0 0-5z"/><path d="M13 5v14" stroke-dasharray="2 2.5"/></svg>',
+    note:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></svg>'
+  };
+  const KIND_LABEL = {commit:'程式修改', ticket:'看板票', note:'日誌'};
 
-  function fmt(v){
-    if (v === null || v === undefined) return '—';
-    if (typeof v === 'number' && Number.isNaN(v)) return '—';
-    return v;
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const num = (v, d=0) => (typeof v === 'number' && isFinite(v)) ? v.toFixed(d).replace(/\.0+$/,'') : null;
+  const wan = v => { const n = num(v,1); return n === null ? '—' : n; };
+  const per100 = (done, w) => (typeof done === 'number' && typeof w === 'number' && w > 0) ? (done / (w/100)) : null;
+  const fmtPer = v => v === null ? '—' : (v >= 10 ? Math.round(v) : v.toFixed(1)).toString();
+
+  function fmtDate(s){
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || '');
+    if(!m) return esc(s || '?');
+    const d = new Date(+m[1], +m[2]-1, +m[3]);
+    return `${+m[2]}/${+m[3]}（${WD[d.getDay()]}）`;
+  }
+  function todayStr(){
+    const d = new Date(); const p = n => String(n).padStart(2,'0');
+    return `${d.getFullYear()}-${p(d.getMonth()+1)}-${p(d.getDate())}`;
+  }
+  function fmtUpdated(s){
+    const d = new Date(s); if(isNaN(d)) return s ? esc(s) : '—';
+    const p = n => String(n).padStart(2,'0');
+    return `${d.getMonth()+1}/${d.getDate()} ${p(d.getHours())}:${p(d.getMinutes())}`;
   }
 
-  function fmtNum1(v){
-    if (v === null || v === undefined || Number.isNaN(v)) return '—';
-    return (Math.round(v * 10) / 10).toString();
+  function scoreHtml(day){
+    const s = num(day.score_avg, 1);
+    if(s === null) return `<span class="chunk">你打 <span class="n">—</span></span>`;
+    const bad = day.score_avg <= 2;
+    return `<span class="chunk">你打 <span class="${bad?'alert':'n'}">${s} 分</span></span>`;
   }
 
-  function fmtDateHuman(iso){
-    // 2026-09-18T12:10+08:00 -> 2026年9月18日 12:10
-    var m = iso.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
-    if (!m) return iso;
-    return m[1] + '年' + parseInt(m[2],10) + '月' + parseInt(m[3],10) + '日 ' + m[4] + ':' + m[5];
+  function summaryHtml(day, done, burn){
+    return `<span class="sum-date">${fmtDate(day.date)}</span>`
+      + `<span class="sum-stats">`
+      + `<span class="chunk">完成 <span class="n">${done === null ? '—' : done}</span> 件</span>`
+      + `<span class="chunk">回你 <span class="n">${num(day.discord_replies) ?? '—'}</span> 則</span>`
+      + scoreHtml(day)
+      + `<span class="chunk burn">燒 <span class="n">${wan(burn)}</span> 萬 → 每 100 萬額度 <span class="n">${fmtPer(per100(done, burn))}</span> 件</span>`
+      + `</span>`;
   }
 
-  function fmtDateShort(dateStr){
-    var m = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
-    if (!m) return dateStr;
-    return parseInt(m[2],10) + '/' + parseInt(m[3],10);
+  function itemHtml(it){
+    const kind = ICON[it.kind] ? it.kind : 'note';
+    const unv = it.verified === false;
+    let pill;
+    if(unv){
+      pill = `<span class="pill warn">未驗證${it.evidence_label ? '・'+esc(it.evidence_label) : ''}</span>`;
+    } else if(it.evidence_url){
+      pill = `<a class="pill link" href="${esc(it.evidence_url)}" target="_blank" rel="noopener">${esc(it.evidence_label || '證據')} ↗</a>`;
+    } else {
+      pill = `<span class="pill off" title="沒有可點的連結">${esc(it.evidence_label || '無連結')}</span>`;
+    }
+    return `<li class="item${unv?' unverified':''}">`
+      + `<span class="k" title="${KIND_LABEL[kind]}" aria-label="${KIND_LABEL[kind]}">${ICON[kind]}</span>`
+      + `<div class="txt"><span class="t">${esc(it.text || '（沒有描述）')}</span>${pill}</div>`
+      + `<span class="time">${esc(it.time || '')}</span>`
+      + `</li>`;
   }
 
-  function tokensText(d){
-    var main = fmtNum1(d.tokens_main_wan);
-    var sub = fmtNum1(d.tokens_sub_wan);
-    if (main === '—' && sub === '—') return '—';
-    return '主 ' + main + ' + 分 ' + sub;
-  }
+  function dayHtml(day, open){
+    const items = Array.isArray(day.items) ? day.items : null;
+    const hl = Array.isArray(day.highlights) ? day.highlights : [];
+    const burn = (day.tokens_main_wan || 0) + (day.tokens_sub_wan || 0);
+    let done, list;
 
-  function scoreText(d){
-    var avg = (d.score_avg === null || d.score_avg === undefined || Number.isNaN(d.score_avg)) ? '—' : fmtNum1(d.score_avg);
-    var low = (d.score_low === null || d.score_low === undefined) ? '—' : d.score_low;
-    return avg + '（≤2分：' + low + '次）';
-  }
-
-  function highlightsText(d){
-    if (!d.highlights || !d.highlights.length) return '—';
-    return d.highlights.join(' ‧ ');
-  }
-
-  function sumField(days, key){
-    var has = false, total = 0;
-    days.forEach(function(d){
-      var v = d[key];
-      if (v !== null && v !== undefined && !Number.isNaN(v)){ has = true; total += v; }
-    });
-    return has ? total : null;
-  }
-
-  function trendArrow(cur, prev){
-    if (cur === null || prev === null) return { cls:'flat', txt:'' };
-    if (cur > prev) return { cls:'up', txt:'▲' };
-    if (cur < prev) return { cls:'down', txt:'▼' };
-    return { cls:'flat', txt:'–' };
-  }
-
-  function buildCompare(daysAsc){
-    var n = daysAsc.length;
-    var recent = daysAsc.slice(Math.max(0, n - 7), n);
-    var prevStart = Math.max(0, n - 14);
-    var prevEnd = Math.max(0, n - 7);
-    var prev = daysAsc.slice(prevStart, prevEnd);
-
-    var metrics = [
-      { key:'commits', label:'存檔次數' },
-      { key:'tickets_done', label:'關掉的票' },
-      { key:'subagent_runs', label:'派出的分身' },
-      { key:'discord_replies', label:'回你幾則' }
-    ];
-
-    var box = document.getElementById('compareBox');
-    box.innerHTML = '';
-
-    var recentCard = document.createElement('div');
-    recentCard.className = 'compare-card';
-    var recentTitle = document.createElement('p');
-    recentTitle.className = 'compare-title';
-    recentTitle.textContent = '近 ' + recent.length + ' 天合計';
-    recentCard.appendChild(recentTitle);
-
-    var prevCard = document.createElement('div');
-    prevCard.className = 'compare-card';
-    var prevTitle = document.createElement('p');
-    prevTitle.className = 'compare-title';
-    prevTitle.textContent = prev.length ? ('前 ' + prev.length + ' 天合計') : '前 7 天合計';
-    prevCard.appendChild(prevTitle);
-
-    metrics.forEach(function(m){
-      var rSum = sumField(recent, m.key);
-      var pSum = prev.length ? sumField(prev, m.key) : null;
-      var tr = trendArrow(rSum, pSum);
-
-      var rRow = document.createElement('div');
-      rRow.className = 'compare-row';
-      rRow.innerHTML = '<span class="label">' + m.label + '</span><span class="val">' + fmt(rSum) +
-        (tr.txt ? ' <span class="trend ' + tr.cls + '">' + tr.txt + '</span>' : '') + '</span>';
-      recentCard.appendChild(rRow);
-
-      var pRow = document.createElement('div');
-      pRow.className = 'compare-row';
-      pRow.innerHTML = '<span class="label">' + m.label + '</span><span class="val">' + fmt(pSum) + '</span>';
-      prevCard.appendChild(pRow);
-    });
-
-    if (!prev.length){
-      var note = document.createElement('p');
-      note.className = 'compare-note';
-      note.textContent = '資料還不滿 14 天，暫時沒有前 7 天可以比。';
-      prevCard.appendChild(note);
+    if(items){
+      done = items.filter(i => i.verified !== false).length;
+      list = items.length
+        ? `<ul class="items">${items.map(itemHtml).join('')}</ul>`
+        : `<p class="empty">這天沒有可驗證的產出</p>`;
+    } else {
+      // 舊資料：沒有 items，退回顯示 highlights（完成件數顯示 —）
+      done = null;
+      list = hl.length
+        ? `<p class="fallback-tag">舊格式資料，只有摘要、沒逐件證據：</p>`
+          + `<ul class="items">${hl.map(h => itemHtml({kind:'note', text:h, evidence_url:null, evidence_label:'日誌摘要', verified:false})).join('')}</ul>`
+        : `<p class="empty">這天沒有可驗證的產出</p>`;
     }
 
-    box.appendChild(recentCard);
-    box.appendChild(prevCard);
-    box.style.display = 'grid';
-  }
+    const n = v => num(v) ?? '—';
+    const detail = `詳細：commit ${n(day.commits)}・票 送驗 ${n(day.tickets_verify)}／關單 ${n(day.tickets_done)}・分身 ${n(day.subagent_runs)} 支・主線 ${wan(day.tokens_main_wan)} 萬／分身 ${wan(day.tokens_sub_wan)} 萬・新糾正票 ${n(day.corrections_new)}`;
+    const notes = day.notes ? `<p class="notes">${esc(day.notes)}</p>` : '';
 
-  function makeQmark(tip){
-    var btn = document.createElement('button');
-    btn.className = 'qmark';
-    btn.type = 'button';
-    btn.textContent = '?';
-    btn.setAttribute('aria-label', '說明');
-    btn.addEventListener('click', function(e){
-      e.stopPropagation();
-      showTip(btn, tip);
-    });
-    return btn;
-  }
-
-  function showTip(anchor, text){
-    var pop = document.getElementById('tipPop');
-    if (pop.classList.contains('show') && pop._anchor === anchor){
-      pop.classList.remove('show');
-      pop._anchor = null;
-      return;
-    }
-    pop.textContent = text;
-    pop.classList.add('show');
-    pop._anchor = anchor;
-    var rect = anchor.getBoundingClientRect();
-    var top = rect.bottom + 6;
-    var left = rect.left;
-    var maxLeft = window.innerWidth - 290;
-    if (left > maxLeft) left = Math.max(8, maxLeft);
-    pop.style.top = top + 'px';
-    pop.style.left = left + 'px';
-  }
-
-  document.addEventListener('click', function(){
-    var pop = document.getElementById('tipPop');
-    pop.classList.remove('show');
-    pop._anchor = null;
-  });
-
-  function buildTable(daysDesc){
-    var headRow = document.getElementById('headRow');
-    headRow.innerHTML = '';
-    COLS.forEach(function(c){
-      var th = document.createElement('th');
-      th.textContent = c.label;
-      th.appendChild(makeQmark(c.tip));
-      headRow.appendChild(th);
-    });
-
-    var body = document.getElementById('tableBody');
-    body.innerHTML = '';
-    daysDesc.forEach(function(d){
-      var tr = document.createElement('tr');
-      var cells = [
-        d.date,
-        fmt(d.commits),
-        fmt(d.tickets_done),
-        fmt(d.tickets_verify),
-        fmt(d.subagent_runs),
-        fmt(d.discord_replies),
-        tokensText(d),
-        scoreText(d),
-        fmt(d.corrections_new),
-        highlightsText(d)
-      ];
-      cells.forEach(function(val, i){
-        var td = document.createElement('td');
-        if (i !== 0 && i !== cells.length - 1) td.className = 'num';
-        if (i === cells.length - 1) td.className = 'highlights';
-        td.textContent = val;
-        tr.appendChild(td);
-      });
-      body.appendChild(tr);
-    });
-    document.getElementById('dataTable').style.display = '';
-  }
-
-  function buildCards(daysDesc){
-    var box = document.getElementById('cardsBox');
-    box.innerHTML = '';
-    daysDesc.forEach(function(d){
-      var card = document.createElement('div');
-      card.className = 'day-card';
-
-      var dateEl = document.createElement('p');
-      dateEl.className = 'date';
-      dateEl.textContent = d.date;
-      card.appendChild(dateEl);
-
-      var rows = [
-        { c: COLS[1], val: fmt(d.commits) },
-        { c: COLS[2], val: fmt(d.tickets_done) },
-        { c: COLS[3], val: fmt(d.tickets_verify) },
-        { c: COLS[4], val: fmt(d.subagent_runs) },
-        { c: COLS[5], val: fmt(d.discord_replies) },
-        { c: COLS[6], val: tokensText(d) },
-        { c: COLS[7], val: scoreText(d) },
-        { c: COLS[8], val: fmt(d.corrections_new) },
-        { c: COLS[9], val: highlightsText(d), isHighlight:true }
-      ];
-
-      rows.forEach(function(r){
-        var row = document.createElement('div');
-        row.className = 'field-row';
-        var label = document.createElement('span');
-        label.className = 'field-label';
-        label.textContent = r.c.label;
-        label.appendChild(makeQmark(r.c.tip));
-        var val = document.createElement('span');
-        val.className = 'field-val' + (r.isHighlight ? ' highlight-text' : '');
-        val.textContent = r.val;
-        row.appendChild(label);
-        row.appendChild(val);
-        card.appendChild(row);
-      });
-
-      box.appendChild(card);
-    });
+    return `<details class="day"${open?' open':''}>`
+      + `<summary><div class="sum-body">${summaryHtml(day, done, burn)}</div>`
+      + `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>`
+      + `<div class="day-body">${list}<p class="detail">${detail}</p>${notes}</div>`
+      + `</details>`;
   }
 
   function render(data){
-    document.getElementById('updatedLine').textContent = '最近更新：' + fmtDateHuman(data.generated_at);
-    var daysAsc = (data.days || []).slice().sort(function(a,b){ return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
-    var daysDesc = daysAsc.slice().reverse();
+    const days = (Array.isArray(data.days) ? data.days.slice() : []).sort((a,b) => (a.date < b.date ? 1 : -1));
+    document.getElementById('updated').textContent = '最近更新 ' + fmtUpdated(data.generated_at);
+    const root = document.getElementById('days');
+    if(!days.length){ root.innerHTML = '<div class="msg">還沒有任何一天的資料</div>'; return; }
 
-    buildCompare(daysAsc);
-    buildTable(daysDesc);
-    buildCards(daysDesc);
+    const today = todayStr();
+    const openDate = days.some(d => d.date === today) ? today : days[0].date;
+    root.innerHTML = days.map(d => dayHtml(d, d.date === openDate)).join('');
+
+    // 14 天小結
+    const recent = days.slice(0, 14);
+    let done = 0, burn = 0, scoreSum = 0, scoreN = 0;
+    recent.forEach(d => {
+      if(Array.isArray(d.items)) done += d.items.filter(i => i.verified !== false).length;
+      burn += (d.tokens_main_wan || 0) + (d.tokens_sub_wan || 0);
+      if(typeof d.score_avg === 'number' && isFinite(d.score_avg)){ scoreSum += d.score_avg; scoreN++; }
+    });
+    const sep = '<span class="sep">·</span>';
+    const avg = scoreN ? (scoreSum/scoreN).toFixed(1) : '—';
+    const s14 = document.getElementById('sum14');
+    s14.hidden = false;
+    s14.innerHTML = `這 ${recent.length} 天：完成共 <span class="n">${done}</span> 件${sep}額度共 <span class="n">${wan(burn)}</span> 萬${sep}每 100 萬額度 <span class="n">${fmtPer(per100(done, burn))}</span> 件${sep}你打分平均 <span class="n">${avg}</span>`;
   }
 
-  fetch('proof.json', { cache: 'no-store' })
-    .then(function(res){
-      if (!res.ok) throw new Error('not ok');
-      return res.json();
-    })
-    .then(function(data){
-      if (!data || !data.days || !data.days.length) throw new Error('empty');
-      render(data);
-    })
-    .catch(function(){
-      document.getElementById('updatedLine').textContent = '最近更新：—';
-      document.getElementById('fallbackBox').style.display = 'block';
+  fetch(SRC, {cache:'no-store'})
+    .then(r => { if(!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(() => {
+      document.getElementById('updated').textContent = '';
+      document.getElementById('days').innerHTML = '<div class="msg">資料檔還沒生出來</div>';
     });
 })();
 </script>
