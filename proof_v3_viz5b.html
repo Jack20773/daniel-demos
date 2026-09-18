@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>AI 每天做了什麼（V5b：專案×日期格子表＋熱圖紅綠＋分數點陣）</title>
+<style>
+  :root{color-scheme:light;--bg:#fcfcfb;--card:#fff;--ink:#0b0b0b;--ink-2:#52514e;--ink-3:#898781;--line:#e6e5e1;--accent:#2a78d6;--accent-bg:#e9f1fb;--warn:#a05a00;--warn-bg:#fff3e0;--muted-bg:#f3f2ee;
+    --grid:#e1e0d9;--zero:#c3c2b7;
+    --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--s6:#008300;--s7:#4a3aa7;--s8:#e34948;
+    --s1-rgb:42,120,214;--s2-rgb:235,104,52;--s3-rgb:27,175,122;--s4-rgb:237,161,0;--s5-rgb:232,123,164;--s6-rgb:0,131,0;--s7-rgb:74,58,167;
+    --good:#1baf7a;--bad:#e34948;--good-rgb:27,175,122;--bad-rgb:227,73,72;--neutral-rgb:137,135,129;--heat-rgb:42,120,214;
+    --sc1:#a31d16;--sc2:#e2572b;--sc3:#d9a600;--sc4:#8bc34a;--sc5:#0f7a3d}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
+    --grid:#2c2c2a;--zero:#383835;
+    --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;--s8:#e66767;
+    --s1-rgb:57,135,229;--s2-rgb:217,89,38;--s3-rgb:25,158,112;--s4-rgb:201,133,0;--s5-rgb:213,81,129;--s6-rgb:0,131,0;--s7-rgb:144,133,233;
+    --good:#199e70;--bad:#e66767;--good-rgb:25,158,112;--bad-rgb:230,103,103;--neutral-rgb:150,148,140;--heat-rgb:127,176,239;
+    --sc1:#e2564c;--sc2:#f0834f;--sc3:#f0d060;--sc4:#a8d878;--sc5:#3fae72}}
+  :root[data-theme="dark"]{color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
+    --grid:#2c2c2a;--zero:#383835;
+    --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;--s8:#e66767;
+    --s1-rgb:57,135,229;--s2-rgb:217,89,38;--s3-rgb:25,158,112;--s4-rgb:201,133,0;--s5-rgb:213,81,129;--s6-rgb:0,131,0;--s7-rgb:144,133,233;
+    --good:#199e70;--bad:#e66767;--good-rgb:25,158,112;--bad-rgb:230,103,103;--neutral-rgb:150,148,140;--heat-rgb:127,176,239;
+    --sc1:#e2564c;--sc2:#f0834f;--sc3:#f0d060;--sc4:#a8d878;--sc5:#3fae72}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Noto Sans TC","PingFang TC",system-ui,sans-serif}
+  main{max-width:720px;margin:0 auto;padding:16px 16px 60px}
+  h1{font-size:20px;margin:0 0 12px}
+  h2{font-size:17px;margin:26px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+  h3{font-size:14px;color:var(--ink-2);margin:14px 0 6px;font-weight:600}
+  .demo-tag{display:inline-block;font-size:11px;color:var(--warn);background:var(--warn-bg);border-radius:999px;padding:1px 7px;margin-left:6px;vertical-align:1px}
+  .chartbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 12px 6px;margin:8px 0 16px}
+  svg{width:100%;height:auto;display:block;overflow:visible}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--ink-2);margin:0 0 8px}
+  .legend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+  .legend .sw.round{border-radius:50%}
+
+  /* ---- 三張大數字卡 ---- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 10px;text-align:center}
+  .card .num{font-size:26px;font-weight:800;line-height:1.1}
+  .card .unit{font-size:12px;color:var(--ink-2);margin-top:2px}
+  .card .lbl{font-size:12px;color:var(--ink-3);margin-top:4px}
+  @media(max-width:420px){.cards{grid-template-columns:1fr 1fr 1fr;gap:6px}.card{padding:9px 6px}.card .num{font-size:21px}}
+
+  .day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+  .day-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .headline{font-weight:700;font-size:15px}
+  .rule{font-size:12px;color:var(--ink-3)}
+  .segbar{display:flex;width:100%;height:14px;border-radius:4px;overflow:hidden;margin:8px 0 2px;background:var(--muted-bg)}
+  .segbar .seg{height:100%;margin-right:2px}
+  .segbar .seg:last-child{margin-right:0}
+  .toggle{margin-top:8px}
+  .toggle > summary{cursor:pointer;color:var(--accent);font-size:14px;list-style:none;user-select:none}
+  .toggle > summary::-webkit-details-marker{display:none}
+  .toggle > summary::before{content:"▸ ";display:inline-block}
+  .toggle[open] > summary::before{content:"▾ "}
+  details.bigtoggle > summary{font-size:15px;font-weight:600;color:var(--ink);margin:4px 0 8px}
+  ul.items{list-style:none;margin:8px 0 0;padding:0}
+  ul.items li{padding:8px 0 8px 2px;border-top:1px dashed var(--line)}
+  ul.items .row1{display:grid;grid-template-columns:44px 12px 1fr;gap:6px 8px;align-items:start}
+  .empty{color:var(--ink-3);font-size:14px;padding:8px 0}
+  .t{color:var(--ink-3);font-variant-numeric:tabular-nums;font-size:14px;padding-top:2px}
+  .dot{width:10px;height:10px;border-radius:50%;margin-top:5px}
+  .kind{display:inline-block;font-size:12px;padding:1px 7px;border-radius:999px;background:var(--accent-bg);color:var(--accent);margin-right:6px}
+  .ev{display:block;font-size:14px;margin-top:3px;word-break:break-word}
+  .ev a{color:var(--accent);text-decoration:none}
+  .ev a:hover{text-decoration:underline}
+  .plain{font-size:13px;color:var(--ink-2);margin:4px 0 0 52px;line-height:1.5}
+  .caption{font-size:14px;color:var(--ink-2);background:var(--muted-bg);border-radius:8px;padding:10px 12px;margin:0 0 10px}
+  .caption p{margin:4px 0}
+  .caption p.lead{font-weight:700;color:var(--ink)}
+
+  /* ---- 熱圖表格（共用：額度熱圖／專案×日期格子表） ---- */
+  table.heat{width:100%;border-collapse:collapse;font-size:13px}
+  table.heat th,table.heat td{text-align:center;padding:8px 4px;border:1px solid var(--line)}
+  table.heat th{color:var(--ink-2);font-weight:600;font-size:12px;background:var(--muted-bg)}
+  table.heat th:first-child,table.heat td.rowlbl{text-align:left;padding-left:8px;font-weight:700;background:var(--muted-bg)}
+  table.heat td.cell{font-variant-numeric:tabular-nums;font-weight:600}
+  table.gridtable{width:100%;border-collapse:collapse;font-size:11px}
+  table.gridtable th,table.gridtable td{text-align:center;padding:5px 2px;border:1px solid var(--line)}
+  table.gridtable th{color:var(--ink-2);font-weight:600;font-size:10px;background:var(--muted-bg);white-space:nowrap}
+  table.gridtable th:first-child,table.gridtable td.rowlbl{text-align:left;padding-left:6px;font-weight:700;background:var(--muted-bg);font-size:12px;white-space:nowrap}
+  table.gridtable td.cell{font-variant-numeric:tabular-nums;font-weight:700}
+  .gridwrap{overflow-x:auto}
+
+  /* ---- 分數點陣（五色，一點一筆） ---- */
+  .scoregrid{display:flex;flex-direction:column;gap:6px}
+  .scorerow{display:grid;grid-template-columns:52px 1fr;align-items:center;gap:8px;font-size:12px;color:var(--ink-3)}
+  .scorerow .dots{display:flex;flex-wrap:wrap;gap:3px;align-items:center;min-width:0}
+  .scorerow .dots span{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+  .scorerow .none{color:var(--ink-3);font-size:12px;white-space:nowrap;flex:none}
+
+  .footnote{font-size:12px;color:var(--ink-3);margin:36px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+  .footnote p{margin:4px 0}
+</style>
+</head>
+<body>
+<main>
+  <h1>AI 每天做了什麼（V5b：專案×日期格子表＋熱圖紅綠＋分數點陣）</h1>
+
+  <div class="cards" id="cards"></div>
+
+  <h3 id="today-proj-title">今天按專案</h3>
+  <div class="legend" id="proj-legend"></div>
+  <div class="chartbox"><div id="today-bar"></div></div>
+
+  <h2>各專案近 14 天做了多少件</h2>
+  <div class="caption"><p class="lead">列＝專案，欄＝日期，格內數字＝那天那個專案算進來的件數，有件數才上色（用專案自己的顏色，跟上面「今天按專案」同一套）。想看某一天某個專案的細節，展開下面的清單。</p></div>
+  <div class="chartbox"><div class="gridwrap"><table class="gridtable" id="grid-table"></table></div></div>
+
+  <details class="toggle bigtoggle">
+    <summary>看每天清單（14 天，每天一份，含證據連結）</summary>
+    <div id="days"></div>
+  </details>
+
+  <h2>花了多少額度（帳號 × 模型熱圖）</h2>
+  <div class="caption">
+    <p class="lead">顏色像紅綠燈：紅＝可能沒必要花這麼多錢（分身做雜事卻用了貴模型、或主帳號做正事卻只捨得用便宜模型）；綠＝花得剛好（正事用好模型、雜事用便宜模型）。深淺代表用量多少，「其他」欄不分好壞、一律灰色。</p>
+    <p>想確認分身是不是都用便宜模型，看「分身」那一列哪一欄顏色最深。數字是近 14 天加總（萬 token），從我電腦裡的對話紀錄算出來的，跟 claude.ai 額度頁對不起來，只能看比例。</p>
+  </div>
+  <div class="chartbox"><table class="heat" id="heat-table"></table></div>
+
+  <h2>你打的分數（一點一筆，顏色跟著分數變）</h2>
+  <div class="caption">
+    <p class="lead">一點＝你打的一筆分數，顏色由紅到綠對應 1～5 分：1 分最紅、3 分黃、5 分最綠。</p>
+  </div>
+  <div class="legend" id="score-legend"></div>
+  <div class="chartbox"><div class="scoregrid" id="score-grid"></div></div>
+
+  <div class="footnote">
+    <p><b>這頁證明什麼：</b>每天做了幾件、給哪幾個專案，點開看每一件的證據連結；額度看是不是都叫主帳號、都叫貴的模型做；分數是你自己打的滿意度。</p>
+    <p><b>「一件」怎麼算：</b>只算有驗證＋有證據連結的（commit／票／日誌對得上的），AI 自己寫「做完了」不算。</p>
+    <p><b>怎麼自己驗：</b>展開「看每天清單」再點「看每一件」，數清單行數＝標題上的數字；連結點得開才算數。</p>
+    <p>每一件下面那句白話說明<span class="demo-tag">示意</span>：只有「今天（09-18）」是手寫示意文字，其餘天數是程式套版文字。正式版會由程式對每天都自動產生。「件」的口徑是 demo 版（verified＋有證據連結），正式版依規則 v3。</p>
+  </div>
+</main>
+<script>
+const TODAY_DATE="2026-09-18";
+// 今天每一件手寫的白話說明（示意，索引對應該天 countedItems 的順序）。
+// 判準：不出現 commit／hook／repo／token 這類字，非用不可時同一句給生活譬喻。
+const TODAY_PLAIN_MAP=[
+  "示意：把「AI 這週做了什麼」的自動小幫手修好，讓週報格式跟他要的對得上。為什麼做：讓每週整理不用人工東拼西湊。",
+  "示意：把「AI 每天做了什麼」的日報做出來，控制在 8 行以內。為什麼做：讓他早上打開就看得懂，不用自己動手算。",
+  "示意：把上次某天分數「為什麼是那個分數」的原因補寫清楚。為什麼做：以後回頭看才知道當初為什麼扣分。",
+  "示意：把「藏在附件裡的訊息」也抓進來一起算分數，不然會漏算。為什麼做：分數統計才準，不會漏掉他打的分。",
+  "示意：把「哪件事該用便宜的小助手做、哪件事要用貴的大助手做」的規則寫進說明書。為什麼做：以後不用每次重新判斷，照規則做就好。",
+  "示意：把改好的股票篩選工具存檔並同步一份到網路備份。為什麼做：東西存好才不會不見，其他機器也拿得到最新版。",
+  "示意：把股票代號資料庫裡兩檔股票的編號錯誤修正。為什麼做：抓錯代號會讓後面的分析用錯股票的資料。",
+  "示意：四個小助手各自把小任務做完，順手修好一個算額度時的小漏洞。為什麼做：讓後面算額度的數字準一點。",
+  "示意：把「AI 每天做了什麼」的證明頁面做出雛形給他看。為什麼做：讓他不用信我說的話，自己點連結就能查證。",
+  "示意：把散在各處的紀錄（做了什麼、票、額度、分數）整合成一份「每天一份」的檔案。為什麼做：以後每天自動產生這份報表，不用手動拼湊。",
+  "示意：把「小幫手自己發的系統通知」誤判成「他打的分數」這個小毛病修掉。為什麼做：不然分數統計會被雜訊污染，變得不準。",
+  "示意：把頁面主角從「做了多少件事」改成「每天完成了什麼、有沒有證據」。為什麼做：他要看的是實際成果，不是數量灌水。",
+  "示意：把「他打的分數」從標題那行搬到獨立一行。為什麼做：他糾正過分數是在評「AI 回答得好不好」，不是評「做出來的東西好不好」，兩者要分開看。",
+  "示意：把「回覆了幾則」這個數字改成只算他親自傳的訊息，小幫手之間互傳不算進去。為什麼做：不然這個數字會被灌水，看起來比實際多。",
+  "示意：跟上一件一起重新產生檔案，讓改過的算法生效。為什麼做：改了算法卻沒重新產檔，頁面看到的還是舊數字。",
+  "示意：先做兩個範例版面（卡片式／表格式）給他挑。為什麼做：直接做完整版怕方向猜錯，先給他挑喜歡哪種再做細節。",
+  "示意：再做兩個小版本（要不要用表情符號當圖示）給他選。為什麼做：同上，先讓他挑喜歡的風格再往下做。",
+  "示意：做出「總覽在最上面」跟「每天帶小圖表」兩種版面給他比較。為什麼做：他說想要圖表、不是純文字列表，先給兩種抓感覺。",
+  "示意：做出「照專案分」和「照誰交辦的分」兩種分類方式的版面。為什麼做：讓他從不同角度看同一批工作，看哪種比較好懂。",
+  "示意：做出兩版新畫面（今天橫條圖放大版／數字卡加熱圖版），回應他稍早給的六點意見。為什麼做：把他提的修改意見一次做進去，讓他驗收。"
+];
+
+const NS="http://www.w3.org/2000/svg";
+function svgEl(tag,attrs){const el=document.createElementNS(NS,tag);for(const k in attrs)el.setAttribute(k,attrs[k]);return el;}
+function fmtDate(s){return s.slice(5).replace('-','/');}
+function countedItems(day){return (day.items||[]).filter(i=>i.verified&&i.evidence_url);}
+function esc(s){const d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+
+function plainText(it){
+  const proj=it.project||'這個專案';
+  if(it.kind==='commit')return `示意：這是「${proj}」的一次程式修改，存進版本紀錄後就正式生效，不用你再確認。`;
+  if(it.kind==='ticket')return `示意：這是「${proj}」的一張工作票，你按下「同意」代表你已經驗收通過了。`;
+  if(it.kind==='note')return `示意：這是當天日誌裡補記的一句說明，用來解釋那天做了什麼、為什麼做。`;
+  return `示意：這是當天記錄下來的一筆工作項目。`;
+}
+
+const PROJ_SLOTS=['var(--s1)','var(--s2)','var(--s3)','var(--s4)','var(--s5)','var(--s6)','var(--s7)'];
+const PROJ_RGB_SLOTS=['var(--s1-rgb)','var(--s2-rgb)','var(--s3-rgb)','var(--s4-rgb)','var(--s5-rgb)','var(--s6-rgb)','var(--s7-rgb)'];
+function buildProjectColorMap(days){
+  const counts={};
+  days.forEach(d=>countedItems(d).forEach(it=>{
+    const p=it.project||'其他';
+    if(p==='其他')return;
+    counts[p]=(counts[p]||0)+1;
+  }));
+  const top=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]).slice(0,7);
+  const map={}, rgbMap={};
+  top.forEach((p,i)=>{map[p]=PROJ_SLOTS[i];rgbMap[p]=PROJ_RGB_SLOTS[i];});
+  return {map,rgbMap,top};
+}
+function projColor(map,p){return map[p&&p!=='其他'?p:'__x__']||'var(--zero)';}
+function projKeyFor(map,p){return (p&&map[p])?p:'其他';}
+
+function projSegBar(container,items,map){
+  const n=items.length;
+  container.innerHTML='';
+  if(n===0){
+    const seg=document.createElement('div');seg.className='seg';seg.style.background='var(--zero)';seg.style.width='100%';
+    container.appendChild(seg);
+    return;
+  }
+  const byProj={};
+  items.forEach(it=>{const p=it.project||'其他';byProj[p]=(byProj[p]||0)+1;});
+  const order=Object.keys(byProj).sort((a,b)=>byProj[b]-byProj[a]);
+  order.forEach(p=>{
+    const seg=document.createElement('div');seg.className='seg';
+    seg.style.background=projColor(map,p);
+    seg.style.width=(byProj[p]/n*100)+'%';
+    seg.title=`${p}：${byProj[p]} 件（${Math.round(byProj[p]/n*100)}%）`;
+    container.appendChild(seg);
+  });
+}
+
+function scoreColor(s){return {1:'var(--sc1)',2:'var(--sc2)',3:'var(--sc3)',4:'var(--sc4)',5:'var(--sc5)'}[s]||'var(--zero)';}
+
+const EXPENSIVE_MODELS=new Set(['opus','fable']);
+function heatCellStyle(accountKey,modelKey,v,maxCell){
+  if(modelKey==='other'){
+    const alpha=v<=0?0:0.12+0.6*(v/maxCell);
+    return {bg:v<=0?'transparent':`rgba(var(--neutral-rgb),${alpha.toFixed(2)})`,fg:alpha>0.55?'#fff':'var(--ink)'};
+  }
+  const isExpensive=EXPENSIVE_MODELS.has(modelKey);
+  const good=(accountKey==='sub')?!isExpensive:isExpensive;
+  const rgbVar=good?'var(--good-rgb)':'var(--bad-rgb)';
+  const alpha=v<=0?0:0.12+0.78*(v/maxCell);
+  const bg=v<=0?'transparent':`rgba(${rgbVar},${alpha.toFixed(2)})`;
+  const fg=alpha>0.55?'#fff':'var(--ink)';
+  return {bg,fg};
+}
+
+fetch('./proof.json').then(r=>r.json()).then(data=>{
+  const days=[...data.days].sort((a,b)=>a.date<b.date?-1:1);
+  const today=days[days.length-1];
+  const {map:projMap,rgbMap:projRgbMap,top:projTop}=buildProjectColorMap(days);
+
+  // ---- 三張大數字卡（維持 4b 原樣）----
+  const todayItems=countedItems(today);
+  const todayTot=(today.tokens_main_wan||0)+(today.tokens_sub_wan||0);
+  const todayHigh=today.score_high||0, todayLow=today.score_low||0;
+  document.getElementById('cards').innerHTML=`
+    <div class="card"><div class="num">${todayItems.length}</div><div class="unit">件</div><div class="lbl">今天做了幾件</div></div>
+    <div class="card"><div class="num">${todayTot.toFixed(0)}</div><div class="unit">萬 token</div><div class="lbl">今天花了多少額度</div></div>
+    <div class="card"><div class="num" style="color:var(--good)">${todayHigh}<span style="color:var(--ink-3);font-size:16px"> / </span><span style="color:var(--bad)">${todayLow}</span></div><div class="unit">高分 / 低分</div><div class="lbl">今天的滿意度</div></div>
+  `;
+  document.getElementById('today-proj-title').textContent=`今天（${today.date}）按專案`;
+
+  document.getElementById('proj-legend').innerHTML=
+    projTop.map((p,i)=>`<span><span class="sw" style="background:${PROJ_SLOTS[i]}"></span>${esc(p)}</span>`).join('')+
+    `<span><span class="sw" style="background:var(--zero)"></span>其他</span>`;
+  projSegBar(document.getElementById('today-bar'),todayItems,projMap);
+
+  // ---- 專案 × 日期格子表 ----
+  const gridCounts={}; // proj -> date -> n
+  const rowTotals={};
+  days.forEach(d=>{
+    const byProj={};
+    countedItems(d).forEach(it=>{
+      const p=projKeyFor(projMap,it.project);
+      byProj[p]=(byProj[p]||0)+1;
+    });
+    Object.keys(byProj).forEach(p=>{
+      gridCounts[p]=gridCounts[p]||{};
+      gridCounts[p][d.date]=byProj[p];
+      rowTotals[p]=(rowTotals[p]||0)+byProj[p];
+    });
+  });
+  const gridRows=Object.keys(rowTotals).sort((a,b)=>rowTotals[b]-rowTotals[a]);
+  let maxGridCell=1;
+  gridRows.forEach(p=>days.forEach(d=>{maxGridCell=Math.max(maxGridCell,(gridCounts[p]&&gridCounts[p][d.date])||0);}));
+  let gridHtml='<thead><tr><th>專案 ＼ 日期</th>'+days.map(d=>`<th>${fmtDate(d.date)}</th>`).join('')+'</tr></thead><tbody>';
+  gridRows.forEach(p=>{
+    gridHtml+=`<tr><td class="rowlbl">${esc(p)}</td>`;
+    days.forEach(d=>{
+      const v=(gridCounts[p]&&gridCounts[p][d.date])||0;
+      const rgbVar=projRgbMap[p]||'var(--neutral-rgb)';
+      const alpha=v<=0?0:0.2+0.7*(v/maxGridCell);
+      const bg=v<=0?'transparent':`rgba(${rgbVar},${alpha.toFixed(2)})`;
+      const fg=alpha>0.6?'#fff':'var(--ink)';
+      gridHtml+=`<td class="cell" style="background:${bg};color:${fg}">${v>0?v:''}</td>`;
+    });
+    gridHtml+='</tr>';
+  });
+  gridHtml+='</tbody>';
+  document.getElementById('grid-table').innerHTML=gridHtml;
+
+  // ---- 每天清單（收合在格子表下方）----
+  const daysDiv=document.getElementById('days');
+  const rev=[...days].reverse();
+  rev.forEach(d=>{
+    const items=countedItems(d);
+    const n=items.length;
+    const byProj={};
+    items.forEach(it=>{const p=it.project||'其他';byProj[p]=(byProj[p]||0)+1;});
+    const order=Object.keys(byProj).sort((a,b)=>byProj[b]-byProj[a]);
+    const headline=n===0?`做了 0 件：—`:`做了 ${n} 件：`+order.map(p=>`${esc(p)} ${byProj[p]}`).join('、');
+    const isToday=d.date===today.date;
+
+    const card=document.createElement('div');card.className='day';
+    const head=document.createElement('div');head.className='day-head';
+    head.innerHTML=`<span class="headline">${esc(d.date)}${isToday?'（今天）':''}　${headline}</span><span class="rule">規則 v3.1</span>`;
+    card.appendChild(head);
+
+    const bar=document.createElement('div');bar.className='segbar';
+    projSegBar(bar,items,projMap);
+    card.appendChild(bar);
+
+    const det=document.createElement('details');det.className='toggle';
+    const sum=document.createElement('summary');sum.textContent='看每一件';
+    det.appendChild(sum);
+    if(n===0){
+      const e=document.createElement('div');e.className='empty';e.textContent='這天沒有算進來的項目。';
+      det.appendChild(e);
+    }else{
+      const ul=document.createElement('ul');ul.className='items';
+      items.forEach((it,idx)=>{
+        const li=document.createElement('li');
+        const row1=document.createElement('div');row1.className='row1';
+        const t=document.createElement('span');t.className='t';t.textContent=it.time||'';
+        const dot=document.createElement('span');dot.className='dot';dot.style.background=projColor(projMap,it.project);
+        const cont=document.createElement('div');
+        const kd=document.createElement('span');kd.className='kind';
+        kd.textContent={commit:'commit',ticket:'票',note:'日誌'}[it.kind]||it.kind;
+        cont.appendChild(kd);
+        cont.appendChild(document.createTextNode(it.text||''));
+        const ev=document.createElement('span');ev.className='ev';
+        if(it.evidence_url){const a=document.createElement('a');a.href=it.evidence_url;a.textContent='證據：'+(it.evidence_label||'連結');ev.appendChild(a);}
+        else{ev.textContent=it.evidence_label||'';}
+        cont.appendChild(ev);
+        row1.appendChild(t);row1.appendChild(dot);row1.appendChild(cont);
+        li.appendChild(row1);
+        const plain=document.createElement('div');plain.className='plain';
+        plain.textContent=(d.date===TODAY_DATE&&TODAY_PLAIN_MAP[idx])?TODAY_PLAIN_MAP[idx]:plainText(it);
+        li.appendChild(plain);
+        ul.appendChild(li);
+      });
+      det.appendChild(ul);
+    }
+    card.appendChild(det);
+    daysDiv.appendChild(card);
+  });
+
+  // ---- 額度熱圖：行＝主帳號／分身，列＝各模型，紅綠代表花得合不合理 ----
+  const MODEL_KEYS=['opus','sonnet','haiku','fable','other'];
+  const MODEL_LABEL={opus:'Opus',sonnet:'Sonnet',haiku:'Haiku',fable:'Fable',other:'其他'};
+  const sumByAccount={main:{},sub:{}};
+  MODEL_KEYS.forEach(k=>{sumByAccount.main[k]=0;sumByAccount.sub[k]=0;});
+  days.forEach(d=>{
+    const m=d.tokens_by_model_main||{}, s=d.tokens_by_model_sub||{};
+    MODEL_KEYS.forEach(k=>{sumByAccount.main[k]+=(m[k]||0);sumByAccount.sub[k]+=(s[k]||0);});
+  });
+  const maxCell=Math.max(...MODEL_KEYS.map(k=>Math.max(sumByAccount.main[k],sumByAccount.sub[k])),1);
+  let heatHtml='<thead><tr><th>帳號 ＼ 模型</th>'+MODEL_KEYS.map(k=>`<th>${MODEL_LABEL[k]}</th>`).join('')+'<th>合計</th></tr></thead><tbody>';
+  [['主帳號','main'],['分身','sub']].forEach(([label,key])=>{
+    const vals=sumByAccount[key];
+    const tot=MODEL_KEYS.reduce((s,k)=>s+vals[k],0);
+    heatHtml+=`<tr><td class="rowlbl">${label}</td>`;
+    MODEL_KEYS.forEach(k=>{
+      const v=vals[k];
+      const {bg,fg}=heatCellStyle(key,k,v,maxCell);
+      heatHtml+=`<td class="cell" style="background:${bg};color:${fg}">${v>0?v.toFixed(0):'0'}</td>`;
+    });
+    heatHtml+=`<td class="cell">${tot.toFixed(0)}</td></tr>`;
+  });
+  heatHtml+='</tbody>';
+  document.getElementById('heat-table').innerHTML=heatHtml;
+
+  // ---- 分數點陣：每天一排點，一點一筆，五色 ----
+  document.getElementById('score-legend').innerHTML=[1,2,3,4,5].map(s=>
+    `<span><span class="sw round" style="background:${scoreColor(s)}"></span>${s} 分</span>`
+  ).join('');
+  const scoreGrid=document.getElementById('score-grid');
+  rev.forEach(d=>{
+    const scores=d.scores||[];
+    const row=document.createElement('div');row.className='scorerow';
+    const lbl=document.createElement('span');lbl.textContent=fmtDate(d.date)+(d.date===today.date?' 今天':'');
+    row.appendChild(lbl);
+    const dotsWrap=document.createElement('div');dotsWrap.className='dots';
+    if(scores.length===0){
+      const none=document.createElement('span');none.className='none';none.textContent='沒有打分紀錄';
+      dotsWrap.appendChild(none);
+    }else{
+      scores.forEach(sc=>{
+        const s=document.createElement('span');
+        s.style.background=scoreColor(sc.score);
+        s.title=`${sc.score} 分　${sc.time||''}`;
+        dotsWrap.appendChild(s);
+      });
+    }
+    row.appendChild(dotsWrap);
+    scoreGrid.appendChild(row);
+  });
+});
+</script>
+</body>
+</html>
