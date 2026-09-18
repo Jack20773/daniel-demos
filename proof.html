@@ -197,7 +197,6 @@
       + `<span class="sum-stats">`
       + `<span class="chunk">完成 <span class="n">${done === null ? '—' : done}</span> 件</span>`
       + `<span class="chunk">回你 <span class="n">${num(day.discord_replies) ?? '—'}</span> 則</span>`
-      + scoreHtml(day)
       + `<span class="chunk burn">燒 <span class="n">${wan(burn)}</span> 萬 → 每 100 萬額度 <span class="n">${fmtPer(per100(done, burn))}</span> 件</span>`
       + `</span>`;
   }
@@ -243,11 +242,16 @@
     const n = v => num(v) ?? '—';
     const detail = `詳細：commit ${n(day.commits)}・票 送驗 ${n(day.tickets_verify)}／關單 ${n(day.tickets_done)}・分身 ${n(day.subagent_runs)} 支・主線 ${wan(day.tokens_main_wan)} 萬／分身 ${wan(day.tokens_sub_wan)} 萬・新糾正票 ${n(day.corrections_new)}`;
     const notes = day.notes ? `<p class="notes">${esc(day.notes)}</p>` : '';
+    // 2026-09-18 他糾正：分數是打「回答得好不好」，不是打當天的產出——獨立一行、不放標題行
+    const sAvg = num(day.score_avg, 1);
+    const replyScore = sAvg === null
+      ? `<p class="detail">回答被打分：這天沒打</p>`
+      : `<p class="detail">回答被打分：平均 <span class="${day.score_avg <= 2 ? 'alert' : 'n'}">${sAvg}</span> 分・≤2 分 ${num(day.score_low) ?? 0} 次（評的是我回話的品質，跟上面的產出分開看）</p>`;
 
     return `<details class="day"${open?' open':''}>`
       + `<summary><div class="sum-body">${summaryHtml(day, done, burn)}</div>`
       + `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary>`
-      + `<div class="day-body">${list}<p class="detail">${detail}</p>${notes}</div>`
+      + `<div class="day-body">${list}<p class="detail">${detail}</p>${replyScore}${notes}</div>`
       + `</details>`;
   }
 
@@ -273,7 +277,7 @@
     const avg = scoreN ? (scoreSum/scoreN).toFixed(1) : '—';
     const s14 = document.getElementById('sum14');
     s14.hidden = false;
-    s14.innerHTML = `這 ${recent.length} 天：完成共 <span class="n">${done}</span> 件${sep}額度共 <span class="n">${wan(burn)}</span> 萬${sep}每 100 萬額度 <span class="n">${fmtPer(per100(done, burn))}</span> 件${sep}你打分平均 <span class="n">${avg}</span>`;
+    s14.innerHTML = `這 ${recent.length} 天：完成共 <span class="n">${done}</span> 件${sep}額度共 <span class="n">${wan(burn)}</span> 萬${sep}每 100 萬額度 <span class="n">${fmtPer(per100(done, burn))}</span> 件${sep}回答被打分平均 <span class="n">${avg}</span>（評回答，不評產出）`;
   }
 
   fetch(SRC, {cache:'no-store'})
