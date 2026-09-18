@@ -11,19 +11,19 @@
     --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--s6:#008300;--s7:#4a3aa7;--s8:#e34948;
     --s1-rgb:42,120,214;--s2-rgb:235,104,52;--s3-rgb:27,175,122;--s4-rgb:237,161,0;--s5-rgb:232,123,164;--s6-rgb:0,131,0;--s7-rgb:74,58,167;
     --good:#1baf7a;--bad:#e34948;--good-rgb:27,175,122;--bad-rgb:227,73,72;--neutral-rgb:137,135,129;--heat-rgb:42,120,214;
-    --sc1:#2a78d6;--sc2:#a31d16;--sc3:#f07800;--sc4:#b8860b;--sc5:#0f7a3d}
+    --sc1:#2a78d6;--sc2:#7b1fa2;--sc3:#d32f2f;--sc4:#b8860b;--sc5:#0f7a3d}
   @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
     --grid:#2c2c2a;--zero:#383835;
     --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;--s8:#e66767;
     --s1-rgb:57,135,229;--s2-rgb:217,89,38;--s3-rgb:25,158,112;--s4-rgb:201,133,0;--s5-rgb:213,81,129;--s6-rgb:0,131,0;--s7-rgb:144,133,233;
     --good:#199e70;--bad:#e66767;--good-rgb:25,158,112;--bad-rgb:230,103,103;--neutral-rgb:150,148,140;--heat-rgb:127,176,239;
-    --sc1:#3987e5;--sc2:#e2564c;--sc3:#ff9100;--sc4:#f0d060;--sc5:#3fae72}}
+    --sc1:#3987e5;--sc2:#ba68c8;--sc3:#ef5350;--sc4:#f0d060;--sc5:#3fae72}}
   :root[data-theme="dark"]{color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
     --grid:#2c2c2a;--zero:#383835;
     --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;--s8:#e66767;
     --s1-rgb:57,135,229;--s2-rgb:217,89,38;--s3-rgb:25,158,112;--s4-rgb:201,133,0;--s5-rgb:213,81,129;--s6-rgb:0,131,0;--s7-rgb:144,133,233;
     --good:#199e70;--bad:#e66767;--good-rgb:25,158,112;--bad-rgb:230,103,103;--neutral-rgb:150,148,140;--heat-rgb:127,176,239;
-    --sc1:#3987e5;--sc2:#e2564c;--sc3:#ff9100;--sc4:#f0d060;--sc5:#3fae72}
+    --sc1:#3987e5;--sc2:#ba68c8;--sc3:#ef5350;--sc4:#f0d060;--sc5:#3fae72}
   *{box-sizing:border-box}
   html,body{overflow-x:hidden}
   body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Noto Sans TC","PingFang TC",system-ui,sans-serif}
@@ -164,7 +164,7 @@
   <div class="legend" id="score-legend"></div>
   <div class="chartbox"><div class="scoregrid" id="score-grid"></div></div>
   <div class="caption">
-    <p class="lead">只有 5 分算過關（綠），其餘都是扣分：4 黃稍微不滿、3 橘嚴重、2 深紅極度嚴重、1 藍＋外框圈是根本不該出現的嚴重落差。</p>
+    <p class="lead">只有 5 分算過關（綠），其餘都是扣分：4 黃稍微不滿、3 紅嚴重、2 紫極度嚴重、1 藍＋外框圈是根本不該出現的嚴重落差。</p>
     <p>同一列由左到右＝當天打分的時間先後，最左邊最早；同一天出現好幾個點＝那天打了不只一次分。</p>
   </div>
 
