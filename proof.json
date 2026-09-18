@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T16:44+08:00",
+  "generated_at": "2026-09-18T16:58+08:00",
   "days": [
     {
       "date": "2026-09-05",
@@ -2448,24 +2448,24 @@
     },
     {
       "date": "2026-09-18",
-      "commits": 28,
+      "commits": 30,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 23,
+      "subagent_runs": 24,
       "discord_replies": 71,
-      "tokens_main_wan": 100.7,
-      "tokens_sub_wan": 205.4,
-      "tokens_sessions": 28,
-      "tokens_msgs": 1230,
+      "tokens_main_wan": 102.2,
+      "tokens_sub_wan": 216.1,
+      "tokens_sessions": 29,
+      "tokens_msgs": 1294,
       "tokens_by_model": {
-        "opus": 189.8,
-        "sonnet": 99.0,
-        "haiku": 9.5,
+        "opus": 191.3,
+        "sonnet": 108.2,
+        "haiku": 10.9,
         "fable": 7.9,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 100.7,
+        "opus": 102.2,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -2473,14 +2473,14 @@
       },
       "tokens_by_model_sub": {
         "opus": 89.1,
-        "sonnet": 99.0,
-        "haiku": 9.5,
+        "sonnet": 108.2,
+        "haiku": 10.9,
         "fable": 7.9,
         "other": 0.0
       },
-      "score_avg": 2.73,
-      "score_low": 6,
-      "score_high": 3,
+      "score_avg": 2.67,
+      "score_low": 4,
+      "score_high": 2,
       "scores": [
         {
           "score": 2,
@@ -2503,28 +2503,8 @@
           "time": "2026-09-18 15:19"
         },
         {
-          "score": 3,
-          "time": "2026-09-18 15:19"
-        },
-        {
-          "score": 2,
-          "time": "2026-09-18 15:19"
-        },
-        {
           "score": 5,
           "time": "2026-09-18 15:35"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-18 16:41"
-        },
-        {
-          "score": 1,
-          "time": "2026-09-18 16:41"
-        },
-        {
-          "score": 3,
-          "time": "2026-09-18 16:41"
         }
       ],
       "corrections_new": 0,
@@ -2765,6 +2745,26 @@
           "time": "16:18"
         },
         {
+          "kind": "commit",
+          "text": "proof v3.3 計畫（09-18 16:41 回饋）§3.6；proof_table.py 補 scores 每…",
+          "project": "會計部",
+          "by": "未對",
+          "evidence_url": null,
+          "evidence_label": "commit 215df43",
+          "verified": true,
+          "time": "16:55"
+        },
+        {
+          "kind": "commit",
+          "text": "proof v3.3 demo：5a（分數點陣＋熱圖紅綠＋清單移最下）／5b（專案×日期格子表＋熱圖紅綠＋分數點陣）—…",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/c0900ab2de609539a7b872ad59be23c3ffed34f5",
+          "evidence_label": "commit c0900ab",
+          "verified": true,
+          "time": "16:55"
+        },
+        {
           "kind": "note",
           "text": "會計部流程優化分身收工（16 分鐘）：audit.py v3 message.id 去重（×1.89 對上）、quota_report.py 5.7 秒 69 行（實跑驗過）、加 5h／7d 窗口＋撞牆校準點、SKILL.md 418→16",
           "project": "會計部",
@@ -2785,7 +2785,7 @@
           "time": null
         }
       ],
-      "items_count": 25,
+      "items_count": 27,
       "notes": "另有 6 筆收工紀錄 commit 未列"
     }
   ]
