@@ -83,10 +83,21 @@
   table.gridtable{width:100%;border-collapse:collapse;font-size:11px}
   table.gridtable th,table.gridtable td{text-align:center;padding:5px 2px;border:1px solid var(--line)}
   table.gridtable th{color:var(--ink-2);font-weight:600;font-size:10px;background:var(--muted-bg);white-space:nowrap}
-  table.gridtable th:first-child,table.gridtable td.rowlbl{text-align:left;padding-left:6px;font-weight:700;background:var(--muted-bg);font-size:12px;white-space:nowrap}
+  table.gridtable th:first-child{text-align:left;padding-left:6px;font-weight:700;background:var(--muted-bg);font-size:12px;white-space:nowrap}
+  table.gridtable td.rowlbl{text-align:left;padding:0;font-weight:700;background:var(--muted-bg);font-size:12px}
   table.gridtable td.cell{font-variant-numeric:tabular-nums;font-weight:700}
   .gridwrap{overflow-x:hidden}
   .gridtable .d-short{display:none}
+
+  /* ---- 專案列：可點展開的說明 ---- */
+  #grid-h2{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .grid-toggle-all{font-size:13px;font-weight:400;color:var(--accent);cursor:pointer;white-space:nowrap}
+  .gridtable .row-toggle{display:flex;align-items:center;gap:4px;width:100%;padding:5px 2px 5px 6px;background:none;border:none;font:inherit;font-weight:700;color:inherit;text-align:left;cursor:pointer}
+  .gridtable .row-toggle .ic{flex:none;width:10px;font-size:10px;color:var(--accent);text-align:center}
+  .gridtable .row-toggle .ic::before{content:"▸"}
+  .gridtable .row-toggle[aria-expanded="true"] .ic::before{content:"▾"}
+  .gridtable .row-toggle .lbl{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  tr.grid-explain td{text-align:left;white-space:normal;word-break:break-word;overflow-wrap:anywhere;font-weight:400;font-size:12px;color:var(--ink-2);background:var(--card);padding:8px 10px}
 
   /* ---- 專案×日期格子表：手機（≤600px）縮欄位塞進 390 寬、不橫捲，最新在最左 ---- */
   @media(max-width:600px){
@@ -96,10 +107,13 @@
 
     table.gridtable{table-layout:fixed;font-size:10px}
     table.gridtable th,table.gridtable td{padding:4px 1px}
-    table.gridtable th:first-child,table.gridtable td.rowlbl{width:62px;max-width:62px;font-size:10px;padding:4px 3px 4px 3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    table.gridtable th:first-child{width:62px;max-width:62px;font-size:10px;padding:4px 3px}
+    table.gridtable td.rowlbl{width:62px;max-width:62px;font-size:10px;padding:0}
+    table.gridtable .row-toggle{padding:4px 3px}
     table.gridtable th:not(:first-child),table.gridtable td.cell{width:auto}
     .gridtable .d-full{display:none}
     .gridtable .d-short{display:inline}
+    tr.grid-explain td{font-size:11px;padding:8px}
   }
 
   /* ---- 分數點陣（五色，一點一筆） ---- */
@@ -123,8 +137,8 @@
   <div class="legend" id="proj-legend"></div>
   <div class="chartbox"><div id="today-bar"></div></div>
 
-  <h2>各專案近 14 天做了多少件</h2>
-  <div class="caption"><p class="lead">列＝專案，欄＝日期，格內數字＝那天那個專案算進來的件數，有件數才上色（用專案自己的顏色，跟上面「今天按專案」同一套）。想看某一天某個專案的細節，展開下面的清單。</p></div>
+  <h2 id="grid-h2">各專案近 14 天做了多少件 <a href="javascript:void(0)" id="grid-toggle-all" class="grid-toggle-all">全部展開</a></h2>
+  <div class="caption"><p class="lead">列＝專案，欄＝日期，格內數字＝那天那個專案算進來的件數，有件數才上色（用專案自己的顏色，跟上面「今天按專案」同一套）。點專案名稱前面的箭頭，可以展開看這個專案在做什麼。想看某一天某個專案的細節，展開下面的清單。</p></div>
   <div class="chartbox"><div class="gridwrap"><table class="gridtable" id="grid-table"></table></div></div>
 
   <details class="toggle bigtoggle">
@@ -197,6 +211,28 @@ function plainText(it){
   return `示意：這是當天記錄下來的一筆工作項目。`;
 }
 
+const PROJ_DESC={
+  '預約系統':'LINE 預約系統（Cloudflare Workers），第一個商業客戶「又仟」實際在用；後台、客人名單、錢包都在這裡',
+  '股癌':'股癌 Podcast 逐字稿 → AI 抽出提到的股票與看法 → 資料庫 → 每週報告／熱度頁',
+  '股癌回測':'拿股癌講過的標的去回測「照他講的做會不會賺」，每筆附他的原話，產靜態網站',
+  '交易機器人':'AI 選股實驗，多組投資策略互相 PK（影子帳本 → 之後接券商模擬單）',
+  '橋樑':'跟賈維斯（波樂那邊的 AI）的溝通橋與交換區，含交易機器人協作組的規格',
+  '工作證明頁':'這個頁面本身——每天 AI 做了哪些事、證據連結、你打的分數',
+  '報告站':'daniel-reports（戰情室、各種給你看的報告頁）',
+  '會計部':'AI 額度／token 花費的稽核與日報，抓漏、算每件事花多少',
+  '看板':'計畫看板與台帳（plans.json）、糾正票、按鈕決策的收發',
+  '制度':'AI 的規則正本（判斷 checklist、紅線、維護協議）',
+  '記憶':'AI 的跨 session 記憶、每日 log、糾正紀錄',
+  'hook':'Claude Code 的攔截器腳本（擋危險指令、強制讀規則、自動存記憶）',
+  '工具':'共用小腳本（寄信、找便宜 AI 代讀、報表產生）',
+  '遠端':'Discord 常駐 session 的開機流程、看門狗、交接簡報',
+  'skill':'自建的 Claude Code 技能（收工、評估、會計部…）',
+  'serenity-clone':'股癌選股／多空判斷的統計實證（他點名的股票比隨機好多少）',
+  'tw-backtest':'台股回測基礎工具（手續費、證交稅、績效指標）',
+  'video-transcribe':'本機影片語音轉錄＋字幕工具',
+  'root':'母資料夾層級的雜項（CLAUDE.md、索引、跨專案整理）',
+  '其他':'對不到專案的零碎項目'
+};
 const PROJ_SLOTS=['var(--s1)','var(--s2)','var(--s3)','var(--s4)','var(--s5)','var(--s6)','var(--s7)'];
 const PROJ_RGB_SLOTS=['var(--s1-rgb)','var(--s2-rgb)','var(--s3-rgb)','var(--s4-rgb)','var(--s5-rgb)','var(--s6-rgb)','var(--s7-rgb)'];
 function buildProjectColorMap(days){
@@ -292,8 +328,10 @@ fetch('./proof.json').then(r=>r.json()).then(data=>{
   gridRows.forEach(p=>days.forEach(d=>{maxGridCell=Math.max(maxGridCell,(gridCounts[p]&&gridCounts[p][d.date])||0);}));
   const gridDays=[...days].reverse(); // 5c：最新在前（最左／最上，桌機、手機皆同）
   let gridHtml='<thead><tr><th><span class="d-full">專案 ＼ 日期</span><span class="d-short">專案</span></th>'+gridDays.map(d=>`<th><span class="d-full">${fmtDate(d.date)}</span><span class="d-short">${d.date.slice(8,10)}</span></th>`).join('')+'</tr></thead><tbody>';
-  gridRows.forEach(p=>{
-    gridHtml+=`<tr><td class="rowlbl">${esc(p)}</td>`;
+  const gridColspan=gridDays.length+1;
+  gridRows.forEach((p,ri)=>{
+    const descText=Object.prototype.hasOwnProperty.call(PROJ_DESC,p)?PROJ_DESC[p]:'（尚未寫說明）';
+    gridHtml+=`<tr class="grid-row"><td class="rowlbl"><button type="button" class="row-toggle" aria-expanded="false" data-row="${ri}"><span class="ic"></span><span class="lbl">${esc(p)}</span></button></td>`;
     gridDays.forEach(d=>{
       const v=(gridCounts[p]&&gridCounts[p][d.date])||0;
       const rgbVar=projRgbMap[p]||'var(--neutral-rgb)';
@@ -303,9 +341,38 @@ fetch('./proof.json').then(r=>r.json()).then(data=>{
       gridHtml+=`<td class="cell" style="background:${bg};color:${fg}">${v>0?v:''}</td>`;
     });
     gridHtml+='</tr>';
+    gridHtml+=`<tr class="grid-explain" data-row="${ri}" hidden><td colspan="${gridColspan}">${esc(descText)}</td></tr>`;
   });
   gridHtml+='</tbody>';
   document.getElementById('grid-table').innerHTML=gridHtml;
+
+  // ---- 專案說明列：展開／收起 ----
+  const gridTableEl=document.getElementById('grid-table');
+  const toggleAllLink=document.getElementById('grid-toggle-all');
+  function setRowOpen(btn,open){
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    const explainRow=btn.closest('tr').nextElementSibling;
+    if(explainRow&&explainRow.classList.contains('grid-explain'))explainRow.hidden=!open;
+  }
+  function syncToggleAllLabel(){
+    const allBtns=gridTableEl.querySelectorAll('.row-toggle');
+    const openCount=gridTableEl.querySelectorAll('.row-toggle[aria-expanded="true"]').length;
+    toggleAllLink.textContent=(allBtns.length>0&&openCount===allBtns.length)?'全部收起':'全部展開';
+  }
+  gridTableEl.querySelectorAll('.row-toggle').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      setRowOpen(btn,btn.getAttribute('aria-expanded')!=='true');
+      syncToggleAllLabel();
+    });
+  });
+  toggleAllLink.addEventListener('click',()=>{
+    const allBtns=gridTableEl.querySelectorAll('.row-toggle');
+    const openCount=gridTableEl.querySelectorAll('.row-toggle[aria-expanded="true"]').length;
+    const makeOpen=openCount<allBtns.length;
+    allBtns.forEach(btn=>setRowOpen(btn,makeOpen));
+    syncToggleAllLabel();
+  });
+  syncToggleAllLabel();
 
   // ---- 每天清單（收合在格子表下方）----
   const daysDiv=document.getElementById('days');
