@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>AI 每天做了什麼（範本 B）</title>
+<style>
+  :root{color-scheme:light;--bg:#fff;--ink:#111;--ink-2:#555;--ink-3:#888;--line:#ddd;--accent:#1f6fd0;--warn:#a05a00;--warn-bg:#fff3e0;--head:#f4f4f2;--zebra:#fafaf8}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#121212;--ink:#eee;--ink-2:#bbb;--ink-3:#888;--line:#333;--accent:#7fb0ef;--warn:#f0b060;--warn-bg:#2e2410;--head:#1e1e1e;--zebra:#171717}}
+  :root[data-theme="dark"]{color-scheme:dark;--bg:#121212;--ink:#eee;--ink-2:#bbb;--ink-3:#888;--line:#333;--accent:#7fb0ef;--warn:#f0b060;--warn-bg:#2e2410;--head:#1e1e1e;--zebra:#171717}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"Noto Sans TC","PingFang TC",system-ui,sans-serif}
+  main{max-width:820px;margin:0 auto;padding:16px 16px 60px}
+  h1{font-size:20px;margin:0 0 6px}
+  .banner{background:var(--warn-bg);color:var(--warn);border-radius:6px;padding:8px 12px;font-size:14px;margin:10px 0}
+  .intro{font-size:14px;color:var(--ink-2);border-left:3px solid var(--line);padding-left:10px;margin:0 0 16px}
+  .intro p{margin:3px 0}
+  h2{font-size:16px;margin:22px 0 6px}
+  .daybar{display:flex;justify-content:space-between;align-items:baseline;background:var(--head);padding:8px 10px;border-radius:6px 6px 0 0;font-weight:700}
+  .daybar .n{color:var(--accent);font-size:20px}
+  .daybar .rule{font-weight:400;font-size:12px;color:var(--ink-3)}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th{font-weight:600;text-align:left;color:var(--ink-2);font-size:12px;background:var(--head);padding:6px 8px;border-bottom:1px solid var(--line)}
+  td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:var(--zebra)}
+  td.t{white-space:nowrap;color:var(--ink-3);font-variant-numeric:tabular-nums;width:52px}
+  td.ev{white-space:nowrap}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .by{color:var(--ink-3);font-size:12px}
+  details{font-size:14px;color:var(--ink-2);padding:8px 10px;border:1px solid var(--line);border-top:0;border-radius:0 0 6px 6px}
+  details ul{margin:6px 0 0;padding-left:18px}
+  .note{font-size:13px;color:var(--ink-2);margin:0 0 6px}
+  code{font-size:12px;background:var(--head);padding:1px 4px;border-radius:3px;word-break:break-all}
+  .score{font-weight:800;color:var(--accent)}
+  .score.low{color:var(--warn)}
+  @media (max-width:520px){
+    table,thead,tbody,tr,td,th{display:block}
+    thead{display:none}
+    tr{border-bottom:1px solid var(--line);padding:6px 0}
+    td{border:0;padding:2px 8px}
+    td.t{width:auto;display:inline-block}
+    td.ev{white-space:normal}
+    tr:nth-child(even) td{background:transparent}
+    tr:nth-child(even){background:var(--zebra)}
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>AI 每天做了什麼</h1>
+  <div class="banner">範本 B（表格式）：資料跟 A 版一模一樣，只有版面不同。你挑一版，或說哪裡要混。</div>
+  <div class="intro">
+    <p><b>證明什麼：</b>AI 每天真的做完了哪些事，每件附證據，你點開看、不用信它。</p>
+    <p><b>一件怎麼算：</b>只算有證據的三種——推上 GitHub 的程式、你自己按同意關掉的票、日誌上對得到 commit 的紀錄。AI 自己說「做完了」不算。</p>
+    <p><b>怎麼驗：</b>數表格行數＝件數；點連結要打得開。</p>
+  </div>
+
+  <h2>一、做了什麼</h2>
+  <div class="daybar"><span>2026-09-18（四）</span><span><span class="n" id="n0918">0</span> 件 <span class="rule">規則 v3</span></span></div>
+  <table>
+    <thead><tr><th>時間</th><th>事項</th><th>證據</th><th>你哪句交辦的</th></tr></thead>
+    <tbody id="items0918"></tbody>
+  </table>
+  <details>
+    <summary>其他紀錄（不算件）：跳過 4 筆 commit、AI 自己送驗 1 張票、AI 自述 3 條</summary>
+    <ul>
+      <li>跳過 commit（收工／交接類）：7cab459、2101e17、4aecec4 收工；07c2fb9 BOOT_BRIEF 補段</li>
+      <li>AI 送驗、你還沒按同意的票：tw-backtest-project</li>
+      <li>AI 自述（對不到 commit 的日誌 ✅）：兆利代號改 3548.TWO／transcribe-4q-2bugs 不關／BOOT_BRIEF 更新</li>
+    </ul>
+  </details>
+
+  <h2>二、花了多少額度</h2>
+  <p class="note">從我電腦裡的對話紀錄加總（主帳號＋分身）。<b>跟你在 claude.ai 看到的額度對不起來，你驗不了</b>，只能看每天高低。算法：每次呼叫「讀進去＋新記住＋寫出來」的字加總，同一則只算一次，不含「重讀已記住的字」。</p>
+  <table>
+    <thead><tr><th>日期</th><th>合計</th><th>主帳號</th><th>分身</th><th>母體</th></tr></thead>
+    <tbody>
+      <tr><td>09-18</td><td><b>201.4 萬</b></td><td>69.7 萬</td><td>131.7 萬</td><td>正式版印「M 個對話檔、K 則呼叫」；重算 <code>proof_table.py --days 14 --print</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>三、你打的分數</h2>
+  <p class="note">評的是「回答」，不是上面的產出。逐則列，不平均。</p>
+  <table>
+    <thead><tr><th>時間</th><th>分數</th><th>原因</th><th>你那則</th></tr></thead>
+    <tbody>
+      <tr><td class="t">10:36</td><td><span class="score low">2</span></td><td>評估才問一題就急著要同意</td><td class="ev"><a href="https://discord.com/channels/1541147813948424225/1547587315956973588/1550334690018328729">開</a></td></tr>
+      <tr><td class="t">14:10</td><td><span class="score">4</span></td><td>demo 主角錯，做成活動量數字</td><td class="ev"><a href="https://discord.com/channels/1541147813948424225/1547587315956973588/1550388574724161659">開</a></td></tr>
+      <tr><td class="t">14:26</td><td><span class="score low">2</span></td><td>表有問題、看不到數字含義</td><td class="ev"><a href="https://discord.com/channels/1541147813948424225/1547587315956973588/1550392480610910271">開</a></td></tr>
+      <tr><td class="t">14:33</td><td><span class="score low">1</span></td><td>聽一個訴求修一次，要整個 plan</td><td class="ev"><a href="https://discord.com/channels/1541147813948424225/1547587315956973588/1550394360842158084">開</a></td></tr>
+    </tbody>
+  </table>
+</main>
+<script>
+const G="https://github.com/Jack20773/ai-journal/commit/";
+const items=[
+  ["14:28","proof_table：「回你幾則」只算你本人兩個頻道＋去重","a20445e","你 14:26 那則"],
+  ["14:21","harvest_scores：分身通知被當成你打分 → 丟棄","14e9992","自主"],
+  ["14:18","proof_table：每日事項（commit／票／日誌）＋證據連結","2b86d70","你 14:10 那則"],
+  ["12:17","proof_table.py：每日工作證明資料表第一版","6a6bdad","你 11:50 那則"],
+  ["11:58","quota_report：補抓漏掉的觸發來源","8c2887f","自主"],
+  ["11:54","制度：分身任務切小＋機械活改用 Sonnet","6279403","你 10:43 那則"],
+  ["11:18","weekly_fixes：補 09-18 品質註記","4257d39","自主"],
+  ["11:18","harvest_scores：補抓你在我忙時傳的訊息（之前漏低分）","241bc3d","你 10:36 那則"],
+  ["11:15","會計部改成每日日報（≤8 行＋品質線）","ee534ea","你 11:06 那則"],
+  ["10:58","會計部每週回顧上線＋寄信硬關","ff4d520","你 10:48 那則"],
+];
+const tb=document.getElementById("items0918");
+for(const [t,txt,sha,by] of items){
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td class="t">${t}</td><td>${txt}</td><td class="ev"><a href="${G}${sha}">commit ${sha}</a></td><td class="by">${by}</td>`;
+  tb.appendChild(tr);
+}
+document.getElementById("n0918").textContent=tb.children.length;
+</script>
+</body>
+</html>
