@@ -85,28 +85,21 @@
   table.gridtable th{color:var(--ink-2);font-weight:600;font-size:10px;background:var(--muted-bg);white-space:nowrap}
   table.gridtable th:first-child,table.gridtable td.rowlbl{text-align:left;padding-left:6px;font-weight:700;background:var(--muted-bg);font-size:12px;white-space:nowrap}
   table.gridtable td.cell{font-variant-numeric:tabular-nums;font-weight:700}
-  .gridwrap{overflow-x:auto}
+  .gridwrap{overflow-x:hidden}
+  .gridtable .d-short{display:none}
 
-  /* ---- 專案×日期：桌機用表格、手機用直向堆疊（5c 新增，最新在最前）---- */
-  .grid-mobile{display:none}
-  .gridm-day{border-top:1px dashed var(--line);padding:8px 0}
-  .gridm-day:first-child{border-top:0}
-  .gridm-date{font-weight:700;font-size:13px;margin-bottom:4px}
-  .gridm-date .tag{font-weight:600;font-size:11px;color:var(--accent);margin-left:4px}
-  .gridm-projs{display:flex;flex-wrap:wrap;gap:6px}
-  .gridm-chip{display:inline-flex;align-items:center;gap:4px;font-size:12px;padding:3px 8px;border-radius:999px;color:#fff;font-weight:600}
-  .gridm-empty{color:var(--ink-3);font-size:13px}
-  .gridm-older > summary{cursor:pointer;color:var(--accent);font-size:13px;list-style:none;user-select:none;padding:8px 0 4px}
-  .gridm-older > summary::-webkit-details-marker{display:none}
-  .gridm-older > summary::before{content:"▸ ";display:inline-block}
-  .gridm-older[open] > summary::before{content:"▾ ";}
-
+  /* ---- 專案×日期格子表：手機（≤600px）縮欄位塞進 390 寬、不橫捲，最新在最左 ---- */
   @media(max-width:600px){
-    .grid-desktop{display:none}
-    .grid-mobile{display:block}
     table.heat{font-size:11px}
     table.heat th,table.heat td{padding:6px 2px}
     table.heat th:first-child,table.heat td.rowlbl{font-size:11px}
+
+    table.gridtable{table-layout:fixed;font-size:10px}
+    table.gridtable th,table.gridtable td{padding:4px 1px}
+    table.gridtable th:first-child,table.gridtable td.rowlbl{width:62px;max-width:62px;font-size:10px;padding:4px 3px 4px 3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    table.gridtable th:not(:first-child),table.gridtable td.cell{width:auto}
+    .gridtable .d-full{display:none}
+    .gridtable .d-short{display:inline}
   }
 
   /* ---- 分數點陣（五色，一點一筆） ---- */
@@ -132,8 +125,7 @@
 
   <h2>各專案近 14 天做了多少件</h2>
   <div class="caption"><p class="lead">列＝專案，欄＝日期，格內數字＝那天那個專案算進來的件數，有件數才上色（用專案自己的顏色，跟上面「今天按專案」同一套）。想看某一天某個專案的細節，展開下面的清單。</p></div>
-  <div class="chartbox grid-desktop"><div class="gridwrap"><table class="gridtable" id="grid-table"></table></div></div>
-  <div class="chartbox grid-mobile" id="grid-mobile"></div>
+  <div class="chartbox"><div class="gridwrap"><table class="gridtable" id="grid-table"></table></div></div>
 
   <details class="toggle bigtoggle">
     <summary>看每天清單（14 天，每天一份，含證據連結）</summary>
@@ -153,6 +145,9 @@
   </div>
   <div class="legend" id="score-legend"></div>
   <div class="chartbox"><div class="scoregrid" id="score-grid"></div></div>
+  <div class="caption">
+    <p>縱軸（由上到下）＝日期，最新一天在最上面；橫軸（同一列由左到右）＝那天打分的時間先後，最左邊是當天最早打的一筆。點的顏色＝分數（1～5 分，紅色最低、綠色最高）；同一天出現好幾個點＝那天打了不只一次分。</p>
+  </div>
 
   <div class="footnote">
     <p><b>這頁證明什麼：</b>每天做了幾件、給哪幾個專案，點開看每一件的證據連結；額度看是不是都叫主帳號、都叫貴的模型做；分數是你自己打的滿意度。</p>
@@ -295,8 +290,8 @@ fetch('./proof.json').then(r=>r.json()).then(data=>{
   const gridRows=Object.keys(rowTotals).sort((a,b)=>rowTotals[b]-rowTotals[a]);
   let maxGridCell=1;
   gridRows.forEach(p=>days.forEach(d=>{maxGridCell=Math.max(maxGridCell,(gridCounts[p]&&gridCounts[p][d.date])||0);}));
-  const gridDays=[...days].reverse(); // 5c：最新在前（最左／最上）
-  let gridHtml='<thead><tr><th>專案 ＼ 日期</th>'+gridDays.map(d=>`<th>${fmtDate(d.date)}</th>`).join('')+'</tr></thead><tbody>';
+  const gridDays=[...days].reverse(); // 5c：最新在前（最左／最上，桌機、手機皆同）
+  let gridHtml='<thead><tr><th><span class="d-full">專案 ＼ 日期</span><span class="d-short">專案</span></th>'+gridDays.map(d=>`<th><span class="d-full">${fmtDate(d.date)}</span><span class="d-short">${d.date.slice(8,10)}</span></th>`).join('')+'</tr></thead><tbody>';
   gridRows.forEach(p=>{
     gridHtml+=`<tr><td class="rowlbl">${esc(p)}</td>`;
     gridDays.forEach(d=>{
@@ -311,32 +306,6 @@ fetch('./proof.json').then(r=>r.json()).then(data=>{
   });
   gridHtml+='</tbody>';
   document.getElementById('grid-table').innerHTML=gridHtml;
-
-  // ---- 專案×日期（手機版：直向堆疊，一天一塊，最新在最上，最近 7 天先看、其餘收進「更早」）----
-  const gridMobile=document.getElementById('grid-mobile');
-  function dayChips(d){
-    const byProj={};
-    countedItems(d).forEach(it=>{const p=projKeyFor(projMap,it.project);byProj[p]=(byProj[p]||0)+1;});
-    const order=Object.keys(byProj).sort((a,b)=>byProj[b]-byProj[a]);
-    if(order.length===0)return '<div class="gridm-empty">這天沒有算進來的項目。</div>';
-    return '<div class="gridm-projs">'+order.map(p=>{
-      const bg=projColor(projMap,p);
-      return `<span class="gridm-chip" style="background:${bg}">${esc(p)} ${byProj[p]}</span>`;
-    }).join('')+'</div>';
-  }
-  function dayBlockHtml(d){
-    const isToday=d.date===today.date;
-    return `<div class="gridm-day"><div class="gridm-date">${fmtDate(d.date)}${isToday?'<span class="tag">今天</span>':''}</div>${dayChips(d)}</div>`;
-  }
-  const RECENT_N=7;
-  const recentDays=gridDays.slice(0,RECENT_N);
-  const olderDays=gridDays.slice(RECENT_N);
-  let gridMobileHtml=recentDays.map(dayBlockHtml).join('');
-  if(olderDays.length>0){
-    gridMobileHtml+=`<details class="gridm-older"><summary>更早（其餘 ${olderDays.length} 天）</summary>`+
-      olderDays.map(dayBlockHtml).join('')+'</details>';
-  }
-  gridMobile.innerHTML=gridMobileHtml;
 
   // ---- 每天清單（收合在格子表下方）----
   const daysDiv=document.getElementById('days');
