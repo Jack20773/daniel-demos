@@ -1,0 +1,243 @@
+{
+  "generated_at": "2026-09-18T12:15+08:00",
+  "days": [
+    {
+      "date": "2026-09-05",
+      "commits": 32,
+      "tickets_done": 0,
+      "tickets_verify": 3,
+      "subagent_runs": 44,
+      "discord_replies": 200,
+      "tokens_main_wan": 432.5,
+      "tokens_sub_wan": 688.0,
+      "score_avg": 3.44,
+      "score_low": 4,
+      "corrections_new": 9,
+      "highlights": [
+        "帳務結案：claude auth status 回 authMethod=cla",
+        "又仟那件根因查明（唯讀分身）：不是查詢被過濾，是渲染漏畫——public/b8q",
+        "前端兩改完成＋自己多找到第三個洞：界外預約補畫卡片（迴圈不動，insertBef"
+      ],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-06",
+      "commits": 12,
+      "tickets_done": 0,
+      "tickets_verify": 1,
+      "subagent_runs": 31,
+      "discord_replies": 146,
+      "tokens_main_wan": 247.8,
+      "tokens_sub_wan": 394.9,
+      "score_avg": 3.75,
+      "score_low": 1,
+      "corrections_new": 5,
+      "highlights": [],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-07",
+      "commits": 18,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 33,
+      "discord_replies": 122,
+      "tokens_main_wan": 253.9,
+      "tokens_sub_wan": 557.0,
+      "score_avg": 3.71,
+      "score_low": 2,
+      "corrections_new": 6,
+      "highlights": [
+        "正式庫 migration 0021 已套（17 queries／425 row",
+        "兩道閘門各擋一次且都擋對：①schema 漂移（程式已改、正式庫未改）②路由契約",
+        "daily/ 全目錄錨點掃描本棒已做：62 檔、零檔案有多組活錨點（上一棒交接記"
+      ],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-08",
+      "commits": 11,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 32,
+      "discord_replies": 21,
+      "tokens_main_wan": 118.6,
+      "tokens_sub_wan": 203.6,
+      "score_avg": 2.0,
+      "score_low": 1,
+      "corrections_new": 3,
+      "highlights": [
+        "已確認跑的是 paper（4002）不是真錢——scheduleddailyru"
+      ],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-09",
+      "commits": 8,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 16,
+      "discord_replies": 86,
+      "tokens_main_wan": 244.3,
+      "tokens_sub_wan": 218.6,
+      "score_avg": 4.0,
+      "score_low": 0,
+      "corrections_new": 0,
+      "highlights": [
+        "沒有給他任何手機畫面步驟——照 03judgment 七之5 先重讀 feedb",
+        "@ 有效已由他親口確認（「至少我看手機的當下是可以收到」）；三步的帳＝猜對→測錯",
+        "01:11 他親口確認：「回測沒錯，股癌」——兩題歧義都解除。要修的是回測那一邊"
+      ],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-10",
+      "commits": 11,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 35,
+      "discord_replies": 94,
+      "tokens_main_wan": 223.2,
+      "tokens_sub_wan": 889.8,
+      "score_avg": 4.22,
+      "score_low": 0,
+      "corrections_new": 1,
+      "highlights": [
+        "股癌回測改固定天期已派工（他拍板走我推薦的）：30 天／90 天兩組、基準同天期",
+        "line-booking 兩件已派工（他 00:09 交辦）：①商品刪不掉 ②課",
+        "他 00:32 核准兩件並已交付：①打分訊號接起來（005scripts/har"
+      ],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-11",
+      "commits": 26,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 33,
+      "discord_replies": 85,
+      "tokens_main_wan": 224.4,
+      "tokens_sub_wan": 487.1,
+      "score_avg": 5.0,
+      "score_low": 0,
+      "corrections_new": 1,
+      "highlights": [
+        "00:33 已在新主人頻道 1547587315956973588 回他停擺原因",
+        "5.1 提問稿交付 100Todo/projects/ai-teaches-ai",
+        "Discord 已講：第一課記憶（1547653379302498345）、對回"
+      ],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-12",
+      "commits": 19,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 43,
+      "discord_replies": 121,
+      "tokens_main_wan": 204.4,
+      "tokens_sub_wan": 553.5,
+      "score_avg": 4.0,
+      "score_low": 0,
+      "corrections_new": 2,
+      "highlights": [],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-13",
+      "commits": 4,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 8,
+      "discord_replies": 72,
+      "tokens_main_wan": 135.0,
+      "tokens_sub_wan": 87.7,
+      "score_avg": 4.0,
+      "score_low": 0,
+      "corrections_new": 1,
+      "highlights": [],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-14",
+      "commits": 4,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 2,
+      "discord_replies": 17,
+      "tokens_main_wan": 84.4,
+      "tokens_sub_wan": 31.1,
+      "score_avg": null,
+      "score_low": 0,
+      "corrections_new": 1,
+      "highlights": [],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-15",
+      "commits": 12,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 10,
+      "discord_replies": 31,
+      "tokens_main_wan": 50.7,
+      "tokens_sub_wan": 93.3,
+      "score_avg": 4.0,
+      "score_low": 0,
+      "corrections_new": 0,
+      "highlights": [],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-16",
+      "commits": 9,
+      "tickets_done": 0,
+      "tickets_verify": 1,
+      "subagent_runs": 5,
+      "discord_replies": 33,
+      "tokens_main_wan": 85.2,
+      "tokens_sub_wan": 32.7,
+      "score_avg": 4.0,
+      "score_low": 0,
+      "corrections_new": 1,
+      "highlights": [],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-17",
+      "commits": 5,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 17,
+      "discord_replies": 17,
+      "tokens_main_wan": 56.7,
+      "tokens_sub_wan": 159.4,
+      "score_avg": 5.0,
+      "score_low": 0,
+      "corrections_new": 0,
+      "highlights": [
+        "熱度頁病歷卡上線：commit 17cedcd、publish run 3522"
+      ],
+      "notes": ""
+    },
+    {
+      "date": "2026-09-18",
+      "commits": 11,
+      "tickets_done": 0,
+      "tickets_verify": 1,
+      "subagent_runs": 10,
+      "discord_replies": 27,
+      "tokens_main_wan": 52.2,
+      "tokens_sub_wan": 100.5,
+      "score_avg": 2.0,
+      "score_low": 1,
+      "corrections_new": 0,
+      "highlights": [
+        "11:08 週報分身收工，commit ff4d520（未 push）：week",
+        "11:28 日報分身收工 commit ee534ea：dailyreview.",
+        "會計部流程優化分身收工（16 分鐘）：audit.py v3 message.i"
+      ],
+      "notes": ""
+    }
+  ]
+}

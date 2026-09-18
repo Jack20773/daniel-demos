@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 每天做了什麼</title>
+<style>
+  :root{
+    --bg:#f5f5f7;
+    --card:#ffffff;
+    --text:#1c1c1e;
+    --sub:#6e6e73;
+    --line:#e5e5ea;
+    --accent:#0071e3;
+    --accent-bg:#eaf3ff;
+    --good:#1f8a3b;
+    --bad:#c62828;
+    --tip-bg:#1c1c1e;
+    --tip-text:#ffffff;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0e0e10;
+      --card:#1c1c1e;
+      --text:#f2f2f7;
+      --sub:#9a9a9e;
+      --line:#3a3a3c;
+      --accent:#4da3ff;
+      --accent-bg:#132339;
+      --good:#4cd964;
+      --bad:#ff6b6b;
+      --tip-bg:#f2f2f7;
+      --tip-text:#1c1c1e;
+      --shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+  }
+  *{ box-sizing:border-box; }
+  html,body{
+    margin:0; padding:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    -webkit-text-size-adjust:100%;
+    overflow-x:hidden;
+    max-width:100vw;
+  }
+  .wrap{
+    max-width:960px;
+    margin:0 auto;
+    padding:16px 16px 48px;
+  }
+  header.top{
+    margin-bottom:14px;
+  }
+  .updated{
+    font-size:15px;
+    font-weight:600;
+    margin:0 0 4px;
+  }
+  .updated-sub{
+    font-size:13px;
+    color:var(--sub);
+    margin:0 0 16px;
+    line-height:1.5;
+  }
+  /* 7天合計卡 */
+  .compare{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-bottom:20px;
+  }
+  .compare-card{
+    background:var(--card);
+    border-radius:12px;
+    padding:12px 14px;
+    box-shadow:var(--shadow);
+  }
+  .compare-title{
+    font-size:12px;
+    color:var(--sub);
+    margin:0 0 8px;
+    font-weight:600;
+  }
+  .compare-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:13px;
+    padding:3px 0;
+  }
+  .compare-row .label{ color:var(--sub); }
+  .compare-row .val{ font-weight:600; font-variant-numeric: tabular-nums; }
+  .trend{
+    font-size:12px;
+    margin-left:6px;
+    font-weight:700;
+  }
+  .trend.up{ color:var(--good); }
+  .trend.down{ color:var(--bad); }
+  .trend.flat{ color:var(--sub); }
+  .compare-note{
+    font-size:11px;
+    color:var(--sub);
+    margin-top:6px;
+  }
+
+  /* 欄名 + 說明按鈕 */
+  .qmark{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:15px; height:15px;
+    border-radius:50%;
+    border:1px solid var(--sub);
+    color:var(--sub);
+    font-size:10px;
+    line-height:1;
+    background:transparent;
+    cursor:pointer;
+    margin-left:4px;
+    padding:0;
+    vertical-align:middle;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tip-pop{
+    position:fixed;
+    max-width:280px;
+    background:var(--tip-bg);
+    color:var(--tip-text);
+    font-size:13px;
+    line-height:1.5;
+    padding:10px 12px;
+    border-radius:10px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.3);
+    z-index:999;
+    display:none;
+  }
+  .tip-pop.show{ display:block; }
+
+  /* 桌機表格 */
+  table.data{
+    width:100%;
+    border-collapse:collapse;
+    background:var(--card);
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    font-size:13px;
+    table-layout:fixed;
+  }
+  table.data th, table.data td{
+    padding:10px 8px;
+    text-align:left;
+    border-bottom:1px solid var(--line);
+    vertical-align:top;
+    word-break:break-word;
+    overflow-wrap:break-word;
+  }
+  table.data th{
+    font-size:12px;
+    color:var(--sub);
+    font-weight:600;
+  }
+  table.data td.num{ font-variant-numeric: tabular-nums; }
+  table.data tr:last-child td{ border-bottom:none; }
+
+  /* 手機卡片 */
+  .cards{ display:none; }
+  .day-card{
+    background:var(--card);
+    border-radius:14px;
+    box-shadow:var(--shadow);
+    padding:14px 16px;
+    margin-bottom:12px;
+  }
+  .day-card .date{
+    font-size:16px;
+    font-weight:700;
+    margin:0 0 10px;
+  }
+  .field-row{
+    display:grid;
+    grid-template-columns: 1fr minmax(0, 60%);
+    align-items:start;
+    padding:6px 0;
+    border-bottom:1px dashed var(--line);
+    gap:10px;
+  }
+  .field-row:last-child{ border-bottom:none; }
+  .field-label{
+    font-size:13px;
+    color:var(--sub);
+    min-width:0;
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .field-val{
+    font-size:14px;
+    font-weight:600;
+    text-align:right;
+    font-variant-numeric: tabular-nums;
+    min-width:0;
+    word-break:break-word;
+    overflow-wrap:anywhere;
+    white-space:normal;
+  }
+  .field-val.highlight-text{
+    font-weight:400;
+    line-height:1.5;
+  }
+
+  .fallback{
+    background:var(--card);
+    border-radius:12px;
+    padding:24px 18px;
+    text-align:center;
+    color:var(--sub);
+    font-size:14px;
+    box-shadow:var(--shadow);
+  }
+
+  @media (max-width: 720px){
+    table.data{ display:none; }
+    .cards{ display:block; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <p class="updated" id="updatedLine">最近更新：讀取中…</p>
+    <p class="updated-sub">每格數字都是從紀錄自動算的，不是我自己填的。</p>
+  </header>
+
+  <section class="compare" id="compareBox" style="display:none;"></section>
+
+  <table class="data" id="dataTable" style="display:none;">
+    <colgroup>
+      <col style="width:8%">
+      <col style="width:9%">
+      <col style="width:7%">
+      <col style="width:7%">
+      <col style="width:8%">
+      <col style="width:7%">
+      <col style="width:13%">
+      <col style="width:13%">
+      <col style="width:7%">
+      <col style="width:21%">
+    </colgroup>
+    <thead>
+      <tr id="headRow"></tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <div class="cards" id="cardsBox"></div>
+
+  <div class="fallback" id="fallbackBox" style="display:none;">
+    資料檔還沒生出來
+  </div>
+</div>
+
+<div class="tip-pop" id="tipPop"></div>
+
+<script>
+(function(){
+  var COLS = [
+    { key:'date', label:'日期', tip:'那一天的日期，最新的一天放在最上面。' },
+    { key:'commits', label:'存檔次數(commit)', tip:'我把工作存檔的次數，類似你在 Word 按「儲存」的次數，越多代表當天改動越多。' },
+    { key:'tickets_done', label:'關掉的票', tip:'完成並結案的待辦事項數量，像手機備忘錄裡打勾劃掉的項目。' },
+    { key:'tickets_verify', label:'送驗的票', tip:'已經做完、但還在等你確認才能正式結案的待辦。' },
+    { key:'subagent_runs', label:'派出的分身', tip:'派出的分身＝我叫出去做事的小幫手數量，越多代表我把工作分出去，不是自己在主房間耗。' },
+    { key:'discord_replies', label:'回你幾則', tip:'我在 Discord 回覆你訊息的則數。' },
+    { key:'tokens', label:'額度：主線＋分身（萬）', tip:'用掉的運算額度，單位是萬，類似手機月租的用量條，數字越大代表當天花的資源越多。' },
+    { key:'score', label:'你打的分數(平均・≤2次)', tip:'你幫我打的分數平均值；後面是你打「2 分以下（不滿意）」的次數。' },
+    { key:'corrections_new', label:'新糾正票', tip:'你當天新指出我做錯、需要記住改進的地方。' },
+    { key:'highlights', label:'當天亮點', tip:'當天比較值得一提的幾件事，用「‧」隔開。' }
+  ];
+
+  function fmt(v){
+    if (v === null || v === undefined) return '—';
+    if (typeof v === 'number' && Number.isNaN(v)) return '—';
+    return v;
+  }
+
+  function fmtNum1(v){
+    if (v === null || v === undefined || Number.isNaN(v)) return '—';
+    return (Math.round(v * 10) / 10).toString();
+  }
+
+  function fmtDateHuman(iso){
+    // 2026-09-18T12:10+08:00 -> 2026年9月18日 12:10
+    var m = iso.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+    if (!m) return iso;
+    return m[1] + '年' + parseInt(m[2],10) + '月' + parseInt(m[3],10) + '日 ' + m[4] + ':' + m[5];
+  }
+
+  function fmtDateShort(dateStr){
+    var m = dateStr.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!m) return dateStr;
+    return parseInt(m[2],10) + '/' + parseInt(m[3],10);
+  }
+
+  function tokensText(d){
+    var main = fmtNum1(d.tokens_main_wan);
+    var sub = fmtNum1(d.tokens_sub_wan);
+    if (main === '—' && sub === '—') return '—';
+    return '主 ' + main + ' + 分 ' + sub;
+  }
+
+  function scoreText(d){
+    var avg = (d.score_avg === null || d.score_avg === undefined || Number.isNaN(d.score_avg)) ? '—' : fmtNum1(d.score_avg);
+    var low = (d.score_low === null || d.score_low === undefined) ? '—' : d.score_low;
+    return avg + '（≤2分：' + low + '次）';
+  }
+
+  function highlightsText(d){
+    if (!d.highlights || !d.highlights.length) return '—';
+    return d.highlights.join(' ‧ ');
+  }
+
+  function sumField(days, key){
+    var has = false, total = 0;
+    days.forEach(function(d){
+      var v = d[key];
+      if (v !== null && v !== undefined && !Number.isNaN(v)){ has = true; total += v; }
+    });
+    return has ? total : null;
+  }
+
+  function trendArrow(cur, prev){
+    if (cur === null || prev === null) return { cls:'flat', txt:'' };
+    if (cur > prev) return { cls:'up', txt:'▲' };
+    if (cur < prev) return { cls:'down', txt:'▼' };
+    return { cls:'flat', txt:'–' };
+  }
+
+  function buildCompare(daysAsc){
+    var n = daysAsc.length;
+    var recent = daysAsc.slice(Math.max(0, n - 7), n);
+    var prevStart = Math.max(0, n - 14);
+    var prevEnd = Math.max(0, n - 7);
+    var prev = daysAsc.slice(prevStart, prevEnd);
+
+    var metrics = [
+      { key:'commits', label:'存檔次數' },
+      { key:'tickets_done', label:'關掉的票' },
+      { key:'subagent_runs', label:'派出的分身' },
+      { key:'discord_replies', label:'回你幾則' }
+    ];
+
+    var box = document.getElementById('compareBox');
+    box.innerHTML = '';
+
+    var recentCard = document.createElement('div');
+    recentCard.className = 'compare-card';
+    var recentTitle = document.createElement('p');
+    recentTitle.className = 'compare-title';
+    recentTitle.textContent = '近 ' + recent.length + ' 天合計';
+    recentCard.appendChild(recentTitle);
+
+    var prevCard = document.createElement('div');
+    prevCard.className = 'compare-card';
+    var prevTitle = document.createElement('p');
+    prevTitle.className = 'compare-title';
+    prevTitle.textContent = prev.length ? ('前 ' + prev.length + ' 天合計') : '前 7 天合計';
+    prevCard.appendChild(prevTitle);
+
+    metrics.forEach(function(m){
+      var rSum = sumField(recent, m.key);
+      var pSum = prev.length ? sumField(prev, m.key) : null;
+      var tr = trendArrow(rSum, pSum);
+
+      var rRow = document.createElement('div');
+      rRow.className = 'compare-row';
+      rRow.innerHTML = '<span class="label">' + m.label + '</span><span class="val">' + fmt(rSum) +
+        (tr.txt ? ' <span class="trend ' + tr.cls + '">' + tr.txt + '</span>' : '') + '</span>';
+      recentCard.appendChild(rRow);
+
+      var pRow = document.createElement('div');
+      pRow.className = 'compare-row';
+      pRow.innerHTML = '<span class="label">' + m.label + '</span><span class="val">' + fmt(pSum) + '</span>';
+      prevCard.appendChild(pRow);
+    });
+
+    if (!prev.length){
+      var note = document.createElement('p');
+      note.className = 'compare-note';
+      note.textContent = '資料還不滿 14 天，暫時沒有前 7 天可以比。';
+      prevCard.appendChild(note);
+    }
+
+    box.appendChild(recentCard);
+    box.appendChild(prevCard);
+    box.style.display = 'grid';
+  }
+
+  function makeQmark(tip){
+    var btn = document.createElement('button');
+    btn.className = 'qmark';
+    btn.type = 'button';
+    btn.textContent = '?';
+    btn.setAttribute('aria-label', '說明');
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      showTip(btn, tip);
+    });
+    return btn;
+  }
+
+  function showTip(anchor, text){
+    var pop = document.getElementById('tipPop');
+    if (pop.classList.contains('show') && pop._anchor === anchor){
+      pop.classList.remove('show');
+      pop._anchor = null;
+      return;
+    }
+    pop.textContent = text;
+    pop.classList.add('show');
+    pop._anchor = anchor;
+    var rect = anchor.getBoundingClientRect();
+    var top = rect.bottom + 6;
+    var left = rect.left;
+    var maxLeft = window.innerWidth - 290;
+    if (left > maxLeft) left = Math.max(8, maxLeft);
+    pop.style.top = top + 'px';
+    pop.style.left = left + 'px';
+  }
+
+  document.addEventListener('click', function(){
+    var pop = document.getElementById('tipPop');
+    pop.classList.remove('show');
+    pop._anchor = null;
+  });
+
+  function buildTable(daysDesc){
+    var headRow = document.getElementById('headRow');
+    headRow.innerHTML = '';
+    COLS.forEach(function(c){
+      var th = document.createElement('th');
+      th.textContent = c.label;
+      th.appendChild(makeQmark(c.tip));
+      headRow.appendChild(th);
+    });
+
+    var body = document.getElementById('tableBody');
+    body.innerHTML = '';
+    daysDesc.forEach(function(d){
+      var tr = document.createElement('tr');
+      var cells = [
+        d.date,
+        fmt(d.commits),
+        fmt(d.tickets_done),
+        fmt(d.tickets_verify),
+        fmt(d.subagent_runs),
+        fmt(d.discord_replies),
+        tokensText(d),
+        scoreText(d),
+        fmt(d.corrections_new),
+        highlightsText(d)
+      ];
+      cells.forEach(function(val, i){
+        var td = document.createElement('td');
+        if (i !== 0 && i !== cells.length - 1) td.className = 'num';
+        if (i === cells.length - 1) td.className = 'highlights';
+        td.textContent = val;
+        tr.appendChild(td);
+      });
+      body.appendChild(tr);
+    });
+    document.getElementById('dataTable').style.display = '';
+  }
+
+  function buildCards(daysDesc){
+    var box = document.getElementById('cardsBox');
+    box.innerHTML = '';
+    daysDesc.forEach(function(d){
+      var card = document.createElement('div');
+      card.className = 'day-card';
+
+      var dateEl = document.createElement('p');
+      dateEl.className = 'date';
+      dateEl.textContent = d.date;
+      card.appendChild(dateEl);
+
+      var rows = [
+        { c: COLS[1], val: fmt(d.commits) },
+        { c: COLS[2], val: fmt(d.tickets_done) },
+        { c: COLS[3], val: fmt(d.tickets_verify) },
+        { c: COLS[4], val: fmt(d.subagent_runs) },
+        { c: COLS[5], val: fmt(d.discord_replies) },
+        { c: COLS[6], val: tokensText(d) },
+        { c: COLS[7], val: scoreText(d) },
+        { c: COLS[8], val: fmt(d.corrections_new) },
+        { c: COLS[9], val: highlightsText(d), isHighlight:true }
+      ];
+
+      rows.forEach(function(r){
+        var row = document.createElement('div');
+        row.className = 'field-row';
+        var label = document.createElement('span');
+        label.className = 'field-label';
+        label.textContent = r.c.label;
+        label.appendChild(makeQmark(r.c.tip));
+        var val = document.createElement('span');
+        val.className = 'field-val' + (r.isHighlight ? ' highlight-text' : '');
+        val.textContent = r.val;
+        row.appendChild(label);
+        row.appendChild(val);
+        card.appendChild(row);
+      });
+
+      box.appendChild(card);
+    });
+  }
+
+  function render(data){
+    document.getElementById('updatedLine').textContent = '最近更新：' + fmtDateHuman(data.generated_at);
+    var daysAsc = (data.days || []).slice().sort(function(a,b){ return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
+    var daysDesc = daysAsc.slice().reverse();
+
+    buildCompare(daysAsc);
+    buildTable(daysDesc);
+    buildCards(daysDesc);
+  }
+
+  fetch('proof.json', { cache: 'no-store' })
+    .then(function(res){
+      if (!res.ok) throw new Error('not ok');
+      return res.json();
+    })
+    .then(function(data){
+      if (!data || !data.days || !data.days.length) throw new Error('empty');
+      render(data);
+    })
+    .catch(function(){
+      document.getElementById('updatedLine').textContent = '最近更新：—';
+      document.getElementById('fallbackBox').style.display = 'block';
+    });
+})();
+</script>
+</body>
+</html>
