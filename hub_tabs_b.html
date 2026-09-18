@@ -42,24 +42,24 @@
 </head>
 <body>
 <div class="tab-bar" role="tablist" aria-label="頁籤">
-  <button type="button" class="tab-btn" id="tabBtnWarroom" data-tab="warroom" role="tab">戰情室</button>
   <button type="button" class="tab-btn" id="tabBtnProof" data-tab="proof" role="tab">今天 AI 使用分析</button>
+  <button type="button" class="tab-btn" id="tabBtnWarroom" data-tab="warroom" role="tab">戰情室</button>
 </div>
 <div class="frame-wrap">
-  <iframe id="frameWarroom" class="hub-frame" title="戰情室"></iframe>
-  <iframe id="frameProof" class="hub-frame" title="今天 AI 使用分析" hidden></iframe>
+  <iframe id="frameProof" class="hub-frame" title="今天 AI 使用分析"></iframe>
+  <iframe id="frameWarroom" class="hub-frame" title="戰情室" hidden></iframe>
 </div>
 <script>
 (function(){
   try{
     var TABS = {
-      warroom: { btn: document.getElementById('tabBtnWarroom'), frame: document.getElementById('frameWarroom'), url: 'https://daniel-reports.vercel.app/warroom.html' },
-      proof:   { btn: document.getElementById('tabBtnProof'),   frame: document.getElementById('frameProof'),   url: 'proof_v3_viz5b.html' }
+      proof:   { btn: document.getElementById('tabBtnProof'),   frame: document.getElementById('frameProof'),   url: 'proof_v3_viz5c.html' },
+      warroom: { btn: document.getElementById('tabBtnWarroom'), frame: document.getElementById('frameWarroom'), url: 'https://daniel-reports.vercel.app/warroom.html' }
     };
     var loaded = {};
 
     function activate(key){
-      if(!TABS[key]) key = 'warroom';
+      if(!TABS[key]) key = 'proof';
       Object.keys(TABS).forEach(function(k){
         var t = TABS[k];
         var on = (k === key);
@@ -80,7 +80,7 @@
       TABS[k].btn.addEventListener('click', function(){ activate(k); });
     });
 
-    var initial = 'warroom';
+    var initial = 'proof';
     try{
       var h = (location.hash || '').replace('#', '');
       if(h && TABS[h]) initial = h;
