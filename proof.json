@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T03:00+08:00",
+  "generated_at": "2026-09-20T04:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3335,31 +3335,31 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 4,
+      "commits": 6,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 4,
-      "discord_replies": 23,
-      "tokens_main_wan": 22.9,
-      "tokens_sub_wan": 31.5,
-      "tokens_sessions": 7,
-      "tokens_msgs": 278,
+      "discord_replies": 26,
+      "tokens_main_wan": 31.5,
+      "tokens_sub_wan": 38.9,
+      "tokens_sessions": 8,
+      "tokens_msgs": 359,
       "tokens_by_model": {
-        "opus": 51.2,
+        "opus": 67.3,
         "sonnet": 0.0,
         "haiku": 3.2,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 22.9,
+        "opus": 31.5,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 28.3,
+        "opus": 35.8,
         "sonnet": 0.0,
         "haiku": 3.2,
         "fable": 0.0,
@@ -3381,12 +3381,30 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "遠端 9/20 凌晨棒收工（縮減版，上下文 203k）：本地 AI 生圖 D:\\ComfyUI 上線（評估三題→同意→…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:58",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "遠端 9/19 晚棒收工（縮減版，上下文 200k）：17:00 ai_overview 上線 c8d8bb6→16:…",
           "project": "記憶",
           "reason": "automated",
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:26",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T03:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3417,7 +3435,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
+      "notes": "另有 6 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
     }
   ]
 }
