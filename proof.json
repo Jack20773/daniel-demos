@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T01:30+08:00",
+  "generated_at": "2026-09-19T12:27+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -2984,65 +2984,58 @@
     },
     {
       "date": "2026-09-19",
-      "commits": 6,
+      "commits": 18,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 5,
-      "discord_replies": 13,
-      "tokens_main_wan": 15.8,
-      "tokens_sub_wan": 55.3,
-      "tokens_sessions": 8,
-      "tokens_msgs": 318,
+      "subagent_runs": 9,
+      "discord_replies": 43,
+      "tokens_main_wan": 228.9,
+      "tokens_sub_wan": 123.8,
+      "tokens_sessions": 108,
+      "tokens_msgs": 930,
       "tokens_by_model": {
-        "opus": 43.2,
-        "sonnet": 27.9,
-        "haiku": 0.0,
+        "opus": 106.4,
+        "sonnet": 71.3,
+        "haiku": 174.9,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 15.8,
+        "opus": 61.9,
         "sonnet": 0.0,
-        "haiku": 0.0,
+        "haiku": 167.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 27.4,
-        "sonnet": 27.9,
-        "haiku": 0.0,
+        "opus": 44.5,
+        "sonnet": 71.3,
+        "haiku": 7.9,
         "fable": 0.0,
         "other": 0.0
       },
-      "score_avg": 3.0,
-      "score_low": 2,
+      "score_avg": 4.0,
+      "score_low": 0,
       "score_high": 2,
       "scores": [
-        {
-          "score": 3,
-          "time": "2026-09-19 00:02"
-        },
-        {
-          "score": 4,
-          "time": "2026-09-19 00:02"
-        },
-        {
-          "score": 2,
-          "time": "2026-09-19 00:02"
-        },
         {
           "score": 5,
           "time": "2026-09-19 00:03"
         },
         {
-          "score": 1,
-          "time": "2026-09-19 00:29"
+          "score": 3,
+          "time": "2026-09-19 09:14"
+        },
+        {
+          "score": 4,
+          "time": "2026-09-19 09:17"
         }
       ],
       "corrections_new": 0,
       "highlights": [
         "demo：viz5c 分數五色重定義（5綠4黃3橘紅2深紅1藍特殊）",
-        "demo：viz5c 3 分改純橘，與 2 分深紅拉開"
+        "demo：viz5c 3 分改純橘，與 2 分深紅拉開",
+        "proof 正式版接 5c 版面：一致性 11 條修完、白話句改讀 proof_table --plain 產出（10…"
       ],
       "items": [
         {
@@ -3068,10 +3061,136 @@
           "time": "00:15",
           "plain": "改了顏色的深淺設定，讓橘色看起來更清楚，跟深紅色的差別更明顯，這樣使用者選顏色時不會搞錯。",
           "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "proof 正式版接 5c 版面：一致性 11 條修完、白話句改讀 proof_table --plain 產出（10…",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/a7666ff5a70a1337c5778934f51b43815455ee11",
+          "evidence_label": "commit a7666ff",
+          "verified": true,
+          "time": "01:31",
+          "plain": "我把工作證明頁面改成新版面，修正了 11 個看起來不一樣的地方，文字也改用新方式製作。這樣頁面看起來就整整齊齊，用戶不會覺得有些東西奇怪。",
+          "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "proof：分數色 5綠4藍3黃2紅1紫、去紅圈；分數表橫軸改 0–24 時；新增額度每天走勢表＋分身 Opus 近7…",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/179ec08b628bc2d809424396b719eaa56c1c3bb0",
+          "evidence_label": "commit 179ec08",
+          "verified": true,
+          "time": "09:19",
+          "plain": "把工作證明頁改用顏色表示分數（綠色很好、紅色需加油），拿掉紅色圓圈，時間軸改成按小時，加上每天額度和最近一週表現的圖表。這樣一眼就看得出做得怎樣、哪裡要改進。",
+          "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "demo：v4 圖表版面二選一（分數 1 點疊／2 趨勢；額度 1 堆疊長條／2 折線），橫軸皆日期（他 09:34 …",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/0bb81b44d2a50abb9e72ff406ef41b9e0c028607",
+          "evidence_label": "commit 0bb81b4",
+          "verified": true,
+          "time": "09:44",
+          "plain": "改了程式算數字的圖表，做出兩種看法，分數可以看一粒粒或看變化，額度可以看柱子堆疊或折線，全部都用日期當時間軸。這樣想看的人就能選自己最喜歡的方式。",
+          "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "demo：v4 圖表頁再加七張（分數 日曆格／堆疊條／累積平均；額度 面積／Opus 佔比／啞鈴／小走勢卡），共 11…",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/e24ed3cddaf154c2dc98f51892605868b798ec8c",
+          "evidence_label": "commit e24ed3c",
+          "verified": true,
+          "time": "09:58",
+          "plain": "在圖表頁面上新增了七種不同的展示方式，包括日曆格、堆疊圖、平均線圖等，讓使用者能用不同角度檢視同一份資料，就像用不同方式數東西一樣清楚。",
+          "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "proof 正式頁套定案：分數改每天一根堆疊條（分數 4）、額度走勢改前7→近7 啞鈴圖＋標題句（額度 5）（他 11…",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/79049c608e1d5bc30fe18429fe732133dfc7e9c9",
+          "evidence_label": "commit 79049c6",
+          "verified": true,
+          "time": "12:01",
+          "plain": "把工作證明頁面的分數改成堆疊的小條子，額度改成前後對比圖，讓你一眼看出哪邊變多、哪邊變少。",
+          "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "proof：分數回 a7666ff 點點圖（新五色、去紅圈）；額度走勢改回一格一天日條乾淨版（無框線、每列同色系深淺、…",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/05e1cec92890b6dcc53923175ba11f5d8e257b58",
+          "evidence_label": "commit 05e1cec",
+          "verified": true,
+          "time": "12:17",
+          "plain": "把分數用彩色點點顯示，拿掉紅圈圈。把額度走勢改成一格一天的乾淨圖表，用同一種顏色的不同深淺，讓整個頁面看起來更清爽舒服。",
+          "plain_ok": true
         }
       ],
-      "items_count": 2,
+      "items_count": 8,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "遠端 9/19 上午棒收工（縮減版，上下文 201k）：他四點回饋→demo 11 張→Codex 盲評→採後退回原點…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:18",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "09-19 11:42–12:03：Codex 盲評圖表、他定分數4＋額度5、正式頁上線 daniel-demos 7…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:02",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "09-19 09:14 他四點回饋（3／4 分）全改完上線 daniel-demos 179ec08；記憶：圖的軸要在…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:20",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "遠端 9/19 凌晨棒收工（縮減版，上下文 203k）：完整版 proof.html 上線（daniel-demos …",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:01",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "file_audit：Codex 主審後加程式硬規則——30 天內有動或位於子 git repo 的 delete 一…",
+          "project": "會計部",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "08:40",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "file_audit r2：引用數改只算正文型檔並排除 worktrees/jsonl/log/_shots/.pla…",
+          "project": "會計部",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:49",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "遠端 9/18 夜棒收工補：分數色定案 綠黃紅紫藍（daniel-demos 57ab7c5）；file_audit.…",
@@ -3110,7 +3229,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2、無 Co-Authored-By: Claude 2）"
+      "notes": "另有 10 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5、未 push 3、無 Co-Authored-By: Claude 2）"
     }
   ]
 }
