@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T13:13+08:00",
+  "generated_at": "2026-09-19T14:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -2984,39 +2984,39 @@
     },
     {
       "date": "2026-09-19",
-      "commits": 25,
+      "commits": 29,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 12,
-      "discord_replies": 61,
-      "tokens_main_wan": 264.9,
-      "tokens_sub_wan": 151.6,
-      "tokens_sessions": 122,
-      "tokens_msgs": 1183,
+      "subagent_runs": 14,
+      "discord_replies": 66,
+      "tokens_main_wan": 287.2,
+      "tokens_sub_wan": 176.9,
+      "tokens_sessions": 130,
+      "tokens_msgs": 1366,
       "tokens_by_model": {
-        "opus": 137.1,
-        "sonnet": 82.7,
-        "haiku": 196.8,
+        "opus": 165.9,
+        "sonnet": 93.7,
+        "haiku": 204.6,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 79.0,
-        "sonnet": 0.0,
+        "opus": 90.4,
+        "sonnet": 11.0,
         "haiku": 185.9,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 58.1,
+        "opus": 75.5,
         "sonnet": 82.7,
-        "haiku": 10.9,
+        "haiku": 18.7,
         "fable": 0.0,
         "other": 0.0
       },
-      "score_avg": 4.0,
+      "score_avg": 4.2,
       "score_low": 0,
-      "score_high": 3,
+      "score_high": 4,
       "scores": [
         {
           "score": 5,
@@ -3033,6 +3033,10 @@
         {
           "score": 4,
           "time": "2026-09-19 13:05"
+        },
+        {
+          "score": 5,
+          "time": "2026-09-19 13:13"
         }
       ],
       "corrections_new": 0,
@@ -3185,10 +3189,43 @@
           "time": "12:56",
           "plain": "工作證明頁的顯示方式改了：現在「工作」那行直接寫「5 個・手機工作」，下面把全部列出來。他之前看到橘色疑惑，現在一眼就清楚有多少個、分別是什麼。",
           "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "proof 正式頁：合併 v5 版面＋整版精簡（他 13:01「你自己跑優化」、13:05 解除「只整理不新增」）",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/f73c9e15dd733a4ba5b64b715abcfe131eaf5927",
+          "evidence_label": "commit f73c9e1",
+          "verified": true,
+          "time": "13:16",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "ai_overview：AI 兩週總覽一圖看懂頁（他 13:10「猜我要什麼、圖示化、17:00 前交」）；含看板快照…",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/c8d8bb6233ed1870d9fff3fbbbc0815714286d6d",
+          "evidence_label": "commit c8d8bb6",
+          "verified": true,
+          "time": "13:43",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 12,
+      "items_count": 14,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "遠端 9/19 午棒收工（縮減版，上下文 208k）：假分數修（harvest_scores 三條）、proof.js…",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:18",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "遠端 9/19 上午棒收工（縮減版，上下文 201k）：他四點回饋→demo 11 張→Codex 盲評→採後退回原點…",
@@ -3263,6 +3300,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-19T13:13+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:13",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-19T13:12+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -3308,7 +3354,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 13 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 8、未 push 3、無 Co-Authored-By: Claude 2）"
+      "notes": "另有 15 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10、未 push 3、無 Co-Authored-By: Claude 2）"
     }
   ]
 }
