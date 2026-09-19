@@ -400,7 +400,7 @@
           html += '<a class="row" role="row" href="'+gflights(r.q, c.job.dep, c.job.ret)+'" target="_blank" rel="noopener">' +
             '<span class="c-dest"><span class="name"><span class="rank">'+(idx+1)+'</span>'+r.flag+' '+esc(r.name)+(idx===0?'<span class="best">最便宜</span>':'')+'</span>' +
               '<span class="code">'+(anywhere ? r.iata : esc(r.sub)+' · '+r.iata)+'</span></span>' +
-            '<span class="c-price">'+ntd(r.price)+'<small>來回</small></span>' +
+            '<span class="c-price">'+ntd(r.price)+'</span>' +
             '<span class="c-time">'+dur(r.dur)+'<span class="stops '+(r.stops?'':'direct')+'">'+(r.stops?'轉 '+r.stops+' 次':'直飛')+'</span></span>' +
           '</a>';
         });
