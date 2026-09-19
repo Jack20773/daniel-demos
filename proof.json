@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T22:00+08:00",
+  "generated_at": "2026-09-19T23:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -2712,6 +2712,18 @@
           "plain_ok": true
         },
         {
+          "kind": "commit",
+          "text": "proof_table：items 加 project／by、每日 tokens_by_model（main／sub）",
+          "project": "會計部",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3e90beb3f7a8249431288efb6888f5ca59c30004",
+          "evidence_label": "commit 3e90beb",
+          "verified": true,
+          "time": "15:49",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
           "kind": "note",
           "text": "v3.1 兩版上線（daniel-demos 05a5ae5）：3a 按專案／3b 按交辦 vs 自主（示意）；每天一句話＋分專案橫條、額度加各模型堆疊、分數週趨勢表；proof_table.py 加 project／by／tokens_b",
           "project": "工作證明頁",
@@ -2722,6 +2734,18 @@
           "time": "15:49",
           "plain": "更新了工作紀錄系統，做出兩種檢視：按案子分或按別人交的、自己做的分；每天整理一句話、加進度條、額度堆疊和這週趨勢，讓紀錄一眼就看懂。",
           "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "proof：v3.2 計畫（09-18 16:02 六點回饋）§3.5；score_high（≥4 分）欄位",
+          "project": "會計部",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/70aaa08b0c05d931132ce40910cc2ea19968aca1",
+          "evidence_label": "commit 70aaa08",
+          "verified": true,
+          "time": "16:18",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
@@ -2737,6 +2761,18 @@
         },
         {
           "kind": "commit",
+          "text": "proof v3.3 計畫（09-18 16:41 回饋）§3.6；proof_table.py 補 scores 每…",
+          "project": "會計部",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/215df43c734ee9598ed36a8fda47d2743498b035",
+          "evidence_label": "commit 215df43",
+          "verified": true,
+          "time": "16:55",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
           "text": "proof v3.3 demo：5a（分數點陣＋熱圖紅綠＋清單移最下）／5b（專案×日期格子表＋熱圖紅綠＋分數點陣）—…",
           "project": "工作證明頁",
           "by": "未對",
@@ -2746,6 +2782,18 @@
           "time": "16:55",
           "plain": "把工作證明頁做了新版本，有兩種排法給你選：一種把分數點點和紅綠燈放上面、清單放下面看；另一種用表格顯示各個項目和日期，配上分數點點和紅綠燈。這樣可以一眼看出做了什麼工作、表現好不好。",
           "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "harvest_scores：inline 偽陽性標記補「才有意義／紅色／黃色／綠色／顏色／分界／降為／升為」（09-…",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e979b63a06c611293dd34e476a3e9c45e3f6d090",
+          "evidence_label": "commit e979b63",
+          "verified": true,
+          "time": "16:58",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
@@ -2832,7 +2880,7 @@
           "plain_ok": true
         }
       ],
-      "items_count": 26,
+      "items_count": 30,
       "skipped": [
         {
           "kind": "commit",
@@ -2845,47 +2893,11 @@
         },
         {
           "kind": "commit",
-          "text": "harvest_scores：inline 偽陽性標記補「才有意義／紅色／黃色／綠色／顏色／分界／降為／升為」（09-…",
-          "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "16:58",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "proof v3.3 計畫（09-18 16:41 回饋）§3.6；proof_table.py 補 scores 每…",
-          "project": "會計部",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "16:55",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "proof：v3.2 計畫（09-18 16:02 六點回饋）§3.5；score_high（≥4 分）欄位",
-          "project": "會計部",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "16:18",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
           "text": "遠端 9/18 午後棒收工（縮減版，上下文 203k）：proof 計畫 v1→Fable 審→v3.1，demo 3…",
           "project": "記憶",
           "reason": "automated",
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "15:52",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "proof_table：items 加 project／by、每日 tokens_by_model（main／sub）",
-          "project": "會計部",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "15:49",
           "repo": "root"
         },
         {
@@ -2980,35 +2992,35 @@
           "time": null
         }
       ],
-      "notes": "另有 15 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10、未 push 4、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 11 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10、無 Co-Authored-By: Claude 1）"
     },
     {
       "date": "2026-09-19",
-      "commits": 39,
+      "commits": 43,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 18,
+      "subagent_runs": 19,
       "discord_replies": 69,
-      "tokens_main_wan": 326.2,
-      "tokens_sub_wan": 202.7,
-      "tokens_sessions": 138,
-      "tokens_msgs": 1650,
+      "tokens_main_wan": 331.2,
+      "tokens_sub_wan": 217.9,
+      "tokens_sessions": 139,
+      "tokens_msgs": 1772,
       "tokens_by_model": {
-        "opus": 225.3,
+        "opus": 245.5,
         "sonnet": 93.7,
         "haiku": 210.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 129.3,
+        "opus": 134.4,
         "sonnet": 11.0,
         "haiku": 185.9,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 96.0,
+        "opus": 111.1,
         "sonnet": 82.7,
         "haiku": 24.1,
         "fable": 0.0,
@@ -3043,7 +3055,7 @@
       "highlights": [
         "demo：viz5c 分數五色重定義（5綠4黃3橘紅2深紅1藍特殊）",
         "demo：viz5c 3 分改純橘，與 2 分深紅拉開",
-        "proof 正式版接 5c 版面：一致性 11 條修完、白話句改讀 proof_table --plain 產出（10…"
+        "file_audit r2：引用數改只算正文型檔並排除 worktrees/jsonl/log/_shots/.pla…"
       ],
       "items": [
         {
@@ -3072,6 +3084,18 @@
         },
         {
           "kind": "commit",
+          "text": "file_audit r2：引用數改只算正文型檔並排除 worktrees/jsonl/log/_shots/.pla…",
+          "project": "會計部",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e257b1a3093743291aba55045a93afd3cdfd9b6a",
+          "evidence_label": "commit e257b1a",
+          "verified": true,
+          "time": "00:49",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
           "text": "proof 正式版接 5c 版面：一致性 11 條修完、白話句改讀 proof_table --plain 產出（10…",
           "project": "工作證明頁",
           "by": "未對",
@@ -3084,6 +3108,18 @@
         },
         {
           "kind": "commit",
+          "text": "file_audit：Codex 主審後加程式硬規則——30 天內有動或位於子 git repo 的 delete 一…",
+          "project": "會計部",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/d8e19e7136a8f180a9bebf7a60ab5aba6a1803ff",
+          "evidence_label": "commit d8e19e7",
+          "verified": true,
+          "time": "08:40",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
           "text": "proof：分數色 5綠4藍3黃2紅1紫、去紅圈；分數表橫軸改 0–24 時；新增額度每天走勢表＋分身 Opus 近7…",
           "project": "工作證明頁",
           "by": "未對",
@@ -3093,6 +3129,18 @@
           "time": "09:19",
           "plain": "把工作證明頁改用顏色表示分數（綠色很好、紅色需加油），拿掉紅色圓圈，時間軸改成按小時，加上每天額度和最近一週表現的圖表。這樣一眼就看得出做得怎樣、哪裡要改進。",
           "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "09-19 09:14 他四點回饋（3／4 分）全改完上線 daniel-demos 179ec08；記憶：圖的軸要在…",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/df0e5ff74c16619681b38058fd16c361085d5b09",
+          "evidence_label": "commit df0e5ff",
+          "verified": true,
+          "time": "09:20",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
@@ -3225,10 +3273,43 @@
           "time": "20:56",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "flight-explore：出發地下拉（TPE/TSA/KHH/RMQ/其他）、130 座機場中文名字典、回程日曆限…",
+          "project": "flight-explore",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/14d92f74de451a5654e4e5d3250b47757dbc6011",
+          "evidence_label": "commit 14d92f7",
+          "verified": true,
+          "time": "22:31",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "daily 09-19：flight-explore 城市模式／出發地／push 收尾",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/30a6f96ce31bee1679008c6b9dee31ceb4bc0240",
+          "evidence_label": "commit 30a6f96",
+          "verified": true,
+          "time": "22:46",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 15,
+      "items_count": 20,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "flight-explore 航班探索新專案上線（評估四題→demo→正式版；SerpApi explore＋goog…",
+          "project": "flight-explore",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "22:11",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "遠端 9/19 午棒收工（縮減版，上下文 208k）：假分數修（harvest_scores 三條）、proof.js…",
@@ -3258,38 +3339,11 @@
         },
         {
           "kind": "commit",
-          "text": "09-19 09:14 他四點回饋（3／4 分）全改完上線 daniel-demos 179ec08；記憶：圖的軸要在…",
-          "project": "記憶",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "09:20",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
           "text": "遠端 9/19 凌晨棒收工（縮減版，上下文 203k）：完整版 proof.html 上線（daniel-demos …",
           "project": "記憶",
           "reason": "automated",
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "09:01",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "file_audit：Codex 主審後加程式硬規則——30 天內有動或位於子 git repo 的 delete 一…",
-          "project": "會計部",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "08:40",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "file_audit r2：引用數改只算正文型檔並排除 worktrees/jsonl/log/_shots/.pla…",
-          "project": "會計部",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "00:49",
           "repo": "root"
         },
         {
@@ -3309,6 +3363,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:11",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-19T22:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "22:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3447,7 +3510,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 24 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 18、未 push 3、無 Co-Authored-By: Claude 3）"
+      "notes": "另有 23 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 20、無 Co-Authored-By: Claude 3）"
     }
   ]
 }
