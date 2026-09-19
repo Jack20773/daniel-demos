@@ -1,207 +1,7 @@
 {
-  "generated_at": "2026-09-19T23:00+08:00",
+  "generated_at": "2026-09-20T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-09-06",
-      "commits": 12,
-      "tickets_done": 0,
-      "tickets_verify": 1,
-      "subagent_runs": 31,
-      "discord_replies": 110,
-      "tokens_main_wan": 247.8,
-      "tokens_sub_wan": 394.9,
-      "tokens_sessions": 38,
-      "tokens_msgs": 2310,
-      "tokens_by_model": {
-        "opus": 552.7,
-        "sonnet": 77.2,
-        "haiku": 12.8,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 247.8,
-        "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 304.9,
-        "sonnet": 77.2,
-        "haiku": 12.8,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "score_avg": 3.75,
-      "score_low": 1,
-      "score_high": 5,
-      "scores": [
-        {
-          "score": 5,
-          "time": "2026-09-06 14:39"
-        },
-        {
-          "score": 3,
-          "time": "2026-09-06 17:13"
-        },
-        {
-          "score": 1,
-          "time": "2026-09-06 17:18"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-06 17:25"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-06 22:43"
-        },
-        {
-          "score": 4,
-          "time": "2026-09-06 23:05"
-        },
-        {
-          "score": 3,
-          "time": "2026-09-06 23:07"
-        },
-        {
-          "score": 4,
-          "time": "2026-09-06 23:11"
-        }
-      ],
-      "corrections_new": 5,
-      "highlights": [
-        "line-booking UI 自評 17 條上線（三批，每批 curl 正式站驗新版）",
-        "line-booking 後台報表：砍掉四項功能（店主 2026-09-06 裁決「砍」）",
-        "後台推播三則改名：早上/中午/晚上 → 今天的預約/今天剩下的預約/明天的預約"
-      ],
-      "items": [
-        {
-          "kind": "commit",
-          "text": "line-booking UI 自評 17 條上線（三批，每批 curl 正式站驗新版）",
-          "project": "預約系統",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0e00a27014e0ce9aaf365d9a2052e408c74b4d7c",
-          "evidence_label": "commit 0e00a27",
-          "verified": true,
-          "time": "02:34",
-          "plain": "檢查訂號介面的 17 項改變沒問題，分三次把新版本推上真的網站，每次都確認跑起來了。這樣客人才能用好的版本。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "line-booking 後台報表：砍掉四項功能（店主 2026-09-06 裁決「砍」）",
-          "project": "預約系統",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/311f0ddcec88a8d717c060455fbb1bc18ab53804",
-          "evidence_label": "commit 311f0dd",
-          "verified": true,
-          "time": "22:22",
-          "plain": "預約系統的後台報表裡原本有四項功能，我把它們刪掉了，因為老闆說用不上。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "後台推播三則改名：早上/中午/晚上 → 今天的預約/今天剩下的預約/明天的預約",
-          "project": "預約系統",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8cc651d3f9d7d8d4daa712234243b955dc7a1aed",
-          "evidence_label": "commit 8cc651d",
-          "verified": true,
-          "time": "23:50",
-          "plain": "我改了系統每天傳給你的三個提醒訊息的名字，早上改成「今天的預約」，中午改成「今天剩下的預約」，晚上改成「明天的預約」，讓你一眼就看出是哪些預約，不用猜來猜去。",
-          "plain_ok": true
-        }
-      ],
-      "items_count": 3,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "收工：又仟提醒設定直接改正式庫＋後台三則改名＋B 延伸三版 demo",
-          "project": "報告站",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "23:51",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工：line-booking 減法（22 題問答定出帳本規格＋砍掉四張 AI 自造的報表卡＋三個形式 demo 上線）",
-          "project": "報告站",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "22:36",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工補正3：BOOT_BRIEF 壓到 2530 bytes（前兩次補正的訊息宣稱壓進上限，實際沒有）",
-          "project": "遠端",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "15:12",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工補正2：BOOT_BRIEF 確實壓進 2560",
-          "project": "遠端",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "15:12",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工補正：BOOT_BRIEF 壓回 2.5KB 上限內",
-          "project": "遠端",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "15:11",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工：B案兩輪對抗審查後停手（路線本身有問題）＋讀圖攔截hook上線＋他喊減法",
-          "project": "看板",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "15:11",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工：read-back 閘門上線＋機械化突變掃描把覆蓋缺口 19→7＋reply-first-guard 擋分身修好",
-          "project": "看板",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "11:14",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工：讀回來的內容才算數（賈維斯橋樑）＋gitignore 根因修復＋台帳兩個閘門缺口",
-          "project": "tw-backtest",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "10:32",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工：line-booking 17 條上線交接＋管線吃掉 exit code 的檢查缺口",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "02:38",
-          "repo": "root"
-        }
-      ],
-      "selfreport": [],
-      "notes": "另有 9 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 9）"
-    },
     {
       "date": "2026-09-07",
       "commits": 18,
@@ -2996,31 +2796,31 @@
     },
     {
       "date": "2026-09-19",
-      "commits": 43,
+      "commits": 45,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 19,
-      "discord_replies": 69,
-      "tokens_main_wan": 331.2,
-      "tokens_sub_wan": 217.9,
+      "discord_replies": 75,
+      "tokens_main_wan": 336.0,
+      "tokens_sub_wan": 220.0,
       "tokens_sessions": 139,
-      "tokens_msgs": 1772,
+      "tokens_msgs": 1836,
       "tokens_by_model": {
-        "opus": 245.5,
+        "opus": 252.4,
         "sonnet": 93.7,
         "haiku": 210.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 134.4,
+        "opus": 139.2,
         "sonnet": 11.0,
         "haiku": 185.9,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 111.1,
+        "opus": 113.2,
         "sonnet": 82.7,
         "haiku": 24.1,
         "fable": 0.0,
@@ -3297,9 +3097,21 @@
           "time": "22:46",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "flight-explore：每段日期可選去程／回程出發時段（google_flights outbound_time…",
+          "project": "flight-explore",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e49021788d4d58b74ab2987a4fc6c01de205be2e",
+          "evidence_label": "commit e490217",
+          "verified": true,
+          "time": "23:09",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 20,
+      "items_count": 21,
       "skipped": [
         {
           "kind": "commit",
@@ -3363,6 +3175,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:11",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-19T23:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3510,7 +3331,51 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 23 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 20、無 Co-Authored-By: Claude 3）"
+      "notes": "另有 24 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21、無 Co-Authored-By: Claude 3）"
+    },
+    {
+      "date": "2026-09-20",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 0.0,
+      "tokens_sessions": 0,
+      "tokens_msgs": 0,
+      "tokens_by_model": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
