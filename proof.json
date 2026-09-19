@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T21:00+08:00",
+  "generated_at": "2026-09-19T22:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -2984,31 +2984,31 @@
     },
     {
       "date": "2026-09-19",
-      "commits": 38,
+      "commits": 39,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 17,
+      "subagent_runs": 18,
       "discord_replies": 69,
-      "tokens_main_wan": 316.2,
-      "tokens_sub_wan": 194.6,
-      "tokens_sessions": 137,
-      "tokens_msgs": 1544,
+      "tokens_main_wan": 326.2,
+      "tokens_sub_wan": 202.7,
+      "tokens_sessions": 138,
+      "tokens_msgs": 1650,
       "tokens_by_model": {
-        "opus": 207.3,
+        "opus": 225.3,
         "sonnet": 93.7,
         "haiku": 210.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 119.4,
+        "opus": 129.3,
         "sonnet": 11.0,
         "haiku": 185.9,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 87.9,
+        "opus": 96.0,
         "sonnet": 82.7,
         "haiku": 24.1,
         "fable": 0.0,
@@ -3312,6 +3312,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-19T21:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "flights demo：拿掉票價後重複的「來回」小字（表頭已寫來回票價）",
           "project": "工作證明頁",
           "reason": "no_coauthor",
@@ -3438,7 +3447,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 23 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17、未 push 3、無 Co-Authored-By: Claude 3）"
+      "notes": "另有 24 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 18、未 push 3、無 Co-Authored-By: Claude 3）"
     }
   ]
 }
