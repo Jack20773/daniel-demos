@@ -157,6 +157,7 @@
 <body>
 <main>
   <h1>AI 每天做了什麼</h1>
+  <p class="sub" id="data-asof"></p>
 
   <div class="cards" id="cards"></div>
 
@@ -300,6 +301,8 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
   const rulesVersion=(data.rules_version!=null)?String(data.rules_version):'?';
   document.querySelectorAll('.ndays').forEach(el=>{el.textContent=String(days.length);});
   document.querySelectorAll('.rules-ver').forEach(el=>{el.textContent=rulesVersion;});
+  // 他 12:46「這是不是一份死檔？」：頁頂直接寫資料算到幾點（排程每小時重算一次）
+  {const g=String(data.generated_at||'');const el=document.getElementById('data-asof');el.textContent=g?('資料更新到 '+g.slice(5,10).replace('-','/')+' '+g.slice(11,16)+'（每小時自動重算）'):'資料時間不明';}
   const {map:projMap,rgbMap:projRgbMap,top:projTop}=buildProjectColorMap(days);
 
   // ---- 三張大數字卡 ----
