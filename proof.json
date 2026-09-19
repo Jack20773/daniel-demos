@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T13:10+08:00",
+  "generated_at": "2026-09-19T13:12+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -2984,33 +2984,33 @@
     },
     {
       "date": "2026-09-19",
-      "commits": 23,
+      "commits": 24,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 11,
-      "discord_replies": 59,
-      "tokens_main_wan": 256.8,
-      "tokens_sub_wan": 145.6,
-      "tokens_sessions": 117,
-      "tokens_msgs": 1129,
+      "subagent_runs": 12,
+      "discord_replies": 60,
+      "tokens_main_wan": 264.7,
+      "tokens_sub_wan": 151.6,
+      "tokens_sessions": 122,
+      "tokens_msgs": 1181,
       "tokens_by_model": {
-        "opus": 132.6,
+        "opus": 137.0,
         "sonnet": 82.7,
-        "haiku": 187.2,
+        "haiku": 196.8,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 77.6,
+        "opus": 78.9,
         "sonnet": 0.0,
-        "haiku": 179.3,
+        "haiku": 185.9,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 55.0,
+        "opus": 58.1,
         "sonnet": 82.7,
-        "haiku": 7.9,
+        "haiku": 10.9,
         "fable": 0.0,
         "other": 0.0
       },
@@ -3263,6 +3263,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json 重產 13:10（白話句 114/114；排程改 --plain-cache-only）",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:10",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json：修假分數——09-19 的 1 分（00:29「1分是紫色+紅色圈」）與 3/4/2（00:02…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -3290,7 +3299,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 11 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6、未 push 3、無 Co-Authored-By: Claude 2）"
+      "notes": "另有 12 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7、未 push 3、無 Co-Authored-By: Claude 2）"
     }
   ]
 }
