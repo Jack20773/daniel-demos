@@ -51,8 +51,10 @@
   .day-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
   .headline{font-weight:700;font-size:15px}
   .rule{font-size:12px;color:var(--ink-3)}
-  .segbar{display:flex;width:100%;height:14px;border-radius:4px;overflow:hidden;margin:8px 0 2px;background:var(--muted-bg)}
-  .segbar .seg{height:100%;margin-right:2px}
+  .segbar{display:flex;width:100%;height:22px;border-radius:4px;overflow:hidden;margin:8px 0 2px;background:var(--muted-bg)}
+  .segbar .seg{height:100%;margin-right:2px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--on-dark);white-space:nowrap;overflow:hidden}
+  @media (max-width:600px){#trend-table .d-old{display:none}}
+  .segbar-label{font-size:12px;color:var(--ink-2);margin:2px 0 0}
   .segbar .seg:last-child{margin-right:0}
   .toggle{margin-top:8px}
   .toggle > summary{cursor:pointer;color:var(--accent);font-size:14px;list-style:none;user-select:none}
@@ -291,8 +293,14 @@ function projSegBar(container,items,map){
     seg.style.background=projColor(map,p);
     seg.style.width=(byProj[p]/n*100)+'%';
     seg.title=`${p}：${byProj[p]} 件（${Math.round(byProj[p]/n*100)}%）`;
+    // 他 12:49「下面那條橘色的是做什麼的？」：條夠寬就把「幾件・專案」寫在條上，不靠圖例
+    if(byProj[p]/n>=0.22)seg.textContent=`${byProj[p]} 件・${p}`;
     container.appendChild(seg);
   });
+  // 條下一行把全部專案件數寫出來（窄段寫不進條上的也看得到）
+  let lbl=container.nextElementSibling;
+  if(!lbl||!lbl.classList.contains('segbar-label')){lbl=document.createElement('div');lbl.className='segbar-label';container.after(lbl);}
+  lbl.textContent=order.map(p=>`${p} ${byProj[p]} 件`).join('・');
 }
 
 function scoreColor(s){return {1:'var(--sc1)',2:'var(--sc2)',3:'var(--sc3)',4:'var(--sc4)',5:'var(--sc5)'}[s]||'var(--zero)';}
@@ -542,7 +550,9 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
 
     // v5 版面 demo：改用跟 #heat-table 同一套 table.heat 樣式（字級/格子/色階/圓角/邊線都沿用 .heat），
     // 不再用獨立的 .daybar 視覺語言；欄＝日期，最後一欄＝近 7 天小計（跟 heat-table 的「合計」欄同一個做法）。
-    let trendHtml='<thead><tr><th>帳號 · 模型 ＼ 日期</th>'+days.map(d=>`<th>${d.date.slice(8,10)}</th>`).join('')+'<th>近 7 天</th></tr></thead><tbody>';
+    // 手機（≤600px）只顯示近 7 天：14 天 16 欄在 390 寬擠到讀不了（我 13:02 自決）
+    const oldCls=i=>(i<days.length-7?' class="d-old"':'');
+    let trendHtml='<thead><tr><th>帳號 · 模型 ＼ 日期</th>'+days.map((d,i)=>`<th${oldCls(i)}>${d.date.slice(8,10)}</th>`).join('')+'<th>近 7 天</th></tr></thead><tbody>';
     ROWS.forEach(([label,acct,model,slot])=>{
       const vals=days.map(d=>acctVal(d,acct,model));
       const near=sumRange(acct,model,half,n);
@@ -551,12 +561,13 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
       vals.forEach((v,i)=>{
         const d=days[i];
         const title=`${fmtDate(d.date)} ${label} ${v.toFixed(0)} 萬`;
+        const oc=i<days.length-7?' d-old':'';
         if(v<=0){
-          trendHtml+=`<td class="cell" title="${esc(title)}">·</td>`;
+          trendHtml+=`<td class="cell${oc}" title="${esc(title)}">·</td>`;
         }else{
           // 他 12:44「分身熱圖顏色不對」：改用主熱圖同一套綠／紅規則（heatCellStyle），不再一列一色系
           const {bg,fg}=heatCellStyle(acct,model,v,maxV);
-          trendHtml+=`<td class="cell" style="background:${bg};color:${fg}" title="${esc(title)}">${fmtKM(v)}</td>`;
+          trendHtml+=`<td class="cell${oc}" style="background:${bg};color:${fg}" title="${esc(title)}">${fmtKM(v)}</td>`;
         }
       });
       trendHtml+=`<td class="cell">${fmtKM(near)}</td></tr>`;
