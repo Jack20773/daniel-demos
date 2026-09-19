@@ -11,19 +11,19 @@
     --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--s6:#008300;--s7:#4a3aa7;
     --s1-rgb:42,120,214;--s2-rgb:235,104,52;--s3-rgb:27,175,122;--s4-rgb:237,161,0;--s5-rgb:232,123,164;--s6-rgb:0,131,0;--s7-rgb:74,58,167;
     --good:#0f7a3d;--bad:#d32f2f;--good-rgb:15,122,61;--bad-rgb:211,47,47;--on-dark:#fff;--neutral-rgb:137,135,129;
-    --sc1:#7b1fa2;--sc2:#7b1fa2;--sc3:#d32f2f;--sc4:#b8860b;--sc5:#0f7a3d}
+    --sc1:#7b1fa2;--sc2:#d32f2f;--sc3:#c9a000;--sc4:#2a78d6;--sc5:#0f7a3d}
   @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
     --zero:#383835;
     --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;
     --s1-rgb:57,135,229;--s2-rgb:217,89,38;--s3-rgb:25,158,112;--s4-rgb:201,133,0;--s5-rgb:213,81,129;--s6-rgb:0,131,0;--s7-rgb:144,133,233;
     --good:#3fae72;--bad:#ef5350;--good-rgb:63,174,114;--bad-rgb:239,83,80;--neutral-rgb:150,148,140;
-    --sc1:#ba68c8;--sc2:#ba68c8;--sc3:#ef5350;--sc4:#f0d060;--sc5:#3fae72}}
+    --sc1:#ba68c8;--sc2:#ef5350;--sc3:#f0d060;--sc4:#5b9cf0;--sc5:#3fae72}}
   :root[data-theme="dark"]{color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
     --zero:#383835;
     --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;
     --s1-rgb:57,135,229;--s2-rgb:217,89,38;--s3-rgb:25,158,112;--s4-rgb:201,133,0;--s5-rgb:213,81,129;--s6-rgb:0,131,0;--s7-rgb:144,133,233;
     --good:#3fae72;--bad:#ef5350;--good-rgb:63,174,114;--bad-rgb:239,83,80;--neutral-rgb:150,148,140;
-    --sc1:#ba68c8;--sc2:#ba68c8;--sc3:#ef5350;--sc4:#f0d060;--sc5:#3fae72}
+    --sc1:#ba68c8;--sc2:#ef5350;--sc3:#f0d060;--sc4:#5b9cf0;--sc5:#3fae72}
   *{box-sizing:border-box}
   html,body{overflow-x:hidden}
   body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Noto Sans TC","PingFang TC",system-ui,sans-serif}
@@ -70,7 +70,13 @@
   .ev{display:block;font-size:14px;margin-top:3px;word-break:break-word}
   .ev a{color:var(--accent);text-decoration:none}
   .ev a:hover{text-decoration:underline}
-  .plain{font-size:13px;color:var(--ink-2);margin:4px 0 0 52px;line-height:1.5}
+  .plain{font-size:14px;color:var(--ink);line-height:1.5}
+  .raw{margin:4px 0 0 52px;font-size:12px;color:var(--ink-3)}
+  .raw summary{cursor:pointer;color:var(--accent);list-style:none;display:inline}
+  .raw summary::-webkit-details-marker{display:none}
+  .raw summary::before{content:"▸ ";font-size:10px}
+  .raw[open] summary::before{content:"▾ "}
+  .raw .rawtext{margin-top:3px;line-height:1.5;overflow-wrap:anywhere;word-break:break-word}
   .caption{font-size:14px;color:var(--ink-2);background:var(--muted-bg);border-radius:8px;padding:10px 12px;margin:0 0 10px}
   .caption p{margin:4px 0}
   .caption p.lead{font-weight:700;color:var(--ink)}
@@ -120,14 +126,17 @@
     tr.grid-explain td{font-size:11px;padding:8px}
   }
 
-  /* ---- 分數點陣（五色，一點一筆） ---- */
+  /* ---- 分數時間軸（一列一天，橫軸＝打分時刻 0–24 點，一點一筆，五色） ---- */
   .scoregrid{display:flex;flex-direction:column;gap:6px}
   .scorerow{display:grid;grid-template-columns:52px 1fr;align-items:center;gap:8px;font-size:12px;color:var(--ink-3)}
-  .scorerow .dots{display:flex;flex-wrap:wrap;gap:3px;align-items:center;min-width:0}
-  .scorerow .dots span{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
-  .scorerow .dots span.mark1,.legend .sw.mark1{box-shadow:0 0 0 2px var(--card),0 0 0 4px var(--sc3)}
-  .scorerow .dots span.mark1{margin:0 2px}
-  .scorerow .dots .none{color:var(--ink-3);font-size:12px;white-space:nowrap;flex:none;width:auto;height:auto;border-radius:0}
+  .scorerow.axis{color:var(--ink-3);font-size:11px}
+  .scorerow.axis .track{height:14px;border-bottom:1px solid var(--line)}
+  .scorerow.axis .tick{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}
+  .scorerow.axis .tick:first-child{transform:none}
+  .scorerow.axis .tick:last-child{left:auto!important;right:0;transform:none}
+  .scorerow .track{position:relative;min-height:16px;min-width:0;background-image:linear-gradient(to right,var(--line) 1px,transparent 1px);background-size:25% 100%;background-position:0 0;border-left:1px solid var(--line)}
+  .scorerow .track .dot{position:absolute;width:10px;height:10px;border-radius:50%;transform:translateX(-50%);top:3px}
+  .scorerow .track .none{position:absolute;left:8px;top:0;color:var(--ink-3);font-size:12px;white-space:nowrap}
 
   .footnote{font-size:12px;color:var(--ink-3);margin:36px 0 0;padding-top:14px;border-top:1px solid var(--line)}
   .footnote p{margin:4px 0}
@@ -161,14 +170,21 @@
     <p class="lead">紅或綠要配帳號看：分身做雜事卻用貴模型、或主帳號做正事卻只捨得用便宜模型＝紅；正事用好模型、雜事用便宜模型＝綠。想確認分身是不是都用便宜模型，看「分身」那一列哪一欄顏色最深。</p>
     <p>數字是近 <span class="ndays"></span> 天加總，從我電腦裡的對話紀錄算出來的，跟 claude.ai 額度頁對不起來，只能看比例。</p>
   </div>
+
+  <h2>額度每天走勢（單位：萬 token，一格一天、越右越新）</h2>
+  <p class="lead" id="trend-lead"></p>
+  <div class="chartbox"><div class="gridwrap"><table class="gridtable trend" id="trend-table"></table></div></div>
+  <div class="caption">
+    <p>上面那張熱圖是 14 天加總、看「誰用什麼模型多」；這張是同一份數字攤開成每天一格、看「在降還是在漲」。格子越深＝那天花越多（每一列各自比）。</p>
+  </div>
   <div class="chartbox"><table class="heat" id="heat-table"></table></div>
 
-  <h2>你打的分數（1–5 分，一點＝一次評分）</h2>
+  <h2>你打的分數（1–5 分，一點＝一次評分；橫軸＝當天幾點打的，一列一天、最上面是最新一天）</h2>
   <div class="legend" id="score-legend"></div>
   <div class="chartbox"><div class="scoregrid" id="score-grid"></div></div>
   <div class="caption">
-    <p class="lead">只有 5 分算過關（綠），其餘都是扣分：4 黃稍微不滿、3 紅嚴重、2 紫極度嚴重、1 紫＋紅圈是根本不該出現的嚴重落差。</p>
-    <p>同一列由左到右＝當天打分的時間先後，最左邊最早；同一天出現好幾個點＝那天打了不只一次分。</p>
+    <p class="lead">只有 5 分算過關（綠），其餘都是扣分：4 藍稍微不滿、3 黃嚴重、2 紅極度嚴重、1 紫是根本不該出現的嚴重落差。</p>
+    <p>橫軸是時間：最左邊是 0 點、最右邊是 24 點，直線是 6／12／18 點。點落在哪就是那天幾點打的分；點疊在一起＝同一分鐘打了好幾個分（例如一次回好幾則），滑鼠移上去或點一下會顯示幾點幾分。</p>
   </div>
 
   <div class="footnote">
@@ -415,16 +431,22 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
         const kd=document.createElement('span');kd.className='kind';
         kd.textContent={commit:'commit',ticket:'票',note:'日誌'}[it.kind]||it.kind;
         cont.appendChild(kd);
-        cont.appendChild(document.createTextNode(it.text||''));
+        // 第一行放白話句（主文）；原始紀錄收進「看原文」，不再一開就是一串代號
+        const plain=document.createElement('span');plain.className='plain';
+        plain.textContent=plainText(it);
+        cont.appendChild(plain);
         const ev=document.createElement('span');ev.className='ev';
         if(it.evidence_url){const a=document.createElement('a');a.href=it.evidence_url;a.textContent='證據：'+(it.evidence_label||'連結');ev.appendChild(a);}
         else{ev.textContent=it.evidence_label||'';}
         cont.appendChild(ev);
         row1.appendChild(t);row1.appendChild(dot);row1.appendChild(cont);
         li.appendChild(row1);
-        const plain=document.createElement('div');plain.className='plain';
-        plain.textContent=plainText(it);
-        li.appendChild(plain);
+        if(it.text&&plainText(it)!==it.text){
+          const raw=document.createElement('details');raw.className='raw';
+          const rs=document.createElement('summary');rs.textContent='看原文';raw.appendChild(rs);
+          const rt=document.createElement('div');rt.className='rawtext';rt.textContent=it.text;raw.appendChild(rt);
+          li.appendChild(raw);
+        }
         ul.appendChild(li);
       });
       det.appendChild(ul);
@@ -458,31 +480,74 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
   heatHtml+='</tbody>';
   document.getElementById('heat-table').innerHTML=heatHtml;
 
-  // ---- 分數點陣：每天一排點，一點一筆，五色 ----
+  // ---- 額度每天走勢：帳號×模型 各一列，一格一天（舊→新，跟專案格子表同方向） ----
+  const TREND_ROWS=[['分身 · Opus','sub','opus'],['分身 · Sonnet','sub','sonnet'],['主帳號 · Opus','main','opus'],['主帳號 · Sonnet','main','sonnet']];
+  const trendDays=days;
+  function trendVal(d,acct,model){const src=acct==='main'?(d.tokens_by_model_main||{}):(d.tokens_by_model_sub||{});return +(src[model]||0);}
+  let trendHtml='<thead><tr><th><span class="d-full">帳號 · 模型 ＼ 日期</span><span class="d-short">帳號·模型</span></th>'+trendDays.map(d=>`<th><span class="d-full">${fmtDate(d.date)}</span><span class="d-short">${d.date.slice(8,10)}</span></th>`).join('')+'</tr></thead><tbody>';
+  TREND_ROWS.forEach(([label,acct,model])=>{
+    const vals=trendDays.map(d=>trendVal(d,acct,model));
+    const mx=Math.max(...vals,1);
+    trendHtml+=`<tr><td class="rowlbl" style="padding:5px 2px 5px 6px">${label}</td>`;
+    vals.forEach(v=>{
+      const a=v>0?0.12+0.78*(v/mx):0;
+      const fg=a>0.55?'var(--on-dark)':'var(--ink)';
+      trendHtml+=`<td class="cell" style="background:rgba(var(--s1-rgb),${a.toFixed(2)});color:${fg}">${v>0?v.toFixed(0):'0'}</td>`;
+    });
+    trendHtml+='</tr>';
+  });
+  trendHtml+='</tbody>';
+  document.getElementById('trend-table').innerHTML=trendHtml;
+  // 一句話：分身 Opus 近 7 天 vs 前 7 天
+  const last7=trendDays.slice(-7), prev7=trendDays.slice(-14,-7);
+  const sumSubOpus=arr=>arr.reduce((t,d)=>t+trendVal(d,'sub','opus'),0);
+  const a7=sumSubOpus(last7), b7=sumSubOpus(prev7);
+  let lead='';
+  if(prev7.length===0){lead=`分身用 Opus：近 ${last7.length} 天共 ${a7.toFixed(0)} 萬，資料還不夠比前一週。`;}
+  else{
+    const diff=a7-b7; const pct=b7>0?Math.round(diff/b7*100):null;
+    const word=Math.abs(diff)<1?'差不多':(diff>0?'變多了':'變少了');
+    lead=`分身用 Opus：近 7 天 ${a7.toFixed(0)} 萬，前 7 天 ${b7.toFixed(0)} 萬 → ${word}${pct!=null&&Math.abs(diff)>=1?`（${diff>0?'+':''}${pct}%）`:''}。`;
+  }
+  document.getElementById('trend-lead').textContent=lead;
+
+  // ---- 分數時間軸：一列一天，點依「幾點幾分」放在 0–24 時的橫軸上；同一時刻的點往下疊 ----
   const scoreMeaning={5:'過關',4:'稍微不滿',3:'嚴重',2:'極度嚴重',1:'不該出現'};
   document.getElementById('score-legend').innerHTML=[5,4,3,2,1].map(s=>
-    `<span><span class="sw round${s===1?' mark1':''}" style="background:${scoreColor(s)}"></span>${s} 分＝${scoreMeaning[s]}</span>`
+    `<span><span class="sw round" style="background:${scoreColor(s)}"></span>${s} 分＝${scoreMeaning[s]}</span>`
   ).join('');
   const scoreGrid=document.getElementById('score-grid');
+  const axisRow=document.createElement('div');axisRow.className='scorerow axis';
+  const axisLbl=document.createElement('span');axisLbl.textContent='幾點打的';axisRow.appendChild(axisLbl);
+  const axisTrack=document.createElement('div');axisTrack.className='track';
+  [0,6,12,18,24].forEach(h=>{const t=document.createElement('span');t.className='tick';t.style.left=(h/24*100)+'%';t.textContent=h+'點';axisTrack.appendChild(t);});
+  axisRow.appendChild(axisTrack);scoreGrid.appendChild(axisRow);
+  function minuteOfDay(t){const m=/(\d{1,2}):(\d{2})\s*$/.exec(t||'');return m?(+m[1])*60+(+m[2]):null;}
   rev.forEach(d=>{
-    const scores=d.scores||[];
+    const scores=(d.scores||[]).slice().sort((a,b)=>(minuteOfDay(a.time)??0)-(minuteOfDay(b.time)??0));
     const row=document.createElement('div');row.className='scorerow';
     const lbl=document.createElement('span');lbl.textContent=fmtDate(d.date)+(d.date===today.date?' 今天':'');
     row.appendChild(lbl);
-    const dotsWrap=document.createElement('div');dotsWrap.className='dots';
+    const track=document.createElement('div');track.className='track';
     if(scores.length===0){
       const none=document.createElement('span');none.className='none';none.textContent='沒有打分紀錄';
-      dotsWrap.appendChild(none);
+      track.appendChild(none);
     }else{
-      scores.forEach(sc=>{
-        const s=document.createElement('span');
-        if(sc.score===1)s.className='mark1';
+      const placed=[];let maxLevel=0;
+      scores.forEach((sc,i)=>{
+        const mm=minuteOfDay(sc.time);
+        const x=mm==null?(i+1)/(scores.length+1)*100:mm/1440*100;
+        let level=0;while(placed.some(p=>p.level===level&&Math.abs(p.x-x)<1.5))level++;
+        placed.push({x,level});maxLevel=Math.max(maxLevel,level);
+        const s=document.createElement('span');s.className='dot';
+        s.style.left=x+'%';s.style.top=(3+level*12)+'px';
         s.style.background=scoreColor(sc.score);
         s.title=`${sc.score} 分　${scoreMeaning[sc.score]||''}　${sc.time||''}`;
-        dotsWrap.appendChild(s);
+        track.appendChild(s);
       });
+      track.style.minHeight=(16+maxLevel*12)+'px';
     }
-    row.appendChild(dotsWrap);
+    row.appendChild(track);
     scoreGrid.appendChild(row);
   });
 }).catch(err=>{
