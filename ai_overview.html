@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>AI 兩週總覽</title>
+<style>
+  :root{color-scheme:light;--bg:#fcfcfb;--card:#fff;--ink:#0b0b0b;--ink-2:#52514e;--ink-3:#898781;--line:#e6e5e1;--accent:#2a78d6;--accent-bg:#e9f1fb;--warn:#a05a00;--warn-bg:#fff3e0;--muted-bg:#f3f2ee;
+    --zero:#c3c2b7;
+    --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--s6:#008300;--s7:#4a3aa7;
+    --s1-rgb:42,120,214;--s2-rgb:235,104,52;--s3-rgb:27,175,122;--s4-rgb:237,161,0;--s5-rgb:232,123,164;--s6-rgb:0,131,0;--s7-rgb:74,58,167;
+    --good:#0f7a3d;--bad:#d32f2f;--good-rgb:15,122,61;--bad-rgb:211,47,47;--on-dark:#fff;--neutral-rgb:137,135,129;
+    --sc1:#7b1fa2;--sc2:#d32f2f;--sc3:#c9a000;--sc4:#2a78d6;--sc5:#0f7a3d;
+    --seq-rgb:42,120,214}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
+    --zero:#383835;
+    --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;
+    --s1-rgb:57,135,229;--s2-rgb:217,89,38;--s3-rgb:25,158,112;--s4-rgb:201,133,0;--s5-rgb:213,81,129;--s6-rgb:0,131,0;--s7-rgb:144,133,233;
+    --good:#3fae72;--bad:#ef5350;--good-rgb:63,174,114;--bad-rgb:239,83,80;--neutral-rgb:150,148,140;
+    --sc1:#ba68c8;--sc2:#ef5350;--sc3:#f0d060;--sc4:#5b9cf0;--sc5:#3fae72;
+    --seq-rgb:57,135,229}}
+  :root[data-theme="dark"]{color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
+    --zero:#383835;
+    --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;
+    --s1-rgb:57,135,229;--s2-rgb:217,89,38;--s3-rgb:25,158,112;--s4-rgb:201,133,0;--s5-rgb:213,81,129;--s6-rgb:0,131,0;--s7-rgb:144,133,233;
+    --good:#3fae72;--bad:#ef5350;--good-rgb:63,174,114;--bad-rgb:239,83,80;--neutral-rgb:150,148,140;
+    --sc1:#ba68c8;--sc2:#ef5350;--sc3:#f0d060;--sc4:#5b9cf0;--sc5:#3fae72;
+    --seq-rgb:57,135,229}
+  *{box-sizing:border-box}
+  html,body{overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Noto Sans TC","PingFang TC",system-ui,sans-serif}
+  main{max-width:760px;margin:0 auto;padding:16px 16px 60px}
+  h1{font-size:21px;margin:0 0 4px}
+  h2{font-size:17px;margin:28px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+  h2 .n{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:var(--ink);color:var(--bg);font-size:13px;margin-right:6px}
+  h3{font-size:14px;color:var(--ink-2);margin:16px 0 6px;font-weight:600}
+  .sub{font-size:12px;color:var(--ink-3);margin:0 0 10px}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin:8px 0 14px}
+  .legend{display:flex;gap:10px 14px;flex-wrap:wrap;font-size:12px;color:var(--ink-2);margin:6px 0 8px}
+  .legend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+  .legend .sw.round{border-radius:50%}
+  .legend .ramp{display:inline-block;width:56px;height:10px;border-radius:2px;vertical-align:-1px;margin:0 4px;background:linear-gradient(90deg,rgba(var(--neutral-rgb),.15),rgba(var(--neutral-rgb),.95))}
+  .hint{font-size:12px;color:var(--ink-3)}
+  .num{font-variant-numeric:tabular-nums}
+  .up{color:var(--good)}.down{color:var(--bad)}.flat{color:var(--ink-3)}
+
+  /* ---- ① 一句話 + 三張卡（含 14 天火柴棒） ---- */
+  .lead{font-size:17px;line-height:1.6;margin:8px 0 12px;padding:12px 14px;background:var(--accent-bg);border-radius:12px}
+  .lead b{font-weight:800}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 10px 8px;min-width:0}
+  .tile .q{font-size:12px;color:var(--ink-3)}
+  .tile .big{font-size:24px;font-weight:800;line-height:1.15;margin-top:2px}
+  .tile .big small{font-size:12px;font-weight:500;color:var(--ink-2);margin-left:2px}
+  .tile .cmp{font-size:11px;margin-top:2px;min-height:15px}
+  .spark{display:flex;align-items:flex-end;gap:2px;height:28px;margin-top:8px}
+  .spark i{flex:1;display:block;background:rgba(var(--neutral-rgb),.35);border-radius:2px 2px 0 0;min-height:2px}
+  .spark i.near{background:var(--ink-2)}
+  .spark i.sc5{background:var(--sc5)}.spark i.sc4{background:var(--sc4)}.spark i.sc3{background:var(--sc3)}.spark i.sc2{background:var(--sc2)}.spark i.sc1{background:var(--sc1)}
+  .tile .axis{display:flex;justify-content:space-between;font-size:10px;color:var(--ink-3);margin-top:2px}
+  @media(max-width:420px){.tiles{gap:6px}.tile{padding:8px 7px 6px}.tile .big{font-size:19px}.lead{font-size:15px;padding:10px 12px}}
+
+  /* ---- ② 14 天一張圖：三條軌道對齊同一排日期 ---- */
+  .tracks{display:grid;grid-template-columns:56px repeat(14,1fr);gap:0 2px;align-items:end}
+  .tracks .lab{font-size:12px;color:var(--ink-2);font-weight:600;line-height:1.2;padding-right:4px;align-self:center}
+  .tracks .lab small{display:block;font-weight:400;color:var(--ink-3);font-size:10px}
+  .tracks .dcol{text-align:center;font-size:11px;color:var(--ink-3);padding:4px 0 2px;border-top:1px solid var(--line)}
+  .tracks .dcol.today{color:var(--ink);font-weight:700}
+  .tracks .bar{height:110px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;border-radius:3px}
+  .tracks .bar .stk{display:flex;flex-direction:column-reverse;gap:2px;width:100%}
+  .tracks .bar .seg{width:100%;border-radius:2px;flex:1 1 0}
+  .tracks .bar .seg:last-child{border-radius:3px 3px 2px 2px}
+  .tracks .bar .cnt{font-size:11px;font-weight:700;color:var(--ink-2);text-align:center;line-height:1;margin-bottom:3px}
+  .tracks .bar.zero .cnt{color:var(--ink-3);font-weight:400}
+  .tracks .heat{height:30px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;margin:6px 0;cursor:pointer;background:var(--muted-bg);color:var(--ink-3)}
+  .tracks .dots{display:flex;flex-wrap:wrap;gap:2px;align-content:flex-start;justify-content:center;min-height:14px;padding:2px 1px;cursor:pointer}
+  .tracks .dots i{width:9px;height:9px;border-radius:50%;display:block}
+  .tracks .dots .none{width:6px;height:2px;border-radius:1px;background:var(--line);margin-top:4px}
+  .tracks .sel{outline:2px solid var(--ink);outline-offset:1px}
+  .readout{font-size:13px;color:var(--ink-2);background:var(--muted-bg);border-radius:8px;padding:8px 10px;margin-top:8px;min-height:36px;line-height:1.5}
+  .readout b{color:var(--ink)}
+  @media(max-width:600px){
+    .tracks{grid-template-columns:38px repeat(14,1fr);gap:0 1px}
+    .tracks .lab{font-size:10px}.tracks .lab small{font-size:9px}
+    .tracks .dcol{font-size:9px}
+    .tracks .bar{height:84px}.tracks .bar .cnt{font-size:9px}
+    .tracks .heat{font-size:8px;height:26px;letter-spacing:-.2px}
+    .tracks .dots i{width:6px;height:6px}
+    .tracks .dots{gap:1px}
+  }
+
+  /* ---- ③ 拆開看 ---- */
+  .hbars{display:grid;grid-template-columns:auto 1fr auto;gap:5px 8px;align-items:center;font-size:13px}
+  .hbars .k{color:var(--ink-2);white-space:nowrap;max-width:110px;overflow:hidden;text-overflow:ellipsis}
+  .hbars .b{height:14px;border-radius:0 3px 3px 0;min-width:2px}
+  .hbars .v{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .hbars .v small{font-weight:400;color:var(--ink-3)}
+  .stack{display:flex;height:26px;border-radius:5px;overflow:hidden;background:var(--muted-bg);margin:6px 0 4px}
+  .stack .seg{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--on-dark);text-shadow:0 0 2px rgba(0,0,0,.5);white-space:nowrap;overflow:hidden;margin-right:2px}
+  .stack .seg:last-child{margin-right:0}
+  .stack-lbl{font-size:12px;color:var(--ink-2)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:600px){.grid2{grid-template-columns:1fr}}
+  table.heat{width:100%;border-collapse:collapse;font-size:12px}
+  table.heat th,table.heat td{text-align:center;padding:6px 2px;border:1px solid var(--line)}
+  table.heat th{color:var(--ink-2);font-weight:600;font-size:11px;background:var(--muted-bg)}
+  table.heat th:first-child,table.heat td.rowlbl{text-align:left;padding-left:6px;font-weight:700;background:var(--muted-bg);white-space:nowrap}
+  table.heat td.cell{font-variant-numeric:tabular-nums;font-weight:600}
+  @media(max-width:600px){
+    table.heat{table-layout:fixed;font-size:10px}
+    table.heat th,table.heat td{padding:5px 0}
+    table.heat th:first-child,table.heat td.rowlbl{width:50px;max-width:50px;font-size:10px;padding-left:3px}
+    table.heat .d-old{display:none}
+  }
+  .mini{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .mini .m{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px}
+  .mini .m .t{font-size:12px;color:var(--ink-2)}
+  .mini .m .mx{font-size:16px;font-weight:800}
+  .mini .m .mx small{font-size:11px;font-weight:400;color:var(--ink-3)}
+  .mini .spark{height:36px}
+  @media(max-width:420px){.mini{grid-template-columns:1fr 1fr 1fr;gap:5px}.mini .m{padding:6px}.mini .m .mx{font-size:14px}}
+  .lowdays{list-style:none;margin:8px 0 0;padding:0;font-size:13px}
+  .lowdays li{padding:5px 0;border-top:1px dashed var(--line);display:grid;grid-template-columns:52px 1fr;gap:8px}
+  .lowdays .sd{display:inline-flex;gap:2px;vertical-align:middle;margin-right:6px}
+  .lowdays .sd i{width:9px;height:9px;border-radius:50%;display:inline-block}
+
+  /* ---- ④ 猜你要什麼 ---- */
+  .guess{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:12px;padding:12px 14px;margin:10px 0}
+  .guess .h{font-size:15px;font-weight:800;margin:0 0 4px}
+  .guess .why{font-size:13px;color:var(--ink-2);margin:0 0 6px}
+  .guess .why b{color:var(--ink)}
+  .guess .do{font-size:13px;margin:0;padding:6px 10px;background:var(--muted-bg);border-radius:8px}
+  .guess .do::before{content:"下一步 → ";font-weight:700}
+  .guess .pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;background:var(--accent-bg);color:var(--accent);margin-left:6px;vertical-align:1px}
+  .waitlist{list-style:none;margin:6px 0 0;padding:0;font-size:13px}
+  .waitlist li{padding:6px 0;border-top:1px dashed var(--line);display:grid;grid-template-columns:auto 1fr;gap:8px;align-items:start}
+  .waitlist .d{font-size:11px;color:var(--on-dark);background:var(--ink-3);border-radius:999px;padding:1px 7px;white-space:nowrap;margin-top:2px}
+  .waitlist .d.old{background:var(--bad)}
+  .waitlist .nx{display:block;font-size:12px;color:var(--ink-3);margin-top:2px}
+
+  /* ---- ⑤ 原始資料 ---- */
+  details.toggle > summary{cursor:pointer;color:var(--accent);font-size:14px;list-style:none;user-select:none;margin:8px 0}
+  details.toggle > summary::-webkit-details-marker{display:none}
+  details.toggle > summary::before{content:"▸ ";display:inline-block}
+  details.toggle[open] > summary::before{content:"▾ "}
+  .rawwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table.raw{border-collapse:collapse;font-size:12px;width:100%;min-width:560px}
+  table.raw th,table.raw td{padding:5px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  table.raw th{background:var(--muted-bg);color:var(--ink-2);font-weight:600;white-space:nowrap;position:sticky;top:0}
+  table.raw td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  table.raw .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+  .footnote{font-size:12px;color:var(--ink-3);margin:36px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+  .footnote p{margin:4px 0}
+  .empty{color:var(--ink-3);font-size:14px;padding:8px 0}
+</style>
+</head>
+<body>
+<main>
+  <h1>AI 這兩週幫你做了什麼</h1>
+  <p class="sub" id="asof">資料載入中…</p>
+
+  <!-- ① 一句話結論 -->
+  <div class="lead" id="lead">載入中…</div>
+  <div class="tiles" id="tiles"></div>
+  <p class="hint" style="margin-top:6px">綠字＝比前 7 天好、紅字＝比前 7 天差。卡片下面那排小柱子＝近 14 天每一天（深色＝近 7 天、淺色＝再前 7 天），像量體重的折線，只是用柱子畫。</p>
+
+  <!-- ② 14 天一張圖 -->
+  <h2><span class="n">2</span>14 天一張圖：做了幾件、花多少、你打幾分</h2>
+  <div class="legend" id="track-legend"></div>
+  <div class="box">
+    <div class="tracks" id="tracks"></div>
+    <div class="readout" id="readout">點任何一天的柱子、格子或點點，這裡會寫出那天的細節。</div>
+  </div>
+
+  <!-- ④ 猜你要什麼 -->
+  <h2><span class="n">3</span>AI 猜你接下來想要什麼（純猜，你 13:10 叫我猜的）</h2>
+  <p class="sub">每一條都寫「為什麼這樣猜」跟數字出處；猜錯直接跟我說哪條。</p>
+  <div id="guesses"></div>
+
+  <!-- ③ 拆開看 -->
+  <h2><span class="n">4</span>拆開看：專案／額度／分數／忙碌度</h2>
+
+  <h3>3a・時間花在哪些專案（近 14 天，一件＝有證據的一件事）</h3>
+  <div class="box"><p class="sub" id="proj-sentence" style="margin:0 0 10px;font-size:14px;color:var(--ink)"></p><div class="hbars" id="proj-bars"></div><p class="hint" style="margin:8px 0 0">括號裡＝近 7 天佔幾件；顏色跟 <a href="./proof.html">工作證明頁</a> 的專案色一樣。</p></div>
+
+  <h3>3b・額度去哪了（單位＝萬 token；token 像水表的度數，用越多度數越高）</h3>
+  <div class="box">
+    <div class="stack-lbl">誰在花：<b>主帳號</b>（你直接對話的那個）vs <b>分身</b>（派出去做事的）</div>
+    <div class="stack" id="stack-acct"></div>
+    <div class="stack-lbl" style="margin-top:10px">花在哪種模型：<b>貴的</b>（Opus／Fable）vs <b>便宜的</b>（Sonnet／Haiku）</div>
+    <div class="stack" id="stack-model"></div>
+    <p class="sub" id="quota-sentence" style="margin:10px 0 6px"></p>
+    <div class="legend">
+      <span><span class="sw" style="background:var(--good)"></span>綠＝花得合理（正事用貴的、雜事用便宜的）</span>
+      <span><span class="sw" style="background:var(--bad)"></span>紅＝可能沒必要（分身用貴的、主帳號只用便宜的）</span>
+      <span>顏色越深＝那列裡花越多</span>
+    </div>
+    <table class="heat" id="quota-table"></table>
+    <p class="hint" style="margin:6px 0 0">一格一天、越右越新；手機只顯示近 7 天。K＝千、M＝百萬 token。</p>
+  </div>
+
+  <h3>3c・你打的分數（只有 5 分算過關）</h3>
+  <div class="box">
+    <div class="legend" id="score-legend"></div>
+    <div class="hbars" id="score-dist"></div>
+    <p class="sub" id="score-sentence" style="margin:10px 0 0"></p>
+    <h3 style="margin-top:12px">低分（1–2 分）那幾天 AI 在忙什麼</h3>
+    <ul class="lowdays" id="lowdays"></ul>
+  </div>
+
+  <details class="toggle"><summary>3d・AI 有多忙（每天 commit／派分身／Discord 回覆，點開看）</summary><div class="mini" id="busy"></div></details>
+
+  <h2><span class="n">5</span>看板 <span id="snap-total"></span> 張票現在長什麼樣</h2>
+  <details class="toggle" id="board-details"><summary>點開看（快照 <span id="snap-at"></span>）：狀態分布、多久沒動、等你一句話的清單</summary>
+  <div class="box">
+    <div class="stack-lbl">橘＝等你一句話的（等你＋待驗收）</div>
+    <div class="stack" id="stack-state"></div>
+    <div class="stack-lbl" id="stack-state-lbl"></div>
+    <div class="stack-lbl" style="margin-top:10px">正在做／等你／待驗的票，多久沒動了（越深＝越久）</div>
+    <div class="stack" id="stack-stale"></div>
+    <div class="stack-lbl" id="stack-stale-lbl"></div>
+    <h3>等你一句話的票（最該先回的排前面）</h3>
+    <ul class="waitlist" id="waitlist"></ul>
+  </div>
+  </details>
+
+  <!-- ⑤ 原始資料 -->
+  <h2><span class="n">6</span>原始資料（給想核對的人，可不看）</h2>
+  <details class="toggle"><summary>每天總表（14 列）</summary><div class="rawwrap"><table class="raw" id="raw-days"></table></div></details>
+  <details class="toggle"><summary id="raw-items-sum">每一件（含證據連結）</summary><div class="rawwrap"><table class="raw" id="raw-items"></table></div></details>
+  <details class="toggle"><summary id="raw-tickets-sum">看板全部票</summary><div class="rawwrap"><table class="raw" id="raw-tickets"></table></div></details>
+
+  <div class="footnote">
+    <p><b>這頁怎麼來的：</b>件數、額度、分數來自 <a href="./proof.html">工作證明頁</a> 同一份資料（每小時自動重算）；看板票是做這頁時抓的快照。「一件」只算有 commit／票／日誌證據的；額度是從電腦裡的對話紀錄算的，跟 claude.ai 的額度頁對不起來，只能看比例。</p>
+  </div>
+</main>
+
+<script id="plans-snapshot" type="application/json">{"generated_at":"2026-09-19T13:27+08:00","total":168,"state":{"done":9,"active":58,"paused":4,"waiting":15,"parked":1,"dropped":2,"verify":9,"backlog":68,"destroyed":1,"blocked":1},"category":{"工作區/制度":69,"程式專案":23,"對外案子":15,"correction":15,"未分類":13,"制度":11,"機制":7,"雜務":5,"工具":3,"制度/機制":3,"內容":1,"又仟案":1,"project":1,"user_request":1},"stale_open":{"15–30 天":68,"超過 30 天":1,"沒紀錄":4,"8–14 天":5,"7 天內":5},"now_active":27,"now_active_over14":25,"corrections_total":87,"corrections_open":51,"waiting_on_him":[{"id":"tw-backtest-project","title":"tw-backtest 專案：只有 366MB .venv，工具包一支沒寫、未進 project_index","state":"verify","priority":"now","days":24,"next":"寫 twbt/ 工具包（fees.py／metrics.py／data.py＋兩支測試），並把專案補進 project_index.md"},{"id":"ygo-cardname-screenshots","title":"遊戲王 MD 繁體卡名截圖（13 張）","state":"waiting","priority":"now","days":23,"next":"請丹尼爾拍第 10（增殖的Z/G）、1（薇兒/玻璃）、2（潔妮）三張優先"},{"id":"transcribe-remodel-266","title":"換模型重標 266 集：第一步對分測試（成本≈0）未跑","state":"verify","priority":"now","days":22,"next":"🔴 送他審核關單：done_when 的前半「對分結果出來」已達成（報告在上面）。後半「決定要不要整批重標」是他的決定，報告的建議是**不要花錢重標**，改做三件零花費的：把 notfwd／unclear 加進標註 schema（stock"},{"id":"stock-signal-ad-misread","title":"股癌訊號管線把業配口播誤判成投資訊號（已寄給 8 人）","state":"verify","priority":"now","days":22,"next":"根因：prompt.py（158 行）沒有任何規則教模型分辨「業配/贊助口播」與「真實股票討論」——不是判斷錯，是沒被教過。修法：prompt.py 加排除規則（偵測贊助商/折扣碼/品牌置入/送禮情境即跳過），並補一個以 EP689 這句為"},{"id":"gemini-import-verify","title":"GEMINI.md 的 import 是否真的載入，從未驗證（紅線可能在 Gemini 側沒生效）","state":"waiting","priority":"next","days":30,"next":"🔴 事實上已驗證完畢（8/20 headless 實跑，非 /memory show 手動法）。僅剩「關單」動作待丹尼爾點頭——關單權在他，AI 不自行關。"},{"id":"ai-trader-email-test","title":"ai-trader：端到端寄信測試","state":"waiting","priority":"next","days":29,"next":"取得同意後先寄測試信到他自己信箱，確認含垃圾信匣有收到"},{"id":"teaching-material-license","title":"教材上線卡授權：原教材明文「僅限購買學員個人學習、禁止公開散布」，新手全集整本是對照改寫","state":"waiting","priority":"next","days":27,"next":"請他自行拿捏或去信作者取書面同意；另需釐清已上線的 ai-three-lessons 跟卡授權的是不是同一份"},{"id":"gold-standard-offsite","title":"他花 20 分鐘標的黃金標準檔只存在一顆硬碟上，異地備份是否涵蓋未實地驗證","state":"verify","priority":"next","days":26,"next":"AI 先實地確認雲端鏡像有沒有把該路徑排除掉；再問他納不納版控"}],"waiting_count":24,"all":[{"id":"correction-no-user-manual-step","title":"糾正：不准把「要使用者動手」寫成計畫前置條件，先自己窮舉替代路","state":"active","priority":"high","category":"correction","last":"2026-08-29"},{"id":"correction-push-directly-no-ask","title":"糾正：改完直接推，不要再問他（二犯）","state":"active","priority":"now","category":"工作區/制度","last":""},{"id":"voice-claude","title":"VoiceClaude 語音輸入","state":"active","priority":"later","category":"程式專案","last":"2026-08-24"},{"id":"unverified-claims-105","title":"105 條「未驗宣稱」逐條台帳已落地成檔，一條都沒開始驗","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-24"},{"id":"transcribe-4q-2bugs","title":"video-transcribe 四題待裁決＋兩個未修 bug（台帳標 paused「無需管」是錯的）","state":"active","priority":"next","category":"程式專案","last":"2026-08-25"},{"id":"todo-dashboard","title":"待辦看板（就是這個東西）","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-27"},{"id":"ai-trader","title":"ai-trader 六組投資策略 PK（Phase 1）","state":"active","priority":"now","category":"程式專案","last":"2026-08-27"},{"id":"stock-signal-ui","title":"stock-signal 報告介面與效能","state":"active","priority":"later","category":"程式專案","last":"2026-08-28"},{"id":"warroom-mechanism","title":"主動推進機制（戰情室）：讓待辦自己叫人","state":"active","priority":"now","category":"制度","last":"2026-08-28"},{"id":"security-holes-open","title":"四個資安機制破洞全開（含 Read 工具讀憑證檔零閘門）","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-reply-before-work","title":"糾正：收到他的訊息先回一句，再去做事（二犯）","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-no-new-rule-md","title":"糾正：規則不准再寫成新的 MD 檔，只能進台帳或寫成程式","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-restart-before-longwork","title":"糾正：宣告要重開之後，不准再派長工分身","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-no-unreproducible-numbers","title":"糾正：引用記憶裡的任何數字前，先問「產生它的指令還在嗎」","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-bridge-message-length","title":"糾正：橋樑訊息不豁免篇幅，一則只講一件事","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-no-overcorrection","title":"糾正：被打回時不准跳到極端的另一邊，中間格要先講","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-two-sources-before-universal-claim","title":"糾正：講「官方沒有寫 X」這種全稱句之前，至少查兩個來源","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-main-session-no-longwork","title":"糾正：主 session 不接長工，長工一律派分身（否則會漏他的訊息）","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-bridge-at-mention","title":"橋樑送件必須用 <@id>，寫名字等於沒送","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-transcription-best-model","title":"要精確的逐字稿直接用最好的模型，不先跑縮水版","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-publication-9-categories","title":"審對外發布素材要跑九類清單，第九類「歸屬誤植」要讀完整敘事","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-plain-language-5yo","title":"給丹尼爾的回報要五歲小孩聽得懂，術語同句配譬喻","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-html-vercel-delivery","title":"給他讀的東西一律出 HTML 並走 Vercel 網址，不發截圖／不發 md／不發 artifact","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-no-suggestion-downgrade","title":"該自動做的動作不准退回成「建議你去做 X」","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-progress-must-go-discord","title":"警報／進度／完成回報一律發 Discord，不能只寫終端機","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-cross-source-number-check","title":"規模性數字要跨來源 grep 同類詞，兩處不一致就停下來問","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-refetch-volatile-source-before-deciding","title":"糾正：不可逆決策前，對「會變動的來源」再撈一次最新狀態","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-evaluation-flow-skill","title":"糾正：2026-08-27：第 0 關（找原始目的正本）第一次擋下實質損害——這是它的第一個證據","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-proactive-push","title":"糾正：我太被動：待辦不提就不動（2026-08-27 丹尼爾糾正）","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-do-not-disclose-projects","title":"糾正：不主動對外提及丹尼爾的「新」專案","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-cheap-model-for-subagents","title":"糾正：派 subagent 要主動挑便宜模型（省額度）","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-verify-online-before-asking","title":"糾正：「我不懂」不是把問題丟回去的理由——先自己上網查一遍","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-28"},{"id":"correction-improve-existing-not-new-artifact","title":"糾正：介面/產出有問題時改既有的那個，不准另開新的","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"ai-output-no-qc-station","title":"AI 產出沒有品管站：模型判斷錯了沒有任何一關會發現","state":"active","priority":"now","category":"程式專案","last":"2026-08-28"},{"id":"correction-relay-external-frame-unchecked","title":"糾正：轉述外部 AI 的框架前，先拿回去對使用者原話","state":"active","priority":"high","category":"correction","last":"2026-08-28"},{"id":"correction-not-just-step-by-step","title":"糾正：不要講一步做一步——要自己想全局，不是等派工","state":"active","priority":"now","category":"工作區/制度","last":"2026-08-29"},{"id":"correction-external-opinion-blackbox","title":"外審意見不准只給摘要就叫他選：原文照貼、標清楚哪些是我翻譯的、附白話場景","state":"active","priority":"high","category":"correction","last":"2026-08-29"},{"id":"correction-restate-before-plan","title":"寫計畫前先重述「我以為你要的是什麼」讓他確認，不准拿局部當全部","state":"active","priority":"high","category":"correction","last":"2026-08-29"},{"id":"closed-loop-pipeline","title":"閉環生產線：意圖→票→自動派工→自動驗收→他決定（計畫已核准，待新 session 執行）","state":"active","priority":"high","category":"project","last":"2026-08-29"},{"id":"correction-daily-2026-08-30","title":"糾正待整理：2026-08-30 的 daily log 有更新，裡面的糾正還沒逐條開單","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-30"},{"id":"correction-verification-must-discriminate","title":"糾正：驗收要有鑑別度（2026-08-10 新手包 E2E 一次學到三條）","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-30"},{"id":"correction-preview-first","title":"糾正：2026-08-12 擴大適用範圍（使用者當場糾正，原話「這樣好浪費時間」）","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-30"},{"id":"correction-readable-output-html","title":"糾正：2026-08-14 延伸：丹尼爾嫌 Discord HTML 附件「每次都要下載才能點」","state":"active","priority":"next","category":"工作區/制度","last":"2026-08-30"},{"id":"correction-daily-2026-09-02","title":"糾正待整理：2026-09-02 的 daily log 有更新，裡面的糾正還沒逐條開單","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-02"},{"id":"correction-no-guessing-external-systems","title":"糾正：2026-08-10 第五次：換一種包裝的猜測仍然是猜測（Discord 開發者後台）","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-02"},{"id":"correction-check-existing-features-before-planning","title":"糾正：提新需求時，先查系統「已經有沒有這個功能」，再談怎麼做","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-02"},{"id":"correction-daily-2026-09-03","title":"糾正待整理：2026-09-03 的 daily log 有更新，裡面的糾正還沒逐條開單","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-03"},{"id":"correction-plain-language-for-daniel","title":"糾正：給丹尼爾的訊息一律白話（2026-08-14 成檔，2026-08-15 三犯升級）","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-03"},{"id":"correction-push-authorization-scope","title":"糾正：Push/觸發 Actions 的授權尺度：首次嚴格確認，延續修正可直推","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-05"},{"id":"correction-daily-2026-09-06","title":"糾正待整理：2026-09-06 的 daily log 有更新，裡面的糾正還沒逐條開單","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-06"},{"id":"correction-bridge-discord-mention","title":"糾正：Discord 送件必須用 `<@id>`，寫名字等於沒送（不只橋樑，對客戶端一樣）","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-06"},{"id":"correction-daily-2026-09-11","title":"糾正待整理：2026-09-11 的 daily log 有更新，裡面的糾正還沒逐條開單","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-11"},{"id":"correction-remote-manager-mode","title":"糾正：遠端 session：本體當主管，雜事與專注活派分身","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-11"},{"id":"correction-daily-2026-09-12","title":"糾正：新手包／教材的驗收不能 AI 自讀，讀者是「對方 AI」，要能零聯絡複製整套系統","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-12"},{"id":"correction-debug-visible-state-first","title":"糾正：幫人除錯先問「肉眼一秒看得到的狀態」，別當人肉傳話筒","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-12"},{"id":"correction-daily-2026-09-13","title":"糾正：評估要先問「上次親手做過為什麼沒成」，不能只問怎麼做（AI 老師方向 20:04 硬重置）","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-13"},{"id":"correction-daily-2026-09-15","title":"糾正待整理：2026-09-15 的 daily log 有更新，裡面的糾正還沒逐條開單","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-15"},{"id":"correction-voice-transcription-correction-loop","title":"糾正：🔴 2026-09-15 00:26 他打 4 分：「你沒有回答到我的問題」（訊息 `1549093898670833718`）","state":"active","priority":"next","category":"工作區/制度","last":"2026-09-15"},{"id":"correction-paid-call-hidden-in-test-suite","title":"糾正：付費呼叫藏在「跑一下測試」裡——N6 於 2026-08-29 被踩破","state":"backlog","priority":"","category":"","last":""},{"id":"correction-give-links","title":"糾正：給他連結，同一行就要寫「按下去會怎樣」（2026-08-29 他用「敷衍」形容）","state":"backlog","priority":"","category":"","last":""},{"id":"correction-no-new-page-for-answers","title":"糾正：回答問題不准另開頁面，直接寫在他問的那個對話裡","state":"backlog","priority":"","category":"","last":""},{"id":"correction-dont-overask-when-design-settled","title":"糾正：技術方向已定案時不要再攤選項問他（他已答過的不要重問）","state":"backlog","priority":"now","category":"工作區/制度","last":""},{"id":"correction-ask-mood-before-spec","title":"糾正：使用者嫌某個產出「品質不好」時，第一個問句要問他打開它的心情／情境，不准直接問他要哪些資訊","state":"backlog","priority":"P2","category":"制度","last":""},{"id":"correction-liff-booking-zero-success","title":"糾正：宣稱 line-booking 已上線並驗過，實際換路由後零筆成功預約","state":"backlog","priority":"high","category":"correction","last":""},{"id":"correction-commit-not-pushed","title":"糾正：回報「已進版控／已存檔」之前，必須先查證 commit 真的 push 上遠端","state":"backlog","priority":"","category":"","last":""},{"id":"correction-build-configurable-when-asked","title":"糾正：他說「要能改／先暫定 X」＝第一版就要做成可調設定，不是常數","state":"backlog","priority":"now","category":"工作區/制度","last":""},{"id":"correction-devlog-must-accompany-deploy","title":"做一道閘門：line-booking 沒補工作日誌就不准部署","state":"backlog","priority":"high","category":"機制","last":""},{"id":"correction-recommendation-must-include-its-own-downside","title":"糾正：推薦一個方案時，缺點要跟優點同時給（不要等他問）","state":"backlog","priority":"normal","category":"correction","last":""},{"id":"correction-subagent-briefing-forbidden-zone","title":"派 subagent 的任務書要列「正在等他裁決的議題」為禁區","state":"backlog","priority":"P2","category":"制度","last":""},{"id":"correction-replyfirst-guard-blocks-recovery","title":"reply-first-guard 會擋住「收拾殘局」的指令，要開兩類白名單","state":"backlog","priority":"high","category":"機制","last":""},{"id":"line-booking-schema-gate-subset","title":"schema drift 閘門可被「只選部分 D1」繞過，多店後會變成假綠燈","state":"backlog","priority":"normal","category":"機制","last":""},{"id":"correction-external-opinion-deference","title":"糾正：對外部意見（賈維斯／codex）全盤肯定，沒有逐條標立場","state":"backlog","priority":"high","category":"機制","last":""},{"id":"correction-confidence-score","title":"糾正：給他的每句實質宣稱要標信心度 1-5＋理由，而且要先給結論不是先給過程","state":"backlog","priority":"high","category":"機制","last":""},{"id":"correction-review-before-declaring-fixed","title":"糾正：改「防止自己犯錯的機制」時，對抗審查回來之前不准宣告改好","state":"backlog","priority":"","category":"","last":""},{"id":"correction-self-referential-review-gate","title":"糾正：修「防止自己犯錯的機制」時，動手測試失敗路徑不能省，不准只讀程式碼推論","state":"backlog","priority":"high","category":"制度","last":""},{"id":"correction-execute-own-recommendation","title":"糾正：他的原話已經含答案時，不准把「怎麼做」包裝成問他的決策題","state":"backlog","priority":"high","category":"機制","last":""},{"id":"correction-unsupervised-delegation","title":"糾正：派會對外發送／寫DB／刪檔／部署的 subagent，任務書要附「繼承紅線」段落","state":"backlog","priority":"high","category":"制度","last":""},{"id":"correction-pipeline-eats-exit-code","title":"糾正：管線會吃掉 exit code——cmd | tail 回報的是 tail 的退出碼，差點把失敗的部署報成上線","state":"backlog","priority":"next","category":"制度","last":""},{"id":"harvest-bypasses-donewhen-gate","title":"台帳有兩條寫入路徑，只有一條在守門：harvest_corrections.py --apply 繞過 done_when 閘門與 changelog","state":"backlog","priority":"next","category":"制度","last":""},{"id":"correction-who-hurts-before-building","title":"提「要不要做」之前，先答「這東西壞了誰會痛」","state":"backlog","priority":"high","category":"correction","last":""},{"id":"correction-verify-actual-output","title":"驗「有沒有上線」要用只有這次改動才會出現的錨字串","state":"backlog","priority":"high","category":"correction","last":""},{"id":"correction-ask-dont-guess-options-in-questions","title":"他要的是「問我問題」，而且問題本身要附選項","state":"backlog","priority":"high","category":"correction","last":""},{"id":"correction-empty-data-is-not-empty-reality","title":"系統裡的空白不等於現實裡的空白","state":"backlog","priority":"high","category":"correction","last":""},{"id":"feature-diplomacy-dept","title":"外交部：每個對話對象一份「跟他講話要注意什麼」的 MD","state":"backlog","priority":"medium","category":"user_request","last":""},{"id":"correction-code-gap-vs-real-workflow","title":"糾正：程式碼裡「規則沒被強制」不等於缺口——先問誰能觸發，再決定要不要報警","state":"backlog","priority":"","category":"correction","last":""},{"id":"correction-ship-when-done","title":"糾正：改好測完就直接推，不要每次問「要不要上線」（他唸第三次，2分）","state":"backlog","priority":"","category":"","last":""},{"id":"correction-no-edit-during-deploy","title":"糾正：背景部署在跑的時候，不准改被部署的檔案（測 A 推 B）","state":"backlog","priority":"","category":"","last":""},{"id":"correction-deliver-message-must-land","title":"糾正：交付訊息「送出」不等於「他看到」——給過時間預估就必須在預估時間內有新訊息落地","state":"backlog","priority":"","category":"correction","last":""},{"id":"correction-daily-2026-09-07","title":"糾正待整理：2026-09-07 的 daily log 有多起🔴糾正／裁決，已逐條核對落點","state":"backlog","priority":"","category":"correction","last":""},{"id":"correction-permission-notify-pollutes-channel","title":"權限確認通知把整串 Bash 指令原文推進他的 Discord 主頻道，造成噪音","state":"backlog","priority":"next","category":"制度/機制","last":""},{"id":"correction-subscription-not-api-credit","title":"糾正：他是訂閱制，叫 Claude 模型跑東西不算「要花錢」（他打 2 分、說「很多次了」）","state":"backlog","priority":"next","category":"制度/機制","last":""},{"id":"correction-daily-2026-09-08","title":"糾正待整理：2026-09-08 daily log 的糾正逐條盤點（第③項尚無落點）","state":"backlog","priority":"next","category":"制度/機制","last":""},{"id":"challenger-gate-week1-review","title":"challenger 閘門第一週收訊：算誤判率，決定要不要開攔截","state":"backlog","priority":"P2","category":"機制","last":""},{"id":"correction-design-whole-not-piecemeal","title":"糾正：他指出一個壞點是一個樣本，不是一張工單——先枚舉同類母體再動手","state":"backlog","priority":"","category":"correction","last":""},{"id":"correction-ask-one-at-a-time-with-why","title":"糾正：不懂的一問一答、每題附為什麼問、目標確認後才動工","state":"backlog","priority":"","category":"","last":""},{"id":"correction-add-to-group-means-channel","title":"糾正：「加到 X 群」＝那個聊天頻道本身，不是伺服器、不開新頻道","state":"backlog","priority":"","category":"","last":""},{"id":"gooaye-site-project","title":"股癌計畫（gooaye-site 回測站）：四段計畫的第 2 段骨架能跑，第 0/1/3 段與雲端發布未完成","state":"backlog","priority":"","category":"","last":""},{"id":"correction-subagent-inherits-my-rules","title":"糾正：我蓋的子 agent 要繼承他給我的規矩；驗收劇本要用難搞的人；改完先自測不叫他試","state":"backlog","priority":"P2","category":"correction","last":""},{"id":"institution-f0-trust-anchor","title":"F0 外部信任邊界收據要選哪個外部信任主體（三方案已分析＋Demo，未選）","state":"backlog","priority":"later","category":"工作區/制度","last":"2026-08-09"},{"id":"youqian-plugin-port","title":"又仟案：新手包移植成 claude-starter-tw plugin 骨架","state":"backlog","priority":"later","category":"對外案子","last":"2026-08-10"},{"id":"youqian-noask-mode","title":"又仟案：免問模式＋可變 Gist 網址（外審判 critical、明講不得降級）","state":"backlog","priority":"next","category":"對外案子","last":"2026-08-10"},{"id":"stock-signal-4q","title":"stock-signal 三件待裁決（原四件，第①件已查證作廢）","state":"backlog","priority":"later","category":"程式專案","last":"2026-08-11"},{"id":"youqian-gist-oldfile","title":"又仟案：Gist 舊架構 setup.md（v1.7）內容未刪（已改名 404）","state":"backlog","priority":"later","category":"對外案子","last":"2026-08-12"},{"id":"kemi-code-eval","title":"他 8/16 說「未來用 kemi 寫 code 省額度」，本機沒裝、沒 key、沒接線","state":"backlog","priority":"later","category":"工具","last":"2026-08-16"},{"id":"quota-system-step2","title":"省額度系統只做完第一步，第二步以後全沒寫","state":"backlog","priority":"later","category":"工作區/制度","last":"2026-08-17"},{"id":"quota-5q-remainder","title":"8/17 省額度待裁決 5 件裡剩下的四件","state":"backlog","priority":"later","category":"工作區/制度","last":"2026-08-17"},{"id":"ai-trader-tech-debt","title":"ai-trader 三件工程債（③屬資料正確性，建議先修）","state":"backlog","priority":"later","category":"程式專案","last":"2026-08-17"},{"id":"remote-autostart","title":"遠端 session 不會自己醒（排程會自己跑、session 不會）","state":"backlog","priority":"later","category":"工作區/制度","last":"2026-08-19"},{"id":"new-departments","title":"他 8/19 交辦：開「投資部」與「外交部」兩個部門＋codex/gemini/ollama 三家盲審","state":"backlog","priority":"later","category":"制度","last":"2026-08-19"},{"id":"subagent-worktime-cap","title":"分身工時上限要不要從「純紀律」改成「自動交接」（兩家外審反對純紀律）","state":"backlog","priority":"later","category":"工作區/制度","last":"2026-08-20"},{"id":"bak-files-git-rm","title":"17 個 .bak_* 被 hook 的 git add 誤 commit 進 repo，已追蹤的要 git rm --cached","state":"backlog","priority":"later","category":"雜務","last":"2026-08-20"},{"id":"codex-parity","title":"雙棲落差兩批未動：自建 skills 在 ~/.agents/skills 一個都沒有、Codex [mcp_servers.*] 0 個","state":"backlog","priority":"later","category":"工作區/制度","last":"2026-08-20"},{"id":"skill-naming-and-tools","title":"dept-accounting 要不要加 allowed-tools／8 支中文名 skill 要不要改 kebab-case","state":"backlog","priority":"later","category":"工具","last":"2026-08-20"},{"id":"youqian-guide-screenshots","title":"又仟案：引導文件補圖（8/21 裁決「圖檔越多越好」，只補一張）","state":"backlog","priority":"later","category":"對外案子","last":"2026-08-21"},{"id":"youqian-pii-guard","title":"又仟案：個資防線（8/21 丟給「她自己的 Claude 當練習題」，練習題冰存＝沒人接）","state":"backlog","priority":"later","category":"對外案子","last":"2026-08-21"},{"id":"youqian-resale-kit","title":"又仟案：引導文件可原封不動賣下一個客戶（原 done_when 後半）","state":"backlog","priority":"next","category":"對外案子","last":"2026-08-24"},{"id":"dash-generator-untracked","title":"ai-trader 的 ops/dash/ 整包未追蹤，build_v3.py 的 docstring 謊稱已收進版控","state":"backlog","priority":"later","category":"程式專案","last":"2026-08-24"},{"id":"ai-trader-8-24-open-q","title":"8/24 那批待裁決裡沒被關掉的三題","state":"backlog","priority":"later","category":"程式專案","last":"2026-08-24"},{"id":"serenity-clone-project","title":"serenity-clone 專案完全不在台帳上（任務書已建、Phase 0 未執行）","state":"backlog","priority":"later","category":"程式專案","last":"2026-08-25"},{"id":"memory-slim-f6","title":"F6 記憶層精簡沒收斂：MEMORY.md 索引實測 83 條，門檻 40","state":"backlog","priority":"later","category":"工作區/制度","last":"2026-08-25"},{"id":"youqian-preannounce-msg","title":"又仟案：要傳給又仟的預告訊息發了沒","state":"backlog","priority":"later","category":"對外案子","last":"2026-08-26"},{"id":"youqian-practice-6q","title":"又仟案：練習題六件待裁決（8/26 起零回覆）","state":"backlog","priority":"next","category":"對外案子","last":"2026-08-26"},{"id":"ai-trader-58-wip","title":"ai-trader 工作區 58 項既有未提交異動，來源不明","state":"backlog","priority":"later","category":"程式專案","last":"2026-08-26"},{"id":"warroom-dept-names","title":"戰情室部門名字（工程部／制度部／業務部／內容部／總務部）已問未回","state":"backlog","priority":"later","category":"制度","last":"2026-08-27"},{"id":"warroom-known-gaps","title":"戰情室其餘五個已知缺口（顯示與測試層，存取控制已另立一筆）","state":"backlog","priority":"later","category":"制度","last":"2026-08-27"},{"id":"youqian-learning-skill","title":"又仟案：做一支「引導又仟學習」的 skill（他 8/27 指名的下一步）","state":"backlog","priority":"next","category":"又仟案","last":"2026-08-28"},{"id":"correction-mark-source-tier-and-confidence","title":"糾正：結論要標一手/二手來源，只靠二手不准講肯定句","state":"blocked","priority":"","category":"","last":""},{"id":"ur-20260828T1943","title":"測試需求 123（closed_loop 步3端對端測試，會用銷毀鈕清掉）","state":"destroyed","priority":"","category":"","last":""},{"id":"settings-not-versioned","title":"settings.json 不在版控裡（hook 設定無備份）","state":"done","priority":"next","category":"工作區/制度","last":"2026-08-08"},{"id":"stock-signal-wip","title":"stock-signal 索羅門自我精進未收尾 WIP","state":"done","priority":"later","category":"程式專案","last":"2026-08-11"},{"id":"claudecode-install-cmd","title":"查證 Claude Code 官方安裝指令（Mac/Win）","state":"done","priority":"now","category":"對外案子","last":"2026-08-21"},{"id":"youqian-skeleton","title":"又仟案：AI 協作骨架安裝包","state":"done","priority":"now","category":"對外案子","last":"2026-08-27"},{"id":"institution-lint-falsepositive","title":"institution-lint 誤報 rm-guard 失效","state":"done","priority":"next","category":"工作區/制度","last":"2026-08-27"},{"id":"gooaye-fontsize","title":"股癌報告站字體大小不能調整","state":"done","priority":"now","category":"程式專案","last":"2026-08-27"},{"id":"banned-number-in-live-files","title":"被明令禁用的「199 份逐字稿只叫用 8 次」仍寫在 3 個活檔案裡當論據","state":"done","priority":"next","category":"工作區/制度","last":"2026-08-28"},{"id":"orphan-httpserver","title":"兩個殘留 http.server（PID 42620、47924）在 8899 提供客戶文件","state":"done","priority":"next","category":"雜務","last":"2026-08-28"},{"id":"correction-secret-in-process-output","title":"程序命令列類指令要先接遮蔽管線，避免印出別人寫的字串（含密鑰）","state":"done","priority":"now","category":"工作區/制度","last":"2026-08-28"},{"id":"booking-system","title":"又仟 LINE 預約系統代做（15,000 元方案）","state":"dropped","priority":"later","category":"對外案子","last":"2026-07-13"},{"id":"ai-trader-stockdict-bug","title":"stock-signal：日股名字撞台股代號，靜默指到別家公司（資料正確性）","state":"dropped","priority":"now","category":"程式專案","last":"2026-08-28"},{"id":"chatgpt-carrier","title":"ChatGPT 訂閱當第二載體評估","state":"parked","priority":"later","category":"工作區/制度","last":"2026-07-13"},{"id":"monthly-audit","title":"制度月度深度審計","state":"paused","priority":"next","category":"工作區/制度","last":"2026-07-06"},{"id":"linechat-digest","title":"linechat-digest 社群訊息摘要","state":"paused","priority":"later","category":"程式專案","last":"2026-07-20"},{"id":"linebot-railway","title":"linebot Railway 帳務停權","state":"paused","priority":"next","category":"對外案子","last":"2026-07-27"},{"id":"video-transcribe","title":"video-transcribe 影片轉錄＋字幕","state":"paused","priority":"later","category":"程式專案","last":"2026-08-01"},{"id":"correction-scheduler-must-self-restore","title":"糾正：分身死在中途把排程停掉沒還原，閉環心臟停了兩小時","state":"verify","priority":"","category":"","last":""},{"id":"gold-standard-offsite","title":"他花 20 分鐘標的黃金標準檔只存在一顆硬碟上，異地備份是否涵蓋未實地驗證","state":"verify","priority":"next","category":"工作區/制度","last":"2026-08-24"},{"id":"line-booking-deploy","title":"line-booking 上線：選 A（他登入）或 B（自建 token）","state":"verify","priority":"next","category":"程式專案","last":"2026-08-26"},{"id":"tw-backtest-project","title":"tw-backtest 專案：只有 366MB .venv，工具包一支沒寫、未進 project_index","state":"verify","priority":"now","category":"程式專案","last":"2026-08-26"},{"id":"vercel-plan-hobby","title":"他的 Vercel 是不是 Hobby（若是，rijian-studio 接案站踩商用條款）","state":"verify","priority":"next","category":"對外案子","last":"2026-08-26"},{"id":"transcribe-remodel-266","title":"換模型重標 266 集：第一步對分測試（成本≈0）未跑","state":"verify","priority":"now","category":"程式專案","last":"2026-08-28"},{"id":"dividend-adjusted-price","title":"serenity-clone：含息報酬兩件實作（凍結擷取時間＋獨立配息表）","state":"verify","priority":"next","category":"程式專案","last":"2026-08-28"},{"id":"stock-signal-ad-misread","title":"股癌訊號管線把業配口播誤判成投資訊號（已寄給 8 人）","state":"verify","priority":"now","category":"程式專案","last":"2026-08-28"},{"id":"correction-images-via-cheap-subagent","title":"糾正：讀圖一律派便宜分身，主 session 只收文字","state":"verify","priority":"next","category":"工作區/制度","last":"2026-09-02"},{"id":"rijian-studio","title":"日見工作室品牌頁","state":"waiting","priority":"later","category":"對外案子","last":"2026-07-27"},{"id":"gemini-import-verify","title":"GEMINI.md 的 import 是否真的載入，從未驗證（紅線可能在 Gemini 側沒生效）","state":"waiting","priority":"next","category":"工作區/制度","last":"2026-08-20"},{"id":"ai-trader-email-test","title":"ai-trader：端到端寄信測試","state":"waiting","priority":"next","category":"程式專案","last":"2026-08-21"},{"id":"teaching-material-license","title":"教材上線卡授權：原教材明文「僅限購買學員個人學習、禁止公開散布」，新手全集整本是對照改寫","state":"waiting","priority":"next","category":"對外案子","last":"2026-08-23"},{"id":"linebot-pii-backup-delete","title":"含個資的備份檔要他動手刪：linebot backup_2026-07-06.json（2 位 LINE user_id＋暱稱）","state":"waiting","priority":"next","category":"雜務","last":"2026-08-24"},{"id":"gemini-billing-disk-leftovers","title":"①Gemini 2 次被拒呼叫請他查帳單 ②磁碟殘留清單含 C:\\lb\\（1.1GB，在 scratchpad 外）","state":"waiting","priority":"next","category":"雜務","last":"2026-08-25"},{"id":"ygo-cardname-screenshots","title":"遊戲王 MD 繁體卡名截圖（13 張）","state":"waiting","priority":"now","category":"內容","last":"2026-08-27"},{"id":"ygo-frame-skill","title":"影格判讀流程要不要做成 skill","state":"waiting","priority":"later","category":"工具","last":"2026-08-27"},{"id":"leftover-files","title":"殘留檔刪不刪（AI 不得自行刪）","state":"waiting","priority":"later","category":"雜務","last":"2026-08-27"},{"id":"five-unanswered-q","title":"他從未回答的 5 題（今天在 daily log 出現三次、卻從最新 NEXT 被刪掉）","state":"waiting","priority":"next","category":"工作區/制度","last":"2026-08-27"},{"id":"warroom-access-control","title":"戰情室完全沒有存取控制：知道網址的人都能按","state":"waiting","priority":"next","category":"制度","last":"2026-08-27"},{"id":"institution-writeguard-gap","title":"皇冠資產的 Write/Edit 路徑零攔截（hook 只掛 Bash matcher）","state":"waiting","priority":"next","category":"工作區/制度","last":"2026-08-27"},{"id":"claude-md-upgrade-2","title":"已提案未裁決：兩條要不要升級進 CLAUDE.md NEVER/ALWAYS","state":"waiting","priority":"next","category":"工作區/制度","last":"2026-08-27"},{"id":"db-backup-gap","title":"專案 DB 備份掛零","state":"waiting","priority":"next","category":"工作區/制度","last":"2026-08-28"},{"id":"ai-trader-flex-token","title":"ai-trader：Flex token 要不要重生","state":"waiting","priority":"next","category":"程式專案","last":"2026-08-28"}]}</script>
+<script>
+function esc(s){const d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+function fmtDate(s){return s.slice(5).replace('-','/');}
+function countedItems(day){return (day.items||[]).filter(i=>i.verified&&i.evidence_url);}
+function plainText(it){return (it.plain_ok===true&&it.plain)?it.plain:(it.text||'');}
+// 萬 token → K／M（跟 proof.html 同一條規則）
+function fmtKM(v){if(v<=0)return '·';const t=v*10000;if(t>=1e7)return Math.round(t/1e6)+'M';if(t>=1e6)return (t/1e6).toFixed(1)+'M';return Math.round(t/1e3)+'K';}
+function fmtWan(v){return v>=1000?(v/1000).toFixed(1)+' 億':Math.round(v)+' 萬';}
+const avg=a=>a.length?a.reduce((x,y)=>x+y,0)/a.length:null;
+const sum=a=>a.reduce((x,y)=>x+y,0);
+function pct(now,base){return (base>0&&now!=null)?Math.round((now-base)/base*100):null;}
+function deltaHtml(p,goodWhenUp,words){
+  // words=[多的字,少的字]；顏色只代表「對你好／不好」，綠＝變好、紅＝變差
+  if(p==null)return '<span class="flat">沒有前 7 天可比</span>';
+  if(p===0)return '<span class="flat">跟前 7 天一樣</span>';
+  const up=p>0, good=up===goodWhenUp;
+  return `<span class="${good?'up':'down'}">比前 7 天${up?words[0]:words[1]} ${Math.abs(p)}%（${good?'變好':'變差'}）</span>`;
+}
+
+// 專案色：沿用 proof.html（件數前 7 名各一色、其餘灰）
+const PROJ_SLOTS=['var(--s1)','var(--s2)','var(--s3)','var(--s4)','var(--s5)','var(--s6)','var(--s7)'];
+const PROJ_RGB=['var(--s1-rgb)','var(--s2-rgb)','var(--s3-rgb)','var(--s4-rgb)','var(--s5-rgb)','var(--s6-rgb)','var(--s7-rgb)'];
+function projColorMap(days){
+  const c={};days.forEach(d=>countedItems(d).forEach(it=>{const p=it.project||'其他';if(p!=='其他')c[p]=(c[p]||0)+1;}));
+  const top=Object.keys(c).sort((a,b)=>c[b]-c[a]).slice(0,7);
+  const map={},rgb={};top.forEach((p,i)=>{map[p]=PROJ_SLOTS[i];rgb[p]=PROJ_RGB[i];});
+  return {map,rgb,top,counts:c};
+}
+const projKey=(map,p)=>(p&&map[p])?p:'其他';
+const projColor=(map,p)=>map[projKey(map,p)]||'var(--zero)';
+function scoreColor(s){return {1:'var(--sc1)',2:'var(--sc2)',3:'var(--sc3)',4:'var(--sc4)',5:'var(--sc5)'}[s]||'var(--zero)';}
+const scoreMeaning={5:'過關',4:'稍微不滿',3:'嚴重',2:'極度嚴重',1:'不該出現'};
+
+// 格子字色：跟 proof.html 一樣用實際混色算對比，不猜門檻
+function isDark(){return document.documentElement.dataset.theme==='dark'||(document.documentElement.dataset.theme!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);}
+const _rgbCache={};
+function cssRgb(rgbVar){const name=rgbVar.replace(/^var\(|\)$/g,''),key=name+(isDark()?'|d':'|l');if(_rgbCache[key])return _rgbCache[key];const v=getComputedStyle(document.documentElement).getPropertyValue(name).trim().split(',').map(Number);return _rgbCache[key]=(v.length===3&&v.every(x=>!isNaN(x)))?v:[128,128,128];}
+function lum(c){const f=x=>{x/=255;return x<=0.03928?x/12.92:Math.pow((x+0.055)/1.055,2.4);};return 0.2126*f(c[0])+0.7152*f(c[1])+0.0722*f(c[2]);}
+function contrast(a,b){return (Math.max(a,b)+0.05)/(Math.min(a,b)+0.05);}
+function cellFg(rgbVar,alpha){const dark=isDark(),rgb=cssRgb(rgbVar),base=dark?[26,26,26]:[255,255,255];const L=lum(rgb.map((c,i)=>c*alpha+base[i]*(1-alpha)));const inkL=lum(dark?[242,242,240]:[11,11,11]);return contrast(L,1)>contrast(L,inkL)?'var(--on-dark)':'var(--ink)';}
+const EXPENSIVE=new Set(['opus','fable']);
+function heatStyle(acct,modelKey,v,maxV){
+  if(modelKey==='other'){const a=v<=0?0:0.12+0.6*(v/maxV);return {bg:v<=0?'transparent':`rgba(var(--neutral-rgb),${a.toFixed(2)})`,fg:cellFg('var(--neutral-rgb)',a)};}
+  const good=(acct==='sub')?!EXPENSIVE.has(modelKey):EXPENSIVE.has(modelKey);
+  const rgbVar=good?'var(--good-rgb)':'var(--bad-rgb)';const a=v<=0?0:0.12+0.78*(v/maxV);
+  return {bg:v<=0?'transparent':`rgba(${rgbVar},${a.toFixed(2)})`,fg:cellFg(rgbVar,a)};
+}
+function seqStyle(v,maxV){const a=v<=0?0:0.15+0.8*(v/maxV);return {bg:v<=0?'':`rgba(var(--neutral-rgb),${a.toFixed(2)})`,fg:cellFg('var(--neutral-rgb)',a)};}
+
+const SNAP=(()=>{try{return JSON.parse(document.getElementById('plans-snapshot').textContent||'{}');}catch(e){return {};}})();
+
+fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();}).then(data=>{
+  const days=[...data.days].sort((a,b)=>a.date<b.date?-1:1);
+  const n=days.length, half=Math.max(0,n-7);
+  const today=days[n-1];
+  const near=days.slice(half), prev=days.slice(0,half);
+  const {map:PM,rgb:PRGB,top:PTOP,counts:PC}=projColorMap(days);
+  const dayTok=d=>(d.tokens_main_wan||0)+(d.tokens_sub_wan||0);
+  const dayScores=d=>(d.scores||[]).map(s=>+s.score).filter(s=>s>=1&&s<=5);
+  const acctVal=(d,acct,m)=>+(((acct==='main'?d.tokens_by_model_main:d.tokens_by_model_sub)||{})[m]||0);
+  const ALLM=['opus','sonnet','haiku','fable','other'];
+
+  {const g=String(data.generated_at||'');document.getElementById('asof').textContent=(g?`資料更新到 ${g.slice(5,10).replace('-','/')} ${g.slice(11,16)}（每小時自動重算）`:'資料時間不明')+(SNAP.generated_at?`・看板快照 ${SNAP.generated_at.slice(5,10).replace('-','/')} ${SNAP.generated_at.slice(11,16)}`:'');}
+
+  // ---------- ① 一句話 + 三張卡 ----------
+  const nearItems=sum(near.map(d=>countedItems(d).length)), prevItems=sum(prev.map(d=>countedItems(d).length));
+  const nearTok=sum(near.map(dayTok)), prevTok=sum(prev.map(dayTok));
+  const nearSc=[].concat(...near.map(dayScores)), prevSc=[].concat(...prev.map(dayScores));
+  const nearAvg=avg(nearSc), prevAvg=avg(prevSc);
+  const pItems=pct(nearItems,prevItems), pTok=pct(nearTok,prevTok);
+  const scDiff=(nearAvg!=null&&prevAvg!=null)?nearAvg-prevAvg:null;
+  const nearPass=nearSc.filter(s=>s===5).length;
+  const topNear={};near.forEach(d=>countedItems(d).forEach(it=>{const p=it.project||'其他';topNear[p]=(topNear[p]||0)+1;}));
+  const topNearName=Object.keys(topNear).sort((a,b)=>topNear[b]-topNear[a])[0]||'—';
+  const scWord=scDiff==null?'':(Math.abs(scDiff)<0.05?'跟前 7 天一樣':(scDiff>0?`比前 7 天高 ${scDiff.toFixed(1)} 分`:`比前 7 天低 ${Math.abs(scDiff).toFixed(1)} 分`));
+  document.getElementById('lead').innerHTML=
+    `近 7 天 AI 做了 <b>${nearItems} 件</b>有證據的事（${pItems==null?'':(pItems>=0?'比前 7 天多':'比前 7 天少')+' '+Math.abs(pItems)+'%'}，最多在「${esc(topNearName)}」），`+
+    `花了 <b>${fmtWan(nearTok)} token</b>（${pTok==null?'':(pTok<0?'省了':'多花')+' '+Math.abs(pTok)+'%'}），`+
+    (nearAvg==null?'你這 7 天沒打分。':`你打了 ${nearSc.length} 次分、平均 <b>${nearAvg.toFixed(1)} 分</b>、${nearPass} 次過關（${scWord}）。`);
+
+  const sparkBars=(vals,cls)=>{const mx=Math.max(...vals,0.0001);return `<div class="spark">${vals.map((v,i)=>`<i class="${i>=half?'near':''}${cls?' '+cls(v,i):''}" style="height:${Math.max(2,Math.round(v/mx*100))}%" title="${fmtDate(days[i].date)}：${typeof v==='number'?(Math.round(v*10)/10):v}"></i>`).join('')}</div><div class="axis"><span>${fmtDate(days[0].date)}</span><span>今天</span></div>`;};
+  const tile=(q,big,unit,cmp,spark)=>`<div class="tile"><div class="q">${q}</div><div class="big num">${big}<small>${unit}</small></div><div class="cmp">${cmp}</div>${spark}</div>`;
+  const scAvgByDay=days.map(d=>{const s=dayScores(d);return s.length?avg(s):0;});
+  document.getElementById('tiles').innerHTML=
+    tile('近 7 天做了幾件',nearItems,'件',deltaHtml(pItems,true,['多做','少做']),sparkBars(days.map(d=>countedItems(d).length)))+
+    tile('近 7 天花多少',fmtWan(nearTok).replace(' ',''),'token',deltaHtml(pTok,false,['多花','省']),sparkBars(days.map(dayTok)))+
+    tile('近 7 天你打的平均分',nearAvg==null?'—':nearAvg.toFixed(1),'分',scDiff==null?'<span class="flat">'+(nearAvg==null?'沒打分':'沒有前 7 天可比')+'</span>':`<span class="${Math.abs(scDiff)<0.05?'flat':(scDiff>0?'up':'down')}">${Math.abs(scDiff)<0.05?'跟前 7 天一樣':'比前 7 天'+(scDiff>0?'高':'低')+' '+Math.abs(scDiff).toFixed(1)+' 分（'+(scDiff>0?'變好':'變差')+'）'}</span>`,
+      sparkBars(scAvgByDay,(v)=>v>0?('sc'+Math.round(v)):''));
+
+  // ---------- ② 14 天一張圖 ----------
+  document.getElementById('track-legend').innerHTML=
+    `<span><span class="sw" style="background:var(--ink-2)"></span><b>柱子＝那天做了幾件</b>（數字寫在柱子上）</span>`+
+    `<span style="flex-basis:100%;height:0"></span>`+
+    `<span><b>格子＝那天花的額度</b>（萬 token）少<span class="ramp"></span>多</span>`+
+    `<span style="flex-basis:100%;height:0"></span>`+
+    `<span><b>點點＝你打的分</b>，一點一次：</span>`+[5,4,3,2,1].map(s=>`<span><span class="sw round" style="background:${scoreColor(s)}"></span>${s} 分${s===5?'＝過關':''}</span>`).join('');
+  const maxItems=Math.max(1,...days.map(d=>countedItems(d).length));
+  const maxTok=Math.max(1,...days.map(dayTok));
+  let th='';
+  th+=`<div class="lab">做了<br>幾件<small>柱高＝件數</small></div>`;
+  days.forEach((d,i)=>{
+    const items=countedItems(d), byP={};items.forEach(it=>{const k=projKey(PM,it.project);byP[k]=(byP[k]||0)+1;});
+    const order=Object.keys(byP).sort((a,b)=>byP[b]-byP[a]);
+    const hPct=items.length/maxItems*86; // 留 14% 給數字
+    th+=`<div class="bar${items.length?'':' zero'}" data-i="${i}"><span class="cnt">${items.length}</span><div class="stk" style="height:${hPct.toFixed(1)}%"><div class="seg" style="background:var(--ink-2)"></div></div></div>`;
+  });
+  th+=`<div class="lab">花多少<small>萬 token</small></div>`;
+  days.forEach((d,i)=>{const v=dayTok(d),st=seqStyle(v,maxTok);th+=`<div class="heat" data-i="${i}" style="${st.bg?`background:${st.bg};color:${st.fg}`:''}">${fmtKM(v)}</div>`;});
+  th+=`<div class="lab">你打<br>幾分<small>一點一次</small></div>`;
+  days.forEach((d,i)=>{const sc=d.scores||[];th+=`<div class="dots" data-i="${i}">${sc.length?sc.map(s=>`<i style="background:${scoreColor(+s.score)}" title="${s.score} 分 ${s.time||''}"></i>`).join(''):'<span class="none"></span>'}</div>`;});
+  th+=`<div class="lab"></div>`;
+  days.forEach((d,i)=>{th+=`<div class="dcol${i===n-1?' today':''}">${i===n-1?'今天':d.date.slice(8,10)}</div>`;});
+  const tracks=document.getElementById('tracks');tracks.innerHTML=th;
+  const readout=document.getElementById('readout');
+  function describeDay(i){
+    const d=days[i],items=countedItems(d),byP={};items.forEach(it=>{const p=it.project||'其他';byP[p]=(byP[p]||0)+1;});
+    const projStr=Object.keys(byP).sort((a,b)=>byP[b]-byP[a]).map(p=>`${p} ${byP[p]}`).join('、')||'沒有算進來的項目';
+    const sc=dayScores(d);
+    const m=d.tokens_by_model_main||{},s=d.tokens_by_model_sub||{};
+    const tokStr=`主帳號 ${Math.round(d.tokens_main_wan||0)} 萬（Opus ${Math.round(m.opus||0)}／Sonnet ${Math.round(m.sonnet||0)}／Haiku ${Math.round(m.haiku||0)}／Fable ${Math.round(m.fable||0)}）、分身 ${Math.round(d.tokens_sub_wan||0)} 萬（Opus ${Math.round(s.opus||0)}／Sonnet ${Math.round(s.sonnet||0)}／Haiku ${Math.round(s.haiku||0)}／Fable ${Math.round(s.fable||0)}）`;
+    readout.innerHTML=`<b>${fmtDate(d.date)}${i===n-1?'（今天）':''}</b>：做了 <b>${items.length} 件</b>（${esc(projStr)}）；花了 <b>${Math.round(dayTok(d))} 萬 token</b>＝${esc(tokStr)}；`+(sc.length?`你打了 ${sc.length} 次分：<b>${sc.join('、')}</b>`:'你沒打分')+`；commit ${d.commits||0} 個、派分身 ${d.subagent_runs||0} 次、Discord 回 ${d.discord_replies||0} 則。`;
+    tracks.querySelectorAll('.sel').forEach(e=>e.classList.remove('sel'));
+    tracks.querySelectorAll(`[data-i="${i}"]`).forEach(e=>e.classList.add('sel'));
+  }
+  tracks.addEventListener('click',e=>{const t=e.target.closest('[data-i]');if(t)describeDay(+t.dataset.i);});
+  describeDay(n-1);
+
+  // ---------- 3a 專案 ----------
+  {
+    const tot14={},tot7={};
+    days.forEach((d,i)=>countedItems(d).forEach(it=>{const p=it.project||'其他';tot14[p]=(tot14[p]||0)+1;if(i>=half)tot7[p]=(tot7[p]||0)+1;}));
+    const orderAll=Object.keys(tot14).sort((a,b)=>tot14[b]-tot14[a]);
+    const order=orderAll.slice(0,6), rest=orderAll.slice(6);
+    const mx=Math.max(1,...orderAll.map(p=>tot14[p]));
+    const all=sum(orderAll.map(p=>tot14[p]));
+    const rowH=(name,v14,v7,color)=>`<div class="k" title="${esc(name)}">${esc(name)}</div><div class="b" style="width:${(v14/mx*100).toFixed(1)}%;background:${color}"></div><div class="v">${v14} 件 <small>${Math.round(v14/all*100)}%（近 7 天 ${v7}）</small></div>`;
+    let ph=order.map(p=>rowH(p,tot14[p],tot7[p]||0,projColor(PM,p))).join('');
+    if(rest.length)ph+=rowH(`其他 ${rest.length} 個`,sum(rest.map(p=>tot14[p])),sum(rest.map(p=>tot7[p]||0)),'var(--zero)');
+    document.getElementById('proj-bars').innerHTML=ph;
+    const top1=orderAll[0];
+    document.getElementById('proj-sentence').innerHTML=`<b>${esc(top1)}</b> 一個專案就吃掉 ${Math.round(tot14[top1]/all*100)}% 的件數（${tot14[top1]}／${all} 件）${top1==='工作證明頁'?'——也就是「做報告」本身佔了快三成工時':''}。`;
+  }
+
+  // ---------- 3b 額度 ----------
+  {
+    const mainT=sum(days.map(d=>d.tokens_main_wan||0)), subT=sum(days.map(d=>d.tokens_sub_wan||0));
+    const expT=sum(days.map(d=>acctVal(d,'main','opus')+acctVal(d,'main','fable')+acctVal(d,'sub','opus')+acctVal(d,'sub','fable')));
+    const cheapT=sum(days.map(d=>acctVal(d,'main','sonnet')+acctVal(d,'main','haiku')+acctVal(d,'sub','sonnet')+acctVal(d,'sub','haiku')));
+    const stack=(el,parts)=>{const t=sum(parts.map(p=>p[1]))||1;el.innerHTML=parts.map(([k,v,c])=>`<div class="seg" style="width:${(v/t*100).toFixed(1)}%;background:${c}" title="${k} ${Math.round(v)} 萬">${v/t>=0.18?`${k} ${Math.round(v/t*100)}%・${fmtWan(v)}`:''}</div>`).join('');};
+    stack(document.getElementById('stack-acct'),[['主帳號',mainT,'var(--ink-2)'],['分身',subT,'var(--s2)']]);
+    stack(document.getElementById('stack-model'),[['貴的',expT,'var(--s2)'],['便宜的',cheapT,'var(--ink-2)']]);
+    const subExp=d=>acctVal(d,'sub','opus')+acctVal(d,'sub','fable');
+    const pse=sum(prev.map(subExp)), nse=sum(near.map(subExp));
+    const cmp=(name,p,q)=>p<=0?`${name}近 7 天共 ${Math.round(q)} 萬`:(Math.abs(q-p)<1?`${name}近 7 天跟前 7 天差不多`:`${name}近 7 天比前 7 天${q<p?'少':'多'} ${Math.round(Math.abs(q-p)/p*100)}%（${Math.round(p)}→${Math.round(q)} 萬）`);
+    document.getElementById('quota-sentence').textContent=`${cmp('全部額度',prevTok,nearTok)}；${cmp('分身用貴模型',pse,nse)}。`;
+    const ROWS=[['分身・貴','sub',['opus','fable'],'opus'],['分身・便宜','sub',['sonnet','haiku'],'sonnet'],['主帳號・貴','main',['opus','fable'],'opus'],['主帳號・便宜','main',['sonnet','haiku'],'sonnet']];
+    const oc=i=>(i<n-7?' class="d-old"':'');
+    let h='<thead><tr><th>帳號・模型</th>'+days.map((d,i)=>`<th${oc(i)}>${d.date.slice(8,10)}</th>`).join('')+'<th>近 7 天</th></tr></thead><tbody>';
+    const row=(lbl,fn,styleFn)=>{const vals=days.map(fn);const mx=Math.max(...vals,0.0001);let r=`<tr><td class="rowlbl">${lbl}</td>`;vals.forEach((v,i)=>{if(v<=0){r+=`<td class="cell${i<n-7?' d-old':''}">·</td>`;}else{const st=styleFn(v,mx);r+=`<td class="cell${i<n-7?' d-old':''}" style="background:${st.bg};color:${st.fg}" title="${fmtDate(days[i].date)} ${lbl} ${Math.round(v)} 萬">${fmtKM(v)}</td>`;}});r+=`<td class="cell">${fmtKM(sum(vals.slice(half)))}</td></tr>`;return r;};
+    ROWS.forEach(([lbl,acct,ms,mk])=>{h+=row(lbl,d=>sum(ms.map(m=>acctVal(d,acct,m))),(v,mx)=>heatStyle(acct,mk,v,mx));});
+    h+=row('合計',dayTok,(v,mx)=>heatStyle('main','other',v,mx));
+    h+='</tbody>';document.getElementById('quota-table').innerHTML=h;
+  }
+
+  // ---------- 3c 分數 ----------
+  {
+    document.getElementById('score-legend').innerHTML=[5,4,3,2,1].map(s=>`<span><span class="sw round" style="background:${scoreColor(s)}"></span>${s} 分＝${scoreMeaning[s]}</span>`).join('');
+    const all14=[].concat(...days.map(dayScores));
+    const cnt={5:0,4:0,3:0,2:0,1:0};all14.forEach(s=>cnt[s]++);
+    const mx=Math.max(1,...Object.values(cnt));
+    document.getElementById('score-dist').innerHTML=[5,4,3,2,1].map(s=>`<div class="k">${s} 分・${scoreMeaning[s]}</div><div class="b" style="width:${(cnt[s]/mx*100).toFixed(1)}%;background:${scoreColor(s)}"></div><div class="v">${cnt[s]} 次 <small>${all14.length?Math.round(cnt[s]/all14.length*100):0}%</small></div>`).join('');
+    const passRate=all14.length?Math.round(cnt[5]/all14.length*100):0;
+    const nearPassRate=nearSc.length?Math.round(nearSc.filter(s=>s===5).length/nearSc.length*100):null, prevPassRate=prevSc.length?Math.round(prevSc.filter(s=>s===5).length/prevSc.length*100):null;
+    document.getElementById('score-sentence').textContent=`14 天你打了 ${all14.length} 次分，${cnt[5]} 次過關（${passRate}%）。`+(nearPassRate!=null&&prevPassRate!=null?`過關率：前 7 天 ${prevPassRate}% → 近 7 天 ${nearPassRate}%。`:'')+`低分（1–2 分）共 ${cnt[1]+cnt[2]} 次。`;
+    const low=days.filter(d=>dayScores(d).some(s=>s<=2)).reverse();
+    document.getElementById('lowdays').innerHTML=low.length?low.map(d=>{
+      const items=countedItems(d),byP={};items.forEach(it=>{const p=it.project||'其他';byP[p]=(byP[p]||0)+1;});
+      const top=Object.keys(byP).sort((a,b)=>byP[b]-byP[a]).slice(0,3).map(p=>`${p} ${byP[p]} 件`).join('、')||'沒有算進來的項目';
+      const sc=d.scores||[];
+      const lowN=sc.filter(s=>+s.score<=2).length;
+      return `<li><span class="num" style="color:var(--ink-3)">${fmtDate(d.date)}</span><span><span class="sd">${sc.map(s=>`<i style="background:${scoreColor(+s.score)}"></i>`).join('')}</span><b>${lowN} 次低分</b>（打了 ${sc.length} 次）；那天在做：${esc(top)}，共 ${items.length} 件、花 ${Math.round(dayTok(d))} 萬</span></li>`;
+    }).join(''):'<li class="empty">14 天內沒有 1–2 分</li>';
+  }
+
+  // ---------- 3d 忙碌 ----------
+  {
+    const mk=(t,key,unit)=>{const vals=days.map(d=>+(d[key]||0));const mx=Math.max(...vals);return `<div class="m"><div class="t">${t}</div><div class="mx num">${vals[n-1]}<small> ${unit}／今天，最多 ${mx}</small></div>${sparkBars(vals)}</div>`;};
+    document.getElementById('busy').innerHTML=mk('寫進倉庫的 commit','commits','個')+mk('派出去的分身','subagent_runs','次')+mk('Discord 回你幾則','discord_replies','則');
+  }
+
+  // ---------- ④ 猜你要什麼 ----------
+  {
+    const g=[];
+    const all14={};days.forEach(d=>countedItems(d).forEach(it=>{const p=it.project||'其他';all14[p]=(all14[p]||0)+1;}));
+    const total14=sum(Object.values(all14));
+    const proofN=all14['工作證明頁']||0, proofPct=total14?Math.round(proofN/total14*100):0;
+    const todayN=countedItems(today).length, todayProof=countedItems(today).filter(it=>it.project==='工作證明頁').length;
+    g.push({h:'你要的是一份「看一眼就懂、不用再改版」的 AI 成績單',
+      why:`近 14 天 <b>${proofN} 件（${proofPct}%）</b>都花在做這個證明頁本身，今天 ${todayN} 件裡 ${todayProof} 件也是；你 09-18～19 打的 ${[].concat(...days.slice(-2).map(dayScores)).length} 次分幾乎全是在評它。`,
+      do_:'這頁的版面就定在這裡，之後只換資料不換樣子；想加的東西先開一張票，一次改一批，不再一天改八輪。'});
+    const st=SNAP.state||{};
+    const open=(st.active||0)+(st.waiting||0)+(st.verify||0)+(st.blocked||0);
+    const stale=SNAP.stale_open||{};
+    const staleOld=(stale['15–30 天']||0)+(stale['超過 30 天']||0);
+    g.push({h:'你想知道看板上哪些票其實可以關掉',
+      why:`看板 <b>${SNAP.total||'?'} 張票</b>只有 ${st.done||0} 張 done；正在做／等你／待驗共 ${open} 張，其中 <b>${staleOld} 張超過 2 週沒動</b>、「現在做」的 ${SNAP.now_active||0} 張有 ${SNAP.now_active_over14||0} 張也是。票像冰箱裡的菜，放太久就該問要不要丟。`,
+      do_:'我先列一份「30 秒關票清單」：每張一行「要關／要留／要問你」，你只回不同意的那幾張。'});
+    const w=SNAP.waiting_on_him||[];
+    const oldest=w.reduce((m,x)=>Math.max(m,x.days||0),0);
+    g.push({h:'你想一次只被問一件事，而且是最值得回的那件',
+      why:`等你一句話的票有 <b>${SNAP.waiting_count||0} 張</b>（等你 ${st.waiting||0}＋待驗收 ${st.verify||0}），最久的已經等 ${oldest} 天。你 09-18 打分時講過「一次一題、附為什麼」。`,
+      do_:w.length?`先回優先度最高的這一題（不是等最久的那張）：「${esc(w[0].title)}」，它等了 ${w[0].days==null?'?':w[0].days} 天。其餘在「看板」那段的清單裡，回一題我再問下一題。`:'目前沒有等你的票。'});
+    const haikuToday=acctVal(today,'main','haiku'), haikuPrev=avg(prev.map(d=>acctVal(d,'main','haiku')))||0;
+    const subExpNear=sum(near.map(d=>acctVal(d,'sub','opus')+acctVal(d,'sub','fable'))), subExpPrev=sum(prev.map(d=>acctVal(d,'sub','opus')+acctVal(d,'sub','fable')));
+    g.push({h:'你會問「額度到底省到了沒、錢花在哪」',
+      why:`近 7 天全部額度比前 7 天${pTok==null?'—':(pTok<0?'少':'多')+' '+Math.abs(pTok)+'%'}；分身用貴模型 ${subExpPrev>0?(subExpNear<subExpPrev?'少':'多')+' '+Math.round(Math.abs(subExpNear-subExpPrev)/subExpPrev*100)+'%':'—'}（這是你上週點名要省的那格）。但今天主帳號的 Haiku 突然 <b>${Math.round(haikuToday)} 萬</b>（前 7 天平均 ${Math.round(haikuPrev)} 萬）——猜是每小時重算白話句那支在燒。`,
+      do_:'我去看白話句是不是每小時都重算舊的；是的話改成只補新件，明天這格應該掉回去。'});
+    const lowN=[].concat(...days.map(dayScores)).filter(s=>s<=2).length;
+    g.push({h:'你想看「我糾正過的，之後有沒有真的改」',
+      why:`14 天裡 <b>${lowN} 次 1–2 分</b>，糾正票開著 ${SNAP.corrections_open||0} 張（共 ${SNAP.corrections_total||0} 張）。現在分數跟糾正票各放一邊，看不出「打完分之後有沒有再犯」。`,
+      do_:'在這頁加一條「糾正 → 之後 3 天有沒有再犯」的對照列，每張糾正票一行、再犯就變紅；不用你打分，程式自己比。'});
+    document.getElementById('guesses').innerHTML=g.map((x,i)=>`<div class="guess"><p class="h">猜 ${i+1}：${x.h}</p><p class="why">為什麼這樣猜：${x.why}</p><p class="do">${x.do_}</p></div>`).join('');
+  }
+
+  // ---------- 看板快照 ----------
+  {
+    document.getElementById('snap-at').textContent=SNAP.generated_at?SNAP.generated_at.slice(5,16).replace('T',' ').replace('-','/'):'—';
+    document.getElementById('snap-total').textContent=SNAP.total||'?';
+    const st=SNAP.state||{};
+    const ORDER=[['active','正在做','var(--ink-2)'],['waiting','等你','var(--s2)'],['verify','待驗收','var(--s2)'],['blocked','卡住','var(--warn)'],['backlog','排隊中','rgba(var(--neutral-rgb),.55)'],['paused','暫停','var(--zero)'],['parked','擱置','var(--zero)'],['done','完成','rgba(var(--neutral-rgb),.3)'],['dropped','放棄','var(--zero)'],['destroyed','銷毀','var(--zero)']];
+    const tot=SNAP.total||1;
+    document.getElementById('stack-state').innerHTML=ORDER.filter(([k])=>st[k]).map(([k,l,c])=>`<div class="seg" style="width:${(st[k]/tot*100).toFixed(1)}%;background:${c}" title="${l} ${st[k]}">${st[k]/tot>=0.1?`${l} ${st[k]}`:''}</div>`).join('');
+    document.getElementById('stack-state-lbl').textContent=ORDER.filter(([k])=>st[k]).map(([k,l])=>`${l} ${st[k]}`).join('・');
+    const sO=[['7 天內','rgba(var(--neutral-rgb),.35)'],['8–14 天','rgba(var(--neutral-rgb),.6)'],['15–30 天','rgba(var(--neutral-rgb),.85)'],['超過 30 天','var(--ink)'],['沒紀錄','var(--zero)']];const sv=SNAP.stale_open||{};const stot=sum(sO.map(([k])=>sv[k]||0))||1;
+    document.getElementById('stack-stale').innerHTML=sO.filter(([k])=>sv[k]).map(([k,c])=>`<div class="seg" style="width:${(sv[k]/stot*100).toFixed(1)}%;background:${c}" title="${k} ${sv[k]}">${sv[k]/stot>=0.12?`${k} ${sv[k]}`:''}</div>`).join('');
+    document.getElementById('stack-stale-lbl').textContent=sO.filter(([k])=>sv[k]).map(([k])=>`${k} ${sv[k]} 張`).join('・');
+    const w=SNAP.waiting_on_him||[];
+    document.getElementById('waitlist').innerHTML=w.length?w.map(x=>`<li><span class="d${(x.days||0)>14?' old':''}">${x.days==null?'?':x.days} 天</span><span>${esc(x.title)}<span class="pill">${x.state==='verify'?'待驗收':'等你'}${x.priority?'・'+({now:'現在',high:'重要',next:'接著',later:'之後'}[x.priority]||x.priority):''}</span>${x.next?`<span class="nx">${esc(x.next)}</span>`:''}</span></li>`).join(''):'<li class="empty">沒有等你的票</li>';
+  }
+
+  // ---------- ⑤ 原始資料 ----------
+  {
+    let h='<thead><tr><th>日期</th><th>件數</th><th>commit</th><th>分身</th><th>Discord</th><th>session</th><th>主 Opus</th><th>主 Sonnet</th><th>主 Haiku</th><th>主 Fable</th><th>分 Opus</th><th>分 Sonnet</th><th>分 Haiku</th><th>分 Fable</th><th>合計(萬)</th><th>分數</th></tr></thead><tbody>';
+    [...days].reverse().forEach(d=>{h+=`<tr><td>${d.date}</td><td class="n">${countedItems(d).length}</td><td class="n">${d.commits||0}</td><td class="n">${d.subagent_runs||0}</td><td class="n">${d.discord_replies||0}</td><td class="n">${d.tokens_sessions||0}</td>`+['main','sub'].map(a=>['opus','sonnet','haiku','fable'].map(m=>`<td class="n">${Math.round(acctVal(d,a,m))}</td>`).join('')).join('')+`<td class="n">${Math.round(dayTok(d))}</td><td>${dayScores(d).join('、')||'—'}</td></tr>`;});
+    document.getElementById('raw-days').innerHTML=h+'</tbody>';
+    let it='<thead><tr><th>日期</th><th>時間</th><th>專案</th><th>白話</th><th>證據</th></tr></thead><tbody>';let cnt=0;
+    [...days].reverse().forEach(d=>countedItems(d).forEach(x=>{cnt++;it+=`<tr><td>${fmtDate(d.date)}</td><td>${esc(x.time||'')}</td><td><span class="dot" style="background:${projColor(PM,x.project)}"></span>${esc(x.project||'其他')}</td><td>${esc(plainText(x))}</td><td>${x.evidence_url?`<a href="${esc(x.evidence_url)}">${esc(x.evidence_label||'連結')}</a>`:esc(x.evidence_label||'')}</td></tr>`;}));
+    document.getElementById('raw-items').innerHTML=it+'</tbody>';document.getElementById('raw-items-sum').textContent=`每一件（${cnt} 件，含證據連結）`;
+    const all=SNAP.all||[];
+    let tk='<thead><tr><th>狀態</th><th>優先</th><th>分類</th><th>標題</th><th>最後有動</th></tr></thead><tbody>';
+    all.forEach(x=>{tk+=`<tr><td>${esc(x.state)}</td><td>${esc(x.priority)}</td><td>${esc(x.category)}</td><td>${esc(x.title)}</td><td>${esc(x.last||'—')}</td></tr>`;});
+    document.getElementById('raw-tickets').innerHTML=tk+'</tbody>';document.getElementById('raw-tickets-sum').textContent=`看板全部票（${all.length} 張）`;
+  }
+}).catch(err=>{document.getElementById('lead').textContent='資料載入失敗（proof.json 讀不到）';console.error(err);});
+</script>
+</body>
+</html>
