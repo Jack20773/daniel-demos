@@ -126,8 +126,29 @@
     tr.grid-explain td{font-size:11px;padding:8px}
   }
 
-  /* ---- 分數 4／額度 5：SVG 圖表最小樣式 ---- */
-  .chartbox svg{width:100%;height:auto;display:block}
+  /* ---- 額度日條（一格一天） ---- */
+  .sub{font-size:12px;color:var(--ink-3);margin:-4px 0 10px}
+  .daybar{margin:10px 0}
+  .daybar .lbl{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2);margin:0 0 4px}
+  .daybar .lbl .dot{width:8px;height:8px;border-radius:50%;flex:none}
+  .daybar .lbl .name{flex:1}
+  .daybar .lbl .amt{flex:none;text-align:right}
+  .daybar .cells{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:2px}
+  .daybar .cell{aspect-ratio:1/1;min-width:0;box-sizing:border-box;overflow:hidden;border-radius:4px;
+    display:flex;align-items:center;justify-content:center;
+    font-variant-numeric:tabular-nums;font-size:10px;letter-spacing:-0.3px;white-space:nowrap}
+  .daybar .cell.empty{background:var(--muted-bg);color:var(--ink-3)}
+  .daxis{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:2px;margin:4px 0 0}
+  .daxis span{text-align:center;font-size:10px;color:var(--ink-3);min-width:0}
+  .daxis span.today{font-weight:700;color:var(--ink)}
+  @media(max-width:420px){.daybar .cell{font-size:9px}}
+
+  /* ---- 分數點陣（五色，一點一筆） ---- */
+  .scoregrid{display:flex;flex-direction:column;gap:6px}
+  .scorerow{display:grid;grid-template-columns:52px 1fr;align-items:center;gap:8px;font-size:12px;color:var(--ink-3)}
+  .scorerow .dots{display:flex;flex-wrap:wrap;gap:3px;align-items:center;min-width:0}
+  .scorerow .dots span{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+  .scorerow .dots .none{color:var(--ink-3);font-size:12px;white-space:nowrap;flex:none;width:auto;height:auto;border-radius:0}
 
   .footnote{font-size:12px;color:var(--ink-3);margin:36px 0 0;padding-top:14px;border-top:1px solid var(--line)}
   .footnote p{margin:4px 0}
@@ -163,18 +184,19 @@
   </div>
 
   <h2 id="dumbbell-h2"></h2>
+  <p class="sub">一格一天、越右越新，單位：萬 token，顏色越深花越多（每列各自比）。</p>
   <div class="chartbox"><div id="trend-table"></div></div>
   <div class="caption">
-    <p>每列一條線：灰空心＝前 7 天合計、實心＝近 7 天合計；線是綠的＝變少、紅的＝變多。</p>
+    <p>橫著看一列＝這個帳號用這個模型每天花多少；哪一天特別深就是那天特別燒。</p>
   </div>
   <div class="chartbox"><table class="heat" id="heat-table"></table></div>
 
-  <h2>你打的分數（一天一根，顏色＝幾分、高度＝打了幾次，越右越新）</h2>
+  <h2>你打的分數（1–5 分，一點＝一次評分）</h2>
   <div class="legend" id="score-legend"></div>
-  <div class="chartbox"><div id="score-grid"></div></div>
+  <div class="chartbox"><div class="scoregrid" id="score-grid"></div></div>
   <div class="caption">
     <p class="lead">只有 5 分算過關（綠），其餘都是扣分：4 藍稍微不滿、3 黃嚴重、2 紅極度嚴重、1 紫是根本不該出現的嚴重落差。</p>
-    <p>一根＝一天，紅紫那幾段就是低分；根越高＝那天打越多次。</p>
+    <p>同一列由左到右＝當天打分的時間先後，最左邊最早；同一天出現好幾個點＝那天打了不只一次分。</p>
   </div>
 
   <div class="footnote">
@@ -470,104 +492,85 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
   heatHtml+='</tbody>';
   document.getElementById('heat-table').innerHTML=heatHtml;
 
-  // ---- 額度 5：前 7 天 → 近 7 天 啞鈴圖（分身·Opus／分身·Sonnet／主帳號·Opus／主帳號·Sonnet，共用尺度） ----
-  function niceMax(v){
-    if(v<=0)return 10;
-    const pow=Math.pow(10,Math.floor(Math.log10(v)));
-    const norm=v/pow;
-    let n; if(norm<=1)n=1; else if(norm<=2)n=2; else if(norm<=5)n=5; else n=10;
-    return n*pow;
-  }
+  // ---- 額度：一格一天日條（分身·Opus／分身·Sonnet／主帳號·Opus／主帳號·Sonnet） ----
   function acctVal(d,acct,model){const src=acct==='main'?(d.tokens_by_model_main||{}):(d.tokens_by_model_sub||{});return +(src[model]||0);}
   (function(){
-    const DUMBBELL_ROWS=[['分身·Opus','sub','opus','var(--s1)'],['分身·Sonnet','sub','sonnet','var(--s1)'],['主帳號·Opus','main','opus','var(--s2)'],['主帳號·Sonnet','main','sonnet','var(--s2)']];
+    const ROWS=[['分身 · Opus','sub','opus','s1'],['分身 · Sonnet','sub','sonnet','s1'],['主帳號 · Opus','main','opus','s2'],['主帳號 · Sonnet','main','sonnet','s2']];
     const n=days.length, half=Math.max(0,n-7);
     function sumRange(acct,model,from,to){let s=0;for(let i=from;i<to;i++)s+=acctVal(days[i],acct,model);return s;}
-    const rows=DUMBBELL_ROWS.map(([label,acct,model,color])=>({
-      label,color,
-      prev:sumRange(acct,model,0,half),
-      near:sumRange(acct,model,half,n)
-    }));
 
-    const subOpus=rows[0];
+    const prevSubOpus=sumRange('sub','opus',0,half), nearSubOpus=sumRange('sub','opus',half,n);
     let h2Text;
-    if(subOpus.prev<=0){
-      h2Text=`分身 Opus：近 ${n-half} 天共 ${Math.round(subOpus.near)} 萬，資料還不夠比前一週。`;
+    if(prevSubOpus<=0){
+      h2Text=`分身 Opus：近 ${n-half} 天共 ${Math.round(nearSubOpus)} 萬，資料還不夠比前一週。`;
     }else{
-      const diff=subOpus.near-subOpus.prev;
-      const pct=Math.round(Math.abs(diff)/subOpus.prev*100);
+      const diff=nearSubOpus-prevSubOpus;
+      const pct=Math.round(Math.abs(diff)/prevSubOpus*100);
       h2Text=Math.abs(diff)<1
-        ? `分身 Opus：近 7 天跟前 7 天差不多（${Math.round(subOpus.prev)}→${Math.round(subOpus.near)} 萬）`
-        : `分身 Opus：近 7 天${diff<0?'少':'多'} ${pct}%（${Math.round(subOpus.prev)}→${Math.round(subOpus.near)} 萬）`;
+        ? `分身 Opus：近 7 天跟前 7 天差不多（${Math.round(prevSubOpus)}→${Math.round(nearSubOpus)} 萬）`
+        : `分身 Opus：近 7 天${diff<0?'少':'多'} ${pct}%（${Math.round(prevSubOpus)}→${Math.round(nearSubOpus)} 萬）`;
     }
     document.getElementById('dumbbell-h2').textContent=h2Text;
 
-    const VW=330,marginL=82,marginR=30,marginT=10,rowH=32,marginB=18;
-    const VH=marginT+rowH*rows.length+marginB;
-    const plotW=VW-marginL-marginR;
-    const maxVal=niceMax(Math.max(1,...rows.flatMap(r=>[r.prev,r.near])));
-    const xOf=v=>marginL+v/maxVal*plotW;
-    const parts=[];
-    [0,0.5,1].forEach(f=>{
-      const val=maxVal*f, gx=marginL+plotW*f;
-      parts.push(`<line x1="${gx.toFixed(1)}" y1="${marginT}" x2="${gx.toFixed(1)}" y2="${marginT+rowH*rows.length}" stroke="var(--line)" stroke-width="1"/>`);
-      parts.push(`<text x="${gx.toFixed(1)}" y="${marginT+rowH*rows.length+12}" font-size="10" fill="var(--ink-3)" text-anchor="middle">${Math.round(val)}</text>`);
+    let html='';
+    ROWS.forEach(([label,acct,model,slot])=>{
+      const vals=days.map(d=>acctVal(d,acct,model));
+      const near=sumRange(acct,model,half,n);
+      const maxV=Math.max(...vals,0.0001);
+      html+='<div class="daybar">';
+      html+=`<div class="lbl"><span class="dot" style="background:var(--${slot})"></span><span class="name">${esc(label)}</span><span class="amt">近 7 天 ${Math.round(near)} 萬</span></div>`;
+      html+='<div class="cells">';
+      vals.forEach((v,i)=>{
+        const d=days[i];
+        const title=`${fmtDate(d.date)} ${label} ${v.toFixed(0)} 萬`;
+        if(v<=0){
+          html+=`<div class="cell empty" title="${esc(title)}">·</div>`;
+        }else{
+          const a=0.08+0.82*(v/maxV);
+          const bg=`rgba(var(--${slot}-rgb),${a.toFixed(2)})`;
+          const fg=a>0.5?'var(--on-dark)':'var(--ink)';
+          const rv=Math.round(v);
+          const fsStyle=String(rv).length>=4?';font-size:8.5px':'';
+          html+=`<div class="cell" style="background:${bg};color:${fg}${fsStyle}" title="${esc(title)}">${rv}</div>`;
+        }
+      });
+      html+='</div></div>';
     });
-    rows.forEach((r,i)=>{
-      const y=marginT+rowH*i+rowH/2;
-      parts.push(`<text x="2" y="${(y+3.5).toFixed(1)}" font-size="10.5" fill="var(--ink-2)">${esc(r.label)}</text>`);
-      const x1=xOf(r.prev), x2=xOf(r.near);
-      const improved=r.near<r.prev;
-      const lineColor=r.near===r.prev?'var(--ink-3)':(improved?'var(--good)':'var(--bad)');
-      parts.push(`<line x1="${x1.toFixed(1)}" y1="${y.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y.toFixed(1)}" stroke="${lineColor}" stroke-width="2.5"/>`);
-      parts.push(`<circle cx="${x1.toFixed(1)}" cy="${y.toFixed(1)}" r="4" fill="var(--card)" stroke="var(--ink-3)" stroke-width="1.5"/>`);
-      parts.push(`<circle cx="${x2.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="${r.color}"/>`);
-      const prevIsLeft=x1<=x2;
-      parts.push(`<text x="${(x1+(prevIsLeft?-4:4)).toFixed(1)}" y="${(y-7).toFixed(1)}" font-size="9.5" fill="var(--ink-3)" text-anchor="${prevIsLeft?'end':'start'}">${Math.round(r.prev)}</text>`);
-      parts.push(`<text x="${(x2+(prevIsLeft?4:-4)).toFixed(1)}" y="${(y-7).toFixed(1)}" font-size="9.5" fill="var(--ink)" text-anchor="${prevIsLeft?'start':'end'}">${Math.round(r.near)}</text>`);
-    });
-    document.getElementById('trend-table').innerHTML=`<svg viewBox="0 0 ${VW} ${VH}" xmlns="http://www.w3.org/2000/svg">${parts.join('')}</svg>`;
+    html+='<div class="daxis">'+days.map(d=>{
+      const isToday=d.date===today.date;
+      const dd=d.date.slice(8,10);
+      return `<span class="${isToday?'today':''}">${dd}${isToday?'今':''}</span>`;
+    }).join('')+'</div>';
+
+    document.getElementById('trend-table').innerHTML=html;
   })();
 
-  // ---- 分數 4：每天一根堆疊條，1→5 由下往上，一格一筆評分，頂端標總次數 ----
+  // ---- 分數點陣：每天一排點，一點一筆，五色 ----
   const scoreMeaning={5:'過關',4:'稍微不滿',3:'嚴重',2:'極度嚴重',1:'不該出現'};
   document.getElementById('score-legend').innerHTML=[5,4,3,2,1].map(s=>
     `<span><span class="sw round" style="background:${scoreColor(s)}"></span>${s} 分＝${scoreMeaning[s]}</span>`
   ).join('');
-  (function(){
-    const VW=330,marginL=24,marginR=6,marginT=14,marginB=18;
-    const plotW=VW-marginL-marginR;
-    const colW=plotW/days.length;
-    const barW=colW*0.62;
-    const plotH=110;
-    const VH=marginT+plotH+marginB;
-    const baseline=marginT+plotH;
-    const totals=days.map(d=>(d.scores||[]).length);
-    const axisMax=niceMax(Math.max(...totals,1));
-    const unitH=plotH/axisMax;
-    const parts=[];
-    for(let t=0;t<=4;t++){
-      const val=axisMax*t/4, gy=baseline-plotH*t/4;
-      parts.push(`<line x1="${marginL}" y1="${gy.toFixed(1)}" x2="${VW-marginR}" y2="${gy.toFixed(1)}" stroke="var(--line)" stroke-width="1"/>`);
-      parts.push(`<text x="${marginL-4}" y="${(gy+3).toFixed(1)}" font-size="11" fill="var(--ink-3)" text-anchor="end">${Math.round(val)}</text>`);
-    }
-    days.forEach((d,i)=>{
-      const cx=marginL+colW*i+(colW-barW)/2;
-      let y=baseline;
-      [1,2,3,4,5].forEach(score=>{
-        const entries=(d.scores||[]).filter(s=>s.score===score);
-        entries.forEach(en=>{
-          parts.push(`<rect x="${cx.toFixed(1)}" y="${(y-unitH).toFixed(1)}" width="${barW.toFixed(1)}" height="${unitH.toFixed(1)}" fill="${scoreColor(score)}"><title>${esc(d.date+'　'+score+' 分　'+(en.time||'')+'　'+(scoreMeaning[score]||''))}</title></rect>`);
-          y-=unitH;
-        });
+  const scoreGrid=document.getElementById('score-grid');
+  rev.forEach(d=>{
+    const scores=d.scores||[];
+    const row=document.createElement('div');row.className='scorerow';
+    const lbl=document.createElement('span');lbl.textContent=fmtDate(d.date)+(d.date===today.date?' 今天':'');
+    row.appendChild(lbl);
+    const dotsWrap=document.createElement('div');dotsWrap.className='dots';
+    if(scores.length===0){
+      const none=document.createElement('span');none.className='none';none.textContent='沒有打分紀錄';
+      dotsWrap.appendChild(none);
+    }else{
+      scores.forEach(sc=>{
+        const s=document.createElement('span');
+        s.style.background=scoreColor(sc.score);
+        s.title=`${sc.score} 分　${scoreMeaning[sc.score]||''}　${sc.time||''}`;
+        dotsWrap.appendChild(s);
       });
-      if(totals[i]>0){
-        parts.push(`<text x="${(cx+barW/2).toFixed(1)}" y="${(y-3).toFixed(1)}" font-size="10" fill="var(--ink-2)" text-anchor="middle">${totals[i]}</text>`);
-      }
-      parts.push(`<text x="${(cx+barW/2).toFixed(1)}" y="${VH-4}" font-size="11" fill="var(--ink-3)" text-anchor="middle">${d.date.slice(8,10)}</text>`);
-    });
-    document.getElementById('score-grid').innerHTML=`<svg viewBox="0 0 ${VW} ${VH}" xmlns="http://www.w3.org/2000/svg">${parts.join('')}</svg>`;
-  })();
+    }
+    row.appendChild(dotsWrap);
+    scoreGrid.appendChild(row);
+  });
 }).catch(err=>{
   document.getElementById('cards').innerHTML='<div class="empty">資料載入失敗（proof.json 讀不到）</div>';
   console.error('proof.json 載入失敗',err);
