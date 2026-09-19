@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>航班探索 demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --surface: #ffffff;
+    --surface-2: #eef1f5;
+    --text: #1b1f24;
+    --muted: #5f6873;
+    --line: #dde2e8;
+    --accent: #1a73e8;
+    --accent-text: #ffffff;
+    --price: #0b7a3b;
+    --warn-bg: #fff4d6;
+    --warn-text: #7a4b00;
+    --danger: #c5221f;
+    --radius: 14px;
+    --shadow: 0 1px 2px rgba(0,0,0,.06), 0 4px 14px rgba(0,0,0,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101418;
+      --surface: #1a1f26;
+      --surface-2: #232a33;
+      --text: #e8ecf1;
+      --muted: #9aa5b1;
+      --line: #2e3640;
+      --accent: #6ea8ff;
+      --accent-text: #0b1220;
+      --price: #57c785;
+      --warn-bg: #3a2e12;
+      --warn-text: #ffd479;
+      --danger: #ff7b73;
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 14px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101418; --surface: #1a1f26; --surface-2: #232a33; --text: #e8ecf1; --muted: #9aa5b1;
+    --line: #2e3640; --accent: #6ea8ff; --accent-text: #0b1220; --price: #57c785;
+    --warn-bg: #3a2e12; --warn-text: #ffd479; --danger: #ff7b73;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Noto Sans TC", system-ui, -apple-system, "PingFang TC", "Microsoft JhengHei", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 20px 16px 40px; }
+
+  h1 { font-size: 22px; margin: 0 0 6px; font-weight: 700; }
+  .lead { margin: 0 0 18px; color: var(--muted); font-size: 15px; }
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 16px;
+    margin-bottom: 18px;
+  }
+  .field-label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+  input[type="date"], input[type="text"], input[list] {
+    width: 100%;
+    min-width: 0;
+    font: inherit;
+    font-size: 16px;
+    color: var(--text);
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 10px 12px;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+  .hint { font-size: 13px; color: var(--muted); margin: 6px 0 0; }
+
+  .dest-row { margin-bottom: 16px; }
+  .dest-input-wrap { display: flex; gap: 8px; }
+  .dest-input-wrap input { flex: 1; }
+  .btn-ghost {
+    font: inherit; font-size: 14px; white-space: nowrap;
+    background: transparent; color: var(--accent);
+    border: 1px solid var(--line); border-radius: 10px; padding: 0 12px; cursor: pointer;
+  }
+
+  .seg {
+    position: relative;
+    border: 1px dashed var(--line);
+    border-radius: 12px;
+    padding: 12px 12px 12px;
+    margin-bottom: 10px;
+    background: var(--bg);
+  }
+  .seg-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .seg-title { font-size: 14px; font-weight: 500; color: var(--muted); }
+  .seg-remove {
+    font: inherit; font-size: 13px; color: var(--danger);
+    background: transparent; border: 0; padding: 4px 6px; cursor: pointer; border-radius: 6px;
+  }
+  .seg-remove:hover { background: var(--surface-2); }
+  .seg-dates { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 10px; }
+  .seg-dates > label { display: block; min-width: 0; }
+  .seg-dates input[type="date"] { max-width: 100%; }
+  .seg-err { color: var(--danger); font-size: 13px; margin-top: 6px; display: none; }
+  .seg.invalid .seg-err { display: block; }
+  .seg.invalid input[type="date"] { border-color: var(--danger); }
+
+  .btn-add {
+    font: inherit; font-size: 15px;
+    width: 100%; padding: 10px;
+    background: transparent; color: var(--accent);
+    border: 1px dashed var(--accent); border-radius: 10px; cursor: pointer;
+    margin: 4px 0 14px;
+  }
+  .btn-go {
+    font: inherit; font-size: 18px; font-weight: 700;
+    width: 100%; padding: 14px;
+    background: var(--accent); color: var(--accent-text);
+    border: 0; border-radius: 12px; cursor: pointer;
+  }
+  .btn-go:disabled { opacity: .6; cursor: progress; }
+
+  /* 結果卡 */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+  .card-head { padding: 14px 16px 10px; border-bottom: 1px solid var(--line); }
+  .card-title { font-size: 17px; font-weight: 700; margin: 0; }
+  .card-sub { font-size: 13px; color: var(--muted); margin: 2px 0 0; }
+  .loading { padding: 28px 16px; text-align: center; color: var(--muted); font-size: 15px; }
+  .loading .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--muted); margin: 0 2px; animation: blink 1s infinite; }
+  .loading .dot:nth-child(2) { animation-delay: .2s; } .loading .dot:nth-child(3) { animation-delay: .4s; }
+  @keyframes blink { 0%,80%,100%{opacity:.2} 40%{opacity:1} }
+
+  .tbl { width: 100%; }
+  .row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 84px 92px;
+    gap: 8px;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+  }
+  .row:last-child { border-bottom: 0; }
+  a.row:hover, a.row:active { background: var(--surface-2); }
+  .row.head { padding: 6px 16px; font-size: 12px; color: var(--muted); background: var(--surface-2); }
+  .c-dest { min-width: 0; }
+  .c-dest .name { font-weight: 500; font-size: 15px; line-height: 1.35; overflow-wrap: anywhere; }
+  .c-dest .name { display: block; }
+  .c-dest .code { display: block; font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .c-price { text-align: right; font-weight: 700; color: var(--price); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .c-price small { display: block; font-size: 11px; font-weight: 400; color: var(--muted); }
+  .c-time { text-align: right; font-size: 14px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .c-time .stops { display: block; font-size: 12px; color: var(--muted); }
+  .c-time .stops.direct { color: var(--price); }
+  .rank { display: inline-block; min-width: 18px; font-size: 12px; color: var(--muted); margin-right: 4px; }
+  .best { display: inline-block; font-size: 11px; background: var(--price); color: #fff; border-radius: 6px; padding: 0 6px; margin-left: 6px; vertical-align: middle; }
+  .card-foot { padding: 8px 16px 12px; font-size: 12px; color: var(--muted); }
+
+  .demo-warn {
+    margin-top: 24px;
+    background: var(--warn-bg); color: var(--warn-text);
+    border-radius: 12px; padding: 12px 14px;
+    font-weight: 700; font-size: 15px; text-align: center;
+  }
+  footer { text-align: center; font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+  @media (min-width: 600px) {
+    .row { grid-template-columns: minmax(0, 1fr) 110px 130px; }
+    .c-dest .name { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>桃園出發，去哪最便宜？</h1>
+  <p class="lead">填你有空的日期，我幫你看這些天去哪最便宜。來回票、桃園（TPE）出發。</p>
+
+  <div class="panel" id="form">
+    <div class="dest-row">
+      <label class="field-label" for="dest">目的地</label>
+      <div class="dest-input-wrap">
+        <input id="dest" list="dest-list" type="text" value="任何地點" placeholder="任何地點" autocomplete="off">
+        <button type="button" class="btn-ghost" id="dest-reset" title="回到「任何地點」">任何地點</button>
+      </div>
+      <datalist id="dest-list">
+        <option value="任何地點">
+        <option value="東京">
+        <option value="大阪">
+        <option value="沖繩">
+        <option value="福岡">
+        <option value="首爾">
+        <option value="釜山">
+        <option value="香港">
+        <option value="曼谷">
+        <option value="新加坡">
+        <option value="胡志明市">
+      </datalist>
+      <p class="hint">留「任何地點」＝幫你看所有地方哪裡便宜；也可以直接打城市名，例如「東京」，就只列那裡的航班。</p>
+    </div>
+
+    <div id="segs"></div>
+    <button type="button" class="btn-add" id="add">＋ 再加一段日期</button>
+    <button type="button" class="btn-go" id="go">查</button>
+  </div>
+
+  <div id="results"></div>
+
+  <div class="demo-warn">⚠ 這是 demo，資料是假的，只給你看版面</div>
+  <footer>正式版資料來源：Google Flights（透過 SerpApi）。不盯價、不通知、不登入、不訂票。</footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var WD = ['日','一','二','三','四','五','六'];
+
+  // ---------- 目的地資料（假） ----------
+  var CITIES = {
+    '東京':   { iata:'TYO', flag:'🇯🇵', dur:200, air:['長榮 BR','中華 CI','星宇 JX','樂桃 MM','台灣虎航 IT','日本航空 JL','全日空 NH','酷航 TR'] },
+    '大阪':   { iata:'OSA', flag:'🇯🇵', dur:175, air:['長榮 BR','中華 CI','星宇 JX','樂桃 MM','台灣虎航 IT','日本航空 JL','酷航 TR'] },
+    '沖繩':   { iata:'OKA', flag:'🇯🇵', dur:90,  air:['長榮 BR','中華 CI','台灣虎航 IT','樂桃 MM','星宇 JX'] },
+    '福岡':   { iata:'FUK', flag:'🇯🇵', dur:140, air:['長榮 BR','中華 CI','台灣虎航 IT','星宇 JX','樂桃 MM'] },
+    '名古屋': { iata:'NGO', flag:'🇯🇵', dur:180, air:['中華 CI','星宇 JX','台灣虎航 IT','日本航空 JL'] },
+    '札幌':   { iata:'CTS', flag:'🇯🇵', dur:250, air:['長榮 BR','中華 CI','星宇 JX','台灣虎航 IT'] },
+    '首爾':   { iata:'SEL', flag:'🇰🇷', dur:155, air:['長榮 BR','中華 CI','大韓 KE','韓亞 OZ','台灣虎航 IT','濟州 7C','真航空 LJ','德威 TW'] },
+    '釜山':   { iata:'PUS', flag:'🇰🇷', dur:150, air:['長榮 BR','中華 CI','台灣虎航 IT','釜山航空 BX','濟州 7C'] },
+    '香港':   { iata:'HKG', flag:'🇭🇰', dur:115, air:['國泰 CX','長榮 BR','中華 CI','香港快運 UO','香港航空 HX'] },
+    '澳門':   { iata:'MFM', flag:'🇲🇴', dur:110, air:['長榮 BR','澳門航空 NX','台灣虎航 IT','星宇 JX'] },
+    '曼谷':   { iata:'BKK', flag:'🇹🇭', dur:230, air:['長榮 BR','中華 CI','泰航 TG','星宇 JX','台灣虎航 IT','泰獅航 SL','泰越捷 VZ'] },
+    '清邁':   { iata:'CNX', flag:'🇹🇭', dur:340, air:['泰越捷 VZ','星宇 JX','泰獅航 SL'] },
+    '新加坡': { iata:'SIN', flag:'🇸🇬', dur:275, air:['新航 SQ','長榮 BR','中華 CI','酷航 TR','星宇 JX','捷星 3K'] },
+    '吉隆坡': { iata:'KUL', flag:'🇲🇾', dur:285, air:['馬航 MH','亞航 AK','長榮 BR','中華 CI','峇迪 OD'] },
+    '馬尼拉': { iata:'MNL', flag:'🇵🇭', dur:135, air:['菲航 PR','宿霧太平洋 5J','長榮 BR','中華 CI','星宇 JX'] },
+    '宿霧':   { iata:'CEB', flag:'🇵🇭', dur:165, air:['宿霧太平洋 5J','長榮 BR','星宇 JX'] },
+    '胡志明市':{ iata:'SGN', flag:'🇻🇳', dur:210, air:['越航 VN','越捷 VJ','長榮 BR','中華 CI','星宇 JX','越竹 QH'] },
+    '河內':   { iata:'HAN', flag:'🇻🇳', dur:195, air:['越航 VN','越捷 VJ','長榮 BR','中華 CI','星宇 JX'] },
+    '峴港':   { iata:'DAD', flag:'🇻🇳', dur:170, air:['越捷 VJ','越航 VN','星宇 JX','越竹 QH'] },
+    '峇里島': { iata:'DPS', flag:'🇮🇩', dur:320, air:['長榮 BR','中華 CI','印尼鷹航 GA','星宇 JX'] }
+  };
+
+  // 兩個預設日期段各給一份固定名單，確保看起來不一樣
+  var PRESET = {
+    '2026-10-09': [
+      ['澳門',3480,110,0],['香港',3920,115,0],['沖繩',4560,90,0],['馬尼拉',4890,135,0],
+      ['胡志明市',5760,210,0],['曼谷',6420,230,0],['福岡',7180,140,0],['首爾',8350,155,0],
+      ['大阪',9640,175,0],['東京',11280,200,0]
+    ],
+    '2026-11-20': [
+      ['香港',3650,115,0],['澳門',3890,110,0],['峴港',4720,170,0],['吉隆坡',5980,285,0],
+      ['釜山',6550,150,0],['清邁',7340,340,1],['新加坡',8120,275,0],['名古屋',9870,180,0],
+      ['東京',12460,205,0],['札幌',17800,250,0]
+    ]
+  };
+
+  // ---------- 小工具 ----------
+  function seed(str) { var h = 2166136261; for (var i=0;i<str.length;i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); } return function(){ h += 0x6D2B79F5; var t = Math.imul(h ^ (h>>>15), 1|h); t ^= t + Math.imul(t ^ (t>>>7), 61|t); return ((t ^ (t>>>14))>>>0)/4294967296; }; }
+  function pad2(n){ return (n<10?'0':'')+n; }
+  function parseDate(s){ var p = s.split('-'); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function fmtMD(d){ return pad2(d.getMonth()+1)+'/'+pad2(d.getDate())+' '+WD[d.getDay()]; }
+  function nights(a,b){ return Math.round((b-a)/86400000); }
+  function ntd(n){ return 'NT$' + n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function dur(m){ return Math.floor(m/60)+'h'+pad2(m%60)+'m'; }
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function gflights(dest, dep, ret){
+    return 'https://www.google.com/travel/flights?q=' + encodeURIComponent('Flights to '+dest+' from TPE on '+dep+' through '+ret);
+  }
+
+  // ---------- 假資料產生 ----------
+  function exploreRows(dep, ret){
+    var list = PRESET[dep];
+    if (!list) {
+      // 其他日期：從池子裡用日期當種子抽 10 個
+      var rnd = seed(dep+ret), names = Object.keys(CITIES).slice();
+      for (var i=names.length-1;i>0;i--){ var j=Math.floor(rnd()*(i+1)); var t=names[i]; names[i]=names[j]; names[j]=t; }
+      list = names.slice(0,10).map(function(n){
+        var c = CITIES[n];
+        var base = 2600 + c.dur*28;                 // 飛越久越貴
+        var price = Math.round((base * (0.85 + rnd()*0.7)) / 10) * 10;
+        price = Math.max(3000, Math.min(18000, price));
+        var stops = (c.dur > 250 && rnd() < 0.35) ? 1 : 0;
+        return [n, price, c.dur + (stops?95:0), stops];
+      });
+    }
+    return list.map(function(r){
+      var c = CITIES[r[0]];
+      return { name:r[0], iata:c.iata, flag:c.flag, price:r[1], dur:r[2], stops:r[3], q:c.iata };
+    }).sort(function(a,b){ return a.price-b.price; });
+  }
+
+  function cityRows(city, dep, ret){
+    var c = CITIES[city] || { iata:city, flag:'🌏', dur:220, air:['長榮 BR','中華 CI','星宇 JX','台灣虎航 IT','酷航 TR'] };
+    var rnd = seed(city+dep+ret);
+    var n = 5 + Math.floor(rnd()*4); // 5~8 筆
+    var airs = c.air.slice(), rows = [];
+    for (var i=0;i<n;i++){
+      var a = airs.length ? airs.splice(Math.floor(rnd()*airs.length),1)[0] : c.air[Math.floor(rnd()*c.air.length)];
+      var lcc = /虎航|樂桃|酷航|捷星|亞航|越捷|濟州|真航空|德威|快運|宿霧太平洋|泰獅航|泰越捷|釜山航空/.test(a);
+      var base = 2600 + c.dur*28;
+      var price = Math.round((base * (lcc ? 0.7 : 1.0) * (0.85 + rnd()*0.55)) / 10) * 10;
+      price = Math.max(3000, Math.min(18000, price));
+      var stops = (rnd() < 0.2) ? 1 : 0;
+      var h = 6 + Math.floor(rnd()*16), m = [0,15,30,45][Math.floor(rnd()*4)];
+      rows.push({ name:a, sub:'去程 '+pad2(h)+':'+pad2(m)+' 出發', iata:c.iata, flag:c.flag,
+                  price:price, dur:c.dur + (stops?90:0) + Math.floor(rnd()*3)*5, stops:stops, q:c.iata });
+    }
+    return rows.sort(function(a,b){ return a.price-b.price; });
+  }
+
+  // ---------- 日期段 UI ----------
+  var segsEl = document.getElementById('segs');
+  var segCount = 0;
+  function addSeg(dep, ret){
+    segCount++;
+    var el = document.createElement('div');
+    el.className = 'seg';
+    el.innerHTML =
+      '<div class="seg-head"><span class="seg-title">第 <b class="seg-n"></b> 段</span>' +
+      '<button type="button" class="seg-remove">刪除</button></div>' +
+      '<div class="seg-dates">' +
+        '<label><span class="field-label">出發</span><input type="date" class="dep" value="'+(dep||'')+'"></label>' +
+        '<label><span class="field-label">回程</span><input type="date" class="ret" value="'+(ret||'')+'"></label>' +
+      '</div><div class="seg-err">回程要在出發之後</div>';
+    el.querySelector('.seg-remove').addEventListener('click', function(){
+      if (segsEl.children.length <= 1) { alert('至少要留一段日期'); return; }
+      el.remove(); renumber();
+    });
+    segsEl.appendChild(el); renumber();
+  }
+  function renumber(){
+    var segs = segsEl.querySelectorAll('.seg');
+    for (var i=0;i<segs.length;i++){
+      segs[i].querySelector('.seg-n').textContent = i+1;
+      segs[i].querySelector('.seg-remove').style.visibility = segs.length>1 ? 'visible' : 'hidden';
+    }
+  }
+  addSeg('2026-10-09','2026-10-13');
+  addSeg('2026-11-20','2026-11-24');
+  document.getElementById('add').addEventListener('click', function(){ addSeg('',''); });
+
+  var destEl = document.getElementById('dest');
+  document.getElementById('dest-reset').addEventListener('click', function(){ destEl.value = '任何地點'; destEl.focus(); });
+  destEl.addEventListener('focus', function(){ if (destEl.value === '任何地點') destEl.value = ''; });
+  destEl.addEventListener('blur',  function(){ if (!destEl.value.trim()) destEl.value = '任何地點'; });
+
+  // ---------- 查 ----------
+  var resultsEl = document.getElementById('results');
+  var goBtn = document.getElementById('go');
+  goBtn.addEventListener('click', function(){
+    var segs = segsEl.querySelectorAll('.seg'), jobs = [], ok = true;
+    for (var i=0;i<segs.length;i++){
+      var dep = segs[i].querySelector('.dep').value, ret = segs[i].querySelector('.ret').value;
+      var bad = !dep || !ret || parseDate(ret) <= parseDate(dep);
+      segs[i].classList.toggle('invalid', bad);
+      if (bad) ok = false; else jobs.push({dep:dep, ret:ret});
+    }
+    if (!ok) return;
+    var dest = destEl.value.trim();
+    var anywhere = (!dest || dest === '任何地點');
+
+    resultsEl.innerHTML = '';
+    goBtn.disabled = true; goBtn.textContent = '查詢中…';
+    var cards = jobs.map(function(j){
+      var d1 = parseDate(j.dep), d2 = parseDate(j.ret);
+      var card = document.createElement('section');
+      card.className = 'card';
+      card.innerHTML =
+        '<div class="card-head"><h2 class="card-title">'+fmtMD(d1)+' → '+fmtMD(d2)+'（'+nights(d1,d2)+' 晚）</h2>' +
+        '<p class="card-sub">'+(anywhere ? '桃園出發 · 所有目的地 · 便宜排前' : '桃園 → '+esc(dest)+' · 便宜排前')+'</p></div>' +
+        '<div class="loading">正在問 Google Flights <span class="dot"></span><span class="dot"></span><span class="dot"></span></div>';
+      resultsEl.appendChild(card);
+      return { card:card, job:j };
+    });
+
+    setTimeout(function(){
+      cards.forEach(function(c){
+        var rows = anywhere ? exploreRows(c.job.dep, c.job.ret) : cityRows(dest, c.job.dep, c.job.ret);
+        var html = '<div class="tbl" role="table">' +
+          '<div class="row head" role="row"><span>'+(anywhere?'目的地':'航班')+'</span><span class="c-price" style="color:var(--muted);font-weight:400">來回票價</span><span class="c-time">飛多久</span></div>';
+        rows.forEach(function(r, idx){
+          html += '<a class="row" role="row" href="'+gflights(r.q, c.job.dep, c.job.ret)+'" target="_blank" rel="noopener">' +
+            '<span class="c-dest"><span class="name"><span class="rank">'+(idx+1)+'</span>'+r.flag+' '+esc(r.name)+(idx===0?'<span class="best">最便宜</span>':'')+'</span>' +
+              '<span class="code">'+(anywhere ? r.iata : esc(r.sub)+' · '+r.iata)+'</span></span>' +
+            '<span class="c-price">'+ntd(r.price)+'<small>來回</small></span>' +
+            '<span class="c-time">'+dur(r.dur)+'<span class="stops '+(r.stops?'':'direct')+'">'+(r.stops?'轉 '+r.stops+' 次':'直飛')+'</span></span>' +
+          '</a>';
+        });
+        html += '</div><div class="card-foot">價格是查詢當下 Google 顯示的最低價，點進去以實際為準。</div>';
+        c.card.querySelector('.loading').outerHTML = html;
+      });
+      goBtn.disabled = false; goBtn.textContent = '查';
+      resultsEl.scrollIntoView({ behavior:'smooth', block:'start' });
+    }, 800);
+  });
+})();
+</script>
+</body>
+</html>
