@@ -47,12 +47,33 @@
   .headline{font-size:12px; color:var(--ink-2); margin:0 0 8px; line-height:1.5;}
   footer{font-size:11px; color:var(--ink-3); text-align:center; margin-top:8px; padding-bottom:8px;}
   #err{color:var(--score-2); font-size:12px; white-space:pre-wrap;}
+
+  .cal-grid{display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:4px;}
+  .cal-cell{position:relative; aspect-ratio:1/1; min-width:0; max-width:100%; box-sizing:border-box; overflow:hidden;
+    border-radius:6px; padding:3px;
+    color:#fff; display:flex; flex-direction:column; justify-content:space-between;}
+  .cal-cell .cal-dd{font-size:9px; opacity:.9;}
+  .cal-cell .cal-avg{font-size:13px; font-weight:700; text-align:center; flex:1; display:flex; align-items:center; justify-content:center; white-space:nowrap;}
+  .cal-cell .cal-n{font-size:8px; text-align:right; opacity:.9; white-space:nowrap;}
+  .cal-cell.empty{background:var(--line); color:var(--ink-3);}
+  .cal-cell.score-3{color:#2a2200;}
+
+  .minicards{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px;}
+  .minicard{border:1px solid var(--line); border-radius:8px; padding:8px; min-width:0; box-sizing:border-box;}
+  .minicard .mc-head{display:flex; justify-content:space-between; align-items:baseline; gap:4px;}
+  .minicard .mc-name{font-size:11px; color:var(--ink-2);}
+  .minicard .mc-value{font-size:17px; font-weight:700; white-space:nowrap;}
+  .minicard .mc-delta{font-size:11px; margin:2px 0 6px;}
+  .minicard svg{height:36px; width:100%; display:block;}
+
+  .legend-circle{width:10px; height:10px; border-radius:50%; border:1.5px solid var(--ink-3); flex:none; display:inline-block; box-sizing:border-box;}
+  .legend-circle.filled{border:none; background:var(--ink-2);}
 </style>
 </head>
 <body>
 
 <header>
-  <p class="lead">四張都是同一份資料，挑你覺得一眼看得懂的：回我「分數 1 或 2」「額度 1 或 2」。</p>
+  <p class="lead">十一張都是同一份資料，挑你覺得一眼看得懂的：回我「分數幾」「額度幾」。</p>
 </header>
 
 <section class="card">
@@ -89,6 +110,51 @@
   <p class="headline" id="quota2-headline"></p>
   <div class="legend" id="quota-line-legend"></div>
   <div id="quota2-svg"></div>
+</section>
+
+<section class="card">
+  <h2>分數 3️⃣　日曆格子（一天一格、顏色＝當天平均）</h2>
+  <p class="sub">顏色越綠分數越高，格子中間是那天平均分，右下角是打了幾次。</p>
+  <div class="cal-grid" id="score3-cal"></div>
+</section>
+
+<section class="card">
+  <h2>分數 4️⃣　每天一根堆疊條（幾個 5 分、幾個 2 分）</h2>
+  <p class="sub">長條疊出那天總共打了幾次，顏色告訴你各是幾分。</p>
+  <div class="legend" id="score4-legend"></div>
+  <div id="score4-svg"></div>
+</section>
+
+<section class="card">
+  <h2>分數 5️⃣　累積平均線</h2>
+  <p class="sub">深色線是從第一天到那天所有評分的累積平均，淡線是當天平均，越貼近綠虛線越好。</p>
+  <div id="score5-svg"></div>
+</section>
+
+<section class="card">
+  <h2>額度 3️⃣　面積圖（分身 Opus vs Sonnet 疊起來）</h2>
+  <p class="sub">面積越高代表分身當天用的 token 越多，兩色分開看 Opus 跟 Sonnet 各用多少。</p>
+  <div id="quota3-svg"></div>
+</section>
+
+<section class="card">
+  <h2>額度 4️⃣　Opus 佔比 %（分身每天用的額度裡 Opus 佔幾成）</h2>
+  <p class="sub">長條頂到頂是當天全部額度，深藍色佔比就是 Opus 吃掉的比例。</p>
+  <p class="headline" id="quota4-headline"></p>
+  <div id="quota4-svg"></div>
+</section>
+
+<section class="card">
+  <h2>額度 5️⃣　前 7 天 → 近 7 天 啞鈴圖</h2>
+  <p class="sub">灰色空心點是前 7 天、實心點是近 7 天，線變綠代表用量降下來了、變紅代表變多了。</p>
+  <div class="legend" id="quota5-legend"></div>
+  <div id="quota5-svg"></div>
+</section>
+
+<section class="card">
+  <h2>額度 6️⃣　四張小走勢＋差多少</h2>
+  <p class="sub">四張卡各看一個模型近 7 天用多少、跟前一週比是變多還變少，底部小線看走勢。</p>
+  <div class="minicards" id="quota6-cards"></div>
 </section>
 
 <div id="err"></div>
@@ -343,6 +409,370 @@
     document.getElementById('quota2-svg').innerHTML = svg;
   }
 
+  // ---------- 分數 3：日曆格子 ----------
+  function renderScore3Calendar(days){
+    var html = days.map(function(d){
+      var n = d.scores.length;
+      var dd = ddLabel(d.date);
+      if (!n){
+        return '<div class="cal-cell empty" title="' + esc(d.date + '　沒有評分') + '">' +
+          '<span class="cal-dd">' + dd + '</span><span class="cal-avg">—</span><span class="cal-n"></span></div>';
+      }
+      var avg = d.scores.reduce(function(a, s){ return a + s.score; }, 0) / n;
+      var rounded = Math.min(5, Math.max(1, Math.round(avg)));
+      return '<div class="cal-cell score-' + rounded + '" style="background:var(--score-' + rounded + ')" title="' +
+        esc(d.date + '　平均 ' + avg.toFixed(1) + '　' + n + ' 次') + '">' +
+        '<span class="cal-dd">' + dd + '</span><span class="cal-avg">' + avg.toFixed(1) + '</span><span class="cal-n">' + n + ' 次</span></div>';
+    }).join('');
+    document.getElementById('score3-cal').innerHTML = html;
+  }
+
+  // ---------- 分數 4：每天一根堆疊條（次數） ----------
+  function renderScore4CountBar(days){
+    var VW = 330, marginL = 24, marginR = 6, marginT = 14, marginB = 18;
+    var plotW = VW - marginL - marginR;
+    var colW = plotW / days.length;
+    var barW = colW * 0.62;
+    var plotH = 110;
+    var VH = marginT + plotH + marginB;
+    var baseline = marginT + plotH;
+
+    var counts = days.map(function(d){
+      var c = {1:0,2:0,3:0,4:0,5:0};
+      d.scores.forEach(function(s){ c[s.score] = (c[s.score] || 0) + 1; });
+      return c;
+    });
+    var totals = counts.map(function(c){ return c[1]+c[2]+c[3]+c[4]+c[5]; });
+    var axisMax = niceMax(Math.max.apply(null, totals.concat([1])));
+
+    var parts = [];
+    for (var t = 0; t <= 4; t++){
+      var val = axisMax * t / 4;
+      var gy = baseline - plotH * t / 4;
+      parts.push('<line x1="' + marginL + '" y1="' + gy.toFixed(1) + '" x2="' + (VW - marginR) + '" y2="' + gy.toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>');
+      parts.push('<text x="' + (marginL - 4) + '" y="' + (gy + 3).toFixed(1) + '" font-size="11" fill="var(--ink-3)" text-anchor="end">' + fmtInt(val) + '</text>');
+    }
+
+    days.forEach(function(d, i){
+      var cx = marginL + colW * i + (colW - barW) / 2;
+      var y = baseline;
+      [1,2,3,4,5].forEach(function(score){
+        var cnt = counts[i][score];
+        var h = cnt / axisMax * plotH;
+        if (h > 0){
+          parts.push('<rect x="' + cx.toFixed(1) + '" y="' + (y - h).toFixed(1) + '" width="' + barW.toFixed(1) + '" height="' + h.toFixed(1) +
+            '" fill="var(--score-' + score + ')"><title>' + esc(d.date + '　' + score + ' 分 x ' + cnt) + '</title></rect>');
+        }
+        y -= h;
+      });
+      if (totals[i] > 0){
+        parts.push('<text x="' + (cx + barW / 2).toFixed(1) + '" y="' + (y - 3).toFixed(1) + '" font-size="10" fill="var(--ink-2)" text-anchor="middle">' + totals[i] + '</text>');
+      }
+      parts.push('<text x="' + (cx + barW / 2).toFixed(1) + '" y="' + (VH - 4) + '" font-size="11" fill="var(--ink-3)" text-anchor="middle">' + ddLabel(d.date) + '</text>');
+    });
+
+    var svg = '<svg viewBox="0 0 ' + VW + ' ' + VH + '" xmlns="http://www.w3.org/2000/svg">' + parts.join('') + '</svg>';
+    document.getElementById('score4-svg').innerHTML = svg;
+
+    document.getElementById('score4-legend').innerHTML = [5,4,3,2,1].map(function(s){
+      return '<span class="legend-item"><span class="legend-dot" style="border-radius:2px;background:var(--score-' + s + ')"></span>' + s + ' 分</span>';
+    }).join('');
+  }
+
+  // ---------- 分數 5：累積平均線 ----------
+  function renderScore5CumAvg(days){
+    var VW = 330, marginL = 20, marginR = 36, marginT = 8, marginB = 18;
+    var plotW = VW - marginL - marginR;
+    var colW = plotW / days.length;
+    var plotH = 130;
+    var VH = marginT + plotH + marginB;
+
+    function yOf(score){ return marginT + (5 - score) / 4 * plotH; }
+
+    var parts = [];
+    for (var s = 1; s <= 5; s++){
+      var gy = yOf(s);
+      parts.push('<line x1="' + marginL + '" y1="' + gy.toFixed(1) + '" x2="' + (VW - marginR) + '" y2="' + gy.toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>');
+      parts.push('<text x="' + (marginL - 5) + '" y="' + (gy + 3.5).toFixed(1) + '" font-size="11" fill="var(--ink-3)" text-anchor="end">' + s + '</text>');
+    }
+    var passY = yOf(5);
+    parts.push('<line x1="' + marginL + '" y1="' + passY.toFixed(1) + '" x2="' + (VW - marginR) + '" y2="' + passY.toFixed(1) +
+      '" stroke="var(--score-5)" stroke-opacity="0.5" stroke-width="1.5" stroke-dasharray="4,3"/>');
+    parts.push('<text x="' + (VW - marginR + 3) + '" y="' + (passY + 3).toFixed(1) + '" font-size="9" fill="var(--score-5)">過關線</text>');
+
+    var cumSum = 0, cumCount = 0;
+    var cumPts = [], avgPts = [];
+    days.forEach(function(d, i){
+      var cx = marginL + colW * i + colW / 2;
+      d.scores.forEach(function(sc){ cumSum += sc.score; cumCount++; });
+      if (cumCount > 0){
+        var cumAvg = cumSum / cumCount;
+        cumPts.push([cx, yOf(cumAvg), cumAvg]);
+      }
+      if (d.scores.length){
+        var dayAvg = d.scores.reduce(function(a, sc){ return a + sc.score; }, 0) / d.scores.length;
+        avgPts.push([cx, yOf(dayAvg)]);
+      }
+      parts.push('<text x="' + cx.toFixed(1) + '" y="' + (VH - 4) + '" font-size="11" fill="var(--ink-3)" text-anchor="middle">' + ddLabel(d.date) + '</text>');
+    });
+
+    if (avgPts.length > 1){
+      var avgPath = avgPts.map(function(p, i){ return (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' ');
+      parts.push('<path d="' + avgPath + '" fill="none" stroke="var(--ink-3)" stroke-width="1" stroke-opacity="0.65"/>');
+    }
+    if (cumPts.length > 1){
+      var cumPath = cumPts.map(function(p, i){ return (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' ');
+      parts.push('<path d="' + cumPath + '" fill="none" stroke="var(--ink)" stroke-width="2"/>');
+    }
+    if (cumPts.length){
+      var last = cumPts[cumPts.length - 1];
+      parts.push('<circle cx="' + last[0].toFixed(1) + '" cy="' + last[1].toFixed(1) + '" r="3" fill="var(--ink)"/>');
+      parts.push('<text x="' + (last[0] + 4).toFixed(1) + '" y="' + (last[1] - 4).toFixed(1) + '" font-size="10" fill="var(--ink)">' + last[2].toFixed(1) + '</text>');
+    }
+
+    var svg = '<svg viewBox="0 0 ' + VW + ' ' + VH + '" xmlns="http://www.w3.org/2000/svg">' + parts.join('') + '</svg>';
+    document.getElementById('score5-svg').innerHTML = svg;
+  }
+
+  // ---------- 額度 3：面積圖（分身 Opus vs Sonnet） ----------
+  function renderQuota3Area(days){
+    var VW = 330, marginL = 24, marginR = 68, marginT = 10, marginB = 18;
+    var plotW = VW - marginL - marginR;
+    var colW = plotW / (days.length - 1);
+    var plotH = 120;
+    var VH = marginT + plotH + marginB;
+    var baseline = marginT + plotH;
+
+    var opus = days.map(function(d){ return d.tokens_by_model_sub.opus; });
+    var sonnet = days.map(function(d){ return d.tokens_by_model_sub.sonnet; });
+    var totals = opus.map(function(v, i){ return v + sonnet[i]; });
+    var maxVal = niceMax(Math.max.apply(null, totals.concat([1])));
+
+    function xOf(i){ return marginL + colW * i; }
+    function yOf(v){ return baseline - v / maxVal * plotH; }
+
+    var parts = [];
+    for (var t = 0; t <= 4; t++){
+      var val = maxVal * t / 4;
+      var gy = baseline - plotH * t / 4;
+      parts.push('<line x1="' + marginL + '" y1="' + gy.toFixed(1) + '" x2="' + (VW - marginR) + '" y2="' + gy.toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>');
+      parts.push('<text x="' + (marginL - 4) + '" y="' + (gy + 3).toFixed(1) + '" font-size="11" fill="var(--ink-3)" text-anchor="end">' + fmtInt(val) + '</text>');
+    }
+    days.forEach(function(d, i){
+      if (i % 2 === 0 || i === days.length - 1){
+        parts.push('<text x="' + xOf(i).toFixed(1) + '" y="' + (VH - 4) + '" font-size="11" fill="var(--ink-3)" text-anchor="middle">' + ddLabel(d.date) + '</text>');
+      }
+    });
+
+    function areaPath(bottomFn, topFn){
+      var n = days.length;
+      var bottom = [], top = [];
+      for (var i = 0; i < n; i++) bottom.push('L' + xOf(i).toFixed(1) + ' ' + bottomFn(i).toFixed(1));
+      for (var j = n - 1; j >= 0; j--) top.push('L' + xOf(j).toFixed(1) + ' ' + topFn(j).toFixed(1));
+      return 'M' + xOf(0).toFixed(1) + ' ' + bottomFn(0).toFixed(1) + ' ' + bottom.slice(1).join(' ') + ' ' + top.join(' ') + ' Z';
+    }
+
+    parts.push('<path d="' + areaPath(function(){ return baseline; }, function(i){ return yOf(opus[i]); }) +
+      '" fill="var(--opus)" fill-opacity="0.75" stroke="none"/>');
+    parts.push('<path d="' + areaPath(function(i){ return yOf(opus[i]); }, function(i){ return yOf(opus[i] + sonnet[i]); }) +
+      '" fill="var(--sonnet)" fill-opacity="0.75" stroke="none"/>');
+
+    var lastI = days.length - 1;
+    var endLabels = [
+      { y: yOf(opus[lastI]), text: 'Opus ' + opus[lastI].toFixed(1) },
+      { y: yOf(opus[lastI] + sonnet[lastI]), text: 'Sonnet ' + sonnet[lastI].toFixed(1) }
+    ];
+    endLabels.sort(function(a, b){ return a.y - b.y; });
+    if (endLabels[1].y - endLabels[0].y < 10){ endLabels[1].y = endLabels[0].y + 10; }
+    endLabels.forEach(function(lb){
+      parts.push('<text x="' + (xOf(lastI) + 4).toFixed(1) + '" y="' + (lb.y + 3).toFixed(1) + '" font-size="10" fill="var(--ink)">' + esc(lb.text) + '</text>');
+    });
+
+    var svg = '<svg viewBox="0 0 ' + VW + ' ' + VH + '" xmlns="http://www.w3.org/2000/svg">' + parts.join('') + '</svg>';
+    document.getElementById('quota3-svg').innerHTML = svg;
+  }
+
+  // ---------- 額度 4：Opus 佔比 % ----------
+  function renderQuota4OpusShare(days){
+    var VW = 330, marginL = 6, marginR = 6, marginT = 16, marginB = 18;
+    var plotW = VW - marginL - marginR;
+    var colW = plotW / days.length;
+    var barW = colW * 0.62;
+    var plotH = 110;
+    var VH = marginT + plotH + marginB;
+    var baseline = marginT + plotH;
+
+    var parts = [];
+    days.forEach(function(d, i){
+      var m = d.tokens_by_model_sub;
+      var total = m.opus + m.sonnet + m.haiku + m.fable + m.other;
+      var cx = marginL + colW * i + (colW - barW) / 2;
+      if (total <= 0){
+        parts.push('<text x="' + (cx + barW / 2).toFixed(1) + '" y="' + (marginT + plotH / 2 + 4).toFixed(1) + '" font-size="11" fill="var(--ink-3)" text-anchor="middle">—</text>');
+      } else {
+        var other = m.haiku + m.fable + m.other;
+        var opusH = m.opus / total * plotH;
+        var sonnetH = m.sonnet / total * plotH;
+        var otherH = other / total * plotH;
+        var y = baseline;
+        [['opus', opusH, 'var(--opus)'], ['sonnet', sonnetH, 'var(--sonnet)'], ['other', otherH, 'var(--other-model)']].forEach(function(seg){
+          if (seg[1] > 0){
+            parts.push('<rect x="' + cx.toFixed(1) + '" y="' + (y - seg[1]).toFixed(1) + '" width="' + barW.toFixed(1) + '" height="' + seg[1].toFixed(1) + '" fill="' + seg[2] + '"/>');
+          }
+          y -= seg[1];
+        });
+        var pct = Math.round(m.opus / total * 100);
+        parts.push('<text x="' + (cx + barW / 2).toFixed(1) + '" y="' + (baseline - opusH / 2 + 3.5).toFixed(1) + '" font-size="9.5" fill="#fff" text-anchor="middle">' + pct + '%</text>');
+      }
+      parts.push('<text x="' + (cx + barW / 2).toFixed(1) + '" y="' + (VH - 4) + '" font-size="11" fill="var(--ink-3)" text-anchor="middle">' + ddLabel(d.date) + '</text>');
+    });
+
+    var svg = '<svg viewBox="0 0 ' + VW + ' ' + VH + '" xmlns="http://www.w3.org/2000/svg">' + parts.join('') + '</svg>';
+    document.getElementById('quota4-svg').innerHTML = svg;
+
+    var subO = days.map(function(d){ return d.tokens_by_model_sub.opus; });
+    var subTotal = days.map(function(d){ var m = d.tokens_by_model_sub; return m.opus + m.sonnet + m.haiku + m.fable + m.other; });
+    var n = days.length, half = Math.max(0, n - 7);
+    function shareOf(from, to){
+      var o = 0, t = 0;
+      for (var i = from; i < to; i++){ o += subO[i]; t += subTotal[i]; }
+      return t > 0 ? o / t * 100 : null;
+    }
+    var nearShare = shareOf(half, n);
+    var prevShare = shareOf(0, half);
+    var headline;
+    if (prevShare === null || nearShare === null){
+      headline = '分身 Opus 佔比：資料不夠比';
+    } else {
+      var dir = nearShare >= prevShare ? '變多了' : '變少了';
+      headline = '分身 Opus 佔比：近 7 天 ' + Math.round(nearShare) + '%，前 7 天 ' + Math.round(prevShare) + '% → ' + dir;
+    }
+    document.getElementById('quota4-headline').textContent = headline;
+  }
+
+  // ---------- 額度 5：前 7 天 → 近 7 天 啞鈴圖 ----------
+  function renderQuota5Dumbbell(days){
+    var subO = days.map(function(d){ return d.tokens_by_model_sub.opus; });
+    var subS = days.map(function(d){ return d.tokens_by_model_sub.sonnet; });
+    var mainO = days.map(function(d){ return d.tokens_by_model_main.opus; });
+    var mainS = days.map(function(d){ return d.tokens_by_model_main.sonnet; });
+    var n = days.length, half = Math.max(0, n - 7);
+
+    function sumRange(arr, from, to){
+      var s = 0;
+      for (var i = from; i < to; i++){ s += arr[i]; }
+      return s;
+    }
+
+    var rows = [
+      { label: '分身·Opus', color: 'var(--sub-color)', prev: sumRange(subO, 0, half), near: sumRange(subO, half, n) },
+      { label: '分身·Sonnet', color: 'var(--sub-color)', prev: sumRange(subS, 0, half), near: sumRange(subS, half, n) },
+      { label: '主帳號·Opus', color: 'var(--main-color)', prev: sumRange(mainO, 0, half), near: sumRange(mainO, half, n) },
+      { label: '主帳號·Sonnet', color: 'var(--main-color)', prev: sumRange(mainS, 0, half), near: sumRange(mainS, half, n) }
+    ];
+
+    var VW = 330, marginL = 82, marginR = 30, marginT = 10, rowH = 32, marginB = 18;
+    var VH = marginT + rowH * rows.length + marginB;
+    var plotW = VW - marginL - marginR;
+
+    var allVals = [1];
+    rows.forEach(function(r){ allVals.push(r.prev, r.near); });
+    var maxVal = niceMax(Math.max.apply(null, allVals));
+
+    function xOf(v){ return marginL + v / maxVal * plotW; }
+
+    var parts = [];
+    [0, 0.5, 1].forEach(function(f){
+      var val = maxVal * f;
+      var gx = marginL + plotW * f;
+      parts.push('<line x1="' + gx.toFixed(1) + '" y1="' + marginT + '" x2="' + gx.toFixed(1) + '" y2="' + (marginT + rowH * rows.length) + '" stroke="var(--line)" stroke-width="1"/>');
+      parts.push('<text x="' + gx.toFixed(1) + '" y="' + (marginT + rowH * rows.length + 12) + '" font-size="10" fill="var(--ink-3)" text-anchor="middle">' + fmtInt(val) + '</text>');
+    });
+
+    rows.forEach(function(r, i){
+      var y = marginT + rowH * i + rowH / 2;
+      parts.push('<text x="2" y="' + (y + 3.5).toFixed(1) + '" font-size="10.5" fill="var(--ink-2)">' + esc(r.label) + '</text>');
+      var x1 = xOf(r.prev), x2 = xOf(r.near);
+      var improved = r.near < r.prev;
+      var lineColor = r.near === r.prev ? 'var(--ink-3)' : (improved ? 'var(--score-5)' : 'var(--score-2)');
+      parts.push('<line x1="' + x1.toFixed(1) + '" y1="' + y.toFixed(1) + '" x2="' + x2.toFixed(1) + '" y2="' + y.toFixed(1) + '" stroke="' + lineColor + '" stroke-width="2.5"/>');
+      parts.push('<circle cx="' + x1.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="4" fill="var(--card)" stroke="var(--ink-3)" stroke-width="1.5"/>');
+      parts.push('<circle cx="' + x2.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="5" fill="' + r.color + '"/>');
+      var prevIsLeft = x1 <= x2;
+      parts.push('<text x="' + (x1 + (prevIsLeft ? -4 : 4)).toFixed(1) + '" y="' + (y - 7).toFixed(1) + '" font-size="9.5" fill="var(--ink-3)" text-anchor="' + (prevIsLeft ? 'end' : 'start') + '">' + fmtInt(r.prev) + '</text>');
+      parts.push('<text x="' + (x2 + (prevIsLeft ? 4 : -4)).toFixed(1) + '" y="' + (y - 7).toFixed(1) + '" font-size="9.5" fill="var(--ink)" text-anchor="' + (prevIsLeft ? 'start' : 'end') + '">' + fmtInt(r.near) + '</text>');
+    });
+
+    var svg = '<svg viewBox="0 0 ' + VW + ' ' + VH + '" xmlns="http://www.w3.org/2000/svg">' + parts.join('') + '</svg>';
+    document.getElementById('quota5-svg').innerHTML = svg;
+
+    document.getElementById('quota5-legend').innerHTML =
+      '<span class="legend-item"><span class="legend-circle"></span>前 7 天</span>' +
+      '<span class="legend-item"><span class="legend-circle filled"></span>近 7 天</span>' +
+      '<span class="legend-item"><span class="legend-dot" style="background:var(--score-5)"></span>變少了</span>' +
+      '<span class="legend-item"><span class="legend-dot" style="background:var(--score-2)"></span>變多了</span>';
+  }
+
+  // ---------- 額度 6：四張小走勢＋差多少 ----------
+  function buildSparkline(vals, color){
+    var VW = 140, VH = 36, pad = 3;
+    var min = Math.min.apply(null, vals), max = Math.max.apply(null, vals);
+    if (max === min) max = min + 1;
+    var n = vals.length;
+    function xOf(i){ return pad + i / (n - 1) * (VW - 2 * pad); }
+    function yOf(v){ return VH - pad - (v - min) / (max - min) * (VH - 2 * pad); }
+    var pts = vals.map(function(v, i){ return [xOf(i), yOf(v)]; });
+    var d = pts.map(function(p, i){ return (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' ');
+    var last = pts[pts.length - 1];
+    return '<svg viewBox="0 0 ' + VW + ' ' + VH + '" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">' +
+      '<path d="' + d + '" fill="none" stroke="' + color + '" stroke-width="1.8"/>' +
+      '<circle cx="' + last[0].toFixed(1) + '" cy="' + last[1].toFixed(1) + '" r="2.5" fill="' + color + '"/>' +
+      '</svg>';
+  }
+
+  function renderQuota6MiniCards(days){
+    var subO = days.map(function(d){ return d.tokens_by_model_sub.opus; });
+    var subS = days.map(function(d){ return d.tokens_by_model_sub.sonnet; });
+    var mainO = days.map(function(d){ return d.tokens_by_model_main.opus; });
+    var mainS = days.map(function(d){ return d.tokens_by_model_main.sonnet; });
+    var n = days.length, half = Math.max(0, n - 7);
+
+    function sumRange(arr, from, to){
+      var s = 0;
+      for (var i = from; i < to; i++){ s += arr[i]; }
+      return s;
+    }
+
+    var cards = [
+      { name: '分身·Opus', vals: subO, color: 'var(--sub-color)' },
+      { name: '分身·Sonnet', vals: subS, color: 'var(--sub-color)' },
+      { name: '主帳號·Opus', vals: mainO, color: 'var(--main-color)' },
+      { name: '主帳號·Sonnet', vals: mainS, color: 'var(--main-color)' }
+    ];
+
+    var html = cards.map(function(c){
+      var near = sumRange(c.vals, half, n);
+      var prev = sumRange(c.vals, 0, half);
+      var deltaText, deltaColor;
+      if (prev <= 0){
+        deltaText = '比前 7 天：資料不夠比';
+        deltaColor = 'var(--ink-3)';
+      } else {
+        var pct = (near - prev) / prev * 100;
+        var sign = pct >= 0 ? '+' : '';
+        deltaText = '比前 7 天 ' + sign + Math.round(pct) + '%';
+        deltaColor = pct <= 0 ? 'var(--score-5)' : 'var(--score-2)';
+      }
+      return '<div class="minicard">' +
+        '<div class="mc-head"><span class="mc-name">' + esc(c.name) + '</span><span class="mc-value">' + Math.round(near) + ' 萬</span></div>' +
+        '<div class="mc-delta" style="color:' + deltaColor + '">' + esc(deltaText) + '</div>' +
+        buildSparkline(c.vals, c.color) +
+        '</div>';
+    }).join('');
+
+    document.getElementById('quota6-cards').innerHTML = html;
+  }
+
   // ---------- 額度圖上方那句話（分身 Opus 近7天 vs 前7天） ----------
   function headlineText(days){
     var subO = days.map(function(d){ return d.tokens_by_model_sub.opus; });
@@ -387,6 +817,14 @@
     var h = headlineText(days);
     document.getElementById('quota1-headline').textContent = h;
     document.getElementById('quota2-headline').textContent = h;
+
+    renderScore3Calendar(days);
+    renderScore4CountBar(days);
+    renderScore5CumAvg(days);
+    renderQuota3Area(days);
+    renderQuota4OpusShare(days);
+    renderQuota5Dumbbell(days);
+    renderQuota6MiniCards(days);
   }
 
   fetch('proof.json')
