@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T12:27+08:00",
+  "generated_at": "2026-09-19T13:10+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -2984,39 +2984,39 @@
     },
     {
       "date": "2026-09-19",
-      "commits": 18,
+      "commits": 23,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 9,
-      "discord_replies": 43,
-      "tokens_main_wan": 228.9,
-      "tokens_sub_wan": 123.8,
-      "tokens_sessions": 108,
-      "tokens_msgs": 930,
+      "subagent_runs": 11,
+      "discord_replies": 59,
+      "tokens_main_wan": 256.8,
+      "tokens_sub_wan": 145.6,
+      "tokens_sessions": 117,
+      "tokens_msgs": 1129,
       "tokens_by_model": {
-        "opus": 106.4,
-        "sonnet": 71.3,
-        "haiku": 174.9,
+        "opus": 132.6,
+        "sonnet": 82.7,
+        "haiku": 187.2,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 61.9,
+        "opus": 77.6,
         "sonnet": 0.0,
-        "haiku": 167.0,
+        "haiku": 179.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 44.5,
-        "sonnet": 71.3,
+        "opus": 55.0,
+        "sonnet": 82.7,
         "haiku": 7.9,
         "fable": 0.0,
         "other": 0.0
       },
       "score_avg": 4.0,
       "score_low": 0,
-      "score_high": 2,
+      "score_high": 3,
       "scores": [
         {
           "score": 5,
@@ -3029,6 +3029,10 @@
         {
           "score": 4,
           "time": "2026-09-19 09:17"
+        },
+        {
+          "score": 4,
+          "time": "2026-09-19 13:05"
         }
       ],
       "corrections_new": 0,
@@ -3133,9 +3137,57 @@
           "time": "12:17",
           "plain": "把分數用彩色點點顯示，拿掉紅圈圈。把額度走勢改成一格一天的乾淨圖表，用同一種顏色的不同深淺，讓整個頁面看起來更清爽舒服。",
           "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "demo：v5 版面——走勢表搬主熱圖下方、折疊、沿用 .heat 規格；各區說明只留一句、其餘收頁尾（他 12:22…",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/f72fea2003e1f6153fdb2d9369fe8aed098fb021",
+          "evidence_label": "commit f72fea2",
+          "verified": true,
+          "time": "12:38",
+          "plain": "改了頁面的樣子：把顯示趨勢的表格移到下面，可以摺起來節省空間，每個區域的說明只寫最重要的一句話，其他詳細說明收到頁尾。這樣一打開就很清楚，不會一眼看到一堆文字。",
+          "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "demo v5：走勢表改用主熱圖綠／紅規則、數字改 K／M（他 12:44）",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/57fbe4d337fce08fa3a0664ec05251b1b68ed0e8",
+          "evidence_label": "commit 57fbe4d",
+          "verified": true,
+          "time": "12:45",
+          "plain": "把工作證明頁的數字圖表改成用綠色和紅色表示好壞，又把大數字簡化成 K 和 M 這樣的寫法。這樣看起來乾淨又快，一眼就知道表現好不好。",
+          "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "proof：頁頂加「資料更新到 MM/DD HH:MM（每小時自動重算）」（他 12:46 問是不是死檔）",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/f0f5cdf1184da4c42d8ec1733ed721785f1261a1",
+          "evidence_label": "commit f0f5cdf",
+          "verified": true,
+          "time": "12:48",
+          "plain": "在工作證明頁面頂部加上資料更新時間，這個時間每小時自動變新。他看得出時間在變，就知道資料在持續更新而不是卡住不動。",
+          "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "proof：今天按專案那條直接寫「N 件・專案」＋條下列全部件數（他 12:49 問橘色是什麼）；demo v5 手機…",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/70792f4e3e4896a4ab6ea426639e48d4beea4b72",
+          "evidence_label": "commit 70792f4",
+          "verified": true,
+          "time": "12:56",
+          "plain": "工作證明頁的顯示方式改了：現在「工作」那行直接寫「5 個・手機工作」，下面把全部列出來。他之前看到橘色疑惑，現在一眼就清楚有多少個、分別是什麼。",
+          "plain_ok": true
         }
       ],
-      "items_count": 8,
+      "items_count": 12,
       "skipped": [
         {
           "kind": "commit",
@@ -3211,6 +3263,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json：修假分數——09-19 的 1 分（00:29「1分是紫色+紅色圈」）與 3/4/2（00:02…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:28",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "demo：viz5c 分數色改 綠黃紅紫藍（他 00:24 指定）",
           "project": "工作證明頁",
           "reason": "no_coauthor",
@@ -3229,7 +3290,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 10 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5、未 push 3、無 Co-Authored-By: Claude 2）"
+      "notes": "另有 11 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6、未 push 3、無 Co-Authored-By: Claude 2）"
     }
   ]
 }
