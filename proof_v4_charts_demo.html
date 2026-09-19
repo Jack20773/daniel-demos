@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>圖表版面 demo</title>
+<style>
+  :root{
+    --bg:#fcfcfb; --card:#fff; --ink:#0b0b0b; --ink-2:#52514e; --ink-3:#898781; --line:#e6e5e1;
+    --score-5:#0f7a3d; --score-4:#2a78d6; --score-3:#c9a000; --score-2:#d32f2f; --score-1:#7b1fa2;
+    --opus:#2a78d6; --sonnet:#9cc3ef; --other-model:#c3c2b7;
+    --sub-color:#2a78d6; --main-color:#eb6834;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#111; --card:#1a1a1a; --ink:#f2f2f0; --ink-2:#b8b7b2; --ink-3:#898781; --line:#2c2c2a;
+      --score-5:#3fae72; --score-4:#5b9cf0; --score-3:#f0d060; --score-2:#ef5350; --score-1:#ba68c8;
+    }
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC",Segoe UI,Roboto,sans-serif;
+    max-width:480px; margin:0 auto; padding:16px;
+  }
+  header p.lead{font-size:13px; color:var(--ink-2); line-height:1.6; margin:0 0 16px;}
+  section.card{
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    padding:14px; margin-bottom:16px;
+  }
+  section.card h2{font-size:15px; margin:0 0 6px; line-height:1.4;}
+  section.card p.sub{font-size:12px; color:var(--ink-2); margin:0 0 10px; line-height:1.5;}
+  .legend{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:8px; font-size:12px; color:var(--ink-2);}
+  .legend-item{display:flex; align-items:center; gap:4px;}
+  .legend-dot{width:10px; height:10px; border-radius:50%; flex:none; display:inline-block;}
+  .legend-line{width:16px; height:0; border-top:3px solid; flex:none; display:inline-block;}
+  .legend-line.dashed{border-top-style:dashed;}
+  .legend-sq{width:10px; height:10px; flex:none; display:inline-block;}
+  svg{width:100%; height:auto; display:block;}
+  .quota-charts{display:flex; gap:10px;}
+  @media (max-width:480px){
+    .quota-charts{flex-direction:column;}
+  }
+  .quota-chart-wrap{flex:1; min-width:0;}
+  .quota-chart-wrap h3{font-size:12px; color:var(--ink-2); margin:0 0 4px; font-weight:600;}
+  .headline{font-size:12px; color:var(--ink-2); margin:0 0 8px; line-height:1.5;}
+  footer{font-size:11px; color:var(--ink-3); text-align:center; margin-top:8px; padding-bottom:8px;}
+  #err{color:var(--score-2); font-size:12px; white-space:pre-wrap;}
+</style>
+</head>
+<body>
+
+<header>
+  <p class="lead">四張都是同一份資料，挑你覺得一眼看得懂的：回我「分數 1 或 2」「額度 1 或 2」。</p>
+</header>
+
+<section class="card">
+  <h2>分數 1️⃣　一天一欄、點往上疊</h2>
+  <p class="sub">一欄一天，圓點由下往上照時間疊，顏色看分數高低。</p>
+  <div class="legend" id="score1-legend"></div>
+  <div id="score1-svg"></div>
+</section>
+
+<section class="card">
+  <h2>分數 2️⃣　分數當高度、看趨勢</h2>
+  <p class="sub">圓點高度就是那次的分數，細線是每天平均，看得出在變好還變差。</p>
+  <div id="score2-svg"></div>
+</section>
+
+<section class="card">
+  <h2>額度 1️⃣　長條圖</h2>
+  <p class="headline" id="quota1-headline"></p>
+  <div class="legend" id="quota-bar-legend"></div>
+  <div class="quota-charts">
+    <div class="quota-chart-wrap">
+      <h3>分身</h3>
+      <div id="quota1-sub-svg"></div>
+    </div>
+    <div class="quota-chart-wrap">
+      <h3>主帳號</h3>
+      <div id="quota1-main-svg"></div>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2>額度 2️⃣　折線圖</h2>
+  <p class="headline" id="quota2-headline"></p>
+  <div class="legend" id="quota-line-legend"></div>
+  <div id="quota2-svg"></div>
+</section>
+
+<div id="err"></div>
+
+<footer>資料：proof.json（近 14 天）</footer>
+
+<script>
+(function(){
+
+  function esc(s){
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function fmtInt(v){ return String(Math.round(v)); }
+
+  function mmdd(dateStr){
+    var p = dateStr.split('-');
+    return p[1] + '/' + p[2];
+  }
+
+  // 手機欄寬窄，14 天的 MM/DD 會互相疊字，軸上只顯示日（DD）
+  function ddLabel(dateStr){
+    return dateStr.split('-')[2];
+  }
+
+  function niceMax(v){
+    if (v <= 0) return 10;
+    var pow = Math.pow(10, Math.floor(Math.log10(v)));
+    var norm = v / pow;
+    var n;
+    if (norm <= 1) n = 1;
+    else if (norm <= 2) n = 2;
+    else if (norm <= 5) n = 5;
+    else n = 10;
+    return n * pow;
+  }
+
+  // ---------- 分數 1：一天一欄、點往上疊 ----------
+  function renderScore1(days){
+    var VW = 330, marginL = 12, marginR = 12, marginT = 6, marginB = 18;
+    var plotW = VW - marginL - marginR;
+    var colW = plotW / days.length;
+    var dotR = 5, pitch = 12;
+    var maxPoints = 1;
+    days.forEach(function(d){ if (d.scores.length > maxPoints) maxPoints = d.scores.length; });
+    var plotH = Math.max(60, maxPoints * pitch + 6);
+    var VH = marginT + plotH + marginB;
+    var baseline = marginT + plotH;
+    var parts = [];
+
+    days.forEach(function(d, i){
+      var cx = marginL + colW * i + colW / 2;
+      var sorted = d.scores.slice().sort(function(a,b){ return a.time < b.time ? -1 : (a.time > b.time ? 1 : 0); });
+      sorted.forEach(function(s, j){
+        var cy = baseline - dotR - j * pitch;
+        parts.push('<circle cx="' + cx.toFixed(1) + '" cy="' + cy.toFixed(1) + '" r="' + dotR +
+          '" fill="var(--score-' + s.score + ')"><title>' + esc(d.date + ' ' + s.time.slice(11) + '　' + s.score + ' 分') + '</title></circle>');
+      });
+      parts.push('<text x="' + cx.toFixed(1) + '" y="' + (VH - 5) + '" font-size="11" fill="var(--ink-3)" text-anchor="middle">' + ddLabel(d.date) + '</text>');
+    });
+
+    var svg = '<svg viewBox="0 0 ' + VW + ' ' + VH + '" xmlns="http://www.w3.org/2000/svg">' + parts.join('') + '</svg>';
+    document.getElementById('score1-svg').innerHTML = svg;
+
+    var legendDefs = [
+      [5,'過關'], [4,'稍微不滿'], [3,'嚴重'], [2,'極度嚴重'], [1,'不該出現']
+    ];
+    var legendHtml = legendDefs.map(function(pair){
+      return '<span class="legend-item"><span class="legend-dot" style="background:var(--score-' + pair[0] + ')"></span>' + pair[0] + ' 分＝' + pair[1] + '</span>';
+    }).join('');
+    document.getElementById('score1-legend').innerHTML = legendHtml;
+  }
+
+  // ---------- 分數 2：分數當高度、看趨勢 ----------
+  function renderScore2(days){
+    var VW = 330, marginL = 20, marginR = 10, marginT = 8, marginB = 18;
+    var plotW = VW - marginL - marginR;
+    var colW = plotW / days.length;
+    var plotH = 130;
+    var VH = marginT + plotH + marginB;
+    var dotR = 4;
+
+    function yOf(score){ return marginT + (5 - score) / 4 * plotH; }
+
+    var parts = [];
+
+    // gridlines + labels
+    for (var s = 1; s <= 5; s++){
+      var gy = yOf(s);
+      parts.push('<line x1="' + marginL + '" y1="' + gy.toFixed(1) + '" x2="' + (VW - marginR) + '" y2="' + gy.toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>');
+      parts.push('<text x="' + (marginL - 5) + '" y="' + (gy + 3.5).toFixed(1) + '" font-size="11" fill="var(--ink-3)" text-anchor="end">' + s + '</text>');
+    }
+
+    var avgPoints = [];
+
+    days.forEach(function(d, i){
+      var cx = marginL + colW * i + colW / 2;
+      if (d.scores.length){
+        var sum = 0;
+        var byScore = {};
+        d.scores.forEach(function(sc){
+          sum += sc.score;
+          (byScore[sc.score] = byScore[sc.score] || []).push(sc);
+        });
+        Object.keys(byScore).forEach(function(scoreKey){
+          var group = byScore[scoreKey];
+          var n = group.length;
+          group.forEach(function(sc, idx){
+            var offset = (idx - (n - 1) / 2) * 7;
+            var px = cx + offset;
+            var py = yOf(sc.score);
+            parts.push('<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="' + dotR +
+              '" fill="var(--score-' + sc.score + ')"><title>' + esc(d.date + ' ' + sc.time.slice(11) + '　' + sc.score + ' 分') + '</title></circle>');
+          });
+        });
+        var avg = sum / d.scores.length;
+        avgPoints.push([cx, yOf(avg)]);
+      }
+      parts.push('<text x="' + cx.toFixed(1) + '" y="' + (VH - 5) + '" font-size="11" fill="var(--ink-3)" text-anchor="middle">' + ddLabel(d.date) + '</text>');
+    });
+
+    if (avgPoints.length > 1){
+      var pathD = avgPoints.map(function(p, i){ return (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' ');
+      parts.unshift('<path d="' + pathD + '" fill="none" stroke="var(--ink-2)" stroke-width="1.5"/>');
+    }
+
+    var svg = '<svg viewBox="0 0 ' + VW + ' ' + VH + '" xmlns="http://www.w3.org/2000/svg">' + parts.join('') + '</svg>';
+    document.getElementById('score2-svg').innerHTML = svg;
+  }
+
+  // ---------- 額度 1：長條圖（分身 / 主帳號） ----------
+  function renderQuotaBarChart(days, key, containerId){
+    var VW = 330, marginL = 28, marginR = 6, marginT = 16, marginB = 16;
+    var plotW = VW - marginL - marginR;
+    var colW = plotW / days.length;
+    var barW = colW * 0.62;
+    var plotH = 110;
+    var VH = marginT + plotH + marginB;
+    var baseline = marginT + plotH;
+
+    var totals = days.map(function(d){
+      var m = d[key];
+      return m.opus + m.sonnet + m.haiku + m.fable + m.other;
+    });
+    var maxTotal = niceMax(Math.max.apply(null, totals.concat([1])));
+
+    var parts = [];
+    // gridlines (4 ticks)
+    for (var t = 0; t <= 4; t++){
+      var val = maxTotal * t / 4;
+      var gy = baseline - plotH * t / 4;
+      parts.push('<line x1="' + marginL + '" y1="' + gy.toFixed(1) + '" x2="' + (VW - marginR) + '" y2="' + gy.toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>');
+      parts.push('<text x="' + (marginL - 4) + '" y="' + (gy + 3).toFixed(1) + '" font-size="11" fill="var(--ink-3)" text-anchor="end">' + fmtInt(val) + '</text>');
+    }
+
+    // pick top 3 bars by total to label
+    var order = totals.map(function(v, i){ return i; }).sort(function(a, b){ return totals[b] - totals[a]; });
+    var labelSet = {};
+    order.slice(0, 3).forEach(function(i){ labelSet[i] = true; });
+
+    days.forEach(function(d, i){
+      var m = d[key];
+      var cx = marginL + colW * i + (colW - barW) / 2;
+      var other = m.haiku + m.fable + m.other;
+      var segs = [
+        ['opus', m.opus, 'var(--opus)'],
+        ['sonnet', m.sonnet, 'var(--sonnet)'],
+        ['other', other, 'var(--other-model)']
+      ];
+      var y = baseline;
+      segs.forEach(function(seg){
+        var h = seg[1] / maxTotal * plotH;
+        if (h > 0){
+          parts.push('<rect x="' + cx.toFixed(1) + '" y="' + (y - h).toFixed(1) + '" width="' + barW.toFixed(1) + '" height="' + h.toFixed(1) + '" fill="' + seg[2] + '"><title>' + esc(d.date + ' ' + seg[0] + '：' + seg[1].toFixed(1) + ' 萬') + '</title></rect>');
+        }
+        y -= h;
+      });
+      if (labelSet[i] && totals[i] > 0){
+        parts.push('<text x="' + (cx + barW / 2).toFixed(1) + '" y="' + (y - 3).toFixed(1) + '" font-size="10" fill="var(--ink-2)" text-anchor="middle">' + fmtInt(totals[i]) + '</text>');
+      }
+      parts.push('<text x="' + (cx + barW / 2).toFixed(1) + '" y="' + (VH - 4) + '" font-size="11" fill="var(--ink-3)" text-anchor="middle">' + ddLabel(d.date) + '</text>');
+    });
+
+    var svg = '<svg viewBox="0 0 ' + VW + ' ' + VH + '" xmlns="http://www.w3.org/2000/svg">' + parts.join('') + '</svg>';
+    document.getElementById(containerId).innerHTML = svg;
+  }
+
+  // ---------- 額度 2：折線圖 ----------
+  function renderQuotaLineChart(days){
+    var VW = 330, marginL = 24, marginR = 78, marginT = 10, marginB = 18;
+    var plotW = VW - marginL - marginR;
+    var colW = plotW / (days.length - 1);
+    var plotH = 130;
+    var VH = marginT + plotH + marginB;
+    var baseline = marginT + plotH;
+
+    var series = [
+      { key: 'subO', label: '分身·Opus', color: 'var(--sub-color)', dash: false, thick: true, vals: days.map(function(d){ return d.tokens_by_model_sub.opus; }) },
+      { key: 'subS', label: '分身·Sonnet', color: 'var(--sub-color)', dash: true, thick: false, vals: days.map(function(d){ return d.tokens_by_model_sub.sonnet; }) },
+      { key: 'mainO', label: '主帳號·Opus', color: 'var(--main-color)', dash: false, thick: true, vals: days.map(function(d){ return d.tokens_by_model_main.opus; }) },
+      { key: 'mainS', label: '主帳號·Sonnet', color: 'var(--main-color)', dash: true, thick: false, vals: days.map(function(d){ return d.tokens_by_model_main.sonnet; }) }
+    ];
+
+    var allVals = [];
+    series.forEach(function(s){ allVals = allVals.concat(s.vals); });
+    var maxVal = niceMax(Math.max.apply(null, allVals.concat([1])));
+
+    function xOf(i){ return marginL + colW * i; }
+    function yOf(v){ return baseline - v / maxVal * plotH; }
+
+    var parts = [];
+    // gridlines (4 ticks)
+    for (var t = 0; t <= 4; t++){
+      var val = maxVal * t / 4;
+      var gy = baseline - plotH * t / 4;
+      parts.push('<line x1="' + marginL + '" y1="' + gy.toFixed(1) + '" x2="' + (VW - marginR) + '" y2="' + gy.toFixed(1) + '" stroke="var(--line)" stroke-width="1"/>');
+      parts.push('<text x="' + (marginL - 4) + '" y="' + (gy + 3).toFixed(1) + '" font-size="11" fill="var(--ink-3)" text-anchor="end">' + fmtInt(val) + '</text>');
+    }
+    // x labels (every other day to reduce clutter, always show first/last)
+    days.forEach(function(d, i){
+      if (i % 2 === 0 || i === days.length - 1){
+        parts.push('<text x="' + xOf(i).toFixed(1) + '" y="' + (VH - 4) + '" font-size="11" fill="var(--ink-3)" text-anchor="middle">' + ddLabel(d.date) + '</text>');
+      }
+    });
+
+    var endLabels = [];
+
+    series.forEach(function(s){
+      var pts = [];
+      s.vals.forEach(function(v, i){ pts.push([xOf(i), yOf(v)]); });
+      var pathD = pts.map(function(p, i){ return (i === 0 ? 'M' : 'L') + p[0].toFixed(1) + ' ' + p[1].toFixed(1); }).join(' ');
+      parts.push('<path d="' + pathD + '" fill="none" stroke="' + s.color + '" stroke-width="' + (s.thick ? 2.5 : 1.5) +
+        '" stroke-dasharray="' + (s.dash ? '4,3' : 'none') + '"/>');
+      var lastV = s.vals[s.vals.length - 1];
+      endLabels.push({ y: yOf(lastV), text: s.label + ' ' + lastV.toFixed(1), color: s.color });
+    });
+
+    // avoid vertical overlap of end labels: sort by y, push apart
+    endLabels.sort(function(a, b){ return a.y - b.y; });
+    var minGap = 10;
+    for (var i = 1; i < endLabels.length; i++){
+      if (endLabels[i].y - endLabels[i - 1].y < minGap){
+        endLabels[i].y = endLabels[i - 1].y + minGap;
+      }
+    }
+    var lastX = xOf(days.length - 1);
+    endLabels.forEach(function(lb){
+      parts.push('<text x="' + (lastX + 4).toFixed(1) + '" y="' + (lb.y + 3).toFixed(1) + '" font-size="9.5" fill="' + lb.color + '">' + esc(lb.text) + '</text>');
+    });
+
+    var svg = '<svg viewBox="0 0 ' + VW + ' ' + VH + '" xmlns="http://www.w3.org/2000/svg">' + parts.join('') + '</svg>';
+    document.getElementById('quota2-svg').innerHTML = svg;
+  }
+
+  // ---------- 額度圖上方那句話（分身 Opus 近7天 vs 前7天） ----------
+  function headlineText(days){
+    var subO = days.map(function(d){ return d.tokens_by_model_sub.opus; });
+    var n = subO.length;
+    var near7 = subO.slice(Math.max(0, n - 7)).reduce(function(a, b){ return a + b; }, 0);
+    var prev7 = subO.slice(0, Math.max(0, n - 7)).reduce(function(a, b){ return a + b; }, 0);
+    var x = Math.round(near7), y = Math.round(prev7);
+    var tail;
+    if (prev7 <= 0){
+      tail = '→ 資料不夠比';
+    } else {
+      var pct = (near7 - prev7) / prev7 * 100;
+      var dir = pct >= 0 ? '變多了' : '變少了';
+      var sign = pct >= 0 ? '+' : '';
+      tail = '→ ' + dir + '（' + sign + Math.round(pct) + '%）';
+    }
+    return '分身用 Opus：近 7 天 ' + x + ' 萬，前 7 天 ' + y + ' 萬 ' + tail;
+  }
+
+  // ---------- legends ----------
+  function renderLegends(){
+    document.getElementById('quota-bar-legend').innerHTML =
+      '<span class="legend-item"><span class="legend-sq" style="background:var(--opus)"></span>Opus</span>' +
+      '<span class="legend-item"><span class="legend-sq" style="background:var(--sonnet)"></span>Sonnet</span>' +
+      '<span class="legend-item"><span class="legend-sq" style="background:var(--other-model)"></span>其他模型</span>';
+
+    document.getElementById('quota-line-legend').innerHTML =
+      '<span class="legend-item"><span class="legend-line" style="border-color:var(--sub-color)"></span>分身·Opus</span>' +
+      '<span class="legend-item"><span class="legend-line dashed" style="border-color:var(--sub-color)"></span>分身·Sonnet</span>' +
+      '<span class="legend-item"><span class="legend-line" style="border-color:var(--main-color)"></span>主帳號·Opus</span>' +
+      '<span class="legend-item"><span class="legend-line dashed" style="border-color:var(--main-color)"></span>主帳號·Sonnet</span>';
+  }
+
+  function render(data){
+    var days = data.days || [];
+    renderScore1(days);
+    renderScore2(days);
+    renderLegends();
+    renderQuotaBarChart(days, 'tokens_by_model_sub', 'quota1-sub-svg');
+    renderQuotaBarChart(days, 'tokens_by_model_main', 'quota1-main-svg');
+    renderQuotaLineChart(days);
+    var h = headlineText(days);
+    document.getElementById('quota1-headline').textContent = h;
+    document.getElementById('quota2-headline').textContent = h;
+  }
+
+  fetch('proof.json')
+    .then(function(r){ return r.json(); })
+    .then(render)
+    .catch(function(e){
+      document.getElementById('err').textContent = '讀取 proof.json 失敗：' + e.message;
+    });
+
+})();
+</script>
+
+</body>
+</html>
