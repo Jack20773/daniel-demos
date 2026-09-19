@@ -50,9 +50,9 @@
   .day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
   .day-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
   .headline{font-weight:700;font-size:15px}
-  .rule{font-size:12px;color:var(--ink-3)}
   .segbar{display:flex;width:100%;height:22px;border-radius:4px;overflow:hidden;margin:8px 0 2px;background:var(--muted-bg)}
-  .segbar .seg{height:100%;margin-right:2px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--on-dark);white-space:nowrap;overflow:hidden}
+  .segbar .seg{height:100%;margin-right:2px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--on-dark);text-shadow:0 0 2px rgba(0,0,0,.55);white-space:nowrap;overflow:hidden}
+  @media (max-width:600px){#trend-table .d-old{display:none}}
   .segbar-label{font-size:12px;color:var(--ink-2);margin:2px 0 0}
   .segbar .seg:last-child{margin-right:0}
   .toggle{margin-top:8px}
@@ -80,7 +80,6 @@
   .raw .rawtext{margin-top:3px;line-height:1.5;overflow-wrap:anywhere;word-break:break-word}
   .caption{font-size:14px;color:var(--ink-2);background:var(--muted-bg);border-radius:8px;padding:10px 12px;margin:0 0 10px}
   .caption p{margin:4px 0}
-  .caption p.lead{font-weight:700;color:var(--ink)}
 
   /* ---- 熱圖表格（共用：額度熱圖／專案×日期格子表） ---- */
   table.heat{width:100%;border-collapse:collapse;font-size:13px}
@@ -125,24 +124,20 @@
     .gridtable .d-full{display:none}
     .gridtable .d-short{display:inline}
     tr.grid-explain td{font-size:11px;padding:8px}
+
+    /* 走勢表（#trend-table）欄數跟格子表一樣多（14 天＋標籤＋小計），沿用同一招把欄縮窄塞進 390，
+       字級/色階/邊線仍是 table.heat 那一套，只有寬度是 fixed */
+    table.heat#trend-table{table-layout:fixed;font-size:10px}
+    table.heat#trend-table th,table.heat#trend-table td{padding:4px 1px}
+    table.heat#trend-table th:first-child,table.heat#trend-table td.rowlbl{width:44px;max-width:44px;font-size:9px;padding:4px 2px}
+    table.heat#trend-table th:not(:first-child),table.heat#trend-table td.cell{width:auto;font-size:10px}
   }
 
-  /* ---- 額度日條（一格一天） ---- */
   .sub{font-size:12px;color:var(--ink-3);margin:-4px 0 10px}
-  .daybar{margin:10px 0}
-  .daybar .lbl{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink-2);margin:0 0 4px}
-  .daybar .lbl .dot{width:8px;height:8px;border-radius:50%;flex:none}
-  .daybar .lbl .name{flex:1}
-  .daybar .lbl .amt{flex:none;text-align:right}
-  .daybar .cells{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:2px}
-  .daybar .cell{aspect-ratio:1/1;min-width:0;box-sizing:border-box;overflow:hidden;border-radius:4px;
-    display:flex;align-items:center;justify-content:center;
-    font-variant-numeric:tabular-nums;font-size:10px;letter-spacing:-0.3px;white-space:nowrap}
-  .daybar .cell.empty{background:var(--muted-bg);color:var(--ink-3)}
-  .daxis{display:grid;grid-template-columns:repeat(14,minmax(0,1fr));gap:2px;margin:4px 0 0}
-  .daxis span{text-align:center;font-size:10px;color:var(--ink-3);min-width:0}
-  .daxis span.today{font-weight:700;color:var(--ink)}
-  @media(max-width:420px){.daybar .cell{font-size:9px}}
+  /* 每天怎麼花：合計列（灰階）與行標籤的長短版（手機只留短版） */
+  table.heat#trend-table tr.total td{border-top:2px solid var(--ink-3)}
+  #trend-table .d-full{display:inline}
+  @media(max-width:600px){#trend-table .d-full{display:none}}
 
   /* ---- 分數點陣（五色，一點一筆） ---- */
   .scoregrid{display:flex;flex-direction:column;gap:6px}
@@ -163,10 +158,9 @@
   <div class="cards" id="cards"></div>
 
   <h3 id="today-proj-title">今天按專案</h3>
-  <div class="legend" id="proj-legend"></div>
   <div class="chartbox"><div id="today-bar" class="segbar"></div></div>
 
-  <h2 id="grid-h2"><span class="grid-title">各專案近 <span class="ndays"></span> 天做了多少件（格內數字＝件數，顏色越深越多，越右越新）</span> <button type="button" id="grid-toggle-all" class="grid-toggle-all">顯示各專案說明</button></h2>
+  <h2 id="grid-h2"><span class="grid-title">各專案近 <span class="ndays"></span> 天每天做了幾件（數字＝件數，顏色越深＝越多，最右一欄＝今天）</span> <button type="button" id="grid-toggle-all" class="grid-toggle-all">顯示各專案說明</button></h2>
   <div class="chartbox"><div class="gridwrap"><table class="gridtable" id="grid-table"></table></div></div>
 
   <details class="toggle bigtoggle">
@@ -174,39 +168,43 @@
     <div id="days"></div>
   </details>
 
-  <h2>花了多少額度（帳號 × 模型熱圖，單位：萬 token，顏色越深花越多）</h2>
+  <h2>近 <span class="ndays"></span> 天花了多少額度（萬 token；帳號 × 模型；顏色越深＝花越多）</h2>
   <div class="legend" id="heat-legend">
     <span><span class="sw" style="background:var(--good)"></span>綠＝花得剛好</span>
     <span><span class="sw" style="background:var(--bad)"></span>紅＝可能沒必要花這麼多</span>
-    <span><span class="sw" style="background:rgb(var(--neutral-rgb))"></span>其他（不分好壞）</span>
-  </div>
-  <div class="caption">
-    <p class="lead">紅或綠要配帳號看：分身做雜事卻用貴模型、或主帳號做正事卻只捨得用便宜模型＝紅；正事用好模型、雜事用便宜模型＝綠。想確認分身是不是都用便宜模型，看「分身」那一列哪一欄顏色最深。</p>
-    <p>數字是近 <span class="ndays"></span> 天加總，從我電腦裡的對話紀錄算出來的，跟 claude.ai 額度頁對不起來，只能看比例。</p>
-  </div>
-
-  <h2 id="dumbbell-h2"></h2>
-  <p class="sub">一格一天、越右越新，單位：萬 token，顏色越深花越多（每列各自比）。</p>
-  <div class="chartbox"><div id="trend-table"></div></div>
-  <div class="caption">
-    <p>橫著看一列＝這個帳號用這個模型每天花多少；哪一天特別深就是那天特別燒。</p>
+    <span><span class="sw" style="background:rgb(var(--neutral-rgb))"></span>灰＝不分好壞</span>
   </div>
   <div class="chartbox"><table class="heat" id="heat-table"></table></div>
 
-  <h2>你打的分數（1–5 分，一點＝一次評分）</h2>
+  <details class="toggle bigtoggle">
+    <summary id="trend-h2"></summary>
+    <p class="sub">一格一天、越右越新，K＝千 token、M＝百萬 token；綠紅同上表，顏色越深花越多（每列各自比）。</p>
+    <div class="chartbox"><table class="heat" id="trend-table"></table></div>
+  </details>
+
+  <h2>你打的分數（1–5 分，一點＝一次評分，最新的一天在最上）</h2>
   <div class="legend" id="score-legend"></div>
+  <p class="sub" id="score-sub"></p>
   <div class="chartbox"><div class="scoregrid" id="score-grid"></div></div>
-  <div class="caption">
-    <p class="lead">只有 5 分算過關（綠），其餘都是扣分：4 藍稍微不滿、3 黃嚴重、2 紅極度嚴重、1 紫是根本不該出現的嚴重落差。</p>
-    <p>同一列由左到右＝當天打分的時間先後，最左邊最早；同一天出現好幾個點＝那天打了不只一次分。</p>
-  </div>
 
   <div class="footnote">
-    <p><b>這頁證明什麼：</b>每天做了幾件、給哪幾個專案，點開看每一件的證據連結；額度看是不是都叫主帳號、都叫貴的模型做；每件花多少額度＝今天 token 除以件數，越小越省。</p>
-    <p><b>「一件」怎麼算：</b>依規則 v<span class="rules-ver"></span>：只算有驗證＋有證據連結的（commit／票／日誌對得上的），AI 自己寫「做完了」不算。</p>
-    <p><b>怎麼自己驗：</b>展開「看每天清單」再點「看每一件」，數清單行數＝標題上的數字；連結點得開才算數。</p>
-    <p>每一件下面那句白話說明由程式對每件自動產生；規則 v<span class="rules-ver"></span>。</p>
+    <p><b>這頁證明什麼：</b>每天做了幾件、給哪幾個專案，點開看每一件的證據連結；額度看是不是都叫主帳號、都叫貴的模型做、有沒有越花越少；分數看品質有沒有變好。頁頂三張卡＝今天跟前 7 天平均比。</p>
   </div>
+
+  <details class="toggle">
+    <summary>各區塊怎麼看（說明）</summary>
+    <div class="caption">
+      <h3>「一件」怎麼算</h3>
+      <p>依規則 v<span class="rules-ver"></span>：只算有驗證＋有證據連結的（commit／票／日誌對得上的），AI 自己寫「做完了」不算。每一件下面那句白話說明由程式自動產生。</p>
+      <h3>怎麼自己驗</h3>
+      <p>展開「看每天清單」再點「看每一件」，數清單行數＝標題上的數字；連結點得開才算數。</p>
+      <h3>花了多少額度</h3>
+      <p>數字從我電腦裡的對話紀錄算出來的，跟 claude.ai 額度頁對不起來，只能看比例。紅或綠要配帳號看：分身做雜事卻用貴模型（Opus／Fable）、或主帳號做正事卻只捨得用便宜模型（Sonnet／Haiku）＝紅；正事用好模型、雜事用便宜模型＝綠。想確認分身是不是都用便宜模型，看「分身」那一列哪一欄顏色最深。</p>
+      <p>「每天怎麼花」那張：橫著看一列＝這個帳號用這類模型每天花多少；哪一天特別深就是那天特別燒；最下面「合計」列是兩個帳號、全部模型加起來。</p>
+      <h3>你打的分數</h3>
+      <p>只有 5 分算過關，其餘都是扣分。同一列由左到右＝當天打分的時間先後，最左邊最早；同一天出現好幾個點＝那天打了不只一次分。</p>
+    </div>
+  </details>
 </main>
 <script>
 
@@ -283,22 +281,54 @@ function projSegBar(container,items,map){
   let lbl=container.nextElementSibling;
   if(!lbl||!lbl.classList.contains('segbar-label')){lbl=document.createElement('div');lbl.className='segbar-label';container.after(lbl);}
   lbl.textContent=order.map(p=>`${p} ${byProj[p]} 件`).join('・');
+  trimSegLabels(container);
+}
+// 手機上段太窄時「N 件・專案」會被切一半：排版完量一次，塞不下就拿掉字（條下那行還是列得全）
+function trimSegLabels(root){
+  if(!root||!root.isConnected||root.clientWidth===0)return;
+  root.querySelectorAll('.seg').forEach(s=>{if(s.textContent&&s.scrollWidth>s.clientWidth+1)s.textContent='';});
 }
 
 function scoreColor(s){return {1:'var(--sc1)',2:'var(--sc2)',3:'var(--sc3)',4:'var(--sc4)',5:'var(--sc5)'}[s]||'var(--zero)';}
 
 const EXPENSIVE_MODELS=new Set(['opus','fable']);
+// 他 12:44「數字太擠可以用 K 標示」：輸入單位是萬 token，>=100 萬顯示 M（4.7M／20M）、不到 100 萬顯示 K（120K）
+function fmtKM(v){
+  if(v<=0)return '·';
+  const t=v*10000;
+  if(t>=1e7)return Math.round(t/1e6)+'M';
+  if(t>=1e6)return (t/1e6).toFixed(1)+'M';
+  return Math.round(t/1e3)+'K';
+}
+// 格子字色不用固定門檻猜：把格子色跟底色（淺色底白、深色底 #1a1a1a）按透明度混出實際顏色，
+// 算白字跟墨字哪個對比高就用哪個（Haiku 讀圖兩次都說深色模式格子數字看不清）
+function isDark(){return document.documentElement.dataset.theme==='dark'||(document.documentElement.dataset.theme!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);}
+const _rgbCache={};
+function cssRgb(rgbVar){
+  const name=rgbVar.replace(/^var\(|\)$/g,''), key=name+(isDark()?'|d':'|l');
+  if(_rgbCache[key])return _rgbCache[key];
+  const v=getComputedStyle(document.documentElement).getPropertyValue(name).trim().split(',').map(Number);
+  return _rgbCache[key]=(v.length===3&&v.every(x=>!isNaN(x)))?v:[128,128,128];
+}
+function lum(c){const f=x=>{x/=255;return x<=0.03928?x/12.92:Math.pow((x+0.055)/1.055,2.4);};return 0.2126*f(c[0])+0.7152*f(c[1])+0.0722*f(c[2]);}
+function contrast(a,b){return (Math.max(a,b)+0.05)/(Math.min(a,b)+0.05);}
+function cellFg(rgbVar,alpha){
+  const dark=isDark(), rgb=cssRgb(rgbVar), base=dark?[26,26,26]:[255,255,255];
+  const L=lum(rgb.map((c,i)=>c*alpha+base[i]*(1-alpha)));
+  const inkL=lum(dark?[242,242,240]:[11,11,11]);
+  return contrast(L,1)>contrast(L,inkL)?'var(--on-dark)':'var(--ink)';
+}
 function heatCellStyle(accountKey,modelKey,v,maxCell){
   if(modelKey==='other'){
     const alpha=v<=0?0:0.12+0.6*(v/maxCell);
-    return {bg:v<=0?'transparent':`rgba(var(--neutral-rgb),${alpha.toFixed(2)})`,fg:alpha>0.55?'var(--on-dark)':'var(--ink)'};
+    return {bg:v<=0?'transparent':`rgba(var(--neutral-rgb),${alpha.toFixed(2)})`,fg:cellFg('var(--neutral-rgb)',alpha)};
   }
   const isExpensive=EXPENSIVE_MODELS.has(modelKey);
   const good=(accountKey==='sub')?!isExpensive:isExpensive;
   const rgbVar=good?'var(--good-rgb)':'var(--bad-rgb)';
   const alpha=v<=0?0:0.12+0.78*(v/maxCell);
   const bg=v<=0?'transparent':`rgba(${rgbVar},${alpha.toFixed(2)})`;
-  const fg=alpha>0.55?'var(--on-dark)':'var(--ink)';
+  const fg=cellFg(rgbVar,alpha);
   return {bg,fg};
 }
 
@@ -312,46 +342,48 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
   {const g=String(data.generated_at||'');const el=document.getElementById('data-asof');el.textContent=g?('資料更新到 '+g.slice(5,10).replace('-','/')+' '+g.slice(11,16)+'（每小時自動重算）'):'資料時間不明';}
   const {map:projMap,rgbMap:projRgbMap,top:projTop}=buildProjectColorMap(days);
 
-  // ---- 三張大數字卡 ----
+  // ---- 三張大數字卡：他 13:05「一眼看懂做了什麼、額度有沒有變少、品質有沒有變好」→ 三張卡各答一題，
+  //      每張都跟「前 7 天平均」比（今天以外的前 7 天）；紅綠＝比前 7 天好還是差
   const todayItems=countedItems(today);
   const todayTot=(today.tokens_main_wan||0)+(today.tokens_sub_wan||0);
-  const todayRatio=todayItems.length>0?todayTot/todayItems.length:null;
-  const prevRatios=[];
-  days.slice(-8,-1).forEach(d=>{
-    const it=countedItems(d);
-    if(it.length>0)prevRatios.push(((d.tokens_main_wan||0)+(d.tokens_sub_wan||0))/it.length);
-  });
-  let card3Num, card3Lbl, card3Cmp='';
-  if(todayRatio===null){
-    card3Num='—';
-    card3Lbl='今天還沒有一件';
-  } else {
-    card3Num=todayRatio.toFixed(1);
-    card3Lbl='每件花多少額度';
-    if(prevRatios.length>0){
-      const avgRatio=prevRatios.reduce((a,b)=>a+b,0)/prevRatios.length;
-      const pct=(avgRatio-todayRatio)/avgRatio*100;
-      const pctRound=Math.round(Math.abs(pct));
-      if(pct===0||pctRound===0){
-        card3Cmp=`<div class="cmp">跟前 7 天平均一樣</div>`;
-      } else {
-        const isSave=pct>0;
-        card3Cmp=`<div class="cmp ${isSave?'save':'cost'}">比前 7 天平均 ${isSave?'省':'貴'} ${pctRound}%</div>`;
-      }
-    } else {
-      card3Cmp=`<div class="cmp">沒有前 7 天可比</div>`;
+  const prev7=days.slice(-8,-1);
+  const avg=arr=>arr.length?arr.reduce((a,b)=>a+b,0)/arr.length:null;
+  const pctDiff=(now,base)=>(base>0&&now!=null)?Math.round((now-base)/base*100):null;
+  // 卡 1：件數 vs 前 7 天平均件數／天
+  const prevItemsAvg=avg(prev7.map(d=>countedItems(d).length));
+  const card1Cmp=prevItemsAvg==null?'':`<div class="cmp">前 7 天平均 ${prevItemsAvg.toFixed(1)} 件／天</div>`;
+  // 卡 2：額度 vs 前 7 天平均（萬 token／天），少＝綠
+  const prevTokAvg=avg(prev7.map(d=>(d.tokens_main_wan||0)+(d.tokens_sub_wan||0)));
+  const tokPct=pctDiff(todayTot,prevTokAvg);
+  let card2Cmp='';
+  if(tokPct==null)card2Cmp='<div class="cmp">沒有前 7 天可比</div>';
+  else if(tokPct===0)card2Cmp='<div class="cmp">跟前 7 天平均一樣</div>';
+  else card2Cmp=`<div class="cmp ${tokPct<0?'save':'cost'}">比前 7 天平均${tokPct<0?'少':'多'} ${Math.abs(tokPct)}%</div>`;
+  // 卡 3：今天平均分 vs 前 7 天平均分（只有 5 分算過關，越高越好）
+  const todayScores=(today.scores||[]).map(s=>+s.score).filter(s=>s>=1&&s<=5);
+  const prevScores=[];prev7.forEach(d=>(d.scores||[]).forEach(s=>{const v=+s.score;if(v>=1&&v<=5)prevScores.push(v);}));
+  const todayAvg=avg(todayScores), prevAvg=avg(prevScores);
+  let card3Num,card3Lbl,card3Cmp='';
+  if(todayAvg==null){
+    card3Num='—';card3Lbl='今天還沒打分';
+    if(prevAvg!=null)card3Cmp=`<div class="cmp">前 7 天平均 ${prevAvg.toFixed(1)} 分</div>`;
+  }else{
+    card3Num=todayAvg.toFixed(1);card3Lbl=`今天你打的平均分（${todayScores.length} 次）`;
+    if(prevAvg==null)card3Cmp='<div class="cmp">沒有前 7 天可比</div>';
+    else{
+      const diff=todayAvg-prevAvg;
+      if(Math.abs(diff)<0.05)card3Cmp=`<div class="cmp">跟前 7 天平均一樣（${prevAvg.toFixed(1)} 分）</div>`;
+      else card3Cmp=`<div class="cmp ${diff>0?'save':'cost'}">比前 7 天平均${diff>0?'高':'低'} ${Math.abs(diff).toFixed(1)} 分（${prevAvg.toFixed(1)}→${todayAvg.toFixed(1)}）</div>`;
     }
   }
   document.getElementById('cards').innerHTML=`
-    <div class="card"><div class="num">${todayItems.length}</div><div class="unit">件</div><div class="lbl">今天做了幾件</div></div>
-    <div class="card"><div class="num">${todayTot.toFixed(0)}</div><div class="unit">萬 token</div><div class="lbl">今天花了多少額度</div></div>
-    <div class="card"><div class="num">${card3Num}</div><div class="unit">萬 token／件</div><div class="lbl">${card3Lbl}</div>${card3Cmp}</div>
+    <div class="card"><div class="num">${todayItems.length}</div><div class="unit">件</div><div class="lbl">今天做了幾件</div>${card1Cmp}</div>
+    <div class="card"><div class="num">${todayTot.toFixed(0)}</div><div class="unit">萬 token</div><div class="lbl">今天花了多少額度</div>${card2Cmp}</div>
+    <div class="card"><div class="num">${card3Num}</div><div class="unit">分（滿分 5）</div><div class="lbl">${card3Lbl}</div>${card3Cmp}</div>
   `;
   document.getElementById('today-proj-title').textContent=`今天（${today.date}）按專案`;
 
-  document.getElementById('proj-legend').innerHTML=
-    projTop.map((p,i)=>`<span><span class="sw" style="background:${PROJ_SLOTS[i]}"></span>${esc(p)}</span>`).join('')+
-    `<span><span class="sw" style="background:var(--zero)"></span>其他</span>`;
+  // 條上寫「N 件・專案」、條下列全部件數，已足夠對色，不再另放一排圖例
   projSegBar(document.getElementById('today-bar'),todayItems,projMap);
 
   // ---- 專案 × 日期格子表 ----
@@ -379,7 +411,7 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
       const rgbVar=projRgbMap[p]||'var(--neutral-rgb)';
       const alpha=v<=0?0:0.2+0.7*(v/maxGridCell);
       const bg=v<=0?'transparent':`rgba(${rgbVar},${alpha.toFixed(2)})`;
-      const fg=alpha>0.6?'var(--on-dark)':'var(--ink)';
+      const fg=cellFg(rgbVar,alpha);
       gridHtml+=`<td class="cell" style="background:${bg};color:${fg}">${v>0?v:''}</td>`;
     });
     gridHtml+='</tr>';
@@ -422,19 +454,17 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
   rev.forEach(d=>{
     const items=countedItems(d);
     const n=items.length;
-    const byProj=countByProj(items,it=>it.project||'其他');
-    const order=Object.keys(byProj).sort((a,b)=>byProj[b]-byProj[a]);
-    const headline=n===0?`做了 0 件：—`:`做了 ${n} 件：`+order.map(p=>`${esc(p)} ${byProj[p]}`).join('、');
     const isToday=d.date===today.date;
 
+    // 標題只寫總件數；各專案幾件由條上字＋條下那行負責（跟頁頂「今天按專案」同一套，不再兩處各列一遍）
     const card=document.createElement('div');card.className='day';
     const head=document.createElement('div');head.className='day-head';
-    head.innerHTML=`<span class="headline">${esc(d.date)}${isToday?'（今天）':''}　${headline}</span><span class="rule">規則 v${rulesVersion}</span>`;
+    head.innerHTML=`<span class="headline">${esc(d.date)}${isToday?'（今天）':''}　做了 ${n} 件</span>`;
     card.appendChild(head);
 
     const bar=document.createElement('div');bar.className='segbar';
-    projSegBar(bar,items,projMap);
     card.appendChild(bar);
+    projSegBar(bar,items,projMap);
 
     const det=document.createElement('details');det.className='toggle';
     const sum=document.createElement('summary');sum.textContent='看每一件';
@@ -476,6 +506,8 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
     card.appendChild(det);
     daysDiv.appendChild(card);
   });
+  // 清單收在 details 裡，排版前量不到寬度；第一次展開時再量一次、切掉塞不下的條上字
+  daysDiv.closest('details').addEventListener('toggle',()=>{daysDiv.querySelectorAll('.segbar').forEach(trimSegLabels);});
 
   // ---- 額度熱圖：行＝主帳號／分身，列＝各模型，紅綠代表花得合不合理 ----
   const MODEL_KEYS=['opus','sonnet','haiku','fable','other'];
@@ -505,54 +537,66 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
   // ---- 額度：一格一天日條（分身·Opus／分身·Sonnet／主帳號·Opus／主帳號·Sonnet） ----
   function acctVal(d,acct,model){const src=acct==='main'?(d.tokens_by_model_main||{}):(d.tokens_by_model_sub||{});return +(src[model]||0);}
   (function(){
-    const ROWS=[['分身 · Opus','sub','opus','s1'],['分身 · Sonnet','sub','sonnet','s1'],['主帳號 · Opus','main','opus','s2'],['主帳號 · Sonnet','main','sonnet','s2']];
+    // 列改成「帳號 × 貴／便宜模型」四列＋合計：貴＝Opus/Fable、便宜＝Sonnet/Haiku（跟上表紅綠規則同一條線），
+    // 這樣 Haiku／Fable 的花費不會漏掉（原本只列 Opus／Sonnet，09-19 主帳號 Haiku 179 萬就不見了），
+    // 每一格用 modelKey 代表色：貴的用 opus、便宜的用 sonnet，紅綠判斷不變
+    const ROWS=[
+      ['分身','貴模型','sub',['opus','fable'],'opus'],
+      ['分身','便宜模型','sub',['sonnet','haiku'],'sonnet'],
+      ['主帳號','貴模型','main',['opus','fable'],'opus'],
+      ['主帳號','便宜模型','main',['sonnet','haiku'],'sonnet']
+    ];
+    const ALL_MODELS=['opus','sonnet','haiku','fable','other'];
     const n=days.length, half=Math.max(0,n-7);
-    function sumRange(acct,model,from,to){let s=0;for(let i=from;i<to;i++)s+=acctVal(days[i],acct,model);return s;}
+    const rowVal=(d,acct,models)=>models.reduce((s,m)=>s+acctVal(d,acct,m),0);
+    const totVal=d=>rowVal(d,'main',ALL_MODELS)+rowVal(d,'sub',ALL_MODELS);
+    const sumRange=(fn,from,to)=>{let s=0;for(let i=from;i<to;i++)s+=fn(days[i]);return s;};
 
-    const prevSubOpus=sumRange('sub','opus',0,half), nearSubOpus=sumRange('sub','opus',half,n);
-    let h2Text;
-    if(prevSubOpus<=0){
-      h2Text=`分身 Opus：近 ${n-half} 天共 ${Math.round(nearSubOpus)} 萬，資料還不夠比前一週。`;
-    }else{
-      const diff=nearSubOpus-prevSubOpus;
-      const pct=Math.round(Math.abs(diff)/prevSubOpus*100);
-      h2Text=Math.abs(diff)<1
-        ? `分身 Opus：近 7 天跟前 7 天差不多（${Math.round(prevSubOpus)}→${Math.round(nearSubOpus)} 萬）`
-        : `分身 Opus：近 7 天${diff<0?'少':'多'} ${pct}%（${Math.round(prevSubOpus)}→${Math.round(nearSubOpus)} 萬）`;
-    }
-    document.getElementById('dumbbell-h2').textContent=h2Text;
+    // 標題句答「額度有沒有變少」：先講兩個帳號全部加總，再講分身用貴模型（他最在意的那格）
+    const prevTot=sumRange(totVal,0,half), nearTot=sumRange(totVal,half,n);
+    const subExp=d=>rowVal(d,'sub',['opus','fable']);
+    const prevSubExp=sumRange(subExp,0,half), nearSubExp=sumRange(subExp,half,n);
+    const cmpText=(name,prev,near)=>{
+      if(prev<=0)return `${name}近 ${n-half} 天共 ${Math.round(near)} 萬（資料不夠比前一週）`;
+      const diff=near-prev, pct=Math.round(Math.abs(diff)/prev*100);
+      if(Math.abs(diff)<1)return `${name}近 7 天跟前 7 天差不多（${Math.round(prev)}→${Math.round(near)} 萬）`;
+      return `${name}近 7 天比前 7 天${diff<0?'少':'多'} ${pct}%（${Math.round(prev)}→${Math.round(near)} 萬）`;
+    };
+    document.getElementById('trend-h2').textContent=`每天怎麼花：${cmpText('全部額度',prevTot,nearTot)}；${cmpText('分身用貴模型',prevSubExp,nearSubExp)}`;
 
-    let html='';
-    ROWS.forEach(([label,acct,model,slot])=>{
-      const vals=days.map(d=>acctVal(d,acct,model));
-      const near=sumRange(acct,model,half,n);
+    // 欄＝日期，最後一欄＝近 7 天小計；手機（≤600px）只顯示近 7 天（14 天 16 欄在 390 寬擠到讀不了）
+    const oldCls=i=>(i<days.length-7?' class="d-old"':'');
+    let trendHtml='<thead><tr><th>帳號 · 模型</th>'+days.map((d,i)=>`<th${oldCls(i)}>${d.date.slice(8,10)}</th>`).join('')+'<th>近 7 天</th></tr></thead><tbody>';
+    const rowHtml=(labelHtml,labelPlain,valFn,styleFn,cls)=>{
+      const vals=days.map(valFn);
+      const near=sumRange(valFn,half,n);
       const maxV=Math.max(...vals,0.0001);
-      html+='<div class="daybar">';
-      html+=`<div class="lbl"><span class="dot" style="background:var(--${slot})"></span><span class="name">${esc(label)}</span><span class="amt">近 7 天 ${Math.round(near)} 萬</span></div>`;
-      html+='<div class="cells">';
+      let h=`<tr${cls?` class="${cls}"`:''}><td class="rowlbl">${labelHtml}</td>`;
       vals.forEach((v,i)=>{
         const d=days[i];
-        const title=`${fmtDate(d.date)} ${label} ${v.toFixed(0)} 萬`;
+        const title=`${fmtDate(d.date)} ${labelPlain} ${v.toFixed(0)} 萬`;
+        const oc=i<days.length-7?' d-old':'';
         if(v<=0){
-          html+=`<div class="cell empty" title="${esc(title)}">·</div>`;
+          h+=`<td class="cell${oc}" title="${esc(title)}">·</td>`;
         }else{
-          const a=0.08+0.82*(v/maxV);
-          const bg=`rgba(var(--${slot}-rgb),${a.toFixed(2)})`;
-          const fg=a>0.5?'var(--on-dark)':'var(--ink)';
-          const rv=Math.round(v);
-          const fsStyle=String(rv).length>=4?';font-size:8.5px':'';
-          html+=`<div class="cell" style="background:${bg};color:${fg}${fsStyle}" title="${esc(title)}">${rv}</div>`;
+          const {bg,fg}=styleFn(v,maxV);
+          h+=`<td class="cell${oc}" style="background:${bg};color:${fg}" title="${esc(title)}">${fmtKM(v)}</td>`;
         }
       });
-      html+='</div></div>';
+      h+=`<td class="cell">${fmtKM(near)}</td></tr>`;
+      return h;
+    };
+    ROWS.forEach(([acctLabel,kindLabel,acct,models,modelKey])=>{
+      const full=`（${models.map(m=>m[0].toUpperCase()+m.slice(1)).join('/')}）`;
+      const labelHtml=`${esc(acctLabel)} · ${esc(kindLabel)}<span class="d-full">${esc(full)}</span>`;
+      // 他 12:44「分身熱圖顏色不對」：跟主熱圖同一套綠／紅規則（heatCellStyle）
+      trendHtml+=rowHtml(labelHtml,`${acctLabel} ${kindLabel}`,d=>rowVal(d,acct,models),(v,maxV)=>heatCellStyle(acct,modelKey,v,maxV),'');
     });
-    html+='<div class="daxis">'+days.map(d=>{
-      const isToday=d.date===today.date;
-      const dd=d.date.slice(8,10);
-      return `<span class="${isToday?'today':''}">${dd}${isToday?'今':''}</span>`;
-    }).join('')+'</div>';
+    // 合計列：兩帳號、全部模型；灰階（不分好壞）
+    trendHtml+=rowHtml('合計','合計',totVal,(v,maxV)=>heatCellStyle('main','other',v,maxV),'total');
+    trendHtml+='</tbody>';
 
-    document.getElementById('trend-table').innerHTML=html;
+    document.getElementById('trend-table').innerHTML=trendHtml;
   })();
 
   // ---- 分數點陣：每天一排點，一點一筆，五色 ----
@@ -560,6 +604,20 @@ fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return
   document.getElementById('score-legend').innerHTML=[5,4,3,2,1].map(s=>
     `<span><span class="sw round" style="background:${scoreColor(s)}"></span>${s} 分＝${scoreMeaning[s]}</span>`
   ).join('');
+  // 一句答「品質有沒有變好」：近 7 天平均分 vs 前 7 天平均分
+  {
+    const sc=list=>{const a=[];list.forEach(d=>(d.scores||[]).forEach(s=>{const v=+s.score;if(v>=1&&v<=5)a.push(v);}));return a;};
+    const near=sc(days.slice(-7)), prev=sc(days.slice(0,Math.max(0,days.length-7)));
+    const na=avg(near), pa=avg(prev);
+    const el=document.getElementById('score-sub');
+    if(na==null)el.textContent='近 7 天沒有打分紀錄。';
+    else if(pa==null)el.textContent=`近 7 天平均 ${na.toFixed(1)} 分（${near.length} 次），前 7 天沒有紀錄可比。`;
+    else{
+      const diff=na-pa;
+      const word=Math.abs(diff)<0.05?'跟前 7 天一樣':(diff>0?`比前 7 天高 ${diff.toFixed(1)} 分`:`比前 7 天低 ${Math.abs(diff).toFixed(1)} 分`);
+      el.textContent=`近 7 天平均 ${na.toFixed(1)} 分（${near.length} 次），${word}（前 7 天 ${pa.toFixed(1)} 分、${prev.length} 次）。`;
+    }
+  }
   const scoreGrid=document.getElementById('score-grid');
   rev.forEach(d=>{
     const scores=d.scores||[];
