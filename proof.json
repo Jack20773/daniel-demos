@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T17:00+08:00",
+  "generated_at": "2026-09-20T18:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3335,33 +3335,33 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 29,
+      "commits": 32,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 26,
-      "discord_replies": 60,
-      "tokens_main_wan": 128.3,
-      "tokens_sub_wan": 296.6,
-      "tokens_sessions": 34,
-      "tokens_msgs": 1560,
+      "subagent_runs": 28,
+      "discord_replies": 62,
+      "tokens_main_wan": 139.1,
+      "tokens_sub_wan": 313.7,
+      "tokens_sessions": 36,
+      "tokens_msgs": 1764,
       "tokens_by_model": {
-        "opus": 278.7,
-        "sonnet": 59.4,
-        "haiku": 13.4,
-        "fable": 73.5,
+        "opus": 280.1,
+        "sonnet": 70.5,
+        "haiku": 19.3,
+        "fable": 82.8,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 97.0,
+        "opus": 98.4,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 31.4,
+        "fable": 40.7,
         "other": 0.0
       },
       "tokens_by_model_sub": {
         "opus": 181.7,
-        "sonnet": 59.4,
-        "haiku": 13.4,
+        "sonnet": 70.5,
+        "haiku": 19.3,
         "fable": 42.1,
         "other": 0.0
       },
@@ -3440,35 +3440,65 @@
           "time": "14:21",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 5,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "line-booking 任務書：補「2026-09-20 改版：客人進設定」回報節（staging a72cd02e）",
-          "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "16:42",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "line-booking 客人進設定：分頁列回 6 格（今日／時段設定／報表／服務管理／商品／設定），時段設定與服務管…",
-          "project": "預約系統",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "16:39",
-          "repo": "root"
         },
         {
           "kind": "commit",
           "text": "line-booking 第 2 批接手：測試 port 8799→8851/8853 避開本機占用；任務書回報節填實…",
           "project": "預約系統",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/48aaacb5ab0cfb90d512ee763312a0e0f582f141",
+          "evidence_label": "commit 48aaacb",
+          "verified": true,
           "time": "15:31",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "line-booking 客人進設定：分頁列回 6 格（今日／時段設定／報表／服務管理／商品／設定），時段設定與服務管…",
+          "project": "預約系統",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/951ba4d562eb81b3242f1c377f51e2dd3f3330d0",
+          "evidence_label": "commit 951ba4d",
+          "verified": true,
+          "time": "16:39",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "line-booking 任務書：補「2026-09-20 改版：客人進設定」回報節（staging a72cd02e）",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/91abd85f8075196758429940c1cb1c0046a6da24",
+          "evidence_label": "commit 91abd85",
+          "verified": true,
+          "time": "16:42",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "EasyDraw v2 做完入庫 90efe22（17:4x）：已在 http://192.168.0.192:8899 上線（server 已重啟）；主 session 補驗鎖 seed（同 seed 加一字 diff 8.7% vs 換",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/90efe228e6ab7ba16fc19872713a1c0ba2ae3cf4",
+          "evidence_label": "commit 90efe22",
+          "verified": true,
+          "time": "17:18",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 9,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工 09-20 傍晚本機棒：EasyDraw v2 交付＋他提新方向（不只跑壓縮版／模仿業界＋原生模型）待 DC 評…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "17:41",
           "repo": "root"
         },
         {
@@ -3506,6 +3536,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:26",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T17:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "17:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3667,7 +3706,7 @@
           "time": null
         }
       ],
-      "notes": "另有 24 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21）"
+      "notes": "另有 23 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 23）"
     }
   ]
 }
