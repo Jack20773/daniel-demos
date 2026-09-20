@@ -1,285 +1,7 @@
 {
-  "generated_at": "2026-09-20T23:00+08:00",
+  "generated_at": "2026-09-21T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-09-07",
-      "commits": 18,
-      "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 33,
-      "discord_replies": 118,
-      "tokens_main_wan": 253.9,
-      "tokens_sub_wan": 557.0,
-      "tokens_sessions": 41,
-      "tokens_msgs": 3014,
-      "tokens_by_model": {
-        "opus": 532.2,
-        "sonnet": 236.7,
-        "haiku": 11.8,
-        "fable": 30.2,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 253.9,
-        "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 278.3,
-        "sonnet": 236.7,
-        "haiku": 11.8,
-        "fable": 30.2,
-        "other": 0.0
-      },
-      "score_avg": 3.71,
-      "score_low": 2,
-      "score_high": 5,
-      "scores": [
-        {
-          "score": 5,
-          "time": "2026-09-07 00:02"
-        },
-        {
-          "score": 4,
-          "time": "2026-09-07 10:49"
-        },
-        {
-          "score": 2,
-          "time": "2026-09-07 10:55"
-        },
-        {
-          "score": 4,
-          "time": "2026-09-07 10:59"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-07 11:10"
-        },
-        {
-          "score": 2,
-          "time": "2026-09-07 12:00"
-        },
-        {
-          "score": 4,
-          "time": "2026-09-07 13:51"
-        }
-      ],
-      "corrections_new": 6,
-      "highlights": [
-        "只改註解：19 句「叉叉」過期敘述改回中文「刪除」，並修正一句寫反的",
-        "紅線 19→20 同步：N20 上三份 harness 檔＋檢查器母數更新＋白工台帳補兩筆",
-        "line-booking：課程刪除四件套上線（刪前擋／刪後標記不改值／一鍵改諮詢／大類快照）"
-      ],
-      "items": [
-        {
-          "kind": "commit",
-          "text": "只改註解：19 句「叉叉」過期敘述改回中文「刪除」，並修正一句寫反的",
-          "project": "預約系統",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a126e4c54f50ceb415bec2c356a8e93fcbd8b654",
-          "evidence_label": "commit a126e4c",
-          "verified": true,
-          "time": "13:33",
-          "plain": "改了程式碼旁邊的說明，把 19 句舊的、用符號表示的改回正確的中文，還改了其中一句寫反的。這樣下次別人改這段程式，看說明就能快速懂它在幹嘛，不會被舊資訊迷惑。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "紅線 19→20 同步：N20 上三份 harness 檔＋檢查器母數更新＋白工台帳補兩筆",
-          "project": "制度",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7b1a901d87b89006e1372366190ef837b63372f7",
-          "evidence_label": "commit 7b1a901",
-          "verified": true,
-          "time": "13:33",
-          "plain": "把新規則記進三份監督檔、更新計數、補工作記錄兩筆，讓所有系統都看得到並用上新規則。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "line-booking：課程刪除四件套上線（刪前擋／刪後標記不改值／一鍵改諮詢／大類快照）",
-          "project": "預約系統",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/76f66f7c1cd25e9b21eb2e1d0aef028bf0cf069b",
-          "evidence_label": "commit 76f66f7",
-          "verified": true,
-          "time": "15:17",
-          "plain": "預約系統推出課程刪除功能。它會先檢查再刪、刪完只記錄不改資料、一個按鈕改諮詢、還會留課程分類備份。這樣即使刪錯了資料也還在，可以救回來。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "殘留物盤點收尾：漏 commit 的 13 份產出入版控＋.gitignore 補五個洞",
-          "project": "遠端",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b367c6eb8b83e293448ca8c27be2a82b93bb946f",
-          "evidence_label": "commit b367c6e",
-          "verified": true,
-          "time": "22:17",
-          "plain": "把 13 個沒被存進去的檔案都補上，又修好了禁止名單的 5 個漏洞。這樣就不會有遺漏的東西，也不會不小心把不該追蹤的檔案跟著存進去。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "折扣 demo：三個裝一頁可比較＋砍到只剩折扣、預設結帳畫面",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2cfc2cb2a2f7620d2bba2a7882720ac169e4ed83",
-          "evidence_label": "commit 2cfc2cb",
-          "verified": true,
-          "time": "22:49",
-          "plain": "把折扣方案簡化，三個選項放在一個畫面讓人一眼看清，刪掉多餘的東西只留折扣和結帳。因為選擇簡單清楚，人會更快決定，不會搞混。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "折扣 demo：拿掉比較表、切換器移到最上面、順序改儲值方案優先",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/9fdb914c2ab252112f028a320c393b31feb1a29b",
-          "evidence_label": "commit 9fdb914",
-          "verified": true,
-          "time": "23:23",
-          "plain": "改了折扣頁面的設計：把選擇按鈕放最上面、移除對比表、把儲值方案排第一，讓人進來就能馬上看到最推薦的方案。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "demo 頂端橫條：深色改淺色 sticky（他 23:27 抱怨的那條）",
-          "project": "報告站",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cbacfdf62a8810f8ef408dd61dacfdb8e0c3dcfe",
-          "evidence_label": "commit cbacfdf",
-          "verified": true,
-          "time": "23:37",
-          "plain": "把報告站頂端的橫條從深色改成淺色，讓它一直黏在最上面，因為你晚上23點27分說太暗了。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "D 案：結帳自由填折數＋可自設的常用折扣（他 23:10 點頭的規格）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7febfc78a5b94d023b9b34aad447c5149769554c",
-          "evidence_label": "commit 7febfc7",
-          "verified": true,
-          "time": "23:49",
-          "plain": "付錢的時候，現在可以自己決定打幾折，還可以把常用的折扣先保存起來，不用每次都重新打。他夜裡十點同意要做成這樣。",
-          "plain_ok": true
-        }
-      ],
-      "items_count": 8,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "收工（縮減版，上下文 211k 觸發重開）：D 案規格已確認待實作",
-          "project": "看板",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "23:27",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工（縮減版，上下文 200k 觸發重開）：line-booking 折扣介面三 demo 交付＋ai-trader …",
-          "project": "看板",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "22:02",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工（縮減版，上下文 201k 觸發重開）：交接寫全＋B 案已裁決待下一棒實作",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "20:31",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工（縮減版，上下文 205k 觸發重開）：交接寫全＋收工 SKILL 回流一條更正",
-          "project": "看板",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "14:00",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工：課程永久刪除上線（migration 0021 動正式庫）＋他唸第三次的「改好就推」升級成 N20",
-          "project": "預約系統",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "13:18",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工重開：line-booking 三次部署上線＋他教的「回答前三步」立成台帳票",
-          "project": "看板",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "11:19",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工重開：line-booking 報表頁改版成記帳簿（已寫完測完，部署被記憶體擋下待下一棒重推）",
-          "project": "看板",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "02:02",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "探測 log：任何非真實探測的行都標 simulated=，不准冒充成真的「幾點通」",
-          "project": "交易機器人",
-          "reason": "no_remote",
-          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
-          "time": "21:08",
-          "repo": "ai-trader"
-        },
-        {
-          "kind": "commit",
-          "text": "daily_run：敲不到 Gateway 改成每 15 分鐘重試到 23:30，且一天只跑一次",
-          "project": "交易機器人",
-          "reason": "no_remote",
-          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
-          "time": "20:58",
-          "repo": "ai-trader"
-        },
-        {
-          "kind": "commit",
-          "text": "修 review_batch 回傳順序錯位：風控決策會配到別筆訂單，真的送錯單",
-          "project": "交易機器人",
-          "reason": "no_remote",
-          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
-          "time": "19:27",
-          "repo": "ai-trader"
-        }
-      ],
-      "selfreport": [
-        {
-          "text": "正式庫 migration 0021 已套（17 queries／425 rows written）：47→47 筆、service_id notnull=0、on_delete=SET NULL、7 個索引逐名確認、無殘留輔助表；動刀前已",
-          "time": null
-        },
-        {
-          "text": "兩道閘門各擋一次且都擋對：①schema 漂移（程式已改、正式庫未改）②路由契約測試（新開 POST /:secret/api/services/:id/delete 未登記凍結清單，58→59 已補登記＋理由）。第三次部署跑中。",
-          "time": null
-        },
-        {
-          "text": "daily/ 全目錄錨點掃描本棒已做：62 檔、零檔案有多組活錨點（上一棒交接記載的「7 檔違規」已不存在，該敘述過期）。今天這檔活錨點 1/1。",
-          "time": null
-        }
-      ],
-      "notes": "另有 10 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7、repo 沒有 GitHub remote（沒有可點連結） 3）"
-    },
     {
       "date": "2026-09-08",
       "commits": 11,
@@ -3335,33 +3057,33 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 43,
+      "commits": 53,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 38,
-      "discord_replies": 84,
-      "tokens_main_wan": 181.9,
-      "tokens_sub_wan": 423.4,
-      "tokens_sessions": 47,
-      "tokens_msgs": 2193,
+      "subagent_runs": 41,
+      "discord_replies": 106,
+      "tokens_main_wan": 215.6,
+      "tokens_sub_wan": 447.4,
+      "tokens_sessions": 52,
+      "tokens_msgs": 2459,
       "tokens_by_model": {
-        "opus": 406.9,
+        "opus": 460.5,
         "sonnet": 70.5,
-        "haiku": 27.4,
+        "haiku": 31.4,
         "fable": 100.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 123.5,
+        "opus": 157.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 58.5,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 283.4,
+        "opus": 303.4,
         "sonnet": 70.5,
-        "haiku": 27.4,
+        "haiku": 31.4,
         "fable": 42.1,
         "other": 0.0
       },
@@ -3552,10 +3274,112 @@
           "time": "22:59",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "23:03–23:29 遠端棒（fa5ecf92）EasyDraw 三件已交付、全部 push、已上線：①23:02 他改規格（1551247262129332349）「兩段式刪除＋回收桶（隱私）」→ commit 355683f：dele",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/355683f3b481dc99bda9d5b58ca8cf3dc9e21814",
+          "evidence_label": "commit 355683f",
+          "verified": true,
+          "time": "23:18",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 修翻譯逾時把 mock 假字送去畫圖：翻譯端點 120 秒、翻譯中狀態可見、出圖先等翻譯、失敗改用原…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a85ff9f4385b7a0d0a5c84fa3f0eebe5bee2eeb8",
+          "evidence_label": "commit a85ff9f",
+          "verified": true,
+          "time": "23:23",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 翻譯只是輔助：英文欄有字就直接畫（不等翻譯、翻譯結果不蓋掉自己打的英文）、中文空只有英文也能出圖、最…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8cba18b6852817453f56ecf968fc6becca30323e",
+          "evidence_label": "commit 8cba18b",
+          "verified": true,
+          "time": "23:28",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 從圖庫／回收桶刪除或永久刪除時，「本次出圖」同一張的結果卡片同步移除",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/47f579485056d6f4608b39e8c275bdeb53c1461b",
+          "evidence_label": "commit 47f5794",
+          "verified": true,
+          "time": "23:34",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 最近用過的關鍵字改成可展開清單，每列可填入或 ✕：✕ 把用過該關鍵字的圖全部移到回收桶（兩段確認），…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/be34c95bff0fa1577c41706bcf7e860c554dbcdd",
+          "evidence_label": "commit be34c95",
+          "verified": true,
+          "time": "23:39",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw sdxl 風格詞拿掉 vibrant colors（他 23:38 反映圖偏粉，WAI 一鮮豔就往粉…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/171170ffc573de2d9e17276ea219b648f8777331",
+          "evidence_label": "commit 171170f",
+          "verified": true,
+          "time": "23:40",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 關鍵字清單改成獨立便條紙：✕ 只藏字（keywords_hidden.json）不動圖；新 GET …",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1328f8b275a427999d4c96a4a463dcc5ce91525d",
+          "evidence_label": "commit 1328f8b",
+          "verified": true,
+          "time": "23:45",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 14,
+      "items_count": 21,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "遠端 9/20 深夜棒收工（縮減版，上下文 203k）：EasyDraw 七件回饋全交付（回收桶／翻譯逾時／英文直通／…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:54",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "遠端 9/20 晚棒收工（縮減版，上下文 203k）：EasyDraw 畫質升級＋看圖器兩輪＋根因修法交付；根因報告入…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:02",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "遠端 9/20 下午棒收工（縮減版，上下文 202k）：line-booking 第 2 批接手＋客人進設定改版兩輪 …",
@@ -3609,6 +3433,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:26",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T23:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3824,7 +3657,51 @@
           "time": null
         }
       ],
-      "notes": "另有 29 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 29）"
+      "notes": "另有 32 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 32）"
+    },
+    {
+      "date": "2026-09-21",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 0.0,
+      "tokens_sessions": 0,
+      "tokens_msgs": 0,
+      "tokens_by_model": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
