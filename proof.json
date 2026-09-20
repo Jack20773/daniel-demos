@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T22:00+08:00",
+  "generated_at": "2026-09-20T23:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3335,43 +3335,47 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 37,
+      "commits": 43,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 32,
-      "discord_replies": 71,
-      "tokens_main_wan": 155.9,
-      "tokens_sub_wan": 353.8,
-      "tokens_sessions": 41,
-      "tokens_msgs": 1916,
+      "subagent_runs": 38,
+      "discord_replies": 84,
+      "tokens_main_wan": 181.9,
+      "tokens_sub_wan": 423.4,
+      "tokens_sessions": 47,
+      "tokens_msgs": 2193,
       "tokens_by_model": {
-        "opus": 333.7,
+        "opus": 406.9,
         "sonnet": 70.5,
-        "haiku": 22.7,
-        "fable": 82.8,
+        "haiku": 27.4,
+        "fable": 100.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 115.2,
+        "opus": 123.5,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 40.7,
+        "fable": 58.5,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 218.5,
+        "opus": 283.4,
         "sonnet": 70.5,
-        "haiku": 22.7,
+        "haiku": 27.4,
         "fable": 42.1,
         "other": 0.0
       },
       "score_avg": 4.0,
       "score_low": 0,
-      "score_high": 1,
+      "score_high": 2,
       "scores": [
         {
           "score": 4,
           "time": "2026-09-20 02:44"
+        },
+        {
+          "score": 4,
+          "time": "2026-09-20 22:27"
         }
       ],
       "corrections_new": 0,
@@ -3488,9 +3492,69 @@
           "time": "17:18",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "18:48–18:52 畫質差距評估＋市場調查已交付（1551183466882662410 附 16 張對照圖／1551184125082341450），評估 三行回讀已送（1551184171857223732）→ 22:25 他回「這",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f9f07e386f27e312987376f2d9a473145d03e0df",
+          "evidence_label": "commit f9f07e3",
+          "verified": true,
+          "time": "22:41",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 看圖器 5 項：左右切換（滑動／←→／兩側箭頭）、結果卡片點圖也開、張數指示、Esc 關閉、可捲動全…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2b1942cabdb3c45a97117c5bebaf6c7a73b6a7f7",
+          "evidence_label": "commit 2b1942c",
+          "verified": true,
+          "time": "22:51",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 看圖器：電腦寬螢幕直圖限高 80vh（張數指示不用往下捲）；TASK 補看圖器 5 項驗收",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3b78d7dc22ad841f76f99ee1e789a8499cc5cbb8",
+          "evidence_label": "commit 3b78d7d",
+          "verified": true,
+          "time": "22:52",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 看圖器改固定畫框：不捲動、圖自動縮進畫框、箭頭／關閉／底部按鈕列固定可點，加「看原圖」新分頁",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/c0ac44203c993cdada265835396bbd7c2fa2b281",
+          "evidence_label": "commit c0ac442",
+          "verified": true,
+          "time": "22:58",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "修法：退役 7 對「等他點頭」矛盾條文（MEMORY 例外②拿掉上線、03_judgment 部署/訂閱、評估 §6 …",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/dcc0a2ddbc668dc5db086c98fd63aacf9bddef2d",
+          "evidence_label": "commit dcc0a2d",
+          "verified": true,
+          "time": "22:59",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 9,
+      "items_count": 14,
       "skipped": [
         {
           "kind": "commit",
@@ -3545,6 +3609,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:26",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T22:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "22:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3749,13 +3822,9 @@
         {
           "text": "初音 4 張＋怎麼用（11:31）、ComfyUI HANDOFF.md（11:43）、檢測員 inspector.py＋09:12 排程（11:46）都已交付；等他回是否要調整（他沒回不催）。",
           "time": null
-        },
-        {
-          "text": "18:48–18:52 畫質差距評估＋市場調查已交付（1551183466882662410 附 16 張對照圖／1551184125082341450），評估 三行回讀已送（1551184171857223732）→ 等他「同意」才動工；",
-          "time": null
         }
       ],
-      "notes": "另有 28 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 28）"
+      "notes": "另有 29 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 29）"
     }
   ]
 }
