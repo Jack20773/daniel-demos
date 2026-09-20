@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T10:00+08:00",
+  "generated_at": "2026-09-20T11:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3335,33 +3335,33 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 12,
+      "commits": 13,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 4,
-      "discord_replies": 26,
-      "tokens_main_wan": 40.2,
-      "tokens_sub_wan": 38.9,
-      "tokens_sessions": 8,
-      "tokens_msgs": 452,
+      "subagent_runs": 6,
+      "discord_replies": 31,
+      "tokens_main_wan": 46.5,
+      "tokens_sub_wan": 58.3,
+      "tokens_sessions": 10,
+      "tokens_msgs": 557,
       "tokens_by_model": {
-        "opus": 76.0,
+        "opus": 98.3,
         "sonnet": 0.0,
-        "haiku": 3.2,
+        "haiku": 6.5,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 40.2,
+        "opus": 46.5,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 35.8,
+        "opus": 51.8,
         "sonnet": 0.0,
-        "haiku": 3.2,
+        "haiku": 6.5,
         "fable": 0.0,
         "other": 0.0
       },
@@ -3396,6 +3396,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:26",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T10:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "10:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3489,7 +3498,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 12 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 12）"
+      "notes": "另有 13 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 13）"
     }
   ]
 }
