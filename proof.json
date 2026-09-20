@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T15:01+08:00",
+  "generated_at": "2026-09-20T16:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3335,34 +3335,34 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 24,
+      "commits": 26,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 22,
-      "discord_replies": 53,
-      "tokens_main_wan": 98.6,
-      "tokens_sub_wan": 199.7,
-      "tokens_sessions": 29,
-      "tokens_msgs": 1127,
+      "subagent_runs": 24,
+      "discord_replies": 59,
+      "tokens_main_wan": 106.3,
+      "tokens_sub_wan": 225.9,
+      "tokens_sessions": 31,
+      "tokens_msgs": 1230,
       "tokens_by_model": {
-        "opus": 240.4,
+        "opus": 268.1,
         "sonnet": 0.0,
         "haiku": 13.4,
-        "fable": 44.5,
+        "fable": 50.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 88.6,
+        "opus": 94.8,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 10.0,
+        "fable": 11.5,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 151.8,
+        "opus": 173.3,
         "sonnet": 0.0,
         "haiku": 13.4,
-        "fable": 34.5,
+        "fable": 39.2,
         "other": 0.0
       },
       "score_avg": 4.0,
@@ -3446,6 +3446,15 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "line-booking 第 2 批接手：測試 port 8799→8851/8853 避開本機占用；任務書回報節填實…",
+          "project": "預約系統",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "15:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "遠端 9/20 中午棒收工（縮減版，上下文 206k）：初音 4 張＋HANDOFF＋檢測員 inspector＋N2…",
           "project": "記憶",
           "reason": "automated",
@@ -3479,6 +3488,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:26",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T15:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3622,7 +3640,7 @@
           "time": null
         }
       ],
-      "notes": "另有 19 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
+      "notes": "另有 21 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 20）"
     }
   ]
 }
