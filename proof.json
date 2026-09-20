@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T03:01+08:00",
+  "generated_at": "2026-09-21T04:02+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3661,33 +3661,33 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 15,
+      "commits": 23,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 8,
+      "subagent_runs": 23,
       "discord_replies": 37,
-      "tokens_main_wan": 44.5,
-      "tokens_sub_wan": 163.8,
-      "tokens_sessions": 10,
-      "tokens_msgs": 774,
+      "tokens_main_wan": 64.4,
+      "tokens_sub_wan": 231.0,
+      "tokens_sessions": 25,
+      "tokens_msgs": 1006,
       "tokens_by_model": {
-        "opus": 208.3,
+        "opus": 256.7,
         "sonnet": 0.0,
-        "haiku": 0.0,
+        "haiku": 38.7,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 44.5,
+        "opus": 64.4,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 163.8,
+        "opus": 192.3,
         "sonnet": 0.0,
-        "haiku": 0.0,
+        "haiku": 38.7,
         "fable": 0.0,
         "other": 0.0
       },
@@ -3839,12 +3839,84 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "EVAL 線 A：tag 數 1,217（check_dict 實跑）",
+          "project": "easy-draw",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:58",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "EVAL 線 A：字典條數對齊（1,086 條／1,221 tag）",
+          "project": "easy-draw",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:58",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "EVAL 線 A：8899 已重啟、v2 上線實測補記",
+          "project": "easy-draw",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:57",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "API.md §2 /api/translate 補 v2 三段管線、新回應欄位、開關與模型設定",
+          "project": "easy-draw",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:47",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 線 A 字典補邊界詞（風格／花生／雨衣／火山／書包等 22 條；日式／中國風改交給模型）",
+          "project": "easy-draw",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:46",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 隔夜線 B 第一階段：A/B 台架 scripts/ab_bench.py（12 題固定 seed、…",
+          "project": "easy-draw",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:36",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 隔夜線 A（語意／翻譯層）：Danbooru 字典 1066 條＋85 角色、翻譯 v2 三段管線（…",
+          "project": "easy-draw",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "遠端 9/21 凌晨棒收工（縮減版，上下文 207k）：§11 標籤分類收工更新交接；下一棒第一件＝外網固定入口",
           "project": "記憶",
           "reason": "automated",
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "02:03",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T03:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3874,8 +3946,13 @@
           "repo": "daniel-demos"
         }
       ],
-      "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
+      "selfreport": [
+        {
+          "text": "04:0x 線 A 分身交付（本地 commit 56b2862…8dbe66e，未 push）：翻譯 v2＝字典（1,086 詞＋85 角色，外觀 tag 由 danbooru 共現統計）→7b few-shot 8 組→tag 對 14",
+          "time": null
+        }
+      ],
+      "notes": "另有 12 筆 commit 未列（未 push 7、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
     }
   ]
 }
