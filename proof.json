@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T19:00+08:00",
+  "generated_at": "2026-09-20T20:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3335,24 +3335,24 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 34,
+      "commits": 35,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 32,
       "discord_replies": 71,
-      "tokens_main_wan": 152.0,
+      "tokens_main_wan": 154.0,
       "tokens_sub_wan": 353.8,
       "tokens_sessions": 41,
-      "tokens_msgs": 1877,
+      "tokens_msgs": 1893,
       "tokens_by_model": {
-        "opus": 329.7,
+        "opus": 331.7,
         "sonnet": 70.5,
         "haiku": 22.7,
         "fable": 82.8,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 111.2,
+        "opus": 113.2,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 40.7,
@@ -3548,6 +3548,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T19:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "19:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-20T18:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -3722,9 +3731,13 @@
         {
           "text": "初音 4 張＋怎麼用（11:31）、ComfyUI HANDOFF.md（11:43）、檢測員 inspector.py＋09:12 排程（11:46）都已交付；等他回是否要調整（他沒回不催）。",
           "time": null
+        },
+        {
+          "text": "18:48–18:52 畫質差距評估＋市場調查已交付（1551183466882662410 附 16 張對照圖／1551184125082341450），評估 三行回讀已送（1551184171857223732）→ 等他「同意」才動工；",
+          "time": null
         }
       ],
-      "notes": "另有 25 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25）"
+      "notes": "另有 26 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 26）"
     }
   ]
 }
