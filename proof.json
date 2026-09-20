@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T14:00+08:00",
+  "generated_at": "2026-09-20T15:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3335,34 +3335,34 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 17,
+      "commits": 24,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 15,
-      "discord_replies": 46,
-      "tokens_main_wan": 80.4,
-      "tokens_sub_wan": 131.3,
-      "tokens_sessions": 21,
-      "tokens_msgs": 822,
+      "subagent_runs": 22,
+      "discord_replies": 53,
+      "tokens_main_wan": 98.6,
+      "tokens_sub_wan": 199.7,
+      "tokens_sessions": 29,
+      "tokens_msgs": 1127,
       "tokens_by_model": {
-        "opus": 185.8,
+        "opus": 240.4,
         "sonnet": 0.0,
-        "haiku": 8.5,
-        "fable": 17.3,
+        "haiku": 13.4,
+        "fable": 44.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 76.0,
+        "opus": 88.6,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 4.4,
+        "fable": 10.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 109.8,
+        "opus": 151.8,
         "sonnet": 0.0,
-        "haiku": 8.5,
-        "fable": 12.9,
+        "haiku": 13.4,
+        "fable": 34.5,
         "other": 0.0
       },
       "score_avg": 4.0,
@@ -3376,7 +3376,9 @@
       ],
       "corrections_new": 0,
       "highlights": [
-        "紅線 N21（先給整體計畫，不准聽一句修一句；09-18 三犯）＋ lint/sync 硬編碼 20→常數 18（N1…"
+        "紅線 N21（先給整體計畫，不准聽一句修一句；09-18 三犯）＋ lint/sync 硬編碼 20→常數 18（N1…",
+        "file_audit：git_tracked 欄（GitIndex 一次 ls-files）、同 size 才算 sh…",
+        "月度制度防漂移審計 2026-09-20（唯讀）：六項＋07 層級體檢結果 append AUDIT_LOG；_las…"
       ],
       "items": [
         {
@@ -3390,10 +3392,67 @@
           "time": "14:00",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "file_audit：git_tracked 欄（GitIndex 一次 ls-files）、同 size 才算 sh…",
+          "project": "會計部",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1054d562101ab72bf2fe0422cf15e1b9a5ffb5cf",
+          "evidence_label": "commit 1054d56",
+          "verified": true,
+          "time": "14:01",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "月度制度防漂移審計 2026-09-20（唯讀）：六項＋07 層級體檢結果 append AUDIT_LOG；_las…",
+          "project": "制度",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/14a818a9a2b12d9d7d9a5c36c4a4ea9b254e768b",
+          "evidence_label": "commit 14a818a",
+          "verified": true,
+          "time": "14:08",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "easy-draw：手機可用的一句話出圖網頁（動漫 03c／寫實 Z-Image／影片 Wan）＋啟動器＋桌面捷徑；Z…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/336108bc9e36eb253a9a994c044a71ff216e90fc",
+          "evidence_label": "commit 336108b",
+          "verified": true,
+          "time": "14:15",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "審計後續：索引檔相對路徑補 000_Agent/ 前綴 24 處；紅線標題 20/19→18；sync_redline…",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/92af34da57d0d7b02c760253b7b6937e11bb289f",
+          "evidence_label": "commit 92af34d",
+          "verified": true,
+          "time": "14:21",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 1,
+      "items_count": 5,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "遠端 9/20 中午棒收工（縮減版，上下文 206k）：初音 4 張＋HANDOFF＋檢測員 inspector＋N2…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:22",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "遠端 9/20 上午棒：檢測員 inspector.py＋排程 QuotaAudit_Inspector 09:12（…",
@@ -3420,6 +3479,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:26",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T14:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3554,7 +3622,7 @@
           "time": null
         }
       ],
-      "notes": "另有 17 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17）"
+      "notes": "另有 19 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
     }
   ]
 }
