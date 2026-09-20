@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T02:01+08:00",
+  "generated_at": "2026-09-21T03:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3661,31 +3661,31 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 9,
+      "commits": 15,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 4,
-      "discord_replies": 19,
-      "tokens_main_wan": 18.3,
-      "tokens_sub_wan": 104.8,
-      "tokens_sessions": 5,
-      "tokens_msgs": 494,
+      "subagent_runs": 8,
+      "discord_replies": 37,
+      "tokens_main_wan": 44.5,
+      "tokens_sub_wan": 163.8,
+      "tokens_sessions": 10,
+      "tokens_msgs": 774,
       "tokens_by_model": {
-        "opus": 123.1,
+        "opus": 208.3,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 18.3,
+        "opus": 44.5,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 104.8,
+        "opus": 163.8,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -3775,8 +3775,8 @@
           "plain_ok": false
         },
         {
-          "kind": "commit",
-          "text": "EasyDraw PLAN §11 圖庫改標籤分類：Ollama 背景抽標籤（job 建立時＋啟動 10 秒後補舊圖，…",
+          "kind": "note",
+          "text": "§11 標籤分類 commit 105f782 已 push 已上線（補跑 02:01 剩 78）；專區回收桶 bug（子切換排太後面手機看不到）同 commit 修；已回他（1551292396724297849）。",
           "project": "easy-draw",
           "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/105f7825421731f5a3ea1c0d0d345d9c4a817b1d",
@@ -3785,10 +3785,76 @@
           "time": "01:59",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "外網固定入口上線 https://easydraw-entry.line-booking.workers.dev（commit 278d21b 已 push；02:26 我自己 curl 驗：302→隧道、無 cookie 200 登入頁／",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/278d21b99f5f2c07effb3b84adc9d872f35d3736",
+          "evidence_label": "commit 278d21b",
+          "verified": true,
+          "time": "02:25",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw SDXL 預設 CFG 7→6（他 02:31 貼的 WAI v17 建議表；解析度／採樣器／步數原…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/5eaf07d571b416ce2b86df61b4a383a87588fd9b",
+          "evidence_label": "commit 5eaf07d",
+          "verified": true,
+          "time": "02:32",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "計畫書填版本錨點 2ffadb0",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7beb751ceafd6c4d8b664d3658f04bffd50f7be7",
+          "evidence_label": "commit 7beb751",
+          "verified": true,
+          "time": "02:42",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 隔夜強化計畫書（語意／品質／效率三線，他 02:35 交辦、02:37 四題裁決 1A2A3A4B）",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2ffadb0bb2a2ea1dbe72942aecf63860804126c9",
+          "evidence_label": "commit 2ffadb0",
+          "verified": true,
+          "time": "02:42",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 7,
+      "items_count": 11,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "遠端 9/21 凌晨棒收工（縮減版，上下文 207k）：§11 標籤分類收工更新交接；下一棒第一件＝外網固定入口",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:03",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T02:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:01",
+          "repo": "daniel-demos"
+        },
         {
           "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-21T01:01+08:00 (days=14 ite…",
@@ -3809,7 +3875,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 2 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
+      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
     }
   ]
 }
