@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T05:00+08:00",
+  "generated_at": "2026-09-21T06:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3661,33 +3661,33 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 24,
+      "commits": 30,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 56,
-      "discord_replies": 37,
-      "tokens_main_wan": 64.4,
-      "tokens_sub_wan": 324.6,
-      "tokens_sessions": 58,
-      "tokens_msgs": 1229,
+      "subagent_runs": 64,
+      "discord_replies": 40,
+      "tokens_main_wan": 95.6,
+      "tokens_sub_wan": 368.0,
+      "tokens_sessions": 67,
+      "tokens_msgs": 1375,
       "tokens_by_model": {
-        "opus": 271.2,
+        "opus": 331.3,
         "sonnet": 0.0,
-        "haiku": 117.8,
+        "haiku": 132.4,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 64.4,
+        "opus": 95.6,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 206.8,
+        "opus": 235.7,
         "sonnet": 0.0,
-        "haiku": 117.8,
+        "haiku": 132.4,
         "fable": 0.0,
         "other": 0.0
       },
@@ -3776,7 +3776,7 @@
         },
         {
           "kind": "note",
-          "text": "§11 標籤分類 commit 105f782 已 push 已上線（補跑 02:01 剩 78）；專區回收桶 bug（子切換排太後面手機看不到）同 commit 修；已回他（1551292396724297849）。",
+          "text": "§11 標籤分類 commit 105f782 已 push 已上線；專區回收桶 bug 同 commit 修；已回他（1551292396724297849）。",
           "project": "easy-draw",
           "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/105f7825421731f5a3ea1c0d0d345d9c4a817b1d",
@@ -3833,71 +3833,149 @@
           "time": "02:42",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 11,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "EVAL 線 A：tag 數 1,217（check_dict 實跑）",
-          "project": "easy-draw",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "03:58",
-          "repo": "root"
         },
         {
-          "kind": "commit",
-          "text": "EVAL 線 A：字典條數對齊（1,086 條／1,221 tag）",
+          "kind": "note",
+          "text": "04:0x 線 A 分身交付（本地 commit 56b2862…8dbe66e，未 push）：翻譯 v2＝字典（1,086 詞＋85 角色，外觀 tag 由 danbooru 共現統計）→7b few-shot 8 組→tag 對 14",
           "project": "easy-draw",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "03:58",
-          "repo": "root"
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/56b286230b2998ba4358dbbfc93052ff00c9f51b",
+          "evidence_label": "commit 56b2862",
+          "verified": true,
+          "time": "03:31",
+          "plain": null,
+          "plain_ok": false
         },
         {
-          "kind": "commit",
-          "text": "EVAL 線 A：8899 已重啟、v2 上線實測補記",
+          "kind": "note",
+          "text": "05:2x 線 B 分身交付（本地 ad0406c／af16c5a）：採用 detailer 20→12 步＋預設掛 Hands Illu v1.1 LoRA 0.8（單張 36.7→31.2s、雙向盲評沒退步）；imgsz1024／hir",
           "project": "easy-draw",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "03:57",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "API.md §2 /api/translate 補 v2 三段管線、新回應欄位、開關與模型設定",
-          "project": "easy-draw",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "03:47",
-          "repo": "root"
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ad0406c48cd3676209ca7d066c9ccbe47ff70acc",
+          "evidence_label": "commit ad0406c",
+          "verified": true,
+          "time": "03:36",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
           "text": "EasyDraw 線 A 字典補邊界詞（風格／花生／雨衣／火山／書包等 22 條；日式／中國風改交給模型）",
           "project": "easy-draw",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/5d5aacf6e08180b8fdc5ba14334874b87b6ed5b4",
+          "evidence_label": "commit 5d5aacf",
+          "verified": true,
           "time": "03:46",
-          "repo": "root"
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
-          "text": "EasyDraw 隔夜線 B 第一階段：A/B 台架 scripts/ab_bench.py（12 題固定 seed、…",
+          "text": "API.md §2 /api/translate 補 v2 三段管線、新回應欄位、開關與模型設定",
           "project": "easy-draw",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "03:36",
-          "repo": "root"
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6c89cb85c01c587d359d30d3606ceee30298d775",
+          "evidence_label": "commit 6c89cb8",
+          "verified": true,
+          "time": "03:47",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
-          "text": "EasyDraw 隔夜線 A（語意／翻譯層）：Danbooru 字典 1066 條＋85 角色、翻譯 v2 三段管線（…",
+          "text": "EVAL 線 A：8899 已重啟、v2 上線實測補記",
           "project": "easy-draw",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "03:31",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2779848001576a30306fefea3e7a5a95197e6d13",
+          "evidence_label": "commit 2779848",
+          "verified": true,
+          "time": "03:57",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EVAL 線 A：tag 數 1,217（check_dict 實跑）",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8dbe66e09d709db1008d498e5923849989983451",
+          "evidence_label": "commit 8dbe66e",
+          "verified": true,
+          "time": "03:58",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EVAL 線 A：字典條數對齊（1,086 條／1,221 tag）",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ad99aef3b504c52c499fdbb6408fee20fa07d94c",
+          "evidence_label": "commit ad99aef",
+          "verified": true,
+          "time": "03:58",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 隔夜線 B＋C 完工：採用修臉修手 detailer 20→12 步＋預設掛 Hands Illu …",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/af16c5a2a78bbfbddd8cf8b45fef0416719bfde7",
+          "evidence_label": "commit af16c5a",
+          "verified": true,
+          "time": "05:21",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "05:25–05:38 收尾：審查分身抓到 6 個 bug（否定詞整句誤判、人數 tag 不互斥、validate_tag(\"_\") 500、兩顆手 LoRA 疊掛、history 記預設 LoRA、flux 連帶換 7b）→ 修復分身 3",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3b298188b915c42ab729e02a19cbfe803c171928",
+          "evidence_label": "commit 3b29818",
+          "verified": true,
+          "time": "05:35",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw PLAN §13 隔夜結論＋字典拿掉「無人」詞條（會把 no humans 塞進有人的正面）",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f4a85d7e067e9d2913568937d64297cf50501455",
+          "evidence_label": "commit f4a85d7",
+          "verified": true,
+          "time": "05:36",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "隔夜功課全交付（be65923 已 push）：翻譯 v2／detailer 12 步／預設修手 LoRA 上線，PLAN §13 有全部數字；05:38 已回他（1551346581448695928）。07:20 他驗收→看他回什麼再動",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/be659233fd733541d65d5992610bf7d0d5781730",
+          "evidence_label": "commit be65923",
+          "verified": true,
+          "time": "05:37",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 22,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "遠端 9/21 凌晨棒收工（縮減版，上下文 230k）：隔夜功課交付、外網入口、逆兔 LoRA、不附截圖偏好",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "05:38",
           "repo": "root"
         },
         {
@@ -3908,6 +3986,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "02:03",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T05:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "05:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3955,13 +4042,8 @@
           "repo": "daniel-demos"
         }
       ],
-      "selfreport": [
-        {
-          "text": "04:0x 線 A 分身交付（本地 commit 56b2862…8dbe66e，未 push）：翻譯 v2＝字典（1,086 詞＋85 角色，外觀 tag 由 danbooru 共現統計）→7b few-shot 8 組→tag 對 14",
-          "time": null
-        }
-      ],
-      "notes": "另有 13 筆 commit 未列（未 push 7、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
+      "selfreport": [],
+      "notes": "另有 8 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 8）"
     }
   ]
 }
