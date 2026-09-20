@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T01:01+08:00",
+  "generated_at": "2026-09-21T02:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3661,31 +3661,31 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 2,
+      "commits": 9,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 2,
-      "discord_replies": 6,
-      "tokens_main_wan": 6.9,
-      "tokens_sub_wan": 36.9,
-      "tokens_sessions": 3,
-      "tokens_msgs": 173,
+      "subagent_runs": 4,
+      "discord_replies": 19,
+      "tokens_main_wan": 18.3,
+      "tokens_sub_wan": 104.8,
+      "tokens_sessions": 5,
+      "tokens_msgs": 494,
       "tokens_by_model": {
-        "opus": 43.8,
+        "opus": 123.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 6.9,
+        "opus": 18.3,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 36.9,
+        "opus": 104.8,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -3697,7 +3697,9 @@
       "scores": [],
       "corrections_new": 0,
       "highlights": [
-        "EasyDraw 兩個看圖實驗：風格詞 A/B（4 題同 seed，開 3 勝 1 平→預設保持開、suffix 不改…"
+        "EasyDraw 兩個看圖實驗：風格詞 A/B（4 題同 seed，開 3 勝 1 平→預設保持開、suffix 不改…",
+        "EasyDraw PLAN §8 NSFW 專區（0000 開／0001 關）、§9 收尾三件、§10 設定記憶＋風格…",
+        "EasyDraw NSFW 專區（PLAN §8）＋收尾三件（§9 之 Flux ckpt_name、.bak 只留 …"
       ],
       "items": [
         {
@@ -3711,10 +3713,91 @@
           "time": "00:54",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw PLAN §8 NSFW 專區（0000 開／0001 關）、§9 收尾三件、§10 設定記憶＋風格…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/d2e4bbf34aebd68090fe44bb5176157870ff74db",
+          "evidence_label": "commit d2e4bbf",
+          "verified": true,
+          "time": "01:01",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw NSFW 專區（PLAN §8）＋收尾三件（§9 之 Flux ckpt_name、.bak 只留 …",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/05f0d7a093bb3d7d9c99daa1073c6ff615b57a39",
+          "evidence_label": "commit 05f0d7a",
+          "verified": true,
+          "time": "01:06",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw PLAN §11 圖庫改標籤分類（他 01:14 交辦）",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/bc8ab92a8a79b37db9296d04ee1a94c5dad4b48d",
+          "evidence_label": "commit bc8ab92",
+          "verified": true,
+          "time": "01:16",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw PLAN §10 設定記憶＋風格詞開關：prefs.json（GET/POST /api/prefs…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/d6069442f5918e14e91d470eaf8e4eb7bbcfecf8",
+          "evidence_label": "commit d606944",
+          "verified": true,
+          "time": "01:23",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "遠端 9/21 凌晨棒交接（縮減版，上下文 207k）：NSFW 專區／設定記憶／實驗上線；外網選 B＋Vercel …",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f2cd3786f439abf46eb4cab8d93bf60cdb760b68",
+          "evidence_label": "commit f2cd378",
+          "verified": true,
+          "time": "01:58",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw PLAN §11 圖庫改標籤分類：Ollama 背景抽標籤（job 建立時＋啟動 10 秒後補舊圖，…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/105f7825421731f5a3ea1c0d0d345d9c4a817b1d",
+          "evidence_label": "commit 105f782",
+          "verified": true,
+          "time": "01:59",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 1,
+      "items_count": 7,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T01:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:01",
+          "repo": "daniel-demos"
+        },
         {
           "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-21T00:00+08:00 (days=14 ite…",
@@ -3726,7 +3809,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 1 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
+      "notes": "另有 2 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
     }
   ]
 }
