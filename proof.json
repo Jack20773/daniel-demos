@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T11:00+08:00",
+  "generated_at": "2026-09-20T12:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3335,33 +3335,33 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 13,
+      "commits": 14,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 6,
-      "discord_replies": 31,
-      "tokens_main_wan": 46.5,
-      "tokens_sub_wan": 58.3,
-      "tokens_sessions": 10,
-      "tokens_msgs": 557,
+      "subagent_runs": 10,
+      "discord_replies": 44,
+      "tokens_main_wan": 60.9,
+      "tokens_sub_wan": 85.2,
+      "tokens_sessions": 15,
+      "tokens_msgs": 682,
       "tokens_by_model": {
-        "opus": 98.3,
+        "opus": 137.6,
         "sonnet": 0.0,
-        "haiku": 6.5,
+        "haiku": 8.5,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 46.5,
+        "opus": 60.9,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 51.8,
+        "opus": 76.7,
         "sonnet": 0.0,
-        "haiku": 6.5,
+        "haiku": 8.5,
         "fable": 0.0,
         "other": 0.0
       },
@@ -3396,6 +3396,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:26",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T11:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3497,8 +3506,13 @@
           "repo": "daniel-demos"
         }
       ],
-      "selfreport": [],
-      "notes": "另有 13 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 13）"
+      "selfreport": [
+        {
+          "text": "初音 4 張＋怎麼用（11:31）、ComfyUI HANDOFF.md（11:43）、檢測員 inspector.py＋09:12 排程（11:46）都已交付；等他回是否要調整（他沒回不催）。",
+          "time": null
+        }
+      ],
+      "notes": "另有 14 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 14）"
     }
   ]
 }
