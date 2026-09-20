@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T16:00+08:00",
+  "generated_at": "2026-09-20T17:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3335,34 +3335,34 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 26,
+      "commits": 29,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 24,
-      "discord_replies": 59,
-      "tokens_main_wan": 106.3,
-      "tokens_sub_wan": 225.9,
-      "tokens_sessions": 31,
-      "tokens_msgs": 1230,
+      "subagent_runs": 26,
+      "discord_replies": 60,
+      "tokens_main_wan": 128.3,
+      "tokens_sub_wan": 296.6,
+      "tokens_sessions": 34,
+      "tokens_msgs": 1560,
       "tokens_by_model": {
-        "opus": 268.1,
-        "sonnet": 0.0,
+        "opus": 278.7,
+        "sonnet": 59.4,
         "haiku": 13.4,
-        "fable": 50.7,
+        "fable": 73.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 94.8,
+        "opus": 97.0,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 11.5,
+        "fable": 31.4,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 173.3,
-        "sonnet": 0.0,
+        "opus": 181.7,
+        "sonnet": 59.4,
         "haiku": 13.4,
-        "fable": 39.2,
+        "fable": 42.1,
         "other": 0.0
       },
       "score_avg": 4.0,
@@ -3446,6 +3446,24 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "line-booking 任務書：補「2026-09-20 改版：客人進設定」回報節（staging a72cd02e）",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:42",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "line-booking 客人進設定：分頁列回 6 格（今日／時段設定／報表／服務管理／商品／設定），時段設定與服務管…",
+          "project": "預約系統",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:39",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "line-booking 第 2 批接手：測試 port 8799→8851/8853 避開本機占用；任務書回報節填實…",
           "project": "預約系統",
           "reason": "unpushed",
@@ -3488,6 +3506,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:26",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T16:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3640,7 +3667,7 @@
           "time": null
         }
       ],
-      "notes": "另有 21 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 20）"
+      "notes": "另有 24 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21）"
     }
   ]
 }
