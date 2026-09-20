@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-20T18:00+08:00",
+  "generated_at": "2026-09-20T19:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3335,33 +3335,33 @@
     },
     {
       "date": "2026-09-20",
-      "commits": 32,
+      "commits": 34,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 28,
-      "discord_replies": 62,
-      "tokens_main_wan": 139.1,
-      "tokens_sub_wan": 313.7,
-      "tokens_sessions": 36,
-      "tokens_msgs": 1764,
+      "subagent_runs": 32,
+      "discord_replies": 71,
+      "tokens_main_wan": 152.0,
+      "tokens_sub_wan": 353.8,
+      "tokens_sessions": 41,
+      "tokens_msgs": 1877,
       "tokens_by_model": {
-        "opus": 280.1,
+        "opus": 329.7,
         "sonnet": 70.5,
-        "haiku": 19.3,
+        "haiku": 22.7,
         "fable": 82.8,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 98.4,
+        "opus": 111.2,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 40.7,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 181.7,
+        "opus": 218.5,
         "sonnet": 70.5,
-        "haiku": 19.3,
+        "haiku": 22.7,
         "fable": 42.1,
         "other": 0.0
       },
@@ -3494,6 +3494,15 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "遠端 9/20 下午棒收工（縮減版，上下文 202k）：line-booking 第 2 批接手＋客人進設定改版兩輪 …",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "收工 09-20 傍晚本機棒：EasyDraw v2 交付＋他提新方向（不只跑壓縮版／模仿業界＋原生模型）待 DC 評…",
           "project": "記憶",
           "reason": "automated",
@@ -3536,6 +3545,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:26",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-20T18:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3706,7 +3724,7 @@
           "time": null
         }
       ],
-      "notes": "另有 23 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 23）"
+      "notes": "另有 25 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25）"
     }
   ]
 }
