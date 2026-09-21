@@ -1,190 +1,7 @@
 {
-  "generated_at": "2026-09-21T23:00+08:00",
+  "generated_at": "2026-09-22T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-09-08",
-      "commits": 11,
-      "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 32,
-      "discord_replies": 21,
-      "tokens_main_wan": 119.7,
-      "tokens_sub_wan": 203.6,
-      "tokens_sessions": 39,
-      "tokens_msgs": 843,
-      "tokens_by_model": {
-        "opus": 252.3,
-        "sonnet": 25.1,
-        "haiku": 3.5,
-        "fable": 42.4,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 118.6,
-        "sonnet": 1.0,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 133.7,
-        "sonnet": 24.1,
-        "haiku": 3.5,
-        "fable": 42.4,
-        "other": 0.0
-      },
-      "score_avg": 2.0,
-      "score_low": 1,
-      "score_high": 0,
-      "scores": [
-        {
-          "score": 2,
-          "time": "2026-09-08 01:22"
-        }
-      ],
-      "corrections_new": 3,
-      "highlights": [
-        "Fable 5.1 功課交付＋N6 規則修訂（他打 2 分：訂閱制不是 API 額度）",
-        "派工器根因 2：正常 stderr 被當成終止性錯誤（已用對照組實測）",
-        "折扣 demo：版面改成一張網頁＋新增 E/F/G 三個不同思路"
-      ],
-      "items": [
-        {
-          "kind": "commit",
-          "text": "Fable 5.1 功課交付＋N6 規則修訂（他打 2 分：訂閱制不是 API 額度）",
-          "project": "看板",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e6d51ce9ac446be9e3390b81c7ecff322e0d10ab",
-          "evidence_label": "commit e6d51ce",
-          "verified": true,
-          "time": "02:07",
-          "plain": "把 Fable 5.1 的工作做好交出去，然後修改規則書，改成訂閱制不用特別報價。因為他說訂閱制就像辦月票，用多少都不用另外加錢。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "派工器根因 2：正常 stderr 被當成終止性錯誤（已用對照組實測）",
-          "project": "看板",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/fb820827ffba0623eb67383f6ace502c9cd0da4d",
-          "evidence_label": "commit fb82082",
-          "verified": true,
-          "time": "02:27",
-          "plain": "派工器把正常的工作訊息搞混成出問題的信號，所以它以為有問題就停下來，但根本沒事——已經用測試驗證過這個搞混真的會發生。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "折扣 demo：版面改成一張網頁＋新增 E/F/G 三個不同思路",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/d1d51e248877a25823c2afe32baac3979425e164",
-          "evidence_label": "commit d1d51e2",
-          "verified": true,
-          "time": "02:27",
-          "plain": "把折扣展示重新整理成一張網頁，並且加進了三種不同的想法，這樣他可以有更多選擇。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "派工器根因 1：寫入口忙碌被誤判成「lease 被別人搶走」，改為退避重試",
-          "project": "看板",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6bab11cf1fdb532dbd59011554c3f311ed3e19b1",
-          "evidence_label": "commit 6bab11c",
-          "verified": true,
-          "time": "03:03",
-          "plain": "把派工系統改聰明了。以前它窗口忙的時候，會以為別人搶走了它的工作權，現在改成先讓一讓，等一下再重新試試，就不會搞混了。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "派工器根因 3：預算閘門 fail-open（usage.jsonl 讀不到＝無限預算），改成 fail-closed",
-          "project": "看板",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3a1efcacae2f9044feb8edf58899a79ad6cf2f77",
-          "evidence_label": "commit 3a1efca",
-          "verified": true,
-          "time": "03:48",
-          "plain": "分配工作的系統有個管錢的門，原本壞掉時大門敞開讓錢無限花，改成壞掉時大門關上停止花錢。這樣才不怕花太多錢。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": ".gitignore：linechat-digest-site 比照 linechat-digest 不進母 repo",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8aeae39274cd70afc3581af32cf518265c7e5078",
-          "evidence_label": "commit 8aeae39",
-          "verified": true,
-          "time": "03:51",
-          "plain": "改了一個設定，讓 linechat-digest-site 這個資料夾被跳過，就跟 linechat-digest 一樣，這樣才不會把不必要的東西都存起來。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "派工器待辦①：read_usage_window() 靜默跳壞行，改成不准無聲",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a92f892e566e50974d0b9b74ede5c7e6a019a65b",
-          "evidence_label": "commit a92f892",
-          "verified": true,
-          "time": "09:44",
-          "plain": "派工程式裡有個讀記錄的步驟，以前看到壞掉的資料會安靜地跳過，現在改成一定要警告一聲。這樣才能及早發現問題在哪，不然會無聲無息地卡住。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "派工器待辦①下半：read_state_changes() 的四種靜默，含最陰險的那種",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a2fcef22fb2e08868fede0fd7677b52608977b96",
-          "evidence_label": "commit a2fcef2",
-          "verified": true,
-          "time": "20:45",
-          "plain": "要找出派工器在四種情況下都沒反應的原因，特別是那種最難被注意到的情況。這樣才能保證重要的訊息不會偷偷漏掉。",
-          "plain_ok": true
-        }
-      ],
-      "items_count": 8,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "收工：派工器三根因全修完上線，但候選票 0 張——水塔是空的",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "04:01",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "收工：派工器根因 1 第五次再現（45 分鐘週期），下一棒先修鎖不是先改時間",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "02:46",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "daily log 09-08：折扣 demo 版面改造＋E/F/G 交付、派工器根因 2 實測修好",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "02:29",
-          "repo": "root"
-        }
-      ],
-      "selfreport": [
-        {
-          "text": "已確認跑的是 paper（4002）不是真錢——scheduled_daily_run.ps1:211 寫明偵測到 live Gateway 就拒絕開跑；因此補跑不屬於「要花錢／不可逆」，我可自行執行。",
-          "time": null
-        }
-      ],
-      "notes": "另有 3 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
-    },
     {
       "date": "2026-09-09",
       "commits": 8,
@@ -3661,24 +3478,24 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 66,
+      "commits": 68,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 85,
-      "discord_replies": 113,
-      "tokens_main_wan": 200.9,
+      "discord_replies": 119,
+      "tokens_main_wan": 208.8,
       "tokens_sub_wan": 717.4,
       "tokens_sessions": 92,
-      "tokens_msgs": 2742,
+      "tokens_msgs": 2805,
       "tokens_by_model": {
-        "opus": 644.4,
+        "opus": 652.3,
         "sonnet": 0.0,
         "haiku": 148.7,
         "fable": 125.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 200.9,
+        "opus": 208.8,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -3700,7 +3517,7 @@
           "time": "2026-09-21 16:09"
         }
       ],
-      "corrections_new": 2,
+      "corrections_new": 3,
       "highlights": [
         "EasyDraw 兩個看圖實驗：風格詞 A/B（4 題同 seed，開 3 勝 1 平→預設保持開、suffix 不改…",
         "EasyDraw PLAN §8 NSFW 專區（0000 開／0001 關）、§9 收尾三件、§10 設定記憶＋風格…",
@@ -4156,6 +3973,15 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "test/e2e.mjs：店家總覽整點測試離整點 ≤150s 先等過去、D-4 錯開整點從 +2 起跳——閘門第 8 …",
+          "project": "預約系統",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "遠端 9/21 夜棒收工（縮減版，上下文 206k）：line-booking 會員中心第一版上正式站、第二版（個人資…",
           "project": "預約系統",
           "reason": "automated",
@@ -4207,6 +4033,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "02:03",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T23:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4430,7 +4265,51 @@
           "time": null
         }
       ],
-      "notes": "另有 29 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 29）"
+      "notes": "另有 31 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 30）"
+    },
+    {
+      "date": "2026-09-22",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 0.0,
+      "tokens_sessions": 0,
+      "tokens_msgs": 0,
+      "tokens_by_model": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
