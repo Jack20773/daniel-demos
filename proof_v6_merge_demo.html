@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>AI 每天做了什麼（v6 demo：近 7 天一張圖）</title>
+<style>
+  :root{color-scheme:light;--bg:#fcfcfb;--card:#fff;--ink:#0b0b0b;--ink-2:#52514e;--ink-3:#898781;--line:#e6e5e1;--accent:#2a78d6;--accent-bg:#e9f1fb;--warn:#a05a00;--warn-bg:#fff3e0;--muted-bg:#f3f2ee;
+    --zero:#c3c2b7;
+    --s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--s6:#008300;--s7:#4a3aa7;
+    --s1-rgb:42,120,214;--s2-rgb:235,104,52;--s3-rgb:27,175,122;--s4-rgb:237,161,0;--s5-rgb:232,123,164;--s6-rgb:0,131,0;--s7-rgb:74,58,167;
+    --good:#0f7a3d;--bad:#d32f2f;--good-rgb:15,122,61;--bad-rgb:211,47,47;--on-dark:#fff;--neutral-rgb:137,135,129;
+    --sc1:#7b1fa2;--sc2:#d32f2f;--sc3:#c9a000;--sc4:#2a78d6;--sc5:#0f7a3d}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
+    --zero:#383835;
+    --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;
+    --s1-rgb:57,135,229;--s2-rgb:217,89,38;--s3-rgb:25,158,112;--s4-rgb:201,133,0;--s5-rgb:213,81,129;--s6-rgb:0,131,0;--s7-rgb:144,133,233;
+    --good:#3fae72;--bad:#ef5350;--good-rgb:63,174,114;--bad-rgb:239,83,80;--neutral-rgb:150,148,140;
+    --sc1:#ba68c8;--sc2:#ef5350;--sc3:#f0d060;--sc4:#5b9cf0;--sc5:#3fae72}}
+  :root[data-theme="dark"]{color-scheme:dark;--bg:#111;--card:#1a1a1a;--ink:#f2f2f0;--ink-2:#b8b7b2;--ink-3:#898781;--line:#2c2c2a;--accent:#7fb0ef;--accent-bg:#17283d;--warn:#f0b060;--warn-bg:#2e2410;--muted-bg:#222;
+    --zero:#383835;
+    --s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--s6:#008300;--s7:#9085e9;
+    --s1-rgb:57,135,229;--s2-rgb:217,89,38;--s3-rgb:25,158,112;--s4-rgb:201,133,0;--s5-rgb:213,81,129;--s6-rgb:0,131,0;--s7-rgb:144,133,233;
+    --good:#3fae72;--bad:#ef5350;--good-rgb:63,174,114;--bad-rgb:239,83,80;--neutral-rgb:150,148,140;
+    --sc1:#ba68c8;--sc2:#ef5350;--sc3:#f0d060;--sc4:#5b9cf0;--sc5:#3fae72}
+  *{box-sizing:border-box}
+  html,body{overflow-x:hidden}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Noto Sans TC","PingFang TC",system-ui,sans-serif}
+  main{max-width:720px;margin:0 auto;padding:16px 16px 60px}
+  h1{font-size:20px;margin:0 0 12px}
+  h2{font-size:17px;margin:26px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--line)}
+  h3{font-size:14px;color:var(--ink-2);margin:14px 0 6px;font-weight:600}
+  .chartbox{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 12px 6px;margin:8px 0 16px}
+  .legend{display:flex;gap:12px;flex-wrap:wrap;font-size:13px;color:var(--ink-2);margin:0 0 8px}
+  .legend .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+  .legend .sw.round{border-radius:50%}
+
+  /* ---- 三張大數字卡 ---- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 0 16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 10px;text-align:center}
+  .card .num{font-size:26px;font-weight:800;line-height:1.1}
+  .card .unit{font-size:12px;color:var(--ink-2);margin-top:2px}
+  .card .lbl{font-size:12px;color:var(--ink-3);margin-top:4px}
+  .card .cmp{font-size:11px;margin-top:4px;color:var(--ink-3)}
+  .card .cmp.save{color:var(--good)}
+  .card .cmp.cost{color:var(--bad)}
+  @media(max-width:420px){.cards{gap:6px}.card{padding:9px 6px}.card .num{font-size:21px}}
+
+  .day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+  .day-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .headline{font-weight:700;font-size:15px}
+  .segbar{display:flex;width:100%;height:22px;border-radius:4px;overflow:hidden;margin:8px 0 2px;background:var(--muted-bg)}
+  .segbar .seg{height:100%;margin-right:2px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;color:var(--on-dark);text-shadow:0 0 2px rgba(0,0,0,.55);white-space:nowrap;overflow:hidden}
+  @media (max-width:600px){#trend-table .d-old{display:none}}
+  .segbar-label{font-size:12px;color:var(--ink-2);margin:2px 0 0}
+  .segbar .seg:last-child{margin-right:0}
+  .toggle{margin-top:8px}
+  .toggle > summary{cursor:pointer;color:var(--accent);font-size:14px;list-style:none;user-select:none}
+  .toggle > summary::-webkit-details-marker{display:none}
+  .toggle > summary::before{content:"▸ ";display:inline-block}
+  .toggle[open] > summary::before{content:"▾ "}
+  details.bigtoggle > summary{font-size:15px;font-weight:600;color:var(--ink);margin:4px 0 8px}
+  ul.items{list-style:none;margin:8px 0 0;padding:0}
+  ul.items li{padding:8px 0 8px 2px;border-top:1px dashed var(--line);overflow-wrap:anywhere;word-break:break-word}
+  ul.items .row1{display:grid;grid-template-columns:44px 12px 1fr;gap:6px 8px;align-items:start}
+  .empty{color:var(--ink-3);font-size:14px;padding:8px 0}
+  .t{color:var(--ink-3);font-variant-numeric:tabular-nums;font-size:14px;padding-top:2px}
+  .dot{width:10px;height:10px;border-radius:50%;margin-top:5px}
+  .kind{display:inline-block;font-size:12px;padding:1px 7px;border-radius:999px;background:var(--accent-bg);color:var(--accent);margin-right:6px}
+  .ev{display:block;font-size:14px;margin-top:3px;word-break:break-word}
+  .ev a{color:var(--accent);text-decoration:none}
+  .ev a:hover{text-decoration:underline}
+  .plain{font-size:14px;color:var(--ink);line-height:1.5}
+  .raw{margin:4px 0 0 52px;font-size:12px;color:var(--ink-3)}
+  .raw summary{cursor:pointer;color:var(--accent);list-style:none;display:inline}
+  .raw summary::-webkit-details-marker{display:none}
+  .raw summary::before{content:"▸ ";font-size:10px}
+  .raw[open] summary::before{content:"▾ "}
+  .raw .rawtext{margin-top:3px;line-height:1.5;overflow-wrap:anywhere;word-break:break-word}
+  .caption{font-size:14px;color:var(--ink-2);background:var(--muted-bg);border-radius:8px;padding:10px 12px;margin:0 0 10px}
+  .caption p{margin:4px 0}
+
+  /* ---- 熱圖表格（共用：額度熱圖／專案×日期格子表） ---- */
+  table.heat{width:100%;border-collapse:collapse;font-size:13px}
+  table.heat th,table.heat td{text-align:center;padding:8px 4px;border:1px solid var(--line)}
+  table.heat th{color:var(--ink-2);font-weight:600;font-size:12px;background:var(--muted-bg)}
+  table.heat th:first-child,table.heat td.rowlbl{text-align:left;padding-left:8px;font-weight:700;background:var(--muted-bg)}
+  table.heat td.cell{font-variant-numeric:tabular-nums;font-weight:600}
+  table.heat td.cell .cu{font-size:10px;font-weight:400;color:currentColor;opacity:.65;margin-left:1px}
+  @media(max-width:420px){table.heat td.cell .cu{font-size:9px}}
+  table.gridtable{width:100%;border-collapse:collapse;font-size:11px}
+  table.gridtable th,table.gridtable td{text-align:center;padding:5px 2px;border:1px solid var(--line)}
+  table.gridtable th{color:var(--ink-2);font-weight:600;font-size:10px;background:var(--muted-bg);white-space:nowrap}
+  table.gridtable th:first-child{text-align:left;padding-left:6px;font-weight:700;background:var(--muted-bg);font-size:12px;white-space:nowrap}
+  table.gridtable td.rowlbl{text-align:left;padding:0;font-weight:700;background:var(--muted-bg);font-size:12px}
+  table.gridtable td.cell{font-variant-numeric:tabular-nums;font-weight:700}
+  .gridwrap{overflow-x:hidden}
+  .gridtable .d-short{display:none}
+
+  /* ---- 專案列：可點展開的說明 ---- */
+  #grid-h2{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .grid-toggle-all{font-size:13px;font-weight:400;color:var(--accent);cursor:pointer;white-space:nowrap;background:none;border:none;padding:0;font-family:inherit;line-height:inherit}
+  .grid-toggle-all:hover{text-decoration:underline}
+  .gridtable .row-toggle{display:flex;align-items:center;gap:4px;width:100%;padding:5px 2px 5px 6px;background:none;border:none;font:inherit;font-weight:700;color:inherit;text-align:left;cursor:pointer}
+  .gridtable .row-toggle .ic{flex:none;width:10px;font-size:10px;color:var(--accent);text-align:center}
+  .gridtable .row-toggle .ic::before{content:"▸"}
+  .gridtable .row-toggle[aria-expanded="true"] .ic::before{content:"▾"}
+  .gridtable .row-toggle .lbl{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  tr.grid-explain td{text-align:left;white-space:normal;word-break:break-word;overflow-wrap:anywhere;font-weight:400;font-size:12px;color:var(--ink-2);background:var(--card);padding:8px 10px}
+
+  /* ---- 專案×日期格子表：手機（≤600px）縮欄位塞進 390 寬、不橫捲，最新在最右 ---- */
+  @media(max-width:600px){
+    table.heat{font-size:11px}
+    table.heat th,table.heat td{padding:6px 2px}
+    table.heat th:first-child,table.heat td.rowlbl{font-size:11px}
+
+    table.gridtable{table-layout:fixed;font-size:10px}
+    table.gridtable th,table.gridtable td{padding:4px 1px}
+    table.gridtable th:first-child{width:62px;max-width:62px;font-size:10px;padding:4px 3px}
+    table.gridtable td.rowlbl{width:62px;max-width:62px;font-size:10px;padding:0}
+    table.gridtable .row-toggle{padding:4px 3px}
+    table.gridtable th:not(:first-child),table.gridtable td.cell{width:auto}
+    .gridtable .d-full{display:none}
+    .gridtable .d-short{display:inline}
+    tr.grid-explain td{font-size:11px;padding:8px}
+
+    /* 走勢表（#trend-table）欄數跟格子表一樣多（14 天＋標籤＋小計），沿用同一招把欄縮窄塞進 390，
+       字級/色階/邊線仍是 table.heat 那一套，只有寬度是 fixed */
+    table.heat#trend-table{table-layout:fixed;font-size:10px}
+    table.heat#trend-table th,table.heat#trend-table td{padding:4px 1px}
+    table.heat#trend-table th:first-child,table.heat#trend-table td.rowlbl{width:44px;max-width:44px;font-size:9px;padding:4px 2px}
+    table.heat#trend-table th:not(:first-child),table.heat#trend-table td.cell{width:auto;font-size:10px}
+  }
+
+  .sub{font-size:12px;color:var(--ink-3);margin:-4px 0 10px}
+  /* 每天怎麼花：合計列（灰階）與行標籤的長短版（手機只留短版） */
+  table.heat#trend-table tr.total td{border-top:2px solid var(--ink-3)}
+  #trend-table .d-full{display:inline}
+  @media(max-width:600px){#trend-table .d-full{display:none}}
+
+  /* ---- 分數點陣（五色，一點一筆） ---- */
+  .scoregrid{display:flex;flex-direction:column;gap:6px}
+  .scorerow{display:grid;grid-template-columns:52px 1fr;align-items:center;gap:8px;font-size:12px;color:var(--ink-3)}
+  .scorerow .dots{display:flex;flex-wrap:wrap;gap:3px;align-items:center;min-width:0}
+  .scorerow .dots span{width:10px;height:10px;border-radius:50%;display:inline-block;flex:none}
+  .scorerow .dots .none{color:var(--ink-3);font-size:12px;white-space:nowrap;flex:none;width:auto;height:auto;border-radius:0}
+
+  /* ---- 近 7 天一張圖：三條軌道對齊同一排日期（自 ai_overview.html §2 搬來，14 欄→7 欄） ---- */
+  .legend .ramp{display:inline-block;width:56px;height:10px;border-radius:2px;vertical-align:-1px;margin:0 4px;background:linear-gradient(90deg,rgba(var(--neutral-rgb),.15),rgba(var(--neutral-rgb),.95))}
+  .tracks{display:grid;grid-template-columns:56px repeat(7,1fr);gap:0 3px;align-items:end}
+  .tracks .lab{font-size:12px;color:var(--ink-2);font-weight:600;line-height:1.2;padding-right:4px;align-self:center}
+  .tracks .lab small{display:block;font-weight:400;color:var(--ink-3);font-size:10px}
+  .tracks .dcol{text-align:center;font-size:11px;color:var(--ink-3);padding:4px 0 2px;border-top:1px solid var(--line)}
+  .tracks .dcol.today{color:var(--ink);font-weight:700}
+  .tracks .bar{height:110px;display:flex;flex-direction:column;justify-content:flex-end;cursor:pointer;border-radius:3px}
+  .tracks .bar .stk{display:flex;flex-direction:column-reverse;gap:2px;width:100%}
+  .tracks .bar .stk .seg{width:100%;border-radius:3px 3px 2px 2px;flex:1 1 0;margin:0}
+  .tracks .bar .cnt{font-size:11px;font-weight:700;color:var(--ink-2);text-align:center;line-height:1;margin-bottom:3px}
+  .tracks .bar.zero .cnt{color:var(--ink-3);font-weight:400}
+  .tracks .heat{height:30px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;font-variant-numeric:tabular-nums;margin:6px 0;cursor:pointer;background:var(--muted-bg);color:var(--ink-3)}
+  .tracks .dots{display:flex;flex-wrap:wrap;gap:2px;align-content:flex-start;justify-content:center;min-height:14px;padding:2px 1px;cursor:pointer}
+  .tracks .dots i{width:9px;height:9px;border-radius:50%;display:block}
+  .tracks .dots .none{width:6px;height:2px;border-radius:1px;background:var(--line);margin-top:4px}
+  .tracks .sel{outline:2px solid var(--ink);outline-offset:1px}
+  .readout{font-size:13px;color:var(--ink-2);background:var(--muted-bg);border-radius:8px;padding:8px 10px;margin:8px 0 6px;min-height:36px;line-height:1.5}
+  .readout b{color:var(--ink)}
+  @media(max-width:600px){
+    .tracks{grid-template-columns:42px repeat(7,1fr);gap:0 2px}
+    .tracks .lab{font-size:10px}.tracks .lab small{font-size:9px}
+    .tracks .dcol{font-size:10px}
+    .tracks .bar{height:84px}.tracks .bar .cnt{font-size:10px}
+    .tracks .heat{font-size:10px;height:26px}
+    .tracks .dots i{width:7px;height:7px}
+    .tracks .dots{gap:1px}
+  }
+
+  .footnote{font-size:12px;color:var(--ink-3);margin:36px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+  .footnote p{margin:4px 0}
+</style>
+</head>
+<body>
+<main>
+  <h1>AI 每天做了什麼</h1>
+  <p class="sub" id="data-asof"></p>
+
+  <div class="cards" id="cards"></div>
+
+  <h2>近 7 天一張圖：做了幾件、花多少、你打幾分</h2>
+  <div class="legend" id="track-legend"></div>
+  <div class="chartbox">
+    <div class="tracks" id="tracks"></div>
+    <div class="readout" id="readout">點任何一天的柱子、格子或點點，這裡會寫出那天的細節。</div>
+  </div>
+
+  <h2 id="grid-h2"><span class="grid-title">各專案近 <span class="ndays"></span> 天每天做了幾件（數字＝件數，顏色越深＝越多，最右一欄＝今天）</span> <button type="button" id="grid-toggle-all" class="grid-toggle-all">顯示各專案說明</button></h2>
+  <div class="chartbox"><div class="gridwrap"><table class="gridtable" id="grid-table"></table></div></div>
+
+  <details class="toggle bigtoggle">
+    <summary>看每天清單（<span class="ndays"></span> 天，每天一份，含證據連結）</summary>
+    <div id="days"></div>
+  </details>
+
+  <h2>近 <span class="ndays"></span> 天花了多少額度（萬 token；帳號 × 模型；顏色越深＝花越多）</h2>
+  <div class="legend" id="heat-legend">
+    <span><span class="sw" style="background:var(--good)"></span>綠＝花得剛好</span>
+    <span><span class="sw" style="background:var(--bad)"></span>紅＝可能沒必要花這麼多</span>
+    <span><span class="sw" style="background:rgb(var(--neutral-rgb))"></span>灰＝不分好壞</span>
+  </div>
+  <div class="chartbox"><table class="heat" id="heat-table"></table></div>
+
+  <details class="toggle bigtoggle">
+    <summary id="trend-h2"></summary>
+    <p class="sub">一格一天、越右越新，K＝千 token、M＝百萬 token；綠紅同上表，顏色越深花越多（每列各自比）。</p>
+    <div class="chartbox"><table class="heat" id="trend-table"></table></div>
+  </details>
+
+  <h2>你打的分數（1–5 分，一點＝一次評分，最新的一天在最上）</h2>
+  <div class="legend" id="score-legend"></div>
+  <p class="sub" id="score-sub"></p>
+  <div class="chartbox"><div class="scoregrid" id="score-grid"></div></div>
+
+  <div class="footnote">
+    <p><b>這頁證明什麼：</b>每天做了幾件、給哪幾個專案，點開看每一件的證據連結；額度看是不是都叫主帳號、都叫貴的模型做、有沒有越花越少；分數看品質有沒有變好。頁頂三張卡＝今天跟前 7 天平均比。</p>
+  </div>
+
+  <details class="toggle">
+    <summary>各區塊怎麼看（說明）</summary>
+    <div class="caption">
+      <h3>「一件」怎麼算</h3>
+      <p>依規則 v<span class="rules-ver"></span>：只算有驗證＋有證據連結的（commit／票／日誌對得上的），AI 自己寫「做完了」不算。每一件下面那句白話說明由程式自動產生。</p>
+      <h3>怎麼自己驗</h3>
+      <p>展開「看每天清單」再點「看每一件」，數清單行數＝標題上的數字；連結點得開才算數。</p>
+      <h3>近 7 天一張圖</h3>
+      <p>三條軌道對齊同一排日期：上排柱子＝那天做了幾件（數字寫在柱上）、中排格子＝那天花的額度（越深越多，K＝千 token、M＝百萬）、下排點點＝你那天打的分（一點一次，顏色同「你打的分數」那段）。點任何一天，圖下面那格會寫出那天的專案、額度拆帳、分數、commit 數。</p>
+      <h3>花了多少額度</h3>
+      <p>數字從我電腦裡的對話紀錄算出來的，跟 claude.ai 額度頁對不起來，只能看比例。紅或綠要配帳號看：分身做雜事卻用貴模型（Opus／Fable）、或主帳號做正事卻只捨得用便宜模型（Sonnet／Haiku）＝紅；正事用好模型、雜事用便宜模型＝綠。想確認分身是不是都用便宜模型，看「分身」那一列哪一欄顏色最深。</p>
+      <p>「每天怎麼花」那張：橫著看一列＝這個帳號用這類模型每天花多少；哪一天特別深就是那天特別燒；最下面「合計」列是兩個帳號、全部模型加起來。</p>
+      <h3>你打的分數</h3>
+      <p>只有 5 分算過關，其餘都是扣分。同一列由左到右＝當天打分的時間先後，最左邊最早；同一天出現好幾個點＝那天打了不只一次分。</p>
+    </div>
+  </details>
+</main>
+<script>
+
+function fmtDate(s){return s.slice(5).replace('-','/');}
+function countedItems(day){return (day.items||[]).filter(i=>i.verified&&i.evidence_url);}
+function esc(s){const d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+
+function plainText(it){
+  // 白話句由 proof_table.py --plain 產生；plain_ok 不是 true 或沒有 plain 時退回原文，不留空白
+  if(it.plain_ok===true&&it.plain)return it.plain;
+  return it.text||'';
+}
+
+const PROJ_DESC={
+  '預約系統':'LINE 預約系統（Cloudflare Workers），第一個商業客戶「又仟」實際在用；後台、客人名單、錢包都在這裡',
+  '股癌':'股癌 Podcast 逐字稿 → AI 抽出提到的股票與看法 → 資料庫 → 每週報告／熱度頁',
+  '股癌回測':'拿股癌講過的標的去回測「照他講的做會不會賺」，每筆附他的原話，產靜態網站',
+  '交易機器人':'AI 選股實驗，多組投資策略互相 PK（影子帳本 → 之後接券商模擬單）',
+  '橋樑':'跟賈維斯（波樂那邊的 AI）的溝通橋與交換區，含交易機器人協作組的規格',
+  '工作證明頁':'這個頁面本身——每天 AI 做了哪些事、證據連結、你打的分數',
+  '報告站':'daniel-reports（戰情室、各種給你看的報告頁）',
+  '會計部':'AI 額度／token 花費的稽核與日報，抓漏、算每件事花多少',
+  '看板':'計畫看板與台帳（plans.json）、糾正票、按鈕決策的收發',
+  '制度':'AI 的規則正本（判斷 checklist、紅線、維護協議）',
+  '記憶':'AI 的跨 session 記憶、每日 log、糾正紀錄',
+  'hook':'Claude Code 的攔截器腳本（擋危險指令、強制讀規則、自動存記憶）',
+  '工具':'共用小腳本（寄信、找便宜 AI 代讀、報表產生）',
+  '遠端':'Discord 常駐 session 的開機流程、看門狗、交接簡報',
+  'skill':'自建的 Claude Code 技能（收工、評估、會計部…）',
+  'serenity-clone':'股癌選股／多空判斷的統計實證（他點名的股票比隨機好多少）',
+  'tw-backtest':'台股回測基礎工具（手續費、證交稅、績效指標）',
+  'video-transcribe':'本機影片語音轉錄＋字幕工具',
+  'root':'母資料夾層級的雜項（CLAUDE.md、索引、跨專案整理）',
+  '其他':'對不到專案的零碎項目'
+};
+const PROJ_SLOTS=['var(--s1)','var(--s2)','var(--s3)','var(--s4)','var(--s5)','var(--s6)','var(--s7)'];
+const PROJ_RGB_SLOTS=['var(--s1-rgb)','var(--s2-rgb)','var(--s3-rgb)','var(--s4-rgb)','var(--s5-rgb)','var(--s6-rgb)','var(--s7-rgb)'];
+function buildProjectColorMap(days){
+  const counts={};
+  days.forEach(d=>countedItems(d).forEach(it=>{
+    const p=it.project||'其他';
+    if(p==='其他')return;
+    counts[p]=(counts[p]||0)+1;
+  }));
+  const top=Object.keys(counts).sort((a,b)=>counts[b]-counts[a]).slice(0,7);
+  const map={}, rgbMap={};
+  top.forEach((p,i)=>{map[p]=PROJ_SLOTS[i];rgbMap[p]=PROJ_RGB_SLOTS[i];});
+  return {map,rgbMap,top};
+}
+function projColor(map,p){return map[projKeyFor(map,p)]||'var(--zero)';}
+function projKeyFor(map,p){return (p&&map[p])?p:'其他';}
+function countByProj(items,keyFn){const by={};items.forEach(it=>{const k=keyFn(it);by[k]=(by[k]||0)+1;});return by;}
+
+function projSegBar(container,items,map){
+  const n=items.length;
+  container.innerHTML='';
+  if(n===0){
+    const seg=document.createElement('div');seg.className='seg';seg.style.background='var(--zero)';seg.style.width='100%';
+    container.appendChild(seg);
+    return;
+  }
+  const byProj=countByProj(items,it=>it.project||'其他');
+  const order=Object.keys(byProj).sort((a,b)=>byProj[b]-byProj[a]);
+  order.forEach(p=>{
+    const seg=document.createElement('div');seg.className='seg';
+    seg.style.background=projColor(map,p);
+    seg.style.width=(byProj[p]/n*100)+'%';
+    seg.title=`${p}：${byProj[p]} 件（${Math.round(byProj[p]/n*100)}%）`;
+    // 他 12:49「下面那條橘色的是做什麼的？」：條夠寬就把「幾件・專案」寫在條上，不靠圖例
+    if(byProj[p]/n>=0.22)seg.textContent=`${byProj[p]} 件・${p}`;
+    container.appendChild(seg);
+  });
+  // 條下一行把全部專案件數寫出來（窄段寫不進條上的也看得到）
+  let lbl=container.nextElementSibling;
+  if(!lbl||!lbl.classList.contains('segbar-label')){lbl=document.createElement('div');lbl.className='segbar-label';container.after(lbl);}
+  lbl.textContent=order.map(p=>`${p} ${byProj[p]} 件`).join('・');
+  trimSegLabels(container);
+}
+// 手機上段太窄時「N 件・專案」會被切一半：排版完量一次，塞不下就拿掉字（條下那行還是列得全）
+function trimSegLabels(root){
+  if(!root||!root.isConnected||root.clientWidth===0)return;
+  root.querySelectorAll('.seg').forEach(s=>{if(s.textContent&&s.scrollWidth>s.clientWidth+1)s.textContent='';});
+}
+
+function scoreColor(s){return {1:'var(--sc1)',2:'var(--sc2)',3:'var(--sc3)',4:'var(--sc4)',5:'var(--sc5)'}[s]||'var(--zero)';}
+
+const EXPENSIVE_MODELS=new Set(['opus','fable']);
+// 他 12:44「數字太擠可以用 K 標示」：輸入單位是萬 token，>=100 萬顯示 M（4.7M／20M）、不到 100 萬顯示 K（120K）
+function fmtKM(v){
+  if(v<=0)return '·';
+  const t=v*10000;
+  if(t>=1e7)return Math.round(t/1e6)+'M';
+  if(t>=1e6)return (t/1e6).toFixed(1)+'M';
+  return Math.round(t/1e3)+'K';
+}
+// 格子字色不用固定門檻猜：把格子色跟底色（淺色底白、深色底 #1a1a1a）按透明度混出實際顏色，
+// 算白字跟墨字哪個對比高就用哪個（Haiku 讀圖兩次都說深色模式格子數字看不清）
+function isDark(){return document.documentElement.dataset.theme==='dark'||(document.documentElement.dataset.theme!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);}
+const _rgbCache={};
+function cssRgb(rgbVar){
+  const name=rgbVar.replace(/^var\(|\)$/g,''), key=name+(isDark()?'|d':'|l');
+  if(_rgbCache[key])return _rgbCache[key];
+  const v=getComputedStyle(document.documentElement).getPropertyValue(name).trim().split(',').map(Number);
+  return _rgbCache[key]=(v.length===3&&v.every(x=>!isNaN(x)))?v:[128,128,128];
+}
+function lum(c){const f=x=>{x/=255;return x<=0.03928?x/12.92:Math.pow((x+0.055)/1.055,2.4);};return 0.2126*f(c[0])+0.7152*f(c[1])+0.0722*f(c[2]);}
+function contrast(a,b){return (Math.max(a,b)+0.05)/(Math.min(a,b)+0.05);}
+function cellFg(rgbVar,alpha){
+  const dark=isDark(), rgb=cssRgb(rgbVar), base=dark?[26,26,26]:[255,255,255];
+  const L=lum(rgb.map((c,i)=>c*alpha+base[i]*(1-alpha)));
+  const inkL=lum(dark?[242,242,240]:[11,11,11]);
+  return contrast(L,1)>contrast(L,inkL)?'var(--on-dark)':'var(--ink)';
+}
+function heatCellStyle(accountKey,modelKey,v,maxCell){
+  if(modelKey==='other'){
+    const alpha=v<=0?0:0.12+0.6*(v/maxCell);
+    return {bg:v<=0?'transparent':`rgba(var(--neutral-rgb),${alpha.toFixed(2)})`,fg:cellFg('var(--neutral-rgb)',alpha)};
+  }
+  const isExpensive=EXPENSIVE_MODELS.has(modelKey);
+  const good=(accountKey==='sub')?!isExpensive:isExpensive;
+  const rgbVar=good?'var(--good-rgb)':'var(--bad-rgb)';
+  const alpha=v<=0?0:0.12+0.78*(v/maxCell);
+  const bg=v<=0?'transparent':`rgba(${rgbVar},${alpha.toFixed(2)})`;
+  const fg=cellFg(rgbVar,alpha);
+  return {bg,fg};
+}
+
+fetch('./proof.json').then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();}).then(data=>{
+  const days=[...data.days].sort((a,b)=>a.date<b.date?-1:1);
+  const today=days[days.length-1];
+  const rulesVersion=(data.rules_version!=null)?String(data.rules_version):'?';
+  document.querySelectorAll('.ndays').forEach(el=>{el.textContent=String(days.length);});
+  document.querySelectorAll('.rules-ver').forEach(el=>{el.textContent=rulesVersion;});
+  // 他 12:46「這是不是一份死檔？」：頁頂直接寫資料算到幾點（排程每小時重算一次）
+  {const g=String(data.generated_at||'');const el=document.getElementById('data-asof');el.textContent=g?('資料更新到 '+g.slice(5,10).replace('-','/')+' '+g.slice(11,16)+'（每小時自動重算）'):'資料時間不明';}
+  const {map:projMap,rgbMap:projRgbMap,top:projTop}=buildProjectColorMap(days);
+
+  // ---- 三張大數字卡：他 13:05「一眼看懂做了什麼、額度有沒有變少、品質有沒有變好」→ 三張卡各答一題，
+  //      每張都跟「前 7 天平均」比（今天以外的前 7 天）；紅綠＝比前 7 天好還是差
+  const todayItems=countedItems(today);
+  const todayTot=(today.tokens_main_wan||0)+(today.tokens_sub_wan||0);
+  const prev7=days.slice(-8,-1);
+  const avg=arr=>arr.length?arr.reduce((a,b)=>a+b,0)/arr.length:null;
+  const pctDiff=(now,base)=>(base>0&&now!=null)?Math.round((now-base)/base*100):null;
+  // 卡 1：件數 vs 前 7 天平均件數／天
+  const prevItemsAvg=avg(prev7.map(d=>countedItems(d).length));
+  const card1Cmp=prevItemsAvg==null?'':`<div class="cmp">前 7 天平均 ${prevItemsAvg.toFixed(1)} 件／天</div>`;
+  // 卡 2：額度 vs 前 7 天平均（萬 token／天），少＝綠
+  const prevTokAvg=avg(prev7.map(d=>(d.tokens_main_wan||0)+(d.tokens_sub_wan||0)));
+  const tokPct=pctDiff(todayTot,prevTokAvg);
+  let card2Cmp='';
+  if(tokPct==null)card2Cmp='<div class="cmp">沒有前 7 天可比</div>';
+  else if(tokPct===0)card2Cmp='<div class="cmp">跟前 7 天平均一樣</div>';
+  else card2Cmp=`<div class="cmp ${tokPct<0?'save':'cost'}">比前 7 天平均${tokPct<0?'少':'多'} ${Math.abs(tokPct)}%</div>`;
+  // 卡 3：今天平均分 vs 前 7 天平均分（只有 5 分算過關，越高越好）
+  const todayScores=(today.scores||[]).map(s=>+s.score).filter(s=>s>=1&&s<=5);
+  const prevScores=[];prev7.forEach(d=>(d.scores||[]).forEach(s=>{const v=+s.score;if(v>=1&&v<=5)prevScores.push(v);}));
+  const todayAvg=avg(todayScores), prevAvg=avg(prevScores);
+  let card3Num,card3Lbl,card3Cmp='';
+  if(todayAvg==null){
+    card3Num='—';card3Lbl='今天還沒打分';
+    if(prevAvg!=null)card3Cmp=`<div class="cmp">前 7 天平均 ${prevAvg.toFixed(1)} 分</div>`;
+  }else{
+    card3Num=todayAvg.toFixed(1);card3Lbl=`今天你打的平均分（${todayScores.length} 次）`;
+    if(prevAvg==null)card3Cmp='<div class="cmp">沒有前 7 天可比</div>';
+    else{
+      const diff=todayAvg-prevAvg;
+      if(Math.abs(diff)<0.05)card3Cmp=`<div class="cmp">跟前 7 天平均一樣（${prevAvg.toFixed(1)} 分）</div>`;
+      else card3Cmp=`<div class="cmp ${diff>0?'save':'cost'}">比前 7 天平均${diff>0?'高':'低'} ${Math.abs(diff).toFixed(1)} 分（${prevAvg.toFixed(1)}→${todayAvg.toFixed(1)}）</div>`;
+    }
+  }
+  document.getElementById('cards').innerHTML=`
+    <div class="card"><div class="num">${todayItems.length}</div><div class="unit">件</div><div class="lbl">今天做了幾件</div>${card1Cmp}</div>
+    <div class="card"><div class="num">${todayTot.toFixed(0)}</div><div class="unit">萬 token</div><div class="lbl">今天花了多少額度</div>${card2Cmp}</div>
+    <div class="card"><div class="num">${card3Num}</div><div class="unit">分（滿分 5）</div><div class="lbl">${card3Lbl}</div>${card3Cmp}</div>
+  `;
+  // ---- 近 7 天一張圖（自 ai_overview.html §2 搬來，資料只取 days 最後 7 天）：
+  //      柱＝件數、格＝額度（灰階深淺）、點＝分數；點任一天，下面 readout 寫那天細節
+  (function(){
+    const d7=days.slice(-7), n7=d7.length;
+    const dayTok=d=>(d.tokens_main_wan||0)+(d.tokens_sub_wan||0);
+    const dayScores=d=>(d.scores||[]).map(s=>+s.score).filter(s=>s>=1&&s<=5);
+    const seqStyle=(v,maxV)=>{const a=v<=0?0:0.15+0.8*(v/maxV);return {bg:v<=0?'':`rgba(var(--neutral-rgb),${a.toFixed(2)})`,fg:cellFg('var(--neutral-rgb)',a)};};
+    document.getElementById('track-legend').innerHTML=
+      `<span><span class="sw" style="background:var(--ink-2)"></span><b>柱子＝那天做了幾件</b>（數字寫在柱子上）</span>`+
+      `<span style="flex-basis:100%;height:0"></span>`+
+      `<span><b>格子＝那天花的額度</b>（萬 token）少<span class="ramp"></span>多</span>`+
+      `<span style="flex-basis:100%;height:0"></span>`+
+      `<span><b>點點＝你打的分</b>，一點一次：</span>`+[5,4,3,2,1].map(s=>`<span><span class="sw round" style="background:${scoreColor(s)}"></span>${s} 分${s===5?'＝過關':''}</span>`).join('');
+    const maxItems=Math.max(1,...d7.map(d=>countedItems(d).length));
+    const maxTok=Math.max(1,...d7.map(dayTok));
+    let th='';
+    th+=`<div class="lab">做了<br>幾件<small>柱高＝件數</small></div>`;
+    d7.forEach((d,i)=>{
+      const cnt=countedItems(d).length;
+      const hPct=cnt/maxItems*86; // 留 14% 給數字
+      th+=`<div class="bar${cnt?'':' zero'}" data-i="${i}"><span class="cnt">${cnt}</span><div class="stk" style="height:${hPct.toFixed(1)}%"><div class="seg" style="background:var(--ink-2)"></div></div></div>`;
+    });
+    th+=`<div class="lab">花多少<small>萬 token</small></div>`;
+    d7.forEach((d,i)=>{const v=dayTok(d),st=seqStyle(v,maxTok);th+=`<div class="heat" data-i="${i}" style="${st.bg?`background:${st.bg};color:${st.fg}`:''}">${fmtKM(v)}</div>`;});
+    th+=`<div class="lab">你打<br>幾分<small>一點一次</small></div>`;
+    d7.forEach((d,i)=>{const sc=d.scores||[];th+=`<div class="dots" data-i="${i}">${sc.length?sc.map(s=>`<i style="background:${scoreColor(+s.score)}" title="${esc(s.score)} 分 ${esc(s.time||'')}"></i>`).join(''):'<span class="none"></span>'}</div>`;});
+    th+=`<div class="lab"></div>`;
+    d7.forEach((d,i)=>{th+=`<div class="dcol${i===n7-1?' today':''}">${i===n7-1?'今天':fmtDate(d.date)}</div>`;});
+    const tracks=document.getElementById('tracks');tracks.innerHTML=th;
+    const readout=document.getElementById('readout');
+    function describeDay(i){
+      const d=d7[i],items=countedItems(d),byP={};items.forEach(it=>{const p=it.project||'其他';byP[p]=(byP[p]||0)+1;});
+      const projStr=Object.keys(byP).sort((a,b)=>byP[b]-byP[a]).map(p=>`${p} ${byP[p]}`).join('、')||'沒有算進來的項目';
+      const sc=dayScores(d);
+      const m=d.tokens_by_model_main||{},s=d.tokens_by_model_sub||{};
+      const tokStr=`主帳號 ${Math.round(d.tokens_main_wan||0)} 萬（Opus ${Math.round(m.opus||0)}／Sonnet ${Math.round(m.sonnet||0)}／Haiku ${Math.round(m.haiku||0)}／Fable ${Math.round(m.fable||0)}）、分身 ${Math.round(d.tokens_sub_wan||0)} 萬（Opus ${Math.round(s.opus||0)}／Sonnet ${Math.round(s.sonnet||0)}／Haiku ${Math.round(s.haiku||0)}／Fable ${Math.round(s.fable||0)}）`;
+      readout.innerHTML=`<b>${fmtDate(d.date)}${i===n7-1?'（今天）':''}</b>：做了 <b>${items.length} 件</b>（${esc(projStr)}）；花了 <b>${Math.round(dayTok(d))} 萬 token</b>＝${esc(tokStr)}；`+(sc.length?`你打了 ${sc.length} 次分：<b>${sc.join('、')}</b>`:'你沒打分')+`；commit ${d.commits||0} 個、派分身 ${d.subagent_runs||0} 次、Discord 回 ${d.discord_replies||0} 則。`;
+      tracks.querySelectorAll('.sel').forEach(e=>e.classList.remove('sel'));
+      tracks.querySelectorAll(`[data-i="${i}"]`).forEach(e=>e.classList.add('sel'));
+    }
+    tracks.addEventListener('click',e=>{const t=e.target.closest('[data-i]');if(t)describeDay(+t.dataset.i);});
+    describeDay(n7-1);
+  })();
+
+  // ---- 專案 × 日期格子表 ----
+  const gridCounts={}; // proj -> date -> n
+  const rowTotals={};
+  days.forEach(d=>{
+    const byProj=countByProj(countedItems(d),it=>projKeyFor(projMap,it.project));
+    Object.keys(byProj).forEach(p=>{
+      gridCounts[p]=gridCounts[p]||{};
+      gridCounts[p][d.date]=byProj[p];
+      rowTotals[p]=(rowTotals[p]||0)+byProj[p];
+    });
+  });
+  const gridRows=Object.keys(rowTotals).sort((a,b)=>rowTotals[b]-rowTotals[a]);
+  let maxGridCell=1;
+  gridRows.forEach(p=>days.forEach(d=>{maxGridCell=Math.max(maxGridCell,(gridCounts[p]&&gridCounts[p][d.date])||0);}));
+  const gridDays=days; // 最舊在前（最左），最新在後（最右＝今天，桌機、手機皆同）
+  let gridHtml='<thead><tr><th><span class="d-full">專案 ＼ 日期</span><span class="d-short">專案</span></th>'+gridDays.map(d=>`<th><span class="d-full">${fmtDate(d.date)}</span><span class="d-short">${d.date.slice(8,10)}</span></th>`).join('')+'</tr></thead><tbody>';
+  const gridColspan=gridDays.length+1;
+  gridRows.forEach((p,ri)=>{
+    const descText=Object.prototype.hasOwnProperty.call(PROJ_DESC,p)?PROJ_DESC[p]:'（尚未寫說明）';
+    gridHtml+=`<tr class="grid-row"><td class="rowlbl"><button type="button" class="row-toggle" aria-expanded="false" data-row="${ri}"><span class="ic"></span><span class="lbl">${esc(p)}</span></button></td>`;
+    gridDays.forEach(d=>{
+      const v=(gridCounts[p]&&gridCounts[p][d.date])||0;
+      const rgbVar=projRgbMap[p]||'var(--neutral-rgb)';
+      const alpha=v<=0?0:0.2+0.7*(v/maxGridCell);
+      const bg=v<=0?'transparent':`rgba(${rgbVar},${alpha.toFixed(2)})`;
+      const fg=cellFg(rgbVar,alpha);
+      gridHtml+=`<td class="cell" style="background:${bg};color:${fg}">${v>0?v:''}</td>`;
+    });
+    gridHtml+='</tr>';
+    gridHtml+=`<tr class="grid-explain" data-row="${ri}" hidden><td colspan="${gridColspan}">${esc(descText)}</td></tr>`;
+  });
+  gridHtml+='</tbody>';
+  document.getElementById('grid-table').innerHTML=gridHtml;
+
+  // ---- 專案說明列：展開／收起 ----
+  const gridTableEl=document.getElementById('grid-table');
+  const toggleAllLink=document.getElementById('grid-toggle-all');
+  function setRowOpen(btn,open){
+    btn.setAttribute('aria-expanded',open?'true':'false');
+    const explainRow=btn.closest('tr').nextElementSibling;
+    if(explainRow&&explainRow.classList.contains('grid-explain'))explainRow.hidden=!open;
+  }
+  function syncToggleAllLabel(){
+    const allBtns=gridTableEl.querySelectorAll('.row-toggle');
+    const openCount=gridTableEl.querySelectorAll('.row-toggle[aria-expanded="true"]').length;
+    toggleAllLink.textContent=(allBtns.length>0&&openCount===allBtns.length)?'隱藏各專案說明':'顯示各專案說明';
+  }
+  gridTableEl.querySelectorAll('.row-toggle').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      setRowOpen(btn,btn.getAttribute('aria-expanded')!=='true');
+      syncToggleAllLabel();
+    });
+  });
+  toggleAllLink.addEventListener('click',()=>{
+    const allBtns=gridTableEl.querySelectorAll('.row-toggle');
+    const openCount=gridTableEl.querySelectorAll('.row-toggle[aria-expanded="true"]').length;
+    const makeOpen=openCount<allBtns.length;
+    allBtns.forEach(btn=>setRowOpen(btn,makeOpen));
+    syncToggleAllLabel();
+  });
+  syncToggleAllLabel();
+
+  // ---- 每天清單（收合在格子表下方）----
+  const daysDiv=document.getElementById('days');
+  const rev=[...days].reverse();
+  rev.forEach(d=>{
+    const items=countedItems(d);
+    const n=items.length;
+    const isToday=d.date===today.date;
+
+    // 標題只寫總件數；各專案幾件由條上字＋條下那行負責（跟頁頂「今天按專案」同一套，不再兩處各列一遍）
+    const card=document.createElement('div');card.className='day';
+    const head=document.createElement('div');head.className='day-head';
+    head.innerHTML=`<span class="headline">${esc(d.date)}${isToday?'（今天）':''}　做了 ${n} 件</span>`;
+    card.appendChild(head);
+
+    const bar=document.createElement('div');bar.className='segbar';
+    card.appendChild(bar);
+    projSegBar(bar,items,projMap);
+
+    const det=document.createElement('details');det.className='toggle';
+    const sum=document.createElement('summary');sum.textContent='看每一件';
+    det.appendChild(sum);
+    if(n===0){
+      const e=document.createElement('div');e.className='empty';e.textContent='這天沒有算進來的項目。';
+      det.appendChild(e);
+    }else{
+      const ul=document.createElement('ul');ul.className='items';
+      items.forEach(it=>{
+        const li=document.createElement('li');
+        const row1=document.createElement('div');row1.className='row1';
+        const t=document.createElement('span');t.className='t';t.textContent=it.time||'';
+        const dot=document.createElement('span');dot.className='dot';dot.style.background=projColor(projMap,it.project);
+        const cont=document.createElement('div');
+        const kd=document.createElement('span');kd.className='kind';
+        kd.textContent={commit:'commit',ticket:'票',note:'日誌'}[it.kind]||it.kind;
+        cont.appendChild(kd);
+        // 第一行放白話句（主文）；原始紀錄收進「看原文」，不再一開就是一串代號
+        const plain=document.createElement('span');plain.className='plain';
+        plain.textContent=plainText(it);
+        cont.appendChild(plain);
+        const ev=document.createElement('span');ev.className='ev';
+        if(it.evidence_url){const a=document.createElement('a');a.href=it.evidence_url;a.textContent='證據：'+(it.evidence_label||'連結');ev.appendChild(a);}
+        else{ev.textContent=it.evidence_label||'';}
+        cont.appendChild(ev);
+        row1.appendChild(t);row1.appendChild(dot);row1.appendChild(cont);
+        li.appendChild(row1);
+        if(it.text&&plainText(it)!==it.text){
+          const raw=document.createElement('details');raw.className='raw';
+          const rs=document.createElement('summary');rs.textContent='看原文';raw.appendChild(rs);
+          const rt=document.createElement('div');rt.className='rawtext';rt.textContent=it.text;raw.appendChild(rt);
+          li.appendChild(raw);
+        }
+        ul.appendChild(li);
+      });
+      det.appendChild(ul);
+    }
+    card.appendChild(det);
+    daysDiv.appendChild(card);
+  });
+  // 清單收在 details 裡，排版前量不到寬度；第一次展開時再量一次、切掉塞不下的條上字
+  daysDiv.closest('details').addEventListener('toggle',()=>{daysDiv.querySelectorAll('.segbar').forEach(trimSegLabels);});
+
+  // ---- 額度熱圖：行＝主帳號／分身，列＝各模型，紅綠代表花得合不合理 ----
+  const MODEL_KEYS=['opus','sonnet','haiku','fable','other'];
+  const MODEL_LABEL={opus:'Opus',sonnet:'Sonnet',haiku:'Haiku',fable:'Fable',other:'其他'};
+  const sumByAccount={main:{},sub:{}};
+  MODEL_KEYS.forEach(k=>{sumByAccount.main[k]=0;sumByAccount.sub[k]=0;});
+  days.forEach(d=>{
+    const m=d.tokens_by_model_main||{}, s=d.tokens_by_model_sub||{};
+    MODEL_KEYS.forEach(k=>{sumByAccount.main[k]+=(m[k]||0);sumByAccount.sub[k]+=(s[k]||0);});
+  });
+  const maxCell=Math.max(...MODEL_KEYS.map(k=>Math.max(sumByAccount.main[k],sumByAccount.sub[k])),1);
+  let heatHtml='<thead><tr><th>帳號 ＼ 模型</th>'+MODEL_KEYS.map(k=>`<th>${MODEL_LABEL[k]}</th>`).join('')+'<th>合計</th></tr></thead><tbody>';
+  [['主帳號','main'],['分身','sub']].forEach(([label,key])=>{
+    const vals=sumByAccount[key];
+    const tot=MODEL_KEYS.reduce((s,k)=>s+vals[k],0);
+    heatHtml+=`<tr><td class="rowlbl">${label}</td>`;
+    MODEL_KEYS.forEach(k=>{
+      const v=vals[k];
+      const {bg,fg}=heatCellStyle(key,k,v,maxCell);
+      heatHtml+=`<td class="cell" style="background:${bg};color:${fg}">${v>0?v.toFixed(0):'0'}<span class="cu">萬</span></td>`;
+    });
+    heatHtml+=`<td class="cell">${tot.toFixed(0)}<span class="cu">萬</span></td></tr>`;
+  });
+  heatHtml+='</tbody>';
+  document.getElementById('heat-table').innerHTML=heatHtml;
+
+  // ---- 額度：一格一天日條（分身·Opus／分身·Sonnet／主帳號·Opus／主帳號·Sonnet） ----
+  function acctVal(d,acct,model){const src=acct==='main'?(d.tokens_by_model_main||{}):(d.tokens_by_model_sub||{});return +(src[model]||0);}
+  (function(){
+    // 列改成「帳號 × 貴／便宜模型」四列＋合計：貴＝Opus/Fable、便宜＝Sonnet/Haiku（跟上表紅綠規則同一條線），
+    // 這樣 Haiku／Fable 的花費不會漏掉（原本只列 Opus／Sonnet，09-19 主帳號 Haiku 179 萬就不見了），
+    // 每一格用 modelKey 代表色：貴的用 opus、便宜的用 sonnet，紅綠判斷不變
+    const ROWS=[
+      ['分身','貴模型','sub',['opus','fable'],'opus'],
+      ['分身','便宜模型','sub',['sonnet','haiku'],'sonnet'],
+      ['主帳號','貴模型','main',['opus','fable'],'opus'],
+      ['主帳號','便宜模型','main',['sonnet','haiku'],'sonnet']
+    ];
+    const ALL_MODELS=['opus','sonnet','haiku','fable','other'];
+    const n=days.length, half=Math.max(0,n-7);
+    const rowVal=(d,acct,models)=>models.reduce((s,m)=>s+acctVal(d,acct,m),0);
+    const totVal=d=>rowVal(d,'main',ALL_MODELS)+rowVal(d,'sub',ALL_MODELS);
+    const sumRange=(fn,from,to)=>{let s=0;for(let i=from;i<to;i++)s+=fn(days[i]);return s;};
+
+    // 標題句答「額度有沒有變少」：先講兩個帳號全部加總，再講分身用貴模型（他最在意的那格）
+    const prevTot=sumRange(totVal,0,half), nearTot=sumRange(totVal,half,n);
+    const subExp=d=>rowVal(d,'sub',['opus','fable']);
+    const prevSubExp=sumRange(subExp,0,half), nearSubExp=sumRange(subExp,half,n);
+    const cmpText=(name,prev,near)=>{
+      if(prev<=0)return `${name}近 ${n-half} 天共 ${Math.round(near)} 萬（資料不夠比前一週）`;
+      const diff=near-prev, pct=Math.round(Math.abs(diff)/prev*100);
+      if(Math.abs(diff)<1)return `${name}近 7 天跟前 7 天差不多（${Math.round(prev)}→${Math.round(near)} 萬）`;
+      return `${name}近 7 天比前 7 天${diff<0?'少':'多'} ${pct}%（${Math.round(prev)}→${Math.round(near)} 萬）`;
+    };
+    document.getElementById('trend-h2').textContent=`每天怎麼花：${cmpText('全部額度',prevTot,nearTot)}；${cmpText('分身用貴模型',prevSubExp,nearSubExp)}`;
+
+    // 欄＝日期，最後一欄＝近 7 天小計；手機（≤600px）只顯示近 7 天（14 天 16 欄在 390 寬擠到讀不了）
+    const oldCls=i=>(i<days.length-7?' class="d-old"':'');
+    let trendHtml='<thead><tr><th>帳號 · 模型</th>'+days.map((d,i)=>`<th${oldCls(i)}>${d.date.slice(8,10)}</th>`).join('')+'<th>近 7 天</th></tr></thead><tbody>';
+    const rowHtml=(labelHtml,labelPlain,valFn,styleFn,cls)=>{
+      const vals=days.map(valFn);
+      const near=sumRange(valFn,half,n);
+      const maxV=Math.max(...vals,0.0001);
+      let h=`<tr${cls?` class="${cls}"`:''}><td class="rowlbl">${labelHtml}</td>`;
+      vals.forEach((v,i)=>{
+        const d=days[i];
+        const title=`${fmtDate(d.date)} ${labelPlain} ${v.toFixed(0)} 萬`;
+        const oc=i<days.length-7?' d-old':'';
+        if(v<=0){
+          h+=`<td class="cell${oc}" title="${esc(title)}">·</td>`;
+        }else{
+          const {bg,fg}=styleFn(v,maxV);
+          h+=`<td class="cell${oc}" style="background:${bg};color:${fg}" title="${esc(title)}">${fmtKM(v)}</td>`;
+        }
+      });
+      h+=`<td class="cell">${fmtKM(near)}</td></tr>`;
+      return h;
+    };
+    ROWS.forEach(([acctLabel,kindLabel,acct,models,modelKey])=>{
+      const full=`（${models.map(m=>m[0].toUpperCase()+m.slice(1)).join('/')}）`;
+      const labelHtml=`${esc(acctLabel)} · ${esc(kindLabel)}<span class="d-full">${esc(full)}</span>`;
+      // 他 12:44「分身熱圖顏色不對」：跟主熱圖同一套綠／紅規則（heatCellStyle）
+      trendHtml+=rowHtml(labelHtml,`${acctLabel} ${kindLabel}`,d=>rowVal(d,acct,models),(v,maxV)=>heatCellStyle(acct,modelKey,v,maxV),'');
+    });
+    // 合計列：兩帳號、全部模型；灰階（不分好壞）
+    trendHtml+=rowHtml('合計','合計',totVal,(v,maxV)=>heatCellStyle('main','other',v,maxV),'total');
+    trendHtml+='</tbody>';
+
+    document.getElementById('trend-table').innerHTML=trendHtml;
+  })();
+
+  // ---- 分數點陣：每天一排點，一點一筆，五色 ----
+  const scoreMeaning={5:'過關',4:'稍微不滿',3:'嚴重',2:'極度嚴重',1:'不該出現'};
+  document.getElementById('score-legend').innerHTML=[5,4,3,2,1].map(s=>
+    `<span><span class="sw round" style="background:${scoreColor(s)}"></span>${s} 分＝${scoreMeaning[s]}</span>`
+  ).join('');
+  // 一句答「品質有沒有變好」：近 7 天平均分 vs 前 7 天平均分
+  {
+    const sc=list=>{const a=[];list.forEach(d=>(d.scores||[]).forEach(s=>{const v=+s.score;if(v>=1&&v<=5)a.push(v);}));return a;};
+    const near=sc(days.slice(-7)), prev=sc(days.slice(0,Math.max(0,days.length-7)));
+    const na=avg(near), pa=avg(prev);
+    const el=document.getElementById('score-sub');
+    if(na==null)el.textContent='近 7 天沒有打分紀錄。';
+    else if(pa==null)el.textContent=`近 7 天平均 ${na.toFixed(1)} 分（${near.length} 次），前 7 天沒有紀錄可比。`;
+    else{
+      const diff=na-pa;
+      const word=Math.abs(diff)<0.05?'跟前 7 天一樣':(diff>0?`比前 7 天高 ${diff.toFixed(1)} 分`:`比前 7 天低 ${Math.abs(diff).toFixed(1)} 分`);
+      el.textContent=`近 7 天平均 ${na.toFixed(1)} 分（${near.length} 次），${word}（前 7 天 ${pa.toFixed(1)} 分、${prev.length} 次）。`;
+    }
+  }
+  const scoreGrid=document.getElementById('score-grid');
+  rev.forEach(d=>{
+    const scores=d.scores||[];
+    const row=document.createElement('div');row.className='scorerow';
+    const lbl=document.createElement('span');lbl.textContent=fmtDate(d.date)+(d.date===today.date?' 今天':'');
+    row.appendChild(lbl);
+    const dotsWrap=document.createElement('div');dotsWrap.className='dots';
+    if(scores.length===0){
+      const none=document.createElement('span');none.className='none';none.textContent='沒有打分紀錄';
+      dotsWrap.appendChild(none);
+    }else{
+      scores.forEach(sc=>{
+        const s=document.createElement('span');
+        s.style.background=scoreColor(sc.score);
+        s.title=`${sc.score} 分　${scoreMeaning[sc.score]||''}　${sc.time||''}`;
+        dotsWrap.appendChild(s);
+      });
+    }
+    row.appendChild(dotsWrap);
+    scoreGrid.appendChild(row);
+  });
+}).catch(err=>{
+  document.getElementById('cards').innerHTML='<div class="empty">資料載入失敗（proof.json 讀不到）</div>';
+  console.error('proof.json 載入失敗',err);
+});
+</script>
+</body>
+</html>
