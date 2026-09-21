@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T00:00+08:00",
+  "generated_at": "2026-09-22T01:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3973,15 +3973,6 @@
       "skipped": [
         {
           "kind": "commit",
-          "text": "test/e2e.mjs：店家總覽整點測試離整點 ≤150s 先等過去、D-4 錯開整點從 +2 起跳——閘門第 8 …",
-          "project": "預約系統",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "23:09",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
           "text": "遠端 9/21 夜棒收工（縮減版，上下文 206k）：line-booking 會員中心第一版上正式站、第二版（個人資…",
           "project": "預約系統",
           "reason": "automated",
@@ -4265,28 +4256,28 @@
           "time": null
         }
       ],
-      "notes": "另有 31 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 30）"
+      "notes": "另有 30 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 30）"
     },
     {
       "date": "2026-09-22",
-      "commits": 0,
+      "commits": 1,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 0.0,
+      "discord_replies": 8,
+      "tokens_main_wan": 6.7,
       "tokens_sub_wan": 0.0,
-      "tokens_sessions": 0,
-      "tokens_msgs": 0,
+      "tokens_sessions": 1,
+      "tokens_msgs": 62,
       "tokens_by_model": {
-        "opus": 0.0,
+        "opus": 6.7,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
+        "opus": 6.7,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4304,12 +4295,46 @@
       "score_high": 0,
       "scores": [],
       "corrections_new": 0,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
-      "skipped": [],
-      "selfreport": [],
-      "notes": ""
+      "highlights": [
+        "00:35 第 11 次全過（兩輪 34 支各 2022 PASS／0 FAIL，RETRIED 0），正式站 Version b8420cc4；curl 驗：/api/services shop_name＝花漾Spa美學、PATCH /a"
+      ],
+      "items": [
+        {
+          "kind": "note",
+          "text": "00:35 第 11 次全過（兩輪 34 支各 2022 PASS／0 FAIL，RETRIED 0），正式站 Version b8420cc4；curl 驗：/api/services shop_name＝花漾Spa美學、PATCH /a",
+          "project": "預約系統",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a67e77f657b4aa30806e8d0eedf8bf87a8f1d9bf",
+          "evidence_label": "commit a67e77f",
+          "verified": true,
+          "time": "23:09",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 1,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-22T00:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:00",
+          "repo": "daniel-demos"
+        }
+      ],
+      "selfreport": [
+        {
+          "text": "00:51 他「刪」（1551636902917177405）→ CONFIRM_DELETE=1 清掉 line-booking 根目錄 16 個暫存檔（_fix1_／_probe／orker = spawn(p），untracked 歸",
+          "time": null
+        },
+        {
+          "text": "00:55 他「那15筆都改成諮詢」＋問她最後一次操作（1551637965019553803）→ 唯讀 dry-run 列 15 筆（WHERE service_name='皮秒雷射' AND service_id IS NULL AND",
+          "time": null
+        }
+      ],
+      "notes": "另有 1 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
     }
   ]
 }
