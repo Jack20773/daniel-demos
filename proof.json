@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T17:01+08:00",
+  "generated_at": "2026-09-21T18:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3661,33 +3661,33 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 48,
+      "commits": 51,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 74,
-      "discord_replies": 70,
-      "tokens_main_wan": 150.1,
-      "tokens_sub_wan": 566.1,
-      "tokens_sessions": 79,
-      "tokens_msgs": 2030,
+      "subagent_runs": 76,
+      "discord_replies": 76,
+      "tokens_main_wan": 155.8,
+      "tokens_sub_wan": 583.4,
+      "tokens_sessions": 81,
+      "tokens_msgs": 2149,
       "tokens_by_model": {
-        "opus": 455.2,
+        "opus": 474.6,
         "sonnet": 0.0,
-        "haiku": 135.9,
+        "haiku": 139.5,
         "fable": 125.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 150.1,
+        "opus": 155.8,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 305.1,
+        "opus": 318.8,
         "sonnet": 0.0,
-        "haiku": 135.9,
+        "haiku": 139.5,
         "fable": 125.1,
         "other": 0.0
       },
@@ -4030,9 +4030,33 @@
           "time": "15:30",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "17:05 line-booking 第一刀三修 demo 貼他（1551519619821469726，附三張舊｜新圖）：commit ead8a04 已 push、staging version b381bbc7、gate 全綠（33 ",
+          "project": "預約系統",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ead8a04a3176e9c7bffdb9b39ff357c2919a2753",
+          "evidence_label": "commit ead8a04",
+          "verified": true,
+          "time": "17:03",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "line-booking 第二刀（監控＋備份，測試站已上、正式站未推）：/api/health 回 cron／日報時間…",
+          "project": "預約系統",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1e1f81a14a0bc8e030ea005900128908278e13a0",
+          "evidence_label": "commit 1e1f81a",
+          "verified": true,
+          "time": "17:50",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 27,
+      "items_count": 29,
       "skipped": [
         {
           "kind": "commit",
@@ -4069,6 +4093,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "02:03",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T17:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "17:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4224,8 +4257,13 @@
           "repo": "daniel-demos"
         }
       ],
-      "selfreport": [],
-      "notes": "另有 21 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21）"
+      "selfreport": [
+        {
+          "text": "17:42 他裁決「這些看起來都可以推上正式版」（1551529074734669908）→ 已回一句（1551529135145226272）。等第二刀分身 test:all 跑完 commit 後，跑 npm run deploy（閘門",
+          "time": null
+        }
+      ],
+      "notes": "另有 22 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22）"
     }
   ]
 }
