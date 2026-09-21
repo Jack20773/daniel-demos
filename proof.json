@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T19:00+08:00",
+  "generated_at": "2026-09-21T20:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3661,33 +3661,33 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 54,
+      "commits": 57,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 80,
-      "discord_replies": 87,
-      "tokens_main_wan": 173.2,
-      "tokens_sub_wan": 619.1,
-      "tokens_sessions": 86,
-      "tokens_msgs": 2324,
+      "subagent_runs": 81,
+      "discord_replies": 89,
+      "tokens_main_wan": 176.3,
+      "tokens_sub_wan": 631.0,
+      "tokens_sessions": 87,
+      "tokens_msgs": 2421,
       "tokens_by_model": {
-        "opus": 524.3,
+        "opus": 536.8,
         "sonnet": 0.0,
-        "haiku": 142.9,
+        "haiku": 145.3,
         "fable": 125.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 173.2,
+        "opus": 176.3,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 351.1,
+        "opus": 360.5,
         "sonnet": 0.0,
-        "haiku": 142.9,
+        "haiku": 145.3,
         "fable": 125.1,
         "other": 0.0
       },
@@ -4072,6 +4072,24 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "test/run-all.mjs：登記 member.test.mjs 進閘門清單（母體 33→34 支；--only…",
+          "project": "預約系統",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "19:42",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "會員中心 demo（只推 staging）：mine.html 擴成儲值金大數字＋預約／消費／儲值／個人資料四格，新增…",
+          "project": "預約系統",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "19:23",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "遠端 9/21 晚棒收工（縮減版，上下文 203k）：line-booking 兩刀 demo＋正式站部署卡閘門瞬時錯…",
           "project": "看板",
           "reason": "automated",
@@ -4114,6 +4132,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "02:03",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T19:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "19:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4295,9 +4322,17 @@
         {
           "text": "17:47 回他「使用者習慣」問題（1551529474728792064）：她用約一半功能只用一週（代客登記 49／結帳 8／儲值 3）、客人自約 0／取消 0／電話 1/49；三個猜測原因；建議只問又仟一題「預約記在哪、哪裡不順手」＋圖",
           "time": null
+        },
+        {
+          "text": "19:17 正式站部署成功（新棒 ae3bbe4d）：第 4 次（排程 LineBooking_DeployOnce）閘門全綠 RETRIED_TOTAL=0、DEPLOY_EXIT=0，Version 55f0c7e3；curl 正式站驗",
+          "time": null
+        },
+        {
+          "text": "19:27 會員中心 demo 已貼他（1551554897617362946，附 2 圖）：staging Version 546234ce、本地 commit b2be41f 未 push；連結 https://line-booking",
+          "time": null
         }
       ],
-      "notes": "另有 24 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
+      "notes": "另有 27 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25）"
     }
   ]
 }
