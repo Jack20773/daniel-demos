@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T08:00+08:00",
+  "generated_at": "2026-09-21T09:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3661,31 +3661,31 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 32,
+      "commits": 38,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 65,
-      "discord_replies": 43,
-      "tokens_main_wan": 101.0,
-      "tokens_sub_wan": 371.6,
-      "tokens_sessions": 68,
-      "tokens_msgs": 1423,
+      "subagent_runs": 69,
+      "discord_replies": 64,
+      "tokens_main_wan": 126.1,
+      "tokens_sub_wan": 414.2,
+      "tokens_sessions": 73,
+      "tokens_msgs": 1689,
       "tokens_by_model": {
-        "opus": 336.7,
+        "opus": 404.3,
         "sonnet": 0.0,
         "haiku": 135.9,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 101.0,
+        "opus": 126.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 235.7,
+        "opus": 278.2,
         "sonnet": 0.0,
         "haiku": 135.9,
         "fable": 0.0,
@@ -3965,10 +3965,67 @@
           "time": "05:37",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "圖庫：「實驗」tag 的圖預設不列、chip 只算「實驗」一字；HISTORY_KEEP 200→1000（隔夜 20…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ab1469f95762a255bfd4a9045bb4851f28d4b07d",
+          "evidence_label": "commit ab1469f",
+          "verified": true,
+          "time": "08:08",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "他 08:15–08:25 五件：圖庫上限 10000；修手修臉預設關（prefs 記成關）；「清空提示詞」鈕；「常用…",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2d1a85b1c2b5b9cf477498a65317f69c9aa63c90",
+          "evidence_label": "commit 2d1a85b",
+          "verified": true,
+          "time": "08:32",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "EasyDraw 三件：回收桶「一鍵清空」、圖庫縮圖 /thumb/、專區解鎖後「這批進專區」預設開",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/5f45224c3a7a7e50ea323c11aa280de6f8b3945b",
+          "evidence_label": "commit 5f45224",
+          "verified": true,
+          "time": "08:46",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "專區測試圖腳本進 repo（scripts/zone_test.py：解鎖→翻譯→nsfw 出圖→補「測試」標籤）",
+          "project": "easy-draw",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/113655523009be082e1fe27f3a7e832615b91cb8",
+          "evidence_label": "commit 1136555",
+          "verified": true,
+          "time": "08:48",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 22,
+      "items_count": 26,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "遠端 9/21 早棒收工（縮減版，上下文 203k）：EasyDraw 五件上線、實驗圖整理、截圖規則與清空鈕兩條糾正",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "08:33",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "遠端 9/21 凌晨棒收工（縮減版，上下文 230k）：隔夜功課交付、外網入口、逆兔 LoRA、不附截圖偏好",
@@ -3986,6 +4043,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "02:03",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T08:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "08:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4061,7 +4127,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 10 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10）"
+      "notes": "另有 12 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 12）"
     }
   ]
 }
