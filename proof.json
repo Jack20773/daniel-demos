@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T15:00+08:00",
+  "generated_at": "2026-09-21T16:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3661,24 +3661,24 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 44,
+      "commits": 47,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 69,
-      "discord_replies": 64,
-      "tokens_main_wan": 133.7,
-      "tokens_sub_wan": 414.2,
-      "tokens_sessions": 73,
-      "tokens_msgs": 1771,
+      "subagent_runs": 73,
+      "discord_replies": 68,
+      "tokens_main_wan": 145.7,
+      "tokens_sub_wan": 539.3,
+      "tokens_sessions": 78,
+      "tokens_msgs": 1888,
       "tokens_by_model": {
-        "opus": 411.9,
+        "opus": 423.9,
         "sonnet": 0.0,
         "haiku": 135.9,
-        "fable": 0.0,
+        "fable": 125.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 133.7,
+        "opus": 145.7,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -3688,7 +3688,7 @@
         "opus": 278.2,
         "sonnet": 0.0,
         "haiku": 135.9,
-        "fable": 0.0,
+        "fable": 125.1,
         "other": 0.0
       },
       "score_avg": null,
@@ -4013,10 +4013,31 @@
           "time": "08:48",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "line-booking 全盤體檢報告（Fable 5.1 唯讀實查：使用率＋26 條痛點）",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/96c17aa4ea2e55df99a0f53cfca6bb467a3c1a09",
+          "evidence_label": "commit 96c17aa",
+          "verified": true,
+          "time": "15:30",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 26,
+      "items_count": 27,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "遠端 9/21 日棒收工（縮減版，上下文 207k）：EasyDraw 四件上線、LINE 預約體檢報告、兩張糾正票",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:32",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "遠端 9/21 早棒收工（縮減版，上下文 203k）：EasyDraw 五件上線、實驗圖整理、截圖規則與清空鈕兩條糾正",
@@ -4043,6 +4064,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "02:03",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T15:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4181,7 +4211,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 18 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 18）"
+      "notes": "另有 20 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 20）"
     }
   ]
 }
