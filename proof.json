@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T21:00+08:00",
+  "generated_at": "2026-09-21T22:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3661,33 +3661,33 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 58,
+      "commits": 62,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 81,
-      "discord_replies": 91,
-      "tokens_main_wan": 179.4,
-      "tokens_sub_wan": 631.0,
-      "tokens_sessions": 87,
-      "tokens_msgs": 2447,
+      "subagent_runs": 85,
+      "discord_replies": 106,
+      "tokens_main_wan": 187.5,
+      "tokens_sub_wan": 667.7,
+      "tokens_sessions": 91,
+      "tokens_msgs": 2645,
       "tokens_by_model": {
-        "opus": 539.9,
+        "opus": 581.3,
         "sonnet": 0.0,
-        "haiku": 145.3,
+        "haiku": 148.7,
         "fable": 125.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 179.4,
+        "opus": 187.5,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 360.5,
+        "opus": 393.8,
         "sonnet": 0.0,
-        "haiku": 145.3,
+        "haiku": 148.7,
         "fable": 125.1,
         "other": 0.0
       },
@@ -4066,26 +4066,59 @@
           "time": "18:47",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 30,
-      "skipped": [
+        },
+        {
+          "kind": "note",
+          "text": "19:27 會員中心 demo 已貼他（1551554897617362946，附 2 圖）：staging Version 546234ce、本地 commit b2be41f 未 push；連結 https://line-booking",
+          "project": "預約系統",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b2be41f55a2f0055eee44dc2f677c48a3afbb664",
+          "evidence_label": "commit b2be41f",
+          "verified": true,
+          "time": "19:23",
+          "plain": null,
+          "plain_ok": false
+        },
         {
           "kind": "commit",
           "text": "test/run-all.mjs：登記 member.test.mjs 進閘門清單（母體 33→34 支；--only…",
           "project": "預約系統",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/c2f5545e749c254f68f0a076ba49a01eb7c94e85",
+          "evidence_label": "commit c2f5545",
+          "verified": true,
+          "time": "19:42",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 32,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "會員中心第二版（只推 staging）：個人資料可改姓名／電話（PATCH /api/my/profile，只認 LI…",
+          "project": "預約系統",
           "reason": "unpushed",
           "reason_label": "未 push",
-          "time": "19:42",
+          "time": "21:54",
           "repo": "root"
         },
         {
           "kind": "commit",
-          "text": "會員中心 demo（只推 staging）：mine.html 擴成儲值金大數字＋預約／消費／儲值／個人資料四格，新增…",
+          "text": "店名改為「花漾Spa美學」：SHOP_NAME（正式／測試站）、env 預設、預約頁 title 與頁首（原佔位「沐光…",
           "project": "預約系統",
           "reason": "unpushed",
           "reason_label": "未 push",
-          "time": "19:23",
+          "time": "21:39",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "webhook 回覆文字：3 句「點下方選單的『我的預約』」改為「會員中心 → 預約記錄」（會員中心上線後名稱對齊；圖…",
+          "project": "預約系統",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "21:37",
           "repo": "root"
         },
         {
@@ -4132,6 +4165,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "02:03",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T21:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4337,11 +4379,11 @@
           "time": null
         },
         {
-          "text": "19:27 會員中心 demo 已貼他（1551554897617362946，附 2 圖）：staging Version 546234ce、本地 commit b2be41f 未 push；連結 https://line-booking",
+          "text": "21:58 第二版 demo 已貼他（1551592964726198314，附 2 圖）：commit b4c786d、staging Version 2c7703aa；PATCH /api/my/profile（只認 LINE toke",
           "time": null
         }
       ],
-      "notes": "另有 28 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 26）"
+      "notes": "另有 30 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 27）"
     }
   ]
 }
