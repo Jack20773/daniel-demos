@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-21T18:00+08:00",
+  "generated_at": "2026-09-21T19:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3661,33 +3661,33 @@
     },
     {
       "date": "2026-09-21",
-      "commits": 51,
+      "commits": 54,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 76,
-      "discord_replies": 76,
-      "tokens_main_wan": 155.8,
-      "tokens_sub_wan": 583.4,
-      "tokens_sessions": 81,
-      "tokens_msgs": 2149,
+      "subagent_runs": 80,
+      "discord_replies": 87,
+      "tokens_main_wan": 173.2,
+      "tokens_sub_wan": 619.1,
+      "tokens_sessions": 86,
+      "tokens_msgs": 2324,
       "tokens_by_model": {
-        "opus": 474.6,
+        "opus": 524.3,
         "sonnet": 0.0,
-        "haiku": 139.5,
+        "haiku": 142.9,
         "fable": 125.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 155.8,
+        "opus": 173.2,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 318.8,
+        "opus": 351.1,
         "sonnet": 0.0,
-        "haiku": 139.5,
+        "haiku": 142.9,
         "fable": 125.1,
         "other": 0.0
       },
@@ -4044,8 +4044,8 @@
           "plain_ok": false
         },
         {
-          "kind": "commit",
-          "text": "line-booking 第二刀（監控＋備份，測試站已上、正式站未推）：/api/health 回 cron／日報時間…",
+          "kind": "note",
+          "text": "第二刀分身收工 commit 1e1f81a 已 push：/api/health（cron 寫 store_settings.cron_last_run_at）、scripts/health_check.ps1 排程 LineBookin",
           "project": "預約系統",
           "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1e1f81a14a0bc8e030ea005900128908278e13a0",
@@ -4054,10 +4054,31 @@
           "time": "17:50",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "test/run-all.mjs：閘門對基礎設施瞬時錯誤（fetch failed／ECONNREFUSED／ECON…",
+          "project": "預約系統",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/29ecbac12e109b273ab09213d84c5b043979d264",
+          "evidence_label": "commit 29ecbac",
+          "verified": true,
+          "time": "18:47",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 29,
+      "items_count": 30,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "遠端 9/21 晚棒收工（縮減版，上下文 203k）：line-booking 兩刀 demo＋正式站部署卡閘門瞬時錯…",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:51",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "遠端 9/21 日棒收工（縮減版，上下文 207k）：EasyDraw 四件上線、LINE 預約體檢報告、兩張糾正票",
@@ -4093,6 +4114,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "02:03",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-21T18:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4261,9 +4291,13 @@
         {
           "text": "17:42 他裁決「這些看起來都可以推上正式版」（1551529074734669908）→ 已回一句（1551529135145226272）。等第二刀分身 test:all 跑完 commit 後，跑 npm run deploy（閘門",
           "time": null
+        },
+        {
+          "text": "17:47 回他「使用者習慣」問題（1551529474728792064）：她用約一半功能只用一週（代客登記 49／結帳 8／儲值 3）、客人自約 0／取消 0／電話 1/49；三個猜測原因；建議只問又仟一題「預約記在哪、哪裡不順手」＋圖",
+          "time": null
         }
       ],
-      "notes": "另有 22 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22）"
+      "notes": "另有 24 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
     }
   ]
 }
