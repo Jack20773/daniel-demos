@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T01:00+08:00",
+  "generated_at": "2026-09-22T02:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4260,34 +4260,34 @@
     },
     {
       "date": "2026-09-22",
-      "commits": 1,
+      "commits": 5,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 8,
-      "tokens_main_wan": 6.7,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 1,
-      "tokens_msgs": 62,
+      "subagent_runs": 3,
+      "discord_replies": 24,
+      "tokens_main_wan": 23.4,
+      "tokens_sub_wan": 29.3,
+      "tokens_sessions": 5,
+      "tokens_msgs": 192,
       "tokens_by_model": {
-        "opus": 6.7,
+        "opus": 34.6,
         "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 0.0,
+        "haiku": 3.5,
+        "fable": 14.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 6.7,
+        "opus": 23.4,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 0.0,
+        "opus": 11.2,
         "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 0.0,
+        "haiku": 3.5,
+        "fable": 14.6,
         "other": 0.0
       },
       "score_avg": null,
@@ -4296,9 +4296,22 @@
       "scores": [],
       "corrections_new": 0,
       "highlights": [
+        "proof v6 demo：近 7 天一張圖取代今天按專案（他 01:44 提）",
         "00:35 第 11 次全過（兩輪 34 支各 2022 PASS／0 FAIL，RETRIED 0），正式站 Version b8420cc4；curl 驗：/api/services shop_name＝花漾Spa美學、PATCH /a"
       ],
       "items": [
+        {
+          "kind": "commit",
+          "text": "proof v6 demo：近 7 天一張圖取代今天按專案（他 01:44 提）",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/38b7802c9ffa10a31237566f3901505ae3324e95",
+          "evidence_label": "commit 38b7802",
+          "verified": true,
+          "time": "01:49",
+          "plain": null,
+          "plain_ok": false
+        },
         {
           "kind": "note",
           "text": "00:35 第 11 次全過（兩輪 34 支各 2022 PASS／0 FAIL，RETRIED 0），正式站 Version b8420cc4；curl 驗：/api/services shop_name＝花漾Spa美學、PATCH /a",
@@ -4312,8 +4325,35 @@
           "plain_ok": false
         }
       ],
-      "items_count": 1,
+      "items_count": 2,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "隔夜任務檔：額度全盤檢視（會計 5.1＋審查員對抗）＋AI 教學素材研究（他 01:48 交辦 15516512608…",
+          "project": "會計部",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:49",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "遠端 9/22 01:07 棒收工（縮減版，上下文 205k）：line-booking 會員中心第二版第 11 次閘…",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-22T01:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:00",
+          "repo": "daniel-demos"
+        },
         {
           "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-22T00:00+08:00 (days=14 ite…",
@@ -4334,7 +4374,7 @@
           "time": null
         }
       ],
-      "notes": "另有 1 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
+      "notes": "另有 4 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
     }
   ]
 }
