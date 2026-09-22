@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T12:00+08:00",
+  "generated_at": "2026-09-22T13:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4260,24 +4260,24 @@
     },
     {
       "date": "2026-09-22",
-      "commits": 19,
+      "commits": 22,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 12,
-      "discord_replies": 39,
-      "tokens_main_wan": 63.8,
-      "tokens_sub_wan": 171.8,
-      "tokens_sessions": 18,
-      "tokens_msgs": 537,
+      "subagent_runs": 13,
+      "discord_replies": 42,
+      "tokens_main_wan": 65.7,
+      "tokens_sub_wan": 173.5,
+      "tokens_sessions": 19,
+      "tokens_msgs": 558,
       "tokens_by_model": {
-        "opus": 110.3,
-        "sonnet": 24.3,
+        "opus": 112.2,
+        "sonnet": 26.0,
         "haiku": 17.5,
         "fable": 83.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 55.9,
+        "opus": 57.8,
         "sonnet": 0.0,
         "haiku": 7.9,
         "fable": 0.0,
@@ -4285,7 +4285,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 54.4,
-        "sonnet": 24.3,
+        "sonnet": 26.0,
         "haiku": 9.6,
         "fable": 83.5,
         "other": 0.0
@@ -4354,6 +4354,24 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "全盤分析 skill 正式上線（他 12:02 裁決 A開始）；分身預設模型開關 CLAUDE_CODE_SUBAGE…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:04",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "全盤分析 demo：分身 Opus 佔比報告 v2（Fable 分析＋Opus 盲審 16 條）、inbox 拒收機制…",
+          "project": "會計部",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:00",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "BOOT_BRIEF：全盤分析 skill 評估進度 Q3 已答、Q4 已送",
           "project": "遠端",
           "reason": "automated",
@@ -4387,6 +4405,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "01:07",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-22T12:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4515,7 +4542,7 @@
           "time": null
         }
       ],
-      "notes": "另有 16 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16）"
+      "notes": "另有 19 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17）"
     }
   ]
 }
