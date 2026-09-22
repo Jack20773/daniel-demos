@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T10:00+08:00",
+  "generated_at": "2026-09-22T11:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4260,34 +4260,34 @@
     },
     {
       "date": "2026-09-22",
-      "commits": 15,
+      "commits": 18,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 8,
-      "discord_replies": 29,
-      "tokens_main_wan": 40.9,
-      "tokens_sub_wan": 116.4,
-      "tokens_sessions": 13,
-      "tokens_msgs": 387,
+      "subagent_runs": 11,
+      "discord_replies": 39,
+      "tokens_main_wan": 62.4,
+      "tokens_sub_wan": 163.1,
+      "tokens_sessions": 17,
+      "tokens_msgs": 504,
       "tokens_by_model": {
-        "opus": 74.0,
+        "opus": 108.9,
         "sonnet": 15.6,
         "haiku": 17.5,
-        "fable": 50.1,
+        "fable": 83.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 33.0,
+        "opus": 54.5,
         "sonnet": 0.0,
         "haiku": 7.9,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 41.0,
+        "opus": 54.4,
         "sonnet": 15.6,
         "haiku": 9.6,
-        "fable": 50.1,
+        "fable": 83.5,
         "other": 0.0
       },
       "score_avg": null,
@@ -4296,10 +4296,23 @@
       "scores": [],
       "corrections_new": 0,
       "highlights": [
+        "隔夜任務檔：額度全盤檢視（會計 5.1＋審查員對抗）＋AI 教學素材研究（他 01:48 交辦 15516512608…",
         "proof v6 demo：近 7 天一張圖取代今天按專案（他 01:44 提）",
-        "00:35 第 11 次全過（兩輪 34 支各 2022 PASS／0 FAIL，RETRIED 0），正式站 Version b8420cc4；curl 驗：/api/services shop_name＝花漾Spa美學、PATCH /a"
+        "補：struct_audit 輸出留檔（審查員重算依據）"
       ],
       "items": [
+        {
+          "kind": "commit",
+          "text": "隔夜任務檔：額度全盤檢視（會計 5.1＋審查員對抗）＋AI 教學素材研究（他 01:48 交辦 15516512608…",
+          "project": "會計部",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/9cb4ae9a8118a6d10299abffa843a52434bd8d01",
+          "evidence_label": "commit 9cb4ae9",
+          "verified": true,
+          "time": "01:49",
+          "plain": null,
+          "plain_ok": false
+        },
         {
           "kind": "commit",
           "text": "proof v6 demo：近 7 天一張圖取代今天按專案（他 01:44 提）",
@@ -4311,6 +4324,18 @@
           "time": "01:49",
           "plain": "改用近 7 天圖片總結代替每天按項目列，讓展示效果更清楚。",
           "plain_ok": true
+        },
+        {
+          "kind": "commit",
+          "text": "補：struct_audit 輸出留檔（審查員重算依據）",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b0ffa3d0bd9fc7c9db2e7dd2e1cd207698b91608",
+          "evidence_label": "commit b0ffa3d",
+          "verified": true,
+          "time": "02:44",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "note",
@@ -4325,15 +4350,24 @@
           "plain_ok": true
         }
       ],
-      "items_count": 2,
+      "items_count": 4,
       "skipped": [
         {
           "kind": "commit",
-          "text": "補：struct_audit 輸出留檔（審查員重算依據）",
-          "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:44",
+          "text": "BOOT_BRIEF：全盤分析 skill 評估進度 Q3 已答、Q4 已送",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "10:02",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "遠端 9/22 10:07 棒收工（縮減版，上下文 217k）：隔夜額度檢視＋教學素材研究交付、發第三人訊息先給他篩（…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "10:01",
           "repo": "root"
         },
         {
@@ -4347,21 +4381,21 @@
         },
         {
           "kind": "commit",
-          "text": "隔夜任務檔：額度全盤檢視（會計 5.1＋審查員對抗）＋AI 教學素材研究（他 01:48 交辦 15516512608…",
-          "project": "會計部",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "01:49",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
           "text": "遠端 9/22 01:07 棒收工（縮減版，上下文 205k）：line-booking 會員中心第二版第 11 次閘…",
           "project": "看板",
           "reason": "automated",
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "01:07",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-22T10:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "10:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4472,7 +4506,7 @@
           "time": null
         }
       ],
-      "notes": "另有 14 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 12）"
+      "notes": "另有 15 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 15）"
     }
   ]
 }
