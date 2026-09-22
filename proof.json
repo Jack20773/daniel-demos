@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T13:00+08:00",
+  "generated_at": "2026-09-22T14:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4260,24 +4260,24 @@
     },
     {
       "date": "2026-09-22",
-      "commits": 22,
+      "commits": 24,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 13,
-      "discord_replies": 42,
-      "tokens_main_wan": 65.7,
+      "discord_replies": 44,
+      "tokens_main_wan": 76.2,
       "tokens_sub_wan": 173.5,
-      "tokens_sessions": 19,
-      "tokens_msgs": 558,
+      "tokens_sessions": 20,
+      "tokens_msgs": 577,
       "tokens_by_model": {
-        "opus": 112.2,
+        "opus": 122.7,
         "sonnet": 26.0,
         "haiku": 17.5,
         "fable": 83.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 57.8,
+        "opus": 68.3,
         "sonnet": 0.0,
         "haiku": 7.9,
         "fable": 0.0,
@@ -4338,6 +4338,30 @@
           "plain_ok": false
         },
         {
+          "kind": "commit",
+          "text": "全盤分析 demo：分身 Opus 佔比報告 v2（Fable 分析＋Opus 盲審 16 條）、inbox 拒收機制…",
+          "project": "會計部",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e4cfe850d1976a5085973ef036493c347e9ea746",
+          "evidence_label": "commit e4cfe85",
+          "verified": true,
+          "time": "12:00",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "全盤分析 skill 正式上線（他 12:02 裁決 A開始）；分身預設模型開關 CLAUDE_CODE_SUBAGE…",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/97bc9a525e6002baa6be9ac52ca554835e276ac6",
+          "evidence_label": "commit 97bc9a5",
+          "verified": true,
+          "time": "12:04",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
           "kind": "note",
           "text": "00:35 第 11 次全過（兩輪 34 支各 2022 PASS／0 FAIL，RETRIED 0），正式站 Version b8420cc4；curl 驗：/api/services shop_name＝花漾Spa美學、PATCH /a",
           "project": "預約系統",
@@ -4350,24 +4374,15 @@
           "plain_ok": true
         }
       ],
-      "items_count": 4,
+      "items_count": 6,
       "skipped": [
         {
           "kind": "commit",
-          "text": "全盤分析 skill 正式上線（他 12:02 裁決 A開始）；分身預設模型開關 CLAUDE_CODE_SUBAGE…",
+          "text": "遠端 9/22 13:46 棒收工（縮減版，上下文 202k）：全盤分析 skill 上線＋Opus 佔比報告 v2＋…",
           "project": "記憶",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "12:04",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "全盤分析 demo：分身 Opus 佔比報告 v2（Fable 分析＋Opus 盲審 16 條）、inbox 拒收機制…",
-          "project": "會計部",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "12:00",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:46",
           "repo": "root"
         },
         {
@@ -4405,6 +4420,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "01:07",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-22T13:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4542,7 +4566,7 @@
           "time": null
         }
       ],
-      "notes": "另有 19 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17）"
+      "notes": "另有 19 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
     }
   ]
 }
