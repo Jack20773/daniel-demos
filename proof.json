@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T16:00+08:00",
+  "generated_at": "2026-09-22T17:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4260,24 +4260,24 @@
     },
     {
       "date": "2026-09-22",
-      "commits": 26,
+      "commits": 28,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 15,
-      "discord_replies": 50,
-      "tokens_main_wan": 81.4,
-      "tokens_sub_wan": 202.7,
+      "discord_replies": 52,
+      "tokens_main_wan": 83.1,
+      "tokens_sub_wan": 204.3,
       "tokens_sessions": 22,
-      "tokens_msgs": 740,
+      "tokens_msgs": 766,
       "tokens_by_model": {
-        "opus": 127.9,
-        "sonnet": 55.2,
+        "opus": 129.6,
+        "sonnet": 56.9,
         "haiku": 17.5,
         "fable": 83.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 73.5,
+        "opus": 75.2,
         "sonnet": 0.0,
         "haiku": 7.9,
         "fable": 0.0,
@@ -4285,7 +4285,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 54.4,
-        "sonnet": 55.2,
+        "sonnet": 56.9,
         "haiku": 9.6,
         "fable": 83.5,
         "other": 0.0
@@ -4363,6 +4363,18 @@
         },
         {
           "kind": "note",
+          "text": "16:04 開關上線：commit 1381599（已 push）、版本 f5f6b0c1、閘門 35 檔／2046 項全綠；store_settings 新增 self_booking_enabled='0'（唯讀查無此列→純 INSER",
+          "project": "預約系統",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/138159996f1121e5aae5c0f1ab00e3226d048b6d",
+          "evidence_label": "commit 1381599",
+          "verified": true,
+          "time": "16:04",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "note",
           "text": "00:35 第 11 次全過（兩輪 34 支各 2022 PASS／0 FAIL，RETRIED 0），正式站 Version b8420cc4；curl 驗：/api/services shop_name＝花漾Spa美學、PATCH /a",
           "project": "預約系統",
           "by": "未對",
@@ -4374,7 +4386,7 @@
           "plain_ok": true
         }
       ],
-      "items_count": 6,
+      "items_count": 7,
       "skipped": [
         {
           "kind": "commit",
@@ -4420,6 +4432,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "01:07",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-22T16:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4584,7 +4605,7 @@
           "time": null
         }
       ],
-      "notes": "另有 21 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21）"
+      "notes": "另有 22 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22）"
     }
   ]
 }
