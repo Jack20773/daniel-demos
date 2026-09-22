@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T20:00+08:00",
+  "generated_at": "2026-09-22T21:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4260,24 +4260,24 @@
     },
     {
       "date": "2026-09-22",
-      "commits": 32,
+      "commits": 33,
       "tickets_done": 0,
       "tickets_verify": 1,
       "subagent_runs": 15,
       "discord_replies": 52,
-      "tokens_main_wan": 98.4,
+      "tokens_main_wan": 98.9,
       "tokens_sub_wan": 204.3,
       "tokens_sessions": 22,
-      "tokens_msgs": 792,
+      "tokens_msgs": 795,
       "tokens_by_model": {
-        "opus": 144.9,
+        "opus": 145.3,
         "sonnet": 56.9,
         "haiku": 17.5,
         "fable": 83.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 90.5,
+        "opus": 90.9,
         "sonnet": 0.0,
         "haiku": 7.9,
         "fable": 0.0,
@@ -4444,6 +4444,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "01:07",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-22T20:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "20:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4644,7 +4653,7 @@
           "time": null
         }
       ],
-      "notes": "另有 25 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25）"
+      "notes": "另有 26 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 26）"
     }
   ]
 }
