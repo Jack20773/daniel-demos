@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-22T15:00+08:00",
+  "generated_at": "2026-09-22T16:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4260,24 +4260,24 @@
     },
     {
       "date": "2026-09-22",
-      "commits": 25,
+      "commits": 26,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 13,
-      "discord_replies": 45,
-      "tokens_main_wan": 77.4,
-      "tokens_sub_wan": 173.5,
-      "tokens_sessions": 20,
-      "tokens_msgs": 585,
+      "subagent_runs": 15,
+      "discord_replies": 50,
+      "tokens_main_wan": 81.4,
+      "tokens_sub_wan": 202.7,
+      "tokens_sessions": 22,
+      "tokens_msgs": 740,
       "tokens_by_model": {
-        "opus": 123.9,
-        "sonnet": 26.0,
+        "opus": 127.9,
+        "sonnet": 55.2,
         "haiku": 17.5,
         "fable": 83.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 69.5,
+        "opus": 73.5,
         "sonnet": 0.0,
         "haiku": 7.9,
         "fable": 0.0,
@@ -4285,7 +4285,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 54.4,
-        "sonnet": 26.0,
+        "sonnet": 55.2,
         "haiku": 9.6,
         "fable": 83.5,
         "other": 0.0
@@ -4420,6 +4420,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "01:07",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-22T15:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4575,7 +4584,7 @@
           "time": null
         }
       ],
-      "notes": "另有 20 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 20）"
+      "notes": "另有 21 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21）"
     }
   ]
 }
