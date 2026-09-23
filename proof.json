@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T06:00+08:00",
+  "generated_at": "2026-09-24T07:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 13,
+      "commits": 17,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 9,
-      "discord_replies": 20,
-      "tokens_main_wan": 67.7,
-      "tokens_sub_wan": 107.4,
-      "tokens_sessions": 14,
-      "tokens_msgs": 524,
+      "subagent_runs": 11,
+      "discord_replies": 23,
+      "tokens_main_wan": 84.4,
+      "tokens_sub_wan": 116.6,
+      "tokens_sessions": 17,
+      "tokens_msgs": 580,
       "tokens_by_model": {
-        "opus": 100.3,
-        "sonnet": 42.4,
-        "haiku": 3.3,
+        "opus": 117.0,
+        "sonnet": 48.3,
+        "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 67.7,
+        "opus": 84.4,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4529,8 +4529,8 @@
       },
       "tokens_by_model_sub": {
         "opus": 32.6,
-        "sonnet": 42.4,
-        "haiku": 3.3,
+        "sonnet": 48.3,
+        "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
@@ -4604,10 +4604,40 @@
           "time": "05:06",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "06:0x 自己抓到自己又把猜測講成確定：ai-trader 其實是活的，差一步就貼假告警",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/4e9d463bddc1b64a42fe1b9d7c70149af3af99c9",
+          "evidence_label": "commit 4e9d463",
+          "verified": true,
+          "time": "06:09",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 5,
+      "items_count": 6,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：08e9f1d9 棒（01:22-06:55），看門狗 206k 縮減版重開",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:56",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "Gateway 狀態分類器補上 LOGGED_IN：健康的 Gateway 原本會被回報成「在等你登入」",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "06:07",
+          "repo": "ai-trader"
+        },
         {
           "kind": "commit",
           "text": "Gateway 告警從一句 log 升級成截圖＋人話＋Discord 直送，並補上「通了」的恢復訊息",
@@ -4625,6 +4655,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "00:24",
           "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T06:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4699,7 +4738,7 @@
           "time": null
         }
       ],
-      "notes": "另有 8 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
+      "notes": "另有 11 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 8、repo 沒有 GitHub remote（沒有可點連結） 3）"
     }
   ]
 }
