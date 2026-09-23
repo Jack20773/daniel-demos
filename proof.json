@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T03:00+08:00",
+  "generated_at": "2026-09-24T04:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 7,
+      "commits": 9,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 9,
       "discord_replies": 20,
-      "tokens_main_wan": 59.2,
+      "tokens_main_wan": 63.4,
       "tokens_sub_wan": 107.4,
       "tokens_sessions": 14,
-      "tokens_msgs": 486,
+      "tokens_msgs": 503,
       "tokens_by_model": {
-        "opus": 91.8,
+        "opus": 96.0,
         "sonnet": 42.4,
         "haiku": 3.3,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 59.2,
+        "opus": 63.4,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4540,7 +4540,9 @@
       "scores": [],
       "corrections_new": 0,
       "highlights": [
-        "早報頁改版：提案卡收合、核准碼短顯示+一鍵複製、0 筆改綠色好消息"
+        "早報頁改版：提案卡收合、核准碼短顯示+一鍵複製、0 筆改綠色好消息",
+        "修每日備份 wrapper 的假綠燈：linebot 失敗已連續 27 天但排程器一直顯示成功",
+        "修 002_skills 的防漂移指令自己漂了：舊指令數出 19（自建 11＋synced/ 官方 8）"
       ],
       "items": [
         {
@@ -4554,19 +4556,34 @@
           "time": "00:07",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 1,
-      "skipped": [
+        },
         {
           "kind": "commit",
           "text": "修每日備份 wrapper 的假綠燈：linebot 失敗已連續 27 天但排程器一直顯示成功",
           "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f6c3fded53323029b65737507aa9b7619faa1db0",
+          "evidence_label": "commit f6c3fde",
+          "verified": true,
           "time": "00:30",
-          "repo": "root"
+          "plain": null,
+          "plain_ok": false
         },
+        {
+          "kind": "commit",
+          "text": "修 002_skills 的防漂移指令自己漂了：舊指令數出 19（自建 11＋synced/ 官方 8）",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/5c31de93583f4844e500f24822731663848b0e8c",
+          "evidence_label": "commit 5c31de9",
+          "verified": true,
+          "time": "03:17",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 3,
+      "skipped": [
         {
           "kind": "commit",
           "text": "Gateway 告警從一句 log 升級成截圖＋人話＋Discord 直送，並補上「通了」的恢復訊息",
@@ -4584,6 +4601,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "00:24",
           "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T03:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4625,9 +4651,13 @@
         {
           "text": "對抗審查 21 條已獨立複核，交接說的「零待處理」屬實，挑錯員不用重派（上面 33 行那節「只差分析員裁決」已過期）。逐條編號點名：接受 16＝02/03/05/07/08/09/10/11/12/15/16/17/18/19/20/21，",
           "time": null
+        },
+        {
+          "text": "SessionStart 規模數字巡檢的紅燈已修掉，而且挖出一個比紅燈本身更嚴重的東西（03:1x）。",
+          "time": null
         }
       ],
-      "notes": "另有 6 筆 commit 未列（未 push 1、repo 沒有 GitHub remote（沒有可點連結） 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
+      "notes": "另有 6 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
     }
   ]
 }
