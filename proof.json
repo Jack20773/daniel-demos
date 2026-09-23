@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T00:01+08:00",
+  "generated_at": "2026-09-24T01:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,34 +4504,34 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 0,
+      "commits": 4,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 0.0,
-      "tokens_sub_wan": 0.3,
-      "tokens_sessions": 1,
-      "tokens_msgs": 1,
+      "subagent_runs": 9,
+      "discord_replies": 8,
+      "tokens_main_wan": 34.1,
+      "tokens_sub_wan": 104.3,
+      "tokens_sessions": 13,
+      "tokens_msgs": 406,
       "tokens_by_model": {
-        "opus": 0.0,
-        "sonnet": 0.3,
-        "haiku": 0.0,
-        "fable": 0.0,
+        "opus": 66.7,
+        "sonnet": 42.4,
+        "haiku": 3.3,
+        "fable": 26.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
+        "opus": 34.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 0.0,
-        "sonnet": 0.3,
-        "haiku": 0.0,
-        "fable": 0.0,
+        "opus": 32.6,
+        "sonnet": 42.4,
+        "haiku": 3.3,
+        "fable": 26.0,
         "other": 0.0
       },
       "score_avg": null,
@@ -4539,12 +4539,60 @@
       "score_high": 0,
       "scores": [],
       "corrections_new": 0,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
-      "skipped": [],
-      "selfreport": [],
-      "notes": ""
+      "highlights": [
+        "早報頁改版：提案卡收合、核准碼短顯示+一鍵複製、0 筆改綠色好消息"
+      ],
+      "items": [
+        {
+          "kind": "commit",
+          "text": "早報頁改版：提案卡收合、核准碼短顯示+一鍵複製、0 筆改綠色好消息",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/9730905a09be56bc9929dc65623b620907bac019",
+          "evidence_label": "commit 9730905",
+          "verified": true,
+          "time": "00:07",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 1,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "修每日備份 wrapper 的假綠燈：linebot 失敗已連續 27 天但排程器一直顯示成功",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:30",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "補進版控：兩個月實驗帳本與每日 live run 產出",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "00:24",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T00:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:01",
+          "repo": "daniel-demos"
+        }
+      ],
+      "selfreport": [
+        {
+          "text": "直接做掉（沒問他）：ai-trader data/ 備份至 D:\\_backups\\ai-trader_2026-09-24（209/209 檔、md5 抽驗一致）＋ 207 檔補進版控（53a2ca1，零敏感檔；public 下本機設定檔",
+          "time": null
+        }
+      ],
+      "notes": "另有 3 筆 commit 未列（未 push 1、repo 沒有 GitHub remote（沒有可點連結） 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
     }
   ]
 }
