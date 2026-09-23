@@ -86,27 +86,56 @@ def load_pending_proposals():
     return out, str(path)
 
 
+def _shorten(text, n=40):
+    """摘要用：只截斷「顯示」的那份，原文完全不動、完整放進展開區。"""
+    t = str(text)
+    if len(t) <= n:
+        return t
+    return t[:n] + "…"
+
+
+def _paragraphize(text):
+    """展開區斷行用：中文句號/驚嘆號/問號後面加空行，不刪不改任何字元。"""
+    return re.sub(r'([。！？])(?!\s*$)', r'\1\n\n', str(text))
+
+
+def _short_id(pid, keep=13):
+    """顯示用短版（"prop-" + 前 8 碼 hex + 刪節號），複製的仍是完整 pid。"""
+    pid = str(pid)
+    if len(pid) <= keep:
+        return pid
+    return pid[:keep] + "…"
+
+
 def render_proposal_card(ticket, pr):
     ticket_id = ticket.get("id") or "（無 id）"
     field = pr.get("field") or ""
     field_label = FIELD_LABEL.get(field, field)
+    field_short = field_label.split("（")[0]
     value = pr.get("value") or ""
     prop_id = pr.get("proposal_id") or ""
     proposed_at = pr.get("proposed_at") or "（無時間戳）"
     approve_cmd = f"核准 {prop_id}"
+    summary_text = f"{ticket_id} ・ {field_short} ・ {_shorten(value, 40)}"
+    value_paragraphs = _paragraphize(value)
+    short_prop = _short_id(prop_id)
+    short_approve_display = f"核准 {short_prop}"
     return f"""  <article class="card">
-    <div class="tag">票：<code>{esc(ticket_id)}</code></div>
-    <div class="field-label">{esc(field_label)}</div>
-    <p class="value">{esc(value)}</p>
-    <div class="meta-row">
-      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">{esc(prop_id)}</code></span>
-      <span>提出時間：{esc(proposed_at)}</span>
-    </div>
-    <div class="howto">
-      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
-      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
-      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">{esc(approve_cmd)}</code>
-    </div>
+    <details>
+      <summary>{esc(summary_text)}<span class="expand-hint">展開看全文</span></summary>
+      <div class="tag">票：<code>{esc(ticket_id)}</code></div>
+      <div class="field-label">{esc(field_label)}</div>
+      <p class="value">{esc(value_paragraphs)}</p>
+      <div class="meta-row">
+        <span>提案編號：<code>{esc(short_prop)}</code></span>
+        <span>提出時間：{esc(proposed_at)}</span>
+      </div>
+      <div class="howto">
+        <div class="approve-line">要同意的核准指令：<code class="short-approve">{esc(short_approve_display)}</code></div>
+        <button class="copy-btn" type="button" data-copy="{esc(approve_cmd)}" data-label="📋 一鍵複製" onclick="copyApprove(this)">📋 一鍵複製</button>
+        <p class="copy-hint">複製後貼到 Discord 送出就算同意。整串不能改，多一個字會被退件。</p>
+      </div>
+    </details>
   </article>
 """
 
@@ -164,13 +193,13 @@ def render_section2():
     if overdue:
         parts.append("".join(render_alert_item(x) for x in overdue))
     else:
-        parts.append('  <p class="empty">本次 0 筆。</p>\n')
+        parts.append('  <p class="good">✅ 這裡是 0，沒有逾期沒處理的東西。</p>\n')
 
     parts.append(f'  <h3>他留言我還沒回（UNANSWERED）—— 這段共 {len(unanswered)} 筆</h3>\n')
     if unanswered:
         parts.append("".join(render_alert_item(x) for x in unanswered))
     else:
-        parts.append('  <p class="empty">本次 0 筆。</p>\n')
+        parts.append('  <p class="good">✅ 這裡也是 0，你沒有欠我回覆的東西。</p>\n')
 
     if correction_n is not None:
         parts.append(
@@ -247,8 +276,14 @@ body{
   font-size:17px; line-height:1.7; overflow-x:hidden;
 }
 .wrap{max-width:720px; margin:0 auto; padding:0 16px 64px}
-header{padding:28px 0 18px}
-h1{font-size:23px; margin:0 0 6px; letter-spacing:.01em}
+.banner{
+  background:var(--accent-soft); color:var(--accent); border:1px solid var(--accent);
+  border-radius:10px; padding:10px 14px; margin-top:18px; font-size:14px; font-weight:700;
+  line-height:1.5;
+}
+header{padding:20px 0 18px}
+h1{font-size:34px; margin:0 0 8px; font-weight:800; letter-spacing:.01em; line-height:1.3}
+h1 .num{font-size:1.3em; color:var(--accent); font-weight:900}
 .sub{color:var(--ink2); font-size:14.5px; margin:0}
 section.group{margin-top:30px}
 .group > h2{font-size:17px; margin:0 0 4px; font-weight:700}
@@ -272,7 +307,38 @@ code.pick{display:inline-block; cursor:pointer; border:1px dashed var(--accent)}
 .howto{font-size:13.5px; color:var(--ink2); margin-top:8px; padding-top:10px; border-top:1px dashed var(--line)}
 .howto code.approve-cmd{display:block; margin-top:8px; padding:10px 12px; font-size:15px; text-align:center}
 .empty{color:var(--ink2); font-size:14.5px; padding:4px 0}
+.good{
+  color:#1a7a4c; background:#e6f6ec; border:1px solid #b9e3c9;
+  border-radius:10px; padding:10px 14px; font-size:14.5px; font-weight:700;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .good{ color:#8fe3b6; background:#173325; border-color:#2c5940; }
+}
+:root[data-theme="dark"] .good{ color:#8fe3b6; background:#173325; border-color:#2c5940; }
 .footnote{color:var(--ink2); font-size:12.5px; margin-top:6px}
+details{margin:0}
+details > summary{
+  cursor:pointer; list-style:none; font-size:15.5px; font-weight:600;
+  padding-left:20px; position:relative;
+}
+details > summary::-webkit-details-marker{display:none}
+details > summary::before{
+  content:"▸"; position:absolute; left:0; top:0; color:var(--accent); font-weight:900;
+}
+details[open] > summary::before{content:"▾"}
+details > summary .expand-hint{
+  display:inline-block; margin-left:8px; color:var(--ink2); font-size:12.5px; font-weight:400;
+}
+details[open] > summary .expand-hint{display:none}
+details > summary ~ *{margin-top:10px}
+.approve-line{font-size:13.5px; color:var(--ink2); margin-bottom:8px}
+.short-approve{font-size:14px}
+.copy-btn{
+  display:block; width:100%; border:none; border-radius:10px; padding:12px 14px;
+  background:var(--accent); color:#fff; font-size:15px; font-weight:700; cursor:pointer;
+}
+.copy-btn:active{opacity:.85}
+.copy-hint{color:var(--ink2); font-size:12px; margin:8px 0 0}
 .day-label{font-weight:600; margin:0 0 8px}
 .quota-line{margin:0 0 6px; font-size:15px; white-space:pre-wrap; word-break:break-word}
 footer{margin-top:40px; padding-top:16px; border-top:1px solid var(--line); color:var(--ink2); font-size:12px; word-break:break-all}
@@ -281,6 +347,7 @@ footer p{margin:4px 0}
 </head>
 <body>
 <div class="wrap">
+<div class="banner">這頁要你做的事只有一種：看到想同意的就按複製、貼到 Discord。其他都不用管。</div>
 <header>
   <h1>__HEADLINE__</h1>
   <p class="sub">每天早上一頁看完：球在你那邊的事、我還沒補好的功課、昨天花多少今天做什麼</p>
@@ -320,6 +387,34 @@ function selectAll(el){
     sel.addRange(range);
   }catch(e){}
 }
+function copyApprove(btn){
+  var text = btn.getAttribute('data-copy');
+  var label = btn.getAttribute('data-label') || btn.textContent;
+  function show(ok){
+    btn.textContent = ok ? '已複製 ✓' : '複製失敗，請手動選取';
+    setTimeout(function(){ btn.textContent = label; }, 2000);
+  }
+  function fallbackCopy(){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      ta.style.top = '-9999px';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      show(ok);
+    }catch(e){ show(false); }
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){ show(true); }, fallbackCopy);
+  } else {
+    fallbackCopy();
+  }
+}
 </script>
 </body>
 </html>
@@ -333,14 +428,14 @@ def build(dry_run=False):
 
     total = n1 + n2
     if total == 0:
-        headline = "今天沒有事等你，其他都正常"
+        headline_html = "今天沒有事等你，其他都正常"
     else:
-        headline = f"早安，今天有 {total} 件事等你"
+        headline_html = f'早安，今天有 <span class="num">{total}</span> 件事等你'
 
     now_s = datetime.now(TZ8).isoformat(timespec="seconds")
 
     out = TEMPLATE
-    out = out.replace("__HEADLINE__", esc(headline))
+    out = out.replace("__HEADLINE__", headline_html)
     out = out.replace("__N1__", str(n1))
     out = out.replace("__SECTION1__", sec1_html)
     out = out.replace("__N2__", str(n2))
@@ -354,7 +449,7 @@ def build(dry_run=False):
     print(f"[morning_build] 第一段（提案）：{n1} 筆，來源：{src1}")
     print(f"[morning_build] 第二段（OVERDUE+UNANSWERED）：{n2} 筆，來源：{src2}")
     print(f"[morning_build] 第三段（額度日報）：{day_label}，來源：{src3}")
-    print(f"[morning_build] 頁首標題：{headline}")
+    print(f"[morning_build] 頁首標題：{headline_html}")
     print(f"[morning_build] 產生時間：{now_s}")
 
     if dry_run:
