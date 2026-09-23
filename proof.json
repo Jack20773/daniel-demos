@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T02:00+08:00",
+  "generated_at": "2026-09-24T03:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 6,
+      "commits": 7,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 9,
       "discord_replies": 20,
-      "tokens_main_wan": 56.2,
+      "tokens_main_wan": 59.2,
       "tokens_sub_wan": 107.4,
       "tokens_sessions": 14,
-      "tokens_msgs": 472,
+      "tokens_msgs": 486,
       "tokens_by_model": {
-        "opus": 88.8,
+        "opus": 91.8,
         "sonnet": 42.4,
         "haiku": 3.3,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 56.2,
+        "opus": 59.2,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4587,6 +4587,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T02:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-24T01:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -4608,9 +4617,17 @@
         {
           "text": "直接做掉（沒問他）：ai-trader data/ 備份至 D:\\_backups\\ai-trader_2026-09-24（209/209 檔、md5 抽驗一致）＋ 207 檔補進版控（53a2ca1，零敏感檔；public 下本機設定檔",
           "time": null
+        },
+        {
+          "text": "Gateway 告警「沒實跑過真的送出」這個缺口已關掉。上一棒明列為未涵蓋，本棒實跑：AI_TRADER_DISCORD_CHANNEL=1550889153686671430 python -X utf8 ops/gateway_disc",
+          "time": null
+        },
+        {
+          "text": "對抗審查 21 條已獨立複核，交接說的「零待處理」屬實，挑錯員不用重派（上面 33 行那節「只差分析員裁決」已過期）。逐條編號點名：接受 16＝02/03/05/07/08/09/10/11/12/15/16/17/18/19/20/21，",
+          "time": null
         }
       ],
-      "notes": "另有 5 筆 commit 未列（未 push 1、repo 沒有 GitHub remote（沒有可點連結） 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
+      "notes": "另有 6 筆 commit 未列（未 push 1、repo 沒有 GitHub remote（沒有可點連結） 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
     }
   ]
 }
