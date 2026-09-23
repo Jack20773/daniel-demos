@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T05:00+08:00",
+  "generated_at": "2026-09-24T06:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 11,
+      "commits": 13,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 9,
       "discord_replies": 20,
-      "tokens_main_wan": 66.0,
+      "tokens_main_wan": 67.7,
       "tokens_sub_wan": 107.4,
       "tokens_sessions": 14,
-      "tokens_msgs": 514,
+      "tokens_msgs": 524,
       "tokens_by_model": {
-        "opus": 98.6,
+        "opus": 100.3,
         "sonnet": 42.4,
         "haiku": 3.3,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 66.0,
+        "opus": 67.7,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4592,9 +4592,21 @@
           "time": "04:12",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "daily 09-24：查出 ai-trader 已停 8 天、17 則告警一則都沒送達",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0fa437c4d6db841991a450a986b6b6df33b55f8c",
+          "evidence_label": "commit 0fa437c",
+          "verified": true,
+          "time": "05:06",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 4,
+      "items_count": 5,
       "skipped": [
         {
           "kind": "commit",
@@ -4613,6 +4625,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "00:24",
           "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T05:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "05:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4678,7 +4699,7 @@
           "time": null
         }
       ],
-      "notes": "另有 7 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
+      "notes": "另有 8 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
     }
   ]
 }
