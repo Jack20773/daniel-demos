@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>每日早報</title>
+<meta name="description" content="丹尼爾的每日早報：等你點頭的提案、還沒修好的糾正、昨天花多少今天做什麼">
+<style>
+:root{
+  --bg:#f7f6f3; --card:#ffffff; --ink:#1c1b19; --ink2:#5c5852; --line:#e3dfd8;
+  --accent:#a4552c; --accent-soft:#f3e7df; --warn:#b23b2e; --warn-soft:#fbe9e6;
+  --shadow:0 1px 2px rgba(0,0,0,.05),0 6px 16px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16151a; --card:#201f26; --ink:#eeeae4; --ink2:#a6a09a; --line:#332f38;
+    --accent:#e0a17a; --accent-soft:#33261e; --warn:#e08a7a; --warn-soft:#3a2420;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16151a; --card:#201f26; --ink:#eeeae4; --ink2:#a6a09a; --line:#332f38;
+  --accent:#e0a17a; --accent-soft:#33261e; --warn:#e08a7a; --warn-soft:#3a2420;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-size:17px; line-height:1.7; overflow-x:hidden;
+}
+.wrap{max-width:720px; margin:0 auto; padding:0 16px 64px}
+header{padding:28px 0 18px}
+h1{font-size:23px; margin:0 0 6px; letter-spacing:.01em}
+.sub{color:var(--ink2); font-size:14.5px; margin:0}
+section.group{margin-top:30px}
+.group > h2{font-size:17px; margin:0 0 4px; font-weight:700}
+.group > .count-line{color:var(--ink2); font-size:13.5px; margin:0 0 12px}
+h3{font-size:14.5px; color:var(--ink2); margin:18px 0 8px; font-weight:600}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:14px;
+  padding:14px 16px; margin-bottom:12px; box-shadow:var(--shadow);
+}
+.card.alert{border-left:4px solid var(--warn)}
+.tag{font-size:13px; color:var(--ink2); margin-bottom:6px}
+.field-label{font-size:13.5px; color:var(--accent); font-weight:600; margin-bottom:6px}
+.value{margin:0 0 10px; white-space:pre-wrap; word-break:break-word}
+.meta-row{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:12.5px; color:var(--ink2); margin-bottom:10px}
+code{
+  background:var(--accent-soft); color:var(--accent); border-radius:6px; padding:2px 7px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:13.5px;
+  word-break:break-all;
+}
+code.pick{display:inline-block; cursor:pointer; border:1px dashed var(--accent)}
+.howto{font-size:13.5px; color:var(--ink2); margin-top:8px; padding-top:10px; border-top:1px dashed var(--line)}
+.howto code.approve-cmd{display:block; margin-top:8px; padding:10px 12px; font-size:15px; text-align:center}
+.empty{color:var(--ink2); font-size:14.5px; padding:4px 0}
+.footnote{color:var(--ink2); font-size:12.5px; margin-top:6px}
+.day-label{font-weight:600; margin:0 0 8px}
+.quota-line{margin:0 0 6px; font-size:15px; white-space:pre-wrap; word-break:break-word}
+footer{margin-top:40px; padding-top:16px; border-top:1px solid var(--line); color:var(--ink2); font-size:12px; word-break:break-all}
+footer p{margin:4px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>早安，今天有 18 件事等你</h1>
+  <p class="sub">每天早上一頁看完：球在你那邊的事、我還沒補好的功課、昨天花多少今天做什麼</p>
+</header>
+
+<section class="group">
+  <h2>一、等你點頭的提案</h2>
+  <p class="count-line">這段共 18 筆</p>
+  <article class="card">
+    <div class="tag">票：<code>correction-daily-2026-08-30</code></div>
+    <div class="field-label">完成定義（done_when：怎樣才算做完，像作業本上「及格標準」那一行）</div>
+    <p class="value">可人工抽驗：逐條核對 2026-08-30 daily log 內每一則帶🔴的糾正/裁決段落，是否都能在 plans.json 或 001_memory/ 找到對應正本。本次已完整讀畢全文並 grep 所有「糾正/裁決/原話」標記，盤點結果：①N16 反轉已寫入 CLAUDE.md 與 09_never_always_rationale.md ②correction-plain-language-5yo 已投信落地（20:28 附近，applied=1）③該日 503 行標出的兩張問題票（correction-readable-output-html 重複、correction-html-vercel-delivery 矛盾）已在本輪任務中一併處理。唯一尚未轉成具體行動的，是同日 20:31 記載的『done_when 結構性問題』（15+ 張『連續 N 次做對』型 correction 票天天顯示沒進度、催到變噪音）——這則 meta 發現要嘛轉成一張具體修復票，要嘛經使用者裁決『不追蹤』，本票才算真的關得掉。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-ff773c4725a7968069a81878ef079852a5f094e255ddf9d61ebcf9621ef8dbc3</code></span>
+      <span>提出時間：2026-09-06T13:14:35+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-ff773c4725a7968069a81878ef079852a5f094e255ddf9d61ebcf9621ef8dbc3</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-daily-2026-08-30</code></div>
+    <div class="field-label">下一步（next_action：接下來要做的第一件事，像待辦清單最上面那一條）</div>
+    <p class="value">把 2026-08-30 20:31 那則『done_when 結構性問題』整理成一句話講給丹尼爾聽：『卡住的糾正票超過一半的關單條件是「連續 N 次未來行為都對」，這種條件沒有「今天可以做的那一格」，所以永遠顯示沒進度——要不要把這類票改成一次性可判定的檢核動作？』問他要不要處理；本票其餘內容（N16 反轉、plain-language-5yo）皆已有落點，不需要再重複開新票。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-58d7c9d6518ac7b82c34b363814c5b7c282bffcb26a5aa720ab798564c004fdc</code></span>
+      <span>提出時間：2026-09-06T13:14:35+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-58d7c9d6518ac7b82c34b363814c5b7c282bffcb26a5aa720ab798564c004fdc</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-verification-must-discriminate</code></div>
+    <div class="field-label">完成定義（done_when：怎樣才算做完，像作業本上「及格標準」那一行）</div>
+    <p class="value">可人工抽驗：連續 3 份驗收報告／驗收設計，逐字稿或報告裡都能看到「先問『如果我要驗的東西根本不存在，這個測試會不會照樣綠燈？』」這句反問，並寫出對照組與其結果（或明寫為何不需要對照組）；3 份全部具備才算通過，缺一份即不通過。（本原則已於 2026-09-06 在 pull_decisions.py 的 read-back 驗收上實際套用過一次：44 個突變、殺死 25、存活 19，19 個逐一裁決不留待辦——可當作範例對照。）</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-15889ddd0127ec9e044ff351cf4980b3d84a8a2ed4e416718e9453aa6d644e5e</code></span>
+      <span>提出時間：2026-09-06T13:14:35+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-15889ddd0127ec9e044ff351cf4980b3d84a8a2ed4e416718e9453aa6d644e5e</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-verification-must-discriminate</code></div>
+    <div class="field-label">下一步（next_action：接下來要做的第一件事，像待辦清單最上面那一條）</div>
+    <p class="value">設計任何驗收前，先問「如果我要驗的東西根本不存在，這個測試會不會照樣綠燈？」，會的話換測法，並明確寫出對照組（或明說為何不需要對照組）。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-d733a29665f5259844994911c64c23aa17bc3791f6bec84790a66ba4970c52d7</code></span>
+      <span>提出時間：2026-09-06T13:14:35+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-d733a29665f5259844994911c64c23aa17bc3791f6bec84790a66ba4970c52d7</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-preview-first</code></div>
+    <div class="field-label">完成定義（done_when：怎樣才算做完，像作業本上「及格標準」那一行）</div>
+    <p class="value">可人工抽驗：連續 3 次 UI／報表／操作流程改動，逐字稿或 Discord 記錄都能對上「先給對應形式的 demo → 他確認 → 才動手／上線」的順序，且形式要對——純外觀改動給文字或截圖 demo 即可，涉及『操作方式／順不順手』的改動（版面、流程步數、按鈕配置）一律要給他手機能真的點的連結，不接受截圖。3 次全部符合才算過；任一次把操作類需求用截圖交付，視為本條違反一次，不計入通過次數。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-08513e690f7533c0e05b94442bfc8b67e115154dc73fd3b502c330876ede79c0</code></span>
+      <span>提出時間：2026-09-06T13:14:35+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-08513e690f7533c0e05b94442bfc8b67e115154dc73fd3b502c330876ede79c0</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-preview-first</code></div>
+    <div class="field-label">下一步（next_action：接下來要做的第一件事，像待辦清單最上面那一條）</div>
+    <p class="value">改動任何 UI／報表外觀／欄位／格式前，先給『改完那段實際長什麼樣』的demo再動手：純外觀 → 文字或截圖 demo，他點頭才寫進檔案；操作方式／順手度 → 部署成可點的連結（如既有 daniel-reports 網址或既有產品頁）讓他手機點過。他連續講好幾句需求時是在組織想法不是下指令，先聽完再一次動作，中間用提問幫他想清楚，不要逐句照做。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-23d8b92e8b38903ed0b43aec147fdd0d080e60073692d73878602f89cbd7a031</code></span>
+      <span>提出時間：2026-09-06T13:14:35+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-23d8b92e8b38903ed0b43aec147fdd0d080e60073692d73878602f89cbd7a031</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-plain-language-for-daniel</code></div>
+    <div class="field-label">完成定義（done_when：怎樣才算做完，像作業本上「及格標準」那一行）</div>
+    <p class="value">🔴 無法用單一程式判定條件覆蓋全部語意（涉及語氣與可讀性），改為人工抽驗：抽最近 3 則對丹尼爾的裁決類訊息，逐則核對①是否具備固定三行結構（是什麼／為什麼提／你回什麼，2026-09-03 他 3.5 分那次確認有效的格式）②有無用『剛剛那題』『上面那個』等指代詞代替題目重述（2026-09-04 他答非所問那次的根因）③長度與密度是否符合『先給三句話結論，細節他要才給』、橋樑頻道（賈維斯）是否維持技術精確但砍條例化結構、目標長度約原稿 1/4（2026-08-27 23:31 他已確認的標準）。3 則全部符合才算通過，任一則違反即不通過。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-91cb04d99facf6b082f1e415b512010442db0c5dd9f97c814136802f8d170037</code></span>
+      <span>提出時間：2026-09-06T13:14:35+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-91cb04d99facf6b082f1e415b512010442db0c5dd9f97c814136802f8d170037</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-plain-language-for-daniel</code></div>
+    <div class="field-label">下一步（next_action：接下來要做的第一件事，像待辦清單最上面那一條）</div>
+    <p class="value">下次要丹尼爾裁決的訊息，固定套三行格式（是什麼／為什麼提／你回什麼）；追問時把題目重講一次、禁止用指代詞代替；橋樑頻道訊息維持技術精確但砍掉條例化排版、目標長度為原稿 1/4。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-2d81fd041df3d09976f4f808612ec6da44eb36922e1653c34695d1fe219e27a6</code></span>
+      <span>提出時間：2026-09-06T13:14:35+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-2d81fd041df3d09976f4f808612ec6da44eb36922e1653c34695d1fe219e27a6</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-push-authorization-scope</code></div>
+    <div class="field-label">完成定義（done_when：怎樣才算做完，像作業本上「及格標準」那一行）</div>
+    <p class="value">可人工抽驗：下次交接檔／BOOT_BRIEF 更新時，grep 其中「先問｜確認後｜部署前」等字樣，逐句核對是否與 001_memory/ 裡已知的通則授權（例如 2026-09-02／2026-09-05 的『改完一律直推』、2026-09-05『又仟提案不用問』）矛盾；若有矛盾，核對是否已在交接當下被改掉、沒有原樣照抄。抽驗連續 3 次交接／收工紀錄皆無「已知有通則授權卻仍照抄舊的『先問』字樣」的情形才算通過。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-968d812740cb0d56fc110a2b953ee25cc8d42fd3c043231bf194c161a115bb2e</code></span>
+      <span>提出時間：2026-09-06T13:14:35+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-968d812740cb0d56fc110a2b953ee25cc8d42fd3c043231bf194c161a115bb2e</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-push-authorization-scope</code></div>
+    <div class="field-label">下一步（next_action：接下來要做的第一件事，像待辦清單最上面那一條）</div>
+    <p class="value">下次開機或寫交接檔時，若看到『X 之前先問丹尼爾』字樣，先 grep 001_memory/ 查他是否已對 X 給過通則授權；有的話以他的通則為準，並當場把交接那句改掉，不要因為『交接是上一棒寫的』就照抄——上一棒的交接只是待驗證假設。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-5837db4996f92630e69b595bbae7b1d485031d6d295c4c3a3878c285c50ffbbe</code></span>
+      <span>提出時間：2026-09-06T13:14:35+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-5837db4996f92630e69b595bbae7b1d485031d6d295c4c3a3878c285c50ffbbe</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-daily-2026-09-11</code></div>
+    <div class="field-label">下一步（next_action：接下來要做的第一件事，像待辦清單最上面那一條）</div>
+    <p class="value">2026-09-11 daily 的糾正已逐條落點：派長工前重開→票 correction-remote-manager-mode；『一問一答、先講為什麼問、目標確認再幹活』（01:56 訊息 1547666968801185793）→ 待寫 feedback 檔並開單；其餘（豬肉＝不足、另一個通道是哪個）待他早上糾正後補。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-73cb387e8386740d35f43e0969445a2387106b58959e618d2dc1120f6c5d2853</code></span>
+      <span>提出時間：2026-09-11T02:00:27+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-73cb387e8386740d35f43e0969445a2387106b58959e618d2dc1120f6c5d2853</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-daily-2026-09-11</code></div>
+    <div class="field-label">完成定義（done_when：怎樣才算做完，像作業本上「及格標準」那一行）</div>
+    <p class="value">可人工抽驗：2026-09-11 daily log 內每一則帶🔴的糾正段落，都能在 plans.json 找到對應 correction- 票或在 001_memory/ 找到 feedback 檔；逐條核對一張對照表貼在本票 note，缺一條即不通過。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-7acf38617b0886296700f24e503af58960376ee3d5be598bbcb337a0a434c705</code></span>
+      <span>提出時間：2026-09-11T02:00:27+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-7acf38617b0886296700f24e503af58960376ee3d5be598bbcb337a0a434c705</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-remote-manager-mode</code></div>
+    <div class="field-label">下一步（next_action：接下來要做的第一件事，像待辦清單最上面那一條）</div>
+    <p class="value">派任何預期 ≥10 分鐘的長工前照固定順序：任務書落檔→/收工→建 restart.flag 重開→由新 session 派；派時指定 model（機械搬檔＝sonnet、判斷型＝opus）、一次只派一支；主 session 只收結論與驗收，不自己連續讀改檔。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-04b0c5173f2fcca5e8ceba1ec3360791362ed30045e2d28a8abc25c1bca70f78</code></span>
+      <span>提出時間：2026-09-11T02:00:27+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-04b0c5173f2fcca5e8ceba1ec3360791362ed30045e2d28a8abc25c1bca70f78</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-remote-manager-mode</code></div>
+    <div class="field-label">完成定義（done_when：怎樣才算做完，像作業本上「及格標準」那一行）</div>
+    <p class="value">可人工抽驗：連續 3 次派長工的逐字稿都能對上『任務書已落檔→該 session 有收工→派工發生在重開後的新 session→Agent 呼叫帶 model 參數→同時在飛的長工 ≤1 支』五項；3 次全符合才過，任一次少一項即不通過、計數歸零。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-855a61596d5854f5ff3592a9188b4a1ae731975c7ab0233775054b8841151d14</code></span>
+      <span>提出時間：2026-09-11T02:00:27+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-855a61596d5854f5ff3592a9188b4a1ae731975c7ab0233775054b8841151d14</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-daily-2026-09-15</code></div>
+    <div class="field-label">下一步（next_action：接下來要做的第一件事，像待辦清單最上面那一條）</div>
+    <p class="value">本日糾正已各自落單：00:26 語音誤字→correction-voice-transcription-correction-loop；00:41「可自決的事拿去等他」→ feedback_proactive_push.md 並歸 correction-proactive-push；本票不另追。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-ef1617bd91ee713bb64368a51a9c09010b8d82c0d891932e6731edc0f025d7e5</code></span>
+      <span>提出時間：2026-09-15T01:09:08+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-ef1617bd91ee713bb64368a51a9c09010b8d82c0d891932e6731edc0f025d7e5</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-daily-2026-09-15</code></div>
+    <div class="field-label">完成定義（done_when：怎樣才算做完，像作業本上「及格標準」那一行）</div>
+    <p class="value">可人工抽驗：daily 2026-09-15 內每則帶🔴的糾正都能在 plans.json 找到對應票（voice-transcription／proactive-push），找到即關。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-b8070c3bcd41a7797090a6416774e1035ba42f285e403a9246cb5853eccbbf4d</code></span>
+      <span>提出時間：2026-09-15T01:09:08+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-b8070c3bcd41a7797090a6416774e1035ba42f285e403a9246cb5853eccbbf4d</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-voice-transcription-correction-loop</code></div>
+    <div class="field-label">下一步（next_action：接下來要做的第一件事，像待辦清單最上面那一條）</div>
+    <p class="value">語音訊息裡出現位置怪異的詞（例：骨癌的長期記性）→ 回答前先整句回讀「你是問 X 為什麼 Y 嗎」，一句有兩個誤字時兩個都要問到，不准問完一個詞就開答。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-a3e7d5fd40e35060c7c8cb9fd574286889de2aac08a741a8584f814fcd544b73</code></span>
+      <span>提出時間：2026-09-15T01:09:08+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-a3e7d5fd40e35060c7c8cb9fd574286889de2aac08a741a8584f814fcd544b73</code>
+    </div>
+  </article>
+  <article class="card">
+    <div class="tag">票：<code>correction-voice-transcription-correction-loop</code></div>
+    <div class="field-label">完成定義（done_when：怎樣才算做完，像作業本上「及格標準」那一行）</div>
+    <p class="value">可人工抽驗：接下來 3 則含疑似語音誤字的訊息，逐字稿裡都能看到我先整句回讀再作答，且沒有再出現他回「你沒有回答到我的問題」；3 則全過才關。</p>
+    <div class="meta-row">
+      <span>提案編號：<code class="pick" tabindex="0" onclick="selectAll(this)">prop-ffbb219d699851de8e823552263da78cd768f6ba199ce17acef26934138f7c95</code></span>
+      <span>提出時間：2026-09-15T01:09:08+08:00</span>
+    </div>
+    <div class="howto">
+      要同意就在 Discord 打一則<b>只有</b>這幾個字的訊息（點一下框框可以整段選起來，複製貼上就好，
+      像超商結帳掃條碼一樣，掃到什麼就是什麼，不用自己重打）：
+      <code class="pick approve-cmd" tabindex="0" onclick="selectAll(this)">核准 prop-ffbb219d699851de8e823552263da78cd768f6ba199ce17acef26934138f7c95</code>
+    </div>
+  </article>
+
+</section>
+
+<section class="group">
+  <h2>二、你糾正過、我還沒修好的</h2>
+  <p class="count-line">這段共 0 筆</p>
+  <h3>逾期未處理（OVERDUE）—— 這段共 0 筆</h3>
+  <p class="empty">本次 0 筆。</p>
+  <h3>他留言我還沒回（UNANSWERED）—— 這段共 0 筆</h3>
+  <p class="empty">本次 0 筆。</p>
+  <p class="footnote">另有 46 件是我自己的功課（糾正類，像自己欠自己的作業），不放這裡。</p>
+
+</section>
+
+<section class="group">
+  <h2>三、昨天花多少、今天要做什麼</h2>
+  <p class="day-label">這份是 2026-09-22 的日報：</p>
+  <p class="quota-line">額度日報 09/22｜跟前天比：新灌 305萬（-67%）、重讀舊話 1.09億（-73%）；主線 新-52%/重讀-53%，分身 新-72%/重讀-83%；被鎖 0 回（0 則錯誤；前天 0 回）；近7天 vs 前7天：新灌 -13%、重讀 +13%。</p>
+  <p class="quota-line">空轉（機器自己戳自己：空 tick＋「該寫日誌」嘮叨）佔主線重讀 14%（前天 7%）。</p>
+  <p class="quota-line">產出比：每百萬新灌 token 關 0.33 張票（共 1 張）、3.61 個 commit（共 11 個，9 個 repo）。</p>
+  <p class="quota-line">最肥一格：模型·opus 佔全部重讀 69%；最肥分身 85807a65/agent-a5d1839d（121 輪，重讀 0.20億）做「專案：`D:\All claude\300_Projects\line-booking`（Cloud」。</p>
+  <p class="quota-line">品質線：他沒打分（前7天日均 3.7 分／≤2分 0.6 次）；新開糾正票 1（日均 0.7）；白工 0（日均 0.0）→ 品質變差：糾正票 1&gt;0.7，原因寫在下一行。</p>
+  <p class="quota-line">昨天(09/22)改了：proof_table.py --plain 白話句改成 40 則一批打包成一場 claude -p（haiku），缺號才回退單筆（09-22 02:41 改好、實跑驗過）；實測：未測（metric「每則白話句開的 claude -p 場數」不在 METRICS 表）</p>
+  <p class="quota-line">今天要改：排程 run_proof_publish.ps1 仍走 --plain-cache-only 不打模型，要有活著的 session 跑 --plain 才會補；下一步看要不要讓排程也能批次（claude -p 在工作排程器下會卡死，未解）；品質變差原因：（未填——請在該 day 行加 quality_note）</p>
+
+</section>
+
+<footer>
+  <p>產生時間：2026-09-23T23:56:04+08:00</p>
+  <p>第一段來源：D:\All claude\000_Agent\007_dashboard\plans.json</p>
+  <p>第二段來源：D:\All claude\000_Agent\007_dashboard\ledger_alerts.md</p>
+  <p>第三段來源：D:\All claude\000_Agent\009_quota_audit\daily\2026-09-22.txt</p>
+</footer>
+</div>
+<script>
+function selectAll(el){
+  try{
+    var range = document.createRange();
+    range.selectNodeContents(el);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }catch(e){}
+}
+</script>
+</body>
+</html>
