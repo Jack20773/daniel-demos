@@ -1,0 +1,338 @@
+{
+ "meta": {
+  "source_channel": "1547231069923713084",
+  "generated_at": "2026-09-23"
+ },
+ "words": [
+  {
+   "en": "theory",
+   "pos": "noun",
+   "uk": "/ˈθɪə.ri/",
+   "us": "/ˈθɪr.i/",
+   "say": "theory",
+   "note": "理論。開頭是 <b>θ</b>——舌頭輕輕咬在牙齒中間吹氣，不是ㄙ也不是ㄈ。"
+  },
+  {
+   "en": "threat",
+   "pos": "",
+   "uk": "/θret/",
+   "us": "/θret/",
+   "say": "threat",
+   "note": "威脅。跟 theory 同一個 <b>θ</b> 開頭。"
+  },
+  {
+   "en": "bathe",
+   "pos": "",
+   "uk": "/beɪð/",
+   "us": "/beɪð/",
+   "say": "bathe",
+   "note": "洗澡、浸泡。結尾是 <b>ð</b>——跟 θ 同一個嘴型，但是有聲的（喉嚨會震）。"
+  },
+  {
+   "en": "method",
+   "pos": "",
+   "uk": "/ˈmeθ.əd/",
+   "us": "/ˈmeθ.əd/",
+   "say": "method",
+   "note": "方法。中間是 <b>θ</b>。"
+  },
+  {
+   "en": "author",
+   "pos": "noun [C]",
+   "uk": "/ˈɔː.θər/",
+   "us": "/ˈɑː.θɚ/",
+   "say": "author",
+   "note": "作者。課堂原話：<b>「ㄜㄈㄜˊ，或者阿佛」</b>——這是拿注音去逼近 <b>θ</b>，但真正的音不是ㄈ，是咬舌吹氣。"
+  },
+  {
+   "en": "feather",
+   "pos": "noun [C]",
+   "uk": "/ˈfeð.ər/",
+   "us": "/ˈfeð.ɚ/",
+   "say": "feather",
+   "note": "羽毛。中間是 <b>ð</b>（有聲）。跟 father 只差一點點，別混。"
+  },
+  {
+   "en": "clothing",
+   "pos": "noun [U] formal",
+   "uk": "/ˈkləʊ.ðɪŋ/",
+   "us": "/ˈkloʊ.ðɪŋ/",
+   "say": "clothing",
+   "note": "衣物（不可數）。中間 <b>ð</b>；UK 的 /əʊ/ 跟 US 的 /oʊ/ 嘴型起點不一樣。"
+  },
+  {
+   "en": "sour",
+   "pos": "adjective",
+   "uk": "/saʊər/",
+   "us": "/saʊr/",
+   "say": "sour",
+   "note": "酸的。"
+  },
+  {
+   "en": "through",
+   "pos": "preposition, adverb",
+   "uk": "/θruː/",
+   "us": "/θruː/",
+   "say": "through",
+   "note": "穿過。課堂原話：<b>「ou 在這兩邊發不同音」</b>——sour 的 ou 唸 /aʊ/，through 的 ou 唸 /uː/，同樣兩個字母、兩種唸法。"
+  },
+  {
+   "en": "decision",
+   "pos": "noun",
+   "uk": "/dɪˈsɪʒ.ən/",
+   "us": "/dɪˈsɪʒ.ən/",
+   "say": "decision",
+   "note": "決定。課堂原話：<b>「ʒ = 捲」</b>——舌頭往後捲、帶喉音的「ㄖ／ㄓ」之間那個音。"
+  }
+ ],
+ "grammar": [
+  {
+   "title": "1. 時態 ＝ 時間 × 狀態（3 × 4 = 12 格）",
+   "blocks": [
+    {
+     "type": "p",
+     "html": "課堂原話：<b>「歐洲語言都建立在這個上面，每個時間都有四個狀態，這十二個有各自的邏輯。」</b>"
+    },
+    {
+     "type": "tense",
+     "rows": [
+      {
+       "when": "現在",
+       "states": [
+        "簡單式",
+        "進行式",
+        "完成式",
+        "完成進行式"
+       ]
+      },
+      {
+       "when": "過去",
+       "states": [
+        "簡單式",
+        "進行式",
+        "完成式",
+        "完成進行式"
+       ]
+      },
+      {
+       "when": "未來",
+       "states": [
+        "簡單式",
+        "進行式",
+        "完成式",
+        "完成進行式"
+       ]
+      }
+     ],
+     "legend": "3 個時間 × 4 個狀態 ＝ 12 種時態"
+    },
+    {
+     "type": "p",
+     "style": "font-size:14px;color:var(--ink2);margin-top:8px",
+     "html": "白話：先決定「什麼時候」（現在／過去／未來），再決定「是哪一種狀態」（平常都這樣／正在做／已經做完／做了一陣子還在做）。兩個一配，就是十二種。"
+    }
+   ]
+  },
+  {
+   "title": "2. 簡單式＝常態，進行式＝當下",
+   "blocks": [
+    {
+     "type": "ex",
+     "html": "Where <b>do</b> you live?　<i>→ 常態性，從小住不太變</i><br>\nWhere <b>are</b> you <b>living</b>?　<i>→ 暫時性，現在住在哪裡</i>"
+    },
+    {
+     "type": "ex",
+     "html": "I <b>eat</b> apples.　<i>→ 我是有吃蘋果的／我平常有在吃蘋果</i><br>\nI <b>am eating</b> an apple.　<i>→ 我正在吃蘋果</i><br>\nI <b>ate</b> an apple.　<i>→ 我吃了一顆蘋果</i>"
+    },
+    {
+     "type": "ex",
+     "html": "<b>Does</b> he take photographs?　<i>→ 他會拍照嗎？（常態、職業）</i><br>\n<b>Is</b> he <b>taking</b> a photograph?　<i>→ 他正在拍照嗎？（當下）</i>"
+    },
+    {
+     "type": "p",
+     "html": "課堂原話：<b>「其中的 Does 是常態性，現在簡單式也是個描述常態性的時態。」</b>"
+    },
+    {
+     "type": "ex",
+     "html": "I <b>go</b> to work by scooter every day.　<i>→ 不加 -ing 的 go 就是常態性</i><br>\nI <b>went</b> to work by scooter yesterday.　<i>→ 過去</i><br>\nI <b>am going</b> to work.　<i>→ 當下正在路上</i>"
+    }
+   ]
+  },
+  {
+   "title": "3. 一個完整的句子 ＝ S + V + O",
+   "blocks": [
+    {
+     "type": "p",
+     "html": "課堂原話：<b>「所有的句子，以一個完整的句子來說，必須要是＝ 主角 + 動作 + 對象。」</b>"
+    },
+    {
+     "type": "ex",
+     "html": "✅ I am going to work.<br>❌ I going to work.　<i>→ 沒有動詞</i>"
+    },
+    {
+     "type": "p",
+     "style": "font-size:14px;color:var(--ink2)",
+     "html": "為什麼 <code>I going to work</code> 不行：go 是動詞，但<b>原型動詞加上 -ing 就變成名詞了</b>，所以整句只剩名詞、沒有動詞，要補一個 be 動詞（am）回去當動作。"
+    }
+   ]
+  },
+  {
+   "title": "4. to + 動詞、動詞 + ing ＝ 一件「事情」，不是動作",
+   "blocks": [
+    {
+     "type": "ex",
+     "html": "I <b>want</b> to eat ice cream.　<i>→ 我想吃冰淇淋</i><br>\n<i>「我想」才是 S+V；「to eat ice cream」是一件事情（受詞）</i>"
+    },
+    {
+     "type": "ex",
+     "html": "<b>Playing video games</b>(主) <b>is</b>(動) good for children(受).<br>\n<i>打電動是「事情」不是「動作」，所以可以當主詞</i>"
+    },
+    {
+     "type": "p",
+     "html": "課堂原話：<b>「be 動詞前面是主詞，後面是受詞。」</b>"
+    }
+   ]
+  },
+  {
+   "title": "5. 靜態動詞（沒有動作的動詞）",
+   "blocks": [
+    {
+     "type": "p",
+     "html": "課堂原話：<b>「is / am / are 是靜態動詞，沒有動作的動詞。我覺得、我堅持、我認為、我答應，這些沒有實質動作的動詞就叫做靜態動詞。」</b>"
+    },
+    {
+     "type": "ex",
+     "html": "is / am / are / was / were / been　<i>→ 課本上寫的 beV</i><br>\nthink, insist, believe, promise　<i>→ 覺得、堅持、認為、答應</i>"
+    },
+    {
+     "type": "p",
+     "style": "font-size:14px;color:var(--ink2)",
+     "html": "白話：這些動詞是在描述「心裡的狀態」，不是身體在動，所以通常不加 -ing。你不會說 <code>I am thinking it is good</code> 來表達「我覺得它很好」。"
+    }
+   ]
+  },
+  {
+   "title": "6. do 還是 does？看主詞是單數還是複數",
+   "blocks": [
+    {
+     "type": "p",
+     "html": "這則是丹尼爾 9/23 自己整理的規則：<b>看主詞是單數還是複數，決定要用 do 還是 does。</b>"
+    },
+    {
+     "type": "ex",
+     "html": "<b>我／你／你們／我們／他們</b>（複數）→ <b>do</b><br>\n<b>她／他／它</b>（單數）→ <b>does</b>"
+    },
+    {
+     "type": "ex",
+     "html": "How much is it?<br>\nHow much does it cost?　<i>→ 都是問多少錢</i>"
+    },
+    {
+     "type": "ex",
+     "html": "Where are you from?　<i>→ 問國籍</i><br>\nWhere is she from?"
+    },
+    {
+     "type": "p",
+     "style": "font-size:14px;color:var(--ink2)",
+     "html": "白話：疑問句裡的 do／does 只是幫忙開頭的「助手」，真正的動詞維持原形——像 <code>Where do you come from?</code> 的 come 不加 s。"
+    }
+   ]
+  }
+ ],
+ "book": [
+  {
+   "img": "english_notes_img/01_sounds_chart.png",
+   "alt": "BBC Learning English 的 Sounds of English 音標總表，含手寫紅字註記",
+   "caption": "① 音標總表（BBC Learning English · Sounds of English）",
+   "date": "9/09",
+   "ocr_status": "done",
+   "ocr": "Sounds of English\n\nVOWELS（紅字手寫：母音）\n短母音 short：　ɪ　ʊ　ʌ　ɒ　ə（紅框圈起來）　e　æ\n長母音 long：　iː　uː　ɑː　ɔː　ɜː\n雙母音 diphthongs：　ɪə　ʊə　aɪ　ɔɪ　əʊ　eə　aʊ　eɪ\n\nCONSONANTS\nvoiceless（無聲）：　p　t　tʃ　k　f　θ（橘色手繪圈起來）　s　ʃ\nvoiced（有聲）：　b　d　dʒ　g　v　ð（上方有手寫標記）　z　ʒ\n其他：　m　n　ŋ　h　l　r　w　j\n\n出處：bbclearningenglish.com\n\n【圈起來的重點】ə（schwa，弱音）、θ 與 ð 這一對。"
+  },
+  {
+   "img": "english_notes_img/02_tense_table.png",
+   "alt": "時態表格筆記，現在／過去／未來各有四個狀態，附吃蘋果例句",
+   "caption": "② 時態表 ＋ 吃蘋果例句（課堂筆記畫面）",
+   "date": "9/16",
+   "ocr_status": "done",
+   "ocr": "時態　時間與狀態\n\n現在　　簡單式　進行式　完成式（黃底標記）　完成進行式\n過去（黃底標記）　簡單式（黃底標記）　進行式　完成式　完成進行式\n未來　　簡單式　進行式　完成式　完成進行式\n\nI eat apples.　我是有吃蘋果的\nI am eating an apple.　我正在吃蘋果\nI ate an apple.　我吃了一顆蘋果　（整行黃底標記）"
+  },
+  {
+   "img": "english_notes_img/03_exercise.png",
+   "alt": "英文練習講義：看圖回答現在簡單式與現在進行式問句，第一題已用橘筆填答",
+   "caption": "③ 練習題：看圖回答（Exercise 1）",
+   "date": "9/16",
+   "ocr_status": "done",
+   "ocr": "1　Answer the questions about the pictures.\n\n【圖 1】I'm a photographer.\n　Does he take photographs?　→ Yes, he does.　（已填，橘筆）\n　Is he taking a photograph?　→ No, he isn't.　（已填，橘筆）\n　What is he doing?　→ He's having a bath.　（已填，橘筆）\n\n【圖 2】I'm a bus driver.\n　Is she driving a bus?　→ （空白）\n　Does she drive a bus?　→ （空白）\n　What is she doing?\n\n【圖 3】I'm a window cleaner.\n　Does he clean windows?　→ （空白）\n　Is he cleaning a window?　→ （空白）\n　What is he doing?\n\n【圖 4】We are teachers.\n　Are they teaching?　→ （空白）\n　Do they teach?　→ （空白）\n　What do they do?\n\n2　Complete the sentences with am/is/are or do/don't/does/doesn't.\n（本頁到此，下半被裁切）"
+  },
+  {
+   "img": "english_notes_img/04_exercise_notes.png",
+   "alt": "同一份練習題的另一張照片，多了中文文法註記：beV 與「會」「在」的對照",
+   "caption": "④ 同一題 ＋ 中文註記（beV／「會」與「在」）",
+   "date": "9/16",
+   "ocr_status": "done",
+   "ocr": "…ercises　　在：beV = am, is, are, was, were, been\n\n1　Answer the questions about the pictures.\n\n【圖 1】I'm a photographer.\n　（紅筆補充）photos?\n　「會」→ Does he take photographs?　　Yes, he does.\n　「在」→ Is he taking a photograph?　　No, he isn't.\n　What is he doing?　→ He's having a bath.\n\n【這張的重點】中文的「會」對應現在簡單式（Does…），中文的「在」對應現在進行式（Is…-ing）。"
+  },
+  {
+   "img": "english_notes_img/05_exercise_82_do_does.png",
+   "alt": "英文課本練習 8.2，用 am/is/are 或 do/don't/does/doesn't 填空，右側有手寫中文筆記",
+   "caption": "⑤ 練習 8.2：am/is/are 還是 do/does？（右邊是他自己的筆記）",
+   "date": "2026-09-23",
+   "ocr_status": "done",
+   "ocr": "8.2　Complete the sentences with am/is/are or do/don't/does/doesn't.\n\n1　Excuse me, [填:do] you speak English?\n2　'Where's Kate?'  'I [空] know.'\n3　What's funny? Why [空] you laughing?\n4　'What [填:does] your sister do?'  'She's a dentist.'（your sister 有畫底線）\n5　It [空] raining. I [空] want to go out in the rain.\n6　'Where [填:do] you come from?'  'Canada.'（you come 有畫底線）\n7　How much [填:does] it cost to stay at this hotel? Is it expensive?\n8　Sreve is a good tennis player, but he [空] play very often.　（此行在頁面底部被截斷）\n\n【旁邊的手寫筆記】\n（第 1 題上方）How much is it? ／ How much does it cost?　→ 問多少錢\n（第 4 題）does 上方小字「她」；右側「牙醫」\n（第 4 題右側）我／你／你們／我們／他們／複數 → do\n（第 5 題右側）她／他／它／單數 → does\n（第 6 題右側）Where are you from?　→ 問國籍\n（第 7 題右側）Where is she from?\n（第 6、7 題之間有一條手繪弧線把兩處連起來）"
+  },
+  {
+   "img": "english_notes_img/06_exercise1_answers.png",
+   "alt": "同一份練習講義，window cleaner 與 teachers 兩組問答已用暗紅色筆填上答案",
+   "caption": "⑥ 上面那份練習題，他寫完的答案版",
+   "date": "2026-09-23",
+   "ocr_status": "done",
+   "ocr": "（這張是 ③ 那份練習題寫完答案的版本，左右兩欄）\n\n【左欄】\n　[填:Yes, he does.]　（最上方一行，上方內容被截斷）\n　Does he clean windows?　→ [填:He cleans windows.]\n　Is he cleaning a window?　→ [填:Yes, he is cleaning a window.]\n　What is he doing?　→ [填:He is cleaning windows.]\n\n【右欄】\n　Are they teaching?　→ [填:No, they are not teaching]\n　Do they teach?　→ [填:Yes, they do. ／ they teach.]\n　What do they do?　→ [填:They are teachers.]　（題目底色有淺藍灰標示）\n　What are they doing?　→ [填:They are watching a movie.]\n\n【手寫筆記】\n（左欄最下方）the window 那個 ／ the windows 那些、這些\n（右欄「What do they do?」旁）問工作"
+  }
+ ],
+ "inbox": [],
+ "seen_message_ids": [
+  "1547231102824087614",
+  "1547231226266386482",
+  "1547231489677066250",
+  "1547231816166014997",
+  "1547231890938003486",
+  "1547232075902357595",
+  "1547232645757280336",
+  "1547232865844994181",
+  "1547233381434130462",
+  "1547233555011084344",
+  "1547233613387399179",
+  "1547233647155879957",
+  "1547234323114229882",
+  "1547234637594624000",
+  "1549767370250133656",
+  "1549769862316826645",
+  "1549769932240199681",
+  "1549770572177875065",
+  "1549770705170858027",
+  "1549770808182833294",
+  "1549771495595704442",
+  "1549772055988142190",
+  "1549772845586845726",
+  "1549773343811575943",
+  "1549773545058340946",
+  "1549773790572187679",
+  "1549773891616907317",
+  "1549774160237166745",
+  "1549774762564255795",
+  "1549775725320474687",
+  "1549775841762877522",
+  "1549776395524243558",
+  "1549776995410378825",
+  "1549777121990156362",
+  "1549777313527374047",
+  "1549777670961897578"
+ ],
+ "resources": [
+  {
+   "name": "Daily Dictation（聽寫練習）",
+   "url": "https://dailydictation.com/exercises",
+   "note": "老師推薦。挑「能聽懂一半」的來練，從 A1／A2 開始。<b>聽比自己程度難一點點的才會進步。</b>",
+   "date": "2026-09-23"
+  }
+ ]
+}
