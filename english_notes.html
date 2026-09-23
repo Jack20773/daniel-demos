@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>英文筆記</title>
+<meta name="description" content="丹尼爾的英文課筆記：單字發音、文法、課本頁（文字可搜尋）">
+<style>
+:root{
+  --bg:#f7f6f3; --card:#ffffff; --ink:#1c1b19; --ink2:#5c5852; --line:#e3dfd8;
+  --accent:#a4552c; --accent-soft:#f3e7df; --hl:#ffe9a8; --shadow:0 1px 2px rgba(0,0,0,.05),0 6px 16px rgba(0,0,0,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#16151a; --card:#201f26; --ink:#eeeae4; --ink2:#a6a09a; --line:#332f38;
+    --accent:#e0a17a; --accent-soft:#33261e; --hl:#6b5620; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16151a; --card:#201f26; --ink:#eeeae4; --ink2:#a6a09a; --line:#332f38;
+  --accent:#e0a17a; --accent-soft:#33261e; --hl:#6b5620; --shadow:0 1px 2px rgba(0,0,0,.3),0 6px 20px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-size:16px; line-height:1.65; overflow-x:hidden;
+}
+.wrap{max-width:720px; margin:0 auto; padding:0 16px 96px}
+
+header{padding:28px 0 14px}
+h1{font-size:26px; margin:0 0 4px; letter-spacing:.01em}
+.sub{color:var(--ink2); font-size:13.5px; margin:0}
+
+.tools{position:sticky; top:0; z-index:20; background:var(--bg); padding:10px 0 8px; margin:0 -16px; padding-left:16px; padding-right:16px; border-bottom:1px solid var(--line)}
+.search{position:relative}
+.search input{
+  width:100%; padding:12px 40px 12px 40px; font-size:16px; border-radius:12px;
+  border:1px solid var(--line); background:var(--card); color:var(--ink); box-shadow:var(--shadow);
+}
+.search input:focus{outline:2px solid var(--accent); outline-offset:1px}
+.search .mag{position:absolute; left:13px; top:50%; transform:translateY(-50%); color:var(--ink2); font-size:15px}
+.search .clear{position:absolute; right:8px; top:50%; transform:translateY(-50%); border:0; background:transparent; color:var(--ink2); font-size:20px; padding:6px 10px; cursor:pointer; display:none; line-height:1}
+.tabs{display:flex; gap:6px; margin-top:8px; overflow-x:auto; scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:0 0 auto; border:1px solid var(--line); background:var(--card); color:var(--ink2);
+  padding:7px 14px; border-radius:999px; font-size:14px; cursor:pointer; white-space:nowrap; font-family:inherit;
+}
+.tab[aria-selected="true"]{background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tab[aria-selected="true"]{color:#16151a}}
+:root[data-theme="dark"] .tab[aria-selected="true"]{color:#16151a}
+
+.hint{color:var(--ink2); font-size:12.5px; margin:10px 0 0}
+section.group{margin-top:26px}
+.group > h2{font-size:15px; letter-spacing:.06em; text-transform:none; color:var(--ink2); margin:0 0 10px; font-weight:600}
+.day{display:inline-block; font-size:12px; color:var(--ink2); background:var(--accent-soft); border-radius:999px; padding:2px 9px; margin-left:6px; vertical-align:2px}
+
+.card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:10px; box-shadow:var(--shadow)}
+
+.word{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap}
+.word .en{font-size:21px; font-weight:650; letter-spacing:.01em}
+.word .pos{font-size:12.5px; color:var(--ink2)}
+.ipa{margin:6px 0 0; display:flex; flex-wrap:wrap; gap:6px 14px; font-size:15px}
+.ipa span b{font-weight:600; color:var(--ink2); font-size:12px; margin-right:5px; letter-spacing:.04em}
+.ipa code{font-family:"Doulos SIL","Charis SIL","Gentium Plus",Georgia,"Times New Roman",serif; font-size:16.5px; background:transparent; color:var(--ink)}
+.note{margin:8px 0 0; font-size:14.5px; color:var(--ink2); border-left:3px solid var(--accent-soft); padding-left:10px}
+.note b{color:var(--accent); font-weight:600}
+.say{border:1px solid var(--line); background:transparent; color:var(--ink2); border-radius:999px; font-size:13px; padding:4px 11px; cursor:pointer; font-family:inherit; margin-left:auto}
+.say:active{background:var(--accent-soft)}
+
+.g-title{font-size:17px; font-weight:650; margin:0 0 6px}
+.g-body{font-size:15px; margin:0}
+.g-body p{margin:0 0 8px}
+.g-body p:last-child{margin-bottom:0}
+.ex{font-family:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace; font-size:14.5px; background:var(--accent-soft); border-radius:8px; padding:8px 11px; margin:8px 0; overflow-x:auto}
+.ex i{font-style:normal; color:var(--ink2); font-family:inherit}
+.tense{margin:12px 0 2px}
+.tense .row{display:flex; align-items:flex-start; gap:8px; padding:8px 0; border-top:1px solid var(--line)}
+.tense .row:first-child{border-top:0; padding-top:2px}
+.tense .when{flex:0 0 46px; font-weight:650; font-size:15px; padding-top:3px}
+.tense .states{display:flex; flex-wrap:wrap; gap:6px}
+.tense .states span{background:var(--accent-soft); border-radius:8px; padding:4px 9px; font-size:13.5px; white-space:nowrap}
+.tense .legend{font-size:12.5px; color:var(--ink2); margin:8px 0 0}
+
+figure{margin:0 0 10px}
+figure img{width:100%; height:auto; display:block; border-radius:12px; border:1px solid var(--line); background:#fff}
+figcaption{font-size:13px; color:var(--ink2); margin-top:8px}
+details.ocr{margin-top:8px; border-top:1px dashed var(--line); padding-top:8px}
+details.ocr summary{cursor:pointer; font-size:13.5px; color:var(--accent); font-weight:600; list-style:none}
+details.ocr summary::-webkit-details-marker{display:none}
+details.ocr summary::before{content:"▸ "; display:inline-block; transition:transform .15s}
+details.ocr[open] summary::before{content:"▾ "}
+details.ocr .txt{font-size:14px; white-space:pre-wrap; color:var(--ink2); margin-top:8px; line-height:1.7}
+
+mark{background:var(--hl); color:inherit; border-radius:3px; padding:0 1px}
+.empty{color:var(--ink2); font-size:14.5px; padding:26px 0; text-align:center}
+footer{margin-top:34px; border-top:1px solid var(--line); padding-top:16px; color:var(--ink2); font-size:13px}
+footer h3{font-size:13.5px; margin:0 0 6px; color:var(--ink)}
+footer ul{margin:0 0 12px; padding-left:18px}
+footer li{margin-bottom:3px}
+.hidden{display:none !important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>英文筆記</h1>
+  <p class="sub">課堂筆記整理　·　素材來自英文頻道 9/09、9/16　·　共 10 個單字、5 則文法、4 張課本頁</p>
+</header>
+
+<div class="tools">
+  <div class="search">
+    <span class="mag">🔍</span>
+    <input id="q" type="search" placeholder="搜單字、音標、中文、課本上的字…" autocomplete="off" aria-label="搜尋筆記">
+    <button class="clear" id="clr" aria-label="清除">×</button>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-t="all" aria-selected="true">全部</button>
+    <button class="tab" role="tab" data-t="word" aria-selected="false">單字發音</button>
+    <button class="tab" role="tab" data-t="gram" aria-selected="false">文法</button>
+    <button class="tab" role="tab" data-t="book" aria-selected="false">課本頁</button>
+  </div>
+</div>
+
+<p class="hint" id="hint">點單字右邊的「唸」可以聽發音（手機需開聲音）。課本頁的字已經抄成文字，搜尋搜得到。</p>
+
+<!-- ============ 單字 ============ -->
+<section class="group" data-t="word">
+  <h2>單字發音<span class="day">9/09 這堂：θ / ð / ʒ 這幾個音</span></h2>
+
+  <article class="card" data-t="word">
+    <div class="word"><span class="en">theory</span><span class="pos">noun</span>
+      <button class="say" data-say="theory">唸</button></div>
+    <div class="ipa"><span><b>UK</b><code>/ˈθɪə.ri/</code></span><span><b>US</b><code>/ˈθɪr.i/</code></span></div>
+    <p class="note">理論。開頭是 <b>θ</b>——舌頭輕輕咬在牙齒中間吹氣，不是ㄙ也不是ㄈ。</p>
+  </article>
+
+  <article class="card" data-t="word">
+    <div class="word"><span class="en">threat</span>
+      <button class="say" data-say="threat">唸</button></div>
+    <div class="ipa"><span><b>UK</b><code>/θret/</code></span><span><b>US</b><code>/θret/</code></span></div>
+    <p class="note">威脅。跟 theory 同一個 <b>θ</b> 開頭。</p>
+  </article>
+
+  <article class="card" data-t="word">
+    <div class="word"><span class="en">bathe</span>
+      <button class="say" data-say="bathe">唸</button></div>
+    <div class="ipa"><span><b>UK</b><code>/beɪð/</code></span><span><b>US</b><code>/beɪð/</code></span></div>
+    <p class="note">洗澡、浸泡。結尾是 <b>ð</b>——跟 θ 同一個嘴型，但是有聲的（喉嚨會震）。</p>
+  </article>
+
+  <article class="card" data-t="word">
+    <div class="word"><span class="en">method</span>
+      <button class="say" data-say="method">唸</button></div>
+    <div class="ipa"><span><b>UK</b><code>/ˈmeθ.əd/</code></span><span><b>US</b><code>/ˈmeθ.əd/</code></span></div>
+    <p class="note">方法。中間是 <b>θ</b>。</p>
+  </article>
+
+  <article class="card" data-t="word">
+    <div class="word"><span class="en">author</span><span class="pos">noun [C]</span>
+      <button class="say" data-say="author">唸</button></div>
+    <div class="ipa"><span><b>UK</b><code>/ˈɔː.θər/</code></span><span><b>US</b><code>/ˈɑː.θɚ/</code></span></div>
+    <p class="note">作者。課堂原話：<b>「ㄜㄈㄜˊ，或者阿佛」</b>——這是拿注音去逼近 <b>θ</b>，但真正的音不是ㄈ，是咬舌吹氣。</p>
+  </article>
+
+  <article class="card" data-t="word">
+    <div class="word"><span class="en">feather</span><span class="pos">noun [C]</span>
+      <button class="say" data-say="feather">唸</button></div>
+    <div class="ipa"><span><b>UK</b><code>/ˈfeð.ər/</code></span><span><b>US</b><code>/ˈfeð.ɚ/</code></span></div>
+    <p class="note">羽毛。中間是 <b>ð</b>（有聲）。跟 father 只差一點點，別混。</p>
+  </article>
+
+  <article class="card" data-t="word">
+    <div class="word"><span class="en">clothing</span><span class="pos">noun [U] formal</span>
+      <button class="say" data-say="clothing">唸</button></div>
+    <div class="ipa"><span><b>UK</b><code>/ˈkləʊ.ðɪŋ/</code></span><span><b>US</b><code>/ˈkloʊ.ðɪŋ/</code></span></div>
+    <p class="note">衣物（不可數）。中間 <b>ð</b>；UK 的 /əʊ/ 跟 US 的 /oʊ/ 嘴型起點不一樣。</p>
+  </article>
+
+  <article class="card" data-t="word">
+    <div class="word"><span class="en">sour</span><span class="pos">adjective</span>
+      <button class="say" data-say="sour">唸</button></div>
+    <div class="ipa"><span><b>UK</b><code>/saʊər/</code></span><span><b>US</b><code>/saʊr/</code></span></div>
+    <p class="note">酸的。</p>
+  </article>
+
+  <article class="card" data-t="word">
+    <div class="word"><span class="en">through</span><span class="pos">preposition, adverb</span>
+      <button class="say" data-say="through">唸</button></div>
+    <div class="ipa"><span><b>UK</b><code>/θruː/</code></span><span><b>US</b><code>/θruː/</code></span></div>
+    <p class="note">穿過。課堂原話：<b>「ou 在這兩邊發不同音」</b>——sour 的 ou 唸 /aʊ/，through 的 ou 唸 /uː/，同樣兩個字母、兩種唸法。</p>
+  </article>
+
+  <article class="card" data-t="word">
+    <div class="word"><span class="en">decision</span><span class="pos">noun</span>
+      <button class="say" data-say="decision">唸</button></div>
+    <div class="ipa"><span><b>UK</b><code>/dɪˈsɪʒ.ən/</code></span><span><b>US</b><code>/dɪˈsɪʒ.ən/</code></span></div>
+    <p class="note">決定。課堂原話：<b>「ʒ = 捲」</b>——舌頭往後捲、帶喉音的「ㄖ／ㄓ」之間那個音。</p>
+  </article>
+</section>
+
+<!-- ============ 文法 ============ -->
+<section class="group" data-t="gram">
+  <h2>文法<span class="day">9/16 這堂</span></h2>
+
+  <article class="card" data-t="gram">
+    <p class="g-title">1. 時態 ＝ 時間 × 狀態（3 × 4 = 12 格）</p>
+    <div class="g-body">
+      <p>課堂原話：<b>「歐洲語言都建立在這個上面，每個時間都有四個狀態，這十二個有各自的邏輯。」</b></p>
+      <div class="tense">
+        <div class="row"><div class="when">現在</div><div class="states"><span>簡單式</span><span>進行式</span><span>完成式</span><span>完成進行式</span></div></div>
+        <div class="row"><div class="when">過去</div><div class="states"><span>簡單式</span><span>進行式</span><span>完成式</span><span>完成進行式</span></div></div>
+        <div class="row"><div class="when">未來</div><div class="states"><span>簡單式</span><span>進行式</span><span>完成式</span><span>完成進行式</span></div></div>
+        <p class="legend">3 個時間 × 4 個狀態 ＝ 12 種時態</p>
+      </div>
+      <p style="font-size:14px;color:var(--ink2);margin-top:8px">白話：先決定「什麼時候」（現在／過去／未來），再決定「是哪一種狀態」（平常都這樣／正在做／已經做完／做了一陣子還在做）。兩個一配，就是十二種。</p>
+    </div>
+  </article>
+
+  <article class="card" data-t="gram">
+    <p class="g-title">2. 簡單式＝常態，進行式＝當下</p>
+    <div class="g-body">
+      <div class="ex">Where <b>do</b> you live?　<i>→ 常態性，從小住不太變</i><br>
+Where <b>are</b> you <b>living</b>?　<i>→ 暫時性，現在住在哪裡</i></div>
+      <div class="ex">I <b>eat</b> apples.　<i>→ 我是有吃蘋果的／我平常有在吃蘋果</i><br>
+I <b>am eating</b> an apple.　<i>→ 我正在吃蘋果</i><br>
+I <b>ate</b> an apple.　<i>→ 我吃了一顆蘋果</i></div>
+      <div class="ex"><b>Does</b> he take photographs?　<i>→ 他會拍照嗎？（常態、職業）</i><br>
+<b>Is</b> he <b>taking</b> a photograph?　<i>→ 他正在拍照嗎？（當下）</i></div>
+      <p>課堂原話：<b>「其中的 Does 是常態性，現在簡單式也是個描述常態性的時態。」</b></p>
+      <div class="ex">I <b>go</b> to work by scooter every day.　<i>→ 不加 -ing 的 go 就是常態性</i><br>
+I <b>went</b> to work by scooter yesterday.　<i>→ 過去</i><br>
+I <b>am going</b> to work.　<i>→ 當下正在路上</i></div>
+    </div>
+  </article>
+
+  <article class="card" data-t="gram">
+    <p class="g-title">3. 一個完整的句子 ＝ S + V + O</p>
+    <div class="g-body">
+      <p>課堂原話：<b>「所有的句子，以一個完整的句子來說，必須要是＝ 主角 + 動作 + 對象。」</b></p>
+      <div class="ex">✅ I am going to work.<br>❌ I going to work.　<i>→ 沒有動詞</i></div>
+      <p style="font-size:14px;color:var(--ink2)">為什麼 <code>I going to work</code> 不行：go 是動詞，但<b>原型動詞加上 -ing 就變成名詞了</b>，所以整句只剩名詞、沒有動詞，要補一個 be 動詞（am）回去當動作。</p>
+    </div>
+  </article>
+
+  <article class="card" data-t="gram">
+    <p class="g-title">4. to + 動詞、動詞 + ing ＝ 一件「事情」，不是動作</p>
+    <div class="g-body">
+      <div class="ex">I <b>want</b> to eat ice cream.　<i>→ 我想吃冰淇淋</i><br>
+<i>「我想」才是 S+V；「to eat ice cream」是一件事情（受詞）</i></div>
+      <div class="ex"><b>Playing video games</b>(主) <b>is</b>(動) good for children(受).<br>
+<i>打電動是「事情」不是「動作」，所以可以當主詞</i></div>
+      <p>課堂原話：<b>「be 動詞前面是主詞，後面是受詞。」</b></p>
+    </div>
+  </article>
+
+  <article class="card" data-t="gram">
+    <p class="g-title">5. 靜態動詞（沒有動作的動詞）</p>
+    <div class="g-body">
+      <p>課堂原話：<b>「is / am / are 是靜態動詞，沒有動作的動詞。我覺得、我堅持、我認為、我答應，這些沒有實質動作的動詞就叫做靜態動詞。」</b></p>
+      <div class="ex">is / am / are / was / were / been　<i>→ 課本上寫的 beV</i><br>
+think, insist, believe, promise　<i>→ 覺得、堅持、認為、答應</i></div>
+      <p style="font-size:14px;color:var(--ink2)">白話：這些動詞是在描述「心裡的狀態」，不是身體在動，所以通常不加 -ing。你不會說 <code>I am thinking it is good</code> 來表達「我覺得它很好」。</p>
+    </div>
+  </article>
+</section>
+
+<!-- ============ 課本頁 ============ -->
+<section class="group" data-t="book">
+  <h2>課本頁<span class="day">字已抄成文字，搜尋搜得到</span></h2>
+
+  <article class="card" data-t="book">
+    <figure>
+      <img src="english_notes_img/01_sounds_chart.png" alt="BBC Learning English 的 Sounds of English 音標總表，含手寫紅字註記">
+      <figcaption>① 音標總表（BBC Learning English · Sounds of English）　<span style="color:var(--accent)">9/09</span></figcaption>
+    </figure>
+    <details class="ocr"><summary>看這張圖上的文字</summary><div class="txt">Sounds of English
+
+VOWELS（紅字手寫：母音）
+短母音 short：　ɪ　ʊ　ʌ　ɒ　ə（紅框圈起來）　e　æ
+長母音 long：　iː　uː　ɑː　ɔː　ɜː
+雙母音 diphthongs：　ɪə　ʊə　aɪ　ɔɪ　əʊ　eə　aʊ　eɪ
+
+CONSONANTS
+voiceless（無聲）：　p　t　tʃ　k　f　θ（橘色手繪圈起來）　s　ʃ
+voiced（有聲）：　b　d　dʒ　g　v　ð（上方有手寫標記）　z　ʒ
+其他：　m　n　ŋ　h　l　r　w　j
+
+出處：bbclearningenglish.com
+
+【圈起來的重點】ə（schwa，弱音）、θ 與 ð 這一對。</div></details>
+  </article>
+
+  <article class="card" data-t="book">
+    <figure>
+      <img src="english_notes_img/02_tense_table.png" alt="時態表格筆記，現在／過去／未來各有四個狀態，附吃蘋果例句">
+      <figcaption>② 時態表 ＋ 吃蘋果例句（課堂筆記畫面）　<span style="color:var(--accent)">9/16</span></figcaption>
+    </figure>
+    <details class="ocr"><summary>看這張圖上的文字</summary><div class="txt">時態　時間與狀態
+
+現在　　簡單式　進行式　完成式（黃底標記）　完成進行式
+過去（黃底標記）　簡單式（黃底標記）　進行式　完成式　完成進行式
+未來　　簡單式　進行式　完成式　完成進行式
+
+I eat apples.　我是有吃蘋果的
+I am eating an apple.　我正在吃蘋果
+I ate an apple.　我吃了一顆蘋果　（整行黃底標記）</div></details>
+  </article>
+
+  <article class="card" data-t="book">
+    <figure>
+      <img src="english_notes_img/03_exercise.png" alt="英文練習講義：看圖回答現在簡單式與現在進行式問句，第一題已用橘筆填答">
+      <figcaption>③ 練習題：看圖回答（Exercise 1）　<span style="color:var(--accent)">9/16</span></figcaption>
+    </figure>
+    <details class="ocr"><summary>看這張圖上的文字</summary><div class="txt">1　Answer the questions about the pictures.
+
+【圖 1】I'm a photographer.
+　Does he take photographs?　→ Yes, he does.　（已填，橘筆）
+　Is he taking a photograph?　→ No, he isn't.　（已填，橘筆）
+　What is he doing?　→ He's having a bath.　（已填，橘筆）
+
+【圖 2】I'm a bus driver.
+　Is she driving a bus?　→ （空白）
+　Does she drive a bus?　→ （空白）
+　What is she doing?
+
+【圖 3】I'm a window cleaner.
+　Does he clean windows?　→ （空白）
+　Is he cleaning a window?　→ （空白）
+　What is he doing?
+
+【圖 4】We are teachers.
+　Are they teaching?　→ （空白）
+　Do they teach?　→ （空白）
+　What do they do?
+
+2　Complete the sentences with am/is/are or do/don't/does/doesn't.
+（本頁到此，下半被裁切）</div></details>
+  </article>
+
+  <article class="card" data-t="book">
+    <figure>
+      <img src="english_notes_img/04_exercise_notes.png" alt="同一份練習題的另一張照片，多了中文文法註記：beV 與「會」「在」的對照">
+      <figcaption>④ 同一題 ＋ 中文註記（beV／「會」與「在」）　<span style="color:var(--accent)">9/16</span></figcaption>
+    </figure>
+    <details class="ocr"><summary>看這張圖上的文字</summary><div class="txt">…ercises　　在：beV = am, is, are, was, were, been
+
+1　Answer the questions about the pictures.
+
+【圖 1】I'm a photographer.
+　（紅筆補充）photos?
+　「會」→ Does he take photographs?　　Yes, he does.
+　「在」→ Is he taking a photograph?　　No, he isn't.
+　What is he doing?　→ He's having a bath.
+
+【這張的重點】中文的「會」對應現在簡單式（Does…），中文的「在」對應現在進行式（Is…-ing）。</div></details>
+  </article>
+</section>
+
+<p class="empty hidden" id="empty">找不到「<span id="qshow"></span>」。換個字試試，或按上面的「全部」。</p>
+
+<footer>
+  <h3>這頁是怎麼來的</h3>
+  <ul>
+    <li>素材＝英文頻道 9/09（14 則）與 9/16（22 則）的訊息，加 4 張課本照片。9/16 之後沒有新的。</li>
+    <li>照片上的字是抄出來的，所以搜尋搜得到；看不清楚的地方標成空白，沒有猜。</li>
+    <li>你 9/16 貼的 Google 文件要登入才看得到，這頁沒有收進來。</li>
+  </ul>
+  <h3>我幫你順過的語音誤字（覺得不對就跟我說）</h3>
+  <ul>
+    <li>「現代簡單式」→ <b>現在簡單式</b></li>
+    <li>「前面的 GO 舊式常態性的」→ <b>前面的 go 就是常態性的</b></li>
+    <li>「to eat ice cream 式事情」→ <b>是事情</b></li>
+    <li>「他會照照片嗎」→ <b>他會拍照嗎</b></li>
+  </ul>
+  <p style="margin:0">demo 版本　·　產於 2026-09-23</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var q=document.getElementById('q'), clr=document.getElementById('clr'),
+      empty=document.getElementById('empty'), qshow=document.getElementById('qshow'),
+      hint=document.getElementById('hint'),
+      cards=[].slice.call(document.querySelectorAll('.card')),
+      groups=[].slice.call(document.querySelectorAll('section.group')),
+      tabs=[].slice.call(document.querySelectorAll('.tab')),
+      cur='all';
+
+  // 記住每張卡片的原始 HTML，才能反覆上／下螢光筆
+  cards.forEach(function(c){ c.dataset.html=c.innerHTML; });
+
+  function esc(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+
+  function highlight(el, term){
+    if(!term){ el.innerHTML=el.dataset.html; return true; }
+    el.innerHTML=el.dataset.html;
+    var re=new RegExp(esc(term),'gi'), found=false;
+    var walker=document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), nodes=[], n;
+    while((n=walker.nextNode())) nodes.push(n);
+    nodes.forEach(function(node){
+      var txt=node.nodeValue;
+      if(!re.test(txt)) return;
+      re.lastIndex=0; found=true;
+      var frag=document.createDocumentFragment(), last=0, m;
+      while((m=re.exec(txt))!==null){
+        if(m.index>last) frag.appendChild(document.createTextNode(txt.slice(last,m.index)));
+        var mk=document.createElement('mark'); mk.textContent=m[0]; frag.appendChild(mk);
+        last=m.index+m[0].length;
+        if(m[0].length===0) re.lastIndex++;
+      }
+      if(last<txt.length) frag.appendChild(document.createTextNode(txt.slice(last)));
+      node.parentNode.replaceChild(frag,node);
+    });
+    return found;
+  }
+
+  function apply(){
+    var term=q.value.trim(), shown=0;
+    clr.style.display=term?'block':'none';
+    hint.style.display=term?'none':'';
+    cards.forEach(function(c){
+      var okTab=(cur==='all'||c.dataset.t===cur);
+      var okTerm=true;
+      if(term){
+        // 先用純文字判斷有沒有中，再決定要不要上螢光筆
+        okTerm=(c.dataset.html.replace(/<[^>]*>/g,' ')).toLowerCase().indexOf(term.toLowerCase())>=0;
+      }
+      var show=okTab&&okTerm;
+      c.classList.toggle('hidden',!show);
+      if(show){ highlight(c, term); shown++; }
+      else { c.innerHTML=c.dataset.html; }
+      // 搜尋時把收合的課本文字自動打開，才看得到命中的字
+      if(show&&term){ var d=c.querySelector('details.ocr'); if(d) d.open=true; }
+    });
+    groups.forEach(function(g){
+      var any=[].slice.call(g.querySelectorAll('.card')).some(function(c){return !c.classList.contains('hidden');});
+      g.classList.toggle('hidden',!any);
+    });
+    qshow.textContent=term;
+    empty.classList.toggle('hidden', shown>0);
+  }
+
+  q.addEventListener('input', apply);
+  clr.addEventListener('click', function(){ q.value=''; q.focus(); apply(); });
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.setAttribute('aria-selected', x===t?'true':'false'); });
+      cur=t.dataset.t; apply();
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+
+  // 唸單字（瀏覽器內建，不連外、不花錢）
+  document.addEventListener('click', function(e){
+    var b=e.target.closest('.say'); if(!b) return;
+    if(!('speechSynthesis' in window)){ b.textContent='此裝置不支援'; return; }
+    try{
+      speechSynthesis.cancel();
+      var u=new SpeechSynthesisUtterance(b.dataset.say);
+      u.lang='en-US'; u.rate=0.85;
+      speechSynthesis.speak(u);
+      var old=b.textContent; b.textContent='♪';
+      u.onend=function(){ b.textContent=old; };
+      setTimeout(function(){ b.textContent=old; }, 2500);
+    }catch(err){ b.textContent='放不出來'; }
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>
