@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T12:00+08:00",
+  "generated_at": "2026-09-24T13:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 33,
+      "commits": 39,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 17,
-      "discord_replies": 32,
-      "tokens_main_wan": 131.5,
-      "tokens_sub_wan": 190.1,
-      "tokens_sessions": 24,
-      "tokens_msgs": 1022,
+      "subagent_runs": 19,
+      "discord_replies": 37,
+      "tokens_main_wan": 156.9,
+      "tokens_sub_wan": 211.7,
+      "tokens_sessions": 27,
+      "tokens_msgs": 1195,
       "tokens_by_model": {
-        "opus": 164.1,
-        "sonnet": 121.8,
+        "opus": 189.5,
+        "sonnet": 143.3,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 131.5,
+        "opus": 156.9,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4529,7 +4529,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 32.6,
-        "sonnet": 121.8,
+        "sonnet": 143.3,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -4719,8 +4719,8 @@
           "plain_ok": false
         },
         {
-          "kind": "commit",
-          "text": "challenger-gate 收窄：兩週 375 次「該送審」實際送審 0 次，網子撒錯地方",
+          "kind": "note",
+          "text": "challenger-gate 收窄已上線（commit 22fefea，仍 log-only）。兩週 1028 筆早就滿了卻沒人算：would_block 375 則（26.8/天、佔對外訊息 36.4%）、challenger 全部 n",
           "project": "hook",
           "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/22fefea875295cf45d810ca0ccd96762655cddad",
@@ -4729,10 +4729,67 @@
           "time": "11:37",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "皇冠資產攔截首次真實驗證通過：G3 擋下真的 Edit，檔案 0 byte 變動",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f0bb71b644d859b27f5a6d2ed6fbb1dac9efc561",
+          "evidence_label": "commit f0bb71b",
+          "verified": true,
+          "time": "12:11",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "修掉一條斷了兩天沒人發現的通知路（commit a220dce，已推）。ledger_sweep 每天 09:30／20:30 跑、sweep.log 天天印 SWEEP OK、70 行進 queue.log——但活著的 session 一",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a220dcead84c1b8121d2978f5dc5163daa61207c",
+          "evidence_label": "commit a220dce",
+          "verified": true,
+          "time": "12:41",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "daily 09-24 續：接棒、PUSH 稽核投回台帳、掃描通知路修復",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a572b340b8cd69a80f57327dbc7a3657176e9351",
+          "evidence_label": "commit a572b34",
+          "verified": true,
+          "time": "12:45",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "AI_INBOX 的「被拒收的信 20」不是待辦，是永久 log 被當成佇列",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/bc328b076ef5783e8c0569ecc3bbedaff54165ff",
+          "evidence_label": "commit bc328b0",
+          "verified": true,
+          "time": "12:48",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 15,
+      "items_count": 19,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：381fd573 棒（09:44-12:30），上下文 260k 第 2 階重開",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:31",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "BOOT_BRIEF 交接：7becd0a3 棒（06:56-09:20），看門狗 216k 縮減版重開",
@@ -4786,6 +4843,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T12:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4924,9 +4990,17 @@
         {
           "text": "②回來了，而且答案是「票面過期」：兩個 bug 都在 2026-09-03 就修好了。",
           "time": null
+        },
+        {
+          "text": "12:09 皇冠資產攔截首次真實驗證通過（他 12:07 授權 1552531804358057997「可以測 但要有回朔」）。用 Edit 對 plans.json 唯一 token 做有效一字元修改 → write-guard deny",
+          "time": null
+        },
+        {
+          "text": "上一棒留的「PUSH 9 張票稽核結果還沒投回台帳」已投：6 封 op=note（voice-claude／ai-trader／security-holes-open／institution-writeguard-gap／closed-lo",
+          "time": null
         }
       ],
-      "notes": "另有 18 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 14、repo 沒有 GitHub remote（沒有可點連結） 4）"
+      "notes": "另有 20 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16、repo 沒有 GitHub remote（沒有可點連結） 4）"
     }
   ]
 }
