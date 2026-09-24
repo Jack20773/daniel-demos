@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T18:01+08:00",
+  "generated_at": "2026-09-24T19:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,32 +4504,32 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 71,
+      "commits": 80,
       "tickets_done": 0,
-      "tickets_verify": 2,
-      "subagent_runs": 61,
-      "discord_replies": 65,
-      "tokens_main_wan": 322.7,
-      "tokens_sub_wan": 559.4,
-      "tokens_sessions": 76,
-      "tokens_msgs": 2712,
+      "tickets_verify": 3,
+      "subagent_runs": 63,
+      "discord_replies": 73,
+      "tokens_main_wan": 385.0,
+      "tokens_sub_wan": 584.8,
+      "tokens_sessions": 81,
+      "tokens_msgs": 3092,
       "tokens_by_model": {
-        "opus": 369.0,
-        "sonnet": 477.4,
+        "opus": 430.3,
+        "sonnet": 503.8,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 322.3,
-        "sonnet": 0.4,
+        "opus": 383.6,
+        "sonnet": 1.4,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
         "opus": 46.7,
-        "sonnet": 477.0,
+        "sonnet": 502.4,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -5005,17 +5005,107 @@
           "time": "17:35",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 38,
-      "skipped": [
+        },
         {
           "kind": "commit",
           "text": "催告單減噪第二半：CORRECTION 段 32 張逐張輸出收斂，命中數 45 一張沒少",
           "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/09bddcf7578652c9193d1c4f2fea558ed73c14fd",
+          "evidence_label": "commit 09bddcf",
+          "verified": true,
           "time": "17:53",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "靜默綠燈根除：4 支測試檔跑 0 項卻 exit=0，統一入口讓「零項」直接算失敗",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0773a7f007800944f62acd110f77de05b66ca62d",
+          "evidence_label": "commit 0773a7f",
+          "verified": true,
+          "time": "18:07",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "測試假綠燈根除收尾＋提案普查留版控：8 敗測項全修（未改被測程式）、過期提案首次實撤",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/461101cfd9772c556280ef1614f31b9966eb5ed6",
+          "evidence_label": "commit 461101c",
+          "verified": true,
+          "time": "18:27",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "假綠燈第二刀：applied 計數不再把退件冒充成套用成功",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e8d675723a3930b42119fa1b4c73b24f8aa57ddc",
+          "evidence_label": "commit e8d6757",
+          "verified": true,
+          "time": "18:31",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "規模數字巡檢：兩層都做了鑑別度驗收，correction-cross-source-number-check 進 ve…",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ba3cb890f1d95569d5ce53fc18d958052a8bc8a0",
+          "evidence_label": "commit ba3cb89",
+          "verified": true,
+          "time": "18:37",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "未驗宣稱台帳：第三把獨立的尺量出 105，與台帳自數吻合；催告單那兩句是過期資訊",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6760eaa6f07ea2b8ad79350ecd60af27a381f0fb",
+          "evidence_label": "commit 6760eaa",
+          "verified": true,
+          "time": "18:45",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 44,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：4eb8cbd8（18:12-18:52）——8 敗測項全修、applied 假綠燈修掉、…",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:54",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "收工（縮減版，上下文 272k）：4c5f5fe4 棒 NEXT 區塊重寫，舊錨點作廢為 _SUPERSEDED_BY…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：4c5f5fe4（17:37-18:07）——靜默綠燈根除、核准流程根因翻案",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:09",
           "repo": "root"
         },
         {
@@ -5143,6 +5233,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T18:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5387,9 +5486,13 @@
         {
           "text": "改用兩個真訊號，已實作並驗過（board_io.py／pull_decisions.py／ai_inbox.py）：",
           "time": null
+        },
+        {
+          "text": "stamp_progress 首次真實路徑驗證通過：蓋章前全母體 last_progress_by 0 張，跑一筆 set_state 後 1 張（approval-path-never-walked by=set_state at=202",
+          "time": null
         }
       ],
-      "notes": "另有 33 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 27、repo 沒有 GitHub remote（沒有可點連結） 5）"
+      "notes": "另有 36 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 31、repo 沒有 GitHub remote（沒有可點連結） 5）"
     }
   ]
 }
