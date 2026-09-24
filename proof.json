@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T13:00+08:00",
+  "generated_at": "2026-09-24T14:02+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 39,
+      "commits": 46,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 19,
-      "discord_replies": 37,
-      "tokens_main_wan": 156.9,
-      "tokens_sub_wan": 211.7,
-      "tokens_sessions": 27,
-      "tokens_msgs": 1195,
+      "subagent_runs": 36,
+      "discord_replies": 42,
+      "tokens_main_wan": 181.1,
+      "tokens_sub_wan": 316.5,
+      "tokens_sessions": 45,
+      "tokens_msgs": 1468,
       "tokens_by_model": {
-        "opus": 189.5,
-        "sonnet": 143.3,
+        "opus": 213.7,
+        "sonnet": 248.1,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 156.9,
+        "opus": 181.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4529,7 +4529,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 32.6,
-        "sonnet": 143.3,
+        "sonnet": 248.1,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -4767,8 +4767,8 @@
           "plain_ok": false
         },
         {
-          "kind": "commit",
-          "text": "AI_INBOX 的「被拒收的信 20」不是待辦，是永久 log 被當成佇列",
+          "kind": "note",
+          "text": "bc328b0 AI_INBOX 的「被拒收的信 20」defectfix：那格是 inbox_rejected.jsonl（永久追加、只進不出）的長度，卻印在「本輪待辦」→ 每個 session 開機都看到「有 20 件事沒做」，而實際欠",
           "project": "看板",
           "by": "未對",
           "evidence_url": "https://github.com/Jack20773/ai-journal/commit/bc328b076ef5783e8c0569ecc3bbedaff54165ff",
@@ -4777,10 +4777,79 @@
           "time": "12:48",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "未驗宣稱台帳補驗 3 條（commit 19ff4d1）。",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/19ff4d13d970285920af451920dcfac6a3ce4b3b",
+          "evidence_label": "commit 19ff4d1",
+          "verified": true,
+          "time": "13:03",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "daily 09-24 續：語音小抄實測不填、R4-C6 翻案為已滅失",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f1940279f3af552e66f4e616cf0978745d51fb86",
+          "evidence_label": "commit f194027",
+          "verified": true,
+          "time": "13:05",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "同一個病的鏡像面：「我看不到＝它不存在」，三個同日實例",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/279036d61a015c20826da03276ed98771c9cf9ef",
+          "evidence_label": "commit 279036d",
+          "verified": true,
+          "time": "13:06",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "X 類量尺會邊量邊長大：59/58/60 三個數字都對，因為它在數自己",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1e4253d6bbcc2af306da1841728b20a4dc5a8d03",
+          "evidence_label": "commit 1e4253d",
+          "verified": true,
+          "time": "13:49",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "daily 09-24 續：hotwords 也封了（同一個 sot_prev 插座），X 類量尺會邊量邊長大",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/690c739d1ebabcf5f9ad928de4208151c58f22da",
+          "evidence_label": "commit 690c739",
+          "verified": true,
+          "time": "13:52",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 19,
+      "items_count": 24,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：caec61d9 棒（12:32-13:28），上下文 210k 看門狗重開",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:30",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "BOOT_BRIEF 交接：381fd573 棒（09:44-12:30），上下文 260k 第 2 階重開",
@@ -4843,6 +4912,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T13:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4998,9 +5076,21 @@
         {
           "text": "上一棒留的「PUSH 9 張票稽核結果還沒投回台帳」已投：6 封 op=note（voice-claude／ai-trader／security-holes-open／institution-writeguard-gap／closed-lo",
           "time": null
+        },
+        {
+          "text": "voice-claude 詞彙提示詞：實測結論「不要填」（config.py:36 維持 \"\"，本次一個字沒動，已核對）。large-v3／cuda float16／參數逐項抄自 engine.py，跑 voice_samples/raw ",
+          "time": null
+        },
+        {
+          "text": "hotwords 也不可用，但重點是整條路封了：對照組惡化 3/40、決定性那筆主 session 複驗（baseline「可以 可立了」→ prompt_a/b、hotwords_a/b 四版全吐「Claude Code」）；讀 fast",
+          "time": null
+        },
+        {
+          "text": "X 類量尺換掉，真正的罪狀不是「多算 24 行」而是「會邊量邊長大」：交接寫 59、分身實測 58、主 session 在分身補寫 189 行後重跑得 60——三個都沒量錯，是尺在變長。一把每次量都給不同答案的尺，任何引用它的結論都不可複現",
+          "time": null
         }
       ],
-      "notes": "另有 20 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16、repo 沒有 GitHub remote（沒有可點連結） 4）"
+      "notes": "另有 22 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 18、repo 沒有 GitHub remote（沒有可點連結） 4）"
     }
   ]
 }
