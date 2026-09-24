@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>戰情室・舊資料要怎麼講</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground:#EDEFF1; --surface:#FFFFFF; --surface-2:#F5F7F8; --surface-3:#E7EBEE;
+  --ink:#131820; --ink-2:#4E5A67; --ink-3:#7E8A97;
+  --line:#D7DDE2; --line-2:#C3CBD2;
+  --accent:#1B5F58; --accent-soft:#DBEAE7; --accent-ink:#0F3F3A;
+  --crit:#A82B22; --crit-soft:#F6DEDB;
+  --warn:#9A6208; --warn-soft:#F7E8CE;
+  --ok:#2C7350; --ok-soft:#DCEDE2;
+  --btn-agree-bg:#1E7A4B; --btn-agree-ink:#FFFFFF; --btn-agree-line:#165937;
+  --btn-reject-bg:#B3261E; --btn-reject-ink:#FFFFFF; --btn-reject-line:#8A1C16;
+  --btn-neutral-bg:#E7EBEE; --btn-neutral-ink:#131820; --btn-neutral-line:#7E8A97;
+  --shadow:0 1px 2px rgba(19,24,32,.06),0 8px 24px -12px rgba(19,24,32,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1318; --surface:#161D24; --surface-2:#1B232B; --surface-3:#222C35;
+    --ink:#E7ECF1; --ink-2:#A3AFBB; --ink-3:#76838F;
+    --line:#27313A; --line-2:#33404B;
+    --accent:#57B7A9; --accent-soft:#12312E; --accent-ink:#8FD8CD;
+    --crit:#F08A80; --crit-soft:#3A1714;
+    --warn:#DDA044; --warn-soft:#372814;
+    --ok:#61C08C; --ok-soft:#14301F;
+    --btn-neutral-bg:#222C35; --btn-neutral-ink:#E7ECF1; --btn-neutral-line:#76838F;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"IBM Plex Sans","Noto Sans TC",system-ui,sans-serif;
+  font-size:15px;line-height:1.75;
+}
+.wrap{max-width:1040px;margin:0 auto;padding:22px 16px 56px}
+h1{font-size:21px;line-height:1.4;margin:0 0 6px}
+.lede{color:var(--ink-2);margin:0 0 4px}
+.lede b{color:var(--ink)}
+.note{color:var(--ink-3);font-size:13px;margin:6px 0 0}
+
+/* ---- 狀態切換器 ---- */
+.switcher{margin:22px 0 8px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:3px;box-shadow:var(--shadow)}
+.switcher h2{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);margin:0 0 10px;font-weight:600}
+.states{display:flex;flex-wrap:wrap;gap:8px}
+.states button{
+  appearance:none;font:inherit;font-size:14px;cursor:pointer;
+  padding:9px 14px;min-height:44px;border-radius:3px;
+  border:1px solid var(--btn-neutral-line);background:var(--btn-neutral-bg);color:var(--btn-neutral-ink);
+}
+.states button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:600}
+.states button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.whatis{margin:12px 0 0;padding:10px 12px;background:var(--surface-2);border:1px solid var(--line);border-radius:3px;font-size:14px;color:var(--ink-2)}
+.whatis b{color:var(--ink)}
+
+/* ---- 兩版並列 ---- */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+@media (max-width:760px){ .pair{grid-template-columns:1fr} }
+.ver{background:var(--surface);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.ver-head{padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.ver-head .tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.08em;padding:2px 8px;border-radius:2px;background:var(--accent);color:#fff;margin-right:8px}
+.ver-head .name{font-weight:600}
+.ver-head p{margin:6px 0 0;font-size:13.5px;color:var(--ink-2);line-height:1.6}
+.ver-body{padding:14px 16px 18px;flex:1}
+
+/* ---- 模擬出來的戰情室零件 ---- */
+.banner{
+  display:none;padding:11px 14px;border-radius:3px;margin-bottom:12px;
+  font-size:14px;line-height:1.6;border:1px solid transparent;
+}
+.banner.show{display:block}
+.banner.k-warn{background:var(--warn-soft);color:var(--warn);border-color:var(--warn)}
+.banner.k-crit{background:var(--crit-soft);color:var(--crit);border-color:var(--crit)}
+.banner b{font-weight:700}
+.banner .sub{display:block;margin-top:3px;font-size:13px;opacity:.9}
+
+.heartbeat{
+  display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center;
+  padding:9px 13px;border-radius:3px;margin-bottom:12px;
+  background:var(--surface-2);border:1px solid var(--line);
+  color:var(--ink-2);font-size:13px;
+}
+.heartbeat b{color:var(--ink);font-weight:600}
+.heartbeat.k-warn{background:var(--warn-soft);border-color:var(--warn);color:var(--warn)}
+.heartbeat.k-warn b{color:var(--warn)}
+.heartbeat.k-crit{background:var(--crit-soft);border-color:var(--crit);color:var(--crit)}
+.heartbeat.k-crit b{color:var(--crit)}
+.heartbeat .dot{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}
+.heartbeat.k-warn .dot{background:var(--warn)}
+.heartbeat.k-crit .dot{background:var(--crit)}
+.heartbeat .verdict{flex-basis:100%;font-weight:600}
+
+.card{border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:2px;background:var(--surface-2);padding:13px 14px}
+.card .q{margin:0 0 4px;font-weight:600;line-height:1.6}
+.card .meta{margin:0 0 11px;font-size:12.5px;color:var(--ink-3);font-family:"IBM Plex Mono",monospace}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btns button{appearance:none;font:inherit;font-size:14px;cursor:pointer;padding:8px 15px;min-height:44px;border-radius:3px;border:1px solid}
+.b-agree{background:var(--btn-agree-bg);color:var(--btn-agree-ink);border-color:var(--btn-agree-line)}
+.b-reject{background:var(--btn-reject-bg);color:var(--btn-reject-ink);border-color:var(--btn-reject-line)}
+.btns button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.hint{display:none;margin:9px 0 0;font-size:13px;line-height:1.6}
+.hint.show{display:block}
+.hint.k-warn{color:var(--warn)}
+.hint.k-crit{color:var(--crit)}
+.press{display:none;margin:9px 0 0;padding:8px 11px;border-radius:3px;font-size:13.5px;line-height:1.6}
+.press.show{display:block}
+.press.k-ok{background:var(--ok-soft);color:var(--ok)}
+.press.k-crit{background:var(--crit-soft);color:var(--crit)}
+
+/* ---- 結尾 ---- */
+.verdict-box{margin-top:26px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--crit);border-radius:3px;box-shadow:var(--shadow)}
+.verdict-box h2{font-size:16px;margin:0 0 8px}
+.verdict-box p{margin:0 0 8px;color:var(--ink-2)}
+.verdict-box p:last-child{margin-bottom:0}
+.verdict-box b{color:var(--ink)}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);color:var(--ink-3);font-size:12.5px;line-height:1.8}
+code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--surface-3);padding:1px 5px;border-radius:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>戰情室：拿不到新資料的時候，要怎麼跟你講</h1>
+<p class="lede">現在的毛病是——網路拿不到新資料時，這頁<b>會默默拿舊的給你看，而且不說那是舊的</b>。你看到的畫面跟一切正常時長得一模一樣。</p>
+<p class="note">下面兩版是兩種講法。<b>先按上面那排按鈕假裝壞掉，再看左右兩邊的反應差在哪。</b>這是給你挑的樣子，正式站我還沒動。</p>
+
+<div class="switcher">
+  <h2>假裝現在是這個狀況</h2>
+  <div class="states" id="states">
+    <button data-s="ok" aria-pressed="true">一切正常</button>
+    <button data-s="api500" aria-pressed="false">拿不到資料（現在就是這個）</button>
+    <button data-s="offline" aria-pressed="false">完全連不上</button>
+    <button data-s="nols" aria-pressed="false">記不住你按過什麼</button>
+  </div>
+  <p class="whatis" id="whatis"></p>
+</div>
+
+<div class="pair">
+
+  <div class="ver">
+    <div class="ver-head">
+      <span class="tag">A</span><span class="name">在最上面壓一條橫幅</span>
+      <p>壞掉時，整頁最上面多出一條顏色很重的條，講白話、不會漏看。代價是<b>多一個東西佔版面</b>。</p>
+    </div>
+    <div class="ver-body">
+      <div class="banner" id="a-banner"></div>
+      <div class="heartbeat" id="a-hb">
+        <span class="dot"></span>
+        <span>上次拉回 <b id="a-pull">3 分鐘前</b></span>
+        <span>上次派工 <b>18 分鐘前</b></span>
+        <span>今日用量 <b>$1.84</b></span>
+      </div>
+      <div class="card">
+        <p class="q">stock-signal 的 Track1 去重，要不要先上線？</p>
+        <p class="meta">stock-signal-ui ・ 卡你 28 天</p>
+        <div class="btns">
+          <button class="b-agree" data-press="a">同意</button>
+          <button class="b-reject" data-press="a">不要</button>
+        </div>
+        <p class="press" id="a-press"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ver">
+    <div class="ver-head">
+      <span class="tag">B</span><span class="name">把已經有的那條心跳升級</span>
+      <p>不長新東西，把現在那條灰色小字改成會變臉的三態（綠／黃／紅），壞掉時那一條自己說話。代價是<b>比較小聲</b>。</p>
+    </div>
+    <div class="ver-body">
+      <div class="heartbeat" id="b-hb">
+        <span class="dot"></span>
+        <span>上次拉回 <b id="b-pull">3 分鐘前</b></span>
+        <span>上次派工 <b>18 分鐘前</b></span>
+        <span>今日用量 <b>$1.84</b></span>
+        <span class="verdict" id="b-verdict"></span>
+      </div>
+      <div class="card">
+        <p class="q">stock-signal 的 Track1 去重，要不要先上線？</p>
+        <p class="meta">stock-signal-ui ・ 卡你 28 天</p>
+        <div class="btns">
+          <button class="b-agree" data-press="b">同意</button>
+          <button class="b-reject" data-press="b">不要</button>
+        </div>
+        <p class="hint" id="b-hint"></p>
+        <p class="press" id="b-press"></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="verdict-box">
+  <h2>回我一個字母就好</h2>
+  <p><b>A</b> ＝ 最上面壓一條橫幅，很難漏看，但平常沒事時那塊地方就空著。</p>
+  <p><b>B</b> ＝ 心跳那條自己變臉，不多長東西，但你得看一眼才會發現。</p>
+  <p>你也可以說「兩個都要」——橫幅只在<b>完全連不上</b>時出現，其餘狀況交給心跳條。這是我自己會選的那個，但我想先聽你的。</p>
+</div>
+
+<footer>
+  這頁只是樣子，按鈕不會真的送出任何東西，也不會改到你的任何資料。<br>
+  正式站 <code>warroom.html</code> 一個字都還沒改。<br>
+  同一個毛病在那支檔案裡有四個地方，<b>不是只有一個</b>：讀不到就靜靜吃掉、拿到回應但內容是錯的（現在就是這個）、心跳條自己也可能在說謊、還有「記住你按過什麼」那份存不進去時也不吭聲。兩版都是四個地方一起治。
+</footer>
+
+</div>
+
+<script>
+/* 四種狀況下，兩版各自該長什麼樣。純展示，沒有任何網路行為。 */
+var SCENES = {
+  ok: {
+    whatis: "雲端通、資料是新的。<b>這時候兩版看起來都跟現在一樣</b>——不吵人，本來就該這樣。",
+    pull: "3 分鐘前",
+    a: { banner: null, hb: "", press: ["k-ok", "已送出，你不用再管這張了。"] },
+    b: { hb: "", verdict: "", hint: null, press: ["k-ok", "已送出，你不用再管這張了。"] }
+  },
+  api500: {
+    whatis: "網頁打得開，但它去倉庫拿資料被回「沒有權限」。<b>這是 9/24 早上 9:16 到現在的真實狀況</b>——舊版這時候完全不會講，你會以為畫面是新的。",
+    pull: "19 小時前",
+    a: {
+      banner: ["k-warn", "這頁現在拿不到新資料，你看到的是 <b>19 小時前</b>的。", "雲端有回應，但內容拿不出來（倉庫鑰匙失效）。按鈕會送不出去。"],
+      hb: "k-warn",
+      press: ["k-crit", "沒送出去，這張還留在清單上，請再按一次（HTTP 500）"]
+    },
+    b: {
+      hb: "k-warn", verdict: "拿不到新資料，上面這些是 19 小時前的",
+      hint: ["k-warn", "現在按下去會失敗——雲端拿不到資料。"],
+      press: ["k-crit", "沒送出去，這張還留在清單上，請再按一次（HTTP 500）"]
+    }
+  },
+  offline: {
+    whatis: "手機沒訊號、或整個網站掛了。<b>舊版一樣靜悄悄</b>，你會對著一張九月八號的快照按按鈕。",
+    pull: "拉不到",
+    a: {
+      banner: ["k-crit", "連不上雲端。這頁是<b>離線的舊快照</b>，不是現在的狀況。", "你按的任何東西都送不出去，會當場跟你講。"],
+      hb: "k-crit",
+      press: ["k-crit", "沒送出去，這張還留在清單上，請再按一次（連不上）"]
+    },
+    b: {
+      hb: "k-crit", verdict: "連不上雲端，整頁是離線的舊快照",
+      hint: ["k-crit", "現在連不上，按下去送不出去。"],
+      press: ["k-crit", "沒送出去，這張還留在清單上，請再按一次（連不上）"]
+    }
+  },
+  nols: {
+    whatis: "無痕視窗、或瀏覽器空間滿了。<b>「按過就消失」那份記憶存不進去</b>——你按完重新整理，卡片會再冒出來。舊版也不講。",
+    pull: "3 分鐘前",
+    a: {
+      banner: ["k-warn", "這台裝置記不住你按過哪些。", "送出照常會成功，但你重新整理後卡片可能又冒出來（無痕視窗或空間滿了）。"],
+      hb: "",
+      press: ["k-ok", "已送出。但這台裝置記不住，重新整理後這張可能又出現——不用重按。"]
+    },
+    b: {
+      hb: "", verdict: "",
+      hint: ["k-warn", "這台裝置記不住你按過哪些，重新整理後可能又冒出來。"],
+      press: ["k-ok", "已送出。但這台裝置記不住，重新整理後這張可能又出現——不用重按。"]
+    }
+  }
+};
+
+function el(id){ return document.getElementById(id); }
+
+function setBanner(node, spec){
+  node.className = "banner";
+  if (!spec){ node.innerHTML = ""; return; }
+  node.className = "banner show " + spec[0];
+  node.innerHTML = "<b>" + spec[1] + "</b><span class='sub'>" + spec[2] + "</span>";
+}
+function setHb(node, kind){
+  node.className = "heartbeat" + (kind ? " " + kind : "");
+}
+function setHint(node, spec){
+  node.className = "hint";
+  if (!spec){ node.textContent = ""; return; }
+  node.className = "hint show " + spec[0];
+  node.textContent = spec[1];
+}
+
+var CUR = "ok";
+
+function apply(name){
+  CUR = name;
+  var s = SCENES[name];
+  el("whatis").innerHTML = s.whatis;
+  el("a-pull").textContent = s.pull;
+  el("b-pull").textContent = s.pull;
+
+  setBanner(el("a-banner"), s.a.banner);
+  setHb(el("a-hb"), s.a.hb);
+
+  setHb(el("b-hb"), s.b.hb);
+  el("b-verdict").textContent = s.b.verdict;
+  setHint(el("b-hint"), s.b.hint);
+
+  // 換狀況就把「剛剛按過」的回音收掉，不然會誤導
+  el("a-press").className = "press";
+  el("b-press").className = "press";
+
+  var btns = el("states").querySelectorAll("button");
+  for (var i = 0; i < btns.length; i++){
+    btns[i].setAttribute("aria-pressed", btns[i].dataset.s === name ? "true" : "false");
+  }
+}
+
+el("states").addEventListener("click", function(ev){
+  var b = ev.target.closest("button[data-s]");
+  if (b) apply(b.dataset.s);
+});
+
+document.addEventListener("click", function(ev){
+  var b = ev.target.closest("button[data-press]");
+  if (!b) return;
+  var which = b.dataset.press;
+  var spec = SCENES[CUR][which].press;
+  var node = el(which + "-press");
+  node.className = "press show " + spec[0];
+  node.textContent = spec[1];
+});
+
+apply("ok");
+</script>
+
+</body>
+</html>
