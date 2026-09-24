@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T17:01+08:00",
+  "generated_at": "2026-09-24T18:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 62,
+      "commits": 71,
       "tickets_done": 0,
       "tickets_verify": 2,
-      "subagent_runs": 56,
-      "discord_replies": 55,
-      "tokens_main_wan": 274.2,
-      "tokens_sub_wan": 508.0,
-      "tokens_sessions": 70,
-      "tokens_msgs": 2365,
+      "subagent_runs": 61,
+      "discord_replies": 65,
+      "tokens_main_wan": 322.7,
+      "tokens_sub_wan": 559.4,
+      "tokens_sessions": 76,
+      "tokens_msgs": 2712,
       "tokens_by_model": {
-        "opus": 320.5,
-        "sonnet": 426.0,
+        "opus": 369.0,
+        "sonnet": 477.4,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 273.8,
+        "opus": 322.3,
         "sonnet": 0.4,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4529,7 +4529,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 46.7,
-        "sonnet": 425.6,
+        "sonnet": 477.0,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -4543,7 +4543,7 @@
           "time": "2026-09-24 11:32"
         }
       ],
-      "corrections_new": 1,
+      "corrections_new": 3,
       "highlights": [
         "早報頁改版：提案卡收合、核准碼短顯示+一鍵複製、0 筆改綠色好消息",
         "修每日備份 wrapper 的假綠燈：linebot 失敗已連續 27 天但排程器一直顯示成功",
@@ -4933,10 +4933,100 @@
           "time": "16:20",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "閘門回歸測試納入版控：_test_* 一刀切把正式資產也濾掉了",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a448c22b307ce79364c7427185b009036514b444",
+          "evidence_label": "commit a448c22",
+          "verified": true,
+          "time": "17:09",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "票數對帳腳本入庫：把「算數字的那道指令」變成留得住的檔案",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3303c216c5a8a351a410bb7a52822b2774328740",
+          "evidence_label": "commit 3303c21",
+          "verified": true,
+          "time": "17:21",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "糾正票 done_when 普查腳本入庫：複現時抓到自己引用的數字是錯的",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/c794a2cec6ba1a3c1c4ba95152326ef2f94004be",
+          "evidence_label": "commit c794a2c",
+          "verified": true,
+          "time": "17:24",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "普查腳本修偽陽性：14→16→15，並抓到開票閘門的一個真 bug",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b5ff06bb10b428ce5e5fcc36a60f8735168f011c",
+          "evidence_label": "commit b5ff06b",
+          "verified": true,
+          "time": "17:26",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "開票工具入庫：把每次手寫 JSON 的雷變成預檢",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/eb49877919ebd1bd36d64cccd0ccb6835b4c16b0",
+          "evidence_label": "commit eb49877",
+          "verified": true,
+          "time": "17:29",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "催告單減噪：13 張「完成條件未填」的票從逐張長段落濃縮成一行",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1c5251ab86f5930a463e28f6caf7777ee35e7262",
+          "evidence_label": "commit 1c5251a",
+          "verified": true,
+          "time": "17:35",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 32,
+      "items_count": 38,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "催告單減噪第二半：CORRECTION 段 32 張逐張輸出收斂，命中數 45 一張沒少",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "17:53",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：cec88e9f（16:51-17:37），7 個數字稽核 4 個複現不出；噪音假設被對照…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "17:36",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "BOOT_BRIEF 交接：2b4f77be（15:50-16:55），假天數修完並 push；他 16:49 沉默結…",
@@ -5053,6 +5143,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T17:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "17:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5290,7 +5389,7 @@
           "time": null
         }
       ],
-      "notes": "另有 30 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25、repo 沒有 GitHub remote（沒有可點連結） 5）"
+      "notes": "另有 33 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 27、repo 沒有 GitHub remote（沒有可點連結） 5）"
     }
   ]
 }
