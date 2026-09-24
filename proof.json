@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T02:00+08:00",
+  "generated_at": "2026-09-25T03:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,24 +5487,24 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 7,
+      "commits": 12,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 7,
-      "discord_replies": 7,
-      "tokens_main_wan": 55.9,
-      "tokens_sub_wan": 42.4,
+      "discord_replies": 8,
+      "tokens_main_wan": 69.5,
+      "tokens_sub_wan": 44.7,
       "tokens_sessions": 11,
-      "tokens_msgs": 261,
+      "tokens_msgs": 343,
       "tokens_by_model": {
-        "opus": 55.9,
-        "sonnet": 42.4,
+        "opus": 69.5,
+        "sonnet": 44.7,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 55.9,
+        "opus": 69.5,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -5512,7 +5512,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 42.4,
+        "sonnet": 44.7,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -5556,6 +5556,42 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "daily log 續：第廿七棒（dispatch WinError5 已修／next_action 過期警語／N19…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:56",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "跟既有那把尺對帳：釘住包含關係與盲區，並在程式裡指路避免有人造第三把",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:55",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "白工台帳第 66 筆：同一張票第三次重驗——教訓寫成「不要相信交接單」只擋得住交接單那一個入口",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "修兩個讓派工線斷掉的根因：dispatch 相對 scope_dir 必炸、掃描器把過期 next_action 當工單",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "收工第廿六棒：兩件欠件補完；更正已發出的錯數字 52→65",
           "project": "記憶",
           "reason": "automated",
@@ -5583,6 +5619,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T02:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T01:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -5601,7 +5646,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 5 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
+      "notes": "另有 10 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7、未 push 3）"
     }
   ]
 }
