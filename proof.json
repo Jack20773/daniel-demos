@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T14:02+08:00",
+  "generated_at": "2026-09-24T15:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,32 +4504,32 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 46,
+      "commits": 56,
       "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 36,
-      "discord_replies": 42,
-      "tokens_main_wan": 181.1,
-      "tokens_sub_wan": 316.5,
-      "tokens_sessions": 45,
-      "tokens_msgs": 1468,
+      "tickets_verify": 2,
+      "subagent_runs": 50,
+      "discord_replies": 46,
+      "tokens_main_wan": 217.9,
+      "tokens_sub_wan": 413.1,
+      "tokens_sessions": 62,
+      "tokens_msgs": 1803,
       "tokens_by_model": {
-        "opus": 213.7,
-        "sonnet": 248.1,
+        "opus": 250.1,
+        "sonnet": 345.2,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 181.1,
-        "sonnet": 0.0,
+        "opus": 217.5,
+        "sonnet": 0.4,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
         "opus": 32.6,
-        "sonnet": 248.1,
+        "sonnet": 344.8,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -4543,7 +4543,7 @@
           "time": "2026-09-24 11:32"
         }
       ],
-      "corrections_new": 0,
+      "corrections_new": 1,
       "highlights": [
         "早報頁改版：提案卡收合、核准碼短顯示+一鍵複製、0 筆改綠色好消息",
         "修每日備份 wrapper 的假綠燈：linebot 失敗已連續 27 天但排程器一直顯示成功",
@@ -4837,10 +4837,100 @@
           "time": "13:52",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "判斷力正本補上「驗收要有鑑別度」；MEMORY L70 漏改的舊 push 規則退役",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/dfc65dbc8d8ace49310e67acaf4f477f235ef4e3",
+          "evidence_label": "commit dfc65db",
+          "verified": true,
+          "time": "14:16",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "A 類 4 張糾正票全部執行完：mention-gate 上線、preview-first 補判準、開交接票、白話票併票",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2ef23473f7406ac3324054815b7511b156a49c46",
+          "evidence_label": "commit 2ef2347",
+          "verified": true,
+          "time": "14:42",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "daily 09-24 續：第二十一棒把 A 類剩下 4 張執行完（mention-gate 上線、過期提案換掉、開交…",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f8e434f06607e3d299b6af1bee0a8dcd73c2bed2",
+          "evidence_label": "commit f8e434f",
+          "verified": true,
+          "time": "14:45",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "daily 09-24 續：開票 8 分鐘後被自己的派工器咬（機制缺口非填錯欄位）＋gateway_autostart…",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/beb5c3bea7693a0bbd55c3ef204f90a6307ee079",
+          "evidence_label": "commit beb5c3b",
+          "verified": true,
+          "time": "14:50",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "台帳：交接票改 waiting 避開派工器；gateway_autostart 稽核結論入帳",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/c5a3add7b151169da0b215aa5bdfb4bba3ec37dc",
+          "evidence_label": "commit c5a3add",
+          "verified": true,
+          "time": "14:50",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "等他核准的提案 22 則裡 18 則過期（82%）：我踩到的那則不是例外是常態",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3ad090c9d2c28587ead6bb3c17459fe541ddb65f",
+          "evidence_label": "commit 3ad090c",
+          "verified": true,
+          "time": "14:57",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 24,
+      "items_count": 30,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：d27aa86e 棒（14:31-15:00），上下文 219k 看門狗重開",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:59",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：1ddff742 棒（13:31-14:30），上下文 201k 看門狗縮減版重開",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:32",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "BOOT_BRIEF 交接：caec61d9 棒（12:32-13:28），上下文 210k 看門狗重開",
@@ -4879,6 +4969,15 @@
         },
         {
           "kind": "commit",
+          "text": "新增 ops/gateway_autostart.ps1（尚未實跑驗證，補進版控）",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "14:46",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
           "text": "Gateway 狀態分類器補上 LOGGED_IN：健康的 Gateway 原本會被回報成「在等你登入」",
           "project": "交易機器人",
           "reason": "no_remote",
@@ -4912,6 +5011,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T14:02+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:02",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5088,9 +5196,37 @@
         {
           "text": "X 類量尺換掉，真正的罪狀不是「多算 24 行」而是「會邊量邊長大」：交接寫 59、分身實測 58、主 session 在分身補寫 189 行後重跑得 60——三個都沒量錯，是尺在變長。一把每次量都給不同答案的尺，任何引用它的結論都不可複現",
           "time": null
+        },
+        {
+          "text": "03_judgment.md「完成的定義」新增第 7 條「驗收要有鑑別度」（A 類第 1 張）。先驗票是不是空頭：grep -cE '反問|對照組|canary|照樣綠燈' 03_judgment.md → 0（母體 119 行），三條判準",
+          "time": null
+        },
+        {
+          "text": "MEMORY.md L70「首次上線多次確認才推」劃線退役（A 類第 2 張）。刻意沒拿去問他：它寫於 07-12，被 09-05「先做他可以喊停」（1545616127202304072）與 09-07 N20 覆蓋，而同一條的姐妹句 0",
+          "time": null
+        },
+        {
+          "text": "A 類③ correction-bridge-discord-mention：003_hooks/mention-gate.ps1 上線（log-only，永遠 exit 0、不擋不改），掛在 settings.json PreToolUs",
+          "time": null
+        },
+        {
+          "text": "A 類④ correction-preview-first 補判準：發現該票原有的兩則 pending 提案（prop-08513e69…／prop-23d8b92e…，投於 09-06）內容已過期——寫在 09-15／09-18／09-1",
+          "time": null
+        },
+        {
+          "text": "A 類② correction-daily-2026-09-15 → verify，開出 correction-handoff-before-longwork（active）。52 行整份掃過，唯一要開單的是 01:30 主訴「跑長任務的時",
+          "time": null
+        },
+        {
+          "text": "A 類① correction-plain-language-for-daniel → verify（併票）。🔴 併的方向與上一棒交接寫的相反（交接寫「把 5yo 併掉關閉」）：實查兩票 source 指向同一份正本 feedback_pl",
+          "time": null
+        },
+        {
+          "text": "ops/gateway_autostart.ps1 稽核完畢（分身查，主 session 覆核關鍵結論；ai-trader 獨立 repo commit f4b47f5，該 repo 沒有 remote，本機即終點，沒有可推的地方）。",
+          "time": null
         }
       ],
-      "notes": "另有 22 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 18、repo 沒有 GitHub remote（沒有可點連結） 4）"
+      "notes": "另有 26 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21、repo 沒有 GitHub remote（沒有可點連結） 5）"
     }
   ]
 }
