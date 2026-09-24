@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>台帳・過期票怎麼印</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground:#EDEFF1; --surface:#FFFFFF; --surface-2:#F5F7F8; --surface-3:#E7EBEE;
+  --ink:#131820; --ink-2:#4E5A67; --ink-3:#7E8A97;
+  --line:#D7DDE2; --line-2:#C3CBD2;
+  --accent:#1B5F58; --accent-soft:#DBEAE7; --accent-ink:#0F3F3A;
+  --crit:#A82B22; --crit-soft:#F6DEDB;
+  --warn:#9A6208; --warn-soft:#F7E8CE;
+  --ok:#2C7350; --ok-soft:#DCEDE2;
+  --shadow:0 1px 2px rgba(19,24,32,.06),0 8px 24px -12px rgba(19,24,32,.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0E1318; --surface:#161D24; --surface-2:#1B232B; --surface-3:#222C35;
+    --ink:#E7ECF1; --ink-2:#A3AFBB; --ink-3:#76838F;
+    --line:#27313A; --line-2:#33404B;
+    --accent:#57B7A9; --accent-soft:#12312E; --accent-ink:#8FD8CD;
+    --crit:#F08A80; --crit-soft:#3A1714;
+    --warn:#DDA044; --warn-soft:#372814;
+    --ok:#61C08C; --ok-soft:#14301F;
+  }
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--ink);
+  font-family:"IBM Plex Sans","Noto Sans TC",system-ui,sans-serif;
+  font-size:15px;line-height:1.75;
+}
+.wrap{max-width:1040px;margin:0 auto;padding:22px 16px 56px}
+h1{font-size:21px;line-height:1.4;margin:0 0 6px}
+.lede{color:var(--ink-2);margin:0 0 4px}
+.lede b{color:var(--ink)}
+.note{color:var(--ink-3);font-size:13px;margin:6px 0 0}
+
+.numbox{margin:18px 0 0;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:3px;box-shadow:var(--shadow);font-size:13.5px;color:var(--ink-2)}
+.numbox b{color:var(--ink)}
+
+/* ---- 兩版並列 ---- */
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+@media (max-width:760px){ .pair{grid-template-columns:1fr} }
+.ver{background:var(--surface);border:1px solid var(--line);border-radius:3px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.ver-head{padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.ver-head .tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:12px;letter-spacing:.08em;padding:2px 8px;border-radius:2px;background:var(--accent);color:#fff;margin-right:8px}
+.ver-head .name{font-weight:600}
+.ver-head p{margin:6px 0 0;font-size:13.5px;color:var(--ink-2);line-height:1.6}
+.ver-head .cost{margin:4px 0 0;font-size:13px;color:var(--warn)}
+.ver-body{padding:14px 16px 18px;flex:1;max-height:2200px;overflow:auto;font-size:13.5px}
+
+/* ---- md 內容排版（塞進 ver-body 裡的真實產出） ---- */
+.ver-body h3{font-size:15px;margin:0 0 8px;color:var(--ink)}
+.ver-body h4{font-size:13.5px;margin:16px 0 6px;color:var(--accent-ink);border-top:1px solid var(--line);padding-top:10px}
+.ver-body p{margin:0 0 9px}
+.ver-body ul{margin:0 0 9px;padding-left:20px}
+.ver-body li{margin:0 0 6px}
+.ver-body blockquote{margin:0 0 12px;padding:8px 11px;background:var(--surface-2);border-left:3px solid var(--warn);border-radius:2px;color:var(--ink-2);font-size:13px}
+.ver-body code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--surface-3);padding:1px 5px;border-radius:2px;word-break:break-word}
+.ver-body strong{color:var(--ink)}
+.ver-body hr{border:none;border-top:1px solid var(--line);margin:14px 0}
+
+/* ---- 結尾 ---- */
+.verdict-box{margin-top:26px;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--crit);border-radius:3px;box-shadow:var(--shadow)}
+.verdict-box h2{font-size:16px;margin:0 0 8px}
+.verdict-box p{margin:0 0 8px;color:var(--ink-2)}
+.verdict-box p:last-child{margin-bottom:0}
+.verdict-box b{color:var(--ink)}
+footer{margin-top:30px;padding-top:14px;border-top:1px solid var(--line);color:var(--ink-3);font-size:12.5px;line-height:1.8}
+code{font-family:"IBM Plex Mono",monospace;font-size:.92em;background:var(--surface-3);padding:1px 5px;border-radius:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>每天那份待辦清單，過期的票該怎麼印</h1>
+<p class="lede">現在的毛病：AI 早上印給你的 22 張票裡，有 12 張的「下一步」欄位早就是舊字條——事情做完了或你已經回過，但票沒跟著改，等於拿<b>過期地圖</b>問路。</p>
+<p class="lede">兩版都是治這個毛病，差在治法：<b>A 版</b>把那 12 張過期票整張藏起來、只留一行「還有幾張，要看自己點」；<b>B 版</b>那 12 張照樣印出來，但原本「下一步」那行蓋上一個紅色警告牌叫人先別照做。</p>
+<p class="lede">下面是<b>兩版真正印出來的清單全文</b>（不是截圖、不是摘要），麻煩你看完回一個字母：<b>A</b> 或 <b>B</b>。</p>
+
+<div class="numbox">
+真實數字：現在每天印出來的 PUSH＋NUDGE 共 <b>22 張</b>，其中 <b>12 張確定過期</b>、<b>0 張能證明是新的</b>（其餘 10 張查不出新舊）。
+查這個數字的指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py</code>。
+兩份清單都是拿今天（2026-09-25）的真實 <code>plans.json</code> 資料跑出來，不是編的樣子貨。
+</div>
+
+<div class="pair">
+
+  <div class="ver">
+    <div class="ver-head">
+      <span class="tag">A</span><span class="name">過期票整張藏起來</span>
+      <p>差在哪：過期的 12 張<b>不印</b>，段末只留一行摘要＋查證指令；清單一眼看起來乾淨很多，只剩 10 張。</p>
+      <p class="cost">代價：那 12 張變成「你不點就看不到」，容易被忘掉——就像把冰箱門上的舊便利貼直接收進抽屜。</p>
+    </div>
+    <div class="ver-body">
+<h3 id="ledger_sweeppy">任務台帳掃描結果（ledger_sweep.py）</h3>
+<blockquote>
+<p>🧪 <strong>DEMO——非上線內容</strong>。這是「如果 Option A（讓分類器拒絕過期資料）上線，明天早上 <code>ledger_alerts.md</code> 會長什麼樣」的示範，用真實 plans.json 跑出來，但本檔不是正式台帳、<code>ledger_sweep.py</code> 未被改動。
+本版做法：PUSH／NUDGE 段裡，判定過期（<code>stale_map_census.is_stale()</code>==True）的票<strong>整張不印</strong>，改成段末一行摘要＋逐條查證指令。
+產生指令：<code>python -X utf8 000_Agent/005_scripts/demo_option_a_render.py</code>｜產生時間：2026-09-25T07:30:56.182227+08:00</p>
+</blockquote>
+<p>掃描時間：2026-09-25 07:30:56</p>
+<h4 id="_1">母體統計</h4>
+<ul>
+<li>台帳總筆數（population，來自 plans.json）：184</li>
+<li>納入判斷（state=active/waiting）：70</li>
+<li>跳過（paused/parked/dropped/done，只計數不細看）：114</li>
+<li>命中需要動作（OVERDUE+UNANSWERED+CORRECTION+NUDGE+PUSH+EXTERNAL）：66</li>
+<li>未回類（UNANSWERED，唯一不受 state=active/waiting 限制的類別）：台帳共 0 筆掛著 awaiting_ai_reply／pending_interpretation 且未結案，本次命中 0 筆（門檻 2 小時）</li>
+<li>UNKNOWN（last_progress_at 未知，無法判斷）：3</li>
+<li>糾正類（id 以 <code>correction-</code> 開頭）：台帳共 97 筆，其中 47 筆 state 在 active/waiting 內被納入判斷，本次命中 43 筆（其中 13 張 done_when 是純佔位句，下方 CORRECTION 段合併成一行呈現，仍計入本次命中數）</li>
+<li>門檻：days_nudge=3、days_push=7、days_correction=1、days_external=14（days_external 為固定值，不接受 CLI 覆寫）</li>
+</ul>
+<h4 id="overduedeadline">一、OVERDUE（deadline 已過期，最優先處理）</h4>
+<p>（本次掃描無命中）</p>
+<h4 id="unanswered-2">二、UNANSWERED（他留言／按了「不要」，主腦超過 2 小時沒回——球在我身上）</h4>
+<p>（本次掃描無命中）</p>
+<h4 id="correction-1">三、CORRECTION（他糾正過、我還沒修好的——門檻 1 天，最容易被我自己忘掉）</h4>
+<p>🔴 <strong>糾正類共 43 張（30 張逐條列於下、13 張完成條件未填已合併成一行）；全部計入本次命中數，一張都沒藏。</strong>
+- <code>correction-reply-before-work</code>｜糾正：收到他的訊息先回一句，再去做事（二犯）｜停滯 28 天
+- <code>correction-no-new-rule-md</code>｜糾正：規則不准再寫成新的 MD 檔，只能進台帳或寫成程式｜停滯 28 天
+- <code>correction-restart-before-longwork</code>｜糾正：宣告要重開之後，不准再派長工分身｜停滯 28 天
+- <code>correction-no-unreproducible-numbers</code>｜糾正：引用記憶裡的任何數字前，先問「產生它的指令還在嗎」｜停滯 28 天
+- <code>correction-bridge-message-length</code>｜糾正：橋樑訊息不豁免篇幅，一則只講一件事｜停滯 28 天
+- <code>correction-no-overcorrection</code>｜糾正：被打回時不准跳到極端的另一邊，中間格要先講｜停滯 28 天
+- <code>correction-two-sources-before-universal-claim</code>｜糾正：講「官方沒有寫 X」這種全稱句之前，至少查兩個來源｜停滯 28 天
+- <code>correction-main-session-no-longwork</code>｜糾正：主 session 不接長工，長工一律派分身（否則會漏他的訊息）｜停滯 28 天
+- <code>correction-transcription-best-model</code>｜要精確的逐字稿直接用最好的模型，不先跑縮水版｜停滯 28 天
+- <code>correction-publication-9-categories</code>｜審對外發布素材要跑九類清單，第九類「歸屬誤植」要讀完整敘事｜停滯 28 天
+- <code>correction-plain-language-5yo</code>｜給丹尼爾的回報要五歲小孩聽得懂，術語同句配譬喻｜停滯 28 天
+- <code>correction-html-vercel-delivery</code>｜給他讀的東西一律出 HTML 並走 Vercel 網址，不發截圖／不發 md／不發 artifact｜停滯 28 天
+- <code>correction-no-suggestion-downgrade</code>｜該自動做的動作不准退回成「建議你去做 X」｜停滯 28 天
+- <code>correction-progress-must-go-discord</code>｜警報／進度／完成回報一律發 Discord，不能只寫終端機｜停滯 28 天
+- <code>correction-refetch-volatile-source-before-deciding</code>｜糾正：不可逆決策前，對「會變動的來源」再撈一次最新狀態｜停滯 28 天
+- <code>correction-evaluation-flow-skill</code>｜糾正：2026-08-27：第 0 關（找原始目的正本）第一次擋下實質損害——這是它的第一個證據｜停滯 28 天
+- <code>correction-proactive-push</code>｜糾正：我太被動：待辦不提就不動（2026-08-27 丹尼爾糾正）｜停滯 28 天
+- <code>correction-do-not-disclose-projects</code>｜糾正：不主動對外提及丹尼爾的「新」專案｜停滯 28 天
+- <code>correction-cheap-model-for-subagents</code>｜糾正：派 subagent 要主動挑便宜模型（省額度）｜停滯 28 天
+- <code>correction-verify-online-before-asking</code>｜糾正：「我不懂」不是把問題丟回去的理由——先自己上網查一遍｜停滯 28 天
+- <code>correction-improve-existing-not-new-artifact</code>｜糾正：介面/產出有問題時改既有的那個，不准另開新的｜停滯 28 天
+- <code>correction-relay-external-frame-unchecked</code>｜糾正：轉述外部 AI 的框架前，先拿回去對使用者原話｜停滯 28 天｜球在：ai
+- <code>correction-external-opinion-blackbox</code>｜外審意見不准只給摘要就叫他選：原文照貼、標清楚哪些是我翻譯的、附白話場景｜停滯 27 天｜球在：ai
+- <code>correction-restate-before-plan</code>｜寫計畫前先重述「我以為你要的是什麼」讓他確認，不准拿局部當全部｜停滯 27 天｜球在：ai
+- <code>correction-daily-2026-09-02</code>｜糾正待整理：2026-09-02 的 daily log 有更新，裡面的糾正還沒逐條開單｜停滯 23 天
+- <code>correction-no-guessing-external-systems</code>｜糾正：2026-08-10 第五次：換一種包裝的猜測仍然是猜測（Discord 開發者後台）｜停滯 23 天
+- <code>correction-check-existing-features-before-planning</code>｜糾正：提新需求時，先查系統「已經有沒有這個功能」，再談怎麼做｜停滯 23 天
+- <code>correction-daily-2026-09-12</code>｜糾正：新手包／教材的驗收不能 AI 自讀，讀者是「對方 AI」，要能零聯絡複製整套系統｜停滯 13 天
+- <code>correction-debug-visible-state-first</code>｜糾正：幫人除錯先問「肉眼一秒看得到的狀態」，別當人肉傳話筒｜停滯 13 天
+- <code>correction-daily-2026-09-13</code>｜糾正：評估要先問「上次親手做過為什麼沒成」，不能只問怎麼做（AI 老師方向 20:04 硬重置）｜停滯 12 天
+- 🔴 <strong>完成條件未填（13 張，合併成這一行）</strong>：這 13 張每天都命中，但要做的事是同一件——先把 done_when 寫出來。逐張清單：<code>python -X utf8 000_Agent/005_scripts/correction_done_when_census.py --list-b</code>
+👉 <strong>今天該動的一張</strong>：<code>correction-bridge-message-length</code>｜糾正：橋樑訊息不豁免篇幅，一則只講一件事
+完整 done_when／next_action（把 <id> 換成上面任一票號）：<code>python -X utf8 000_Agent/005_scripts/correction_done_when_census.py --show &lt;id&gt;</code></p>
+<h4 id="nudge">四、NUDGE（該催使用者／丹尼爾了）</h4>
+<ul>
+<li><code>stock-signal-ui</code>｜stock-signal 報告介面與效能｜卡在使用者（建票至今 28 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：【AI 暫定決定，非使用者決議｜2026-08-28，因卡在使用者逾 14 天，依 feedback_proactive_push.md 規則自行決定】 暫定：先上線 Track1(去重，non-destructive、風險最低、已有收尾 commit f285894)；Track4 暫不上線——它會呼叫正式 performance.py::calc_performance() 對 signals 表做 UPDATE(commit a45d7b1 已揭露，屬 /股癌績效 既有行為非新增)，涉及正式表寫入，等使用者知悉後再決定。Track1 尚未實際動工，等他一句話或本 AI 下一輪執行。</li>
+<li><code>ygo-cardname-screenshots</code>｜遊戲王 MD 繁體卡名截圖（13 張）｜卡在使用者（建票至今 29 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：請丹尼爾拍第 10（增殖的Z/G）、1（薇兒/玻璃）、2（潔妮）三張優先</li>
+<li><code>ai-trader-flex-token</code>｜ai-trader：Flex token 要不要重生｜卡在使用者（建票至今 28 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：【AI 暫定決定，非使用者決議｜2026-08-28，因卡在使用者逾 14 天，依 feedback_proactive_push.md 規則自行決定】 暫定：維持「未重生」處理，不再每日往上升級。理由：風險等級低(唯讀報表、曝露僅本機且已堵)，而重生的動作 AI 全程無法代勞(需登入 IBKR 後台 + 親手存進 Windows Credential Manager，值不得經過 AI，制度 N2)。使用者若要重生，隨時一句話即可。</li>
+<li><code>ygo-frame-skill</code>｜影格判讀流程要不要做成 skill｜卡在使用者（建票至今 29 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：等丹尼爾一句「要」或「不要」</li>
+<li><code>five-unanswered-q</code>｜他從未回答的 5 題（今天在 daily log 出現三次、卻從最新 NEXT 被刪掉）｜卡在使用者（建票至今 29 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：一次只問一件：台股報告 US$3.75/次要不要天天跑／reports/tw/** 進不進 .gitignore／stock-signal 選 B1-B3／672 與 691 兩則分類／殘留物清不清</li>
+<li><code>teaching-material-license</code>｜教材上線卡授權：原教材明文「僅限購買學員個人學習、禁止公開散布」，新手全集整本是對照改寫｜卡在使用者（建票至今 33 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：請他自行拿捏或去信作者取書面同意；另需釐清已上線的 ai-three-lessons 跟卡授權的是不是同一份</li>
+<li><code>gemini-billing-disk-leftovers</code>｜①Gemini 2 次被拒呼叫請他查帳單 ②磁碟殘留清單含 C:\lb\（1.1GB，在 scratchpad 外）｜卡在使用者（建票至今 31 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：兩件一起問 ｜2026-08-28 複驗更正：C:\lb\ 實測 1.5GB（台帳原寫 1.1GB，資料夾又長大）。另 daily/2026-08-26.md:144 顯示 Gemini 被拒已達第三次，且錯誤訊息會偽裝成 fetch failed / 503，實為額度問題。</li>
+<li><code>claude-md-upgrade-2</code>｜已提案未裁決：兩條要不要升級進 CLAUDE.md NEVER/ALWAYS｜卡在使用者（建票至今 29 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：①claude -p 一律加 --safe-mode ②給他看成品一律給可點網址、截圖不得當驗收依據</li>
+<li><code>ai-output-no-qc-station</code>｜AI 產出沒有品管站：模型判斷錯了沒有任何一關會發現｜卡在丹尼爾（建票至今 28 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：🔴 等使用者給方向。AI 已提三層(1業配關鍵字黑名單 2同一次模型呼叫多問一句是否業配 3寄前人工放行)，他 2026-08-28 15:12 明確表示「你提供的解決方法我覺得不滿意在想」——<strong>AI 不得自行挑一個開始做</strong>，等他想好。｜範圍註記：本票不限股癌，是「AI 產出缺乏品管關卡」的通案，其他自動寄出/自動發布的管線同樣適用。</li>
+</ul>
+<p>另有 4 張的下一步已過期（最新動態比它新），先讀 notes：
+  - <code>db-backup-gap</code>｜專案 DB 備份掛零｜票面停在 2026-08-28，最新動態 2026-09-24｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "db-backup-gap"</code>
+  - <code>ai-trader-email-test</code>｜ai-trader：端到端寄信測試｜票面停在 2026-08-21，最新動態 2026-09-24｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "ai-trader-email-test"</code>
+  - <code>leftover-files</code>｜殘留檔刪不刪（AI 不得自行刪）｜票面停在 2026-08-27，最新動態 2026-09-06｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "leftover-files"</code>
+  - <code>linebot-pii-backup-delete</code>｜含個資的備份檔要他動手刪：linebot backup_2026-07-06.json（2 位 LINE user_id＋暱稱）｜票面停在 2026-08-24，最新動態 2026-08-29｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "linebot-pii-backup-delete"</code></p>
+<h4 id="pushai">五、PUSH（沒人在等，AI 自己該推進，不該等人）</h4>
+<ul>
+<li><code>todo-dashboard</code>｜待辦看板（就是這個東西）｜建票至今 29 天，從未記錄過任何進度（此數字非停滯天數）｜blocker_owner=無，blocker_state=none｜next_action：ledger_sweep.py 掃描器上線＋排程；讓卡住的待辦自己叫人，不靠使用者提起</li>
+</ul>
+<p>另有 8 張的下一步已過期（最新動態比它新），先讀 notes：
+  - <code>voice-claude</code>｜VoiceClaude 語音輸入｜票面停在 2026-08-24，最新動態 2026-09-24｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "voice-claude"</code>
+  - <code>ai-trader</code>｜ai-trader 六組投資策略 PK（Phase 1）｜票面停在 2026-08-27，最新動態 2026-09-24｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "ai-trader"</code>
+  - <code>warroom-mechanism</code>｜主動推進機制（戰情室）：讓待辦自己叫人｜票面停在 2026-08-28，最新動態 2026-09-25｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "warroom-mechanism"</code>
+  - <code>security-holes-open</code>｜四個資安機制破洞全開（含 Read 工具讀憑證檔零閘門）｜票面停在 2026-08-28，最新動態 2026-09-25｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "security-holes-open"</code>
+  - <code>institution-writeguard-gap</code>｜皇冠資產的 Write/Edit 路徑零攔截（hook 只掛 Bash matcher）｜票面停在 2026-08-27，最新動態 2026-09-24｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "institution-writeguard-gap"</code>
+  - <code>unverified-claims-105</code>｜105 條「未驗宣稱」逐條台帳已落地成檔，一條都沒開始驗｜票面停在 2026-08-24，最新動態 2026-09-24｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "unverified-claims-105"</code>
+  - <code>transcribe-4q-2bugs</code>｜video-transcribe 四題待裁決＋兩個未修 bug（台帳標 paused「無需管」是錯的）｜票面停在 2026-08-25，最新動態 2026-09-24｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "transcribe-4q-2bugs"</code>
+  - <code>closed-loop-pipeline</code>｜閉環生產線：意圖→票→自動派工→自動驗收→他決定（計畫已核准，待新 session 執行）｜票面停在 2026-08-29，最新動態 2026-09-24｜查證指令：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "closed-loop-pipeline"</code></p>
+<h4 id="external">六、EXTERNAL（外部依賴卡太久，該重新評估或放棄）</h4>
+<ul>
+<li><code>rijian-studio</code>｜日見工作室品牌頁｜外部依賴「又仟」，建票至今 60 天，從未記錄過任何進度（此數字非停滯天數）｜next_action：跟又仟走完案例公開同意流程，才能補上作品集區塊 ｜2026-08-28 複驗：本票與 youqian-skeleton 不是同一件事。骨架安裝包已交付（他 8/27 確認），但作品集需要的是「又仟同意公開她的美容工作室案例」，前置條件是丹尼爾自己先做出 LINE 預約系統（daily/2026-08-26.md:123-130）。repo 內 index.html 的 CASE 區塊仍是佔位文字。現在催沒有意義。</li>
+</ul>
+<h4 id="unknownlast_progress_at">七、UNKNOWN（資料缺陷：last_progress_at 未知或無法解析）</h4>
+<ul>
+<li><code>correction-no-user-manual-step</code>｜糾正：不准把「要使用者動手」寫成計畫前置條件，先自己窮舉替代路｜last_progress_at 未知（null 或格式錯誤），無法判斷卡了幾天｜next_action：closed_loop 後續各步交件前，逐條掃描有無「請你執行/請你設定/你要動手」字樣；有就先跑替代方案窮舉。</li>
+<li><code>correction-push-directly-no-ask</code>｜糾正：改完直接推，不要再問他（二犯）｜last_progress_at 未知（null 或格式錯誤），無法判斷卡了幾天｜next_action：每次讀到交接檔/BOOT_BRIEF 寫著「X 之前先問丹尼爾」時，先 grep 001_memory/feedback_*.md 有沒有同主題的通則授權；有就以通則為準並當場改掉交接那句。另：他講「以後都…」開頭的話一律寫進 feedback 正本，不可只寫 daily。</li>
+<li><code>correction-handoff-before-longwork</code>｜糾正：派長工分身之前先寫交接（2026-09-15 他的主訴，3 分）｜last_progress_at 未知（null 或格式錯誤），無法判斷卡了幾天｜next_action：（缺 next_action）</li>
+</ul>
+<h4 id="_2">資料品質警訊（欄位格式問題，不影響上面分類，但要修）</h4>
+<ul>
+<li><code>correction-no-user-manual-step</code>｜糾正：不准把「要使用者動手」寫成計畫前置條件，先自己窮舉替代路｜last_progress_at 欄位：日期格式無法解析（非 YYYY-MM-DD）：'2026-08-29T03:00+08:00'</li>
+</ul>
+<hr />
+<p>涵蓋：plans.json 內 state 為 active/waiting 的項目，依 deadline／last_progress_at／blocker_owner／blocker_state 分類；另加 UNANSWERED 一類，掃全部未結案（非 done/destroyed/dropped）的票的awaiting_ai_reply／pending_interpretation 旗標與他最後一次開口的時間。
+未涵蓋：backlog/paused/parked/dropped/done 狀態的項目不參與 OVERDUE/CORRECTION/NUDGE/PUSH/EXTERNAL 五類的判斷（僅計入母體統計；UNANSWERED 不受此限）——包含 state=backlog 的糾正類項目也一樣不會被那五類掃到；plans.json 以外的來源（daily log、記憶正本 feedback_*.md）未查——那一層由 005_scripts/harvest_corrections.py 負責，兩支是分開的。
+來源檔案與母體數：plans.json（母體 184 筆，schema 1）
+查證時間：2026-09-25 07:30:56</p>
+    </div>
+  </div>
+
+  <div class="ver">
+    <div class="ver-head">
+      <span class="tag">B</span><span class="name">過期票照印但蓋警告牌</span>
+      <p>差在哪：22 張<b>全部照印</b>，什麼都沒少，但過期票的「下一步」那行被蓋上紅字警告，原字降級變成參考。</p>
+      <p class="cost">代價：清單變長變吵，每張過期票多印幾行警告字，看久眼睛累，而且這個新警告牌還沒試過大家真的會看還是習慣性跳過。</p>
+    </div>
+    <div class="ver-body">
+<h3 id="ledger_sweeppy">任務台帳掃描結果（ledger_sweep.py）</h3>
+<blockquote>
+<p>🧪 <strong>DEMO——非上線內容</strong>。這是「如果 Option A（讓分類器拒絕過期資料）上線，明天早上 <code>ledger_alerts.md</code> 會長什麼樣」的示範，用真實 plans.json 跑出來，但本檔不是正式台帳、<code>ledger_sweep.py</code> 未被改動。
+本版做法：PUSH／NUDGE 段裡，判定過期的票<strong>照印</strong>，但 <code>next_action</code> 那一行換成過期警語，原文降級到下一行標「僅供參考」。
+產生指令：<code>python -X utf8 000_Agent/005_scripts/demo_option_a_render.py</code>｜產生時間：2026-09-25T07:30:56.182227+08:00</p>
+</blockquote>
+<p>掃描時間：2026-09-25 07:30:56</p>
+<h4 id="_1">母體統計</h4>
+<ul>
+<li>台帳總筆數（population，來自 plans.json）：184</li>
+<li>納入判斷（state=active/waiting）：70</li>
+<li>跳過（paused/parked/dropped/done，只計數不細看）：114</li>
+<li>命中需要動作（OVERDUE+UNANSWERED+CORRECTION+NUDGE+PUSH+EXTERNAL）：66</li>
+<li>未回類（UNANSWERED，唯一不受 state=active/waiting 限制的類別）：台帳共 0 筆掛著 awaiting_ai_reply／pending_interpretation 且未結案，本次命中 0 筆（門檻 2 小時）</li>
+<li>UNKNOWN（last_progress_at 未知，無法判斷）：3</li>
+<li>糾正類（id 以 <code>correction-</code> 開頭）：台帳共 97 筆，其中 47 筆 state 在 active/waiting 內被納入判斷，本次命中 43 筆（其中 13 張 done_when 是純佔位句，下方 CORRECTION 段合併成一行呈現，仍計入本次命中數）</li>
+<li>門檻：days_nudge=3、days_push=7、days_correction=1、days_external=14（days_external 為固定值，不接受 CLI 覆寫）</li>
+</ul>
+<h4 id="overduedeadline">一、OVERDUE（deadline 已過期，最優先處理）</h4>
+<p>（本次掃描無命中）</p>
+<h4 id="unanswered-2">二、UNANSWERED（他留言／按了「不要」，主腦超過 2 小時沒回——球在我身上）</h4>
+<p>（本次掃描無命中）</p>
+<h4 id="correction-1">三、CORRECTION（他糾正過、我還沒修好的——門檻 1 天，最容易被我自己忘掉）</h4>
+<p>🔴 <strong>糾正類共 43 張（30 張逐條列於下、13 張完成條件未填已合併成一行）；全部計入本次命中數，一張都沒藏。</strong>
+- <code>correction-reply-before-work</code>｜糾正：收到他的訊息先回一句，再去做事（二犯）｜停滯 28 天
+- <code>correction-no-new-rule-md</code>｜糾正：規則不准再寫成新的 MD 檔，只能進台帳或寫成程式｜停滯 28 天
+- <code>correction-restart-before-longwork</code>｜糾正：宣告要重開之後，不准再派長工分身｜停滯 28 天
+- <code>correction-no-unreproducible-numbers</code>｜糾正：引用記憶裡的任何數字前，先問「產生它的指令還在嗎」｜停滯 28 天
+- <code>correction-bridge-message-length</code>｜糾正：橋樑訊息不豁免篇幅，一則只講一件事｜停滯 28 天
+- <code>correction-no-overcorrection</code>｜糾正：被打回時不准跳到極端的另一邊，中間格要先講｜停滯 28 天
+- <code>correction-two-sources-before-universal-claim</code>｜糾正：講「官方沒有寫 X」這種全稱句之前，至少查兩個來源｜停滯 28 天
+- <code>correction-main-session-no-longwork</code>｜糾正：主 session 不接長工，長工一律派分身（否則會漏他的訊息）｜停滯 28 天
+- <code>correction-transcription-best-model</code>｜要精確的逐字稿直接用最好的模型，不先跑縮水版｜停滯 28 天
+- <code>correction-publication-9-categories</code>｜審對外發布素材要跑九類清單，第九類「歸屬誤植」要讀完整敘事｜停滯 28 天
+- <code>correction-plain-language-5yo</code>｜給丹尼爾的回報要五歲小孩聽得懂，術語同句配譬喻｜停滯 28 天
+- <code>correction-html-vercel-delivery</code>｜給他讀的東西一律出 HTML 並走 Vercel 網址，不發截圖／不發 md／不發 artifact｜停滯 28 天
+- <code>correction-no-suggestion-downgrade</code>｜該自動做的動作不准退回成「建議你去做 X」｜停滯 28 天
+- <code>correction-progress-must-go-discord</code>｜警報／進度／完成回報一律發 Discord，不能只寫終端機｜停滯 28 天
+- <code>correction-refetch-volatile-source-before-deciding</code>｜糾正：不可逆決策前，對「會變動的來源」再撈一次最新狀態｜停滯 28 天
+- <code>correction-evaluation-flow-skill</code>｜糾正：2026-08-27：第 0 關（找原始目的正本）第一次擋下實質損害——這是它的第一個證據｜停滯 28 天
+- <code>correction-proactive-push</code>｜糾正：我太被動：待辦不提就不動（2026-08-27 丹尼爾糾正）｜停滯 28 天
+- <code>correction-do-not-disclose-projects</code>｜糾正：不主動對外提及丹尼爾的「新」專案｜停滯 28 天
+- <code>correction-cheap-model-for-subagents</code>｜糾正：派 subagent 要主動挑便宜模型（省額度）｜停滯 28 天
+- <code>correction-verify-online-before-asking</code>｜糾正：「我不懂」不是把問題丟回去的理由——先自己上網查一遍｜停滯 28 天
+- <code>correction-improve-existing-not-new-artifact</code>｜糾正：介面/產出有問題時改既有的那個，不准另開新的｜停滯 28 天
+- <code>correction-relay-external-frame-unchecked</code>｜糾正：轉述外部 AI 的框架前，先拿回去對使用者原話｜停滯 28 天｜球在：ai
+- <code>correction-external-opinion-blackbox</code>｜外審意見不准只給摘要就叫他選：原文照貼、標清楚哪些是我翻譯的、附白話場景｜停滯 27 天｜球在：ai
+- <code>correction-restate-before-plan</code>｜寫計畫前先重述「我以為你要的是什麼」讓他確認，不准拿局部當全部｜停滯 27 天｜球在：ai
+- <code>correction-daily-2026-09-02</code>｜糾正待整理：2026-09-02 的 daily log 有更新，裡面的糾正還沒逐條開單｜停滯 23 天
+- <code>correction-no-guessing-external-systems</code>｜糾正：2026-08-10 第五次：換一種包裝的猜測仍然是猜測（Discord 開發者後台）｜停滯 23 天
+- <code>correction-check-existing-features-before-planning</code>｜糾正：提新需求時，先查系統「已經有沒有這個功能」，再談怎麼做｜停滯 23 天
+- <code>correction-daily-2026-09-12</code>｜糾正：新手包／教材的驗收不能 AI 自讀，讀者是「對方 AI」，要能零聯絡複製整套系統｜停滯 13 天
+- <code>correction-debug-visible-state-first</code>｜糾正：幫人除錯先問「肉眼一秒看得到的狀態」，別當人肉傳話筒｜停滯 13 天
+- <code>correction-daily-2026-09-13</code>｜糾正：評估要先問「上次親手做過為什麼沒成」，不能只問怎麼做（AI 老師方向 20:04 硬重置）｜停滯 12 天
+- 🔴 <strong>完成條件未填（13 張，合併成這一行）</strong>：這 13 張每天都命中，但要做的事是同一件——先把 done_when 寫出來。逐張清單：<code>python -X utf8 000_Agent/005_scripts/correction_done_when_census.py --list-b</code>
+👉 <strong>今天該動的一張</strong>：<code>correction-bridge-message-length</code>｜糾正：橋樑訊息不豁免篇幅，一則只講一件事
+完整 done_when／next_action（把 <id> 換成上面任一票號）：<code>python -X utf8 000_Agent/005_scripts/correction_done_when_census.py --show &lt;id&gt;</code></p>
+<h4 id="nudge">四、NUDGE（該催使用者／丹尼爾了）</h4>
+<ul>
+<li><code>stock-signal-ui</code>｜stock-signal 報告介面與效能｜卡在使用者（建票至今 28 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：【AI 暫定決定，非使用者決議｜2026-08-28，因卡在使用者逾 14 天，依 feedback_proactive_push.md 規則自行決定】 暫定：先上線 Track1(去重，non-destructive、風險最低、已有收尾 commit f285894)；Track4 暫不上線——它會呼叫正式 performance.py::calc_performance() 對 signals 表做 UPDATE(commit a45d7b1 已揭露，屬 /股癌績效 既有行為非新增)，涉及正式表寫入，等使用者知悉後再決定。Track1 尚未實際動工，等他一句話或本 AI 下一輪執行。</li>
+<li><code>db-backup-gap</code>｜專案 DB 備份掛零｜卡在使用者（建票至今 28 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-24（1 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻））
+    ⚠️ <strong>這格已過期（票面停在 2026-08-28，最新動態 2026-09-24），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "db-backup-gap"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-24，比 last_progress_at 2026-08-28 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-24）：2026-09-24 19:5x 主 session 複核：本票<strong>不可</strong>直接關，推翻 REPORT_settled_vs_waiting_2026-09-24.md 第 2 節把它列為『可直接關』。兩個理由：①done_when 是佔位句『待確認』，沒有完成條件可以對——關單沒有判準。②next…
+｜原文：【AI 暫定決定，非使用者決議｜2026-08-28】stock-signal 側已解決(每日 03:00 自動備份，已驗)。🔴 剩下唯一未解：linebot 的 Railway 資料庫連不上(TCP 被對方關閉)，需你登入 Railway 後台看該 DB 是否已停用/改連線字串——這件 AI 做不到。另一個已知限制：排程 Logon Mode=Interactive only(未指定 /RU)，電腦登出或關機時 03:00 不會跑；要改成登出也跑需存帳密或用 SYSTEM 帳戶，未做，等你決定要不要。</li>
+<li><code>ygo-cardname-screenshots</code>｜遊戲王 MD 繁體卡名截圖（13 張）｜卡在使用者（建票至今 29 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：請丹尼爾拍第 10（增殖的Z/G）、1（薇兒/玻璃）、2（潔妮）三張優先</li>
+<li><code>ai-trader-flex-token</code>｜ai-trader：Flex token 要不要重生｜卡在使用者（建票至今 28 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：【AI 暫定決定，非使用者決議｜2026-08-28，因卡在使用者逾 14 天，依 feedback_proactive_push.md 規則自行決定】 暫定：維持「未重生」處理，不再每日往上升級。理由：風險等級低(唯讀報表、曝露僅本機且已堵)，而重生的動作 AI 全程無法代勞(需登入 IBKR 後台 + 親手存進 Windows Credential Manager，值不得經過 AI，制度 N2)。使用者若要重生，隨時一句話即可。</li>
+<li><code>ai-trader-email-test</code>｜ai-trader：端到端寄信測試｜卡在使用者（建票至今 35 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-24（1 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻））
+    ⚠️ <strong>這格已過期（票面停在 2026-08-21，最新動態 2026-09-24），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "ai-trader-email-test"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-24，比 last_progress_at 2026-08-21 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-24）：2026-09-24 19:5x 主 session 複核：本票<strong>不可</strong>關，而且這是 REPORT_settled_vs_waiting_2026-09-24.md 裡最危險的一筆——它引用了一句不存在的原話。報告寫『daily/2026-08-29.md:110「他 09:10 在 Disco…
+｜原文：取得同意後先寄測試信到他自己信箱，確認含垃圾信匣有收到</li>
+<li><code>ygo-frame-skill</code>｜影格判讀流程要不要做成 skill｜卡在使用者（建票至今 29 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：等丹尼爾一句「要」或「不要」</li>
+<li><code>leftover-files</code>｜殘留檔刪不刪（AI 不得自行刪）｜卡在使用者（建票至今 29 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-06（19 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻））
+    ⚠️ <strong>這格已過期（票面停在 2026-08-27，最新動態 2026-09-06），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "leftover-files"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-06，比 last_progress_at 2026-08-27 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-06）：[補投，上一則 09:32:58 的 note 內容是空的，同上原因] 2026-09-06 02:50 已完成本票 next_action 的「列清單」動作：唯讀 subagent 全盤掃描，四堆清單已於 Discord 送出（訊息 1545869097806594068），完整清單在 001_m…
+　└ 　　　　 （2026-09-06）：（該 note 無文字內容）
+　└ 　　　　 （2026-08-29）：2026-08-29 17:30 新增殘留：分身做 warroom-b-draft 時在 repo 根目錄 D:\All claude\ 留下 8 張驗證截圖 bdraft_*.png（共約 524KB：dark_footer/dark_footer2/dark_footer3/dark_opts/…
+｜原文：列清單請丹尼爾點頭；獲點頭後 AI 可加 CONFIRM_DELETE=1 自行刪</li>
+<li><code>five-unanswered-q</code>｜他從未回答的 5 題（今天在 daily log 出現三次、卻從最新 NEXT 被刪掉）｜卡在使用者（建票至今 29 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：一次只問一件：台股報告 US$3.75/次要不要天天跑／reports/tw/** 進不進 .gitignore／stock-signal 選 B1-B3／672 與 691 兩則分類／殘留物清不清</li>
+<li><code>teaching-material-license</code>｜教材上線卡授權：原教材明文「僅限購買學員個人學習、禁止公開散布」，新手全集整本是對照改寫｜卡在使用者（建票至今 33 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：請他自行拿捏或去信作者取書面同意；另需釐清已上線的 ai-three-lessons 跟卡授權的是不是同一份</li>
+<li><code>linebot-pii-backup-delete</code>｜含個資的備份檔要他動手刪：linebot backup_2026-07-06.json（2 位 LINE user_id＋暱稱）｜卡在使用者（建票至今 32 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-08-29（27 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻））
+    ⚠️ <strong>這格已過期（票面停在 2026-08-24，最新動態 2026-08-29），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "linebot-pii-backup-delete"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-08-29，比 last_progress_at 2026-08-24 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-08-29）：（該 note 無文字內容）
+　└ 　　　　 （2026-08-29）：（該 note 無文字內容）
+｜原文：請他動手刪（含個資，AI 不碰）；並確認 Google Drive 鏡像裡還在不在</li>
+<li><code>gemini-billing-disk-leftovers</code>｜①Gemini 2 次被拒呼叫請他查帳單 ②磁碟殘留清單含 C:\lb\（1.1GB，在 scratchpad 外）｜卡在使用者（建票至今 31 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：兩件一起問 ｜2026-08-28 複驗更正：C:\lb\ 實測 1.5GB（台帳原寫 1.1GB，資料夾又長大）。另 daily/2026-08-26.md:144 顯示 Gemini 被拒已達第三次，且錯誤訊息會偽裝成 fetch failed / 503，實為額度問題。</li>
+<li><code>claude-md-upgrade-2</code>｜已提案未裁決：兩條要不要升級進 CLAUDE.md NEVER/ALWAYS｜卡在使用者（建票至今 29 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：①claude -p 一律加 --safe-mode ②給他看成品一律給可點網址、截圖不得當驗收依據</li>
+<li><code>ai-output-no-qc-station</code>｜AI 產出沒有品管站：模型判斷錯了沒有任何一關會發現｜卡在丹尼爾（建票至今 28 天，從未記錄過任何進度（此數字非停滯天數））｜next_action：🔴 等使用者給方向。AI 已提三層(1業配關鍵字黑名單 2同一次模型呼叫多問一句是否業配 3寄前人工放行)，他 2026-08-28 15:12 明確表示「你提供的解決方法我覺得不滿意在想」——<strong>AI 不得自行挑一個開始做</strong>，等他想好。｜範圍註記：本票不限股癌，是「AI 產出缺乏品管關卡」的通案，其他自動寄出/自動發布的管線同樣適用。</li>
+</ul>
+<h4 id="pushai">五、PUSH（沒人在等，AI 自己該推進，不該等人）</h4>
+<ul>
+<li><code>todo-dashboard</code>｜待辦看板（就是這個東西）｜建票至今 29 天，從未記錄過任何進度（此數字非停滯天數）｜blocker_owner=無，blocker_state=none｜next_action：ledger_sweep.py 掃描器上線＋排程；讓卡住的待辦自己叫人，不靠使用者提起</li>
+<li><code>voice-claude</code>｜VoiceClaude 語音輸入｜建票至今 32 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-24（1 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻）｜blocker_owner=無，blocker_state=none
+    ⚠️ <strong>這格已過期（票面停在 2026-08-24，最新動態 2026-09-24），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "voice-claude"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-24，比 last_progress_at 2026-08-24 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-24）：2026-09-24 23:3x 主 session｜🔴 本票 next_action 仍是過期地圖，讀到的人不要照做。欄位現值叫人去「在 config.py/engine.py 接上 initial_prompt 參數」，但同票 12:36 與 17:59 兩則 note 已記載：該路實測會讓模型…
+　└ 　　　　 （2026-09-24）：2026-09-24 21:0x 主 session 派工結果｜後處理改字這條路實測可行，且結構上優於今天否決的 decoder 提示詞路線。母體與指令：baseline 重跑 <code>venv\Scripts\python.exe run_transcribe.py baseline</code>（200/200，…
+　└ 　　　　 （2026-09-24）：2026-09-24 實測結論：本票 next_action 寫的「接上 initial_prompt 參數」是死路，不要再照票面做。當天測了兩個參數，壞法一模一樣——同一句「可以 可立了」四個版本全部被辨識成「Claude Code」，也就是模型憑空生出一個他沒說過的專有名詞（不是同音錯字，是幻覺…
+｜原文：先在 config.py/engine.py 接上 initial_prompt 參數（2026-08-24 稽核：目前完全沒有實作），再談更新詞彙清單</li>
+<li><code>ai-trader</code>｜ai-trader 六組投資策略 PK（Phase 1）｜建票至今 29 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-24（1 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻）｜blocker_owner=無，blocker_state=none
+    ⚠️ <strong>這格已過期（票面停在 2026-08-27，最新動態 2026-09-24），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "ai-trader"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-24，比 last_progress_at 2026-08-27 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-24）：2026-09-24 22:4x 入庫 ai-trader commit b1b9298：2026-09-10 告警降噪整組（擱置 14 天未進版控）。【發現路徑】查兩組策略 MISSING 時，發現 src/run_live.py 工作目錄有第三個 hunk（<em>scan_alerts）不是本次產物…
+　└ 　　　　 （2026-09-24）：2026-09-24 22:3x 可觀測性修補已入庫：ai-trader commit f80f57c（master）。【做了什麼】A: ops/boot_run_summary.py 的 cohort_state() 改三層判斷 FAILED(理由)/NO_ACTION(理由)/MISSING；B…
+　└ 　　　　 （2026-09-24）：2026-09-24 22:2x 查明兩組機械策略 MISSING 的原因（subagent 調查，一手來源：程式碼＋log＋live_runs JSON）。【結論：兩組不同根因，都不是故障】① stock_signal_mechanical：程式正常空跑。9/15 有 24 筆 reviewed</em>…
+｜原文：批 9 要不要開工（等丹尼爾）；8/17 事故四項修復已於 2026-08-27 commit 654524a 入庫，1389 測試綠</li>
+<li><code>warroom-mechanism</code>｜主動推進機制（戰情室）：讓待辦自己叫人｜建票至今 28 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-25（0 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻）｜blocker_owner=無，blocker_state=none
+    ⚠️ <strong>這格已過期（票面停在 2026-08-28，最新動態 2026-09-25），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "warroom-mechanism"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-25，比 last_progress_at 2026-08-28 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-25）：[2026-09-25 01:4x 診斷｜唯讀，未動正式站] 戰情室按鈕通道斷了，根因抓到，<strong>而且它跟 9/8 那個部署斷點不是同一件事——修好一個不會修好另一個。</strong> 【一手證據（自己打的，不是看紀錄）】 - `curl -sS -w '%{http_code}' https://daniel-…
+｜原文：掃描結果要真的催到使用者本人（掃描器＋Windows 排程已完成，下一段未做）</li>
+<li><code>security-holes-open</code>｜四個資安機制破洞全開（含 Read 工具讀憑證檔零閘門）｜建票至今 28 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-25（0 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻）｜blocker_owner=無，blocker_state=none
+    ⚠️ <strong>這格已過期（票面停在 2026-08-28，最新動態 2026-09-25），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "security-holes-open"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-25，比 last_progress_at 2026-08-28 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-25）：2026-09-25 查證更正（第卅棒）：本票的 next_action「等他裁決」與 09-24 稽核 note 都已過期。實查 commit aae96ea（2026-08-29）顯示他當天裁決「A：四片全裝」後，洞1/2/4 當晚就已裝進活的 hook（pretooluse-bash-comb…
+　└ 　　　　 （2026-09-24）：2026-09-24 唯讀稽核：同 ai-trader——本票被歸進 PUSH，但 next_action 開頭就寫「🔴 等他裁決」，AI 能獨立做的 3 項已做完。實際球在使用者身上，分類應為 NUDGE。根因同上：ledger_sweep 只看 blocker_owner/blocker_sta…
+｜原文：🔴 等他裁決。權責表 13 項裡 AI 能獨立做的 3 項已做完（離線 patch、兩份名單比對、本台帳更新），剩下 10 項全部要他本人——因為所有實質修法都要改 hook 或 settings.json，那兩者是皇冠資產。他要決定的最小集合：①四份 patch 要不要套用（套用是他跑指令）②洞 3（python -c 字串拼接繞過所有文字閘門）要修還是裁決『不修、登記為已知殘餘風險』③.credentials.json 要不要納入兩份名單。先讀 security_patches_2026-08-28/README.md（已附 HTML 版）。</li>
+<li><code>institution-writeguard-gap</code>｜皇冠資產的 Write/Edit 路徑零攔截（hook 只掛 Bash matcher）｜建票至今 29 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-24（1 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻）｜blocker_owner=無，blocker_state=none
+    ⚠️ <strong>這格已過期（票面停在 2026-08-27，最新動態 2026-09-24），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "institution-writeguard-gap"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-24，比 last_progress_at 2026-08-27 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-24）：2026-09-24 20:0x 主 session：第四、第五筆同型證據，都是本輪實際撞到的，不是推想。 【第四筆 asset-guard】用 Bash 的 <code>python - &lt;&lt;'PY'</code> 對 000_Agent/001_memory/feedback_bridge_discord_menti…
+　└ 　　　　 （2026-09-24）：2026-09-24 19:5x 實證三筆，主題：兩道閘門對同一份檔案判斷不一致，且嚴的那條會把人推向鬆的那條。｜證據1：用 Bash 的 append 重導向寫今天的 daily log，被 asset-guard 擋下，理由是「覆寫皇冠資產、覆寫與刪除後果相同」——但 append 不會毀掉既有…
+　└ 　　　　 （2026-09-24）：2026-09-24 重大更新：本票標題「皇冠資產的 Write/Edit 路徑零攔截（hook 只掛 Bash matcher）」<strong>已不成立</strong>。pretooluse-write-guard.ps1 自 2026-08-27 已掛 Write|Edit matcher，且今天（09-24 12:…
+｜原文：裁決已做（pretooluse-write-guard.ps1 v3「砍掉守不住的那半」）、hook 已掛進 settings.json 並實際運作；剩餘缺口是 Edit 這條路沒有內容保護，威脅已轉包給 institution-lint 外部指紋，而該項本身是 8/20 掛著未裁決的第 6 題</li>
+<li><code>unverified-claims-105</code>｜105 條「未驗宣稱」逐條台帳已落地成檔，一條都沒開始驗｜建票至今 32 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-24（1 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻）｜blocker_owner=無，blocker_state=none
+    ⚠️ <strong>這格已過期（票面停在 2026-08-24，最新動態 2026-09-24），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "unverified-claims-105"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-24，比 last_progress_at 2026-08-24 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-24）：2026-09-24 18:4x 普查（新增留存腳本 000_Agent/005_scripts/unverified_claims_census.py，六組對照組全過）。 🔴 更正催告單對本票的兩句話，兩句都是過期資訊： ① ledger_alerts.md 的 PUSH 段寫「105 條未驗宣稱…
+　└ 　　　　 （2026-09-24）：2026-09-24 第二十棒｜X 類量尺（會數到自己）已修好並補上對照組，另補驗 E1-4／E1-5。(1) 舊指令 grep -cE '|[^|]<em>\bX\b[^|]</em>|[[:space:]]<em>$' 是壞量尺，已標棄用。證據不只『它多算 24 行』，更強的是【它會邊量邊長大】：第十九棒交辦寫…
+　└ 　　　　 （2026-09-24）：2026-09-24 補驗 3 條（上一棒自列的 5 條縮水處裡技術上做得到的那 3 條），commit 19ff4d1：①</em><em>R4-C6（pytest 626 passed）→ 已滅失，不是不存在</em>*。上一棒全庫 grep 0 命中就收手；真因是 SOLOMON_HANDOFF.md 屬 300_…
+｜原文：先撿 F 類（可自己驗、不花錢）跑一批</li>
+<li><code>transcribe-4q-2bugs</code>｜video-transcribe 四題待裁決＋兩個未修 bug（台帳標 paused「無需管」是錯的）｜建票至今 31 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-24（1 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻）｜blocker_owner=無，blocker_state=none
+    ⚠️ <strong>這格已過期（票面停在 2026-08-25，最新動態 2026-09-24），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "transcribe-4q-2bugs"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-24，比 last_progress_at 2026-08-25 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-24）：2026-09-24 23:4x 主 session：上一則 note 的更正「傳不到機器讀的那一格」，本輪實打驗證了完整路徑，結論比原本以為的更窄——①patch_ticket 走不通：handle_op_patch 第一行就是 state != "backlog" 即拒，本票 state=act…
+　└ 　　　　 （2026-09-24）：2026-09-24 23:4x 主 session 派分身獨立複驗，結論推翻票上 2026-09-18 11:56 那則 note。【Bug① mp3 無視訊軌誤判 failed】真的已修：commit c3d7491（video-transcribe repo，2026-09-03 09:28）…
+　└ 　　　　 （2026-09-24）：2026-09-24 實查：票面兩個 bug 都已於 2026-09-03 修復，台帳資訊過期。①mp3 餵不進流程：根因 transcribe.py mux_softsub() 寫死 -map 0:v，mp3 無視訊軌→ffmpeg exit 1→整個 job 判 failed（轉錄其實已成功）。…
+｜原文：bug 先修：①mp3 餵不進流程（mux_softsub 無視訊軌→整 job 判 failed，但 transcribe 其實成功）②episodes.json 97 集日期錯。四題問他：16 集 pilot 產出進不進 L0／EP314 稽核查幾集／1.8GB mkv 刪不刪（③yt-dlp 已升級，改成追認）</li>
+<li><code>closed-loop-pipeline</code>｜閉環生產線：意圖→票→自動派工→自動驗收→他決定（計畫已核准，待新 session 執行）｜建票至今 27 天，從未記錄過任何進度（此數字非停滯天數）｜🔴 但票上最近一次有紀錄的動作是 2026-09-24（1 天前，來自 notes/evidence/proposals，僅供顯示、不影響分類門檻）｜⚠️ evidence 欄位有文字紀錄，但不是結構化清單，抓不到確切時間戳，此天數可靠度存疑，建議人工核對 evidence 全文｜blocker_owner=ai，blocker_state=none
+    ⚠️ <strong>這格已過期（票面停在 2026-08-29，最新動態 2026-09-24），不要照它做，先讀 notes</strong>：<code>python -X utf8 000_Agent/005_scripts/stale_map_census.py --list | grep -A3 "closed-loop-pipeline"</code>
+    原 next_action（僅供參考，不要照做）：🔴 <strong>這格可能過期，動手前先讀 notes</strong>（票上最近一次有紀錄的動作是 2026-09-24，比 last_progress_at 2026-08-29 新；next_action 這一格 AI 改不動，所以更正只會留在 notes 裡）
+　└ 最新 note（2026-09-24）：2026-09-24 唯讀稽核：本票被歸進 PUSH，但 blocker_owner=ai、next_action 是「新 session 讀計畫 §13：步 0 Demo → …」——這是一件沒有人在推的大工程，不是一句話能推進的 next_action。實情是它既不在等他、也沒有人排時間做，掛在…
+　└ 　　　　 （2026-09-07）：[2026-09-07 21:35 遠端 session 實查] 自動派工至今零成功。證據：①queue.log 全部 DISPATCH 行都是 claim-lost（grep -v claim-lost 後零行），同一張票 correction-mark-source-tier-and-confi…
+｜原文：新 session 讀計畫 §13：步 0 Demo → 步 0.5 五項開工前確認 → 步 1 寫入口。他要先建 Discord webhook（setx DISCORD_WEBHOOK_WARROOM）。</li>
+</ul>
+<h4 id="external">六、EXTERNAL（外部依賴卡太久，該重新評估或放棄）</h4>
+<ul>
+<li><code>rijian-studio</code>｜日見工作室品牌頁｜外部依賴「又仟」，建票至今 60 天，從未記錄過任何進度（此數字非停滯天數）｜next_action：跟又仟走完案例公開同意流程，才能補上作品集區塊 ｜2026-08-28 複驗：本票與 youqian-skeleton 不是同一件事。骨架安裝包已交付（他 8/27 確認），但作品集需要的是「又仟同意公開她的美容工作室案例」，前置條件是丹尼爾自己先做出 LINE 預約系統（daily/2026-08-26.md:123-130）。repo 內 index.html 的 CASE 區塊仍是佔位文字。現在催沒有意義。</li>
+</ul>
+<h4 id="unknownlast_progress_at">七、UNKNOWN（資料缺陷：last_progress_at 未知或無法解析）</h4>
+<ul>
+<li><code>correction-no-user-manual-step</code>｜糾正：不准把「要使用者動手」寫成計畫前置條件，先自己窮舉替代路｜last_progress_at 未知（null 或格式錯誤），無法判斷卡了幾天｜next_action：closed_loop 後續各步交件前，逐條掃描有無「請你執行/請你設定/你要動手」字樣；有就先跑替代方案窮舉。</li>
+<li><code>correction-push-directly-no-ask</code>｜糾正：改完直接推，不要再問他（二犯）｜last_progress_at 未知（null 或格式錯誤），無法判斷卡了幾天｜next_action：每次讀到交接檔/BOOT_BRIEF 寫著「X 之前先問丹尼爾」時，先 grep 001_memory/feedback_*.md 有沒有同主題的通則授權；有就以通則為準並當場改掉交接那句。另：他講「以後都…」開頭的話一律寫進 feedback 正本，不可只寫 daily。</li>
+<li><code>correction-handoff-before-longwork</code>｜糾正：派長工分身之前先寫交接（2026-09-15 他的主訴，3 分）｜last_progress_at 未知（null 或格式錯誤），無法判斷卡了幾天｜next_action：（缺 next_action）</li>
+</ul>
+<h4 id="_2">資料品質警訊（欄位格式問題，不影響上面分類，但要修）</h4>
+<ul>
+<li><code>correction-no-user-manual-step</code>｜糾正：不准把「要使用者動手」寫成計畫前置條件，先自己窮舉替代路｜last_progress_at 欄位：日期格式無法解析（非 YYYY-MM-DD）：'2026-08-29T03:00+08:00'</li>
+</ul>
+<hr />
+<p>涵蓋：plans.json 內 state 為 active/waiting 的項目，依 deadline／last_progress_at／blocker_owner／blocker_state 分類；另加 UNANSWERED 一類，掃全部未結案（非 done/destroyed/dropped）的票的awaiting_ai_reply／pending_interpretation 旗標與他最後一次開口的時間。
+未涵蓋：backlog/paused/parked/dropped/done 狀態的項目不參與 OVERDUE/CORRECTION/NUDGE/PUSH/EXTERNAL 五類的判斷（僅計入母體統計；UNANSWERED 不受此限）——包含 state=backlog 的糾正類項目也一樣不會被那五類掃到；plans.json 以外的來源（daily log、記憶正本 feedback_*.md）未查——那一層由 005_scripts/harvest_corrections.py 負責，兩支是分開的。
+來源檔案與母體數：plans.json（母體 184 筆，schema 1）
+查證時間：2026-09-25 07:30:56</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="verdict-box">
+  <h2>回我一個字母就好</h2>
+  <p><b>A</b> ＝ 清單短、乾淨，但過期票藏起來，你要自己點才看得到。</p>
+  <p><b>B</b> ＝ 清單長、吵，但沒有東西被藏，過期票蓋著警告牌照樣攤在你面前。</p>
+</div>
+
+<footer>
+  這兩版都還沒上線。<code>ledger_sweep.py</code> 跟正式的 <code>ledger_alerts.md</code> 都沒有被改動——你現在每天實際收到的清單，跟這兩版都不一樣，等你回信才會挑一版上線。
+</footer>
+
+</div>
+</body>
+</html>
