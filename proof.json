@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T20:02+08:00",
+  "generated_at": "2026-09-24T21:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,32 +4504,32 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 88,
+      "commits": 94,
       "tickets_done": 0,
       "tickets_verify": 5,
-      "subagent_runs": 68,
-      "discord_replies": 77,
-      "tokens_main_wan": 435.4,
-      "tokens_sub_wan": 657.4,
-      "tokens_sessions": 87,
-      "tokens_msgs": 3457,
+      "subagent_runs": 73,
+      "discord_replies": 80,
+      "tokens_main_wan": 466.4,
+      "tokens_sub_wan": 721.3,
+      "tokens_sessions": 93,
+      "tokens_msgs": 3684,
       "tokens_by_model": {
-        "opus": 480.8,
-        "sonnet": 576.3,
+        "opus": 539.7,
+        "sonnet": 612.3,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 434.1,
+        "opus": 465.0,
         "sonnet": 1.4,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 46.7,
-        "sonnet": 574.9,
+        "opus": 74.7,
+        "sonnet": 610.9,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -5101,44 +5101,95 @@
           "time": "19:14",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 46,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "institution-writeguard-gap：補第四、第五筆實撞證據",
-          "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "20:00",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "台帳：關一張、擋下三張不該關的、一張標出重複",
-          "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "19:58",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "修凍結票 verify 死鎖：set_state->verify 的 evidence 非空檢查改吃字串型 evide…",
-          "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "19:54",
-          "repo": "root"
         },
         {
           "kind": "commit",
           "text": "複核推翻「可直接關 5 張」＋抓到主人頻道 @ 那條已退化",
           "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f6ca67c5d797938a2de1075fa039cdbe4a905161",
+          "evidence_label": "commit f6ca67c",
+          "verified": true,
+          "time": "19:51",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "修凍結票 verify 死鎖：set_state->verify 的 evidence 非空檢查改吃字串型 evide…",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/40c0d0933fb88939003a2e2bc070813c6ee9989f",
+          "evidence_label": "commit 40c0d09",
+          "verified": true,
+          "time": "19:54",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "台帳：關一張、擋下三張不該關的、一張標出重複",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f70d74ad536704507d7e811b4dec0f1a3fd279d5",
+          "evidence_label": "commit f70d74a",
+          "verified": true,
+          "time": "19:58",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "institution-writeguard-gap：補第四、第五筆實撞證據",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/66a3fae1c0d5ac492bd10304a4242f85b660ae2b",
+          "evidence_label": "commit 66a3fae",
+          "verified": true,
+          "time": "20:00",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "自我更正：我對 stock-signal-ad-misread 的判斷錯兩處",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e02ca76f4a474b0ed06eb2f2faad622e4083630e",
+          "evidence_label": "commit e02ca76",
+          "verified": true,
+          "time": "20:09",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 51,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "voice-claude：驗過 decoder 提示詞(initial_prompt/hotwords)行不通後，做事…",
+          "project": "root",
           "reason": "unpushed",
           "reason_label": "未 push",
-          "time": "19:51",
+          "time": "20:43",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "修 mention-gate.ps1 兩個已查證缺陷（D1 觸發條件錯、D2 無心跳信號），preflight 加讀取點",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:28",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "收工 935adeaa（19:44–20:13）：死鎖修掉、複核推翻 5 張、抓到 @ 那條退化、自我更正一筆",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "20:15",
           "repo": "root"
         },
         {
@@ -5311,6 +5362,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T20:02+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "20:02",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5579,7 +5639,7 @@
           "time": null
         }
       ],
-      "notes": "另有 43 筆 commit 未列（未 push 4、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 34、repo 沒有 GitHub remote（沒有可點連結） 5）"
+      "notes": "另有 43 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 36、repo 沒有 GitHub remote（沒有可點連結） 5）"
     }
   ]
 }
