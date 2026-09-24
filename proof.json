@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T06:00+08:00",
+  "generated_at": "2026-09-25T07:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,24 +5487,24 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 24,
+      "commits": 31,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 12,
-      "discord_replies": 15,
-      "tokens_main_wan": 123.1,
-      "tokens_sub_wan": 87.7,
-      "tokens_sessions": 18,
-      "tokens_msgs": 688,
+      "subagent_runs": 18,
+      "discord_replies": 17,
+      "tokens_main_wan": 146.1,
+      "tokens_sub_wan": 146.3,
+      "tokens_sessions": 25,
+      "tokens_msgs": 922,
       "tokens_by_model": {
-        "opus": 123.1,
-        "sonnet": 84.4,
+        "opus": 146.1,
+        "sonnet": 143.0,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 123.1,
+        "opus": 146.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -5512,7 +5512,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 84.4,
+        "sonnet": 143.0,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -5635,26 +5635,89 @@
           "time": "04:04",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 9,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "ledger_alerts：過期的 next_action 直接內嵌最近 3 則 notes，段頭印「這節是線索不是工…",
-          "project": "記憶",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "04:47",
-          "repo": "root"
         },
         {
           "kind": "commit",
           "text": "戰情室母體更正：不是 8 處是「1 個檔 4 條路」——數副本數而沒問誰生出它們的",
           "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b126280d328793a804f2ead08ca5251bcbf27f8e",
+          "evidence_label": "commit b126280",
+          "verified": true,
+          "time": "04:30",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "上條已落地並自驗：26 測試過、真資料該票第 3 則 note 第一句即「兩個 bug 都已於 2026-09-03 修復」（5b7cc5e）。限制：它搬運資訊不生產資訊，notes 空或含糊時照樣救不了。",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/5b7cc5e0a19e3e5c7acd2c1ebca40c2efb312999",
+          "evidence_label": "commit 5b7cc5e",
+          "verified": true,
+          "time": "04:47",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "留存量尺：push_nudge_misclass_census.py——PUSH/NUDGE 分類只信 blocker…",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/28b4dbf100f20ffa8d8caed2a352505b3bcc18c2",
+          "evidence_label": "commit 28b4dbf",
+          "verified": true,
+          "time": "06:10",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 12,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "更正：資安四片不是「被漏接27天」，三片08-29當晚就裝好了",
+          "project": "看板",
           "reason": "unpushed",
           "reason_label": "未 push",
-          "time": "04:30",
+          "time": "06:51",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "台帳分類：階段1複查推翻自家方案（12張只對2張），根因改寫",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:40",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "新增 classify_shadow_diff.py：PUSH/NUDGE 分類階段0唯讀 shadow diff",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:28",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "補跑第廿九棒欠的收工三步：白工台帳第69筆、殘留物盤點事後複查、daily錨點全掃",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "收工第廿九棒（精簡版，上下文 201k 過門檻）：戰情室母體二次更正＋防白工機制＋分類錯誤普查",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:13",
           "repo": "root"
         },
         {
@@ -5722,6 +5785,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T06:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T05:01+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -5785,7 +5857,7 @@
           "time": null
         }
       ],
-      "notes": "另有 15 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 13）"
+      "notes": "另有 19 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16）"
     }
   ]
 }
