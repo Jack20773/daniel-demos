@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T19:01+08:00",
+  "generated_at": "2026-09-24T20:02+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 80,
+      "commits": 88,
       "tickets_done": 0,
-      "tickets_verify": 3,
-      "subagent_runs": 63,
-      "discord_replies": 73,
-      "tokens_main_wan": 385.0,
-      "tokens_sub_wan": 584.8,
-      "tokens_sessions": 81,
-      "tokens_msgs": 3092,
+      "tickets_verify": 5,
+      "subagent_runs": 68,
+      "discord_replies": 77,
+      "tokens_main_wan": 435.4,
+      "tokens_sub_wan": 657.4,
+      "tokens_sessions": 87,
+      "tokens_msgs": 3457,
       "tokens_by_model": {
-        "opus": 430.3,
-        "sonnet": 503.8,
+        "opus": 480.8,
+        "sonnet": 576.3,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 383.6,
+        "opus": 434.1,
         "sonnet": 1.4,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4529,7 +4529,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 46.7,
-        "sonnet": 502.4,
+        "sonnet": 574.9,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -5077,10 +5077,88 @@
           "time": "18:45",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "催告單第二刀：「從未記錄過任何進度」這句話自己在說謊",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a22efa0a8cb33067c2971b808160d3fcdea4efcf",
+          "evidence_label": "commit a22efa0",
+          "verified": true,
+          "time": "19:06",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "催告單第三刀：補另外兩種誤報型態，並驗「沒印的那些是不是真的不該印」",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b1eba222397a97373d54c2eba6b22b1aeec2333d",
+          "evidence_label": "commit b1eba22",
+          "verified": true,
+          "time": "19:14",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 44,
+      "items_count": 46,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution-writeguard-gap：補第四、第五筆實撞證據",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:00",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "台帳：關一張、擋下三張不該關的、一張標出重複",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "19:58",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "修凍結票 verify 死鎖：set_state->verify 的 evidence 非空檢查改吃字串型 evide…",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "19:54",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "複核推翻「可直接關 5 張」＋抓到主人頻道 @ 那條已退化",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "19:51",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 壓回 2.5KB 上限內（細節正本在 daily log NEXT 區塊）",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "19:43",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：419c4ea1（18:55-20:30）——催告單三刀、「等他」有一大批是假的、新開 v…",
+          "project": "工具",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "19:43",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "BOOT_BRIEF 交接：4eb8cbd8（18:12-18:52）——8 敗測項全修、applied 假綠燈修掉、…",
@@ -5233,6 +5311,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T19:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "19:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5492,7 +5579,7 @@
           "time": null
         }
       ],
-      "notes": "另有 36 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 31、repo 沒有 GitHub remote（沒有可點連結） 5）"
+      "notes": "另有 43 筆 commit 未列（未 push 4、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 34、repo 沒有 GitHub remote（沒有可點連結） 5）"
     }
   ]
 }
