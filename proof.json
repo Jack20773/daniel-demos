@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T22:01+08:00",
+  "generated_at": "2026-09-24T23:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 97,
+      "commits": 101,
       "tickets_done": 0,
-      "tickets_verify": 5,
-      "subagent_runs": 74,
-      "discord_replies": 89,
-      "tokens_main_wan": 521.3,
-      "tokens_sub_wan": 735.5,
-      "tokens_sessions": 98,
-      "tokens_msgs": 3836,
+      "tickets_verify": 6,
+      "subagent_runs": 76,
+      "discord_replies": 94,
+      "tokens_main_wan": 551.7,
+      "tokens_sub_wan": 754.7,
+      "tokens_sessions": 101,
+      "tokens_msgs": 4003,
       "tokens_by_model": {
-        "opus": 581.1,
-        "sonnet": 624.3,
+        "opus": 611.5,
+        "sonnet": 643.5,
         "haiku": 6.6,
         "fable": 45.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 504.1,
+        "opus": 534.5,
         "sonnet": 1.4,
         "haiku": 0.0,
         "fable": 15.9,
@@ -4529,7 +4529,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 77.0,
-        "sonnet": 622.9,
+        "sonnet": 642.1,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -5203,6 +5203,15 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "收工 8a8c5221（21:37–22:10）：看板凍結真兇是部署觸發、mention-gate 縮回只管外人、Ve…",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "22:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "收工 8922c1d1（20:16–21:45）：抓到自己蓋的閘門是壞的、他推翻我自創的規矩、四棒假等待的真相",
           "project": "看板",
           "reason": "automated",
@@ -5347,6 +5356,24 @@
         },
         {
           "kind": "commit",
+          "text": "入庫 2026-09-10 的告警降噪整組（擱置 14 天，一直在跑卻沒進版控）",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "22:33",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "可觀測性：讓「合規空跑」跟「執行失敗」在輸出上分得出來",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "22:29",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
           "text": "新增 ops/gateway_autostart.ps1（尚未實跑驗證，補進版控）",
           "project": "交易機器人",
           "reason": "no_remote",
@@ -5389,6 +5416,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T22:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "22:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5679,7 +5715,7 @@
           "time": null
         }
       ],
-      "notes": "另有 43 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 38、repo 沒有 GitHub remote（沒有可點連結） 5）"
+      "notes": "另有 47 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 40、repo 沒有 GitHub remote（沒有可點連結） 7）"
     }
   ]
 }
