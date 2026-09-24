@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T08:00+08:00",
+  "generated_at": "2026-09-24T09:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 18,
+      "commits": 20,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 12,
+      "subagent_runs": 14,
       "discord_replies": 23,
-      "tokens_main_wan": 86.6,
-      "tokens_sub_wan": 129.2,
-      "tokens_sessions": 18,
-      "tokens_msgs": 624,
+      "tokens_main_wan": 95.1,
+      "tokens_sub_wan": 149.1,
+      "tokens_sessions": 20,
+      "tokens_msgs": 713,
       "tokens_by_model": {
-        "opus": 119.2,
-        "sonnet": 60.9,
+        "opus": 127.7,
+        "sonnet": 80.7,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 86.6,
+        "opus": 95.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4529,7 +4529,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 32.6,
-        "sonnet": 60.9,
+        "sonnet": 80.7,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -4616,9 +4616,21 @@
           "time": "06:09",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "preflight SCHED 假綠燈已修並推上去（commit 6e0754a）。涵蓋改負面清單抓到 24 支、白名單只放 2 支（逐支讀腳本原始碼認定：daily_run=13 RETRY_LATER、watchdog=1 EXIT_P",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6e0754a93cb35d4d5cb10af9a618b5fb21f5b710",
+          "evidence_label": "commit 6e0754a",
+          "verified": true,
+          "time": "08:09",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 6,
+      "items_count": 7,
       "skipped": [
         {
           "kind": "commit",
@@ -4655,6 +4667,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "00:24",
           "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T08:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "08:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4755,7 +4776,7 @@
           "time": null
         }
       ],
-      "notes": "另有 12 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 9、repo 沒有 GitHub remote（沒有可點連結） 3）"
+      "notes": "另有 13 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10、repo 沒有 GitHub remote（沒有可點連結） 3）"
     }
   ]
 }
