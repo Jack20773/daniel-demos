@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T10:01+08:00",
+  "generated_at": "2026-09-24T11:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 25,
+      "commits": 29,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 16,
-      "discord_replies": 26,
-      "tokens_main_wan": 115.1,
-      "tokens_sub_wan": 179.4,
-      "tokens_sessions": 23,
-      "tokens_msgs": 900,
+      "subagent_runs": 17,
+      "discord_replies": 27,
+      "tokens_main_wan": 124.9,
+      "tokens_sub_wan": 190.1,
+      "tokens_sessions": 24,
+      "tokens_msgs": 991,
       "tokens_by_model": {
-        "opus": 147.7,
-        "sonnet": 111.0,
+        "opus": 157.5,
+        "sonnet": 121.8,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 115.1,
+        "opus": 124.9,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4529,7 +4529,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 32.6,
-        "sonnet": 111.0,
+        "sonnet": 121.8,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -4640,19 +4640,58 @@
           "time": "09:15",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 8,
-      "skipped": [
+        },
+        {
+          "kind": "note",
+          "text": "補上 BOOT.md 步驟 4c：開機要讀 007_dashboard/ledger_alerts.md（commit 06d430b）。這正是上一棒 09:05 才想起來的那件事——判準寫在 MEMORY 索引（每輪推播的提醒）而不在 B",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/06d430b7c4ca324b2e8d49f42e04ae9207529c77",
+          "evidence_label": "commit 06d430b",
+          "verified": true,
+          "time": "09:47",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "①也回來了，同一個形狀第四次：P／X 兩個「驗不了」的標籤，實測後 67%／71% 是錯的（commit bdb7cf6，已推）。",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/bdb7cf6ad5258bb2911bef29a82247b61094a992",
+          "evidence_label": "commit bdb7cf6",
+          "verified": true,
+          "time": "10:09",
+          "plain": null,
+          "plain_ok": false
+        },
         {
           "kind": "commit",
-          "text": "BOOT.md 補 4c：開機要讀 ledger_alerts.md",
-          "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "09:47",
-          "repo": "root"
+          "text": "daily 09-24：一個早上撞到四次同一個形狀，已當證據貼給他",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1ee23df794dfa76d762c4f7341bed318ed21dcf7",
+          "evidence_label": "commit 1ee23df",
+          "verified": true,
+          "time": "10:10",
+          "plain": null,
+          "plain_ok": false
         },
+        {
+          "kind": "commit",
+          "text": "daily 09-24 續：派唯讀稽核查 PUSH 9 張票的票面是否過期",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/5b9b0e1bae6cc556dc5017d21927a1d051d8058e",
+          "evidence_label": "commit 5b9b0e1",
+          "verified": true,
+          "time": "10:41",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 12,
+      "skipped": [
         {
           "kind": "commit",
           "text": "BOOT_BRIEF 交接：7becd0a3 棒（06:56-09:20），看門狗 216k 縮減版重開",
@@ -4706,6 +4745,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T10:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "10:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4824,15 +4872,11 @@
           "time": null
         },
         {
-          "text": "補上 BOOT.md 步驟 4c：開機要讀 007_dashboard/ledger_alerts.md（commit 06d430b）。這正是上一棒 09:05 才想起來的那件事——判準寫在 MEMORY 索引（每輪推播的提醒）而不在 B",
-          "time": null
-        },
-        {
           "text": "②回來了，而且答案是「票面過期」：兩個 bug 都在 2026-09-03 就修好了。",
           "time": null
         }
       ],
-      "notes": "另有 17 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 12、repo 沒有 GitHub remote（沒有可點連結） 4）"
+      "notes": "另有 17 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 13、repo 沒有 GitHub remote（沒有可點連結） 4）"
     }
   ]
 }
