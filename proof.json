@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T09:01+08:00",
+  "generated_at": "2026-09-24T10:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 20,
+      "commits": 25,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 14,
-      "discord_replies": 23,
-      "tokens_main_wan": 95.1,
-      "tokens_sub_wan": 149.1,
-      "tokens_sessions": 20,
-      "tokens_msgs": 713,
+      "subagent_runs": 16,
+      "discord_replies": 26,
+      "tokens_main_wan": 115.1,
+      "tokens_sub_wan": 179.4,
+      "tokens_sessions": 23,
+      "tokens_msgs": 900,
       "tokens_by_model": {
-        "opus": 127.7,
-        "sonnet": 80.7,
+        "opus": 147.7,
+        "sonnet": 111.0,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 95.1,
+        "opus": 115.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4529,7 +4529,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 32.6,
-        "sonnet": 80.7,
+        "sonnet": 111.0,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -4628,10 +4628,40 @@
           "time": "08:09",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "戰情室按鈕通道斷 8 天卻天天印 PULL OK：把「抓不到」跟「他沒按」分開",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/585e23ac12b8f22776744de0be418e59737e8220",
+          "evidence_label": "commit 585e23a",
+          "verified": true,
+          "time": "09:15",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 7,
+      "items_count": 8,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "BOOT.md 補 4c：開機要讀 ledger_alerts.md",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:47",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：7becd0a3 棒（06:56-09:20），看門狗 216k 縮減版重開",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:44",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "BOOT_BRIEF 交接：08e9f1d9 棒（01:22-06:55），看門狗 206k 縮減版重開",
@@ -4667,6 +4697,24 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "00:24",
           "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "測試補強：test_mux_audio_only.py 的 prefix 版本釘死 commit，不再拿 HEAD",
+          "project": "video-transcribe",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "09:54",
+          "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T09:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4774,9 +4822,17 @@
         {
           "text": "②alert_state.json 今晚 21:30 會自己更正，路徑 ops/daily_retry.py:522-557 配 ops/alert_channel.py:145-195 的 record_status：probe_tcp ",
           "time": null
+        },
+        {
+          "text": "補上 BOOT.md 步驟 4c：開機要讀 007_dashboard/ledger_alerts.md（commit 06d430b）。這正是上一棒 09:05 才想起來的那件事——判準寫在 MEMORY 索引（每輪推播的提醒）而不在 B",
+          "time": null
+        },
+        {
+          "text": "②回來了，而且答案是「票面過期」：兩個 bug 都在 2026-09-03 就修好了。",
+          "time": null
         }
       ],
-      "notes": "另有 13 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10、repo 沒有 GitHub remote（沒有可點連結） 3）"
+      "notes": "另有 17 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 12、repo 沒有 GitHub remote（沒有可點連結） 4）"
     }
   ]
 }
