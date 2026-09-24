@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T21:01+08:00",
+  "generated_at": "2026-09-24T22:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,32 +4504,32 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 94,
+      "commits": 97,
       "tickets_done": 0,
       "tickets_verify": 5,
-      "subagent_runs": 73,
-      "discord_replies": 80,
-      "tokens_main_wan": 466.4,
-      "tokens_sub_wan": 721.3,
-      "tokens_sessions": 93,
-      "tokens_msgs": 3684,
+      "subagent_runs": 74,
+      "discord_replies": 89,
+      "tokens_main_wan": 521.3,
+      "tokens_sub_wan": 735.5,
+      "tokens_sessions": 98,
+      "tokens_msgs": 3836,
       "tokens_by_model": {
-        "opus": 539.7,
-        "sonnet": 612.3,
+        "opus": 581.1,
+        "sonnet": 624.3,
         "haiku": 6.6,
-        "fable": 29.1,
+        "fable": 45.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 465.0,
+        "opus": 504.1,
         "sonnet": 1.4,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 15.9,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 74.7,
-        "sonnet": 610.9,
+        "opus": 77.0,
+        "sonnet": 622.9,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -4543,7 +4543,7 @@
           "time": "2026-09-24 11:32"
         }
       ],
-      "corrections_new": 3,
+      "corrections_new": 4,
       "highlights": [
         "早報頁改版：提案卡收合、核准碼短顯示+一鍵複製、0 筆改綠色好消息",
         "修每日備份 wrapper 的假綠燈：linebot 失敗已連續 27 天但排程器一直顯示成功",
@@ -5161,26 +5161,53 @@
           "time": "20:09",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 51,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "voice-claude：驗過 decoder 提示詞(initial_prompt/hotwords)行不通後，做事…",
-          "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "20:43",
-          "repo": "root"
         },
         {
           "kind": "commit",
           "text": "修 mention-gate.ps1 兩個已查證缺陷（D1 觸發條件錯、D2 無心跳信號），preflight 加讀取點",
           "project": "hook",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/76a02b78ce4003ec6f6eb9abb693636c7daaed28",
+          "evidence_label": "commit 76a02b7",
+          "verified": true,
           "time": "20:28",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "voice-claude：驗過 decoder 提示詞(initial_prompt/hotwords)行不通後，做事…",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0b44836fde522122e58b9670d0c7c34c58f4a059",
+          "evidence_label": "commit 0b44836",
+          "verified": true,
+          "time": "20:43",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "mention-gate 對抗審查第二輪修補：修 F1-F6、M1-M3、M5、M6、M8-M11",
+          "project": "hook",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2e857a0c27a862b4df8a40e649605bb5b81a5622",
+          "evidence_label": "commit 2e857a0",
+          "verified": true,
+          "time": "21:07",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 54,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工 8922c1d1（20:16–21:45）：抓到自己蓋的閘門是壞的、他推翻我自創的規矩、四棒假等待的真相",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:36",
           "repo": "root"
         },
         {
@@ -5362,6 +5389,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T21:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5637,9 +5673,13 @@
         {
           "text": "stamp_progress 首次真實路徑驗證通過：蓋章前全母體 last_progress_by 0 張，跑一筆 set_state 後 1 張（approval-path-never-walked by=set_state at=202",
           "time": null
+        },
+        {
+          "text": "正解（制度明文，feedback_self_referential_review_gate.md 教訓 B）：外部指紋＋由別支比對。此處外部指紋＝逐字稿 jsonl（Claude Code 寫的，hook 碰不到）。判準改成「有一則 rep",
+          "time": null
         }
       ],
-      "notes": "另有 43 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 36、repo 沒有 GitHub remote（沒有可點連結） 5）"
+      "notes": "另有 43 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 38、repo 沒有 GitHub remote（沒有可點連結） 5）"
     }
   ]
 }
