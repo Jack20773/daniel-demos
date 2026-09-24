@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T04:01+08:00",
+  "generated_at": "2026-09-25T05:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,24 +5487,24 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 17,
+      "commits": 23,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 9,
-      "discord_replies": 11,
-      "tokens_main_wan": 89.1,
-      "tokens_sub_wan": 53.9,
-      "tokens_sessions": 14,
-      "tokens_msgs": 417,
+      "subagent_runs": 12,
+      "discord_replies": 15,
+      "tokens_main_wan": 122.6,
+      "tokens_sub_wan": 87.7,
+      "tokens_sessions": 18,
+      "tokens_msgs": 686,
       "tokens_by_model": {
-        "opus": 89.1,
-        "sonnet": 50.6,
+        "opus": 122.6,
+        "sonnet": 84.4,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 89.1,
+        "opus": 122.6,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -5512,7 +5512,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 50.6,
+        "sonnet": 84.4,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -5611,10 +5611,61 @@
           "time": "03:55",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "戰情室靜默降級：整體計畫檔（母體 8 處不是 4 處、兩版方案、驗法與分階段）",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/c00acb069a39a94ab99c43d6377bf61f92d1cc70",
+          "evidence_label": "commit c00acb0",
+          "verified": true,
+          "time": "04:02",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "dispatch.py：audit_out_of_scope 的 repo_root 預設值錨到真正的 repo ro…",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f2a7cb3a8baaba7e151b4ce5177654dd61fa2efa",
+          "evidence_label": "commit f2a7cb3",
+          "verified": true,
+          "time": "04:04",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 7,
+      "items_count": 9,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "ledger_alerts：過期的 next_action 直接內嵌最近 3 則 notes，段頭印「這節是線索不是工…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:47",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "戰情室母體更正：不是 8 處是「1 個檔 4 條路」——數副本數而沒問誰生出它們的",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:30",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "收工第廿八棒：戰情室靜默降級整體計畫＋兩版 demo；完整七步跑完還清三步債",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:12",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "BOOT_BRIEF 收進 2.5KB 硬上限（2546 bytes）",
@@ -5671,6 +5722,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T04:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:01",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T03:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -5706,8 +5766,17 @@
           "repo": "daniel-demos"
         }
       ],
-      "selfreport": [],
-      "notes": "另有 10 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10）"
+      "selfreport": [
+        {
+          "text": "完整版七步這次全跑完，前兩棒欠的三步債已還清：①白工台帳補第 67、68 筆（尺：005_scripts/retro_ledger_census.py，66 → 68）②殘留物盤點（見下）③daily/ 全目錄錨點掃描——80 檔裡 0 檔",
+          "time": null
+        },
+        {
+          "text": "完整七步全跑完，前兩棒欠的三步債已還清（白工台帳 66→68、殘留物盤點、全目錄錨點掃描 80 檔 0 檔違規）。",
+          "time": null
+        }
+      ],
+      "notes": "另有 14 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 12）"
     }
   ]
 }
