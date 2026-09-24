@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T00:00+08:00",
+  "generated_at": "2026-09-25T01:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4896,28 +4896,34 @@
           "time": "23:34",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 60,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "台帳：側門票投證據進 verify；新增 post_inbox_msg.py（非 op=new 的投信入口）",
-          "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "23:47",
-          "repo": "root"
         },
         {
           "kind": "commit",
           "text": "關 verify 閘門三道側門：evidence_gate 印記當祖父條款判別式，舊票零遷移",
           "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/995b0e85b6c49d6319a036071c8e07ef70a8db8f",
+          "evidence_label": "commit 995b0e8",
+          "verified": true,
           "time": "23:45",
-          "repo": "root"
+          "plain": null,
+          "plain_ok": false
         },
+        {
+          "kind": "commit",
+          "text": "台帳：側門票投證據進 verify；新增 post_inbox_msg.py（非 op=new 的投信入口）",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/58bcebdee1a77834ceec39cd7fbc0dc9023ec9a8",
+          "evidence_label": "commit 58bcebd",
+          "verified": true,
+          "time": "23:47",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 62,
+      "skipped": [
         {
           "kind": "commit",
           "text": "BOOT_BRIEF 縮到 2553 bytes（上限 2560）；last_inbound_msg_id 改 UNS…",
@@ -5477,28 +5483,28 @@
           "time": null
         }
       ],
-      "notes": "另有 54 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 45、repo 沒有 GitHub remote（沒有可點連結） 7）"
+      "notes": "另有 52 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 45、repo 沒有 GitHub remote（沒有可點連結） 7）"
     },
     {
       "date": "2026-09-25",
-      "commits": 0,
+      "commits": 2,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 0.0,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 0,
-      "tokens_msgs": 0,
+      "subagent_runs": 3,
+      "discord_replies": 2,
+      "tokens_main_wan": 16.7,
+      "tokens_sub_wan": 17.0,
+      "tokens_sessions": 5,
+      "tokens_msgs": 82,
       "tokens_by_model": {
-        "opus": 0.0,
-        "sonnet": 0.0,
+        "opus": 16.7,
+        "sonnet": 17.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
+        "opus": 16.7,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -5506,7 +5512,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 0.0,
+        "sonnet": 17.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -5519,9 +5525,28 @@
       "highlights": [],
       "items": [],
       "items_count": 0,
-      "skipped": [],
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工第廿四棒：三張票查證完，兩張是白工訂單（9/3 早已完成）",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T00:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:00",
+          "repo": "daniel-demos"
+        }
+      ],
       "selfreport": [],
-      "notes": ""
+      "notes": "另有 2 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
     }
   ]
 }
