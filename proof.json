@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T16:00+08:00",
+  "generated_at": "2026-09-24T17:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4504,24 +4504,24 @@
     },
     {
       "date": "2026-09-24",
-      "commits": 59,
+      "commits": 62,
       "tickets_done": 0,
       "tickets_verify": 2,
-      "subagent_runs": 55,
-      "discord_replies": 50,
-      "tokens_main_wan": 251.9,
-      "tokens_sub_wan": 483.4,
-      "tokens_sessions": 68,
-      "tokens_msgs": 2176,
+      "subagent_runs": 56,
+      "discord_replies": 55,
+      "tokens_main_wan": 274.2,
+      "tokens_sub_wan": 508.0,
+      "tokens_sessions": 70,
+      "tokens_msgs": 2365,
       "tokens_by_model": {
-        "opus": 298.2,
-        "sonnet": 401.4,
+        "opus": 320.5,
+        "sonnet": 426.0,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 251.5,
+        "opus": 273.8,
         "sonnet": 0.4,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4529,7 +4529,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 46.7,
-        "sonnet": 401.0,
+        "sonnet": 425.6,
         "haiku": 6.6,
         "fable": 29.1,
         "other": 0.0
@@ -4921,10 +4921,31 @@
           "time": "15:48",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "催告單的「卡了 N 天」不再說謊：進度 op 蓋章＋沒蓋過的改講「建票至今」",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/99aeefcdf180b913be60b10cb337f773a77d6ce3",
+          "evidence_label": "commit 99aeefc",
+          "verified": true,
+          "time": "16:20",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 31,
+      "items_count": 32,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "BOOT_BRIEF 交接：2b4f77be（15:50-16:55），假天數修完並 push；他 16:49 沉默結…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:50",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "BOOT_BRIEF 交接：1c037ca1（15:00-15:50），提案過期閘門上線＋對抗審查 3 個致命洞已補；…",
@@ -5032,6 +5053,15 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "09:54",
           "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-24T16:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5260,7 +5290,7 @@
           "time": null
         }
       ],
-      "notes": "另有 28 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 23、repo 沒有 GitHub remote（沒有可點連結） 5）"
+      "notes": "另有 30 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25、repo 沒有 GitHub remote（沒有可點連結） 5）"
     }
   ]
 }
