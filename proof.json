@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T11:00+08:00",
+  "generated_at": "2026-09-25T12:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,32 +5487,32 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 59,
+      "commits": 67,
       "tickets_done": 0,
       "tickets_verify": 2,
-      "subagent_runs": 39,
-      "discord_replies": 34,
-      "tokens_main_wan": 297.1,
-      "tokens_sub_wan": 371.5,
-      "tokens_sessions": 51,
-      "tokens_msgs": 2088,
+      "subagent_runs": 47,
+      "discord_replies": 40,
+      "tokens_main_wan": 343.7,
+      "tokens_sub_wan": 440.6,
+      "tokens_sessions": 61,
+      "tokens_msgs": 2430,
       "tokens_by_model": {
-        "opus": 370.8,
-        "sonnet": 294.5,
+        "opus": 431.9,
+        "sonnet": 349.2,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 297.1,
+        "opus": 343.7,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 73.7,
-        "sonnet": 294.5,
+        "opus": 88.2,
+        "sonnet": 349.2,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -5911,10 +5911,79 @@
           "time": "10:09",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "settled_vs_waiting_census.py：拔掉指令說明裡的死數字「全 79 份」",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6cf54357af8ebba4a2c448129bf9c72cd958821c",
+          "evidence_label": "commit 6cf5435",
+          "verified": true,
+          "time": "11:04",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "gitignore：把設定檔改成前綴比對，堵住 Neon 連線字串沒被擋的漏洞",
+          "project": "linebot",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/linebot/commit/e9de6b441233dae03da735e3f612efafedb59d86",
+          "evidence_label": "commit e9de6b4",
+          "verified": true,
+          "time": "11:18",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "未驗宣稱台帳：F 類 8 條缺口補驗完＋R2-I10 查明根因改判 X",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/62aadb764ee618583cb6844f2ebd5d13241f19dc",
+          "evidence_label": "commit 62aadb7",
+          "verified": true,
+          "time": "11:21",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "派工任務書加兩條：標籤可信度先驗、個資只讀結構行",
+          "project": "制度",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/34e951186427d4cdd878d7550ae24111f3ae7dff",
+          "evidence_label": "commit 34e9511",
+          "verified": true,
+          "time": "11:31",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "台帳更正：R3-C11 的 A3「2,766 行」是換行編碼假差異，真實 314 行",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e32e67237a21628632c321fa067356e228b6a9a4",
+          "evidence_label": "commit e32e672",
+          "verified": true,
+          "time": "11:40",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 32,
+      "items_count": 37,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工第卅六棒：F 類 8 條補驗完＋R2-I10 改判 X｜堵掉 linebot 憑證漏擋洞｜126 筆逐筆對帳",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:26",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "收工第卅五棒補記：6 個子 repo 共 126 筆未提交（非本棒產生，刻意不盲推）",
@@ -6070,6 +6139,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T11:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T10:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -6204,9 +6282,17 @@
         {
           "text": "daily log NEXT（本區塊）｜✅ BOOT_BRIEF.md｜✅ commit + push",
           "time": null
+        },
+        {
+          "text": "skill_reflect.py：母體 12 支，本 session 主 session 叫用 收工-精簡 2 次、subagent 0 次。用了 收工-精簡，順，無新卡點要回寫。 評估 未被叫用是刻意（hook 在背景通知上誤觸，見四），",
+          "time": null
+        },
+        {
+          "text": "daily log NEXT（本區塊，舊錨點已改名 _SUPERSEDED_BY_1130，內容一字未刪）｜✅ BOOT_BRIEF.md｜✅ commit + push",
+          "time": null
         }
       ],
-      "notes": "另有 28 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 28）"
+      "notes": "另有 30 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 30）"
     }
   ]
 }
