@@ -1,281 +1,7 @@
 {
-  "generated_at": "2026-09-25T23:01+08:00",
+  "generated_at": "2026-09-26T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-09-12",
-      "commits": 19,
-      "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 43,
-      "discord_replies": 75,
-      "tokens_main_wan": 204.4,
-      "tokens_sub_wan": 553.5,
-      "tokens_sessions": 51,
-      "tokens_msgs": 1706,
-      "tokens_by_model": {
-        "opus": 397.1,
-        "sonnet": 15.6,
-        "haiku": 5.2,
-        "fable": 340.0,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 204.4,
-        "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 192.7,
-        "sonnet": 15.6,
-        "haiku": 5.2,
-        "fable": 340.0,
-        "other": 0.0
-      },
-      "score_avg": 4.0,
-      "score_low": 0,
-      "score_high": 1,
-      "scores": [
-        {
-          "score": 4,
-          "time": "2026-09-12 19:07"
-        }
-      ],
-      "corrections_new": 2,
-      "highlights": [
-        "動手全集：白話主頁全展開＋原文另頁（他 03:14 三題裁決），刪手風琴／目錄／tab",
-        "動手全集：34 課【白話】改成課本＋補充整課完整白話版（他 03:17 裁決「完整版、只是比較簡單的語言」），4 個 …",
-        "動手全集：閱讀進度／全站搜尋／主題切換／閱讀時間／回頂端（他 03:45 要看得到的成果）"
-      ],
-      "items": [
-        {
-          "kind": "commit",
-          "text": "動手全集：白話主頁全展開＋原文另頁（他 03:14 三題裁決），刪手風琴／目錄／tab",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2fe4a4fff15f787280ad7aafdd3edf6c0712a392",
-          "evidence_label": "commit 2fe4a4f",
-          "verified": true,
-          "time": "03:21",
-          "plain": "把網頁改成全部內容都展開給你看，原版本放另一頁，並移除手風琴、目錄和標籤，這樣不用點來點去就能一次看到全部。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：34 課【白話】改成課本＋補充整課完整白話版（他 03:17 裁決「完整版、只是比較簡單的語言」），4 個 …",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1d6cf5c5373fec311f68d86085e8183db89f0f8a",
-          "evidence_label": "commit 1d6cf5c",
-          "verified": true,
-          "time": "03:50",
-          "plain": "把 34 堂課改寫成課本加補充的完整簡單版。他要完整內容，但要用更簡單的話講，這樣才聽得懂。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：閱讀進度／全站搜尋／主題切換／閱讀時間／回頂端（他 03:45 要看得到的成果）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b85f5e018cdb977aaf8fe643c1916955a8f1de48",
-          "evidence_label": "commit b85f5e0",
-          "verified": true,
-          "time": "03:55",
-          "plain": "幫網站加了五個實用功能，讀文章時能記住讀到哪裡、找東西更快、切換亮暗模式、看要讀多久、還能快速回頂端。為的是讓他讀東西不會迷路，眼睛也不會累。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "新手骨架站：進度條＋複製鈕＋手機抽屜（他 03:45 要看得到的成果；Vercel 登出未部署）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/757e925ed2117d28153a842b67e634c187e2e276",
-          "evidence_label": "commit 757e925",
-          "verified": true,
-          "time": "04:05",
-          "plain": "幫新手做了一個網站骨架，加上了進度條、複製按鈕和手機版本可以滑出來的選單，這樣他凌晨三點多的時候就能打開看，不用等天亮才能確認成果。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：首頁 34 張課程卡片＋原文頁跳段列（凌晨分身產出，本棒 Playwright 驗收通過）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/dcbe438c24d3bb3d999a2ae5fe5859588fc9e153",
-          "evidence_label": "commit dcbe438",
-          "verified": true,
-          "time": "06:46",
-          "plain": "AI 昨晚改好了網站上的 34 張課程卡片和幫你快速找內容的功能，為的是讓頁面更漂亮、更好用，改完還測試確認沒有壞掉。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：原文頁表格橫向捲動＋程式碼複製鈕（headless 驗收通過）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/426addb9e8dd2827a3a1b7ee7ee1bd1b88e1fb4e",
-          "evidence_label": "commit 426addb",
-          "verified": true,
-          "time": "07:18",
-          "plain": "我給原文頁面的表格加上左右滑功能和複製按鈕，這樣大家即使表格很寬也看得全，複製程式碼時也不用一個字一個字手打。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：課末上一課／下一課導覽＋分享預覽 meta（headless 驗收通過）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/615ced839f6a27b16814ab5a43beccf87956d64f",
-          "evidence_label": "commit 615ced8",
-          "verified": true,
-          "time": "07:23",
-          "plain": "在課程結尾加上前一堂課和下一堂課的連結，並且設定分享課程時會顯示的樣子。這樣學生能看到自己在哪裡，分享給朋友時也會很清楚。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：字級鈕＋鍵盤 ←→ 翻課＋404 頁（headless 驗收通過）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ea541e585837906f9fa64fffc73591b9257ac0f1",
-          "evidence_label": "commit ea541e5",
-          "verified": true,
-          "time": "07:29",
-          "plain": "修好了按鈕大小、鍵盤翻頁和找不到的頁面這些功能，全部用自動檢查確認沒有問題。這樣網站用起來就更好用。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：原文頁 50 個 .md 交叉引用改連站內課／未收錄者去連結（掃描 0 壞連結）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f4e46ce5213d923c8146cd210c65c69d2be08325",
-          "evidence_label": "commit f4e46ce",
-          "verified": true,
-          "time": "07:34",
-          "plain": "把 50 個頁面裡所有的連結都修好，讓它們連到課程或其他網站，檢查一遍確定都能用。讀者點進去才看得到想要的東西。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：續讀位置橫幅＋列印／PDF 乾淨版（headless 驗收通過）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/9aa546617c21e1b979079fae19fb1d11d780759b",
-          "evidence_label": "commit 9aa5466",
-          "verified": true,
-          "time": "07:42",
-          "plain": "記住你上次讀到哪裡，然後把它改成可以列印的乾淨版，這樣下次打開就知道從哪繼續，列印出來也很整潔。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：整站視覺 QA 修 1 項（桌機側欄自動捲到目前課）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/97b8bbca02714d48465995ef7d85d1f54c2b128b",
-          "evidence_label": "commit 97b8bbc",
-          "verified": true,
-          "time": "07:53",
-          "plain": "把網站左邊那欄修好，讓它在你看課時自動滑到你現在上的課，這樣你就能馬上知道自己在哪一堂課。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：分享鈕＋搜尋落點高亮＋回頂端浮鈕不壓內文（headless 驗收通過）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/5a96a20758279e2db2bad1ba1a8382f6cae63785",
-          "evidence_label": "commit 5a96a20",
-          "verified": true,
-          "time": "08:01",
-          "plain": "加了分享按鈕、搜尋高亮和回頂端浮鈕，都不會擋住你正在看的東西，這樣就能輕鬆分享、找東西和快速回到最上面。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：標題錨點加 scroll-margin，帶 # 開頁不貼視窗上緣／不被跳段列蓋住（headless 驗收通過）",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cc725e64497003dc4f2ffca9b8bb177e76be1694",
-          "evidence_label": "commit cc725e6",
-          "verified": true,
-          "time": "08:03",
-          "plain": "改進網頁上標題的位置設定，讓點擊連結跳過去時，標題不會被頂部選單蓋住。這樣大家才能清楚看到標題。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：每課改回一頁——課本原文（含 51 張圖）在前、補充、白話、助教依序同頁堆疊，不再產 -src 頁（他 12…",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/605e9dd1bc8d1cfa6187d2cfa2cb7bbc5c217f83",
-          "evidence_label": "commit 605e9dd",
-          "verified": true,
-          "time": "12:43",
-          "plain": "把教科書的每一課都整理成單獨一頁，把原文、補充重點、白話說法和老師的建議全部放在同一個頁面裡，這樣學生打開一頁就能看到所有東西，不用一直翻來翻去找不同部分。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：新手版 demo（060 記憶）＋5.1 結構分析與全盤重設計規格；build.py 支援【新手版】格（有 …",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/80bdce9abead41f6c4d4fcfab77632c24a59b319",
-          "evidence_label": "commit 80bdce9",
-          "verified": true,
-          "time": "13:34",
-          "plain": "做了一個新手版的示範，從過去的記錄出發重新整理系統怎麼運作，還讓編譯工具可以讀懂新手版的寫法，這樣新人用起來才不會困惑。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "動手全集：34 課三合一成【新手版】上線（220／940 從目錄拿掉、920 改腳本彙整；12_checks FAIL…",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8a920876506cdb92188f0f3ed72ae02dec0f5648",
-          "evidence_label": "commit 8a92087",
-          "verified": true,
-          "time": "18:19",
-          "plain": "整理 34 堂課成新手版本，刪掉複雜部分、改好工具，這樣新手能更容易開始學。",
-          "plain_ok": true
-        }
-      ],
-      "items_count": 16,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "遠端 9/12 午棒收工（缺上下文縮減版）：四格一頁版上線、5.1 結構分析＋五題一問一答定案、060 新手版 dem…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "13:37",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "遠端 9/12 早棒收工（缺上下文縮減版）：教材站 9 個 commit 上線、新手骨架站驗收＋Workers 預覽站…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "09:54",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "遠端 9/12 凌晨棒收工（縮減版・缺上下文）：教材站白話主頁+原文另頁 2fe4a4f、34 課白話完整版 1d6c…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "06:41",
-          "repo": "root"
-        }
-      ],
-      "selfreport": [],
-      "notes": "另有 3 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
-    },
     {
       "date": "2026-09-13",
       "commits": 4,
@@ -5487,24 +5213,24 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 102,
+      "commits": 105,
       "tickets_done": 0,
       "tickets_verify": 2,
-      "subagent_runs": 57,
-      "discord_replies": 68,
-      "tokens_main_wan": 554.7,
-      "tokens_sub_wan": 551.9,
-      "tokens_sessions": 82,
-      "tokens_msgs": 3303,
+      "subagent_runs": 58,
+      "discord_replies": 76,
+      "tokens_main_wan": 565.7,
+      "tokens_sub_wan": 560.9,
+      "tokens_sessions": 83,
+      "tokens_msgs": 3394,
       "tokens_by_model": {
-        "opus": 662.7,
-        "sonnet": 423.2,
+        "opus": 673.7,
+        "sonnet": 432.2,
         "haiku": 20.6,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 537.3,
+        "opus": 548.3,
         "sonnet": 0.0,
         "haiku": 17.3,
         "fable": 0.0,
@@ -5512,7 +5238,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 125.4,
-        "sonnet": 423.2,
+        "sonnet": 432.2,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -6145,6 +5871,15 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "daily log 續（23:2x–23:4x）：根因收斂到 Auto Restart 一格；他那句「不要再做白工」抓…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:42",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "股票那個查出根因（不是掉登入，是沒登入過）＋凍結票 --check-op 預檢上線",
           "project": "看板",
           "reason": "unpushed",
@@ -6388,12 +6123,30 @@
         },
         {
           "kind": "commit",
+          "text": "把「叫他去開 Gateway」從四處告警文案裡拔掉，並改寫已被證偽的「一週只要登一次」",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "23:39",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
           "text": "探測紀錄加 proc=/api=/last_auth=：把「卡在登入畫面」跟「程式沒開」分開",
           "project": "交易機器人",
           "reason": "no_remote",
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "22:46",
           "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T23:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -6699,9 +6452,57 @@
         {
           "text": "凍結票 --check-op 唯讀預檢上線（今天第三次踩同一個坑之後）：共用函式收在 board_io.py（frozen_gate_reason／check_op／list_available_ops），pull_decisions.py",
           "time": null
+        },
+        {
+          "text": "今天的 instrumentation 當天就回本：23:30 那筆真排程寫出 decision=GIVE_UP proc=1 api=False＝「程式活著但沒登入」的簽名；改動前這行只會寫 paper_4002=DOWN，與「程式沒開」",
+          "time": null
         }
       ],
-      "notes": "另有 51 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 49、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 54 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 51、未 push 1、repo 沒有 GitHub remote（沒有可點連結） 2）"
+    },
+    {
+      "date": "2026-09-26",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 0.0,
+      "tokens_sessions": 0,
+      "tokens_msgs": 0,
+      "tokens_by_model": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
