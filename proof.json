@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T22:00+08:00",
+  "generated_at": "2026-09-25T23:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,32 +5487,32 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 98,
+      "commits": 102,
       "tickets_done": 0,
       "tickets_verify": 2,
-      "subagent_runs": 53,
-      "discord_replies": 61,
-      "tokens_main_wan": 510.4,
-      "tokens_sub_wan": 511.6,
-      "tokens_sessions": 77,
-      "tokens_msgs": 3106,
+      "subagent_runs": 57,
+      "discord_replies": 68,
+      "tokens_main_wan": 554.7,
+      "tokens_sub_wan": 551.9,
+      "tokens_sessions": 82,
+      "tokens_msgs": 3303,
       "tokens_by_model": {
-        "opus": 604.5,
-        "sonnet": 396.9,
+        "opus": 662.7,
+        "sonnet": 423.2,
         "haiku": 20.6,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 493.0,
+        "opus": 537.3,
         "sonnet": 0.0,
         "haiku": 17.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 111.5,
-        "sonnet": 396.9,
+        "opus": 125.4,
+        "sonnet": 423.2,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -6127,10 +6127,31 @@
           "time": "20:49",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "他 22:13 的糾正：股票那個一直掉登入，我三件事都搞錯了",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/910df1db903ab37a63da6eba1b0ee573f45b636c",
+          "evidence_label": "commit 910df1d",
+          "verified": true,
+          "time": "22:16",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 50,
+      "items_count": 51,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "股票那個查出根因（不是掉登入，是沒登入過）＋凍結票 --check-op 預檢上線",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:54",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "daily log 續（17:5x）：刻意違反看門狗不重發通知＋更正 restart.flag 的判準",
@@ -6364,6 +6385,24 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:35",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "探測紀錄加 proc=/api=/last_auth=：把「卡在登入畫面」跟「程式沒開」分開",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "22:46",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T22:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "22:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -6644,9 +6683,25 @@
         {
           "text": "queue.log 那條通道證實有效：20:30:01 的 NUDGE_READY 真的把我叫醒了（不是排程噪音、不是他按按鈕）。內容：命中 62 件（overdue 0／unanswered 0／correction 39／nudge 1",
           "time": null
+        },
+        {
+          "text": "他已明確授權重開：原話「我跟你講完你自己找時間交接重開」。交接已寫完（本節）；/clear 仍需他本人按，AI 無法自行觸發。已回他（1553046992123334737），並承認上面三個錯。",
+          "time": null
+        },
+        {
+          "text": "已交付：探測紀錄加 proc= / api= / last_auth= 三欄（ai-trader 771ec25，路徑限定 commit）。以前「卡在登入框」與「程式根本沒開」在 log 裡長得一模一樣（都只印 paper_4002=DOW",
+          "time": null
+        },
+        {
+          "text": "端到端驗在實際產出檔上（不是只驗函式）：22:45:05 那一行是真的排程跑出來的（節奏 :00/:15/:30/:45 對得上），已帶 proc=0 api=False last_auth=none。另跑鑑別度組（monkeypatch ",
+          "time": null
+        },
+        {
+          "text": "凍結票 --check-op 唯讀預檢上線（今天第三次踩同一個坑之後）：共用函式收在 board_io.py（frozen_gate_reason／check_op／list_available_ops），pull_decisions.py",
+          "time": null
         }
       ],
-      "notes": "另有 48 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 48）"
+      "notes": "另有 51 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 49、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
