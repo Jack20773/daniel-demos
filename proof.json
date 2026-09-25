@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T13:00+08:00",
+  "generated_at": "2026-09-25T14:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,32 +5487,32 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 73,
+      "commits": 78,
       "tickets_done": 0,
       "tickets_verify": 2,
       "subagent_runs": 52,
-      "discord_replies": 47,
-      "tokens_main_wan": 394.9,
-      "tokens_sub_wan": 496.9,
-      "tokens_sessions": 73,
-      "tokens_msgs": 2728,
+      "discord_replies": 54,
+      "tokens_main_wan": 449.8,
+      "tokens_sub_wan": 502.7,
+      "tokens_sessions": 75,
+      "tokens_msgs": 2953,
       "tokens_by_model": {
-        "opus": 492.5,
-        "sonnet": 382.1,
-        "haiku": 17.2,
+        "opus": 543.9,
+        "sonnet": 388.0,
+        "haiku": 20.6,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 381.0,
+        "opus": 432.4,
         "sonnet": 0.0,
-        "haiku": 13.9,
+        "haiku": 17.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
         "opus": 111.5,
-        "sonnet": 382.1,
+        "sonnet": 388.0,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -5983,35 +5983,86 @@
           "time": "12:06",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 38,
-      "skipped": [
+        },
         {
-          "kind": "commit",
-          "text": "每日 DB 備份：停掉 linebot 那條腿（它備份的 Railway Postgres 已經不存在）",
-          "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "12:48",
-          "repo": "root"
+          "kind": "note",
+          "text": "preflight 兩個假紅燈（2712571c）：①daily_run exit 12＝ops/daily_retry.py:51-52 寫死的 ALREADY_DONE，白名單只收 13 → 補 12；20（GIVE_UP）刻意不放行。",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2712571ceb0c17fb3060ba30250ed0bde0d3c2e8",
+          "evidence_label": "commit 2712571",
+          "verified": true,
+          "time": "12:31",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
           "text": "eval-nudge：CLAUDE_CODE_ENTRYPOINT 白名單修掉主力誤觸（headless claude…",
           "project": "hook",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/fab67e192d2104b40113347712ff07c0b7834468",
+          "evidence_label": "commit fab67e1",
+          "verified": true,
           "time": "12:32",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "linebot 備份腿停掉（16047204）：母體與指令 grep -c 'linebot.FAILED' daily_db_backup.log=31／SUCCESS=0／對照組 stock-signal.SUCCESS=31。實跑腳本",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/16047204409e4ea915d8377fc7aa40d7b4ca0369",
+          "evidence_label": "commit 1604720",
+          "verified": true,
+          "time": "12:48",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "eval-nudge：對抗審查打回後改判準，白名單改黑名單修掉靜默盲點",
+          "project": "hook",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3f140c327fd8a6ef40ea34b9d7edd5e0f51ff1e7",
+          "evidence_label": "commit 3f140c3",
+          "verified": true,
+          "time": "13:06",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "留版控：eval-nudge entrypoint 閘門的獨立驗證尺＋payload 形狀探針",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/fde460a58da0ab7e3f3300ffe2135008be87f1af",
+          "evidence_label": "commit fde460a",
+          "verified": true,
+          "time": "13:16",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 43,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "daily log 續（13:20 後）：兩個背景監看被系統回收、英文頻道未授權查明",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:57",
           "repo": "root"
         },
         {
           "kind": "commit",
-          "text": "preflight：修掉兩個「設計上正常卻印紅燈」的排程誤判（同一類病一起修）",
-          "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "12:31",
+          "text": "收工第廿七棒：eval-nudge 被審查打回後改好並自驗 8/8｜preflight 兩個假紅燈｜linebot 停…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:23",
           "repo": "root"
         },
         {
@@ -6187,6 +6238,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T13:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T12:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -6355,9 +6415,17 @@
         {
           "text": "daily log NEXT（本區塊，舊錨點已改名 _SUPERSEDED_BY_1210，內容一字未刪）｜✅ BOOT_BRIEF.md｜✅ commit + push",
           "time": null
+        },
+        {
+          "text": "BOOT_BRIEF ③-1 答完了：claude -p 的 UserPromptSubmit payload 只有 7 鍵（cwd, hook_event_name, permission_mode, prompt, prompt_id,",
+          "time": null
+        },
+        {
+          "text": "eval-nudge 改好並經對抗審查：第一版白名單（只放行 cli）被打回——這台機器已裝 Claude Code 的 VS Code 擴充套件（~/.vscode/extensions/anthropic.claude-code-2.1",
+          "time": null
         }
       ],
-      "notes": "另有 35 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 32）"
+      "notes": "另有 35 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 35）"
     }
   ]
 }
