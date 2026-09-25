@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T09:00+08:00",
+  "generated_at": "2026-09-25T10:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,32 +5487,32 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 46,
+      "commits": 56,
       "tickets_done": 0,
       "tickets_verify": 2,
-      "subagent_runs": 36,
-      "discord_replies": 26,
-      "tokens_main_wan": 234.8,
-      "tokens_sub_wan": 329.5,
-      "tokens_sessions": 46,
-      "tokens_msgs": 1703,
+      "subagent_runs": 39,
+      "discord_replies": 33,
+      "tokens_main_wan": 283.9,
+      "tokens_sub_wan": 365.6,
+      "tokens_sessions": 51,
+      "tokens_msgs": 1990,
       "tokens_by_model": {
-        "opus": 285.5,
-        "sonnet": 275.5,
+        "opus": 357.6,
+        "sonnet": 288.6,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 234.8,
+        "opus": 283.9,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 50.7,
-        "sonnet": 275.5,
+        "opus": 73.7,
+        "sonnet": 288.6,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -5815,10 +5815,112 @@
           "time": "08:41",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "複驗量尺落地：report_number_provenance_audit.py（票 correction-no-un…",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cb57bd3e31fbbe1d1fb0e67b68de024a362b70d7",
+          "evidence_label": "commit cb57bd3",
+          "verified": true,
+          "time": "09:04",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "defectfix：ledger_alerts.md 的 CORRECTION 段把誠實註記丟掉了（26/30 行）",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f53059be173b7b39f568a48179e267b99c1fdbc5",
+          "evidence_label": "commit f53059b",
+          "verified": true,
+          "time": "09:04",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "複驗量尺落地：sweep_handling_streak_census.py + lpa_git_audit.py",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/4b702a7e93fc8bf5a11568f84293a1e5e67bfaa3",
+          "evidence_label": "commit 4b702a7",
+          "verified": true,
+          "time": "09:08",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "「今天該動的一張」改用 last_touch_days 挑（撤回一個丟給他的問題，自己決定）",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/88a2a6fe12f33d73dec5f9a2165695d8e28078b7",
+          "evidence_label": "commit 88a2a6f",
+          "verified": true,
+          "time": "09:11",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "voice-claude：後處理改字接線進正式流程（config.POSTPROCESS_ENABLED 開關）",
+          "project": "voice-claude",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/20f2353c7de117a7f48abc75325dcb312ba52612",
+          "evidence_label": "commit 20f2353",
+          "verified": true,
+          "time": "09:39",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "複驗量尺補盲區：discord_number_provenance_audit.py（票 correction-no-…",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b6b45ab4fe506e1696c5916d264290e72c18bca0",
+          "evidence_label": "commit b6b45ab",
+          "verified": true,
+          "time": "09:44",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "voice-claude：補上「開關那條路」的回歸測試（run_eval.py 沒蓋到）",
+          "project": "voice-claude",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2e747861415a8132e79ebeef9b5bfbe22b2aed2b",
+          "evidence_label": "commit 2e74786",
+          "verified": true,
+          "time": "09:46",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 24,
+      "items_count": 31,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工第卅四棒：voice-claude 後處理上線＋補開關測試｜數字溯源票判 NOT_MET 並記下 done_whe…",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:57",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "收工第卅三棒：三張複驗全不蓋章（推翻分身 2 張）＋修掉 ledger_alerts 的誠實註記＋交接",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:19",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "收工第卅二棒：44 張 correction 逐張查證＋推翻分身 3 個錯判＋交接",
@@ -5938,6 +6040,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T09:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T08:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -6030,9 +6141,25 @@
         {
           "text": "daily/ 全目錄錨點掃描已做（80 檔、嚴格尺不一致 0 檔，並修掉 09-21 那筆）。",
           "time": null
+        },
+        {
+          "text": "skill_reflect.py：母體 12 支，本 session 只叫用 收工-精簡（2 次）。卡點已回寫該 SKILL.md：GUARD 量的是「已經到手的」，不含還在飛的分身——09:04 量到 168k 判斷「還夠」，六分鐘後 2",
+          "time": null
+        },
+        {
+          "text": "daily log NEXT（本區塊）｜✅ BOOT_BRIEF.md｜✅ commit",
+          "time": null
+        },
+        {
+          "text": "skill_reflect.py：母體 12 支，本 session 只叫用 收工-精簡（2 次），用起來順——該檔新加的「GUARD 只在開機印一次，中途要重量就自己重跑」那段本棒實際用到了（09:49 重量得 160,008），是它救了",
+          "time": null
+        },
+        {
+          "text": "daily log NEXT（本區塊）｜✅ BOOT_BRIEF.md｜✅ commit + push",
+          "time": null
         }
       ],
-      "notes": "另有 22 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22）"
+      "notes": "另有 25 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25）"
     }
   ]
 }
