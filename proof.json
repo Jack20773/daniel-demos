@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T17:01+08:00",
+  "generated_at": "2026-09-25T18:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,24 +5487,24 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 89,
+      "commits": 91,
       "tickets_done": 0,
       "tickets_verify": 2,
       "subagent_runs": 53,
       "discord_replies": 60,
-      "tokens_main_wan": 481.8,
+      "tokens_main_wan": 483.0,
       "tokens_sub_wan": 511.6,
       "tokens_sessions": 77,
-      "tokens_msgs": 3083,
+      "tokens_msgs": 3090,
       "tokens_by_model": {
-        "opus": 575.9,
+        "opus": 577.1,
         "sonnet": 396.9,
         "haiku": 20.6,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 464.4,
+        "opus": 465.6,
         "sonnet": 0.0,
         "haiku": 17.3,
         "fable": 0.0,
@@ -6097,6 +6097,15 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "daily log 續（17:5x）：刻意違反看門狗不重發通知＋更正 restart.flag 的判準",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "17:54",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "daily log 續（15:5x-17:0x）：額度表連結的查法留版控＋已用 Discord 通知重開",
           "project": "記憶",
           "reason": "automated",
@@ -6319,6 +6328,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:35",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T17:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "17:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -6552,7 +6570,7 @@
           "time": null
         }
       ],
-      "notes": "另有 42 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 42）"
+      "notes": "另有 44 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 44）"
     }
   ]
 }
