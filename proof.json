@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T15:01+08:00",
+  "generated_at": "2026-09-25T16:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,24 +5487,24 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 83,
+      "commits": 87,
       "tickets_done": 0,
       "tickets_verify": 2,
       "subagent_runs": 53,
-      "discord_replies": 56,
-      "tokens_main_wan": 476.2,
+      "discord_replies": 59,
+      "tokens_main_wan": 480.4,
       "tokens_sub_wan": 511.6,
       "tokens_sessions": 77,
-      "tokens_msgs": 3044,
+      "tokens_msgs": 3071,
       "tokens_by_model": {
-        "opus": 570.4,
+        "opus": 574.5,
         "sonnet": 396.9,
         "haiku": 20.6,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 458.9,
+        "opus": 463.0,
         "sonnet": 0.0,
         "haiku": 17.3,
         "fable": 0.0,
@@ -6079,10 +6079,40 @@
           "time": "14:32",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "他 15:4x 打回「太複雜了，我叫你講簡單一點」：根因不是用詞難，是一則塞太多主題",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0c87f0436ec8ec434dfec8a143e2f92675d3e830",
+          "evidence_label": "commit 0c87f04",
+          "verified": true,
+          "time": "15:46",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 46,
+      "items_count": 47,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "daily log 續（15:4x）：他打回話太複雜，根因是一則塞太多主題不是用詞難",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:47",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "daily log 續（14:4x 後）：心跳三頻道無欠回、harvest 0 則新 id、已建議 /clear",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:07",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "收工第卅三棒：交接錨點的讀取端尺修好＋回寫收工 skill 兩個洞",
@@ -6280,6 +6310,15 @@
           "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
           "time": "00:35",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T15:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -6495,7 +6534,7 @@
           "time": null
         }
       ],
-      "notes": "另有 37 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 37）"
+      "notes": "另有 40 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 40）"
     }
   ]
 }
