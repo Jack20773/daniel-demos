@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T14:00+08:00",
+  "generated_at": "2026-09-25T15:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,24 +5487,24 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 78,
+      "commits": 83,
       "tickets_done": 0,
       "tickets_verify": 2,
-      "subagent_runs": 52,
-      "discord_replies": 54,
-      "tokens_main_wan": 449.8,
-      "tokens_sub_wan": 502.7,
-      "tokens_sessions": 75,
-      "tokens_msgs": 2953,
+      "subagent_runs": 53,
+      "discord_replies": 56,
+      "tokens_main_wan": 476.2,
+      "tokens_sub_wan": 511.6,
+      "tokens_sessions": 77,
+      "tokens_msgs": 3044,
       "tokens_by_model": {
-        "opus": 543.9,
-        "sonnet": 388.0,
+        "opus": 570.4,
+        "sonnet": 396.9,
         "haiku": 20.6,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 432.4,
+        "opus": 458.9,
         "sonnet": 0.0,
         "haiku": 17.3,
         "fable": 0.0,
@@ -5512,7 +5512,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 111.5,
-        "sonnet": 388.0,
+        "sonnet": 396.9,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -6043,10 +6043,55 @@
           "time": "13:16",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "BOOT.md 快路的尺改成定行首（6d8d12c6）：sed -n '/^<!-- NEXT_START -->$/,/^<!-- NEXT_END -->$/p'，並在原地寫清楚為什麼、以及「寫入端與讀取端用不同尺」這個根因。",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6d8d12c69a8f1841be767084bdd1a40d381162b7",
+          "evidence_label": "commit 6d8d12c",
+          "verified": true,
+          "time": "14:21",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "普查器加「讀取端天真尺對照」（2caf6465，派 sonnet 分身做、主 session 自己複跑）：模擬不定行首取第一命中的讀法，跟真實 live 區塊比對，只對分類=OK 的 56 檔比較（其餘 24 檔明講「不適用」不裝一致），並",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2caf6465b75d51732ba9a361ea3a1f6462928efb",
+          "evidence_label": "commit 2caf646",
+          "verified": true,
+          "time": "14:24",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "更正上一棒：run_remote_loop 不是「無法確認」，一道唯讀指令就查得到",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/61cfc4acf615b6570c51127addcf3716a2ba9ff0",
+          "evidence_label": "commit 61cfc4a",
+          "verified": true,
+          "time": "14:32",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 43,
+      "items_count": 46,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工第卅三棒：交接錨點的讀取端尺修好＋回寫收工 skill 兩個洞",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:30",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "daily log 續（13:20 後）：兩個背景監看被系統回收、英文頻道未授權查明",
@@ -6238,6 +6283,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T14:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T13:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -6423,9 +6477,25 @@
         {
           "text": "eval-nudge 改好並經對抗審查：第一版白名單（只放行 cli）被打回——這台機器已裝 Claude Code 的 VS Code 擴充套件（~/.vscode/extensions/anthropic.claude-code-2.1",
           "time": null
+        },
+        {
+          "text": "查證後刻意沒動的兩樣（避免下一棒重查）：①003_hooks/memory-autoload.ps1 取的是最後一組配對（$anchorMatches[$Count-1]），不受此洞影響，不要動那支開機命脈 ②daily_anchor_ce",
+          "time": null
+        },
+        {
+          "text": "本檔第 867 行的孤兒 NEXT_END 改名 _SUPERSEDED_BY_1320：上一棒改名時只改了 START 沒改 END，於是 1 個活 START、2 個活 END，而收工的檢查只數 START → 綠燈放行。已回寫 002",
+          "time": null
+        },
+        {
+          "text": "白工台帳 69→73（尺 retro_ledger_census.py）：補登第廿七棒自列卻沒寫的 3 筆（任務書三個數字對不上帳／GUARD 印別的 session／驗收尺壞兩次，三筆都標明是補記、未回頭複跑重驗）＋本棒自己 1 筆。",
+          "time": null
+        },
+        {
+          "text": "兩則 note 落地（各 succeeded=1、readback 對得上）：db-backup-gap 更正「叫他登入 Railway」這句事實錯誤；correction-cheap-model-for-subagents 記錄完成條件 ",
+          "time": null
         }
       ],
-      "notes": "另有 35 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 35）"
+      "notes": "另有 37 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 37）"
     }
   ]
 }
