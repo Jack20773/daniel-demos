@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T08:00+08:00",
+  "generated_at": "2026-09-25T09:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,32 +5487,32 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 38,
+      "commits": 46,
       "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 26,
-      "discord_replies": 20,
-      "tokens_main_wan": 168.1,
-      "tokens_sub_wan": 216.0,
-      "tokens_sessions": 34,
-      "tokens_msgs": 1175,
+      "tickets_verify": 2,
+      "subagent_runs": 36,
+      "discord_replies": 26,
+      "tokens_main_wan": 234.8,
+      "tokens_sub_wan": 329.5,
+      "tokens_sessions": 46,
+      "tokens_msgs": 1703,
       "tokens_by_model": {
-        "opus": 178.1,
-        "sonnet": 202.7,
+        "opus": 285.5,
+        "sonnet": 275.5,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 168.1,
+        "opus": 234.8,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 10.0,
-        "sonnet": 202.7,
+        "opus": 50.7,
+        "sonnet": 275.5,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -5755,10 +5755,88 @@
           "time": "07:37",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第卅一棒：自己的診斷被自家對抗審查推翻＋順手修掉 evidence 型別 bug",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/815ccac2c7a255c63d1f232ec01ae86682c1a28a",
+          "evidence_label": "commit 815ccac",
+          "verified": true,
+          "time": "08:12",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "daily 續（第卅一棒）：診斷被自家對抗審查推翻＋evidence 型別 bug 實測修復",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/d418629d491efa1a53f11948051ec34c06bf2f9c",
+          "evidence_label": "commit d418629",
+          "verified": true,
+          "time": "08:15",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "錨點全目錄掃描補做＋correction 工作集量尺落地",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/44537f1e296a6fa2e5e227bc1a4e3cd1b6d64d76",
+          "evidence_label": "commit 44537f1",
+          "verified": true,
+          "time": "08:26",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "discord_auth：approve_proposal 投信前先驗核准語，修掉一個假綠燈",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6fcbdfd5fff173c46c24b492920bffa4d62de36e",
+          "evidence_label": "commit 6fcbdfd",
+          "verified": true,
+          "time": "08:31",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "44 張 correction 票逐張查證：2 張推 verify、25 張寫進查證結論、推翻分身 3 個錯判",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f2c53363d8deaab006047f385428ae04da8cdc4d",
+          "evidence_label": "commit f2c5336",
+          "verified": true,
+          "time": "08:41",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 19,
+      "items_count": 24,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工第卅二棒：44 張 correction 逐張查證＋推翻分身 3 個錯判＋交接",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "08:46",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "收工第卅一棒：BOOT_BRIEF 交棒＋「未驗證」格式卡點回寫 SKILL",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "08:19",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "收工第卅棒補件：BOOT_BRIEF 瘦身至上限內＋收工-精簡 SKILL 補 GUARD 中途重量指令",
@@ -5860,6 +5938,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T08:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "08:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T07:01+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -5939,9 +6026,13 @@
         {
           "text": "完整七步全跑完，前兩棒欠的三步債已還清（白工台帳 66→68、殘留物盤點、全目錄錨點掃描 80 檔 0 檔違規）。",
           "time": null
+        },
+        {
+          "text": "daily/ 全目錄錨點掃描已做（80 檔、嚴格尺不一致 0 檔，並修掉 09-21 那筆）。",
+          "time": null
         }
       ],
-      "notes": "另有 19 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
+      "notes": "另有 22 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22）"
     }
   ]
 }
