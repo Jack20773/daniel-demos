@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T10:00+08:00",
+  "generated_at": "2026-09-25T11:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,24 +5487,24 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 56,
+      "commits": 59,
       "tickets_done": 0,
       "tickets_verify": 2,
       "subagent_runs": 39,
-      "discord_replies": 33,
-      "tokens_main_wan": 283.9,
-      "tokens_sub_wan": 365.6,
+      "discord_replies": 34,
+      "tokens_main_wan": 297.1,
+      "tokens_sub_wan": 371.5,
       "tokens_sessions": 51,
-      "tokens_msgs": 1990,
+      "tokens_msgs": 2088,
       "tokens_by_model": {
-        "opus": 357.6,
-        "sonnet": 288.6,
+        "opus": 370.8,
+        "sonnet": 294.5,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 283.9,
+        "opus": 297.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -5512,7 +5512,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 73.7,
-        "sonnet": 288.6,
+        "sonnet": 294.5,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -5899,10 +5899,40 @@
           "time": "09:46",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "派便宜模型票：量尺落地＋口徑拆開，判 NOT_MET；破口在分身的分身",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/d0b14a7c2b063fa8bb5fac8bf222ede0a87d3f30",
+          "evidence_label": "commit d0b14a7",
+          "verified": true,
+          "time": "10:09",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 31,
+      "items_count": 32,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工第卅五棒補記：6 個子 repo 共 126 筆未提交（非本棒產生，刻意不盲推）",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:00",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "收工第卅五棒：派便宜模型票判 NOT_MET＋量尺落地｜交接與簡報",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "10:59",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "收工第卅四棒：voice-claude 後處理上線＋補開關測試｜數字溯源票判 NOT_MET 並記下 done_whe…",
@@ -6040,6 +6070,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T10:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "10:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T09:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -6157,9 +6196,17 @@
         {
           "text": "daily log NEXT（本區塊）｜✅ BOOT_BRIEF.md｜✅ commit + push",
           "time": null
+        },
+        {
+          "text": "skill_reflect.py：母體 12 支，本 session 只叫用 收工-精簡（2 次），用起來順、無新卡點要回寫。另記一筆正面證據：該檔「GUARD 只在開機印一次，中途要重量就自己重跑」那段本棒實際救到一次——10:54 重量",
+          "time": null
+        },
+        {
+          "text": "daily log NEXT（本區塊）｜✅ BOOT_BRIEF.md｜✅ commit + push",
+          "time": null
         }
       ],
-      "notes": "另有 25 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25）"
+      "notes": "另有 28 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 28）"
     }
   ]
 }
