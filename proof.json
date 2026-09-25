@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T12:00+08:00",
+  "generated_at": "2026-09-25T13:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,32 +5487,32 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 67,
+      "commits": 73,
       "tickets_done": 0,
       "tickets_verify": 2,
-      "subagent_runs": 47,
-      "discord_replies": 40,
-      "tokens_main_wan": 343.7,
-      "tokens_sub_wan": 440.6,
-      "tokens_sessions": 61,
-      "tokens_msgs": 2430,
+      "subagent_runs": 52,
+      "discord_replies": 47,
+      "tokens_main_wan": 394.9,
+      "tokens_sub_wan": 496.9,
+      "tokens_sessions": 73,
+      "tokens_msgs": 2728,
       "tokens_by_model": {
-        "opus": 431.9,
-        "sonnet": 349.2,
-        "haiku": 3.3,
+        "opus": 492.5,
+        "sonnet": 382.1,
+        "haiku": 17.2,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 343.7,
+        "opus": 381.0,
         "sonnet": 0.0,
-        "haiku": 0.0,
+        "haiku": 13.9,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 88.2,
-        "sonnet": 349.2,
+        "opus": 111.5,
+        "sonnet": 382.1,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -5971,10 +5971,58 @@
           "time": "11:40",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "eval-nudge：擋掉背景通知誤觸（只蓋 16.6%，主力 sdk 未修）＋普查尺留版控",
+          "project": "hook",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/52a3ba475f87a0ab6842427e04e8bc4e4aa20ab8",
+          "evidence_label": "commit 52a3ba4",
+          "verified": true,
+          "time": "12:06",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 37,
+      "items_count": 38,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "每日 DB 備份：停掉 linebot 那條腿（它備份的 Railway Postgres 已經不存在）",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:48",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "eval-nudge：CLAUDE_CODE_ENTRYPOINT 白名單修掉主力誤觸（headless claude…",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "preflight：修掉兩個「設計上正常卻印紅燈」的排程誤判（同一類病一起修）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "收工第廿六棒：派工任務書＋2 條｜A3「2766 行」查明是換行假差異｜eval-nudge 只修好 16.6% 被審…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:14",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "收工第卅六棒：F 類 8 條補驗完＋R2-I10 改判 X｜堵掉 linebot 憑證漏擋洞｜126 筆逐筆對帳",
@@ -6139,6 +6187,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T12:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T11:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -6290,9 +6347,17 @@
         {
           "text": "daily log NEXT（本區塊，舊錨點已改名 _SUPERSEDED_BY_1130，內容一字未刪）｜✅ BOOT_BRIEF.md｜✅ commit + push",
           "time": null
+        },
+        {
+          "text": "skill_reflect.py：母體 12 支，主 session 叫用 收工-精簡 2 次、subagent 0 次；卡點已回寫該 SKILL.md。評估 未被叫用是刻意（無新專案請求）。",
+          "time": null
+        },
+        {
+          "text": "daily log NEXT（本區塊，舊錨點已改名 _SUPERSEDED_BY_1210，內容一字未刪）｜✅ BOOT_BRIEF.md｜✅ commit + push",
+          "time": null
         }
       ],
-      "notes": "另有 30 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 30）"
+      "notes": "另有 35 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 32）"
     }
   ]
 }
