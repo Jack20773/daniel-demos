@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T01:00+08:00",
+  "generated_at": "2026-09-26T02:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6474,24 +6474,24 @@
     },
     {
       "date": "2026-09-26",
-      "commits": 4,
+      "commits": 10,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 4.6,
+      "discord_replies": 7,
+      "tokens_main_wan": 12.0,
       "tokens_sub_wan": 0.0,
       "tokens_sessions": 1,
-      "tokens_msgs": 16,
+      "tokens_msgs": 47,
       "tokens_by_model": {
-        "opus": 4.6,
+        "opus": 12.0,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 4.6,
+        "opus": 12.0,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -6513,6 +6513,51 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "他 01:33 指正：我把「規格」與「我的儀表收不收得到」混為一談，全程只做後者",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "停手一個證明不了事情的測試；改掛實體證據監看，並停止對 not enabled 那行的第三次猜測",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "更正 01:22 的錯誤結論：那行 not enabled 零鑑別度，他確實有勾",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:27",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "他 01:19 登入成功但 auto-restart 仍未生效；鑑別方法定為查 initialTokenType 是否…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "心跳第三輪刻意不重掛：記下算式與復原方式；/clear 不再第四次提",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:04",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "開 09-26 daily log：跨日指標，刻意不放 NEXT 錨點避免交接被讀成空的",
@@ -6542,6 +6587,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-26T01:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-26T00:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -6550,8 +6604,25 @@
           "repo": "daniel-demos"
         }
       ],
-      "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3、未 push 1）"
+      "selfreport": [
+        {
+          "text": "他 01:19:33 真的登入成功（NS_AUTH_START×2、initialTokenType=PWD、pwd=1 soft=0＝用密碼登入非 token、Switching to a new encrypted log×1、新增 i",
+          "time": null
+        },
+        {
+          "text": "他確實有勾，證據是寫入時間差：AutoRestart=1 在 jts.ini 的 [u:<設定目錄雜湊>] 每個使用者一節（不是 [IBGateway]，我 01:22 說「設定不在本機檔案」也是錯的——是我 grep 的 .xml 找錯地",
+          "time": null
+        },
+        {
+          "text": "該行全文給出兩個真訊號：本次 session 確實拿到 SOFT token（ccpToken=XYZSessionToken[type=SOFT,...]，01:19:33），而 restart= 是空的。",
+          "time": null
+        },
+        {
+          "text": "改成主動盯實體證據（已掛背景監看 bum76ou84）：條件＝naoam…/autorestart 檔出現 或 launcher.log 出現 Running in auto-restart mode。出現即代表 arm 成立，一出現就通知",
+          "time": null
+        }
+      ],
+      "notes": "另有 10 筆 commit 未列（未 push 6、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
     }
   ]
 }
