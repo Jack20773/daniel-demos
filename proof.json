@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-25T07:01+08:00",
+  "generated_at": "2026-09-25T08:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5487,32 +5487,32 @@
     },
     {
       "date": "2026-09-25",
-      "commits": 31,
+      "commits": 38,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 18,
-      "discord_replies": 17,
-      "tokens_main_wan": 146.1,
-      "tokens_sub_wan": 146.3,
-      "tokens_sessions": 25,
-      "tokens_msgs": 922,
+      "subagent_runs": 26,
+      "discord_replies": 20,
+      "tokens_main_wan": 168.1,
+      "tokens_sub_wan": 216.0,
+      "tokens_sessions": 34,
+      "tokens_msgs": 1175,
       "tokens_by_model": {
-        "opus": 146.1,
-        "sonnet": 143.0,
+        "opus": 178.1,
+        "sonnet": 202.7,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 146.1,
+        "opus": 168.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 0.0,
-        "sonnet": 143.0,
+        "opus": 10.0,
+        "sonnet": 202.7,
         "haiku": 3.3,
         "fable": 0.0,
         "other": 0.0
@@ -5671,35 +5671,110 @@
           "time": "06:10",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 12,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "更正：資安四片不是「被漏接27天」，三片08-29當晚就裝好了",
-          "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "06:51",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "台帳分類：階段1複查推翻自家方案（12張只對2張），根因改寫",
-          "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "06:40",
-          "repo": "root"
         },
         {
           "kind": "commit",
           "text": "新增 classify_shadow_diff.py：PUSH/NUDGE 分類階段0唯讀 shadow diff",
           "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/4b8f02df285943e1dadab48c248945ae17c751c2",
+          "evidence_label": "commit 4b8f02d",
+          "verified": true,
           "time": "06:28",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "台帳分類：階段1複查推翻自家方案（12張只對2張），根因改寫",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/619f0a7f5d6865c0b95e4cd735199422da7e5c03",
+          "evidence_label": "commit 619f0a7",
+          "verified": true,
+          "time": "06:40",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "更正：資安四片不是「被漏接27天」，三片08-29當晚就裝好了",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/53a4582811b2dea8f7b6569fd43cedf6ed23c356",
+          "evidence_label": "commit 53a4582",
+          "verified": true,
+          "time": "06:51",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "daily 續（第卅棒）：方案被自家驗收推翻＋資安四片誤判更正",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/56dafdbeafb6d7ff3a569c5b2e79c883a37c850f",
+          "evidence_label": "commit 56dafdb",
+          "verified": true,
+          "time": "07:11",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "新增 stale_map_census.py：next_action 過期地圖規模普查（唯讀）",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8a88bf21e5f8b904590621f90f1dff73ff58fb87",
+          "evidence_label": "commit 8a88bf2",
+          "verified": true,
+          "time": "07:17",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "新增 Option A 兩版 demo：過期票怎麼呈現（唯讀，非上線）",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/c7b2116a84771262dc51a9dfdd37997763e9e2a0",
+          "evidence_label": "commit c7b2116",
+          "verified": true,
+          "time": "07:32",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "新增 ledger_stale_demo.html：台帳過期票 A/B 版全文對照 demo",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/2972168208bf6d4bebf5e8172830c925a6847556",
+          "evidence_label": "commit 2972168",
+          "verified": true,
+          "time": "07:37",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 19,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工第卅棒補件：BOOT_BRIEF 瘦身至上限內＋收工-精簡 SKILL 補 GUARD 中途重量指令",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "07:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "收工第卅棒：方案被自家驗收推翻＋過期地圖普查＋一次自我更正",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "07:41",
           "repo": "root"
         },
         {
@@ -5785,6 +5860,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-25T07:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "07:01",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-25T06:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -5857,7 +5941,7 @@
           "time": null
         }
       ],
-      "notes": "另有 19 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16）"
+      "notes": "另有 19 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
     }
   ]
 }
