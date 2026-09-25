@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-26T00:00+08:00",
+  "generated_at": "2026-09-26T01:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6456,30 +6456,42 @@
         {
           "text": "今天的 instrumentation 當天就回本：23:30 那筆真排程寫出 decision=GIVE_UP proc=1 api=False＝「程式活著但沒登入」的簽名；改動前這行只會寫 paper_4002=DOWN，與「程式沒開」",
           "time": null
+        },
+        {
+          "text": "全語料稽核補完票上第 4 個缺口（尺落地 005_scripts/voiceclaude_glossary_full_corpus_scan.py，主 session 複跑對上）：10 條規則 × 1103 筆非空語料（母體 1387，28",
+          "time": null
+        },
+        {
+          "text": "兩條收斂（b9c229a6，套用票上「祖國→股癌」既定標準，兩者都是減少改字）：重砲→重跑 收斂成 重砲成功→重跑成功（「央行祭出重砲」是財經常用語，而他做台股研究）；卡扣→Claude Code 移進 excluded_candidate",
+          "time": null
+        },
+        {
+          "text": "驗證用正式 correct_text() 非等價重寫：對照組「央行這次祭出重砲」「卡扣式結構」皆不動（改動前會被改錯），命中組「重砲成功／靠扣／Cloud Code」皆仍修正；test_postprocess_wiring.py 4/4 含",
+          "time": null
         }
       ],
       "notes": "另有 54 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 51、未 push 1、repo 沒有 GitHub remote（沒有可點連結） 2）"
     },
     {
       "date": "2026-09-26",
-      "commits": 0,
+      "commits": 4,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 0,
       "discord_replies": 0,
-      "tokens_main_wan": 0.0,
+      "tokens_main_wan": 4.6,
       "tokens_sub_wan": 0.0,
-      "tokens_sessions": 0,
-      "tokens_msgs": 0,
+      "tokens_sessions": 1,
+      "tokens_msgs": 16,
       "tokens_by_model": {
-        "opus": 0.0,
+        "opus": 4.6,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
+        "opus": 4.6,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -6500,9 +6512,46 @@
       "highlights": [],
       "items": [],
       "items_count": 0,
-      "skipped": [],
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "開 09-26 daily log：跨日指標，刻意不放 NEXT 錨點避免交接被讀成空的",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "daily log 續（23:5x）：語音詞表查出兩條靜默改錯正在生效，已收斂",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "語音詞表：關掉兩條正在生效的靜默改錯風險（重砲、卡扣），補全語料稽核",
+          "project": "voice-claude",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:08",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-26T00:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:00",
+          "repo": "daniel-demos"
+        }
+      ],
       "selfreport": [],
-      "notes": ""
+      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3、未 push 1）"
     }
   ]
 }
