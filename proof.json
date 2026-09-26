@@ -1,93 +1,7 @@
 {
-  "generated_at": "2026-09-26T23:00+08:00",
+  "generated_at": "2026-09-27T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-09-13",
-      "commits": 4,
-      "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 8,
-      "discord_replies": 71,
-      "tokens_main_wan": 135.0,
-      "tokens_sub_wan": 87.7,
-      "tokens_sessions": 19,
-      "tokens_msgs": 850,
-      "tokens_by_model": {
-        "opus": 212.5,
-        "sonnet": 10.1,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 135.0,
-        "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 77.5,
-        "sonnet": 10.1,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "score_avg": 4.0,
-      "score_low": 0,
-      "score_high": 1,
-      "scores": [
-        {
-          "score": 4,
-          "time": "2026-09-13 22:54"
-        }
-      ],
-      "corrections_new": 1,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "遠端 9/13 晚棒二收工（縮減版，上下文肥）：opus 分身建好 D:\\classroom（門 deny 實測、展示…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "22:57",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "遠端 9/13 晚棒收工（縮減版，缺上下文）：AI 老師批鬥 7 洞→他硬重置→Discord 教室方案獲同意、任務書…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "20:54",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "遠端 9/13 午後棒收工（縮減版，缺上下文）：AI 老師第一課 demo 上預覽站＋PM 審查；評估 skill 改…",
-          "project": "hook",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "18:33",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "遠端 9/12 晚棒收工（縮減版，缺上下文）：答他「AI 當老師零聯絡複製」四樣＋問最常用 3 號、開 2 張糾正票補…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "01:55",
-          "repo": "root"
-        }
-      ],
-      "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
-    },
     {
       "date": "2026-09-14",
       "commits": 4,
@@ -6474,7 +6388,7 @@
     },
     {
       "date": "2026-09-26",
-      "commits": 32,
+      "commits": 33,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 0,
@@ -6593,6 +6507,15 @@
           "reason_label": "未 push",
           "time": "00:08",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-26T23:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -6824,7 +6747,51 @@
           "time": null
         }
       ],
-      "notes": "另有 32 筆 commit 未列（未 push 7、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25）"
+      "notes": "另有 33 筆 commit 未列（未 push 7、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 26）"
+    },
+    {
+      "date": "2026-09-27",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 0.0,
+      "tokens_sessions": 0,
+      "tokens_msgs": 0,
+      "tokens_by_model": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
