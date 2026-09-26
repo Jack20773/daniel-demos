@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T00:00+08:00",
+  "generated_at": "2026-09-27T01:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6751,7 +6751,7 @@
     },
     {
       "date": "2026-09-27",
-      "commits": 0,
+      "commits": 1,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 0,
@@ -6789,9 +6789,19 @@
       "highlights": [],
       "items": [],
       "items_count": 0,
-      "skipped": [],
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-27T00:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:00",
+          "repo": "daniel-demos"
+        }
+      ],
       "selfreport": [],
-      "notes": ""
+      "notes": "另有 1 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
     }
   ]
 }
