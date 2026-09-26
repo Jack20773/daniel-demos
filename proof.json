@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T01:00+08:00",
+  "generated_at": "2026-09-27T02:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6751,27 +6751,27 @@
     },
     {
       "date": "2026-09-27",
-      "commits": 1,
+      "commits": 4,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 0.0,
+      "discord_replies": 2,
+      "tokens_main_wan": 16.5,
       "tokens_sub_wan": 0.0,
-      "tokens_sessions": 0,
-      "tokens_msgs": 0,
+      "tokens_sessions": 1,
+      "tokens_msgs": 33,
       "tokens_by_model": {
         "opus": 0.0,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 16.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
         "opus": 0.0,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 16.5,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -6792,6 +6792,33 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "語音詞表：對實際產出複核全語料稽核（1387/1103/16 命中 0 誤觸）；把只存在暫存區的逐字稿搬進 voice…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第卅五棒：讀 IBKR 官方說明書回答自動重啟規格；昨晚 23:45 免密碼自登成功（一手 log）；週日通行證失效已…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:08",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-27T01:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-27T00:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -6800,8 +6827,29 @@
           "repo": "daniel-demos"
         }
       ],
-      "selfreport": [],
-      "notes": "另有 1 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
+      "selfreport": [
+        {
+          "text": "昨晚 23:45 Gateway 自動重啟並免密碼登入成功（一手證據，C:\\Jts\\ibgateway\\1045\\launcher.log 361–531 行）：Reading data from '…\\autorestart' → Aut",
+          "time": null
+        },
+        {
+          "text": "照他 01:33 的要求讀了官方說明書（一手），出處與原句：",
+          "time": null
+        },
+        {
+          "text": "已回他兩則（一則一主題）：規格答案 1553452965803589824、昨晚證據＋週日提醒 1553452982501113943。",
+          "time": null
+        },
+        {
+          "text": "對實際產出檔複核（不抄日誌）：用版控的 005_scripts/voiceclaude_glossary_full_corpus_scan.py 拿現行 glossary.json（9 條生效＋5 條排除）重跑 → 總筆數 1387／空文字",
+          "time": null
+        },
+        {
+          "text": "腳本 docstring 的 \\A 轉義警告改成 raw string（-W error 下跑過）。",
+          "time": null
+        }
+      ],
+      "notes": "另有 4 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
     }
   ]
 }
