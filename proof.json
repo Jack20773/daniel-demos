@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T21:00+08:00",
+  "generated_at": "2026-09-27T22:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6755,34 +6755,34 @@
     },
     {
       "date": "2026-09-27",
-      "commits": 38,
+      "commits": 45,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 19,
-      "discord_replies": 40,
-      "tokens_main_wan": 188.4,
-      "tokens_sub_wan": 236.8,
-      "tokens_sessions": 24,
-      "tokens_msgs": 971,
+      "subagent_runs": 23,
+      "discord_replies": 49,
+      "tokens_main_wan": 237.6,
+      "tokens_sub_wan": 290.9,
+      "tokens_sessions": 30,
+      "tokens_msgs": 1286,
       "tokens_by_model": {
-        "opus": 208.9,
-        "sonnet": 155.6,
+        "opus": 269.7,
+        "sonnet": 179.6,
         "haiku": 0.0,
-        "fable": 60.7,
+        "fable": 79.2,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 170.1,
+        "opus": 219.2,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 18.4,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 38.8,
-        "sonnet": 155.6,
+        "opus": 50.5,
+        "sonnet": 179.6,
         "haiku": 0.0,
-        "fable": 42.3,
+        "fable": 60.8,
         "other": 0.0
       },
       "score_avg": 4.0,
@@ -6856,10 +6856,82 @@
           "time": "20:06",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "修正 hotwords 224 token 上限的過期註解",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/1c709d28ea3663c7eb72058655796437521b5c9a",
+          "evidence_label": "commit 1c709d2",
+          "verified": true,
+          "time": "20:33",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "新增組態 D 批次轉錄腳本（EP682/683/684/687）",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/528fc508af13ae940417efb05e8a8dee97810876",
+          "evidence_label": "commit 528fc50",
+          "verified": true,
+          "time": "21:29",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "批次腳本補「怎麼起」：換棒會殺掉 session 程序樹裡的批次",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/1ac4dc0ba9700ee5ade9f0dd4f7940935c31c10c",
+          "evidence_label": "commit 1ac4dc0",
+          "verified": true,
+          "time": "21:49",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 4,
+      "items_count": 7,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "第卅九棒收工：NEXT 交接＋BOOT_BRIEF＋全盤分析 skill 門檻搬進 description",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "memory-autoload 結構性修復：整份計畫（不動程式碼）＋四題中三題 AI 暫定裁決",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "21:25",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第卅九棒：白工台帳＋收工 skill 補「分身死了但子程序還活著」這一格",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:13",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第卅八棒收工：NEXT 交接＋BOOT_BRIEF 更新＋收工-精簡 卡點回寫",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:03",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "BOOT.md 更正一句錯的結論：memory-autoload 並非不受錨點缺陷影響（原句保留）",
@@ -7033,12 +7105,12 @@
         },
         {
           "kind": "commit",
-          "text": "修正 hotwords 224 token 上限的過期註解",
-          "project": "股癌",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "20:33",
-          "repo": "stock-signal"
+          "text": "proof.json auto-refresh 2026-09-27T21:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -7189,7 +7261,7 @@
           "time": null
         }
       ],
-      "notes": "另有 34 筆 commit 未列（未 push 15、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
+      "notes": "另有 38 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 23、未 push 15）"
     }
   ]
 }
