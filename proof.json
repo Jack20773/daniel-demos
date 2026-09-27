@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T20:01+08:00",
+  "generated_at": "2026-09-27T21:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6755,32 +6755,32 @@
     },
     {
       "date": "2026-09-27",
-      "commits": 27,
+      "commits": 38,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 13,
-      "discord_replies": 30,
-      "tokens_main_wan": 141.9,
-      "tokens_sub_wan": 173.7,
-      "tokens_sessions": 17,
-      "tokens_msgs": 613,
+      "subagent_runs": 19,
+      "discord_replies": 40,
+      "tokens_main_wan": 188.4,
+      "tokens_sub_wan": 236.8,
+      "tokens_sessions": 24,
+      "tokens_msgs": 971,
       "tokens_by_model": {
-        "opus": 148.7,
-        "sonnet": 106.2,
+        "opus": 208.9,
+        "sonnet": 155.6,
         "haiku": 0.0,
         "fable": 60.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 123.5,
+        "opus": 170.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 18.4,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 25.2,
-        "sonnet": 106.2,
+        "opus": 38.8,
+        "sonnet": 155.6,
         "haiku": 0.0,
         "fable": 42.3,
         "other": 0.0
@@ -6802,11 +6802,136 @@
           "time": "2026-09-27 19:51"
         }
       ],
-      "corrections_new": 2,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
+      "corrections_new": 3,
+      "highlights": [
+        "Track1 上線：batch.py 選逐字稿時優先用官方版，不再靠 glob 隨機決定",
+        "batch.py：manifest 壞掉不再讓整條流水線靜默停擺；用詞由「官方版」改為「粉絲版」",
+        "新增 eval/：專有名詞正確率量尺（粉絲版 vs 自建版逐字稿）"
+      ],
+      "items": [
+        {
+          "kind": "commit",
+          "text": "Track1 上線：batch.py 選逐字稿時優先用官方版，不再靠 glob 隨機決定",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/49b6bebae4051c54c646942221a2a7d102c8d90a",
+          "evidence_label": "commit 49b6beb",
+          "verified": true,
+          "time": "10:44",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "batch.py：manifest 壞掉不再讓整條流水線靜默停擺；用詞由「官方版」改為「粉絲版」",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/50756f291ca830d4276bf3a8219dbef3f0393730",
+          "evidence_label": "commit 50756f2",
+          "verified": true,
+          "time": "11:06",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "新增 eval/：專有名詞正確率量尺（粉絲版 vs 自建版逐字稿）",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/af88a4a207914fa1451e6410db413775fada819d",
+          "evidence_label": "commit af88a4a",
+          "verified": true,
+          "time": "19:45",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "asr：固定名詞後處理改字表，修自建版逐字稿的股癌/謝孟恭/聯準會系統性訛寫",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/f906849866c4538a343afde857d549b6e9fbd3d9",
+          "evidence_label": "commit f906849",
+          "verified": true,
+          "time": "20:06",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 4,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "BOOT.md 更正一句錯的結論：memory-autoload 並非不受錨點缺陷影響（原句保留）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:53",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "白工台帳補兩筆：錨點缺陷在第三個讀取端多活兩天、交接與自己的 commit 互相矛盾",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:49",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "voice-claude：initial_prompt 票稽核發現已於09-05接完，補token上限警告與接線回歸測試",
+          "project": "voice-claude",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:48",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "daily log 第卅八棒：評估第3關補免費層、memory-autoload 錨點 bug、寄信解卡、64%量錯對象",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "20:47",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "memory-autoload 交接錨點改定行首：舊尺在 09-25／09-26 只抓到 5 字垃圾",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "評估第 3 關補免費盲測層：沒付費授權只砍 A／B 家，砍不掉整個關卡",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:21",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第卅七棒收工：NEXT 交接＋BOOT_BRIEF 更新＋兩支 skill 卡點回寫",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "20:13",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "譬喻第十次：依該檔自己的規定改開機制票，不再往檔案加解方",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:02",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "daily log 續（20:2x）：尺的兩個數字、N22／N23 三關驗收、自抓假話的根因三條",
@@ -6908,30 +7033,21 @@
         },
         {
           "kind": "commit",
-          "text": "新增 eval/：專有名詞正確率量尺（粉絲版 vs 自建版逐字稿）",
+          "text": "修正 hotwords 224 token 上限的過期註解",
           "project": "股癌",
           "reason": "unpushed",
           "reason_label": "未 push",
-          "time": "19:45",
+          "time": "20:33",
           "repo": "stock-signal"
         },
         {
           "kind": "commit",
-          "text": "batch.py：manifest 壞掉不再讓整條流水線靜默停擺；用詞由「官方版」改為「粉絲版」",
-          "project": "股癌",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "11:06",
-          "repo": "stock-signal"
-        },
-        {
-          "kind": "commit",
-          "text": "Track1 上線：batch.py 選逐字稿時優先用官方版，不再靠 glob 隨機決定",
-          "project": "股癌",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "10:44",
-          "repo": "stock-signal"
+          "text": "proof.json auto-refresh 2026-09-27T20:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "20:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -7073,7 +7189,7 @@
           "time": null
         }
       ],
-      "notes": "另有 27 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16、未 push 11）"
+      "notes": "另有 34 筆 commit 未列（未 push 15、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
     }
   ]
 }
