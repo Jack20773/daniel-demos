@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T02:00+08:00",
+  "generated_at": "2026-09-27T10:06+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6745,33 +6745,37 @@
         {
           "text": "今晚全部產出已 commit、無未存檔項；三支監看死掉不影響已落地的東西（排程 \\ai-trader\\gateway_autostart 是 Windows 工作排程器管的，不受此影響，NextRun 09/26 08:00 仍在）。",
           "time": null
+        },
+        {
+          "text": "可信判據只有這個：Running in auto-restart mode + autoRestartType=DAILY + initialTokenType=SOFT。",
+          "time": null
         }
       ],
       "notes": "另有 33 筆 commit 未列（未 push 7、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 26）"
     },
     {
       "date": "2026-09-27",
-      "commits": 4,
+      "commits": 7,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 0,
-      "discord_replies": 2,
-      "tokens_main_wan": 16.5,
+      "discord_replies": 4,
+      "tokens_main_wan": 47.5,
       "tokens_sub_wan": 0.0,
-      "tokens_sessions": 1,
-      "tokens_msgs": 33,
+      "tokens_sessions": 2,
+      "tokens_msgs": 51,
       "tokens_by_model": {
-        "opus": 0.0,
+        "opus": 29.2,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 16.5,
+        "fable": 18.4,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
+        "opus": 29.2,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 16.5,
+        "fable": 18.4,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -6785,11 +6789,29 @@
       "score_low": 0,
       "score_high": 0,
       "scores": [],
-      "corrections_new": 0,
+      "corrections_new": 1,
       "highlights": [],
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "卅四棒收工交接：股票那件事已解決（自動重啟證實生效），他關機",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "糾正上板：開 correction-read-spec-before-inferring-from-logs（規格 v…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:04",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "語音詞表：對實際產出複核全語料稽核（1387/1103/16 命中 0 誤觸）；把只存在暫存區的逐字稿搬進 voice…",
@@ -6807,6 +6829,15 @@
           "reason_label": "未 push",
           "time": "01:08",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-27T02:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -6849,7 +6880,7 @@
           "time": null
         }
       ],
-      "notes": "另有 4 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
+      "notes": "另有 7 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4、未 push 3）"
     }
   ]
 }
