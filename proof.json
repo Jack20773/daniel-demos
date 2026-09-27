@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T03:00+08:00",
+  "generated_at": "2026-09-28T04:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7238,24 +7238,24 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 19,
+      "commits": 21,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 9,
-      "discord_replies": 32,
-      "tokens_main_wan": 106.7,
+      "discord_replies": 36,
+      "tokens_main_wan": 140.1,
       "tokens_sub_wan": 130.7,
-      "tokens_sessions": 16,
-      "tokens_msgs": 744,
+      "tokens_sessions": 17,
+      "tokens_msgs": 810,
       "tokens_by_model": {
-        "opus": 121.6,
+        "opus": 155.0,
         "sonnet": 115.8,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 106.7,
+        "opus": 140.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -7277,6 +7277,15 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "第四十六棒收工：財經逐字稿專家首份 EP687 校稿清單＋NEXT 交接＋BOOT_BRIEF",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:18",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "第四十五棒收工：NEXT 交接＋BOOT_BRIEF＋4a-GUARD 補 UNREADABLE 備援尺＋復活耗時報告…",
@@ -7423,6 +7432,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T03:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T02:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -7459,7 +7477,7 @@
           "time": null
         }
       ],
-      "notes": "另有 19 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 8、未 push 10、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 21 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10、未 push 10、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
