@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T06:00+08:00",
+  "generated_at": "2026-09-28T07:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,32 +7321,32 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 35,
+      "commits": 41,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 28,
-      "discord_replies": 49,
-      "tokens_main_wan": 254.9,
-      "tokens_sub_wan": 322.8,
-      "tokens_sessions": 42,
-      "tokens_msgs": 1601,
+      "subagent_runs": 31,
+      "discord_replies": 53,
+      "tokens_main_wan": 304.8,
+      "tokens_sub_wan": 358.8,
+      "tokens_sessions": 47,
+      "tokens_msgs": 1844,
       "tokens_by_model": {
-        "opus": 269.8,
-        "sonnet": 302.2,
+        "opus": 327.8,
+        "sonnet": 330.1,
         "haiku": 5.7,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 254.9,
+        "opus": 304.8,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 14.9,
-        "sonnet": 302.2,
+        "opus": 23.0,
+        "sonnet": 330.1,
         "haiku": 5.7,
         "fable": 0.0,
         "other": 0.0
@@ -7553,10 +7553,61 @@
           "time": "04:55",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第五十三棒：PUSH/NUDGE 分類器改走邏輯側（8→2）＋兩則過期提案復活＋三個錯數字更正",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/37bcd5bdc59f836faee77b1c13b36244820b9990",
+          "evidence_label": "commit 37bcd5b",
+          "verified": true,
+          "time": "06:12",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第五十四棒：提案過期審計接進程式（--stale-audit）＋查出凍結票是一次性快照不是他逐張決定",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/430e56afc07ca10a466477268c6fc7dac0e3d758",
+          "evidence_label": "commit 430e56a",
+          "verified": true,
+          "time": "06:31",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 16,
+      "items_count": 18,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工-精簡 第4步補：skill 回寫要用 002_skills/ 路徑 add，.claude/ 被 gitigno…",
+          "project": "root",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:40",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第五十四棒收工：NEXT 交接＋BOOT_BRIEF＋收工-精簡 補「這是第二次 commit」",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:39",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第五十三棒收工：NEXT 交接＋BOOT_BRIEF＋BOOT.md 補皇冠資產寫入紅線",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:19",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "第五十二棒收工：四支分身交付四件＋PUSH分類器缺陷查出＋升級階梯根因（第一次沒記）",
@@ -7676,6 +7727,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T06:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T05:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -7739,7 +7799,7 @@
           "time": null
         }
       ],
-      "notes": "另有 19 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 18、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 23 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
