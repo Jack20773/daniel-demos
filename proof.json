@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T19:00+08:00",
+  "generated_at": "2026-09-27T20:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6755,50 +6755,85 @@
     },
     {
       "date": "2026-09-27",
-      "commits": 22,
+      "commits": 27,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 11,
-      "discord_replies": 20,
-      "tokens_main_wan": 106.6,
-      "tokens_sub_wan": 152.3,
-      "tokens_sessions": 15,
-      "tokens_msgs": 492,
+      "subagent_runs": 13,
+      "discord_replies": 30,
+      "tokens_main_wan": 141.9,
+      "tokens_sub_wan": 173.7,
+      "tokens_sessions": 17,
+      "tokens_msgs": 613,
       "tokens_by_model": {
-        "opus": 100.2,
-        "sonnet": 98.0,
+        "opus": 148.7,
+        "sonnet": 106.2,
         "haiku": 0.0,
         "fable": 60.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 88.3,
+        "opus": 123.5,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 18.4,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 11.9,
-        "sonnet": 98.0,
+        "opus": 25.2,
+        "sonnet": 106.2,
         "haiku": 0.0,
         "fable": 42.3,
         "other": 0.0
       },
       "score_avg": 4.0,
       "score_low": 0,
-      "score_high": 1,
+      "score_high": 2,
       "scores": [
         {
           "score": 4,
           "time": "2026-09-27 11:01"
+        },
+        {
+          "score": 3,
+          "time": "2026-09-27 17:03"
+        },
+        {
+          "score": 5,
+          "time": "2026-09-27 19:51"
         }
       ],
-      "corrections_new": 1,
+      "corrections_new": 2,
       "highlights": [],
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "daily log 續（20:2x）：尺的兩個數字、N22／N23 三關驗收、自抓假話的根因三條",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "19:59",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "更正一句自己造的假話：feedback_ask_one_at_a_time_with_why.md 一直都在",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "19:56",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "N22／N23 上線：不准自己停下來＋提問一律走 Discord（含 hook 實測擋下來）",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "19:52",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "第卅六棒收工：NEXT 交接＋用詞更正（股癌沒有官方逐字稿）＋全盤分析 skill 回寫",
@@ -6873,6 +6908,15 @@
         },
         {
           "kind": "commit",
+          "text": "新增 eval/：專有名詞正確率量尺（粉絲版 vs 自建版逐字稿）",
+          "project": "股癌",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "19:45",
+          "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
           "text": "batch.py：manifest 壞掉不再讓整條流水線靜默停擺；用詞由「官方版」改為「粉絲版」",
           "project": "股癌",
           "reason": "unpushed",
@@ -6888,6 +6932,15 @@
           "reason_label": "未 push",
           "time": "10:44",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-27T19:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "19:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -7020,7 +7073,7 @@
           "time": null
         }
       ],
-      "notes": "另有 22 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 14、未 push 8）"
+      "notes": "另有 27 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16、未 push 11）"
     }
   ]
 }
