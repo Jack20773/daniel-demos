@@ -1,88 +1,7 @@
 {
-  "generated_at": "2026-09-27T23:01+08:00",
+  "generated_at": "2026-09-28T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-09-14",
-      "commits": 4,
-      "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 2,
-      "discord_replies": 17,
-      "tokens_main_wan": 84.4,
-      "tokens_sub_wan": 31.1,
-      "tokens_sessions": 7,
-      "tokens_msgs": 537,
-      "tokens_by_model": {
-        "opus": 84.4,
-        "sonnet": 31.1,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 84.4,
-        "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 0.0,
-        "sonnet": 31.1,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "score_avg": null,
-      "score_low": 0,
-      "score_high": 0,
-      "scores": [],
-      "corrections_new": 1,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "遠端 9/14 日棒收工（縮減版，上下文 200k）：錨點全掃 69 檔 live>1=0、harvest 判不開票、…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "18:35",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "遠端 9/14 早棒收工（縮減版，上下文 200k）：白工台帳補 7 筆、殘留物盤點 12 項、unverified-…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "10:32",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "BOOT_BRIEF 修剪到 2.5KB 內",
-          "project": "遠端",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "05:10",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "遠端 9/13 深夜棒收工（縮減版，上下文 201k）：教室老師被重開帶走→schtasks 拉起＋預塞信任旗標，23…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "05:09",
-          "repo": "root"
-        }
-      ],
-      "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
-    },
     {
       "date": "2026-09-15",
       "commits": 12,
@@ -6755,24 +6674,24 @@
     },
     {
       "date": "2026-09-27",
-      "commits": 46,
+      "commits": 51,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 25,
-      "discord_replies": 53,
-      "tokens_main_wan": 270.1,
-      "tokens_sub_wan": 317.3,
-      "tokens_sessions": 34,
-      "tokens_msgs": 1451,
+      "subagent_runs": 28,
+      "discord_replies": 61,
+      "tokens_main_wan": 310.0,
+      "tokens_sub_wan": 352.6,
+      "tokens_sessions": 38,
+      "tokens_msgs": 1686,
       "tokens_by_model": {
-        "opus": 317.9,
-        "sonnet": 190.0,
+        "opus": 357.8,
+        "sonnet": 225.2,
         "haiku": 0.0,
         "fable": 79.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 250.6,
+        "opus": 290.5,
         "sonnet": 1.2,
         "haiku": 0.0,
         "fable": 18.4,
@@ -6780,7 +6699,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 67.3,
-        "sonnet": 188.8,
+        "sonnet": 224.0,
         "haiku": 0.0,
         "fable": 61.2,
         "other": 0.0
@@ -6896,6 +6815,42 @@
       ],
       "items_count": 7,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "第四十二棒：更正「被審物已消失」的假前提＋洞 3 登記為已接受殘餘風險",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:55",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十一棒收工：NEXT 交接＋BOOT_BRIEF＋收工-精簡卡點回寫（GUARD 222k，自評重開）",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十一棒：白工台帳全目錄盤點（78 筆／32 筆屬「檢查該紅卻綠」家族）＋普查數字更新＋核准路徑實查",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:29",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十一棒：25 條盲審逐條裁決完成（接受 23／部分接受 1／駁回 0），原方案 A/B/C/E 全作廢",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:09",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "第卅九棒收工：NEXT 交接＋BOOT_BRIEF＋全盤分析 skill 門檻搬進 description",
@@ -7105,6 +7060,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-27T23:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:01",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-27T22:01+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -7270,7 +7234,51 @@
           "time": null
         }
       ],
-      "notes": "另有 39 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24、未 push 15）"
+      "notes": "另有 44 筆 commit 未列（未 push 18、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 26）"
+    },
+    {
+      "date": "2026-09-28",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 0.0,
+      "tokens_sessions": 0,
+      "tokens_msgs": 0,
+      "tokens_by_model": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
