@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T04:00+08:00",
+  "generated_at": "2026-09-28T05:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7238,24 +7238,24 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 21,
+      "commits": 31,
       "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 9,
-      "discord_replies": 36,
-      "tokens_main_wan": 140.1,
-      "tokens_sub_wan": 130.7,
-      "tokens_sessions": 17,
-      "tokens_msgs": 810,
+      "tickets_verify": 1,
+      "subagent_runs": 18,
+      "discord_replies": 42,
+      "tokens_main_wan": 196.9,
+      "tokens_sub_wan": 221.2,
+      "tokens_sessions": 29,
+      "tokens_msgs": 1204,
       "tokens_by_model": {
-        "opus": 155.0,
-        "sonnet": 115.8,
-        "haiku": 0.0,
+        "opus": 211.8,
+        "sonnet": 200.6,
+        "haiku": 5.7,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 140.1,
+        "opus": 196.9,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -7263,8 +7263,8 @@
       },
       "tokens_by_model_sub": {
         "opus": 14.9,
-        "sonnet": 115.8,
-        "haiku": 0.0,
+        "sonnet": 200.6,
+        "haiku": 5.7,
         "fable": 0.0,
         "other": 0.0
       },
@@ -7277,6 +7277,87 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "BOOT.md 第一行補：本檔整份 Read 必被 bigread hook 攔，改道三條路對它全是白花錢，正確做法是…",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:55",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十九棒收工：NEXT 交接＋BOOT_BRIEF＋收工-精簡 補第三個正向證據",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:47",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "未驗宣稱台帳 N/X 補驗完成＋量尺的寫死數字改為即時計算（同一機制今日第 3、4 次）",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "4a-GUARD 更正：開機基線是變動成本不是固定成本（實測 137k→105k）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:30",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十八棒收工：NEXT 交接＋BOOT_BRIEF＋4a-GUARD 補「開機基線 ~80k」",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:25",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "白工台帳序 81：本台帳自己漏登 8 筆，09-21～09-23 三天完全空窗",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:19",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "未驗宣稱台帳欄位回寫 13 處＋修掉量尺自己印的過期警語；殘留物全目錄盤點落檔",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:18",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "台帳投信說明補齊 op↔欄位名對照：修掉踩過 7 次的同一個坑",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:14",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十七棒收工：EP687 校稿清單硬對照組重驗＋NEXT 交接＋BOOT_BRIEF",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:02",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "第四十六棒收工：財經逐字稿專家首份 EP687 校稿清單＋NEXT 交接＋BOOT_BRIEF",
@@ -7432,6 +7513,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T04:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T03:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -7477,7 +7567,7 @@
           "time": null
         }
       ],
-      "notes": "另有 21 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10、未 push 10、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 31 筆 commit 未列（未 push 16、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 14、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
