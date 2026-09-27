@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T11:00+08:00",
+  "generated_at": "2026-09-27T12:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6755,24 +6755,24 @@
     },
     {
       "date": "2026-09-27",
-      "commits": 12,
+      "commits": 15,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 9,
-      "discord_replies": 15,
-      "tokens_main_wan": 90.7,
-      "tokens_sub_wan": 127.3,
-      "tokens_sessions": 12,
-      "tokens_msgs": 389,
+      "subagent_runs": 11,
+      "discord_replies": 20,
+      "tokens_main_wan": 106.6,
+      "tokens_sub_wan": 152.3,
+      "tokens_sessions": 15,
+      "tokens_msgs": 492,
       "tokens_by_model": {
-        "opus": 84.2,
-        "sonnet": 73.0,
+        "opus": 100.2,
+        "sonnet": 98.0,
         "haiku": 0.0,
         "fable": 60.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 72.3,
+        "opus": 88.3,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 18.4,
@@ -6780,20 +6780,34 @@
       },
       "tokens_by_model_sub": {
         "opus": 11.9,
-        "sonnet": 73.0,
+        "sonnet": 98.0,
         "haiku": 0.0,
         "fable": 42.3,
         "other": 0.0
       },
-      "score_avg": null,
+      "score_avg": 4.0,
       "score_low": 0,
-      "score_high": 0,
-      "scores": [],
+      "score_high": 1,
+      "scores": [
+        {
+          "score": 4,
+          "time": "2026-09-27 11:01"
+        }
+      ],
       "corrections_new": 1,
       "highlights": [],
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "第卅六棒收工：NEXT 交接＋用詞更正（股癌沒有官方逐字稿）＋全盤分析 skill 回寫",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:06",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "語音誠實化兩支防呆 + line-booking DB 全盤分析（含盲審與逐條裁決）",
@@ -6859,12 +6873,30 @@
         },
         {
           "kind": "commit",
+          "text": "batch.py：manifest 壞掉不再讓整條流水線靜默停擺；用詞由「官方版」改為「粉絲版」",
+          "project": "股癌",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:06",
+          "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
           "text": "Track1 上線：batch.py 選逐字稿時優先用官方版，不再靠 glob 隨機決定",
           "project": "股癌",
           "reason": "unpushed",
           "reason_label": "未 push",
           "time": "10:44",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-27T11:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -6925,7 +6957,7 @@
           "time": null
         }
       ],
-      "notes": "另有 12 筆 commit 未列（未 push 7、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
+      "notes": "另有 15 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7、未 push 8）"
     }
   ]
 }
