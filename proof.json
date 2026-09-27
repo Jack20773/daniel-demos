@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T01:01+08:00",
+  "generated_at": "2026-09-28T02:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7238,24 +7238,24 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 10,
+      "commits": 14,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 3,
-      "discord_replies": 4,
-      "tokens_main_wan": 34.3,
-      "tokens_sub_wan": 50.0,
-      "tokens_sessions": 7,
-      "tokens_msgs": 309,
+      "subagent_runs": 6,
+      "discord_replies": 12,
+      "tokens_main_wan": 63.9,
+      "tokens_sub_wan": 90.3,
+      "tokens_sessions": 11,
+      "tokens_msgs": 520,
       "tokens_by_model": {
-        "opus": 34.3,
-        "sonnet": 50.0,
+        "opus": 63.9,
+        "sonnet": 90.3,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 34.3,
+        "opus": 63.9,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -7263,7 +7263,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 50.0,
+        "sonnet": 90.3,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -7277,6 +7277,33 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "第四十四棒：queue_ticket 的佔位句判定改 import board_io（清掉同一個 bug 的最後一份複…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:56",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "修 board_io.done_when_is_placeholder 無界字串比對誤判缺陷（第四十四棒）",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:37",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十三棒收工：NEXT 交接＋BOOT_BRIEF＋BOOT 新增 4a-GUARD 肥度公式（GUARD 212k…",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:22",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "第四十三棒：ledger_sweep 選取器修根因（不再把執行者動不了的票挑給它做）＋量尺落版控",
@@ -7360,6 +7387,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T01:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:01",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T00:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -7368,8 +7404,13 @@
           "repo": "daniel-demos"
         }
       ],
-      "selfreport": [],
-      "notes": "另有 10 筆 commit 未列（未 push 7、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
+      "selfreport": [
+        {
+          "text": "4a-GUARD 公式第一次真的生效（正向證據，已回寫 收工-精簡/SKILL.md）：本棒量了 4 次（75k→113k→140k→160k），收工是被公式促成的，不是被 harness 看門狗 200k/250k 叫醒的。上一棒把它從 ",
+          "time": null
+        }
+      ],
+      "notes": "另有 14 筆 commit 未列（未 push 9、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
     }
   ]
 }
