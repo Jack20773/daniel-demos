@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T10:06+08:00",
+  "generated_at": "2026-09-27T11:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6755,34 +6755,34 @@
     },
     {
       "date": "2026-09-27",
-      "commits": 7,
+      "commits": 12,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 4,
-      "tokens_main_wan": 47.5,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 2,
-      "tokens_msgs": 51,
+      "subagent_runs": 9,
+      "discord_replies": 15,
+      "tokens_main_wan": 90.7,
+      "tokens_sub_wan": 127.3,
+      "tokens_sessions": 12,
+      "tokens_msgs": 389,
       "tokens_by_model": {
-        "opus": 29.2,
-        "sonnet": 0.0,
+        "opus": 84.2,
+        "sonnet": 73.0,
         "haiku": 0.0,
-        "fable": 18.4,
+        "fable": 60.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 29.2,
+        "opus": 72.3,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 18.4,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 0.0,
-        "sonnet": 0.0,
+        "opus": 11.9,
+        "sonnet": 73.0,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 42.3,
         "other": 0.0
       },
       "score_avg": null,
@@ -6794,6 +6794,33 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "語音誠實化兩支防呆 + line-booking DB 全盤分析（含盲審與逐條裁決）",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "10:58",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "ledger_sweep: parse_date 改吃完整 ISO-8601，修好「一張票靜默從待辦機制消失」",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "10:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第卅六棒：卅四棒「新疑點」結案為假警報（daily_run 是週一～五排程，週六本來就不跑）；Gateway「已解決」…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "10:13",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "卅四棒收工交接：股票那件事已解決（自動重啟證實生效），他關機",
@@ -6829,6 +6856,24 @@
           "reason_label": "未 push",
           "time": "01:08",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "Track1 上線：batch.py 選逐字稿時優先用官方版，不再靠 glob 隨機決定",
+          "project": "股癌",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "10:44",
+          "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-27T10:06+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "10:06",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -6880,7 +6925,7 @@
           "time": null
         }
       ],
-      "notes": "另有 7 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4、未 push 3）"
+      "notes": "另有 12 筆 commit 未列（未 push 7、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
     }
   ]
 }
