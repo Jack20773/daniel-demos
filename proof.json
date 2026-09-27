@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T00:00+08:00",
+  "generated_at": "2026-09-28T01:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7238,24 +7238,24 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 0,
+      "commits": 10,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 0.0,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 0,
-      "tokens_msgs": 0,
+      "subagent_runs": 3,
+      "discord_replies": 4,
+      "tokens_main_wan": 34.3,
+      "tokens_sub_wan": 50.0,
+      "tokens_sessions": 7,
+      "tokens_msgs": 309,
       "tokens_by_model": {
-        "opus": 0.0,
-        "sonnet": 0.0,
+        "opus": 34.3,
+        "sonnet": 50.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
+        "opus": 34.3,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -7263,7 +7263,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 0.0,
+        "sonnet": 50.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -7276,9 +7276,100 @@
       "highlights": [],
       "items": [],
       "items_count": 0,
-      "skipped": [],
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "第四十三棒：ledger_sweep 選取器修根因（不再把執行者動不了的票挑給它做）＋量尺落版控",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:46",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十三棒：daily log 續 1（5 bullet 電報體）",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:45",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十三棒：.gitignore ⑩-b 的「17 支」就地對帳標註（今天對不上任何現存母體）",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:38",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十三棒：錨點階段 1＋2 落地（63 條斷言全綠）＋.gitignore ⑩-c 救回 4 支被靜默吞掉的閘門測試",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十三棒：five-unanswered-q 子題①暫定決定（台股報告不排程，維持手動）",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十三棒：白工台帳序 80（掃描器指向動不了的凍結票）＋該票 note 落地",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:30",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十二棒收工：NEXT 交接＋BOOT_BRIEF＋轉錄甲案交棒（GUARD 247k，自評重開）",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:16",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "戰情室舊資料揭露：階段 3＋4 完成（A 橫幅＋B 心跳條三態），第 5 階段仍卡登入",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第四十二棒：階段 0 fixture 表落地（23 格）＋現況成績單＋轉錄專有名詞計畫",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:04",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T00:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:00",
+          "repo": "daniel-demos"
+        }
+      ],
       "selfreport": [],
-      "notes": ""
+      "notes": "另有 10 筆 commit 未列（未 push 7、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
     }
   ]
 }
