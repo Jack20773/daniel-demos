@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T19:00+08:00",
+  "generated_at": "2026-09-28T20:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,24 +7321,24 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 86,
+      "commits": 87,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 65,
-      "discord_replies": 158,
-      "tokens_main_wan": 675.8,
-      "tokens_sub_wan": 673.3,
-      "tokens_sessions": 124,
-      "tokens_msgs": 3427,
+      "subagent_runs": 67,
+      "discord_replies": 169,
+      "tokens_main_wan": 680.9,
+      "tokens_sub_wan": 677.3,
+      "tokens_sessions": 126,
+      "tokens_msgs": 3476,
       "tokens_by_model": {
-        "opus": 764.7,
+        "opus": 769.8,
         "sonnet": 470.7,
-        "haiku": 72.4,
+        "haiku": 76.4,
         "fable": 41.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 585.7,
+        "opus": 590.8,
         "sonnet": 0.0,
         "haiku": 48.8,
         "fable": 41.3,
@@ -7347,7 +7347,7 @@
       "tokens_by_model_sub": {
         "opus": 179.0,
         "sonnet": 470.7,
-        "haiku": 23.6,
+        "haiku": 27.6,
         "fable": 0.0,
         "other": 0.0
       },
@@ -8087,6 +8087,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T19:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "19:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T18:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8267,7 +8276,7 @@
           "time": null
         }
       ],
-      "notes": "另有 47 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 46、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 48 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 47、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
