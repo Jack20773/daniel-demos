@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T17:00+08:00",
+  "generated_at": "2026-09-28T18:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,33 +7321,33 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 75,
+      "commits": 83,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 57,
-      "discord_replies": 116,
-      "tokens_main_wan": 550.8,
-      "tokens_sub_wan": 598.2,
-      "tokens_sessions": 83,
-      "tokens_msgs": 2934,
+      "subagent_runs": 61,
+      "discord_replies": 140,
+      "tokens_main_wan": 605.6,
+      "tokens_sub_wan": 650.1,
+      "tokens_sessions": 98,
+      "tokens_msgs": 3198,
       "tokens_by_model": {
-        "opus": 630.3,
+        "opus": 730.3,
         "sonnet": 470.7,
-        "haiku": 12.5,
-        "fable": 35.5,
+        "haiku": 18.7,
+        "fable": 36.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 515.3,
+        "opus": 566.9,
         "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 35.5,
+        "haiku": 2.7,
+        "fable": 36.1,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 115.0,
+        "opus": 163.4,
         "sonnet": 470.7,
-        "haiku": 12.5,
+        "haiku": 16.0,
         "fable": 0.0,
         "other": 0.0
       },
@@ -7745,10 +7745,88 @@
           "time": "16:26",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第六十五棒：模型預設升 Opus 5.5（三處）＋白工台帳補登＋又仟接 Discord 推進",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b622bf5678177e18b08a3b26de0ce8d45e46dab2",
+          "evidence_label": "commit b622bf5",
+          "verified": true,
+          "time": "17:02",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第六十五棒：覆寫開機簡報（又仟接 Discord 最高優先、模型已升 5.5、他在催速度）",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b1236ba6f04c6abadfecba3fb4c96b9cf78f8a50",
+          "evidence_label": "commit b1236ba",
+          "verified": true,
+          "time": "17:08",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "遠端 wrapper 改檔後自動重載＋一次性換掉 9/27 起跑的舊 wrapper（5.5 沒生效的根因）",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cb6190f9477846c2d6a22bf4d7769352fa9fdc3e",
+          "evidence_label": "commit cb6190f",
+          "verified": true,
+          "time": "17:18",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "遠端重開提速：第 2 輪就回 Discord＋BOOT.md 瘦身到 6.4k 字元＋NEXT 40 行硬上限",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1bf03ea571e4935178912536bfa2a2ed3ff01189",
+          "evidence_label": "commit 1bf03ea",
+          "verified": true,
+          "time": "17:29",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "開機量尺：每次重開記秒數與 token 並報給他（BOOT 第 6 步＋boot_metrics.py）",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f383072c125f91df2bbb9fa1e963a9d741b45041",
+          "evidence_label": "commit f383072",
+          "verified": true,
+          "time": "17:32",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 32,
+      "items_count": 37,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "開機 token 拆帳腳本＋稽核報告（81,423 拆帳對上差 0）",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "17:53",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第六十六棒收工：交接＋開機簡報（下一棒＝重開實測：量尺＋5.5 驗證）",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "17:33",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "第六十二棒收工：AI 影片兩句補查完給定論（改口一句）＋又仟接 Discord 推進到第一步",
@@ -7985,6 +8063,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T17:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "17:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T16:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8147,7 +8234,7 @@
           "time": null
         }
       ],
-      "notes": "另有 43 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 42、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 46 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 44、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
