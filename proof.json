@@ -1,206 +1,7 @@
 {
-  "generated_at": "2026-09-28T23:00+08:00",
+  "generated_at": "2026-09-29T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-09-15",
-      "commits": 12,
-      "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 10,
-      "discord_replies": 30,
-      "tokens_main_wan": 326.7,
-      "tokens_sub_wan": 93.3,
-      "tokens_sessions": 69,
-      "tokens_msgs": 584,
-      "tokens_by_model": {
-        "opus": 409.0,
-        "sonnet": 11.1,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 315.7,
-        "sonnet": 11.1,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 93.3,
-        "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "score_avg": 4.0,
-      "score_low": 0,
-      "score_high": 3,
-      "scores": [
-        {
-          "score": 4,
-          "time": "2026-09-15 00:26"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-15 00:28"
-        },
-        {
-          "score": 4,
-          "time": "2026-09-15 00:41"
-        },
-        {
-          "score": 3,
-          "time": "2026-09-15 01:27"
-        }
-      ],
-      "corrections_new": 0,
-      "highlights": [
-        "本機每日排程週日/四自動寄信（丹尼爾 2026-09-15 裁決「打開」）",
-        "業配關卡拿掉「合作」（丹尼爾 2026-09-15 裁決）",
-        "gooaye-site：股癌回測站主線 v1 首次進 git（骨架＋固定天期回測＋契約驗證；out/ 不入版）"
-      ],
-      "items": [
-        {
-          "kind": "commit",
-          "text": "本機每日排程週日/四自動寄信（丹尼爾 2026-09-15 裁決「打開」）",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/be67ed523f521dd4afc9fdbaa90959748fe22c99",
-          "evidence_label": "commit be67ed5",
-          "verified": true,
-          "time": "00:33",
-          "plain": "股癌專案的電腦被設定成每週日和週四自動發信，丹尼爾就不用每次手動寄，系統會在對的時間自己發送。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "業配關卡拿掉「合作」（丹尼爾 2026-09-15 裁決）",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/609973b8170616f088b5c2d7b4d8dee243d1bd60",
-          "evidence_label": "commit 609973b",
-          "verified": true,
-          "time": "00:37",
-          "plain": "把股癌遊戲裡業配那一關移掉合作功能，因為丹尼爾覺得不需要。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "gooaye-site：股癌回測站主線 v1 首次進 git（骨架＋固定天期回測＋契約驗證；out/ 不入版）",
-          "project": "股癌回測",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0e19ec2ba44ad9778df785558bfa071259b8d890",
-          "evidence_label": "commit 0e19ec2",
-          "verified": true,
-          "time": "00:42",
-          "plain": "把股癌回測站第一版的程式存進共用記錄本，包括架構、回測計算和驗證，這樣以後改動有歷史可查，大家一起改也不會搞混。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "加 .nojekyll：讓 _embed/_shots 底線目錄能被 Pages 服務",
-          "project": "工作證明頁",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/54c16c16f098cd89e32ec112678955715656b3f1",
-          "evidence_label": "commit 54c16c1",
-          "verified": true,
-          "time": "01:01",
-          "plain": "加了一個特殊檔案，告訴網站要公開底線開頭的文件夾，這樣圖片才能被看到。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "三份「回測併進股癌網站」demo：A 貼在訊號旁／B 規律與名單在最前面／C 獨立分頁",
-          "project": "工作證明頁",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/4c798fcca0ef7a8f451267afc37fd914384f595d",
-          "evidence_label": "commit 4c798fc",
-          "verified": true,
-          "time": "01:01",
-          "plain": "做了三種不同的版本：一種把它貼在旁邊、一種把重要東西放最前面、一種放在另外一頁，要試試看哪一種最好用。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "回測頁併進 GitHub Pages 站（backtest.html），每日排程自動更新",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/e080abbe32bdbc7d003f23788c26950abd9859e7",
-          "evidence_label": "commit e080abb",
-          "verified": true,
-          "time": "01:09",
-          "plain": "把回測結果的網頁放到網路上（backtest.html），每天自動更新，這樣不用手動改，網站永遠都是最新的。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "gooaye-site：加規律挖掘＋留出驗證（patterns.py／pattern 契約／頁面第一屏改規律→名單→沒…",
-          "project": "股癌回測",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/558055e81bf5dea1f153810fd7c45f3cb438062a",
-          "evidence_label": "commit 558055e",
-          "verified": true,
-          "time": "01:20",
-          "plain": "程式改成可以自動發現交易規律，並且保留驗證功能，這樣我們就能確認找到的規律是否真的有用。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "backtest.html: 規律挖掘版（180 候選／1 通過／名單 0，含負對照說明）",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/e2a2d2969145884f059ebecccc113bcd44a931dc",
-          "evidence_label": "commit e2a2d29",
-          "verified": true,
-          "time": "01:21",
-          "plain": "改好測試股票規律的網頁，試試 180 個可能的買賣方法，發現只有 1 個真的有效。這樣我們就能知道哪些方法管用、哪些不管用。",
-          "plain_ok": true
-        }
-      ],
-      "items_count": 8,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "遠端 9/15 凌晨棒收工（縮減版，上下文 203k）：4 分＋3 分糾正入記憶、股癌回測併站水管通、規律第一輪 1/…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "01:31",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "9/15 凌晨棒補：合作字拿掉已推、他兩題交下一棒；BOOT_BRIEF 更新",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "00:37",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "遠端 9/15 凌晨棒收工（縮減版，上下文 213k）：股癌寄信 8/30 起漏 4 期已接回（週日/四）、補 goo…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "00:35",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "init",
-          "project": "工作證明頁",
-          "reason": "no_coauthor",
-          "reason_label": "無 Co-Authored-By: Claude",
-          "time": "00:48",
-          "repo": "daniel-demos"
-        }
-      ],
-      "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3、無 Co-Authored-By: Claude 1）"
-    },
     {
       "date": "2026-09-16",
       "commits": 9,
@@ -7321,43 +7122,47 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 95,
+      "commits": 102,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 91,
-      "discord_replies": 247,
-      "tokens_main_wan": 769.4,
-      "tokens_sub_wan": 738.9,
-      "tokens_sessions": 156,
-      "tokens_msgs": 4128,
+      "subagent_runs": 96,
+      "discord_replies": 292,
+      "tokens_main_wan": 802.7,
+      "tokens_sub_wan": 783.8,
+      "tokens_sessions": 162,
+      "tokens_msgs": 4407,
       "tokens_by_model": {
-        "opus": 850.9,
-        "sonnet": 512.5,
+        "opus": 906.1,
+        "sonnet": 529.8,
         "haiku": 85.0,
-        "fable": 59.7,
+        "fable": 65.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 660.8,
+        "opus": 688.3,
         "sonnet": 0.0,
         "haiku": 48.8,
-        "fable": 59.7,
+        "fable": 65.6,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 190.1,
-        "sonnet": 512.5,
+        "opus": 217.8,
+        "sonnet": 529.8,
         "haiku": 36.2,
         "fable": 0.0,
         "other": 0.0
       },
-      "score_avg": 3.0,
+      "score_avg": 3.5,
       "score_low": 0,
-      "score_high": 0,
+      "score_high": 1,
       "scores": [
         {
           "score": 3,
           "time": "2026-09-28 21:20"
+        },
+        {
+          "score": 4,
+          "time": "2026-09-28 23:40"
         }
       ],
       "corrections_new": 1,
@@ -7846,17 +7651,50 @@
           "time": "21:02",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 40,
-      "skipped": [
+        },
         {
           "kind": "commit",
           "text": "米米自動重開安裝包（mimi_kit，實測通過）＋給米米的 Discord 基本功",
           "project": "橋樑",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/29dcdcf5089dff3c96eb79c941e44c8e3f72f466",
+          "evidence_label": "commit 29dcdcf",
+          "verified": true,
+          "time": "22:25",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "交接修正：股癌詳細版連結＝沒有，不自開工單；新規則 demo 一個最佳版、決定完作廢",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2b8f80a5a7b0522a337236fb908b7a8e8cc8b21b",
+          "evidence_label": "commit 2b8f80a",
+          "verified": true,
+          "time": "23:44",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 42,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "新增紅線 N24：不准照猜的去做（一問一答、依回答調整下一題、每題附為什麼問）",
+          "project": "制度",
           "reason": "unpushed",
           "reason_label": "未 push",
-          "time": "22:25",
+          "time": "23:49",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第七十一棒收工：米米自動重開裝完（19 秒）、影片轉錄預設＋複製網址鈕上線、模型查證維持 large-v3、股癌計畫一…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:43",
           "repo": "root"
         },
         {
@@ -8140,6 +7978,42 @@
         },
         {
           "kind": "commit",
+          "text": "保存模型比對腳本與結果（large-v3／turbo／Qwen3-ASR，日文 CER），測試音檔不入庫",
+          "project": "video-transcribe",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "23:36",
+          "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "模型選項文字對齊：large-v3 標預設、turbo 拿掉「預設」；靜音過濾／品質保護註解改為預設勾選",
+          "project": "video-transcribe",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "23:34",
+          "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "預設值改為日文＋品質優先模型＋品質勾選框全開；佇列新增「複製全部網址」按鈕",
+          "project": "video-transcribe",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "23:31",
+          "repo": "video-transcribe"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T23:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T22:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8368,7 +8242,51 @@
           "time": null
         }
       ],
-      "notes": "另有 55 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 53、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 60 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 55、repo 沒有 GitHub remote（沒有可點連結） 4）"
+    },
+    {
+      "date": "2026-09-29",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 1.3,
+      "tokens_sessions": 2,
+      "tokens_msgs": 4,
+      "tokens_by_model": {
+        "opus": 0.4,
+        "sonnet": 0.9,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.4,
+        "sonnet": 0.9,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
