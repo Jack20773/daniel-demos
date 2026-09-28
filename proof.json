@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T02:00+08:00",
+  "generated_at": "2026-09-29T03:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8249,32 +8249,32 @@
     },
     {
       "date": "2026-09-29",
-      "commits": 13,
+      "commits": 23,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 14,
-      "discord_replies": 61,
-      "tokens_main_wan": 57.9,
-      "tokens_sub_wan": 165.9,
-      "tokens_sessions": 21,
-      "tokens_msgs": 820,
+      "subagent_runs": 20,
+      "discord_replies": 62,
+      "tokens_main_wan": 63.2,
+      "tokens_sub_wan": 215.3,
+      "tokens_sessions": 27,
+      "tokens_msgs": 1073,
       "tokens_by_model": {
-        "opus": 113.0,
-        "sonnet": 93.3,
+        "opus": 128.6,
+        "sonnet": 132.3,
         "haiku": 0.0,
-        "fable": 17.4,
+        "fable": 17.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 51.0,
+        "opus": 56.1,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 6.9,
+        "fable": 7.1,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 62.0,
-        "sonnet": 93.3,
+        "opus": 72.5,
+        "sonnet": 132.3,
         "haiku": 0.0,
         "fable": 10.5,
         "other": 0.0
@@ -8428,6 +8428,78 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "修戰情室監看殭屍：boot_warroom_watch.sh 只准一支活著（最新的接手，舊的自己結束）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:33",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "修正 correction-outcome-based-monitoring 的 done_when：股癌週報 Ema…",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:29",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "糾正台帳補兩張：purpose-first-method-self 改觀察期驗收、outcome-based-moni…",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:28",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "修戰情室看板 warroom.html 假紅：內容去重讓 generated_at 停住，加 60 分鐘心跳強制部署",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "新增手機版成果紅綠燈首頁 demo：讀 outcome_check.py --json 產出單頁 HTML",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:16",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "新增 ad_guard 誤擋統計腳本：09-20~09-28 批次逐筆人工判讀，誤擋率 90%",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:06",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "outcome_check.py 對照組測試改留版控：新增 outcome_check_controls.py",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:04",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "修 outcome_check.py 兩個誤判：額度日報假紅、ai-trader 假綠",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:02",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "第七十四棒收工：N25 目的門鈴、全盤稽核、結果導向檢查器；交接 07:20 報表與 ai-trader 修復",
           "project": "遠端",
           "reason": "automated",
@@ -8455,6 +8527,24 @@
         },
         {
           "kind": "commit",
+          "text": "新增成果紅綠燈首頁 demo（手機版靜態頁）",
+          "project": "工作證明頁",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:16",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-29T02:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-29T01:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8473,7 +8563,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 5 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
+      "notes": "另有 15 筆 commit 未列（未 push 9、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
     }
   ]
 }
