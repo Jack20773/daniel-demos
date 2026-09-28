@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T22:00+08:00",
+  "generated_at": "2026-09-28T23:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,33 +7321,33 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 92,
+      "commits": 95,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 87,
-      "discord_replies": 224,
-      "tokens_main_wan": 746.7,
-      "tokens_sub_wan": 715.9,
-      "tokens_sessions": 151,
-      "tokens_msgs": 3915,
+      "subagent_runs": 91,
+      "discord_replies": 247,
+      "tokens_main_wan": 769.4,
+      "tokens_sub_wan": 738.9,
+      "tokens_sessions": 156,
+      "tokens_msgs": 4128,
       "tokens_by_model": {
-        "opus": 817.4,
-        "sonnet": 504.6,
-        "haiku": 81.0,
-        "fable": 59.5,
+        "opus": 850.9,
+        "sonnet": 512.5,
+        "haiku": 85.0,
+        "fable": 59.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 638.4,
+        "opus": 660.8,
         "sonnet": 0.0,
         "haiku": 48.8,
-        "fable": 59.5,
+        "fable": 59.7,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 179.0,
-        "sonnet": 504.6,
-        "haiku": 32.2,
+        "opus": 190.1,
+        "sonnet": 512.5,
+        "haiku": 36.2,
         "fable": 0.0,
         "other": 0.0
       },
@@ -7852,6 +7852,24 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "米米自動重開安裝包（mimi_kit，實測通過）＋給米米的 Discord 基本功",
+          "project": "橋樑",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:25",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第七十棒收工：米米⇄所羅門雙向放行（兩邊外掛補丁），重開生效，交接",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "22:02",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "第六十九棒收工：又仟米米接通（群組回話）、第三方教學一次一步＋灰框格式糾正、交接",
           "project": "記憶",
           "reason": "automated",
@@ -8122,6 +8140,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T22:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "22:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T21:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8331,9 +8358,17 @@
         {
           "text": "21:44 米米在群組回「有接上了」：解法＝交接→Ctrl+C→cd \"C:\\Users\\yiich\\我的AI助理\"; claude --channels plugin:discord@claude-plugins-official --d",
           "time": null
+        },
+        {
+          "text": "米米⇄所羅門雙向實測通過：22:03:46 在又仟頻道 @米米（1554131506665099367）→ 22:03:48 米米回「收到」並 @ 我（1554131518304026676），以 <channel user=米米> 事件推",
+          "time": null
+        },
+        {
+          "text": "22:52 米米自動重開全部裝完：又仟在電腦前口頭確認通行證 → 附檔 12 個 → 第 0 步查出 mimi.bat→cc-launcher.ps1（無 skip 旗標、靠 settings.json bypass；開機帶 cc，判定可繼",
+          "time": null
         }
       ],
-      "notes": "另有 52 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 51、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 55 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 53、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
