@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T15:00+08:00",
+  "generated_at": "2026-09-28T16:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,33 +7321,33 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 64,
+      "commits": 71,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 50,
-      "discord_replies": 93,
-      "tokens_main_wan": 459.1,
-      "tokens_sub_wan": 548.9,
-      "tokens_sessions": 72,
-      "tokens_msgs": 2607,
+      "subagent_runs": 52,
+      "discord_replies": 101,
+      "tokens_main_wan": 498.0,
+      "tokens_sub_wan": 569.3,
+      "tokens_sessions": 76,
+      "tokens_msgs": 2735,
       "tokens_by_model": {
-        "opus": 547.9,
-        "sonnet": 430.1,
-        "haiku": 5.7,
-        "fable": 24.3,
+        "opus": 578.3,
+        "sonnet": 445.2,
+        "haiku": 9.2,
+        "fable": 34.8,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 434.8,
+        "opus": 463.3,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 24.3,
+        "fable": 34.8,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 113.1,
-        "sonnet": 430.1,
-        "haiku": 5.7,
+        "opus": 115.0,
+        "sonnet": 445.2,
+        "haiku": 9.2,
         "fable": 0.0,
         "other": 0.0
       },
@@ -7355,7 +7355,7 @@
       "score_low": 0,
       "score_high": 0,
       "scores": [],
-      "corrections_new": 0,
+      "corrections_new": 1,
       "highlights": [
         "第四十二棒：階段 0 fixture 表落地（23 格）＋現況成績單＋轉錄專有名詞計畫",
         "戰情室舊資料揭露：階段 3＋4 完成（A 橫幅＋B 心跳條三態），第 5 階段仍卡登入",
@@ -7685,10 +7685,73 @@
           "time": "14:50",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "note",
+          "text": "E1 完成並推上 stock-signal d59d20c（15:2x，已 push，master...origin/master 同步）：挑錯員（2026-09-28_EP687_E1挑錯報告.md）要求先修兩點（校稿檔印 sha256、",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/d59d20cc3f7ae3c645e5ec192c9e79fa847a5a51",
+          "evidence_label": "commit d59d20c",
+          "verified": true,
+          "time": "15:02",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "交接補一條可立即執行的並行防撞規則（偵測到 peer 之後要做什麼）",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/fb2d955ac9adcdf627507947e6902996a06c0858",
+          "evidence_label": "commit fb2d955",
+          "verified": true,
+          "time": "15:16",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第六十棒·平行 session 續：並行撞車開單、他丟帳務截圖已回、E1 已完成更正",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/86a7cf75ffa46847d0b5d48efcc52e84298fc73b",
+          "evidence_label": "commit 86a7cf7",
+          "verified": true,
+          "time": "15:52",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 27,
+      "items_count": 30,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "額度查帳：新增 quota_month_rollup.py（跨日報彙總，附母體與對照組）",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "15:58",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第六十棒·平行重工 session 收工：AI 影片市調三份交叉驗證＋UTC 時間戳陷阱已修",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:13",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第六十棒收工：EP687 六題全完成（E1 上線 stock-signal d59d20c）；AI 影片市場調查交付＋…",
+          "project": "看板",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:07",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "第五十九棒收工：EP687 六題做完五題，E1 查出量尺預設值是回歸對照組不可覆寫；AI 影片評估問到第4題被他改方向…",
@@ -7889,6 +7952,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T15:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T14:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8033,7 +8105,7 @@
           "time": null
         }
       ],
-      "notes": "另有 37 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 36、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 41 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 39、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
