@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T01:00+08:00",
+  "generated_at": "2026-09-29T02:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8249,39 +8249,39 @@
     },
     {
       "date": "2026-09-29",
-      "commits": 9,
+      "commits": 13,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 9,
-      "discord_replies": 47,
-      "tokens_main_wan": 36.0,
-      "tokens_sub_wan": 96.7,
-      "tokens_sessions": 15,
-      "tokens_msgs": 517,
+      "subagent_runs": 14,
+      "discord_replies": 61,
+      "tokens_main_wan": 57.9,
+      "tokens_sub_wan": 165.9,
+      "tokens_sessions": 21,
+      "tokens_msgs": 820,
       "tokens_by_model": {
-        "opus": 50.8,
-        "sonnet": 81.3,
+        "opus": 113.0,
+        "sonnet": 93.3,
         "haiku": 0.0,
-        "fable": 0.5,
+        "fable": 17.4,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 35.4,
+        "opus": 51.0,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 0.5,
+        "fable": 6.9,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 15.4,
-        "sonnet": 81.3,
+        "opus": 62.0,
+        "sonnet": 93.3,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 10.5,
         "other": 0.0
       },
-      "score_avg": 3.4,
+      "score_avg": 4.11,
       "score_low": 1,
-      "score_high": 3,
+      "score_high": 7,
       "scores": [
         {
           "score": 4,
@@ -8302,6 +8302,22 @@
         {
           "score": 5,
           "time": "2026-09-29 01:00"
+        },
+        {
+          "score": 5,
+          "time": "2026-09-29 01:03"
+        },
+        {
+          "score": 5,
+          "time": "2026-09-29 01:13"
+        },
+        {
+          "score": 5,
+          "time": "2026-09-29 01:18"
+        },
+        {
+          "score": 5,
+          "time": "2026-09-29 01:27"
         }
       ],
       "corrections_new": 0,
@@ -8370,17 +8386,53 @@
           "time": "00:20",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 5,
-      "skipped": [
+        },
         {
           "kind": "commit",
           "text": "新增結果導向檢查器（outcome_check.py）：只看成果本身日期，過期即紅燈",
           "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7261388e09d3436265519df9ed529adf84266717",
+          "evidence_label": "commit 7261388",
+          "verified": true,
           "time": "00:46",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "全盤目的稽核 2026-09-29：母體 300 件逐件留/修/收（唯讀，腳本＋報告）",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/65a9a449e39d5ec4f6101a62bcda23bfb05eaa90",
+          "evidence_label": "commit 65a9a44",
+          "verified": true,
+          "time": "01:36",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "N25 目的先問、做法自決：門鈴 hook＋lint R12 防拆＋每日分數監看",
+          "project": "hook",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a711bf5f5a8adff6545ee5efb5b598f68af2e33b",
+          "evidence_label": "commit a711bf5",
+          "verified": true,
+          "time": "01:53",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 8,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "第七十四棒收工：N25 目的門鈴、全盤稽核、結果導向檢查器；交接 07:20 報表與 ai-trader 修復",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:54",
           "repo": "root"
         },
         {
@@ -8403,6 +8455,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-29T01:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-29T00:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8412,7 +8473,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
+      "notes": "另有 5 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
     }
   ]
 }
