@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T08:00+08:00",
+  "generated_at": "2026-09-28T09:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,31 +7321,31 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 43,
+      "commits": 46,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 32,
-      "discord_replies": 55,
-      "tokens_main_wan": 321.4,
-      "tokens_sub_wan": 386.9,
-      "tokens_sessions": 49,
-      "tokens_msgs": 1967,
+      "subagent_runs": 33,
+      "discord_replies": 56,
+      "tokens_main_wan": 336.5,
+      "tokens_sub_wan": 417.3,
+      "tokens_sessions": 51,
+      "tokens_msgs": 2086,
       "tokens_by_model": {
-        "opus": 372.5,
+        "opus": 418.0,
         "sonnet": 330.1,
         "haiku": 5.7,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 321.4,
+        "opus": 336.5,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 51.1,
+        "opus": 81.5,
         "sonnet": 330.1,
         "haiku": 5.7,
         "fable": 0.0,
@@ -7589,10 +7589,31 @@
           "time": "07:35",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第五十六棒：staleprop-gate 四個最小上線條件修完（仍未掛 settings.json）",
+          "project": "hook",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/95ae4557d29f08b4132d8a589cc05601d329115b",
+          "evidence_label": "commit 95ae455",
+          "verified": true,
+          "time": "08:11",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 19,
+      "items_count": 20,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "第五十六棒收工：staleprop-gate 第二輪對抗審查裁決不可掛（路線本身要換）＋NEXT 交接＋BOOT_BR…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "08:58",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "收工-精簡 第4步補：skill 回寫要用 002_skills/ 路徑 add，.claude/ 被 gitigno…",
@@ -7739,6 +7760,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T08:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "08:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T07:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -7820,7 +7850,7 @@
           "time": null
         }
       ],
-      "notes": "另有 24 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 23、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 26 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
