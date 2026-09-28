@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T21:00+08:00",
+  "generated_at": "2026-09-28T22:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,40 +7321,45 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 89,
+      "commits": 92,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 71,
-      "discord_replies": 188,
-      "tokens_main_wan": 690.9,
-      "tokens_sub_wan": 685.1,
-      "tokens_sessions": 130,
-      "tokens_msgs": 3567,
+      "subagent_runs": 87,
+      "discord_replies": 224,
+      "tokens_main_wan": 746.7,
+      "tokens_sub_wan": 715.9,
+      "tokens_sessions": 151,
+      "tokens_msgs": 3915,
       "tokens_by_model": {
-        "opus": 779.8,
-        "sonnet": 473.9,
+        "opus": 817.4,
+        "sonnet": 504.6,
         "haiku": 81.0,
-        "fable": 41.3,
+        "fable": 59.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 600.8,
+        "opus": 638.4,
         "sonnet": 0.0,
         "haiku": 48.8,
-        "fable": 41.3,
+        "fable": 59.5,
         "other": 0.0
       },
       "tokens_by_model_sub": {
         "opus": 179.0,
-        "sonnet": 473.9,
+        "sonnet": 504.6,
         "haiku": 32.2,
         "fable": 0.0,
         "other": 0.0
       },
-      "score_avg": null,
+      "score_avg": 3.0,
       "score_low": 0,
       "score_high": 0,
-      "scores": [],
+      "scores": [
+        {
+          "score": 3,
+          "time": "2026-09-28 21:20"
+        }
+      ],
       "corrections_new": 1,
       "highlights": [
         "第四十二棒：階段 0 fixture 表落地（23 格）＋現況成績單＋轉錄專有名詞計畫",
@@ -7829,10 +7834,31 @@
           "time": "18:32",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第六十八棒：又仟現況更新（今天每 3 分鐘看、單則編輯、mimi 叫不出來），重開前交接",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1ec5abbee24e89bd7b6b3b78deb4a79077a7cdca",
+          "evidence_label": "commit 1ec5abb",
+          "verified": true,
+          "time": "21:02",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 39,
+      "items_count": 40,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "第六十九棒收工：又仟米米接通（群組回話）、第三方教學一次一步＋灰框格式糾正、交接",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:48",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "第六十八棒收工：又仟接米米進度、糾正「秒答沒查證」、教材授權結案，交接",
@@ -8096,6 +8122,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T21:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T20:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8292,9 +8327,13 @@
         {
           "text": "AI 可自己做的那一項還沒做：preflight.ps1 快路徑跳過 Get-ScheduledTask，省約 0.6 秒、零風險。",
           "time": null
+        },
+        {
+          "text": "21:44 米米在群組回「有接上了」：解法＝交接→Ctrl+C→cd \"C:\\Users\\yiich\\我的AI助理\"; claude --channels plugin:discord@claude-plugins-official --d",
+          "time": null
         }
       ],
-      "notes": "另有 50 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 49、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 52 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 51、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
