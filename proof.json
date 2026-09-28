@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T18:00+08:00",
+  "generated_at": "2026-09-28T19:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,33 +7321,33 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 83,
+      "commits": 86,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 61,
-      "discord_replies": 140,
-      "tokens_main_wan": 605.6,
-      "tokens_sub_wan": 650.1,
-      "tokens_sessions": 98,
-      "tokens_msgs": 3198,
+      "subagent_runs": 65,
+      "discord_replies": 158,
+      "tokens_main_wan": 675.8,
+      "tokens_sub_wan": 673.3,
+      "tokens_sessions": 124,
+      "tokens_msgs": 3427,
       "tokens_by_model": {
-        "opus": 730.3,
+        "opus": 764.7,
         "sonnet": 470.7,
-        "haiku": 18.7,
-        "fable": 36.1,
+        "haiku": 72.4,
+        "fable": 41.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 566.9,
+        "opus": 585.7,
         "sonnet": 0.0,
-        "haiku": 2.7,
-        "fable": 36.1,
+        "haiku": 48.8,
+        "fable": 41.3,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 163.4,
+        "opus": 179.0,
         "sonnet": 470.7,
-        "haiku": 16.0,
+        "haiku": 23.6,
         "fable": 0.0,
         "other": 0.0
       },
@@ -7805,17 +7805,41 @@
           "time": "17:32",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 37,
-      "skipped": [
+        },
         {
           "kind": "commit",
           "text": "開機 token 拆帳腳本＋稽核報告（81,423 拆帳對上差 0）",
           "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/25da8109da41a680e9a6d7f4da7d9b0f9353c5db",
+          "evidence_label": "commit 25da810",
+          "verified": true,
           "time": "17:53",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "開機降本方案 A：遠端關 5 支工具＋22 個 skill、看板注入改摘要、03_judgment 與紅線瘦身、開機注…",
+          "project": "制度",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b480e1b135cf35fbe709c9122c52d0bf64fcbffb",
+          "evidence_label": "commit b480e1b",
+          "verified": true,
+          "time": "18:32",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 39,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "第六十七棒收工：開機實測＋降本方案 A 完成，交接（下一棒＝重開量前後對照）",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:34",
           "repo": "root"
         },
         {
@@ -8063,6 +8087,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T18:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T17:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8234,7 +8267,7 @@
           "time": null
         }
       ],
-      "notes": "另有 46 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 44、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 47 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 46、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
