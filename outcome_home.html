@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>成果紅綠燈首頁</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #f2f2f4;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    color: #1c1c1e;
+    overflow-x: hidden;
+  }
+  .wrap {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 16px 14px 32px;
+  }
+  .summary {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 18px 16px;
+    margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    text-align: center;
+  }
+  .summary .headline {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+  .summary .headline .big-emoji {
+    font-size: 26px;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .summary .updated {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #6e6e73;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+    border-left: 6px solid #c7c7cc;
+    overflow: hidden;
+  }
+  .card-red { border-left-color: #ff3b30; }
+  .card-yellow { border-left-color: #ffcc00; }
+  .card-green { border-left-color: #34c759; }
+
+  .card summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 12px 14px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px 8px;
+  }
+  .card summary::-webkit-details-marker { display: none; }
+  .card summary::after {
+    content: "▾";
+    margin-left: auto;
+    color: #a1a1a6;
+    font-size: 14px;
+  }
+  .card[open] summary::after { content: "▴"; }
+
+  .badge {
+    font-size: 15px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .name {
+    font-size: 16px;
+    font-weight: 700;
+    flex: 1 1 auto;
+    min-width: 0;
+    word-break: break-word;
+  }
+  .elapsed {
+    font-size: 12px;
+    color: #ffffff;
+    background: #8e8e93;
+    border-radius: 8px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+  .card-red .elapsed { background: #ff3b30; }
+  .card-yellow .elapsed { background: #c99400; }
+  .card-green .elapsed { background: #2fa84a; }
+
+  .reason {
+    font-size: 14px;
+    color: #48484a;
+    flex-basis: 100%;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+
+  .detail {
+    padding: 0 14px 14px;
+    border-top: 1px solid #f0f0f2;
+    font-size: 13px;
+    color: #3a3a3c;
+  }
+  .detail-row {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ececee;
+    line-height: 1.5;
+    word-break: break-word;
+  }
+  .detail-row:last-child { border-bottom: none; }
+  .detail-row .k {
+    display: block;
+    font-size: 12px;
+    color: #8e8e93;
+    margin-bottom: 2px;
+  }
+  .detail-row .v {
+    display: block;
+  }
+
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: #a1a1a6;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="summary">
+    <div class="headline">
+      <span class="big-emoji">🔴</span>
+      10 項裡 7 項正常、1 項要注意、2 項壞了
+    </div>
+    <div class="updated">查證時間：2026-09-29 02:11（點每一項可以看細節）</div>
+  </div>
+
+  <div class="cards">
+
+      <details class="card card-red">
+        <summary>
+          <span class="badge">🔴 壞了</span>
+          <span class="name">戰情室看板 warroom.html</span>
+          <span class="elapsed">2.1 小時前</span>
+          <span class="reason">距今 2.08 小時</span>
+        </summary>
+        <div class="detail">
+          <div class="detail-row"><span class="k">完整原因</span><span class="v">距今 2.08 小時</span></div>
+          <div class="detail-row"><span class="k">找到的值</span><span class="v">2026-09-29 00:06</span></div>
+          <div class="detail-row"><span class="k">容許多久沒更新</span><span class="v">2 小時</span></div>
+          <div class="detail-row"><span class="k">應該多久更新一次</span><span class="v">多個 ClaudeRemote-* 排程每 5~30 分鐘推一次</span></div>
+        </div>
+      </details>
+
+      <details class="card card-red">
+        <summary>
+          <span class="badge">🔴 壞了</span>
+          <span class="name">ai-trader 對外儀表板</span>
+          <span class="elapsed">2.2 小時前</span>
+          <span class="reason">日期字串距今 2.2 小時看似新鮮，但內容偵測到示範/測試字樣，判定不是正式成果：h…</span>
+        </summary>
+        <div class="detail">
+          <div class="detail-row"><span class="k">完整原因</span><span class="v">日期字串距今 2.2 小時看似新鮮，但內容偵測到示範/測試字樣，判定不是正式成果：https://ai-trader-demo-one.vercel.app/overview.html 含「實驗尚未開跑」；https://ai-trader-demo-one.vercel.app/overview.html 含「D0 未設」；https://ai-trader-demo-one.vercel.app/overview.html 含「測試建倉，不是凍結規格下的正式」…等共 6 處</span></div>
+          <div class="detail-row"><span class="k">找到的值</span><span class="v">2026-09-29</span></div>
+          <div class="detail-row"><span class="k">容許多久沒更新</span><span class="v">36 小時</span></div>
+          <div class="detail-row"><span class="k">應該多久更新一次</span><span class="v">目標每日自動發布（另一分身改造中；現況是手動 vercel deploy，2026-08-18 起已停）</span></div>
+        </div>
+      </details>
+
+      <details class="card card-yellow">
+        <summary>
+          <span class="badge">🟡 注意</span>
+          <span class="name">東印度快報·花邊版</span>
+          <span class="elapsed">不明（看不到最新時間）</span>
+          <span class="reason">回 401（），整站 Basic Auth 鎖住、AI 沒有密碼，無法判斷成果新鮮度…</span>
+        </summary>
+        <div class="detail">
+          <div class="detail-row"><span class="k">完整原因</span><span class="v">回 401（），整站 Basic Auth 鎖住、AI 沒有密碼，無法判斷成果新鮮度，列黃燈不猜</span></div>
+          <div class="detail-row"><span class="k">找到的值</span><span class="v">（沒找到）</span></div>
+          <div class="detail-row"><span class="k">容許多久沒更新</span><span class="v">沒有設門檻（這項沒辦法判斷新鮮度）</span></div>
+          <div class="detail-row"><span class="k">應該多久更新一次</span><span class="v">每日一篇，但整站 Basic Auth 上鎖，AI 沒有密碼，判不了、不硬猜綠（黃燈）</span></div>
+        </div>
+      </details>
+
+      <details class="card card-green">
+        <summary>
+          <span class="badge">🟢 正常</span>
+          <span class="name">股癌回測站 backtest.html</span>
+          <span class="elapsed">2.2 小時前</span>
+          <span class="reason">頁面內最新日期字串，距今 2.2 小時</span>
+        </summary>
+        <div class="detail">
+          <div class="detail-row"><span class="k">完整原因</span><span class="v">頁面內最新日期字串，距今 2.2 小時</span></div>
+          <div class="detail-row"><span class="k">找到的值</span><span class="v">2026-09-29</span></div>
+          <div class="detail-row"><span class="k">容許多久沒更新</span><span class="v">36 小時</span></div>
+          <div class="detail-row"><span class="k">應該多久更新一次</span><span class="v">每日 04:13 排程重算重發布（13 天暫停事故的主角）</span></div>
+        </div>
+      </details>
+
+      <details class="card card-green">
+        <summary>
+          <span class="badge">🟢 正常</span>
+          <span class="name">股癌週報網站首頁</span>
+          <span class="elapsed">26.2 小時前</span>
+          <span class="reason">頁面內最新日期字串，距今 26.2 小時</span>
+        </summary>
+        <div class="detail">
+          <div class="detail-row"><span class="k">完整原因</span><span class="v">頁面內最新日期字串，距今 26.2 小時</span></div>
+          <div class="detail-row"><span class="k">找到的值</span><span class="v">2026-09-28</span></div>
+          <div class="detail-row"><span class="k">容許多久沒更新</span><span class="v">8 天</span></div>
+          <div class="detail-row"><span class="k">應該多久更新一次</span><span class="v">跟著股癌新集數更新，約每週一次</span></div>
+        </div>
+      </details>
+
+      <details class="card card-green">
+        <summary>
+          <span class="badge">🟢 正常</span>
+          <span class="name">股癌逐字稿頁 transcripts.html</span>
+          <span class="elapsed">26.2 小時前</span>
+          <span class="reason">頁面內最新日期字串，距今 26.2 小時</span>
+        </summary>
+        <div class="detail">
+          <div class="detail-row"><span class="k">完整原因</span><span class="v">頁面內最新日期字串，距今 26.2 小時</span></div>
+          <div class="detail-row"><span class="k">找到的值</span><span class="v">2026-09-28</span></div>
+          <div class="detail-row"><span class="k">容許多久沒更新</span><span class="v">8 天</span></div>
+          <div class="detail-row"><span class="k">應該多久更新一次</span><span class="v">跟著股癌新集數更新，約每週一次</span></div>
+        </div>
+      </details>
+
+      <details class="card card-green">
+        <summary>
+          <span class="badge">🟢 正常</span>
+          <span class="name">股癌週報 Email 寄送紀錄</span>
+          <span class="elapsed">40.1 小時前</span>
+          <span class="reason">最新一次寄信成功紀錄，距今 40.1 小時</span>
+        </summary>
+        <div class="detail">
+          <div class="detail-row"><span class="k">完整原因</span><span class="v">最新一次寄信成功紀錄，距今 40.1 小時</span></div>
+          <div class="detail-row"><span class="k">找到的值</span><span class="v">2026-09-27 10:06:23</span></div>
+          <div class="detail-row"><span class="k">容許多久沒更新</span><span class="v">5 天</span></div>
+          <div class="detail-row"><span class="k">應該多久更新一次</span><span class="v">run_daily_analysis.ps1 固定週日／週四寄送（不真的觸發寄信，只讀寄送紀錄）</span></div>
+        </div>
+      </details>
+
+      <details class="card card-green">
+        <summary>
+          <span class="badge">🟢 正常</span>
+          <span class="name">額度稽核 proof 頁 proof.json</span>
+          <span class="elapsed">11 分鐘前</span>
+          <span class="reason">距今 0.18 小時</span>
+        </summary>
+        <div class="detail">
+          <div class="detail-row"><span class="k">完整原因</span><span class="v">距今 0.18 小時</span></div>
+          <div class="detail-row"><span class="k">找到的值</span><span class="v">2026-09-29T02:00+08:00</span></div>
+          <div class="detail-row"><span class="k">容許多久沒更新</span><span class="v">3 小時</span></div>
+          <div class="detail-row"><span class="k">應該多久更新一次</span><span class="v">排程 QuotaAudit_ProofPublish 每小時發布一次</span></div>
+        </div>
+      </details>
+
+      <details class="card card-green">
+        <summary>
+          <span class="badge">🟢 正常</span>
+          <span class="name">額度日報（Discord 主人頻道）</span>
+          <span class="elapsed">17.2 小時前</span>
+          <span class="reason">最新檔案 2026-09-27.txt，依實際寫入時間（mtime，2026-09-…</span>
+        </summary>
+        <div class="detail">
+          <div class="detail-row"><span class="k">完整原因</span><span class="v">最新檔案 2026-09-27.txt，依實際寫入時間（mtime，2026-09-28 09:00）距今 17.2 小時（檔名日期是報告內容涵蓋的那一天，非產生時間，不能拿來算新鮮度）</span></div>
+          <div class="detail-row"><span class="k">找到的值</span><span class="v">2026-09-27.txt</span></div>
+          <div class="detail-row"><span class="k">容許多久沒更新</span><span class="v">36 小時</span></div>
+          <div class="detail-row"><span class="k">應該多久更新一次</span><span class="v">排程 QuotaAudit_DailyReview 每日 09:00 產出並推送</span></div>
+        </div>
+      </details>
+
+      <details class="card card-green">
+        <summary>
+          <span class="badge">🟢 正常</span>
+          <span class="name">EasyDraw 外網入口心跳</span>
+          <span class="elapsed">剛剛</span>
+          <span class="reason">距今 0.3 分鐘</span>
+        </summary>
+        <div class="detail">
+          <div class="detail-row"><span class="k">完整原因</span><span class="v">距今 0.3 分鐘</span></div>
+          <div class="detail-row"><span class="k">找到的值</span><span class="v">2026-09-29 02:10:43</span></div>
+          <div class="detail-row"><span class="k">容許多久沒更新</span><span class="v">20 分鐘</span></div>
+          <div class="detail-row"><span class="k">應該多久更新一次</span><span class="v">每 5 分鐘回報一次目前隧道網址</span></div>
+        </div>
+      </details>
+  </div>
+
+  <div class="footer">
+    這頁是自動產生的靜態頁面，資料來自 outcome_check.py<br>
+    紅燈排最前面，黃燈次之，綠燈最後
+  </div>
+</div>
+</body>
+</html>
