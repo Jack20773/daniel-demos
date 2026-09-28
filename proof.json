@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T20:00+08:00",
+  "generated_at": "2026-09-28T21:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,24 +7321,24 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 87,
+      "commits": 89,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 67,
-      "discord_replies": 169,
-      "tokens_main_wan": 680.9,
-      "tokens_sub_wan": 677.3,
-      "tokens_sessions": 126,
-      "tokens_msgs": 3476,
+      "subagent_runs": 71,
+      "discord_replies": 188,
+      "tokens_main_wan": 690.9,
+      "tokens_sub_wan": 685.1,
+      "tokens_sessions": 130,
+      "tokens_msgs": 3567,
       "tokens_by_model": {
-        "opus": 769.8,
-        "sonnet": 470.7,
-        "haiku": 76.4,
+        "opus": 779.8,
+        "sonnet": 473.9,
+        "haiku": 81.0,
         "fable": 41.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 590.8,
+        "opus": 600.8,
         "sonnet": 0.0,
         "haiku": 48.8,
         "fable": 41.3,
@@ -7346,8 +7346,8 @@
       },
       "tokens_by_model_sub": {
         "opus": 179.0,
-        "sonnet": 470.7,
-        "haiku": 27.6,
+        "sonnet": 473.9,
+        "haiku": 32.2,
         "fable": 0.0,
         "other": 0.0
       },
@@ -7835,6 +7835,15 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "第六十八棒收工：又仟接米米進度、糾正「秒答沒查證」、教材授權結案，交接",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "20:44",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "第六十七棒收工：開機實測＋降本方案 A 完成，交接（下一棒＝重開量前後對照）",
           "project": "記憶",
           "reason": "automated",
@@ -8087,6 +8096,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T20:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "20:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T19:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8276,7 +8294,7 @@
           "time": null
         }
       ],
-      "notes": "另有 48 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 47、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 50 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 49、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
