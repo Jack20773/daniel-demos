@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T16:00+08:00",
+  "generated_at": "2026-09-28T17:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,33 +7321,33 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 71,
+      "commits": 75,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 52,
-      "discord_replies": 101,
-      "tokens_main_wan": 498.0,
-      "tokens_sub_wan": 569.3,
-      "tokens_sessions": 76,
-      "tokens_msgs": 2735,
+      "subagent_runs": 57,
+      "discord_replies": 116,
+      "tokens_main_wan": 550.8,
+      "tokens_sub_wan": 598.2,
+      "tokens_sessions": 83,
+      "tokens_msgs": 2934,
       "tokens_by_model": {
-        "opus": 578.3,
-        "sonnet": 445.2,
-        "haiku": 9.2,
-        "fable": 34.8,
+        "opus": 630.3,
+        "sonnet": 470.7,
+        "haiku": 12.5,
+        "fable": 35.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 463.3,
+        "opus": 515.3,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 34.8,
+        "fable": 35.5,
         "other": 0.0
       },
       "tokens_by_model_sub": {
         "opus": 115.0,
-        "sonnet": 445.2,
-        "haiku": 9.2,
+        "sonnet": 470.7,
+        "haiku": 12.5,
         "fable": 0.0,
         "other": 0.0
       },
@@ -7721,17 +7721,50 @@
           "time": "15:52",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 30,
-      "skipped": [
+        },
         {
           "kind": "commit",
           "text": "額度查帳：新增 quota_month_rollup.py（跨日報彙總，附母體與對照組）",
           "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/bc61928f84a253d05ba3d655334f0737aee49b6e",
+          "evidence_label": "commit bc61928",
+          "verified": true,
           "time": "15:58",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "交接補登：又仟端按鈕 disabled 的新線索與已給的瀏覽器繞道",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/52e43ab102dff73449d8e905e7eb5d6b4dce7a21",
+          "evidence_label": "commit 52e43ab",
+          "verified": true,
+          "time": "16:26",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 32,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "第六十二棒收工：AI 影片兩句補查完給定論（改口一句）＋又仟接 Discord 推進到第一步",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:23",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第六十一棒收工：額度查帳交付＋AI 影片四句覆核（兩句判未定不採信）",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:05",
           "repo": "root"
         },
         {
@@ -7952,6 +7985,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T16:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T15:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8105,7 +8147,7 @@
           "time": null
         }
       ],
-      "notes": "另有 41 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 39、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 43 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 42、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
