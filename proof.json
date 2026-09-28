@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T03:00+08:00",
+  "generated_at": "2026-09-29T04:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8249,7 +8249,7 @@
     },
     {
       "date": "2026-09-29",
-      "commits": 23,
+      "commits": 24,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 20,
@@ -8422,9 +8422,21 @@
           "time": "01:53",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "新增成果紅綠燈首頁 demo（手機版靜態頁）",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/2638fbca0474e4127e8129bdad1679ab3f915f6b",
+          "evidence_label": "commit 2638fbc",
+          "verified": true,
+          "time": "02:16",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 8,
+      "items_count": 9,
       "skipped": [
         {
           "kind": "commit",
@@ -8527,11 +8539,11 @@
         },
         {
           "kind": "commit",
-          "text": "新增成果紅綠燈首頁 demo（手機版靜態頁）",
+          "text": "proof.json auto-refresh 2026-09-29T03:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:16",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:00",
           "repo": "daniel-demos"
         },
         {
@@ -8563,7 +8575,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 15 筆 commit 未列（未 push 9、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
+      "notes": "另有 15 筆 commit 未列（未 push 8、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7）"
     }
   ]
 }
