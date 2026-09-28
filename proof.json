@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T14:00+08:00",
+  "generated_at": "2026-09-28T15:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,32 +7321,32 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 59,
+      "commits": 64,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 34,
-      "discord_replies": 67,
-      "tokens_main_wan": 379.6,
-      "tokens_sub_wan": 426.6,
-      "tokens_sessions": 52,
-      "tokens_msgs": 2189,
+      "subagent_runs": 50,
+      "discord_replies": 93,
+      "tokens_main_wan": 459.1,
+      "tokens_sub_wan": 548.9,
+      "tokens_sessions": 72,
+      "tokens_msgs": 2607,
       "tokens_by_model": {
-        "opus": 461.1,
-        "sonnet": 339.3,
+        "opus": 547.9,
+        "sonnet": 430.1,
         "haiku": 5.7,
-        "fable": 0.0,
+        "fable": 24.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 379.6,
+        "opus": 434.8,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 24.3,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 81.5,
-        "sonnet": 339.3,
+        "opus": 113.1,
+        "sonnet": 430.1,
         "haiku": 5.7,
         "fable": 0.0,
         "other": 0.0
@@ -7661,10 +7661,52 @@
           "time": "13:55",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第五十七棒補5：連結清單已交付完畢＋他下令重開，全部寫進交接",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0966768e478935b186c98b1c3cb1738dd9abc75e",
+          "evidence_label": "commit 0966768",
+          "verified": true,
+          "time": "14:02",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第五十九棒補：他 06:46 把 AI 影片講具體成「先做市場調查」，已寫進交接與簡報",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/066bb1ee183a4bb7a42915329f55962ba993db0a",
+          "evidence_label": "commit 066bb1e",
+          "verified": true,
+          "time": "14:50",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 25,
+      "items_count": 27,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "第五十九棒收工：EP687 六題做完五題，E1 查出量尺預設值是回歸對照組不可覆寫；AI 影片評估問到第4題被他改方向…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:46",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "第五十八棒收工：他要的「全部的連結」131 個已交付＋BOOT.md 兩個開機浪費當場修掉",
+          "project": "遠端",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:16",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "收工-精簡 回寫：BOOT_BRIEF 削字削了 5 輪的根因是「砍對象選錯」，不是算錯 ×1.3",
@@ -7847,6 +7889,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T14:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T13:01+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -7982,7 +8033,7 @@
           "time": null
         }
       ],
-      "notes": "另有 34 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 33、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 37 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 36、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
