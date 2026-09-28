@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T07:00+08:00",
+  "generated_at": "2026-09-28T08:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7321,31 +7321,31 @@
     },
     {
       "date": "2026-09-28",
-      "commits": 41,
+      "commits": 43,
       "tickets_done": 0,
       "tickets_verify": 1,
-      "subagent_runs": 31,
-      "discord_replies": 53,
-      "tokens_main_wan": 304.8,
-      "tokens_sub_wan": 358.8,
-      "tokens_sessions": 47,
-      "tokens_msgs": 1844,
+      "subagent_runs": 32,
+      "discord_replies": 55,
+      "tokens_main_wan": 321.4,
+      "tokens_sub_wan": 386.9,
+      "tokens_sessions": 49,
+      "tokens_msgs": 1967,
       "tokens_by_model": {
-        "opus": 327.8,
+        "opus": 372.5,
         "sonnet": 330.1,
         "haiku": 5.7,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 304.8,
+        "opus": 321.4,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 23.0,
+        "opus": 51.1,
         "sonnet": 330.1,
         "haiku": 5.7,
         "fable": 0.0,
@@ -7577,9 +7577,21 @@
           "time": "06:31",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第五十五棒：提案過期審計接成閘門（staleprop-gate）＋對抗審查打出 13 洞 3 致命，依結論刻意不掛",
+          "project": "hook",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/fc064133dc36d33d8a0af44e75999a78be61b551",
+          "evidence_label": "commit fc06413",
+          "verified": true,
+          "time": "07:35",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 18,
+      "items_count": 19,
       "skipped": [
         {
           "kind": "commit",
@@ -7727,6 +7739,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-28T07:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "07:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-28T06:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -7799,7 +7820,7 @@
           "time": null
         }
       ],
-      "notes": "另有 23 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 24 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 23、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
