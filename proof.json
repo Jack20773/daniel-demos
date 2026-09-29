@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T12:00+08:00",
+  "generated_at": "2026-09-29T13:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8249,32 +8249,32 @@
     },
     {
       "date": "2026-09-29",
-      "commits": 39,
+      "commits": 43,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 29,
-      "discord_replies": 90,
-      "tokens_main_wan": 110.3,
-      "tokens_sub_wan": 272.5,
-      "tokens_sessions": 37,
-      "tokens_msgs": 1388,
+      "subagent_runs": 32,
+      "discord_replies": 99,
+      "tokens_main_wan": 123.6,
+      "tokens_sub_wan": 309.4,
+      "tokens_sessions": 40,
+      "tokens_msgs": 1537,
       "tokens_by_model": {
-        "opus": 169.0,
-        "sonnet": 186.8,
+        "opus": 203.8,
+        "sonnet": 202.1,
         "haiku": 2.7,
         "fable": 24.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 96.5,
+        "opus": 109.8,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 13.8,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 72.5,
-        "sonnet": 186.8,
+        "opus": 94.0,
+        "sonnet": 202.1,
         "haiku": 2.7,
         "fable": 10.5,
         "other": 0.0
@@ -8624,6 +8624,33 @@
         },
         {
           "kind": "commit",
+          "text": "LLM 三組 SYSTEM_FAILURE：修正式路徑重試退避從未生效，失敗原因帶出 CLI 原文",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "12:40",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "停擺告警不再靜音：每個壞的交易日一封、沒放棄記號的 NO_RUN 與沒有 exit code 的一輪另立標籤",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "12:36",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "新增六組成績單真實資料頁 results.html 與生成腳本 build_results.py",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "12:34",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
           "text": "重開券商登入週提醒：改週日 20:00（丹尼爾 2026-09-29 裁決 Discord 1554320227108…",
           "project": "交易機器人",
           "reason": "no_remote",
@@ -8639,6 +8666,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-29T12:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -8750,7 +8786,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 18 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 22 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17、repo 沒有 GitHub remote（沒有可點連結） 4、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
