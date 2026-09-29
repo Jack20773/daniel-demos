@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T21:00+08:00",
+  "generated_at": "2026-09-29T22:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8249,39 +8249,39 @@
     },
     {
       "date": "2026-09-29",
-      "commits": 51,
+      "commits": 53,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 33,
-      "discord_replies": 112,
-      "tokens_main_wan": 196.5,
-      "tokens_sub_wan": 317.5,
-      "tokens_sessions": 41,
-      "tokens_msgs": 1611,
+      "subagent_runs": 35,
+      "discord_replies": 137,
+      "tokens_main_wan": 239.7,
+      "tokens_sub_wan": 343.5,
+      "tokens_sessions": 47,
+      "tokens_msgs": 1748,
       "tokens_by_model": {
-        "opus": 284.8,
-        "sonnet": 202.1,
+        "opus": 327.2,
+        "sonnet": 206.0,
         "haiku": 2.7,
-        "fable": 24.3,
+        "fable": 47.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 182.7,
+        "opus": 203.0,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 13.8,
+        "fable": 36.6,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 102.1,
-        "sonnet": 202.1,
+        "opus": 124.2,
+        "sonnet": 206.0,
         "haiku": 2.7,
         "fable": 10.5,
         "other": 0.0
       },
-      "score_avg": 4.0,
+      "score_avg": 4.09,
       "score_low": 1,
-      "score_high": 7,
+      "score_high": 8,
       "scores": [
         {
           "score": 4,
@@ -8322,6 +8322,10 @@
         {
           "score": 3,
           "time": "2026-09-29 11:00"
+        },
+        {
+          "score": 5,
+          "time": "2026-09-29 21:28"
         }
       ],
       "corrections_new": 0,
@@ -8588,6 +8592,15 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "第七十六棒收工：ai-trader 成績頁＋斷線通知、下單月曆 demo、米米抓漏訊與通行證草稿、糾正與核心反思入記憶",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "第七十五棒收工：戰情室退役、ad_guard 擋錯 14→1、券商提醒重開、按鈕 500 根因；交接 21:00 IB…",
           "project": "記憶",
           "reason": "automated",
@@ -8666,6 +8679,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-29T21:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -8863,7 +8885,7 @@
           "time": null
         }
       ],
-      "notes": "另有 30 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25、repo 沒有 GitHub remote（沒有可點連結） 4、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 32 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 27、repo 沒有 GitHub remote（沒有可點連結） 4、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
