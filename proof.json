@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T02:00+08:00",
+  "generated_at": "2026-09-30T03:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8752,32 +8752,32 @@
     },
     {
       "date": "2026-09-30",
-      "commits": 2,
+      "commits": 8,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 16,
-      "tokens_main_wan": 18.1,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 1,
-      "tokens_msgs": 46,
+      "subagent_runs": 3,
+      "discord_replies": 36,
+      "tokens_main_wan": 44.8,
+      "tokens_sub_wan": 20.5,
+      "tokens_sessions": 6,
+      "tokens_msgs": 202,
       "tokens_by_model": {
-        "opus": 18.1,
-        "sonnet": 0.0,
+        "opus": 37.7,
+        "sonnet": 20.5,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 7.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 18.1,
+        "opus": 37.7,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 7.1,
         "other": 0.0
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 0.0,
+        "sonnet": 20.5,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -8796,10 +8796,81 @@
         }
       ],
       "corrections_new": 0,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
+      "highlights": [
+        "CLAUDE.md 再縮一詞，開機預算回到基線內",
+        "CLAUDE.md 身份段再縮幾字，守開機預算",
+        "解除 purpose-gate 掛載（他 1554555331160576003）；CLAUDE.md 身份段寫入「他…"
+      ],
+      "items": [
+        {
+          "kind": "commit",
+          "text": "CLAUDE.md 再縮一詞，開機預算回到基線內",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/73f88694a2e07d5366818dee1b05a118606ec7b7",
+          "evidence_label": "commit 73f8869",
+          "verified": true,
+          "time": "02:11",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "CLAUDE.md 身份段再縮幾字，守開機預算",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7fce6ca9449748d3011edd2ef7516468ca01f79f",
+          "evidence_label": "commit 7fce6ca",
+          "verified": true,
+          "time": "02:11",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "解除 purpose-gate 掛載（他 1554555331160576003）；CLAUDE.md 身份段寫入「他…",
+          "project": "記憶",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/50d95d827f1238978e492f5822956f44a59c9bfb",
+          "evidence_label": "commit 50d95d8",
+          "verified": true,
+          "time": "02:11",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "交接更新：關卡已解除、看板開兩張糾正票",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ee16fdca6820a73e783e79594f0add105adb33e0",
+          "evidence_label": "commit ee16fdc",
+          "verified": true,
+          "time": "02:12",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 4,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "送單後問成交逾時不再整條失敗：錯誤帶型別與步驟並存 traceback、問成交有限次重試、標待補成交；摘要 RETRY…",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "02:21",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-30T02:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:00",
+          "repo": "daniel-demos"
+        },
         {
           "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-30T01:00+08:00 (days=14 ite…",
@@ -8820,7 +8891,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 2 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
+      "notes": "另有 4 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
     }
   ]
 }
