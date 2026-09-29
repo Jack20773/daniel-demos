@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T10:00+08:00",
+  "generated_at": "2026-09-29T11:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8249,37 +8249,37 @@
     },
     {
       "date": "2026-09-29",
-      "commits": 31,
+      "commits": 37,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 22,
-      "discord_replies": 68,
-      "tokens_main_wan": 87.4,
-      "tokens_sub_wan": 230.9,
-      "tokens_sessions": 29,
-      "tokens_msgs": 1136,
+      "subagent_runs": 29,
+      "discord_replies": 85,
+      "tokens_main_wan": 108.4,
+      "tokens_sub_wan": 272.5,
+      "tokens_sessions": 37,
+      "tokens_msgs": 1370,
       "tokens_by_model": {
-        "opus": 152.8,
-        "sonnet": 147.9,
-        "haiku": 0.0,
-        "fable": 17.6,
+        "opus": 167.1,
+        "sonnet": 186.8,
+        "haiku": 2.7,
+        "fable": 24.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 80.3,
+        "opus": 94.6,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 7.1,
+        "fable": 13.8,
         "other": 0.0
       },
       "tokens_by_model_sub": {
         "opus": 72.5,
-        "sonnet": 147.9,
-        "haiku": 0.0,
+        "sonnet": 186.8,
+        "haiku": 2.7,
         "fable": 10.5,
         "other": 0.0
       },
-      "score_avg": 4.11,
+      "score_avg": 4.0,
       "score_low": 1,
       "score_high": 7,
       "scores": [
@@ -8318,6 +8318,10 @@
         {
           "score": 5,
           "time": "2026-09-29 01:27"
+        },
+        {
+          "score": 3,
+          "time": "2026-09-29 11:00"
         }
       ],
       "corrections_new": 0,
@@ -8425,6 +8429,54 @@
         },
         {
           "kind": "commit",
+          "text": "修 outcome_check.py 兩個誤判：額度日報假紅、ai-trader 假綠",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/663811bf05fee0c041589a7d6a41618f2653e2a7",
+          "evidence_label": "commit 663811b",
+          "verified": true,
+          "time": "02:02",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "outcome_check.py 對照組測試改留版控：新增 outcome_check_controls.py",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ac0b39190b56f544d7b8f321b30d3c7d6eae8008",
+          "evidence_label": "commit ac0b391",
+          "verified": true,
+          "time": "02:04",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "新增 ad_guard 誤擋統計腳本：09-20~09-28 批次逐筆人工判讀，誤擋率 90%",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f5c45fb6fdcd7810fd4d1f42f0c636ed5a201e15",
+          "evidence_label": "commit f5c45fb",
+          "verified": true,
+          "time": "02:06",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "新增手機版成果紅綠燈首頁 demo：讀 outcome_check.py --json 產出單頁 HTML",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/892701bd46c42e461b1bdb5ad05442136608399f",
+          "evidence_label": "commit 892701b",
+          "verified": true,
+          "time": "02:16",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
           "text": "新增成果紅綠燈首頁 demo（手機版靜態頁）",
           "project": "工作證明頁",
           "by": "未對",
@@ -8434,80 +8486,101 @@
           "time": "02:16",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 9,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "修戰情室監看殭屍：boot_warroom_watch.sh 只准一支活著（最新的接手，舊的自己結束）",
-          "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:33",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "修正 correction-outcome-based-monitoring 的 done_when：股癌週報 Ema…",
-          "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:29",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "糾正台帳補兩張：purpose-first-method-self 改觀察期驗收、outcome-based-moni…",
-          "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:28",
-          "repo": "root"
         },
         {
           "kind": "commit",
           "text": "修戰情室看板 warroom.html 假紅：內容去重讓 generated_at 停住，加 60 分鐘心跳強制部署",
           "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2983e7cbc67a3c0c5e136ab180c526dd9eacbae2",
+          "evidence_label": "commit 2983e7c",
+          "verified": true,
           "time": "02:22",
-          "repo": "root"
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
-          "text": "新增手機版成果紅綠燈首頁 demo：讀 outcome_check.py --json 產出單頁 HTML",
-          "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:16",
-          "repo": "root"
+          "text": "糾正台帳補兩張：purpose-first-method-self 改觀察期驗收、outcome-based-moni…",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/331445176129d7e1f6c12726034ebac6e44807f5",
+          "evidence_label": "commit 3314451",
+          "verified": true,
+          "time": "02:28",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
-          "text": "新增 ad_guard 誤擋統計腳本：09-20~09-28 批次逐筆人工判讀，誤擋率 90%",
-          "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:06",
-          "repo": "root"
+          "text": "修正 correction-outcome-based-monitoring 的 done_when：股癌週報 Ema…",
+          "project": "看板",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/9efa206587dc8862b3872bc30bdf5da3f2da3086",
+          "evidence_label": "commit 9efa206",
+          "verified": true,
+          "time": "02:29",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
-          "text": "outcome_check.py 對照組測試改留版控：新增 outcome_check_controls.py",
-          "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:04",
-          "repo": "root"
+          "text": "修戰情室監看殭屍：boot_warroom_watch.sh 只准一支活著（最新的接手，舊的自己結束）",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/eb1654b6bbb1cc4cedc54f046fa0dac4a8d73dbb",
+          "evidence_label": "commit eb1654b",
+          "verified": true,
+          "time": "02:33",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
-          "text": "修 outcome_check.py 兩個誤判：額度日報假紅、ai-trader 假綠",
-          "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:02",
+          "text": "退役舊戰情室排程 ClaudeRemote-PullDecisions（他 1554303356678311960 停…",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cf42bc4b52015435102edb4f701ef6b2b747cd01",
+          "evidence_label": "commit cf42bc4",
+          "verified": true,
+          "time": "10:06",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "ad_guard 關鍵字分兩層：弱詞需搭配另一關鍵字才擋，修正 90% 誤擋率",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/a619dcc5ced04db111ad86f48d3efbe66c9c72cb",
+          "evidence_label": "commit a619dcc",
+          "verified": true,
+          "time": "10:11",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "ad_guard 修視窗誤黏：extract_segment 改用段落斷點，window 只當上限",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/779539e4274f313768e6364e4015e3d4cb9daed8",
+          "evidence_label": "commit 779539e",
+          "verified": true,
+          "time": "10:16",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 20,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "第七十五棒收工：戰情室退役、ad_guard 擋錯 14→1、券商提醒重開、按鈕 500 根因；交接 21:00 IB…",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "10:39",
           "repo": "root"
         },
         {
@@ -8539,12 +8612,30 @@
         },
         {
           "kind": "commit",
+          "text": "重開券商登入週提醒：改週日 20:00（丹尼爾 2026-09-29 裁決 Discord 1554320227108…",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "10:37",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
           "text": "backtest.html: daily refresh 2026-09-29 (auto, run_daily_an…",
           "project": "股癌",
           "reason": "no_coauthor",
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-29T10:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "10:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -8638,7 +8729,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 22 筆 commit 未列（未 push 8、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 13、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 17 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 15、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
