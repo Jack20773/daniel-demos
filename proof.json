@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T17:00+08:00",
+  "generated_at": "2026-09-29T18:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8249,24 +8249,24 @@
     },
     {
       "date": "2026-09-29",
-      "commits": 47,
+      "commits": 48,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 32,
-      "discord_replies": 107,
-      "tokens_main_wan": 142.4,
+      "discord_replies": 108,
+      "tokens_main_wan": 159.4,
       "tokens_sub_wan": 309.4,
       "tokens_sessions": 40,
-      "tokens_msgs": 1580,
+      "tokens_msgs": 1583,
       "tokens_by_model": {
-        "opus": 222.6,
+        "opus": 239.6,
         "sonnet": 202.1,
         "haiku": 2.7,
         "fable": 24.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 128.6,
+        "opus": 145.6,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 13.8,
@@ -8669,6 +8669,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-29T17:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "17:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-29T16:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -8821,8 +8830,13 @@
           "repo": "daniel-demos"
         }
       ],
-      "selfreport": [],
-      "notes": "另有 26 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21、repo 沒有 GitHub remote（沒有可點連結） 4、無 Co-Authored-By: Claude 1）"
+      "selfreport": [
+        {
+          "text": "17:29 米米「開機抓漏訊」完成（又仟回「做」1554424815677603893；MIMI_BOOT.md 第 0 步＋交接記最後 id，備份 .bak-20260929）1554424915677937675。",
+          "time": null
+        }
+      ],
+      "notes": "另有 27 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22、repo 沒有 GitHub remote（沒有可點連結） 4、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
