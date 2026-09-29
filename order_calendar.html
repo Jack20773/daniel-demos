@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ai-trader 每日下單月曆</title><style>
+body{margin:0;background:#f4f5f7;font-family:-apple-system,"Noto Sans TC","Microsoft JhengHei",sans-serif;color:#222}
+.w{max-width:430px;margin:0 auto;padding:14px}
+h1{font-size:20px;margin:4px 0}
+.sum{background:#fff;border-radius:12px;padding:10px 12px;font-size:15px;line-height:1.6}
+.leg{font-size:13px;margin:10px 0;line-height:1.9}
+.leg i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin:0 3px 0 6px}
+h2{font-size:16px;margin:14px 0 6px}
+.g{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.h{text-align:center;font-size:12px;color:#777}
+.c{height:56px;border-radius:8px;font-size:12px;padding:3px;box-sizing:border-box;background:#e5e7eb;color:#888;position:relative;cursor:pointer}
+.c b{font-size:15px;display:block;text-align:center;margin-top:6px}
+.c small{display:block;text-align:center;font-size:11px}
+.e{visibility:hidden}
+.ok{background:#22a559;color:#fff}.zero{background:#f6c343;color:#4a3500}.bad{background:#e5484d;color:#fff}
+.off{background:#e5e7eb;color:#999}.wait{background:#fff;border:2px dashed #6b8cff;color:#3554d1}
+.pre{background:#f4f5f7;color:#bbb;border:1px dashed #ccc}
+.t{outline:3px solid #222}
+#d{clear:both;margin-top:16px!important;background:#fff;border-radius:12px;padding:10px 12px;margin-top:12px;font-size:14px;line-height:1.6;min-height:48px}
+.n{font-size:12px;color:#777;margin-top:14px;line-height:1.6}
+</style></head><body><div class="w">
+<h1>ai-trader 每日下單月曆</h1><div class="sum" id="sum"></div>
+<div class="leg"><i style="background:#22a559"></i>有下單(數字=張數)<i style="background:#f6c343"></i>有跑、沒下單<i style="background:#e5484d"></i>該跑卻沒紀錄／有組別失敗<i style="background:#e5e7eb"></i>週末休市<i style="background:#fff;border:2px dashed #6b8cff"></i>今天還沒跑</div>
+<div id="cal"></div><div id="d">點任一天看各組明細。</div>
+<div class="n" id="note"></div></div>
+<script>
+const D={"generated": "2026-09-29 10:43", "today": "2026-09-29", "live_start": "2026-08-17", "holidays": {"2026-09-07": "勞動節休市"}, "days": {"2026-08-17": {"orders": 1, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "裸推理", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "辯論", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "個股訊號", "stage": "failed", "sub": 0, "fail": true, "err": "RiskEngineInputError: BUY AAPL 缺少價格驗證資料"}, {"n": "SPY基準", "stage": "submitted", "sub": 1, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}, "2026-08-18": {"orders": 3, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "裸推理", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "辯論", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "個股訊號", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "submitted", "sub": 3, "fail": false, "err": ""}], "preflight_ok": true}, "2026-08-19": {"orders": 2, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "裸推理", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "辯論", "stage": "submitted", "sub": 2, "fail": false, "err": ""}, {"n": "個股訊號", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}, "2026-08-20": {"orders": 6, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "裸推理", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "辯論", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "個股訊號", "stage": "submitted", "sub": 6, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}, "2026-08-24": {"orders": 8, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "裸推理", "stage": "submitted", "sub": 2, "fail": false, "err": ""}, {"n": "辯論", "stage": "submitted", "sub": 1, "fail": false, "err": ""}, {"n": "個股訊號", "stage": "submitted", "sub": 5, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}, "2026-08-25": {"orders": 3, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "裸推理", "stage": "submitted", "sub": 1, "fail": false, "err": ""}, {"n": "辯論", "stage": "submitted", "sub": 2, "fail": false, "err": ""}, {"n": "個股訊號", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}, "2026-09-03": {"orders": 5, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "裸推理", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "辯論", "stage": "submitted", "sub": 2, "fail": false, "err": ""}, {"n": "個股訊號", "stage": "submitted", "sub": 3, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}, "2026-09-08": {"orders": 5, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "裸推理", "stage": "submitted", "sub": 2, "fail": false, "err": ""}, {"n": "辯論", "stage": "submitted", "sub": 2, "fail": false, "err": ""}, {"n": "個股訊號", "stage": "submitted", "sub": 1, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}, "2026-09-09": {"orders": 2, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "裸推理", "stage": "submitted", "sub": 1, "fail": false, "err": ""}, {"n": "辯論", "stage": "submitted", "sub": 1, "fail": false, "err": ""}, {"n": "個股訊號", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}, "2026-09-15": {"orders": 0, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "裸推理", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "辯論", "stage": "skipped", "sub": 0, "fail": true, "err": ""}, {"n": "個股訊號", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}, "2026-09-24": {"orders": 5, "groups": [{"n": "大師框架", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "裸推理", "stage": "submitted", "sub": 3, "fail": false, "err": ""}, {"n": "辯論", "stage": "submitted", "sub": 2, "fail": false, "err": ""}, {"n": "個股訊號", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}, "2026-09-28": {"orders": 6, "groups": [{"n": "大師框架", "stage": "submitted", "sub": 2, "fail": false, "err": ""}, {"n": "裸推理", "stage": "submitted", "sub": 2, "fail": false, "err": ""}, {"n": "辯論", "stage": "submitted", "sub": 2, "fail": false, "err": ""}, {"n": "個股訊號", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "SPY基準", "stage": "skipped", "sub": 0, "fail": false, "err": ""}, {"n": "動能", "stage": "skipped", "sub": 0, "fail": false, "err": ""}], "preflight_ok": true}}, "months": ["2026-08", "2026-09"], "file_count": 12};
+const WD=["日","一","二","三","四","五","六"];
+function cls(ds,dow){const r=D.days[ds];
+ if(ds<D.live_start)return["pre","未上線"];
+ if(dow==0||dow==6)return["off","休市"];
+ if(D.holidays[ds])return["off","假日"];
+ if(ds>D.today)return["pre",""];
+ if(r){const f=r.groups.some(g=>g.fail);
+  if(r.orders>0)return["ok",r.orders+"張"];
+  return f?["bad","0張·失敗"]:["zero","0張"];}
+ if(ds==D.today)return["wait","待執行"];
+ return["bad","無紀錄"];}
+let tot=0,run=0,miss=0,html="";
+for(const m of D.months){const [y,mo]=m.split("-").map(Number);
+ html+="<h2>"+y+" 年 "+mo+" 月</h2><div class='g'>"+WD.map(w=>"<div class='h'>"+w+"</div>").join("");
+ const first=new Date(y,mo-1,1).getDay(),n=new Date(y,mo,0).getDate();
+ for(let i=0;i<first;i++)html+="<div class='c e'></div>";
+ for(let d=1;d<=n;d++){const ds=m+"-"+String(d).padStart(2,"0"),dow=new Date(y,mo-1,d).getDay();
+  const[c,t]=cls(ds,dow);
+  if(D.days[ds]){run++;tot+=D.days[ds].orders}
+  if(c=="bad"&&t=="無紀錄")miss++;
+  html+="<div class='c "+c+(ds==D.today?" t":"")+"' data-d='"+ds+"'><b>"+d+"</b><small>"+t+"</small></div>";}
+ html+="</div>";}
+document.getElementById("cal").innerHTML=html;
+document.getElementById("sum").innerHTML="上線以來(8/17起)有紀錄 <b>"+run+"</b> 天、累計送出 <b>"+tot+"</b> 張；該跑卻<b style='color:#e5484d'>沒有紀錄</b>的交易日 <b>"+miss+"</b> 天。";
+document.getElementById("note").textContent="資料來源：ai-trader/data/live_runs/live_日期_execute.json（共 "+D.file_count+" 個檔，每個檔代表當天有跑一次）。「無紀錄」代表資料夾裡找不到當天的檔，可能是沒跑，也可能是檔案沒同步過來，需再確認。休市日只排除週末與 9/7 勞動節。產生時間 "+D.generated+"。";
+document.getElementById("cal").onclick=e=>{const c=e.target.closest(".c");if(!c||!c.dataset.d)return;
+ const ds=c.dataset.d,r=D.days[ds];let s="<b>"+ds+"</b><br>";
+ if(!r){s+=c.classList.contains("off")?"休市日。":c.classList.contains("pre")?"還沒上線或還沒到。":"這天沒有執行紀錄檔。"}
+ else s+=r.groups.map(g=>g.n+"："+(g.sub>0?g.sub+" 張":g.fail?"失敗"+(g.err?"("+g.err+")":""):"沒下單")).join("<br>");
+ document.getElementById("d").innerHTML=s;};
+</script></body></html>
