@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T11:00+08:00",
+  "generated_at": "2026-09-29T12:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8249,24 +8249,24 @@
     },
     {
       "date": "2026-09-29",
-      "commits": 37,
+      "commits": 39,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 29,
-      "discord_replies": 85,
-      "tokens_main_wan": 108.4,
+      "discord_replies": 90,
+      "tokens_main_wan": 110.3,
       "tokens_sub_wan": 272.5,
       "tokens_sessions": 37,
-      "tokens_msgs": 1370,
+      "tokens_msgs": 1388,
       "tokens_by_model": {
-        "opus": 167.1,
+        "opus": 169.0,
         "sonnet": 186.8,
         "haiku": 2.7,
         "fable": 24.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 94.6,
+        "opus": 96.5,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 13.8,
@@ -8570,9 +8570,21 @@
           "time": "10:16",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "加下單月曆 demo（給丹尼爾可點連結）",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/9bccded1eb1aecb38cdf3d11870a6c4d24e9421b",
+          "evidence_label": "commit 9bccded",
+          "verified": true,
+          "time": "11:09",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 20,
+      "items_count": 21,
       "skipped": [
         {
           "kind": "commit",
@@ -8627,6 +8639,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-29T11:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -8729,7 +8750,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 17 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 15、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 18 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
