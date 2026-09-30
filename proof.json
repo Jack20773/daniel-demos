@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T16:01+08:00",
+  "generated_at": "2026-09-30T17:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8752,24 +8752,24 @@
     },
     {
       "date": "2026-09-30",
-      "commits": 22,
+      "commits": 26,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 4,
-      "discord_replies": 40,
-      "tokens_main_wan": 59.2,
-      "tokens_sub_wan": 34.6,
-      "tokens_sessions": 7,
-      "tokens_msgs": 245,
+      "subagent_runs": 5,
+      "discord_replies": 42,
+      "tokens_main_wan": 73.8,
+      "tokens_sub_wan": 45.3,
+      "tokens_sessions": 8,
+      "tokens_msgs": 291,
       "tokens_by_model": {
-        "opus": 52.1,
-        "sonnet": 34.6,
+        "opus": 66.8,
+        "sonnet": 45.3,
         "haiku": 0.0,
         "fable": 7.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 52.1,
+        "opus": 66.8,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 7.1,
@@ -8777,7 +8777,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 34.6,
+        "sonnet": 45.3,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -8849,10 +8849,43 @@
           "time": "02:12",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "開機五份換成修剪版，檢查器同步改：R9 只驗標記、刪 R9b、新增 R13 字數上限 4500",
+          "project": "制度",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/100f9332e5ebd309c7225f55549706264ebd646f",
+          "evidence_label": "commit 100f933",
+          "verified": true,
+          "time": "16:53",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "開機簡報改成「跌倒＋現在」兩段；開機預算隨修剪緊縮；看板開機提示改指新版 BOOT 第 2 輪",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cbd693d03f163b0ef728387d4e98bb9c5a15fffc",
+          "evidence_label": "commit cbd693d",
+          "verified": true,
+          "time": "16:56",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 4,
+      "items_count": 6,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-09-30 16:56",
+          "project": "會計部",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:56",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "送單後問成交逾時不再整條失敗：錯誤帶型別與步驟並存 traceback、問成交有限次重試、標待補成交；摘要 RETRY…",
@@ -8870,6 +8903,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-30T16:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -9017,7 +9059,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 18 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16）"
+      "notes": "另有 20 筆 commit 未列（未 push 1、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17）"
     }
   ]
 }
