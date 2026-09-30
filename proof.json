@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T20:00+08:00",
+  "generated_at": "2026-09-30T21:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8752,34 +8752,34 @@
     },
     {
       "date": "2026-09-30",
-      "commits": 38,
+      "commits": 42,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 12,
-      "discord_replies": 58,
-      "tokens_main_wan": 96.0,
-      "tokens_sub_wan": 178.4,
-      "tokens_sessions": 16,
-      "tokens_msgs": 707,
+      "subagent_runs": 14,
+      "discord_replies": 68,
+      "tokens_main_wan": 102.2,
+      "tokens_sub_wan": 207.1,
+      "tokens_sessions": 18,
+      "tokens_msgs": 846,
       "tokens_by_model": {
-        "opus": 155.6,
+        "opus": 181.6,
         "sonnet": 45.3,
         "haiku": 0.0,
-        "fable": 73.5,
+        "fable": 82.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 81.7,
+        "opus": 87.8,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 14.3,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 73.9,
+        "opus": 93.8,
         "sonnet": 45.3,
         "haiku": 0.0,
-        "fable": 59.2,
+        "fable": 68.0,
         "other": 0.0
       },
       "score_avg": 4.0,
@@ -8969,9 +8969,45 @@
           "time": "19:50",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "手機橫向溢出修正",
+          "project": "rijian-studio",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/rijian-studio/commit/b0c0aa41496d0ef2d7eb63b3f9b379a16a186a18",
+          "evidence_label": "commit b0c0aa4",
+          "verified": true,
+          "time": "20:21",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "太陽改回第二版畫法、整頁只留兩顆",
+          "project": "rijian-studio",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/rijian-studio/commit/121406205db6db41ae0d20b5422cc1db906b0db7",
+          "evidence_label": "commit 1214062",
+          "verified": true,
+          "time": "20:25",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "減少動態：首屏直接顯示日出完成（沿用第 9 輪行為）",
+          "project": "rijian-studio",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/rijian-studio/commit/235d019fe39ada1a023a1630cad2ee3dc7f4b1f5",
+          "evidence_label": "commit 235d019",
+          "verified": true,
+          "time": "20:27",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 14,
+      "items_count": 17,
       "skipped": [
         {
           "kind": "commit",
@@ -9008,6 +9044,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-30T20:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "20:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -9191,7 +9236,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 24 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21、無 Co-Authored-By: Claude 2、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 25 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22、無 Co-Authored-By: Claude 2、repo 沒有 GitHub remote（沒有可點連結） 1）"
     }
   ]
 }
