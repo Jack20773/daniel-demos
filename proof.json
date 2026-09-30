@@ -1,116 +1,7 @@
 {
-  "generated_at": "2026-09-30T23:00+08:00",
+  "generated_at": "2026-10-01T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-09-17",
-      "commits": 5,
-      "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 17,
-      "discord_replies": 17,
-      "tokens_main_wan": 62.2,
-      "tokens_sub_wan": 159.4,
-      "tokens_sessions": 22,
-      "tokens_msgs": 906,
-      "tokens_by_model": {
-        "opus": 216.1,
-        "sonnet": 5.5,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 56.7,
-        "sonnet": 5.5,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 159.4,
-        "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "score_avg": 5.0,
-      "score_low": 0,
-      "score_high": 1,
-      "scores": [
-        {
-          "score": 5,
-          "time": "2026-09-17 14:03"
-        }
-      ],
-      "corrections_new": 0,
-      "highlights": [
-        "股癌週報新格式樣本：公司重點節錄頁（EP695/EP696，拿掉看好看壞，只節錄原話）",
-        "股癌週報第二版 demo：按集數／按公司兩個版型（EP695/696，5 家公司＋跨集病歷＋當天股價到今天漲跌）",
-        "熱度頁病歷卡上線：commit 17cedcd、publish run 35228032150 成功、正式站 Last-Modified 13:37Z；curl 實測「本週他怎麼講」24／「病歷時間軸」25。已回他（155014113453"
-      ],
-      "items": [
-        {
-          "kind": "commit",
-          "text": "股癌週報新格式樣本：公司重點節錄頁（EP695/EP696，拿掉看好看壞，只節錄原話）",
-          "project": "工作證明頁",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/a7f6640e43db7ee873c7908e0aea0612e319747d",
-          "evidence_label": "commit a7f6640",
-          "verified": true,
-          "time": "09:51",
-          "plain": "為股癌週報做了一個新樣本頁面，從 EP695 和 EP696 這兩集裡面，只摘出公司重點說的原話，把主播的個人看法全拿掉，這樣大家可以自己決定怎麼想。",
-          "plain_ok": true
-        },
-        {
-          "kind": "commit",
-          "text": "股癌週報第二版 demo：按集數／按公司兩個版型（EP695/696，5 家公司＋跨集病歷＋當天股價到今天漲跌）",
-          "project": "工作證明頁",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/ef709ec88c94887011163182677a03950d94fcb3",
-          "evidence_label": "commit ef709ec",
-          "verified": true,
-          "time": "14:19",
-          "plain": "設計了股癌週報的新版本示意圖，可以按集數或按公司兩種方式看，包含5家公司資訊、跨集的病歷資料和股價漲跌。這樣讓使用者更方便查詢股票相關的故事。",
-          "plain_ok": true
-        },
-        {
-          "kind": "note",
-          "text": "熱度頁病歷卡上線：commit 17cedcd、publish run 35228032150 成功、正式站 Last-Modified 13:37Z；curl 實測「本週他怎麼講」24／「病歷時間軸」25。已回他（155014113453",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/17cedcd53c658bad790b156b801e1301aedbfaad",
-          "evidence_label": "commit 17cedcd",
-          "verified": true,
-          "time": "21:35",
-          "plain": "把病歷卡功能搬到正式網站上線，測試驗證了所有功能都能正常運作，已經通知他可以使用了。",
-          "plain_ok": true
-        }
-      ],
-      "items_count": 3,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "遠端 9/17 晚棒收工（縮減版，上下文 200k）：股癌週報 v2 他選 B 並已上線熱度頁（17cedcd，24 …",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "21:48",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "遠端 9/17 日棒收工（縮減版，上下文 200k）：股癌週報改版 v1→v2 兩版型 demo 已交（等他選 A/B…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "14:43",
-          "repo": "root"
-        }
-      ],
-      "selfreport": [],
-      "notes": "另有 2 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
-    },
     {
       "date": "2026-09-18",
       "commits": 41,
@@ -8752,7 +8643,7 @@
     },
     {
       "date": "2026-09-30",
-      "commits": 44,
+      "commits": 45,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 14,
@@ -9047,6 +8938,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-09-30T23:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-09-30T22:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -9254,7 +9154,51 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 27 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24、無 Co-Authored-By: Claude 2、repo 沒有 GitHub remote（沒有可點連結） 1）"
+      "notes": "另有 28 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 25、無 Co-Authored-By: Claude 2、repo 沒有 GitHub remote（沒有可點連結） 1）"
+    },
+    {
+      "date": "2026-10-01",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 0.0,
+      "tokens_sessions": 0,
+      "tokens_msgs": 0,
+      "tokens_by_model": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
