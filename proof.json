@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T03:00+08:00",
+  "generated_at": "2026-10-02T04:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8879,34 +8879,34 @@
     },
     {
       "date": "2026-10-02",
-      "commits": 3,
+      "commits": 4,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 26,
-      "discord_replies": 27,
-      "tokens_main_wan": 35.4,
-      "tokens_sub_wan": 126.7,
-      "tokens_sessions": 33,
-      "tokens_msgs": 398,
+      "subagent_runs": 38,
+      "discord_replies": 29,
+      "tokens_main_wan": 38.3,
+      "tokens_sub_wan": 189.8,
+      "tokens_sessions": 45,
+      "tokens_msgs": 550,
       "tokens_by_model": {
-        "opus": 85.4,
-        "sonnet": 23.3,
+        "opus": 103.5,
+        "sonnet": 35.0,
         "haiku": 0.0,
-        "fable": 53.4,
+        "fable": 89.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 24.1,
+        "opus": 27.1,
         "sonnet": 3.3,
         "haiku": 0.0,
         "fable": 8.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 61.3,
-        "sonnet": 20.0,
+        "opus": 76.4,
+        "sonnet": 31.7,
         "haiku": 0.0,
-        "fable": 45.4,
+        "fable": 81.7,
         "other": 0.0
       },
       "score_avg": null,
@@ -8918,6 +8918,15 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-02T03:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:00",
+          "repo": "daniel-demos"
+        },
         {
           "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-02T02:00+08:00 (days=14 ite…",
@@ -8952,7 +8961,7 @@
           "time": null
         }
       ],
-      "notes": "另有 3 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
+      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
     }
   ]
 }
