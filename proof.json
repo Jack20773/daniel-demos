@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T04:00+08:00",
+  "generated_at": "2026-10-02T05:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8879,34 +8879,34 @@
     },
     {
       "date": "2026-10-02",
-      "commits": 4,
+      "commits": 6,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 38,
-      "discord_replies": 29,
-      "tokens_main_wan": 38.3,
-      "tokens_sub_wan": 189.8,
-      "tokens_sessions": 45,
-      "tokens_msgs": 550,
+      "subagent_runs": 48,
+      "discord_replies": 32,
+      "tokens_main_wan": 41.5,
+      "tokens_sub_wan": 242.3,
+      "tokens_sessions": 55,
+      "tokens_msgs": 688,
       "tokens_by_model": {
-        "opus": 103.5,
-        "sonnet": 35.0,
+        "opus": 117.3,
+        "sonnet": 47.3,
         "haiku": 0.0,
-        "fable": 89.7,
+        "fable": 119.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 27.1,
+        "opus": 30.3,
         "sonnet": 3.3,
         "haiku": 0.0,
         "fable": 8.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 76.4,
-        "sonnet": 31.7,
+        "opus": 87.0,
+        "sonnet": 44.0,
         "haiku": 0.0,
-        "fable": 81.7,
+        "fable": 111.3,
         "other": 0.0
       },
       "score_avg": null,
@@ -8918,6 +8918,24 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "backtest.html: daily refresh 2026-10-02 (auto, run_daily_an…",
+          "project": "股癌",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "04:13",
+          "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-02T04:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:00",
+          "repo": "daniel-demos"
+        },
         {
           "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-02T03:00+08:00 (days=14 ite…",
@@ -8961,7 +8979,7 @@
           "time": null
         }
       ],
-      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
+      "notes": "另有 6 筆 commit 未列（無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
     }
   ]
 }
