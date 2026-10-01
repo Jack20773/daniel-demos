@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-01T19:00+08:00",
+  "generated_at": "2026-10-01T20:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -9158,34 +9158,34 @@
     },
     {
       "date": "2026-10-01",
-      "commits": 21,
+      "commits": 22,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 26,
-      "discord_replies": 49,
-      "tokens_main_wan": 226.4,
-      "tokens_sub_wan": 299.4,
-      "tokens_sessions": 95,
-      "tokens_msgs": 1026,
+      "subagent_runs": 30,
+      "discord_replies": 57,
+      "tokens_main_wan": 232.0,
+      "tokens_sub_wan": 331.3,
+      "tokens_sessions": 99,
+      "tokens_msgs": 1092,
       "tokens_by_model": {
-        "opus": 345.3,
+        "opus": 355.0,
         "sonnet": 26.4,
         "haiku": 13.8,
-        "fable": 140.4,
+        "fable": 168.2,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 180.9,
+        "opus": 186.5,
         "sonnet": 26.4,
         "haiku": 1.5,
         "fable": 17.6,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 164.4,
+        "opus": 168.5,
         "sonnet": 0.0,
         "haiku": 12.3,
-        "fable": 122.8,
+        "fable": 150.6,
         "other": 0.0
       },
       "score_avg": 3.5,
@@ -9223,6 +9223,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-01T19:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "19:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -9397,7 +9406,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 21 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
+      "notes": "另有 22 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 20）"
     }
   ]
 }
