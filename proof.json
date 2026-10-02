@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T13:00+08:00",
+  "generated_at": "2026-10-02T14:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8879,24 +8879,24 @@
     },
     {
       "date": "2026-10-02",
-      "commits": 28,
+      "commits": 31,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 56,
-      "discord_replies": 39,
-      "tokens_main_wan": 84.3,
-      "tokens_sub_wan": 271.8,
-      "tokens_sessions": 64,
-      "tokens_msgs": 812,
+      "subagent_runs": 58,
+      "discord_replies": 45,
+      "tokens_main_wan": 88.6,
+      "tokens_sub_wan": 274.7,
+      "tokens_sessions": 66,
+      "tokens_msgs": 854,
       "tokens_by_model": {
-        "opus": 154.6,
+        "opus": 158.9,
         "sonnet": 58.2,
-        "haiku": 0.0,
+        "haiku": 2.9,
         "fable": 143.4,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 64.8,
+        "opus": 69.1,
         "sonnet": 3.3,
         "haiku": 0.0,
         "fable": 16.3,
@@ -8905,7 +8905,7 @@
       "tokens_by_model_sub": {
         "opus": 89.8,
         "sonnet": 54.9,
-        "haiku": 0.0,
+        "haiku": 2.9,
         "fable": 127.1,
         "other": 0.0
       },
@@ -8918,6 +8918,24 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "首頁 /plan/ 按鈕移到 hero 上方：原放 lede 在手機首屏之下（實測 top 875>844）",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "13:18",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "首頁加按鈕通到 /plan/（考 100 題第十版），他 2026-10-02 13:15「做吧」",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "13:16",
+          "repo": "ai-trader"
+        },
         {
           "kind": "commit",
           "text": "plan 第 10 輪修：時間尺色帶與格線下移到第一列字之下（首屏下緣不露色塊）；「已夠」改「剛夠／剛好夠」",
@@ -9055,6 +9073,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-02T13:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-02T12:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -9177,7 +9204,7 @@
           "time": null
         }
       ],
-      "notes": "另有 28 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 14、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 13）"
+      "notes": "另有 31 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 16、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 14）"
     }
   ]
 }
