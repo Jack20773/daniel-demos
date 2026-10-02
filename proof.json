@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T05:00+08:00",
+  "generated_at": "2026-10-03T06:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8759,34 +8759,34 @@
     },
     {
       "date": "2026-10-03",
-      "commits": 7,
+      "commits": 9,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 15,
-      "discord_replies": 10,
-      "tokens_main_wan": 28.2,
-      "tokens_sub_wan": 213.4,
-      "tokens_sessions": 17,
-      "tokens_msgs": 711,
+      "subagent_runs": 17,
+      "discord_replies": 11,
+      "tokens_main_wan": 30.1,
+      "tokens_sub_wan": 263.4,
+      "tokens_sessions": 19,
+      "tokens_msgs": 874,
       "tokens_by_model": {
-        "opus": 162.5,
+        "opus": 187.2,
         "sonnet": 10.2,
         "haiku": 0.0,
-        "fable": 68.9,
+        "fable": 96.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 27.2,
+        "opus": 29.0,
         "sonnet": 1.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 135.3,
+        "opus": 158.2,
         "sonnet": 9.2,
         "haiku": 0.0,
-        "fable": 68.9,
+        "fable": 96.0,
         "other": 0.0
       },
       "score_avg": null,
@@ -8798,6 +8798,15 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "v2：手機返回手勢回上一步、「＋」代客登記可選師傅/日期/時間、可點元素全面 44px＋對比度修正",
+          "project": "line-booking-demo-proto",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "05:30",
+          "repo": "line-booking-demo-proto"
+        },
         {
           "kind": "commit",
           "text": "v1 高擬真前端原型：四流程＋一人店切換＋A/B 兩種風格（純前端假資料）",
@@ -8815,6 +8824,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-03T05:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "05:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -8863,7 +8881,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 7 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
+      "notes": "另有 9 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 2、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
     }
   ]
 }
