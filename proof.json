@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T04:00+08:00",
+  "generated_at": "2026-10-03T05:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8759,34 +8759,34 @@
     },
     {
       "date": "2026-10-03",
-      "commits": 4,
+      "commits": 7,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 9,
+      "subagent_runs": 15,
       "discord_replies": 10,
-      "tokens_main_wan": 23.4,
-      "tokens_sub_wan": 92.1,
-      "tokens_sessions": 11,
-      "tokens_msgs": 327,
+      "tokens_main_wan": 28.2,
+      "tokens_sub_wan": 213.4,
+      "tokens_sessions": 17,
+      "tokens_msgs": 711,
       "tokens_by_model": {
-        "opus": 85.9,
+        "opus": 162.5,
         "sonnet": 10.2,
         "haiku": 0.0,
-        "fable": 19.4,
+        "fable": 68.9,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 22.4,
+        "opus": 27.2,
         "sonnet": 1.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 63.5,
+        "opus": 135.3,
         "sonnet": 9.2,
         "haiku": 0.0,
-        "fable": 19.4,
+        "fable": 68.9,
         "other": 0.0
       },
       "score_avg": null,
@@ -8798,6 +8798,33 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "v1 高擬真前端原型：四流程＋一人店切換＋A/B 兩種風格（純前端假資料）",
+          "project": "line-booking-demo-proto",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "04:23",
+          "repo": "line-booking-demo-proto"
+        },
+        {
+          "kind": "commit",
+          "text": "backtest.html: daily refresh 2026-10-03 (auto, run_daily_an…",
+          "project": "股癌",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "04:13",
+          "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-03T04:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:00",
+          "repo": "daniel-demos"
+        },
         {
           "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-03T03:00+08:00 (days=14 ite…",
@@ -8836,7 +8863,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
+      "notes": "另有 7 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
     }
   ]
 }
