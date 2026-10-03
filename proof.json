@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T07:01+08:00",
+  "generated_at": "2026-10-03T08:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8759,31 +8759,31 @@
     },
     {
       "date": "2026-10-03",
-      "commits": 11,
+      "commits": 12,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 19,
       "discord_replies": 13,
-      "tokens_main_wan": 32.9,
-      "tokens_sub_wan": 323.7,
+      "tokens_main_wan": 52.2,
+      "tokens_sub_wan": 325.6,
       "tokens_sessions": 21,
-      "tokens_msgs": 1123,
+      "tokens_msgs": 1148,
       "tokens_by_model": {
-        "opus": 228.4,
+        "opus": 249.5,
         "sonnet": 10.2,
         "haiku": 0.0,
         "fable": 118.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 31.9,
+        "opus": 51.2,
         "sonnet": 1.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 196.5,
+        "opus": 198.3,
         "sonnet": 9.2,
         "haiku": 0.0,
         "fable": 118.0,
@@ -8833,6 +8833,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-03T07:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "07:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -8899,7 +8908,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 11 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 3、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7）"
+      "notes": "另有 12 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 3、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 8）"
     }
   ]
 }
