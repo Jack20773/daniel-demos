@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T21:00+08:00",
+  "generated_at": "2026-10-04T22:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -8452,33 +8452,33 @@
     },
     {
       "date": "2026-10-04",
-      "commits": 7,
+      "commits": 8,
       "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 4,
-      "discord_replies": 12,
-      "tokens_main_wan": 42.6,
-      "tokens_sub_wan": 18.6,
-      "tokens_sessions": 22,
-      "tokens_msgs": 152,
+      "tickets_verify": 1,
+      "subagent_runs": 11,
+      "discord_replies": 21,
+      "tokens_main_wan": 57.6,
+      "tokens_sub_wan": 59.4,
+      "tokens_sessions": 36,
+      "tokens_msgs": 373,
       "tokens_by_model": {
-        "opus": 52.2,
-        "sonnet": 3.7,
-        "haiku": 5.3,
+        "opus": 101.1,
+        "sonnet": 5.4,
+        "haiku": 10.6,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 33.6,
-        "sonnet": 3.7,
-        "haiku": 5.3,
+        "opus": 44.4,
+        "sonnet": 5.4,
+        "haiku": 7.9,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 18.6,
+        "opus": 56.7,
         "sonnet": 0.0,
-        "haiku": 0.0,
+        "haiku": 2.7,
         "fable": 0.0,
         "other": 0.0
       },
@@ -8499,6 +8499,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "19:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-04T21:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -8556,7 +8565,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 7 筆 commit 未列（無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
+      "notes": "另有 8 筆 commit 未列（無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7）"
     }
   ]
 }
