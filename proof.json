@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T00:00+08:00",
+  "generated_at": "2026-10-08T01:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6113,34 +6113,34 @@
     },
     {
       "date": "2026-10-08",
-      "commits": 0,
+      "commits": 1,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 0.0,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 0,
-      "tokens_msgs": 0,
+      "subagent_runs": 15,
+      "discord_replies": 5,
+      "tokens_main_wan": 21.9,
+      "tokens_sub_wan": 126.4,
+      "tokens_sessions": 17,
+      "tokens_msgs": 512,
       "tokens_by_model": {
-        "opus": 0.0,
-        "sonnet": 0.0,
+        "opus": 83.3,
+        "sonnet": 1.0,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 64.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
-        "sonnet": 0.0,
+        "opus": 20.9,
+        "sonnet": 1.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 0.0,
+        "opus": 62.4,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 64.0,
         "other": 0.0
       },
       "score_avg": null,
@@ -6151,9 +6151,19 @@
       "highlights": [],
       "items": [],
       "items_count": 0,
-      "skipped": [],
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-08T00:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:00",
+          "repo": "daniel-demos"
+        }
+      ],
       "selfreport": [],
-      "notes": ""
+      "notes": "另有 1 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
     }
   ]
 }
