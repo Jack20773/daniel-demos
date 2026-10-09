@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T15:00+08:00",
+  "generated_at": "2026-10-09T16:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5119,31 +5119,31 @@
     },
     {
       "date": "2026-10-09",
-      "commits": 16,
+      "commits": 18,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 52,
-      "discord_replies": 40,
-      "tokens_main_wan": 106.9,
-      "tokens_sub_wan": 263.9,
-      "tokens_sessions": 56,
-      "tokens_msgs": 1028,
+      "subagent_runs": 54,
+      "discord_replies": 49,
+      "tokens_main_wan": 114.0,
+      "tokens_sub_wan": 283.2,
+      "tokens_sessions": 60,
+      "tokens_msgs": 1151,
       "tokens_by_model": {
-        "opus": 222.2,
-        "sonnet": 140.5,
+        "opus": 246.9,
+        "sonnet": 142.1,
         "haiku": 8.1,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 106.0,
-        "sonnet": 0.9,
+        "opus": 111.5,
+        "sonnet": 2.5,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 116.2,
+        "opus": 135.4,
         "sonnet": 139.6,
         "haiku": 8.1,
         "fable": 0.0,
@@ -5160,12 +5160,30 @@
       "skipped": [
         {
           "kind": "commit",
+          "text": "英文講義第一、二課（english-lessons）＋股癌關鍵字搜尋頁（asr-lab/search）存檔",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "15:05",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
           "text": "backtest.html: daily refresh 2026-10-09 (auto, run_daily_an…",
           "project": "股癌",
           "reason": "no_coauthor",
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-09T15:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "15:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5304,7 +5322,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 16 筆 commit 未列（無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 15）"
+      "notes": "另有 18 筆 commit 未列（未 push 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16）"
     }
   ]
 }
