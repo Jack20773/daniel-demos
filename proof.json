@@ -1,625 +1,7 @@
 {
-  "generated_at": "2026-10-10T23:00+08:00",
+  "generated_at": "2026-10-11T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-09-27",
-      "commits": 51,
-      "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 28,
-      "discord_replies": 61,
-      "tokens_main_wan": 310.0,
-      "tokens_sub_wan": 352.6,
-      "tokens_sessions": 38,
-      "tokens_msgs": 1686,
-      "tokens_by_model": {
-        "opus": 357.8,
-        "sonnet": 225.2,
-        "haiku": 0.0,
-        "fable": 79.6,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 290.5,
-        "sonnet": 1.2,
-        "haiku": 0.0,
-        "fable": 18.4,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 67.3,
-        "sonnet": 224.0,
-        "haiku": 0.0,
-        "fable": 61.2,
-        "other": 0.0
-      },
-      "score_avg": 4.0,
-      "score_low": 0,
-      "score_high": 2,
-      "scores": [
-        {
-          "score": 4,
-          "time": "2026-09-27 11:01"
-        },
-        {
-          "score": 3,
-          "time": "2026-09-27 17:03"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-27 19:51"
-        }
-      ],
-      "corrections_new": 3,
-      "highlights": [
-        "第卅五棒：讀 IBKR 官方說明書回答自動重啟規格；昨晚 23:45 免密碼自登成功（一手 log）；週日通行證失效已…",
-        "語音詞表：對實際產出複核全語料稽核（1387/1103/16 命中 0 誤觸）；把只存在暫存區的逐字稿搬進 voice…",
-        "糾正上板：開 correction-read-spec-before-inferring-from-logs（規格 v…"
-      ],
-      "items": [
-        {
-          "kind": "commit",
-          "text": "第卅五棒：讀 IBKR 官方說明書回答自動重啟規格；昨晚 23:45 免密碼自登成功（一手 log）；週日通行證失效已…",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/5dd164f5fa3c0b5cc1ac98e4c12c46c59361c280",
-          "evidence_label": "commit 5dd164f",
-          "verified": true,
-          "time": "01:08",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "語音詞表：對實際產出複核全語料稽核（1387/1103/16 命中 0 誤觸）；把只存在暫存區的逐字稿搬進 voice…",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3a14a868cbdfb9ad17380627d3b6c97590ca6e0e",
-          "evidence_label": "commit 3a14a86",
-          "verified": true,
-          "time": "01:12",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "糾正上板：開 correction-read-spec-before-inferring-from-logs（規格 v…",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/93f42d11260e860e1b08737aadf2b05d9cf05738",
-          "evidence_label": "commit 93f42d1",
-          "verified": true,
-          "time": "02:04",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "第卅六棒：卅四棒「新疑點」結案為假警報（daily_run 是週一～五排程，週六本來就不跑）；Gateway「已解決」…",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ddbb19122f14f366c7c75ebc678ce73d4ec112d1",
-          "evidence_label": "commit ddbb191",
-          "verified": true,
-          "time": "10:13",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "ledger_sweep: parse_date 改吃完整 ISO-8601，修好「一張票靜默從待辦機制消失」",
-          "project": "看板",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/13b056e9b1435c5452bd337e461f7bad5fb65398",
-          "evidence_label": "commit 13b056e",
-          "verified": true,
-          "time": "10:41",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "Track1 上線：batch.py 選逐字稿時優先用官方版，不再靠 glob 隨機決定",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/49b6bebae4051c54c646942221a2a7d102c8d90a",
-          "evidence_label": "commit 49b6beb",
-          "verified": true,
-          "time": "10:44",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "語音誠實化兩支防呆 + line-booking DB 全盤分析（含盲審與逐條裁決）",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3644201bae5c26a9a9c98f816aa6ee552b03914a",
-          "evidence_label": "commit 3644201",
-          "verified": true,
-          "time": "10:58",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "batch.py：manifest 壞掉不再讓整條流水線靜默停擺；用詞由「官方版」改為「粉絲版」",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/50756f291ca830d4276bf3a8219dbef3f0393730",
-          "evidence_label": "commit 50756f2",
-          "verified": true,
-          "time": "11:06",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "新增 eval/：專有名詞正確率量尺（粉絲版 vs 自建版逐字稿）",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/af88a4a207914fa1451e6410db413775fada819d",
-          "evidence_label": "commit af88a4a",
-          "verified": true,
-          "time": "19:45",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "N22／N23 上線：不准自己停下來＋提問一律走 Discord（含 hook 實測擋下來）",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/31c40f418ee266fac1e3d4ed5fcbbb71831c6334",
-          "evidence_label": "commit 31c40f4",
-          "verified": true,
-          "time": "19:52",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "更正一句自己造的假話：feedback_ask_one_at_a_time_with_why.md 一直都在",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f3e88f75e9c287c28a735f421d32c9d11dfa0610",
-          "evidence_label": "commit f3e88f7",
-          "verified": true,
-          "time": "19:56",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "譬喻第十次：依該檔自己的規定改開機制票，不再往檔案加解方",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/12b328489625dea7ef0431b94d60df755179f541",
-          "evidence_label": "commit 12b3284",
-          "verified": true,
-          "time": "20:02",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "asr：固定名詞後處理改字表，修自建版逐字稿的股癌/謝孟恭/聯準會系統性訛寫",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/f906849866c4538a343afde857d549b6e9fbd3d9",
-          "evidence_label": "commit f906849",
-          "verified": true,
-          "time": "20:06",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "評估第 3 關補免費盲測層：沒付費授權只砍 A／B 家，砍不掉整個關卡",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8c4d2391f0d52bf985f1663f73b7b88781ed697f",
-          "evidence_label": "commit 8c4d239",
-          "verified": true,
-          "time": "20:21",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "修正 hotwords 224 token 上限的過期註解",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/1c709d28ea3663c7eb72058655796437521b5c9a",
-          "evidence_label": "commit 1c709d2",
-          "verified": true,
-          "time": "20:33",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "memory-autoload 交接錨點改定行首：舊尺在 09-25／09-26 只抓到 5 字垃圾",
-          "project": "hook",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1647b46654b7a552d587a996f208180a7f715bcb",
-          "evidence_label": "commit 1647b46",
-          "verified": true,
-          "time": "20:34",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "voice-claude：initial_prompt 票稽核發現已於09-05接完，補token上限警告與接線回歸測試",
-          "project": "voice-claude",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/25ff879011089fa2abe31b0e5e39855bc019858e",
-          "evidence_label": "commit 25ff879",
-          "verified": true,
-          "time": "20:48",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "白工台帳補兩筆：錨點缺陷在第三個讀取端多活兩天、交接與自己的 commit 互相矛盾",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cbd4985943740795a9dda9758f9136059d4e49d4",
-          "evidence_label": "commit cbd4985",
-          "verified": true,
-          "time": "20:49",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "BOOT.md 更正一句錯的結論：memory-autoload 並非不受錨點缺陷影響（原句保留）",
-          "project": "遠端",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b5536b5d07471fa2a0df376661c6a2fbbb7f3505",
-          "evidence_label": "commit b5536b5",
-          "verified": true,
-          "time": "20:53",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "memory-autoload 結構性修復：整份計畫（不動程式碼）＋四題中三題 AI 暫定裁決",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/875b9ef31a77e0161ca2a470c377c9c6f5ee73bc",
-          "evidence_label": "commit 875b9ef",
-          "verified": true,
-          "time": "21:25",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "新增組態 D 批次轉錄腳本（EP682/683/684/687）",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/528fc508af13ae940417efb05e8a8dee97810876",
-          "evidence_label": "commit 528fc50",
-          "verified": true,
-          "time": "21:29",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "批次腳本補「怎麼起」：換棒會殺掉 session 程序樹裡的批次",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/1ac4dc0ba9700ee5ade9f0dd4f7940935c31c10c",
-          "evidence_label": "commit 1ac4dc0",
-          "verified": true,
-          "time": "21:49",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "第四十一棒：25 條盲審逐條裁決完成（接受 23／部分接受 1／駁回 0），原方案 A/B/C/E 全作廢",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2394a8c79f79ac61cadd6c8402fa37e2d0cadc22",
-          "evidence_label": "commit 2394a8c",
-          "verified": true,
-          "time": "23:09",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "第四十一棒：白工台帳全目錄盤點（78 筆／32 筆屬「檢查該紅卻綠」家族）＋普查數字更新＋核准路徑實查",
-          "project": "看板",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1839e3954810de85fac6ed70950c644e0c1f366f",
-          "evidence_label": "commit 1839e39",
-          "verified": true,
-          "time": "23:29",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "第四十二棒：更正「被審物已消失」的假前提＋洞 3 登記為已接受殘餘風險",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/96f153e3151fa35dd1afa30f83740e5af6fd7d75",
-          "evidence_label": "commit 96f153e",
-          "verified": true,
-          "time": "23:55",
-          "plain": null,
-          "plain_ok": false
-        }
-      ],
-      "items_count": 25,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "第四十一棒收工：NEXT 交接＋BOOT_BRIEF＋收工-精簡卡點回寫（GUARD 222k，自評重開）",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "23:34",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "第卅九棒收工：NEXT 交接＋BOOT_BRIEF＋全盤分析 skill 門檻搬進 description",
-          "project": "看板",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "21:34",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "第卅九棒：白工台帳＋收工 skill 補「分身死了但子程序還活著」這一格",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "21:13",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "第卅八棒收工：NEXT 交接＋BOOT_BRIEF 更新＋收工-精簡 卡點回寫",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "21:03",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "daily log 第卅八棒：評估第3關補免費層、memory-autoload 錨點 bug、寄信解卡、64%量錯對象",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "20:47",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "第卅七棒收工：NEXT 交接＋BOOT_BRIEF 更新＋兩支 skill 卡點回寫",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "20:13",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "daily log 續（20:2x）：尺的兩個數字、N22／N23 三關驗收、自抓假話的根因三條",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "19:59",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "第卅六棒收工：NEXT 交接＋用詞更正（股癌沒有官方逐字稿）＋全盤分析 skill 回寫",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "11:06",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "卅四棒收工交接：股票那件事已解決（自動重啟證實生效），他關機",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "02:10",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T23:01+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "23:01",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T22:01+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "22:01",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T21:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "21:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T20:01+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "20:01",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T19:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "19:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T18:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "18:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T17:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "17:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T16:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "16:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T15:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "15:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T14:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "14:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T13:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "13:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T12:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "12:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T11:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "11:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T10:06+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "10:06",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T02:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "02:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T01:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "01:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-27T00:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "00:00",
-          "repo": "daniel-demos"
-        }
-      ],
-      "selfreport": [
-        {
-          "text": "昨晚 23:45 Gateway 自動重啟並免密碼登入成功（一手證據，C:\\Jts\\ibgateway\\1045\\launcher.log 361–531 行）：Reading data from '…\\autorestart' → Aut",
-          "time": null
-        },
-        {
-          "text": "照他 01:33 的要求讀了官方說明書（一手），出處與原句：",
-          "time": null
-        },
-        {
-          "text": "已回他兩則（一則一主題）：規格答案 1553452965803589824、昨晚證據＋週日提醒 1553452982501113943。",
-          "time": null
-        },
-        {
-          "text": "對實際產出檔複核（不抄日誌）：用版控的 005_scripts/voiceclaude_glossary_full_corpus_scan.py 拿現行 glossary.json（9 條生效＋5 條排除）重跑 → 總筆數 1387／空文字",
-          "time": null
-        },
-        {
-          "text": "腳本 docstring 的 \\A 轉義警告改成 raw string（-W error 下跑過）。",
-          "time": null
-        }
-      ],
-      "notes": "另有 26 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 26）"
-    },
     {
       "date": "2026-09-28",
       "commits": 102,
@@ -5005,24 +4387,24 @@
     },
     {
       "date": "2026-10-10",
-      "commits": 24,
+      "commits": 25,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 50,
       "discord_replies": 62,
-      "tokens_main_wan": 443.3,
+      "tokens_main_wan": 452.0,
       "tokens_sub_wan": 345.8,
       "tokens_sessions": 197,
-      "tokens_msgs": 1652,
+      "tokens_msgs": 1657,
       "tokens_by_model": {
-        "opus": 357.8,
+        "opus": 366.6,
         "sonnet": 333.0,
         "haiku": 0.0,
         "fable": 98.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 202.8,
+        "opus": 211.6,
         "sonnet": 240.4,
         "haiku": 0.0,
         "fable": 0.0,
@@ -5057,6 +4439,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-10T23:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5267,7 +4658,51 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 24 筆 commit 未列（無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 23）"
+      "notes": "另有 25 筆 commit 未列（無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
+    },
+    {
+      "date": "2026-10-11",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 0.0,
+      "tokens_sessions": 0,
+      "tokens_msgs": 0,
+      "tokens_by_model": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
