@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-11T11:00+08:00",
+  "generated_at": "2026-10-11T12:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4662,34 +4662,34 @@
     },
     {
       "date": "2026-10-11",
-      "commits": 12,
+      "commits": 13,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 3,
-      "discord_replies": 9,
-      "tokens_main_wan": 55.0,
-      "tokens_sub_wan": 43.8,
-      "tokens_sessions": 6,
-      "tokens_msgs": 202,
+      "subagent_runs": 11,
+      "discord_replies": 16,
+      "tokens_main_wan": 71.6,
+      "tokens_sub_wan": 113.2,
+      "tokens_sessions": 16,
+      "tokens_msgs": 446,
       "tokens_by_model": {
-        "opus": 77.6,
-        "sonnet": 5.3,
-        "haiku": 0.0,
-        "fable": 15.8,
+        "opus": 118.7,
+        "sonnet": 20.9,
+        "haiku": 2.1,
+        "fable": 43.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 55.0,
+        "opus": 71.6,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 22.6,
-        "sonnet": 5.3,
-        "haiku": 0.0,
-        "fable": 15.8,
+        "opus": 47.1,
+        "sonnet": 20.9,
+        "haiku": 2.1,
+        "fable": 43.1,
         "other": 0.0
       },
       "score_avg": null,
@@ -4709,6 +4709,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-11T11:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4810,8 +4819,13 @@
           "repo": "daniel-demos"
         }
       ],
-      "selfreport": [],
-      "notes": "另有 12 筆 commit 未列（無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 11）"
+      "selfreport": [
+        {
+          "text": "outcome_streak_report.py 已改：報告產 daniel-reports/streak/.html＋部署，Discord 給網址，部署失敗退回本機路徑。實測：py_compile OK、測試頁 200、dry-run 不",
+          "time": null
+        }
+      ],
+      "notes": "另有 13 筆 commit 未列（無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 12）"
     }
   ]
 }
