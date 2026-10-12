@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T00:00+08:00",
+  "generated_at": "2026-10-13T01:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3503,31 +3503,31 @@
     },
     {
       "date": "2026-10-13",
-      "commits": 0,
+      "commits": 2,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 0.0,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 0,
-      "tokens_msgs": 0,
+      "subagent_runs": 1,
+      "discord_replies": 2,
+      "tokens_main_wan": 2.5,
+      "tokens_sub_wan": 7.3,
+      "tokens_sessions": 2,
+      "tokens_msgs": 59,
       "tokens_by_model": {
-        "opus": 0.0,
+        "opus": 9.8,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
+        "opus": 2.5,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 0.0,
+        "opus": 7.3,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -3541,9 +3541,28 @@
       "highlights": [],
       "items": [],
       "items_count": 0,
-      "skipped": [],
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "嘉米攻略頁：加「空劍的用法（套路）」段落（官方幀數表 Modern 查證）",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:33",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-13T00:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:00",
+          "repo": "daniel-demos"
+        }
+      ],
       "selfreport": [],
-      "notes": ""
+      "notes": "另有 2 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
     }
   ]
 }
