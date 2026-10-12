@@ -1,665 +1,7 @@
 {
-  "generated_at": "2026-10-12T23:00+08:00",
+  "generated_at": "2026-10-13T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-09-29",
-      "commits": 55,
-      "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 35,
-      "discord_replies": 139,
-      "tokens_main_wan": 250.1,
-      "tokens_sub_wan": 343.5,
-      "tokens_sessions": 47,
-      "tokens_msgs": 1755,
-      "tokens_by_model": {
-        "opus": 337.7,
-        "sonnet": 206.0,
-        "haiku": 2.7,
-        "fable": 47.1,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 213.5,
-        "sonnet": 0.0,
-        "haiku": 0.0,
-        "fable": 36.6,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 124.2,
-        "sonnet": 206.0,
-        "haiku": 2.7,
-        "fable": 10.5,
-        "other": 0.0
-      },
-      "score_avg": 4.09,
-      "score_low": 1,
-      "score_high": 8,
-      "scores": [
-        {
-          "score": 4,
-          "time": "2026-09-29 00:16"
-        },
-        {
-          "score": 1,
-          "time": "2026-09-29 00:42"
-        },
-        {
-          "score": 4,
-          "time": "2026-09-29 00:42"
-        },
-        {
-          "score": 3,
-          "time": "2026-09-29 00:44"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-29 01:00"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-29 01:03"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-29 01:13"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-29 01:18"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-29 01:27"
-        },
-        {
-          "score": 3,
-          "time": "2026-09-29 11:00"
-        },
-        {
-          "score": 5,
-          "time": "2026-09-29 21:28"
-        }
-      ],
-      "corrections_new": 0,
-      "highlights": [
-        "開機提速（5 輪→3 輪、preflight 1.3s→0.55s）＋開機檔一進一出上限（每次重開自動棘輪）",
-        "更正：股癌詳細版＝stock-signal GitHub Pages（上一棒誤答沒有）",
-        "第七十三棒：開機三輪實測第一次（第一句≈24s），交接第二次實測"
-      ],
-      "items": [
-        {
-          "kind": "commit",
-          "text": "開機提速（5 輪→3 輪、preflight 1.3s→0.55s）＋開機檔一進一出上限（每次重開自動棘輪）",
-          "project": "遠端",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/036edd051ee985ac9814c2fc9df85b3916c7dae5",
-          "evidence_label": "commit 036edd0",
-          "verified": true,
-          "time": "00:06",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "更正：股癌詳細版＝stock-signal GitHub Pages（上一棒誤答沒有）",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b5c8785ab26f9821827fb635a1e1525a3c60404b",
-          "evidence_label": "commit b5c8785",
-          "verified": true,
-          "time": "00:07",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "第七十三棒：開機三輪實測第一次（第一句≈24s），交接第二次實測",
-          "project": "遠端",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6bdf44e13ca1fb1c512dc83e1d52d324ba79dcb2",
-          "evidence_label": "commit 6bdf44e",
-          "verified": true,
-          "time": "00:08",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "backtest.html: manual refresh 2026-09-29 (hold since 09-16;…",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/8dfdf18802f89c35ae3cc0e5e4b103b355691585",
-          "evidence_label": "commit 8dfdf18",
-          "verified": true,
-          "time": "00:14",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "記憶：結果導向監控（他 09-29 裁決）＋回測站暫停 13 天事故",
-          "project": "記憶",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/4751809e799a38484674eabd468624b8192c96a1",
-          "evidence_label": "commit 4751809",
-          "verified": true,
-          "time": "00:20",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "新增結果導向檢查器（outcome_check.py）：只看成果本身日期，過期即紅燈",
-          "project": "工具",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7261388e09d3436265519df9ed529adf84266717",
-          "evidence_label": "commit 7261388",
-          "verified": true,
-          "time": "00:46",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "全盤目的稽核 2026-09-29：母體 300 件逐件留/修/收（唯讀，腳本＋報告）",
-          "project": "工具",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/65a9a449e39d5ec4f6101a62bcda23bfb05eaa90",
-          "evidence_label": "commit 65a9a44",
-          "verified": true,
-          "time": "01:36",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "N25 目的先問、做法自決：門鈴 hook＋lint R12 防拆＋每日分數監看",
-          "project": "hook",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a711bf5f5a8adff6545ee5efb5b598f68af2e33b",
-          "evidence_label": "commit a711bf5",
-          "verified": true,
-          "time": "01:53",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "修 outcome_check.py 兩個誤判：額度日報假紅、ai-trader 假綠",
-          "project": "工具",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/663811bf05fee0c041589a7d6a41618f2653e2a7",
-          "evidence_label": "commit 663811b",
-          "verified": true,
-          "time": "02:02",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "outcome_check.py 對照組測試改留版控：新增 outcome_check_controls.py",
-          "project": "工具",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ac0b39190b56f544d7b8f321b30d3c7d6eae8008",
-          "evidence_label": "commit ac0b391",
-          "verified": true,
-          "time": "02:04",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "新增 ad_guard 誤擋統計腳本：09-20~09-28 批次逐筆人工判讀，誤擋率 90%",
-          "project": "root",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f5c45fb6fdcd7810fd4d1f42f0c636ed5a201e15",
-          "evidence_label": "commit f5c45fb",
-          "verified": true,
-          "time": "02:06",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "新增手機版成果紅綠燈首頁 demo：讀 outcome_check.py --json 產出單頁 HTML",
-          "project": "工具",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/892701bd46c42e461b1bdb5ad05442136608399f",
-          "evidence_label": "commit 892701b",
-          "verified": true,
-          "time": "02:16",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "新增成果紅綠燈首頁 demo（手機版靜態頁）",
-          "project": "工作證明頁",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/2638fbca0474e4127e8129bdad1679ab3f915f6b",
-          "evidence_label": "commit 2638fbc",
-          "verified": true,
-          "time": "02:16",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "修戰情室看板 warroom.html 假紅：內容去重讓 generated_at 停住，加 60 分鐘心跳強制部署",
-          "project": "看板",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2983e7cbc67a3c0c5e136ab180c526dd9eacbae2",
-          "evidence_label": "commit 2983e7c",
-          "verified": true,
-          "time": "02:22",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "糾正台帳補兩張：purpose-first-method-self 改觀察期驗收、outcome-based-moni…",
-          "project": "看板",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/331445176129d7e1f6c12726034ebac6e44807f5",
-          "evidence_label": "commit 3314451",
-          "verified": true,
-          "time": "02:28",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "修正 correction-outcome-based-monitoring 的 done_when：股癌週報 Ema…",
-          "project": "看板",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/9efa206587dc8862b3872bc30bdf5da3f2da3086",
-          "evidence_label": "commit 9efa206",
-          "verified": true,
-          "time": "02:29",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "修戰情室監看殭屍：boot_warroom_watch.sh 只准一支活著（最新的接手，舊的自己結束）",
-          "project": "遠端",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/eb1654b6bbb1cc4cedc54f046fa0dac4a8d73dbb",
-          "evidence_label": "commit eb1654b",
-          "verified": true,
-          "time": "02:33",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "退役舊戰情室排程 ClaudeRemote-PullDecisions（他 1554303356678311960 停…",
-          "project": "遠端",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/cf42bc4b52015435102edb4f701ef6b2b747cd01",
-          "evidence_label": "commit cf42bc4",
-          "verified": true,
-          "time": "10:06",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "ad_guard 關鍵字分兩層：弱詞需搭配另一關鍵字才擋，修正 90% 誤擋率",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/a619dcc5ced04db111ad86f48d3efbe66c9c72cb",
-          "evidence_label": "commit a619dcc",
-          "verified": true,
-          "time": "10:11",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "ad_guard 修視窗誤黏：extract_segment 改用段落斷點，window 只當上限",
-          "project": "股癌",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/779539e4274f313768e6364e4015e3d4cb9daed8",
-          "evidence_label": "commit 779539e",
-          "verified": true,
-          "time": "10:16",
-          "plain": null,
-          "plain_ok": false
-        },
-        {
-          "kind": "commit",
-          "text": "加下單月曆 demo（給丹尼爾可點連結）",
-          "project": "工作證明頁",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/9bccded1eb1aecb38cdf3d11870a6c4d24e9421b",
-          "evidence_label": "commit 9bccded",
-          "verified": true,
-          "time": "11:09",
-          "plain": null,
-          "plain_ok": false
-        }
-      ],
-      "items_count": 21,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "第七十六棒收工：ai-trader 成績頁＋斷線通知、下單月曆 demo、米米抓漏訊與通行證草稿、糾正與核心反思入記憶",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "21:34",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "第七十五棒收工：戰情室退役、ad_guard 擋錯 14→1、券商提醒重開、按鈕 500 根因；交接 21:00 IB…",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "10:39",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "第七十四棒收工：N25 目的門鈴、全盤稽核、結果導向檢查器；交接 07:20 報表與 ai-trader 修復",
-          "project": "遠端",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "01:54",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "第七十三棒收工：回測站解凍、檢測員重開、成果普查、會計自評；交接 ai-trader 儀表板自動發布",
-          "project": "遠端",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "00:32",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "第七十二棒測試重開交接：NEXT＋BOOT_BRIEF",
-          "project": "記憶",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "00:06",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "LLM 三組 SYSTEM_FAILURE：修正式路徑重試退避從未生效，失敗原因帶出 CLI 原文",
-          "project": "交易機器人",
-          "reason": "no_remote",
-          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
-          "time": "12:40",
-          "repo": "ai-trader"
-        },
-        {
-          "kind": "commit",
-          "text": "停擺告警不再靜音：每個壞的交易日一封、沒放棄記號的 NO_RUN 與沒有 exit code 的一輪另立標籤",
-          "project": "交易機器人",
-          "reason": "no_remote",
-          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
-          "time": "12:36",
-          "repo": "ai-trader"
-        },
-        {
-          "kind": "commit",
-          "text": "新增六組成績單真實資料頁 results.html 與生成腳本 build_results.py",
-          "project": "交易機器人",
-          "reason": "no_remote",
-          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
-          "time": "12:34",
-          "repo": "ai-trader"
-        },
-        {
-          "kind": "commit",
-          "text": "重開券商登入週提醒：改週日 20:00（丹尼爾 2026-09-29 裁決 Discord 1554320227108…",
-          "project": "交易機器人",
-          "reason": "no_remote",
-          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
-          "time": "10:37",
-          "repo": "ai-trader"
-        },
-        {
-          "kind": "commit",
-          "text": "backtest.html: daily refresh 2026-09-29 (auto, run_daily_an…",
-          "project": "股癌",
-          "reason": "no_coauthor",
-          "reason_label": "無 Co-Authored-By: Claude",
-          "time": "04:13",
-          "repo": "stock-signal"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T23:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "23:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T22:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "22:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T21:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "21:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T20:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "20:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T19:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "19:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T18:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "18:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T17:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "17:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T16:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "16:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T15:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "15:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T14:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "14:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T13:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "13:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T12:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "12:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T11:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "11:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T10:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "10:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T09:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "09:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T08:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "08:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T07:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "07:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T06:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "06:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T05:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "05:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T04:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "04:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T03:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "03:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T02:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "02:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T01:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "01:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-09-29T00:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "00:00",
-          "repo": "daniel-demos"
-        }
-      ],
-      "selfreport": [
-        {
-          "text": "17:29 米米「開機抓漏訊」完成（又仟回「做」1554424815677603893；MIMI_BOOT.md 第 0 步＋交接記最後 id，備份 .bak-20260929）1554424915677937675。",
-          "time": null
-        }
-      ],
-      "notes": "另有 34 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 29、repo 沒有 GitHub remote（沒有可點連結） 4、無 Co-Authored-By: Claude 1）"
-    },
     {
       "date": "2026-09-30",
       "commits": 45,
@@ -3810,33 +3152,33 @@
     },
     {
       "date": "2026-10-12",
-      "commits": 26,
+      "commits": 34,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 2,
-      "discord_replies": 17,
-      "tokens_main_wan": 134.5,
-      "tokens_sub_wan": 15.2,
-      "tokens_sessions": 4,
-      "tokens_msgs": 268,
+      "subagent_runs": 7,
+      "discord_replies": 29,
+      "tokens_main_wan": 160.3,
+      "tokens_sub_wan": 60.7,
+      "tokens_sessions": 115,
+      "tokens_msgs": 607,
       "tokens_by_model": {
-        "opus": 147.2,
-        "sonnet": 0.5,
-        "haiku": 2.1,
+        "opus": 202.8,
+        "sonnet": 13.6,
+        "haiku": 4.7,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 134.1,
-        "sonnet": 0.5,
+        "opus": 146.7,
+        "sonnet": 13.6,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 13.1,
+        "opus": 56.1,
         "sonnet": 0.0,
-        "haiku": 2.1,
+        "haiku": 4.7,
         "fable": 0.0,
         "other": 0.0
       },
@@ -3849,6 +3191,51 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "自然發音頁：今天範圍切換（預設到 wet）、KK 例外表（floor/poured/minutes/of）",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌這集：頁面原話從逐字稿補全（不再用…省略），▶ 秒數改為原話開頭那行字幕；擋下區同樣補全",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "自然發音頁第 2 版：單字卡三步進度條、句子念／翻譯計數、KK 音標（CMU 轉）、音標總表、慢速、錄音回放",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌這集：上線前加語意覆核關卡（沿用 stock-signal/semantic_gate.py 6c823ea）",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:23",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "英文自然發音每日練習頁（/phonics）；只問非他不可清單（only_daniel.json）",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:08",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "財報考試正式題開放上網查資料（他 2026-10-12：現在能看的所有資料都能看、資訊越多越新越好）",
@@ -3869,12 +3256,39 @@
         },
         {
           "kind": "commit",
+          "text": "語意覆核：「不確定」改照寄＋卡片標註，信末分開算「擋下 N／標註 M」",
+          "project": "股癌",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:18",
+          "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "寄信前加語意覆核關卡（第三道）：另一次 claude -p 只問「是不是真的在對這檔股票表態」",
+          "project": "股癌",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "23:13",
+          "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
           "text": "backtest.html: daily refresh 2026-10-12 (auto, run_daily_an…",
           "project": "股癌",
           "reason": "no_coauthor",
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-12T23:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4085,7 +3499,51 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 26 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 2、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 23）"
+      "notes": "另有 34 筆 commit 未列（未 push 7、repo 沒有 GitHub remote（沒有可點連結） 2、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
+    },
+    {
+      "date": "2026-10-13",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 0.0,
+      "tokens_sessions": 0,
+      "tokens_msgs": 0,
+      "tokens_by_model": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
