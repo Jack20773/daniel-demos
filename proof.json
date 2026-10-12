@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T04:00+08:00",
+  "generated_at": "2026-10-13T05:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3187,9 +3187,37 @@
       "score_high": 0,
       "scores": [],
       "corrections_new": 0,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
+      "highlights": [
+        "寄信前加語意覆核關卡（第三道）：另一次 claude -p 只問「是不是真的在對這檔股票表態」",
+        "語意覆核：「不確定」改照寄＋卡片標註，信末分開算「擋下 N／標註 M」"
+      ],
+      "items": [
+        {
+          "kind": "commit",
+          "text": "寄信前加語意覆核關卡（第三道）：另一次 claude -p 只問「是不是真的在對這檔股票表態」",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/5c4c949735c4c8f2a838f808fcece6f7d439402b",
+          "evidence_label": "commit 5c4c949",
+          "verified": true,
+          "time": "23:13",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "語意覆核：「不確定」改照寄＋卡片標註，信末分開算「擋下 N／標註 M」",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/6c823ea9eef7c4205d01bb2269d3b1e4f3599655",
+          "evidence_label": "commit 6c823ea",
+          "verified": true,
+          "time": "23:18",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 2,
       "skipped": [
         {
           "kind": "commit",
@@ -3253,24 +3281,6 @@
           "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
           "time": "11:42",
           "repo": "ai-trader"
-        },
-        {
-          "kind": "commit",
-          "text": "語意覆核：「不確定」改照寄＋卡片標註，信末分開算「擋下 N／標註 M」",
-          "project": "股癌",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "23:18",
-          "repo": "stock-signal"
-        },
-        {
-          "kind": "commit",
-          "text": "寄信前加語意覆核關卡（第三道）：另一次 claude -p 只問「是不是真的在對這檔股票表態」",
-          "project": "股癌",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "23:13",
-          "repo": "stock-signal"
         },
         {
           "kind": "commit",
@@ -3499,28 +3509,28 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 34 筆 commit 未列（未 push 7、repo 沒有 GitHub remote（沒有可點連結） 2、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
+      "notes": "另有 32 筆 commit 未列（未 push 5、repo 沒有 GitHub remote（沒有可點連結） 2、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
     },
     {
       "date": "2026-10-13",
-      "commits": 8,
+      "commits": 10,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 1,
       "discord_replies": 12,
-      "tokens_main_wan": 17.8,
+      "tokens_main_wan": 17.9,
       "tokens_sub_wan": 7.3,
       "tokens_sessions": 4,
-      "tokens_msgs": 107,
+      "tokens_msgs": 109,
       "tokens_by_model": {
-        "opus": 25.1,
+        "opus": 25.2,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 17.8,
+        "opus": 17.9,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -3580,6 +3590,24 @@
         },
         {
           "kind": "commit",
+          "text": "backtest.html: daily refresh 2026-10-13 (auto, run_daily_an…",
+          "project": "股癌",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "04:13",
+          "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-13T04:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-13T03:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -3616,7 +3644,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 8 筆 commit 未列（未 push 4、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
+      "notes": "另有 10 筆 commit 未列（未 push 4、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
     }
   ]
 }
