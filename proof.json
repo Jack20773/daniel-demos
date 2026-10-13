@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T02:00+08:00",
+  "generated_at": "2026-10-14T03:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3349,34 +3349,34 @@
     },
     {
       "date": "2026-10-14",
-      "commits": 12,
+      "commits": 17,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 9,
-      "discord_replies": 25,
-      "tokens_main_wan": 36.7,
-      "tokens_sub_wan": 107.5,
-      "tokens_sessions": 16,
-      "tokens_msgs": 395,
+      "subagent_runs": 11,
+      "discord_replies": 28,
+      "tokens_main_wan": 49.9,
+      "tokens_sub_wan": 146.1,
+      "tokens_sessions": 19,
+      "tokens_msgs": 515,
       "tokens_by_model": {
-        "opus": 100.2,
+        "opus": 119.0,
         "sonnet": 3.7,
         "haiku": 2.3,
-        "fable": 37.9,
+        "fable": 71.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 32.9,
+        "opus": 46.2,
         "sonnet": 3.7,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 67.3,
+        "opus": 72.8,
         "sonnet": 0.0,
         "haiku": 2.3,
-        "fable": 37.9,
+        "fable": 71.1,
         "other": 0.0
       },
       "score_avg": null,
@@ -3449,10 +3449,49 @@
           "time": "01:47",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第 3 版：首屏轉盤併入標題流、手機服務改分頁常開示範、三個小洞",
+          "project": "rijian-studio",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/rijian-studio/commit/5b27e5983ac662fb834ebd2924319fe2097b09f2",
+          "evidence_label": "commit 5b27e59",
+          "verified": true,
+          "time": "02:09",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 5,
+      "items_count": 6,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "一鍵總結：測驗答過的算做了一部分",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "一鍵總結：之前做過一部分的也算「做了一部分」",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:05",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "自然發音第 2 輪：一鍵預設＝今天功課（跟頂端範圍同一來源＋講義一課）、全部複習另一顆；口訣 vs 音標白話說明、AI…",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:01",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "自然發音一鍵複習：拼錯的字、答錯的測驗題排到最後再練一次",
@@ -3500,6 +3539,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-14T02:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-14T01:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -3518,7 +3566,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 7 筆 commit 未列（未 push 4、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
+      "notes": "另有 11 筆 commit 未列（未 push 7、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
     }
   ]
 }
