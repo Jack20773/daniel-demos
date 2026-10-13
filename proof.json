@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T00:00+08:00",
+  "generated_at": "2026-10-14T01:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3349,33 +3349,33 @@
     },
     {
       "date": "2026-10-14",
-      "commits": 0,
+      "commits": 4,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 0.0,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 0,
-      "tokens_msgs": 0,
+      "subagent_runs": 6,
+      "discord_replies": 13,
+      "tokens_main_wan": 25.8,
+      "tokens_sub_wan": 28.7,
+      "tokens_sessions": 11,
+      "tokens_msgs": 141,
       "tokens_by_model": {
-        "opus": 0.0,
-        "sonnet": 0.0,
-        "haiku": 0.0,
+        "opus": 50.4,
+        "sonnet": 1.9,
+        "haiku": 2.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
-        "sonnet": 0.0,
+        "opus": 23.9,
+        "sonnet": 1.9,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 0.0,
+        "opus": 26.5,
         "sonnet": 0.0,
-        "haiku": 0.0,
+        "haiku": 2.3,
         "fable": 0.0,
         "other": 0.0
       },
@@ -3384,12 +3384,59 @@
       "score_high": 0,
       "scores": [],
       "corrections_new": 0,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
-      "skipped": [],
+      "highlights": [
+        "文案：一人接案改團隊接案（他 10/14：有波樂，叫團隊沒問題）",
+        "服務項目下加「合作之後不用擔心的三件事」（找得到人／網站是你的／上線後有人顧；不寫人數）"
+      ],
+      "items": [
+        {
+          "kind": "commit",
+          "text": "文案：一人接案改團隊接案（他 10/14：有波樂，叫團隊沒問題）",
+          "project": "rijian-studio",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/rijian-studio/commit/c6f00a7474623c6682dae6189a906d6954cb939a",
+          "evidence_label": "commit c6f00a7",
+          "verified": true,
+          "time": "00:44",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "服務項目下加「合作之後不用擔心的三件事」（找得到人／網站是你的／上線後有人顧；不寫人數）",
+          "project": "rijian-studio",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/rijian-studio/commit/0bb7f17fdfc3b551d3bab4b7853a4f4cc32d8bab",
+          "evidence_label": "commit 0bb7f17",
+          "verified": true,
+          "time": "00:50",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 2,
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "雲端備份：排除 AI 模型/.venv*/.wrangler/音檔/權重檔/plans.json 舊備份（雲端 15G…",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-14T00:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:00",
+          "repo": "daniel-demos"
+        }
+      ],
       "selfreport": [],
-      "notes": ""
+      "notes": "另有 2 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
     }
   ]
 }
