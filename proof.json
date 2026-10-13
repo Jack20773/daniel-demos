@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T01:00+08:00",
+  "generated_at": "2026-10-14T02:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3349,34 +3349,34 @@
     },
     {
       "date": "2026-10-14",
-      "commits": 4,
+      "commits": 12,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 6,
-      "discord_replies": 13,
-      "tokens_main_wan": 25.8,
-      "tokens_sub_wan": 28.7,
-      "tokens_sessions": 11,
-      "tokens_msgs": 141,
+      "subagent_runs": 9,
+      "discord_replies": 25,
+      "tokens_main_wan": 36.7,
+      "tokens_sub_wan": 107.5,
+      "tokens_sessions": 16,
+      "tokens_msgs": 395,
       "tokens_by_model": {
-        "opus": 50.4,
-        "sonnet": 1.9,
+        "opus": 100.2,
+        "sonnet": 3.7,
         "haiku": 2.3,
-        "fable": 0.0,
+        "fable": 37.9,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 23.9,
-        "sonnet": 1.9,
+        "opus": 32.9,
+        "sonnet": 3.7,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 26.5,
+        "opus": 67.3,
         "sonnet": 0.0,
         "haiku": 2.3,
-        "fable": 0.0,
+        "fable": 37.9,
         "other": 0.0
       },
       "score_avg": null,
@@ -3386,7 +3386,8 @@
       "corrections_new": 0,
       "highlights": [
         "文案：一人接案改團隊接案（他 10/14：有波樂，叫團隊沒問題）",
-        "服務項目下加「合作之後不用擔心的三件事」（找得到人／網站是你的／上線後有人顧；不寫人數）"
+        "服務項目下加「合作之後不用擔心的三件事」（找得到人／網站是你的／上線後有人顧；不寫人數）",
+        "第 0 輪：四個方向並排（A 需求對話／B 日出捲動劇場／C 動手玩實驗室／D 字是主角雜誌）"
       ],
       "items": [
         {
@@ -3412,10 +3413,73 @@
           "time": "00:50",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第 0 輪：四個方向並排（A 需求對話／B 日出捲動劇場／C 動手玩實驗室／D 字是主角雜誌）",
+          "project": "rijian-studio",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/rijian-studio/commit/0bba3027634f707061d5b354d5db498a77919f1e",
+          "evidence_label": "commit 0bba302",
+          "verified": true,
+          "time": "01:09",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第 1 版：方向 C（動手玩的實驗室）搬到首頁",
+          "project": "rijian-studio",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/rijian-studio/commit/5ee7e4e3ed7747c4ed2de0f0b03bc38ead689d47",
+          "evidence_label": "commit 5ee7e4e",
+          "verified": true,
+          "time": "01:21",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第 2 版：修挑錯員前 3 項＋不要清單新增 2 項",
+          "project": "rijian-studio",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/rijian-studio/commit/802f30754a8653a9e40313495bc08107fdc580f1",
+          "evidence_label": "commit 802f307",
+          "verified": true,
+          "time": "01:47",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 2,
+      "items_count": 5,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "自然發音一鍵複習：拼錯的字、答錯的測驗題排到最後再練一次",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:39",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "自然發音頁：紅字旁顯示照第幾條規則（點開看原文＋同規則字）；一鍵複習接上課文後半、規則表、講義 2～6 課、時態第 1…",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "自然發音頁：一鍵開始複習（自動念→等跟讀/作答→自動下一個，可暫停/跳過/結束，結束列出拼錯與跳過）",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:04",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "雲端備份：排除 AI 模型/.venv*/.wrangler/音檔/權重檔/plans.json 舊備份（雲端 15G…",
@@ -3424,6 +3488,24 @@
           "reason_label": "未 push",
           "time": "00:22",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "修開發日誌連結路徑",
+          "project": "rijian-studio",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "01:21",
+          "repo": "rijian-studio"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-14T01:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3436,7 +3518,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 2 筆 commit 未列（未 push 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
+      "notes": "另有 7 筆 commit 未列（未 push 4、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
     }
   ]
 }
