@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T21:00+08:00",
+  "generated_at": "2026-10-14T22:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -1843,19 +1843,25 @@
       "score_high": 0,
       "scores": [],
       "corrections_new": 0,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
-      "skipped": [
+      "highlights": [
+        "英文講義第一、二課（english-lessons）＋股癌關鍵字搜尋頁（asr-lab/search）存檔"
+      ],
+      "items": [
         {
           "kind": "commit",
           "text": "英文講義第一、二課（english-lessons）＋股癌關鍵字搜尋頁（asr-lab/search）存檔",
           "project": "english-lessons",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a192253fba26bc7cecfe55f45acd73d56d0a893e",
+          "evidence_label": "commit a192253",
+          "verified": true,
           "time": "15:05",
-          "repo": "root"
-        },
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 1,
+      "skipped": [
         {
           "kind": "commit",
           "text": "backtest.html: daily refresh 2026-10-09 (auto, run_daily_an…",
@@ -2083,7 +2089,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 26 筆 commit 未列（未 push 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
+      "notes": "另有 25 筆 commit 未列（無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
     },
     {
       "date": "2026-10-10",
@@ -2673,10 +2679,23 @@
       "scores": [],
       "corrections_new": 0,
       "highlights": [
+        "英文自然發音每日練習頁（/phonics）；只問非他不可清單（only_daniel.json）",
         "寄信前加語意覆核關卡（第三道）：另一次 claude -p 只問「是不是真的在對這檔股票表態」",
         "語意覆核：「不確定」改照寄＋卡片標註，信末分開算「擋下 N／標註 M」"
       ],
       "items": [
+        {
+          "kind": "commit",
+          "text": "英文自然發音每日練習頁（/phonics）；只問非他不可清單（only_daniel.json）",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/22d2b488e6d2ece918e6f4c093221d3fb1e0d4bd",
+          "evidence_label": "commit 22d2b48",
+          "verified": true,
+          "time": "23:08",
+          "plain": null,
+          "plain_ok": false
+        },
         {
           "kind": "commit",
           "text": "寄信前加語意覆核關卡（第三道）：另一次 claude -p 只問「是不是真的在對這檔股票表態」",
@@ -2700,55 +2719,58 @@
           "time": "23:18",
           "plain": null,
           "plain_ok": false
-        }
-      ],
-      "items_count": 2,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "自然發音頁：今天範圍切換（預設到 wet）、KK 例外表（floor/poured/minutes/of）",
-          "project": "english-lessons",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "23:34",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "股癌這集：頁面原話從逐字稿補全（不再用…省略），▶ 秒數改為原話開頭那行字幕；擋下區同樣補全",
-          "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "23:32",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "自然發音頁第 2 版：單字卡三步進度條、句子念／翻譯計數、KK 音標（CMU 轉）、音標總表、慢速、錄音回放",
-          "project": "english-lessons",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "23:32",
-          "repo": "root"
         },
         {
           "kind": "commit",
           "text": "股癌這集：上線前加語意覆核關卡（沿用 stock-signal/semantic_gate.py 6c823ea）",
           "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/744a8f27ac29fbd4ad1947ecd7ca9966dbecf6fc",
+          "evidence_label": "commit 744a8f2",
+          "verified": true,
           "time": "23:23",
-          "repo": "root"
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
-          "text": "英文自然發音每日練習頁（/phonics）；只問非他不可清單（only_daniel.json）",
-          "project": "english-lessons",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "23:08",
-          "repo": "root"
+          "text": "股癌這集：頁面原話從逐字稿補全（不再用…省略），▶ 秒數改為原話開頭那行字幕；擋下區同樣補全",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b72b25093a6d148f9da04035c8ecfa01a8360314",
+          "evidence_label": "commit b72b250",
+          "verified": true,
+          "time": "23:32",
+          "plain": null,
+          "plain_ok": false
         },
+        {
+          "kind": "commit",
+          "text": "自然發音頁第 2 版：單字卡三步進度條、句子念／翻譯計數、KK 音標（CMU 轉）、音標總表、慢速、錄音回放",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/c34347bdc7c7d00bd855b573bd74ba789edde9c4",
+          "evidence_label": "commit c34347b",
+          "verified": true,
+          "time": "23:32",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "自然發音頁：今天範圍切換（預設到 wet）、KK 例外表（floor/poured/minutes/of）",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e839b9a4a08a3b9b0308c66b93b061696b7b73c9",
+          "evidence_label": "commit e839b9a",
+          "verified": true,
+          "time": "23:34",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 7,
+      "skipped": [
         {
           "kind": "commit",
           "text": "財報考試正式題開放上網查資料（他 2026-10-12：現在能看的所有資料都能看、資訊越多越新越好）",
@@ -2994,7 +3016,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 32 筆 commit 未列（未 push 5、repo 沒有 GitHub remote（沒有可點連結） 2、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
+      "notes": "另有 27 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 2、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
     },
     {
       "date": "2026-10-13",
@@ -3033,73 +3055,99 @@
       "score_high": 0,
       "scores": [],
       "corrections_new": 0,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
-      "skipped": [
+      "highlights": [
+        "嘉米攻略頁：加「空劍的用法（套路）」段落（官方幀數表 Modern 查證）",
+        "嘉米攻略：下後輕拳＝轉身拳（他確認），建議用 ←+SP 強版 +3",
+        "嘉米攻略：後重腳→轉身輕拳→打康接昇龍（他補充）"
+      ],
+      "items": [
         {
           "kind": "commit",
-          "text": "睡眠頁加入 iPhone 健康資料：手錶對照、試過的量法、呼吸中斷與血氧、曬太陽分鐘；build.py 可選吃健康 z…",
+          "text": "嘉米攻略頁：加「空劍的用法（套路）」段落（官方幀數表 Modern 查證）",
           "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "09:21",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "睡眠頁：依他答案改第 5 條（快打／弄 AI／滑手機各自收手法），待答區改下一步",
-          "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "09:11",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "睡眠追蹤複盤第一版：build.py（匯出檔→網頁）＋site/index.html，部署 sleep-review.…",
-          "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "08:03",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "嘉米攻略：插到8針＝加8～9幀，循環壓制套路（他確認）",
-          "project": "plan-blueprints",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "01:39",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "嘉米攻略：後重腳→轉身輕拳→打康接昇龍（他補充）",
-          "project": "plan-blueprints",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "01:37",
-          "repo": "root"
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/95618a9d77a4b2433973d5bdf20ac339f0f7a06a",
+          "evidence_label": "commit 95618a9",
+          "verified": true,
+          "time": "00:33",
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
           "text": "嘉米攻略：下後輕拳＝轉身拳（他確認），建議用 ←+SP 強版 +3",
           "project": "plan-blueprints",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/acfb13096f3b8eaf3cc7fa70b849bec11d4a2295",
+          "evidence_label": "commit acfb130",
+          "verified": true,
           "time": "01:29",
-          "repo": "root"
+          "plain": null,
+          "plain_ok": false
         },
         {
           "kind": "commit",
-          "text": "嘉米攻略頁：加「空劍的用法（套路）」段落（官方幀數表 Modern 查證）",
-          "project": "root",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "00:33",
-          "repo": "root"
+          "text": "嘉米攻略：後重腳→轉身輕拳→打康接昇龍（他補充）",
+          "project": "plan-blueprints",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/560b4b7264a23a171cb6d942a90cfe96251a3558",
+          "evidence_label": "commit 560b4b7",
+          "verified": true,
+          "time": "01:37",
+          "plain": null,
+          "plain_ok": false
         },
+        {
+          "kind": "commit",
+          "text": "嘉米攻略：插到8針＝加8～9幀，循環壓制套路（他確認）",
+          "project": "plan-blueprints",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/c1e7dc4d93a6697aabdae6932b7096fab6f7da84",
+          "evidence_label": "commit c1e7dc4",
+          "verified": true,
+          "time": "01:39",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "睡眠追蹤複盤第一版：build.py（匯出檔→網頁）＋site/index.html，部署 sleep-review.…",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/4ab3d4e163bc340ec0ee7feca6b2372ffbd39e64",
+          "evidence_label": "commit 4ab3d4e",
+          "verified": true,
+          "time": "08:03",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "睡眠頁：依他答案改第 5 條（快打／弄 AI／滑手機各自收手法），待答區改下一步",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/25ced62360321b5e8b4e43a2a74546cbe3fbda78",
+          "evidence_label": "commit 25ced62",
+          "verified": true,
+          "time": "09:11",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "睡眠頁加入 iPhone 健康資料：手錶對照、試過的量法、呼吸中斷與血氧、曬太陽分鐘；build.py 可選吃健康 z…",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/43d68e11fc5aa1b4d150f66b9bdd1b849f77ece5",
+          "evidence_label": "commit 43d68e1",
+          "verified": true,
+          "time": "09:21",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 7,
+      "skipped": [
         {
           "kind": "commit",
           "text": "財報考試：有題交卷失敗就讓排程記失敗（run_daily exit 3→ps1 照部署後 exit 8）；排程加週一～…",
@@ -3345,35 +3393,35 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 34 筆 commit 未列（未 push 7、repo 沒有 GitHub remote（沒有可點連結） 2、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
+      "notes": "另有 27 筆 commit 未列（repo 沒有 GitHub remote（沒有可點連結） 2、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
     },
     {
       "date": "2026-10-14",
-      "commits": 36,
+      "commits": 49,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 11,
-      "discord_replies": 36,
-      "tokens_main_wan": 157.4,
-      "tokens_sub_wan": 146.1,
-      "tokens_sessions": 38,
-      "tokens_msgs": 672,
+      "subagent_runs": 12,
+      "discord_replies": 61,
+      "tokens_main_wan": 172.2,
+      "tokens_sub_wan": 157.3,
+      "tokens_sessions": 40,
+      "tokens_msgs": 816,
       "tokens_by_model": {
-        "opus": 203.7,
-        "sonnet": 26.6,
+        "opus": 229.2,
+        "sonnet": 27.0,
         "haiku": 2.3,
         "fable": 71.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 130.9,
-        "sonnet": 26.6,
+        "opus": 145.2,
+        "sonnet": 27.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 72.8,
+        "opus": 84.0,
         "sonnet": 0.0,
         "haiku": 2.3,
         "fable": 71.1,
@@ -3385,11 +3433,23 @@
       "scores": [],
       "corrections_new": 0,
       "highlights": [
+        "雲端備份：排除 AI 模型/.venv*/.wrangler/音檔/權重檔/plans.json 舊備份（雲端 15G…",
         "文案：一人接案改團隊接案（他 10/14：有波樂，叫團隊沒問題）",
-        "服務項目下加「合作之後不用擔心的三件事」（找得到人／網站是你的／上線後有人顧；不寫人數）",
-        "第 0 輪：四個方向並排（A 需求對話／B 日出捲動劇場／C 動手玩實驗室／D 字是主角雜誌）"
+        "服務項目下加「合作之後不用擔心的三件事」（找得到人／網站是你的／上線後有人顧；不寫人數）"
       ],
       "items": [
+        {
+          "kind": "commit",
+          "text": "雲端備份：排除 AI 模型/.venv*/.wrangler/音檔/權重檔/plans.json 舊備份（雲端 15G…",
+          "project": "hook",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/526de11c35f02e833481c83ebc175a1d394ca7a9",
+          "evidence_label": "commit 526de11",
+          "verified": true,
+          "time": "00:22",
+          "plain": null,
+          "plain_ok": false
+        },
         {
           "kind": "commit",
           "text": "文案：一人接案改團隊接案（他 10/14：有波樂，叫團隊沒問題）",
@@ -3411,6 +3471,18 @@
           "evidence_label": "commit 0bb7f17",
           "verified": true,
           "time": "00:50",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "自然發音頁：一鍵開始複習（自動念→等跟讀/作答→自動下一個，可暫停/跳過/結束，結束列出拼錯與跳過）",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/94676ed1e174a3e17cc325093da60b14009aa2df",
+          "evidence_label": "commit 94676ed",
+          "verified": true,
+          "time": "01:04",
           "plain": null,
           "plain_ok": false
         },
@@ -3440,6 +3512,30 @@
         },
         {
           "kind": "commit",
+          "text": "自然發音頁：紅字旁顯示照第幾條規則（點開看原文＋同規則字）；一鍵複習接上課文後半、規則表、講義 2～6 課、時態第 1…",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a110b801571e76a32c8e561df9dde5f46f8de46b",
+          "evidence_label": "commit a110b80",
+          "verified": true,
+          "time": "01:32",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "自然發音一鍵複習：拼錯的字、答錯的測驗題排到最後再練一次",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/c80a34b1e71a15ec451217c5fc447b5631ec51f9",
+          "evidence_label": "commit c80a34b",
+          "verified": true,
+          "time": "01:39",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
           "text": "第 2 版：修挑錯員前 3 項＋不要清單新增 2 項",
           "project": "rijian-studio",
           "by": "未對",
@@ -3447,6 +3543,42 @@
           "evidence_label": "commit 802f307",
           "verified": true,
           "time": "01:47",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "自然發音第 2 輪：一鍵預設＝今天功課（跟頂端範圍同一來源＋講義一課）、全部複習另一顆；口訣 vs 音標白話說明、AI…",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/342f7eb8383385b69c58f80e04600882fe3a3fd9",
+          "evidence_label": "commit 342f7eb",
+          "verified": true,
+          "time": "02:01",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "一鍵總結：之前做過一部分的也算「做了一部分」",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/0d794842721206d3e97045012d656455a982944a",
+          "evidence_label": "commit 0d79484",
+          "verified": true,
+          "time": "02:05",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "一鍵總結：測驗答過的算做了一部分",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/37c1d530ece71b7a712a1fd4ebdc36661c2a48a7",
+          "evidence_label": "commit 37c1d53",
+          "verified": true,
+          "time": "02:07",
           "plain": null,
           "plain_ok": false
         },
@@ -3461,73 +3593,154 @@
           "time": "02:09",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第三課：老師註解改回筆記原文，AI 自己的解釋移到 AI 補充",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/e05d484d7b1bf1e4d79bf78628e718c7f85e62ec",
+          "evidence_label": "commit e05d484",
+          "verified": true,
+          "time": "21:15",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第三課：上課練習句（中翻英，10/14 置頂）＋每段筆記格；目錄接上",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/517a6b6689b59c06d53b3878e915cee5b82687b2",
+          "evidence_label": "commit 517a6b6",
+          "verified": true,
+          "time": "21:15",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第三課：補 10/14 新增兩句（洗澡聽到聲音、經理走進來討論企劃）",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/1b9366fb4663af8391f50a527909beb8948614ff",
+          "evidence_label": "commit 1b9366f",
+          "verified": true,
+          "time": "21:19",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第三課：加「補上最新筆記」按鈕（Worker 記請求→本機排程丟派工叫醒 AI）＋補 10/14 三句",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2ef8f725382258c8f873bf0e0f76472a82b45d55",
+          "evidence_label": "commit 2ef8f72",
+          "verified": true,
+          "time": "21:29",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "english-lessons：忽略筆記快照與已看請求檔",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/f92bce05ae84eb3f68b3dd61e8160ed32da5f251",
+          "evidence_label": "commit f92bce0",
+          "verified": true,
+          "time": "21:30",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第三課：每句加句型公式＋補「等公車一直在下雨」",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a2ff2a3880b63c2c7e9044da964c59263bd0fd0c",
+          "evidence_label": "commit a2ff2a3",
+          "verified": true,
+          "time": "21:31",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第三課：按鈕補上 10/14 兩句（到車站在下雨、風大取消野餐）",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7dd7c6d330223f52336cf1e7bdb3af215d25989e",
+          "evidence_label": "commit 7dd7c6d",
+          "verified": true,
+          "time": "21:34",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第三課：野餐句換成筆記版本、補健身房那句",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8bdcd0ec5f530094cb7c5dcfde0b426162cf0b28",
+          "evidence_label": "commit 8bdcd0e",
+          "verified": true,
+          "time": "21:36",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第三課：健身房換筆記版、補整個下午準備考試",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/109cd2b08cb6c0bc4dc193e003ac434fba9946cc",
+          "evidence_label": "commit 109cd2b",
+          "verified": true,
+          "time": "21:41",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第三課：補打電話洗車那句（AI 翻譯）",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/3cf38499be48a8dd5ae314d142457ef33617ea5c",
+          "evidence_label": "commit 3cf3849",
+          "verified": true,
+          "time": "21:43",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第三課：洗車那句換成筆記版本",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ab9a604a5d335f5d6a8a6052f4dea3820df9e74d",
+          "evidence_label": "commit ab9a604",
+          "verified": true,
+          "time": "21:49",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "第四課：課本練習 過去進行式 vs 過去簡單式（講義第 37、39、257 頁）",
+          "project": "english-lessons",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/855d0211ba683823bd9d40869b68c4fe9843b2e6",
+          "evidence_label": "commit 855d021",
+          "verified": true,
+          "time": "21:58",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 6,
+      "items_count": 25,
       "skipped": [
-        {
-          "kind": "commit",
-          "text": "一鍵總結：測驗答過的算做了一部分",
-          "project": "english-lessons",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:07",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "一鍵總結：之前做過一部分的也算「做了一部分」",
-          "project": "english-lessons",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:05",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "自然發音第 2 輪：一鍵預設＝今天功課（跟頂端範圍同一來源＋講義一課）、全部複習另一顆；口訣 vs 音標白話說明、AI…",
-          "project": "english-lessons",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "02:01",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "自然發音一鍵複習：拼錯的字、答錯的測驗題排到最後再練一次",
-          "project": "english-lessons",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "01:39",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "自然發音頁：紅字旁顯示照第幾條規則（點開看原文＋同規則字）；一鍵複習接上課文後半、規則表、講義 2～6 課、時態第 1…",
-          "project": "english-lessons",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "01:32",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "自然發音頁：一鍵開始複習（自動念→等跟讀/作答→自動下一個，可暫停/跳過/結束，結束列出拼錯與跳過）",
-          "project": "english-lessons",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "01:04",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "雲端備份：排除 AI 模型/.venv*/.wrangler/音檔/權重檔/plans.json 舊備份（雲端 15G…",
-          "project": "hook",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "00:22",
-          "repo": "root"
-        },
         {
           "kind": "commit",
           "text": "修開發日誌連結路徑",
@@ -3545,6 +3758,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-14T21:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3737,7 +3959,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 30 筆 commit 未列（未 push 7、無 Co-Authored-By: Claude 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21）"
+      "notes": "另有 24 筆 commit 未列（無 Co-Authored-By: Claude 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22）"
     }
   ]
 }
