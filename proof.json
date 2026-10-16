@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T05:00+08:00",
+  "generated_at": "2026-10-17T06:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3553,34 +3553,34 @@
     },
     {
       "date": "2026-10-17",
-      "commits": 9,
+      "commits": 20,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 9,
+      "subagent_runs": 21,
       "discord_replies": 4,
-      "tokens_main_wan": 26.0,
-      "tokens_sub_wan": 60.9,
-      "tokens_sessions": 10,
-      "tokens_msgs": 230,
+      "tokens_main_wan": 159.5,
+      "tokens_sub_wan": 201.1,
+      "tokens_sessions": 131,
+      "tokens_msgs": 834,
       "tokens_by_model": {
-        "opus": 64.9,
-        "sonnet": 9.2,
+        "opus": 151.4,
+        "sonnet": 132.0,
         "haiku": 0.0,
-        "fable": 12.8,
+        "fable": 77.2,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 26.0,
-        "sonnet": 0.0,
+        "opus": 36.7,
+        "sonnet": 122.8,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 38.9,
+        "opus": 114.7,
         "sonnet": 9.2,
         "haiku": 0.0,
-        "fable": 12.8,
+        "fable": 77.2,
         "other": 0.0
       },
       "score_avg": null,
@@ -3592,6 +3592,96 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "股癌搜尋站 v2：一眼看懂版",
+          "project": "asr-lab",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:53",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌這集 v8.3 收尾：首屏每檔加「講完至今／對大盤」與未滿 4 週標示；保留卡二次覆核接回的卡也揭露（gate=h…",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:46",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "卡住檢測器 v5（結案版）：說在等但 0 個分身在跑＝立刻判空轉、待改清單（等他）標記不算未完、分身卡死行附 id",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:45",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌這集 v8.3：舊集預設摺疊成一列摘要（首頁 13,107→4,998px，5.9 個手機螢幕）、錨點跳過去自動展…",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "卡住檢測器 v4：紅隊 v3（6/10）指控全修，自測 56 條",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:33",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "卡住檢測器 v3：紅隊 v2（4/10）指控全修，自測 34 條",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:18",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌這集 v8.2：轉折改由 claude -p 讀前後 30 秒判斷（關鍵字只當提示）、候選器認美股代號（補 EP7…",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:17",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "卡住檢測器：先關掉「寫 save_and_restart.flag 升級」（預設關，排程只寫 queue.log；紅隊…",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:14",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "卡住檢測器 v2：紅隊 6/10 的 5 項修好＋自測 16 條",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:08",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌這集 v8.1：前後文改給真的逐字稿行（含秒數、涵蓋判讀依據段落）、原話前後轉折句直接上卡、同一檔跨集串起來；Sp…",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:03",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "股癌這集 v8：手機一眼看懂版（總覽比大盤橫條圖＋簡單回測、每卡折線圖對照大盤、語氣藍橘灰標、白話「為什麼判」、長原話…",
@@ -3627,6 +3717,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-17T05:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "05:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -3675,7 +3774,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 9 筆 commit 未列（未 push 2、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
+      "notes": "另有 20 筆 commit 未列（未 push 12、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
     }
   ]
 }
