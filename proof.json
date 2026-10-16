@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T04:00+08:00",
+  "generated_at": "2026-10-17T05:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3553,34 +3553,34 @@
     },
     {
       "date": "2026-10-17",
-      "commits": 4,
+      "commits": 9,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 9.4,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 1,
-      "tokens_msgs": 18,
+      "subagent_runs": 9,
+      "discord_replies": 4,
+      "tokens_main_wan": 26.0,
+      "tokens_sub_wan": 60.9,
+      "tokens_sessions": 10,
+      "tokens_msgs": 230,
       "tokens_by_model": {
-        "opus": 9.4,
-        "sonnet": 0.0,
+        "opus": 64.9,
+        "sonnet": 9.2,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 12.8,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 9.4,
+        "opus": 26.0,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 0.0,
-        "sonnet": 0.0,
+        "opus": 38.9,
+        "sonnet": 9.2,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 12.8,
         "other": 0.0
       },
       "score_avg": null,
@@ -3592,6 +3592,51 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "股癌這集 v8：手機一眼看懂版（總覽比大盤橫條圖＋簡單回測、每卡折線圖對照大盤、語氣藍橘灰標、白話「為什麼判」、長原話…",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:53",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "卡住檢測器：有未完項卻 30 分沒動／只在重掛監看／分身 35 分沒更新 → 寫 queue.log 叫醒主 sess…",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:50",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "財報考試頁：公司中文名改用人工對照表，不再照抄 LLM 亂取的 zh_name",
+          "project": "交易機器人",
+          "reason": "no_remote",
+          "reason_label": "repo 沒有 GitHub remote（沒有可點連結）",
+          "time": "04:43",
+          "repo": "ai-trader"
+        },
+        {
+          "kind": "commit",
+          "text": "backtest.html: daily refresh 2026-10-17 (auto, run_daily_an…",
+          "project": "股癌",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "04:13",
+          "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-17T04:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:00",
+          "repo": "daniel-demos"
+        },
         {
           "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-17T03:00+08:00 (days=14 ite…",
@@ -3630,7 +3675,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
+      "notes": "另有 9 筆 commit 未列（未 push 2、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
     }
   ]
 }
