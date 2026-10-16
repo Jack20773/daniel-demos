@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T06:00+08:00",
+  "generated_at": "2026-10-17T07:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3553,34 +3553,34 @@
     },
     {
       "date": "2026-10-17",
-      "commits": 20,
+      "commits": 28,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 21,
-      "discord_replies": 4,
-      "tokens_main_wan": 159.5,
-      "tokens_sub_wan": 201.1,
-      "tokens_sessions": 131,
-      "tokens_msgs": 834,
+      "subagent_runs": 28,
+      "discord_replies": 8,
+      "tokens_main_wan": 239.1,
+      "tokens_sub_wan": 293.5,
+      "tokens_sessions": 174,
+      "tokens_msgs": 1217,
       "tokens_by_model": {
-        "opus": 151.4,
-        "sonnet": 132.0,
+        "opus": 221.4,
+        "sonnet": 195.8,
         "haiku": 0.0,
-        "fable": 77.2,
+        "fable": 115.4,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 36.7,
-        "sonnet": 122.8,
+        "opus": 52.5,
+        "sonnet": 186.6,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 114.7,
+        "opus": 168.9,
         "sonnet": 9.2,
         "haiku": 0.0,
-        "fable": 77.2,
+        "fable": 115.4,
         "other": 0.0
       },
       "score_avg": null,
@@ -3592,6 +3592,69 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "股癌最新一集站：理由裡的「N 秒後／前」改用資料算出的秒差（同搜尋站 cdd0caac）",
+          "project": "plan-blueprints",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:37",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌點名回測 demo 最終精修：挑錯員 8/10 最差 3 項修正",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:29",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌搜尋站 v2.3（結案精修）：短詞錯字提示、點擊區加大、理由秒差改用計算值",
+          "project": "asr-lab",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:25",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌點名回測 demo v2：買點改上架隔天起第一個交易日（三種買點並列）、加同產業對照、首屏口氣照最弱的版本、數字捨…",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:19",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌搜尋站 v2.2：挑錯員 7/10 最差 3 項修正",
+          "project": "asr-lab",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:16",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌點名回測新版 demo：加對照組（同日隨便買一檔／大盤）、修正進場日、月份重抽信賴區間、留出驗證＋多重比較＋正負對照",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌搜尋站 v2.1：挑錯員 6/10 最差 3 項修正",
+          "project": "asr-lab",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:05",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "股癌搜尋站 v2：一眼看懂版",
@@ -3720,6 +3783,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-17T06:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-17T05:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -3774,7 +3846,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 20 筆 commit 未列（未 push 12、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
+      "notes": "另有 28 筆 commit 未列（未 push 19、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7）"
     }
   ]
 }
