@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T14:00+08:00",
+  "generated_at": "2026-10-17T15:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3553,34 +3553,34 @@
     },
     {
       "date": "2026-10-17",
-      "commits": 48,
+      "commits": 52,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 49,
+      "subagent_runs": 51,
       "discord_replies": 52,
-      "tokens_main_wan": 316.6,
-      "tokens_sub_wan": 541.5,
-      "tokens_sessions": 201,
-      "tokens_msgs": 2308,
+      "tokens_main_wan": 320.6,
+      "tokens_sub_wan": 571.2,
+      "tokens_sessions": 203,
+      "tokens_msgs": 2460,
       "tokens_by_model": {
-        "opus": 462.7,
+        "opus": 485.6,
         "sonnet": 226.1,
         "haiku": 2.2,
-        "fable": 167.1,
+        "fable": 178.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 127.7,
+        "opus": 131.8,
         "sonnet": 188.9,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 335.0,
+        "opus": 353.8,
         "sonnet": 37.2,
         "haiku": 2.2,
-        "fable": 167.1,
+        "fable": 178.0,
         "other": 0.0
       },
       "score_avg": 3.0,
@@ -3597,6 +3597,33 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "股癌回測站：數字卡三數同大小並排（71 跟他買｜61 隨便買｜91 買大盤）、點開寫明 697～699 集為何沒資料",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:39",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌四站挑錯員第 2 輪：回測兩數對照＋頁尾講實話、這集數字退灰＋理由指名、計分板寫交易日、搜尋 ▶ 有字",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌四站再砍字：首屏一屏一件事、數字帶單位（挑錯員 6.0/10 三項）",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:27",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "保全 B 線校準報告：cum 膨脹來自 cache_read（佔 95~98%），且漏算分身；建議改成本當量（主線＋分…",
@@ -3905,6 +3932,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-17T14:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-17T13:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -4031,7 +4067,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 48 筆 commit 未列（未 push 32、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 14）"
+      "notes": "另有 52 筆 commit 未列（未 push 35、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 15）"
     }
   ]
 }
