@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T13:00+08:00",
+  "generated_at": "2026-10-17T14:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3553,31 +3553,31 @@
     },
     {
       "date": "2026-10-17",
-      "commits": 46,
+      "commits": 48,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 48,
-      "discord_replies": 47,
-      "tokens_main_wan": 305.7,
-      "tokens_sub_wan": 537.6,
-      "tokens_sessions": 199,
-      "tokens_msgs": 2266,
+      "subagent_runs": 49,
+      "discord_replies": 52,
+      "tokens_main_wan": 316.6,
+      "tokens_sub_wan": 541.5,
+      "tokens_sessions": 201,
+      "tokens_msgs": 2308,
       "tokens_by_model": {
-        "opus": 447.9,
+        "opus": 462.7,
         "sonnet": 226.1,
         "haiku": 2.2,
         "fable": 167.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 116.9,
+        "opus": 127.7,
         "sonnet": 188.9,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 331.0,
+        "opus": 335.0,
         "sonnet": 37.2,
         "haiku": 2.2,
         "fable": 167.1,
@@ -3597,6 +3597,15 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "保全 B 線校準報告：cum 膨脹來自 cache_read（佔 95~98%），且漏算分身；建議改成本當量（主線＋分…",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "13:17",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "股癌這集 build.py：轉折句 turn.line 對不上現在字幕時印警告（unopencc 改字後 EP696 …",
@@ -3896,6 +3905,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-17T13:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-17T12:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -4013,7 +4031,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 46 筆 commit 未列（未 push 31、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 13）"
+      "notes": "另有 48 筆 commit 未列（未 push 32、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 14）"
     }
   ]
 }
