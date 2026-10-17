@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T11:00+08:00",
+  "generated_at": "2026-10-17T12:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -3553,45 +3553,68 @@
     },
     {
       "date": "2026-10-17",
-      "commits": 40,
+      "commits": 43,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 43,
-      "discord_replies": 27,
-      "tokens_main_wan": 276.4,
-      "tokens_sub_wan": 493.7,
-      "tokens_sessions": 191,
-      "tokens_msgs": 1942,
+      "subagent_runs": 47,
+      "discord_replies": 46,
+      "tokens_main_wan": 299.8,
+      "tokens_sub_wan": 529.3,
+      "tokens_sessions": 198,
+      "tokens_msgs": 2190,
       "tokens_by_model": {
-        "opus": 386.2,
-        "sonnet": 222.0,
+        "opus": 433.7,
+        "sonnet": 226.1,
         "haiku": 2.2,
-        "fable": 159.7,
+        "fable": 167.1,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 89.2,
-        "sonnet": 187.2,
+        "opus": 110.9,
+        "sonnet": 188.9,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 297.0,
-        "sonnet": 34.8,
+        "opus": 322.8,
+        "sonnet": 37.2,
         "haiku": 2.2,
-        "fable": 159.7,
+        "fable": 167.1,
         "other": 0.0
       },
-      "score_avg": null,
+      "score_avg": 3.0,
       "score_low": 0,
       "score_high": 0,
-      "scores": [],
+      "scores": [
+        {
+          "score": 3,
+          "time": "2026-10-17 11:19"
+        }
+      ],
       "corrections_new": 0,
       "highlights": [],
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "保全兩條線：上下文線 30 萬降 15 萬、累積吞吐線先只寫 log；synthetic 全 0 不再判讀不到；連 3…",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌四站挑錯員三項：計分板首屏不擺 0/0 大數字、這集大卡縮高放 ▶、白話詞（沒說好壞／只說他有買／贏輸大盤／第N集）",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:19",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "股癌四站大砍字：首屏只留標題＋一句結論＋大數字，卡片只露股名/態度/比大盤/▶，其餘收進「點開」，說明併成頁尾「怎麼算…",
@@ -3855,6 +3878,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-17T11:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-17T10:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -3954,7 +3986,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 40 筆 commit 未列（未 push 27、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 11）"
+      "notes": "另有 43 筆 commit 未列（未 push 29、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 12）"
     }
   ]
 }
