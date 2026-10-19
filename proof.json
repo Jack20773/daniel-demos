@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T03:00+08:00",
+  "generated_at": "2026-10-20T04:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4189,32 +4189,32 @@
     },
     {
       "date": "2026-10-20",
-      "commits": 7,
+      "commits": 16,
       "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 14,
-      "discord_replies": 35,
-      "tokens_main_wan": 68.4,
-      "tokens_sub_wan": 107.7,
-      "tokens_sessions": 25,
-      "tokens_msgs": 566,
+      "tickets_verify": 13,
+      "subagent_runs": 18,
+      "discord_replies": 43,
+      "tokens_main_wan": 79.2,
+      "tokens_sub_wan": 162.3,
+      "tokens_sessions": 30,
+      "tokens_msgs": 872,
       "tokens_by_model": {
-        "opus": 92.3,
-        "sonnet": 83.7,
+        "opus": 153.3,
+        "sonnet": 88.3,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 57.0,
+        "opus": 67.9,
         "sonnet": 11.3,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 35.3,
-        "sonnet": 72.4,
+        "opus": 85.4,
+        "sonnet": 77.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -4233,10 +4233,92 @@
         }
       ],
       "corrections_new": 0,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
+      "highlights": [
+        "backtest.html: 進場日修正後重建（30 天 64.1%、含 EP697~699）",
+        "進場日修正：93 筆 entry_date 改回上架日＋EP697~699 補 14 筆；_fill_entry_pr…"
+      ],
+      "items": [
+        {
+          "kind": "commit",
+          "text": "backtest.html: 進場日修正後重建（30 天 64.1%、含 EP697~699）",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/51994042c552fc8c63250d4d5ba478369fb2d385",
+          "evidence_label": "commit 5199404",
+          "verified": true,
+          "time": "03:06",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "進場日修正：93 筆 entry_date 改回上架日＋EP697~699 補 14 筆；_fill_entry_pr…",
+          "project": "股癌",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/stock-signal/commit/499b376971a50ad3bb8f2b871a68898b0a9ed8d0",
+          "evidence_label": "commit 499b376",
+          "verified": true,
+          "time": "03:06",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 2,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "保全③ 看門狗（只記不擋）：每 5 分取樣顯卡自家佔用、每小時結算 1 小時成本當量 Δ＋自家顯卡分鐘，過線推 Dis…",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:38",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "檢測員：重讀(cr)對帳容差修正，日報只印到 0.01 億，絕對容差放到 0.005 億，避免四捨五入造成假不一致而回…",
+          "project": "會計部",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:29",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "保全①②：非 OK 判決直推 Discord＋重開時連登記的顯卡程式一起關；累積線換成「最近 3 小時 主線＋分身 成…",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:25",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "看板：38 張「等你」單 AI 自己分完（他 10/20 1561786394605518888）——16 張推到驗收…",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:20",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌回測站：進場日優先用 episodes.json 上架日（DB entry_date 只當備用）＋測試；附 93 …",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "看板測試 4 支失敗修好：遠端環境變數、寫死日期改帶 --now、提案過期改用固定快照、同日 note 豁免對齊既有規…",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:03",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "逐字稿搜尋站：實驗10（語言模型裁判）過樣本外驗證（Q1.18→1.15%、P1.36→1.30%），12 集換進 o…",
@@ -4275,6 +4357,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-20T03:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-20T02:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -4302,7 +4393,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 7 筆 commit 未列（未 push 4、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
+      "notes": "另有 14 筆 commit 未列（未 push 10、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
     }
   ]
 }
