@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T02:00+08:00",
+  "generated_at": "2026-10-20T03:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4189,32 +4189,32 @@
     },
     {
       "date": "2026-10-20",
-      "commits": 5,
+      "commits": 7,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 10,
-      "discord_replies": 26,
-      "tokens_main_wan": 42.8,
-      "tokens_sub_wan": 81.3,
-      "tokens_sessions": 17,
-      "tokens_msgs": 414,
+      "subagent_runs": 14,
+      "discord_replies": 35,
+      "tokens_main_wan": 68.4,
+      "tokens_sub_wan": 107.7,
+      "tokens_sessions": 25,
+      "tokens_msgs": 566,
       "tokens_by_model": {
-        "opus": 56.5,
-        "sonnet": 67.6,
+        "opus": 92.3,
+        "sonnet": 83.7,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 42.2,
-        "sonnet": 0.6,
+        "opus": 57.0,
+        "sonnet": 11.3,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 14.3,
-        "sonnet": 67.0,
+        "opus": 35.3,
+        "sonnet": 72.4,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -4237,6 +4237,15 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "逐字稿搜尋站：實驗10（語言模型裁判）過樣本外驗證（Q1.18→1.15%、P1.36→1.30%），12 集換進 o…",
+          "project": "asr-lab",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:47",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "結果導向檢查：東印度快報改按需出刊只看站活著（原 36h 門檻對按需站永遠假紅）；加每小時 outcome_alert…",
@@ -4266,6 +4275,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-20T02:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-20T01:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -4284,7 +4302,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 5 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
+      "notes": "另有 7 筆 commit 未列（未 push 4、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
     }
   ]
 }
