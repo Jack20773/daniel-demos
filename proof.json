@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T04:00+08:00",
+  "generated_at": "2026-10-21T05:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4527,32 +4527,32 @@
     },
     {
       "date": "2026-10-21",
-      "commits": 8,
+      "commits": 14,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 6,
-      "discord_replies": 20,
-      "tokens_main_wan": 12.2,
-      "tokens_sub_wan": 61.0,
-      "tokens_sessions": 11,
-      "tokens_msgs": 193,
+      "subagent_runs": 7,
+      "discord_replies": 31,
+      "tokens_main_wan": 38.7,
+      "tokens_sub_wan": 89.0,
+      "tokens_sessions": 14,
+      "tokens_msgs": 306,
       "tokens_by_model": {
-        "opus": 21.0,
-        "sonnet": 52.1,
+        "opus": 60.0,
+        "sonnet": 67.8,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 9.8,
+        "opus": 36.3,
         "sonnet": 2.4,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 11.2,
-        "sonnet": 49.7,
+        "opus": 23.7,
+        "sonnet": 65.4,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -4566,6 +4566,42 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "專案記憶開頭段縮成目的＋現況＋致命 2～3 條（40 檔，其餘原文搬到正文不刪）；注入 hook 先讀索引的記憶檔欄（…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:46",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "羅盤：額度用完時程式直推主人頻道一則（含恢復時間，同一次只推一次），不靠模型；回應 BOOT_BRIEF 待做（10/…",
+          "project": "root",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:16",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "收工存檔：10/21 daily＋BOOT_BRIEF（羅盤上線、專案記憶注入、額度用完事件）",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:15",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "羅盤（原核心審查官）每輪結果由程式直接發到獨立頻道，主 session 只貼連結（他 10/21 00:10 1562…",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:14",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "專案記憶注入：剝掉 task-notification／system-reminder 再比對（分身交件通知列一串專案…",
@@ -4601,6 +4637,24 @@
           "reason_label": "未 push",
           "time": "00:02",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "backtest.html: daily refresh 2026-10-21 (auto, run_daily_an…",
+          "project": "股癌",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "04:13",
+          "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-21T04:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4640,7 +4694,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 8 筆 commit 未列（未 push 4、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
+      "notes": "另有 14 筆 commit 未列（未 push 6、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
