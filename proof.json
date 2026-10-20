@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T06:00+08:00",
+  "generated_at": "2026-10-21T07:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4527,24 +4527,24 @@
     },
     {
       "date": "2026-10-21",
-      "commits": 17,
+      "commits": 19,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 7,
+      "subagent_runs": 10,
       "discord_replies": 35,
-      "tokens_main_wan": 46.8,
-      "tokens_sub_wan": 89.0,
-      "tokens_sessions": 15,
-      "tokens_msgs": 348,
+      "tokens_main_wan": 50.2,
+      "tokens_sub_wan": 94.8,
+      "tokens_sessions": 18,
+      "tokens_msgs": 383,
       "tokens_by_model": {
-        "opus": 68.1,
+        "opus": 71.5,
         "sonnet": 67.8,
-        "haiku": 0.0,
+        "haiku": 5.8,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 44.4,
+        "opus": 47.8,
         "sonnet": 2.4,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4553,7 +4553,7 @@
       "tokens_by_model_sub": {
         "opus": 23.7,
         "sonnet": 65.4,
-        "haiku": 0.0,
+        "haiku": 5.8,
         "fable": 0.0,
         "other": 0.0
       },
@@ -4566,6 +4566,15 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "派工擋門掛上（PreToolUse Agent|Task，pwsh 7）；分身判定改認 hook 輸入 agent_i…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:04",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "回應羅盤 10/21 05:00 兩則；daily 記待問順序",
@@ -4667,6 +4676,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-21T06:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-21T05:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -4721,7 +4739,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 17 筆 commit 未列（未 push 8、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 8、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 19 筆 commit 未列（未 push 9、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 9、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
