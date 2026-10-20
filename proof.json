@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T00:00+08:00",
+  "generated_at": "2026-10-21T01:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4527,32 +4527,32 @@
     },
     {
       "date": "2026-10-21",
-      "commits": 0,
+      "commits": 5,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 0.0,
-      "tokens_sub_wan": 0.2,
-      "tokens_sessions": 1,
-      "tokens_msgs": 1,
+      "subagent_runs": 6,
+      "discord_replies": 20,
+      "tokens_main_wan": 12.2,
+      "tokens_sub_wan": 61.0,
+      "tokens_sessions": 11,
+      "tokens_msgs": 193,
       "tokens_by_model": {
-        "opus": 0.2,
-        "sonnet": 0.0,
+        "opus": 21.0,
+        "sonnet": 52.1,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
-        "sonnet": 0.0,
+        "opus": 9.8,
+        "sonnet": 2.4,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 0.2,
-        "sonnet": 0.0,
+        "opus": 11.2,
+        "sonnet": 49.7,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -4565,9 +4565,55 @@
       "highlights": [],
       "items": [],
       "items_count": 0,
-      "skipped": [],
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "專案記憶注入：剝掉 task-notification／system-reminder 再比對（分身交件通知列一串專案…",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "補齊各專案記憶「現況／他的有效決定」段與 keywords（38 檔，供 project-context-inject…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:08",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "審查官回放：prompt（含他原始訊息、可能有帳密）只在 --dry-run 才落檔；回應 10/21 00:00 審…",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:04",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "專案記憶自動注入：他提到／AI 碰到／分身交辦到某專案，自動帶入該 project_*.md 的「現況／有效決定」段（…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:02",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-21T00:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:00",
+          "repo": "daniel-demos"
+        }
+      ],
       "selfreport": [],
-      "notes": ""
+      "notes": "另有 5 筆 commit 未列（未 push 4、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
     }
   ]
 }
