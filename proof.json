@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T09:00+08:00",
+  "generated_at": "2026-10-21T10:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4527,33 +4527,33 @@
     },
     {
       "date": "2026-10-21",
-      "commits": 22,
+      "commits": 25,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 13,
-      "discord_replies": 37,
-      "tokens_main_wan": 65.2,
-      "tokens_sub_wan": 100.0,
-      "tokens_sessions": 22,
-      "tokens_msgs": 448,
+      "subagent_runs": 16,
+      "discord_replies": 45,
+      "tokens_main_wan": 75.9,
+      "tokens_sub_wan": 145.9,
+      "tokens_sessions": 26,
+      "tokens_msgs": 669,
       "tokens_by_model": {
-        "opus": 86.5,
+        "opus": 141.7,
         "sonnet": 67.8,
-        "haiku": 11.0,
+        "haiku": 12.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 62.8,
+        "opus": 73.5,
         "sonnet": 2.4,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 23.7,
+        "opus": 68.2,
         "sonnet": 65.4,
-        "haiku": 11.0,
+        "haiku": 12.3,
         "fable": 0.0,
         "other": 0.0
       },
@@ -4566,6 +4566,24 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工存檔：10/21 daily＋BOOT_BRIEF（派工擋門三層上線、待他回額度低先停誰）",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "派工擋門接上用量：看門狗每 5 分寫滾動 1h 用量到 cost_gate.json，超 500 萬不准派分身；實派驗…",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:06",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "派工擋門加並行上限（所有 session 分身 3 分鐘內有動靜 ≥2 支就擋）；實派：2 支在跑第 3 支被擋、清空…",
@@ -4685,6 +4703,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-21T09:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-21T08:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -4766,7 +4793,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 22 筆 commit 未列（未 push 10、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 11、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 25 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 13、未 push 11、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
