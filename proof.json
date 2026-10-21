@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21T12:00+08:00",
+  "generated_at": "2026-10-21T13:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4527,25 +4527,25 @@
     },
     {
       "date": "2026-10-21",
-      "commits": 29,
+      "commits": 33,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 20,
-      "discord_replies": 59,
-      "tokens_main_wan": 91.8,
+      "discord_replies": 66,
+      "tokens_main_wan": 105.6,
       "tokens_sub_wan": 173.9,
-      "tokens_sessions": 31,
-      "tokens_msgs": 876,
+      "tokens_sessions": 35,
+      "tokens_msgs": 924,
       "tokens_by_model": {
-        "opus": 165.3,
-        "sonnet": 88.1,
+        "opus": 172.7,
+        "sonnet": 94.5,
         "haiku": 12.3,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 89.4,
-        "sonnet": 2.4,
+        "opus": 96.8,
+        "sonnet": 8.8,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -4566,6 +4566,33 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "收工存檔：10/21 12:17 daily＋BOOT_BRIEF",
+          "project": "記憶",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:16",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "聽寫補 6 集改成閒置就跑、不限半夜（他：平日白天電腦沒在用）",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "回應羅盤 10/21 12:00：報告站子頁補回首頁連結（含晨讀產生器），先發後查記為今日共同原因",
+          "project": "報告站",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:05",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "回應羅盤 10/21 11:30：攻略寫作標準改成手機頁 daniel-reports/guide-standard.…",
@@ -4721,6 +4748,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-21T12:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-21T11:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -4829,7 +4865,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 29 筆 commit 未列（未 push 13、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 15、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 33 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17、未 push 15、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
