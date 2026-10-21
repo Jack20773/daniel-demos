@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T00:00+08:00",
+  "generated_at": "2026-10-22T01:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4734,24 +4734,24 @@
     },
     {
       "date": "2026-10-22",
-      "commits": 0,
+      "commits": 4,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 0.0,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 0,
-      "tokens_msgs": 0,
+      "subagent_runs": 2,
+      "discord_replies": 3,
+      "tokens_main_wan": 9.6,
+      "tokens_sub_wan": 30.7,
+      "tokens_sessions": 5,
+      "tokens_msgs": 145,
       "tokens_by_model": {
-        "opus": 0.0,
-        "sonnet": 0.0,
+        "opus": 9.6,
+        "sonnet": 26.1,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 4.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.0,
+        "opus": 9.6,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4759,9 +4759,9 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 0.0,
+        "sonnet": 26.1,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 4.7,
         "other": 0.0
       },
       "score_avg": null,
@@ -4772,9 +4772,46 @@
       "highlights": [],
       "items": [],
       "items_count": 0,
-      "skipped": [],
+      "skipped": [
+        {
+          "kind": "commit",
+          "text": "盤後復盤：程式碼進 git；notify.py 部署加 300 秒逾時＋砍整棵子程序＋重試一次（10/21 wrang…",
+          "project": "daniel-invest",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:33",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌第五輪：這集加股票晶片並改一行對錯說明；計分板股票名連回這集、刪導引句；搜尋直排集數錯層、首頁只留最新 5 筆；以…",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:23",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌第四輪：以前準嗎改一筆一列（47 筆原話不少＋迷你走勢），長期統計提前；計分板還沒滿合成一行、表搬首屏；這集舊集加…",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "00:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-22T00:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "00:00",
+          "repo": "daniel-demos"
+        }
+      ],
       "selfreport": [],
-      "notes": ""
+      "notes": "另有 4 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
     }
   ]
 }
