@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T13:00+08:00",
+  "generated_at": "2026-10-22T14:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4734,34 +4734,34 @@
     },
     {
       "date": "2026-10-22",
-      "commits": 19,
+      "commits": 23,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 4,
-      "discord_replies": 15,
-      "tokens_main_wan": 65.7,
-      "tokens_sub_wan": 46.1,
-      "tokens_sessions": 10,
-      "tokens_msgs": 338,
+      "subagent_runs": 11,
+      "discord_replies": 25,
+      "tokens_main_wan": 80.5,
+      "tokens_sub_wan": 123.7,
+      "tokens_sessions": 19,
+      "tokens_msgs": 535,
       "tokens_by_model": {
-        "opus": 65.4,
-        "sonnet": 41.8,
+        "opus": 77.0,
+        "sonnet": 67.6,
         "haiku": 0.0,
-        "fable": 4.7,
+        "fable": 59.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 65.4,
-        "sonnet": 0.3,
+        "opus": 77.0,
+        "sonnet": 3.5,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 41.5,
+        "sonnet": 64.1,
         "haiku": 0.0,
-        "fable": 4.7,
+        "fable": 59.6,
         "other": 0.0
       },
       "score_avg": null,
@@ -4773,6 +4773,33 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "股癌第九輪：這集兩行縮排對齊、總覽改一集一行並統一股名與「只說他有買」叫法、搜尋「相關的詞」改純文字",
+          "project": "asr-lab",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "13:50",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "股癌第八輪：搜尋秒數改灰色小字、常講改純文字；這集「見最新一次」改原地印內容、前幾集加純文字總覽；計分板用詞統一",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "13:19",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "以前準嗎大圖改深色底（darken_svgs）＋06:00 重建驗證報告",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "13:08",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "股癌第七輪搜尋站：晶片/排行/更多/回首頁全改純文字，原話區零可點元素，點擊處理器移除；加 check_r7 驗證",
@@ -4826,6 +4853,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-22T13:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4946,7 +4982,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 19 筆 commit 未列（未 push 5、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 13）"
+      "notes": "另有 23 筆 commit 未列（未 push 8、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 14）"
     }
   ]
 }
