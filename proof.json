@@ -1,292 +1,7 @@
 {
-  "generated_at": "2026-10-22T23:00+08:00",
+  "generated_at": "2026-10-23T00:00+08:00",
   "rules_version": 3,
   "days": [
-    {
-      "date": "2026-10-09",
-      "commits": 26,
-      "tickets_done": 0,
-      "tickets_verify": 0,
-      "subagent_runs": 54,
-      "discord_replies": 52,
-      "tokens_main_wan": 182.0,
-      "tokens_sub_wan": 283.2,
-      "tokens_sessions": 61,
-      "tokens_msgs": 1186,
-      "tokens_by_model": {
-        "opus": 314.9,
-        "sonnet": 142.1,
-        "haiku": 8.1,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_main": {
-        "opus": 179.5,
-        "sonnet": 2.5,
-        "haiku": 0.0,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "tokens_by_model_sub": {
-        "opus": 135.4,
-        "sonnet": 139.6,
-        "haiku": 8.1,
-        "fable": 0.0,
-        "other": 0.0
-      },
-      "score_avg": null,
-      "score_low": 0,
-      "score_high": 0,
-      "scores": [],
-      "corrections_new": 0,
-      "highlights": [
-        "英文講義第一、二課（english-lessons）＋股癌關鍵字搜尋頁（asr-lab/search）存檔"
-      ],
-      "items": [
-        {
-          "kind": "commit",
-          "text": "英文講義第一、二課（english-lessons）＋股癌關鍵字搜尋頁（asr-lab/search）存檔",
-          "project": "english-lessons",
-          "by": "未對",
-          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/a192253fba26bc7cecfe55f45acd73d56d0a893e",
-          "evidence_label": "commit a192253",
-          "verified": true,
-          "time": "15:05",
-          "plain": null,
-          "plain_ok": false
-        }
-      ],
-      "items_count": 1,
-      "skipped": [
-        {
-          "kind": "commit",
-          "text": "backtest.html: daily refresh 2026-10-09 (auto, run_daily_an…",
-          "project": "股癌",
-          "reason": "no_coauthor",
-          "reason_label": "無 Co-Authored-By: Claude",
-          "time": "04:13",
-          "repo": "stock-signal"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T23:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "23:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T22:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "22:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T21:01+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "21:01",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T20:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "20:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T19:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "19:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T18:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "18:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T17:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "17:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T16:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "16:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T15:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "15:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T14:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "14:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T13:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "13:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T12:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "12:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T11:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "11:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T10:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "10:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T09:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "09:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T08:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "08:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T07:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "07:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T06:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "06:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T05:01+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "05:01",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T04:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "04:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T03:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "03:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T02:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "02:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T01:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "01:00",
-          "repo": "daniel-demos"
-        },
-        {
-          "kind": "commit",
-          "text": "proof.json auto-refresh 2026-10-09T00:00+08:00 (days=14 ite…",
-          "project": "工作證明頁",
-          "reason": "automated",
-          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
-          "time": "00:00",
-          "repo": "daniel-demos"
-        }
-      ],
-      "selfreport": [],
-      "notes": "另有 25 筆 commit 未列（無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
-    },
     {
       "date": "2026-10-10",
       "commits": 25,
@@ -4734,7 +4449,7 @@
     },
     {
       "date": "2026-10-22",
-      "commits": 32,
+      "commits": 33,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 11,
@@ -4853,6 +4568,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-22T23:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "23:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5063,7 +4787,51 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 32 筆 commit 未列（未 push 8、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 23）"
+      "notes": "另有 33 筆 commit 未列（未 push 8、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 24）"
+    },
+    {
+      "date": "2026-10-23",
+      "commits": 0,
+      "tickets_done": 0,
+      "tickets_verify": 0,
+      "subagent_runs": 0,
+      "discord_replies": 0,
+      "tokens_main_wan": 0.0,
+      "tokens_sub_wan": 0.0,
+      "tokens_sessions": 0,
+      "tokens_msgs": 0,
+      "tokens_by_model": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_main": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "tokens_by_model_sub": {
+        "opus": 0.0,
+        "sonnet": 0.0,
+        "haiku": 0.0,
+        "fable": 0.0,
+        "other": 0.0
+      },
+      "score_avg": null,
+      "score_low": 0,
+      "score_high": 0,
+      "scores": [],
+      "corrections_new": 0,
+      "highlights": [],
+      "items": [],
+      "items_count": 0,
+      "skipped": [],
+      "selfreport": [],
+      "notes": ""
     }
   ]
 }
