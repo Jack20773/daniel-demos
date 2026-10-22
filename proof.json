@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T09:00+08:00",
+  "generated_at": "2026-10-22T10:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4734,24 +4734,24 @@
     },
     {
       "date": "2026-10-22",
-      "commits": 13,
+      "commits": 16,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 3,
-      "discord_replies": 6,
-      "tokens_main_wan": 48.4,
-      "tokens_sub_wan": 35.5,
-      "tokens_sessions": 8,
-      "tokens_msgs": 214,
+      "subagent_runs": 4,
+      "discord_replies": 11,
+      "tokens_main_wan": 55.8,
+      "tokens_sub_wan": 46.1,
+      "tokens_sessions": 10,
+      "tokens_msgs": 303,
       "tokens_by_model": {
-        "opus": 48.1,
-        "sonnet": 31.2,
+        "opus": 55.5,
+        "sonnet": 41.8,
         "haiku": 0.0,
         "fable": 4.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 48.1,
+        "opus": 55.5,
         "sonnet": 0.3,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4759,7 +4759,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 30.9,
+        "sonnet": 41.5,
         "haiku": 0.0,
         "fable": 4.7,
         "other": 0.0
@@ -4773,6 +4773,24 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "股癌第七輪搜尋站：晶片/排行/更多/回首頁全改純文字，原話區零可點元素，點擊處理器移除；加 check_r7 驗證",
+          "project": "asr-lab",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "報紙版第六輪：四站內文不放任何連結、▶ 改純文字秒數、拿掉播放條、搜尋站同步",
+          "project": "股癌回測",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:07",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "盤後復盤：程式碼進 git；notify.py 部署加 300 秒逾時＋砍整棵子程序＋重試一次（10/21 wrang…",
@@ -4808,6 +4826,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-22T09:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4892,7 +4919,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 13 筆 commit 未列（未 push 3、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 9）"
+      "notes": "另有 16 筆 commit 未列（未 push 5、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10）"
     }
   ]
 }
