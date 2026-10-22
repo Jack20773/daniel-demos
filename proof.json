@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T06:00+08:00",
+  "generated_at": "2026-10-23T07:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4791,34 +4791,34 @@
     },
     {
       "date": "2026-10-23",
-      "commits": 10,
+      "commits": 18,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 16,
-      "discord_replies": 61,
-      "tokens_main_wan": 85.5,
-      "tokens_sub_wan": 335.4,
-      "tokens_sessions": 24,
-      "tokens_msgs": 913,
+      "subagent_runs": 21,
+      "discord_replies": 70,
+      "tokens_main_wan": 106.1,
+      "tokens_sub_wan": 378.8,
+      "tokens_sessions": 30,
+      "tokens_msgs": 1111,
       "tokens_by_model": {
-        "opus": 232.2,
-        "sonnet": 66.7,
+        "opus": 267.8,
+        "sonnet": 86.3,
         "haiku": 0.0,
-        "fable": 122.0,
+        "fable": 130.8,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 84.2,
+        "opus": 104.8,
         "sonnet": 1.3,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 148.0,
-        "sonnet": 65.4,
+        "opus": 163.0,
+        "sonnet": 85.0,
         "haiku": 0.0,
-        "fable": 122.0,
+        "fable": 130.8,
         "other": 0.0
       },
       "score_avg": null,
@@ -4830,6 +4830,69 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 06:53",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:53",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "攻略寫作標準入庫：對抗審查需修3項全修、複查可標記；索引對帳日期與遞迴數更正",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:53",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 06:52",
+          "project": "制度",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:52",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 06:50",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:50",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "擋門測試設 UTF-8（22/22、突變全紅、真實擋下）；TradeReview 部署防 npx 卡住；CLAUDE.…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:48",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "美光卡 fix2 補挑 7.5→小修→複查 8 上線；擋門改數主題、拿掉字數行數硬擋（羅盤 06:30）",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:39",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "美光規則卡 v4（挑錯 8 分＋fix2）上線、送出前長度擋門 plain-length-guard、羅盤 06:00…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:11",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "美光風向 v1、深入投資人方法 v1、判斷台帳 #001 判定、羅盤回應三輪",
@@ -4865,6 +4928,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-23T06:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4922,7 +4994,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 10 筆 commit 未列（未 push 3、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
+      "notes": "另有 18 筆 commit 未列（未 push 10、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7）"
     }
   ]
 }
