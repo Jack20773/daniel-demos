@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T02:00+08:00",
+  "generated_at": "2026-10-23T03:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4791,34 +4791,34 @@
     },
     {
       "date": "2026-10-23",
-      "commits": 2,
+      "commits": 5,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 1,
-      "discord_replies": 1,
-      "tokens_main_wan": 10.1,
-      "tokens_sub_wan": 14.5,
-      "tokens_sessions": 2,
-      "tokens_msgs": 42,
+      "subagent_runs": 4,
+      "discord_replies": 8,
+      "tokens_main_wan": 22.7,
+      "tokens_sub_wan": 88.6,
+      "tokens_sessions": 6,
+      "tokens_msgs": 256,
       "tokens_by_model": {
-        "opus": 24.6,
+        "opus": 87.3,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 24.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 10.1,
+        "opus": 22.7,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 14.5,
+        "opus": 64.6,
         "sonnet": 0.0,
         "haiku": 0.0,
-        "fable": 0.0,
+        "fable": 24.0,
         "other": 0.0
       },
       "score_avg": null,
@@ -4830,6 +4830,33 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "記憶體報告挑錯過程手機頁＋首頁補掛（羅盤 10/23 02:30 兩則）",
+          "project": "報告站",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "記憶體產業趨勢報告 10/23（挑錯 7→8.5）＋手機頁",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:28",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-23T02:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:00",
+          "repo": "daniel-demos"
+        },
         {
           "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-23T01:00+08:00 (days=14 ite…",
@@ -4850,7 +4877,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 2 筆 commit 未列（自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
+      "notes": "另有 5 筆 commit 未列（未 push 2、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
     }
   ]
 }
