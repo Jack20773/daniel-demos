@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T08:00+08:00",
+  "generated_at": "2026-10-22T09:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4734,24 +4734,24 @@
     },
     {
       "date": "2026-10-22",
-      "commits": 12,
+      "commits": 13,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 2,
-      "discord_replies": 3,
-      "tokens_main_wan": 45.7,
-      "tokens_sub_wan": 30.7,
-      "tokens_sessions": 7,
-      "tokens_msgs": 186,
+      "subagent_runs": 3,
+      "discord_replies": 6,
+      "tokens_main_wan": 48.4,
+      "tokens_sub_wan": 35.5,
+      "tokens_sessions": 8,
+      "tokens_msgs": 214,
       "tokens_by_model": {
-        "opus": 45.3,
-        "sonnet": 26.4,
+        "opus": 48.1,
+        "sonnet": 31.2,
         "haiku": 0.0,
         "fable": 4.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 45.3,
+        "opus": 48.1,
         "sonnet": 0.3,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4759,7 +4759,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 26.1,
+        "sonnet": 30.9,
         "haiku": 0.0,
         "fable": 4.7,
         "other": 0.0
@@ -4808,6 +4808,15 @@
           "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-22T08:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "08:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -4883,7 +4892,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 12 筆 commit 未列（未 push 3、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 8）"
+      "notes": "另有 13 筆 commit 未列（未 push 3、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 9）"
     }
   ]
 }
