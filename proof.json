@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T13:01+08:00",
+  "generated_at": "2026-10-23T14:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4791,24 +4791,24 @@
     },
     {
       "date": "2026-10-23",
-      "commits": 63,
+      "commits": 66,
       "tickets_done": 0,
       "tickets_verify": 1,
       "subagent_runs": 27,
-      "discord_replies": 96,
-      "tokens_main_wan": 172.2,
+      "discord_replies": 98,
+      "tokens_main_wan": 178.6,
       "tokens_sub_wan": 487.7,
       "tokens_sessions": 41,
-      "tokens_msgs": 1609,
+      "tokens_msgs": 1631,
       "tokens_by_model": {
-        "opus": 344.9,
+        "opus": 351.3,
         "sonnet": 165.5,
         "haiku": 0.0,
         "fable": 149.4,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 170.9,
+        "opus": 177.3,
         "sonnet": 1.3,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4830,6 +4830,24 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 13:07",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "13:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "投資想法筆記：9/3 轉錄全換逐字原文、更正「改口」、加回首頁連結（羅盤 13:00）",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "13:07",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-10-23 12:37",
@@ -5282,6 +5300,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-23T13:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "13:01",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-23T12:01+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -5399,7 +5426,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 63 筆 commit 未列（未 push 47、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 14、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 66 筆 commit 未列（未 push 49、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 15、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
