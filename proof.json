@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T09:00+08:00",
+  "generated_at": "2026-10-23T10:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4791,24 +4791,24 @@
     },
     {
       "date": "2026-10-23",
-      "commits": 34,
+      "commits": 44,
       "tickets_done": 0,
       "tickets_verify": 1,
       "subagent_runs": 26,
-      "discord_replies": 76,
-      "tokens_main_wan": 134.9,
-      "tokens_sub_wan": 473.4,
-      "tokens_sessions": 37,
-      "tokens_msgs": 1390,
+      "discord_replies": 81,
+      "tokens_main_wan": 146.4,
+      "tokens_sub_wan": 476.6,
+      "tokens_sessions": 38,
+      "tokens_msgs": 1466,
       "tokens_by_model": {
-        "opus": 296.6,
-        "sonnet": 162.3,
+        "opus": 308.1,
+        "sonnet": 165.5,
         "haiku": 0.0,
         "fable": 149.4,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 133.6,
+        "opus": 145.1,
         "sonnet": 1.3,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4816,7 +4816,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 163.0,
-        "sonnet": 161.0,
+        "sonnet": 164.2,
         "haiku": 0.0,
         "fable": 149.4,
         "other": 0.0
@@ -4830,6 +4830,87 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 09:37",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:37",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "羅盤 09:30：撤回刪指標檔題、考試時段護額度、週表加考試額度失敗欄",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:37",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 09:35",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 09:07",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "羅盤 09:00：合併前後全目錄訊息 id 比對工具 memory_id_diff.py，寫進 5a 合併紀律",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 09:03",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:03",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 09:02",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:02",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 09:01",
+          "project": "制度",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:01",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "挑錯員需修3項：補 proactive_push 等3檔索引路徑、審計腳本收緊(註解/作廢不算、壞指標、exit 1)…",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:01",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-10-23 08:59",
@@ -5057,6 +5138,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-23T09:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:01",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-23T08:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -5138,7 +5228,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 34 筆 commit 未列（未 push 23、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 44 筆 commit 未列（未 push 32、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 11、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
