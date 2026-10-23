@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T11:00+08:00",
+  "generated_at": "2026-10-23T12:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -4791,24 +4791,24 @@
     },
     {
       "date": "2026-10-23",
-      "commits": 50,
+      "commits": 56,
       "tickets_done": 0,
       "tickets_verify": 1,
       "subagent_runs": 26,
-      "discord_replies": 84,
-      "tokens_main_wan": 155.1,
+      "discord_replies": 88,
+      "tokens_main_wan": 160.4,
       "tokens_sub_wan": 476.6,
       "tokens_sessions": 39,
-      "tokens_msgs": 1502,
+      "tokens_msgs": 1538,
       "tokens_by_model": {
-        "opus": 316.8,
+        "opus": 322.1,
         "sonnet": 165.5,
         "haiku": 0.0,
         "fable": 149.4,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 153.8,
+        "opus": 159.1,
         "sonnet": 1.3,
         "haiku": 0.0,
         "fable": 0.0,
@@ -4830,6 +4830,51 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 11:43",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:43",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 11:34",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "羅盤 11:30：晚上閘門不猜字樣，改看任務書宣告「對象：他 編號／家務」",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-23 11:06",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:06",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "羅盤 11:00：晚上閘門不再把挑錯／羅盤算家務、改硬字樣＋訊息編號判對象",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:05",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-10-23 10:36",
@@ -5183,6 +5228,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-23T11:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-23T10:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -5282,7 +5336,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 50 筆 commit 未列（未 push 36、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 12、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 56 筆 commit 未列（未 push 41、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 13、repo 沒有 GitHub remote（沒有可點連結） 1、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
