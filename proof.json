@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T11:00+08:00",
+  "generated_at": "2026-10-24T12:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5713,24 +5713,24 @@
     },
     {
       "date": "2026-10-24",
-      "commits": 12,
+      "commits": 18,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 0,
-      "discord_replies": 1,
-      "tokens_main_wan": 18.3,
+      "discord_replies": 11,
+      "tokens_main_wan": 26.2,
       "tokens_sub_wan": 0.0,
       "tokens_sessions": 2,
-      "tokens_msgs": 30,
+      "tokens_msgs": 80,
       "tokens_by_model": {
-        "opus": 18.3,
+        "opus": 26.2,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 18.3,
+        "opus": 26.2,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -5752,6 +5752,51 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-24 11:36",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:36",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-24 11:06",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:06",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "outcome_check: 盤後復盤 05:30 後沒更新自己亮紅（羅盤 10/24 10:59 第 2 則）",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:05",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-24 11:01",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:01",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "chore: 把 11 個誤收的 .bak_ 備份檔移出版控（檔案留在磁碟，丹尼爾 10/24 點頭）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:00",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-10-24 10:58",
@@ -5817,6 +5862,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-24T11:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-10-24T04:01+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -5862,7 +5916,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 12 筆 commit 未列（未 push 7、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
+      "notes": "另有 18 筆 commit 未列（未 push 12、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
     }
   ]
 }
