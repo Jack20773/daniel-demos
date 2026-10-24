@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T03:00+08:00",
+  "generated_at": "2026-10-25T04:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -6068,24 +6068,24 @@
     },
     {
       "date": "2026-10-25",
-      "commits": 6,
+      "commits": 8,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 0,
       "discord_replies": 0,
-      "tokens_main_wan": 0.8,
+      "tokens_main_wan": 1.0,
       "tokens_sub_wan": 0.0,
       "tokens_sessions": 1,
-      "tokens_msgs": 13,
+      "tokens_msgs": 17,
       "tokens_by_model": {
-        "opus": 0.8,
+        "opus": 1.0,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 0.8,
+        "opus": 1.0,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -6107,6 +6107,15 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-25 03:17",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:17",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-10-25 02:24",
@@ -6133,6 +6142,15 @@
           "reason_label": "未 push",
           "time": "00:33",
           "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-25T03:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:00",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -6163,7 +6181,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 6 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
+      "notes": "另有 8 筆 commit 未列（未 push 4、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
     }
   ]
 }
