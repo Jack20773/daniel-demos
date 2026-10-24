@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T12:01+08:00",
+  "generated_at": "2026-10-24T13:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -5713,24 +5713,24 @@
     },
     {
       "date": "2026-10-24",
-      "commits": 18,
+      "commits": 25,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
-      "discord_replies": 11,
-      "tokens_main_wan": 26.2,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 2,
-      "tokens_msgs": 80,
+      "subagent_runs": 2,
+      "discord_replies": 15,
+      "tokens_main_wan": 34.4,
+      "tokens_sub_wan": 13.6,
+      "tokens_sessions": 5,
+      "tokens_msgs": 158,
       "tokens_by_model": {
-        "opus": 26.2,
-        "sonnet": 0.0,
+        "opus": 34.4,
+        "sonnet": 13.6,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 26.2,
+        "opus": 34.4,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -5738,7 +5738,7 @@
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
-        "sonnet": 0.0,
+        "sonnet": 13.6,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -5752,6 +5752,60 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-24 12:36",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:36",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "outcome_check: 母體加入晨讀與額度檢測員兩項（11→13），含假時鐘測試",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:36",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-24 12:34",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-24 12:11",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-10-24 12:07",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "trade-review: 美光原持股未知改成頁面第一條紅字（羅盤 10/24 12:00）",
+          "project": "daniel-invest",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "12:04",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-10-24 11:36",
@@ -5855,10 +5909,19 @@
           "kind": "commit",
           "text": "backtest.html: daily refresh 2026-10-24 (auto, run_daily_an…",
           "project": "股癌",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "04:13",
           "repo": "stock-signal"
+        },
+        {
+          "kind": "commit",
+          "text": "proof.json auto-refresh 2026-10-24T12:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "12:01",
+          "repo": "daniel-demos"
         },
         {
           "kind": "commit",
@@ -5916,7 +5979,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 18 筆 commit 未列（未 push 12、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
+      "notes": "另有 25 筆 commit 未列（未 push 17、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7）"
     }
   ]
 }
