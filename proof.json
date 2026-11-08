@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T22:00+08:00",
+  "generated_at": "2026-11-08T23:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -1874,32 +1874,32 @@
     },
     {
       "date": "2026-11-08",
-      "commits": 25,
+      "commits": 36,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 4,
-      "discord_replies": 9,
-      "tokens_main_wan": 205.8,
-      "tokens_sub_wan": 47.8,
-      "tokens_sessions": 103,
-      "tokens_msgs": 397,
+      "subagent_runs": 5,
+      "discord_replies": 12,
+      "tokens_main_wan": 208.7,
+      "tokens_sub_wan": 74.9,
+      "tokens_sessions": 104,
+      "tokens_msgs": 525,
       "tokens_by_model": {
-        "opus": 136.5,
-        "sonnet": 117.0,
+        "opus": 161.6,
+        "sonnet": 121.9,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 88.7,
+        "opus": 91.6,
         "sonnet": 117.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 47.8,
-        "sonnet": 0.0,
+        "opus": 70.0,
+        "sonnet": 4.9,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
@@ -1909,10 +1909,106 @@
       "score_high": 0,
       "scores": [],
       "corrections_new": 0,
-      "highlights": [],
-      "items": [],
-      "items_count": 0,
+      "highlights": [
+        "英文筆記：補進 9/25～11/08 頻道內容、加速查側欄（核心公式／單字分開列、可搜尋），修手機版被長網址撐寬"
+      ],
+      "items": [
+        {
+          "kind": "commit",
+          "text": "英文筆記：補進 9/25～11/08 頻道內容、加速查側欄（核心公式／單字分開列、可搜尋），修手機版被長網址撐寬",
+          "project": "工作證明頁",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/daniel-demos/commit/926c4211c26ca047f984c0793ed32ecc9b3abb74",
+          "evidence_label": "commit 926c421",
+          "verified": true,
+          "time": "22:12",
+          "plain": null,
+          "plain_ok": false
+        }
+      ],
+      "items_count": 1,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-08 22:39",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:39",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-08 22:32",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "英文課程站：一鍵複習畫面開著時藏起「換聲音」，避免蓋住「✕ 結束」",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-08 22:31",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-08 22:15",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:15",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "聽寫排程：子程序加逾時、run.log 改逐行寫（11/08 排程被 20 分鐘上限砍掉、log 空白）",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:13",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "英文課程站：快速翻找側欄＋公式總覽／單字總覽；補 11/08 上課（第 17 條 ng、複習不熟 8 字）",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-08 22:04",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:04",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-08 22:01",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:01",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-08 21:55",
@@ -2122,6 +2218,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-08T22:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "22:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-08T21:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -2140,7 +2245,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 25 筆 commit 未列（未 push 22、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
+      "notes": "另有 35 筆 commit 未列（未 push 31、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
     }
   ]
 }
