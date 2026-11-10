@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T18:00+08:00",
+  "generated_at": "2026-11-10T19:00+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -1651,24 +1651,24 @@
     },
     {
       "date": "2026-11-10",
-      "commits": 49,
+      "commits": 55,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 2,
-      "discord_replies": 17,
-      "tokens_main_wan": 119.6,
+      "discord_replies": 19,
+      "tokens_main_wan": 122.1,
       "tokens_sub_wan": 4.2,
       "tokens_sessions": 5,
-      "tokens_msgs": 160,
+      "tokens_msgs": 180,
       "tokens_by_model": {
-        "opus": 119.6,
+        "opus": 122.1,
         "sonnet": 0.0,
         "haiku": 4.2,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 119.6,
+        "opus": 122.1,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -1690,6 +1690,51 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-10 18:37",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:37",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-10 18:31",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "outcome_check: 記分板加最新集數日期 8 天檢查（只看 built 分不出集數卡住）",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-10 18:01",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:01",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "outcome_check: 加誰說得對記分板 latest.js 每日 06:30 新鮮度檢查",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:01",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-10 17:32",
@@ -1971,6 +2016,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-10T18:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-10T17:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -2133,7 +2187,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 49 筆 commit 未列（未 push 30、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 18）"
+      "notes": "另有 55 筆 commit 未列（未 push 35、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
     }
   ]
 }
