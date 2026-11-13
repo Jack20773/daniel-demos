@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T22:00+08:00",
+  "generated_at": "2026-11-13T23:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -7782,32 +7782,32 @@
     },
     {
       "date": "2026-11-13",
-      "commits": 226,
+      "commits": 234,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 40,
-      "discord_replies": 123,
-      "tokens_main_wan": 308.9,
-      "tokens_sub_wan": 539.5,
-      "tokens_sessions": 63,
-      "tokens_msgs": 2778,
+      "subagent_runs": 43,
+      "discord_replies": 133,
+      "tokens_main_wan": 320.3,
+      "tokens_sub_wan": 572.9,
+      "tokens_sessions": 67,
+      "tokens_msgs": 2904,
       "tokens_by_model": {
-        "opus": 772.3,
-        "sonnet": 31.4,
+        "opus": 812.0,
+        "sonnet": 36.5,
         "haiku": 21.3,
         "fable": 23.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 290.9,
+        "opus": 302.3,
         "sonnet": 4.9,
         "haiku": 13.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 481.4,
-        "sonnet": 26.5,
+        "opus": 509.7,
+        "sonnet": 31.6,
         "haiku": 8.3,
         "fable": 23.3,
         "other": 0.0
@@ -7821,6 +7821,69 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-13 22:55",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:55",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-13 22:50",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:50",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-13 22:48",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:48",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-13 22:45",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:45",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "unanswered_watch: Cloudflare 403 不再誤判登入過期（11/13 白斷 4 小時）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:44",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-13 22:42",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:42",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-13 22:38",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "22:38",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-13 18:15",
@@ -9659,6 +9722,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-13T22:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "22:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-13T21:00+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -9857,7 +9929,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 226 筆 commit 未列（未 push 203、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22）"
+      "notes": "另有 234 筆 commit 未列（未 push 210、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 23）"
     }
   ]
 }
