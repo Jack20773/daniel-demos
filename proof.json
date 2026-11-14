@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T01:00+08:00",
+  "generated_at": "2026-11-15T02:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -11780,24 +11780,24 @@
     },
     {
       "date": "2026-11-15",
-      "commits": 4,
+      "commits": 6,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 0,
-      "discord_replies": 0,
-      "tokens_main_wan": 8.1,
+      "discord_replies": 1,
+      "tokens_main_wan": 10.6,
       "tokens_sub_wan": 0.0,
       "tokens_sessions": 1,
-      "tokens_msgs": 11,
+      "tokens_msgs": 22,
       "tokens_by_model": {
-        "opus": 8.1,
+        "opus": 10.6,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 8.1,
+        "opus": 10.6,
         "sonnet": 0.0,
         "haiku": 0.0,
         "fable": 0.0,
@@ -11819,6 +11819,15 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-15 01:21",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "01:21",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-15 00:26",
@@ -11848,6 +11857,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-15T01:00+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "01:00",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-15T00:01+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -11857,7 +11875,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 4 筆 commit 未列（未 push 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 1）"
+      "notes": "另有 6 筆 commit 未列（未 push 4、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
     }
   ]
 }
