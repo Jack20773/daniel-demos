@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T05:01+08:00",
+  "generated_at": "2026-11-16T06:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -18239,25 +18239,25 @@
     },
     {
       "date": "2026-11-16",
-      "commits": 171,
+      "commits": 180,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 13,
       "discord_replies": 18,
-      "tokens_main_wan": 764.5,
+      "tokens_main_wan": 809.0,
       "tokens_sub_wan": 36.6,
-      "tokens_sessions": 241,
-      "tokens_msgs": 1060,
+      "tokens_sessions": 245,
+      "tokens_msgs": 1170,
       "tokens_by_model": {
-        "opus": 239.3,
-        "sonnet": 459.1,
+        "opus": 278.9,
+        "sonnet": 463.9,
         "haiku": 102.8,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 239.3,
-        "sonnet": 449.4,
+        "opus": 278.9,
+        "sonnet": 454.2,
         "haiku": 75.9,
         "fable": 0.0,
         "other": 0.0
@@ -18278,6 +18278,78 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-16 05:55",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:55",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "health-coach: 劃卡頁劃之前顯示下一張券彩虹%（00:15 前睡著 ×1.5）、保底、沒券時今晚怎麼掙；部…",
+          "project": "health-coach",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:54",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-16 05:49",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:49",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-16 05:32",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-16 05:29",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:29",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-16 05:23",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:23",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-16 05:20",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:20",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "heartbeat_precheck: 沒有員工在推他的專案也叫醒（卡清空不等於沒事）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:20",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-16 03:37",
@@ -19774,6 +19846,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-16T05:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "05:01",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-16T04:01+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -19819,7 +19900,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 171 筆 commit 未列（未 push 165、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
+      "notes": "另有 180 筆 commit 未列（未 push 173、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
     }
   ]
 }
