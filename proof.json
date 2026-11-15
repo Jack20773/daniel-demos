@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T21:01+08:00",
+  "generated_at": "2026-11-15T22:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -11872,24 +11872,24 @@
     },
     {
       "date": "2026-11-15",
-      "commits": 563,
+      "commits": 570,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 31,
-      "discord_replies": 55,
-      "tokens_main_wan": 2042.5,
+      "discord_replies": 57,
+      "tokens_main_wan": 2053.4,
       "tokens_sub_wan": 297.5,
-      "tokens_sessions": 836,
-      "tokens_msgs": 3580,
+      "tokens_sessions": 837,
+      "tokens_msgs": 3648,
       "tokens_by_model": {
-        "opus": 649.8,
+        "opus": 660.7,
         "sonnet": 875.5,
         "haiku": 750.7,
         "fable": 63.9,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 456.6,
+        "opus": 467.5,
         "sonnet": 839.3,
         "haiku": 746.6,
         "fable": 0.0,
@@ -12843,7 +12843,7 @@
           "time": "2026-11-15 09:02"
         }
       ],
-      "corrections_new": 0,
+      "corrections_new": 1,
       "highlights": [
         "health-coach: 程式碼納入版本控管（資料/備份/截圖/密鑰以 .gitignore 排除）",
         "health-coach: 抽卡新規則試玩頁＋機制負責人第1輪報告（7題定案）",
@@ -13021,6 +13021,60 @@
       ],
       "items_count": 14,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-15 21:51",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "21:51",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-15 21:48",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "21:48",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-15 21:28",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "21:28",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-15 21:22",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "21:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-15 21:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "21:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "ledger_sweep 停催名單（leftover-files）；A 類醜圖兩做法寫入口味頁；羅盤回應",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "21:12",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-15 20:50",
@@ -17775,6 +17829,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-15T21:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "21:01",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-15T20:01+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -17964,7 +18027,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 549 筆 commit 未列（未 push 273、無 Co-Authored-By: Claude 255、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21）"
+      "notes": "另有 556 筆 commit 未列（未 push 279、無 Co-Authored-By: Claude 255、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 22）"
     }
   ]
 }
