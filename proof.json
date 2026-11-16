@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T03:01+08:00",
+  "generated_at": "2026-11-17T04:01+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -20355,34 +20355,34 @@
     },
     {
       "date": "2026-11-17",
-      "commits": 102,
+      "commits": 110,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 13,
+      "subagent_runs": 14,
       "discord_replies": 18,
-      "tokens_main_wan": 536.0,
-      "tokens_sub_wan": 54.6,
-      "tokens_sessions": 188,
-      "tokens_msgs": 935,
+      "tokens_main_wan": 558.5,
+      "tokens_sub_wan": 71.0,
+      "tokens_sessions": 190,
+      "tokens_msgs": 1045,
       "tokens_by_model": {
-        "opus": 192.3,
+        "opus": 214.7,
         "sonnet": 181.2,
         "haiku": 143.0,
-        "fable": 74.1,
+        "fable": 90.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 180.1,
+        "opus": 192.2,
         "sonnet": 155.5,
         "haiku": 140.6,
-        "fable": 59.8,
+        "fable": 70.2,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 12.2,
+        "opus": 22.5,
         "sonnet": 25.7,
         "haiku": 2.4,
-        "fable": 14.3,
+        "fable": 20.4,
         "other": 0.0
       },
       "score_avg": null,
@@ -20394,6 +20394,69 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-17 03:58",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:58",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-17 03:55",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:55",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-17 03:55",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:55",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-17 03:43",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:43",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-17 03:18",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:18",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-17 03:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-17 03:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:10",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-17 02:41",
@@ -21287,6 +21350,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-17T03:01+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:01",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-17T02:01+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -21314,7 +21386,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 102 筆 commit 未列（未 push 99、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
+      "notes": "另有 110 筆 commit 未列（未 push 106、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
     }
   ]
 }
