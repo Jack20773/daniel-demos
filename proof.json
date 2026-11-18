@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T05:02+08:00",
+  "generated_at": "2026-11-19T06:02+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -27447,27 +27447,27 @@
     },
     {
       "date": "2026-11-19",
-      "commits": 68,
+      "commits": 74,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 6,
       "discord_replies": 15,
-      "tokens_main_wan": 254.8,
+      "tokens_main_wan": 271.4,
       "tokens_sub_wan": 23.7,
-      "tokens_sessions": 29,
-      "tokens_msgs": 871,
+      "tokens_sessions": 31,
+      "tokens_msgs": 921,
       "tokens_by_model": {
-        "opus": 208.2,
+        "opus": 219.4,
         "sonnet": 35.1,
         "haiku": 0.0,
-        "fable": 35.2,
+        "fable": 40.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 208.2,
+        "opus": 219.4,
         "sonnet": 11.4,
         "haiku": 0.0,
-        "fable": 35.2,
+        "fable": 40.6,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -27510,6 +27510,51 @@
       ],
       "items_count": 1,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 05:35",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "warroom: 「你上次傳話之後」做完每列可點——補抓漏掉的網址（6/8 有打開鈕，原 4/8 含 1 個 JSON…",
+          "project": "warroom-board",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 05:29",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:29",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 05:01",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:01",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 05:01",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "05:01",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 04:37",
@@ -28070,6 +28115,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-19T05:02+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "05:02",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-19T04:02+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -28115,7 +28169,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 67 筆 commit 未列（未 push 61、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
+      "notes": "另有 73 筆 commit 未列（未 push 66、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
     }
   ]
 }
