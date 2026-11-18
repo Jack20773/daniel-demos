@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T11:02+08:00",
+  "generated_at": "2026-11-18T12:02+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -22903,27 +22903,27 @@
     },
     {
       "date": "2026-11-18",
-      "commits": 239,
+      "commits": 276,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 12,
-      "discord_replies": 44,
-      "tokens_main_wan": 776.6,
+      "discord_replies": 45,
+      "tokens_main_wan": 938.1,
       "tokens_sub_wan": 63.8,
-      "tokens_sessions": 180,
-      "tokens_msgs": 1678,
+      "tokens_sessions": 263,
+      "tokens_msgs": 1806,
       "tokens_by_model": {
-        "opus": 440.7,
-        "sonnet": 240.7,
-        "haiku": 125.3,
-        "fable": 33.7,
+        "opus": 441.9,
+        "sonnet": 305.8,
+        "haiku": 205.6,
+        "fable": 48.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 419.2,
-        "sonnet": 200.1,
-        "haiku": 123.6,
-        "fable": 33.7,
+        "opus": 420.4,
+        "sonnet": 265.2,
+        "haiku": 203.9,
+        "fable": 48.6,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -22933,9 +22933,9 @@
         "fable": 0.0,
         "other": 0.0
       },
-      "score_avg": 3.43,
+      "score_avg": 3.44,
       "score_low": 1,
-      "score_high": 45,
+      "score_high": 88,
       "scores": [
         {
           "score": 3,
@@ -23336,6 +23336,382 @@
         {
           "score": 3,
           "time": "2026-11-18 10:32"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:10"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:11"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:11"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:11"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:11"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:11"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:11"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:11"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:11"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:11"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:12"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-18 11:13"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-18 11:13"
         }
       ],
       "corrections_new": 0,
@@ -23343,6 +23719,330 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:42",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:42",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:14",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:14",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:13",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:13",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:13",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:13",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:13",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:13",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:12",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:11",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:11",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:11",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:11",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:10",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:10",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:09",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:09",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:09",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:09",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:08",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:08",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-18 11:02",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "11:02",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-18 10:36",
@@ -25397,6 +26097,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-18T11:02+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "11:02",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-18T10:02+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -25496,7 +26205,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 239 筆 commit 未列（未 push 227、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 11）"
+      "notes": "另有 276 筆 commit 未列（未 push 263、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 12）"
     }
   ]
 }
