@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T03:03+08:00",
+  "generated_at": "2026-11-20T04:04+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -30116,27 +30116,27 @@
     },
     {
       "date": "2026-11-20",
-      "commits": 66,
+      "commits": 78,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 2,
       "discord_replies": 4,
-      "tokens_main_wan": 109.5,
+      "tokens_main_wan": 168.5,
       "tokens_sub_wan": 11.5,
-      "tokens_sessions": 17,
-      "tokens_msgs": 297,
+      "tokens_sessions": 23,
+      "tokens_msgs": 442,
       "tokens_by_model": {
-        "opus": 50.7,
-        "sonnet": 6.9,
+        "opus": 82.7,
+        "sonnet": 14.2,
         "haiku": 4.9,
-        "fable": 58.6,
+        "fable": 78.3,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 50.7,
-        "sonnet": 6.9,
+        "opus": 82.7,
+        "sonnet": 14.2,
         "haiku": 4.9,
-        "fable": 47.1,
+        "fable": 66.8,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -30153,7 +30153,8 @@
       "corrections_new": 0,
       "highlights": [
         "health-coach：初版卡第 2 輪——屋頂/夜雲/土星平塗面全改細線，螢火補線條（卡 goodnews-art…",
-        "health-coach：初版獵戶座沙漏平塗改平行細線紋（卡 goodnews-art-1119late 第 2 輪補）"
+        "health-coach：初版獵戶座沙漏平塗改平行細線紋（卡 goodnews-art-1119late 第 2 輪補）",
+        "goodnews-art-1119night: 塔羅 r10 框跟著月亮換花紋（紅月紅藤蔓蝙蝠吊飾／月牙薰衣草月牙吊飾…"
       ],
       "items": [
         {
@@ -30179,16 +30180,163 @@
           "time": "00:23",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-art-1119night: 塔羅 r10 框跟著月亮換花紋（紅月紅藤蔓蝙蝠吊飾／月牙薰衣草月牙吊飾…",
+          "project": "報告站",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/ebd93eadce50f2fac8cfbc4f2d5cee6ebcbd40d1",
+          "evidence_label": "commit ebd93ea",
+          "verified": true,
+          "time": "00:30",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "bedtime_nudge: 今晚在做條目截斷放寬到 70 字，不切在第一個逗號",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/7bb9cb7110cd00e469b2960c1c0e9bf15951a887",
+          "evidence_label": "commit 7bb9cb7",
+          "verified": true,
+          "time": "01:29",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-art-1119night: r10b 吊飾收進左右框帶不進畫窗（紅月/超級畫窗內 0px），頁面文…",
+          "project": "報告站",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/eaaf6a49cb98aa1c58c38a85afbae6ecb60946f4",
+          "evidence_label": "commit eaaf6a4",
+          "verified": true,
+          "time": "01:30",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "warroom: 好消息加今天各部門 n/3 進度（goodnews-warroom-1120）",
+          "project": "warroom-board",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/6152160dbb440a5ed76de313c0d840dbd807a19c",
+          "evidence_label": "commit 6152160",
+          "verified": true,
+          "time": "03:06",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 2,
+      "items_count": 6,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 04:01",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:01",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 03:41",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 03:30",
+          "project": "hook",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:30",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 03:30",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:30",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 03:26",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:26",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 03:25",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:25",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 03:24",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:24",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 03:21",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:21",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 03:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 03:07",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 03:01",
+          "project": "遠端",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "03:01",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 02:16",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "02:16",
           "repo": "root"
         },
@@ -30196,8 +30344,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 02:10",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "02:10",
           "repo": "root"
         },
@@ -30205,8 +30353,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 02:09",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "02:09",
           "repo": "root"
         },
@@ -30214,8 +30362,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 02:08",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "02:08",
           "repo": "root"
         },
@@ -30223,8 +30371,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 02:02",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "02:02",
           "repo": "root"
         },
@@ -30232,8 +30380,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 02:01",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "02:01",
           "repo": "root"
         },
@@ -30241,8 +30389,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 02:00",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "02:00",
           "repo": "root"
         },
@@ -30250,8 +30398,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 01:40",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "01:40",
           "repo": "root"
         },
@@ -30259,44 +30407,26 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 01:31",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "01:31",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "goodnews-art-1119night: r10b 吊飾收進左右框帶不進畫窗（紅月/超級畫窗內 0px），頁面文…",
-          "project": "報告站",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "01:30",
           "repo": "root"
         },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 01:30",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "01:30",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "bedtime_nudge: 今晚在做條目截斷放寬到 70 字，不切在第一個逗號",
-          "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "01:29",
           "repo": "root"
         },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 01:21",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "01:21",
           "repo": "root"
         },
@@ -30304,8 +30434,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 01:12",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "01:12",
           "repo": "root"
         },
@@ -30313,8 +30443,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 01:11",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "01:11",
           "repo": "root"
         },
@@ -30322,8 +30452,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 01:02",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "01:02",
           "repo": "root"
         },
@@ -30331,8 +30461,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:42",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:42",
           "repo": "root"
         },
@@ -30340,8 +30470,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:41",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:41",
           "repo": "root"
         },
@@ -30349,8 +30479,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:41",
           "project": "看板",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:41",
           "repo": "root"
         },
@@ -30358,8 +30488,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:41",
           "project": "hook",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:41",
           "repo": "root"
         },
@@ -30367,8 +30497,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:41",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:41",
           "repo": "root"
         },
@@ -30376,8 +30506,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:41",
           "project": "工具",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:41",
           "repo": "root"
         },
@@ -30385,8 +30515,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:41",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:41",
           "repo": "root"
         },
@@ -30394,17 +30524,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:30",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
-          "time": "00:30",
-          "repo": "root"
-        },
-        {
-          "kind": "commit",
-          "text": "goodnews-art-1119night: 塔羅 r10 框跟著月亮換花紋（紅月紅藤蔓蝙蝠吊飾／月牙薰衣草月牙吊飾…",
-          "project": "報告站",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:30",
           "repo": "root"
         },
@@ -30412,8 +30533,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:25",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:25",
           "repo": "root"
         },
@@ -30421,8 +30542,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:24",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:24",
           "repo": "root"
         },
@@ -30430,8 +30551,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 00:24",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "00:24",
           "repo": "root"
         },
@@ -30734,6 +30855,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-20T03:03+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:03",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-20T02:03+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -30761,7 +30891,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 64 筆 commit 未列（未 push 28、無 Co-Authored-By: Claude 33、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
+      "notes": "另有 73 筆 commit 未列（未 push 10、無 Co-Authored-By: Claude 59、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
     }
   ]
 }
