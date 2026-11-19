@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T18:04+08:00",
+  "generated_at": "2026-11-19T19:03+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -27527,27 +27527,27 @@
     },
     {
       "date": "2026-11-19",
-      "commits": 199,
+      "commits": 211,
       "tickets_done": 0,
       "tickets_verify": 1,
       "subagent_runs": 16,
-      "discord_replies": 27,
-      "tokens_main_wan": 742.8,
+      "discord_replies": 29,
+      "tokens_main_wan": 797.5,
       "tokens_sub_wan": 68.8,
-      "tokens_sessions": 92,
-      "tokens_msgs": 2127,
+      "tokens_sessions": 95,
+      "tokens_msgs": 2321,
       "tokens_by_model": {
-        "opus": 516.3,
+        "opus": 570.1,
         "sonnet": 125.7,
         "haiku": 9.6,
-        "fable": 159.8,
+        "fable": 160.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 516.3,
+        "opus": 570.1,
         "sonnet": 61.5,
         "haiku": 5.1,
-        "fable": 159.8,
+        "fable": 160.7,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -27732,16 +27732,121 @@
           "time": "17:32",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "warroom-push-1119eve: 等你卡『要你』句裡的網址變成「打開去做」鈕，長網址縮短",
+          "project": "warroom-board",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/81e386f3fdb9651301aa631dc73baee0e7d5c827",
+          "evidence_label": "commit 81e386f",
+          "verified": true,
+          "time": "18:27",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-art-1119eve ①: 評分頁手機版面——完整標題、類別色標、縮圖＋打開看、藏卡片代號",
+          "project": "warroom-board",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/aab51b5171d60108e20161655673e1c8d2e121b3",
+          "evidence_label": "commit aab51b5",
+          "verified": true,
+          "time": "18:50",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-health-1119eve: /bed 起床改用手錶算（不再預設 09:00）、/streak 跟…",
+          "project": "health-coach",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/b72228fb9c60f6cb604db6d9c58317837cb3a5ee",
+          "evidence_label": "commit b72228f",
+          "verified": true,
+          "time": "18:52",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-art-1119eve ②: 報告站『新』字條不再蓋住搜尋框／播放器／按鈕；圖庫 emoji 修正",
+          "project": "報告站",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/c2703e95b7a9ea2747f822962fa0802a949e2abe",
+          "evidence_label": "commit c2703e9",
+          "verified": true,
+          "time": "18:54",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-art-1119eve ③: 晨讀頁結論／白話框起來、來源縮小變灰、未確認變小標籤（產生器改，之後每…",
+          "project": "工具",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/2808f32b3084d57a387177c204bc513db3d1e173",
+          "evidence_label": "commit 2808f32",
+          "verified": true,
+          "time": "18:57",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 13,
+      "items_count": 18,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 18:58",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:58",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 18:53",
+          "project": "遠端",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "18:53",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 18:44",
+          "project": "遠端",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "18:44",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 18:27",
+          "project": "遠端",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "18:27",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 18:23",
+          "project": "遠端",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "18:23",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 18:01",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "18:01",
           "repo": "root"
         },
@@ -27749,8 +27854,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 17:32",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "17:32",
           "repo": "root"
         },
@@ -27758,8 +27863,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 17:32",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "17:32",
           "repo": "root"
         },
@@ -29259,6 +29364,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-19T18:04+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:04",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-19T17:03+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -29421,7 +29535,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 187 筆 commit 未列（未 push 3、無 Co-Authored-By: Claude 166、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 18）"
+      "notes": "另有 193 筆 commit 未列（未 push 1、無 Co-Authored-By: Claude 173、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
     }
   ]
 }
