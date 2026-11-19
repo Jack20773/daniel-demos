@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T20:05+08:00",
+  "generated_at": "2026-11-19T21:06+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -27527,27 +27527,27 @@
     },
     {
       "date": "2026-11-19",
-      "commits": 226,
+      "commits": 241,
       "tickets_done": 0,
       "tickets_verify": 1,
       "subagent_runs": 19,
-      "discord_replies": 31,
-      "tokens_main_wan": 919.9,
+      "discord_replies": 33,
+      "tokens_main_wan": 970.1,
       "tokens_sub_wan": 86.3,
-      "tokens_sessions": 107,
-      "tokens_msgs": 2739,
+      "tokens_sessions": 113,
+      "tokens_msgs": 2866,
       "tokens_by_model": {
-        "opus": 693.9,
-        "sonnet": 132.0,
+        "opus": 707.6,
+        "sonnet": 139.4,
         "haiku": 9.6,
-        "fable": 170.5,
+        "fable": 199.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 682.7,
-        "sonnet": 61.5,
+        "opus": 696.4,
+        "sonnet": 68.9,
         "haiku": 5.1,
-        "fable": 170.5,
+        "fable": 199.6,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -27852,16 +27852,151 @@
           "time": "20:00",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-repeat-1119night: 交件報告（第1件上線、第2件照實沒做）",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/4864569eb73b0c73a7faf793febd509b7cf6edf2",
+          "evidence_label": "commit 4864569",
+          "verified": true,
+          "time": "20:02",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-ops-1119night ①: 抽卡頁卡冊縮圖先出、大圖排隊一次一張（慢4G 縮圖 8.0→5.x…",
+          "project": "遠端",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/fa156c62ca7053ffd3daa1bd06bb280108829d83",
+          "evidence_label": "commit fa156c6",
+          "verified": true,
+          "time": "20:04",
+          "plain": null,
+          "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-ops-1119night: 交件報告＋再次開啟量測",
+          "project": "root",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/aac08f88e41d45167e2440a8efb16f387529d010",
+          "evidence_label": "commit aac08f8",
+          "verified": true,
+          "time": "20:11",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 23,
+      "items_count": 26,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 21:01",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "21:01",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 20:44",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:44",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 20:42",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:42",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 20:41",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 20:31",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 20:22",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 20:21",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:21",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 20:14",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:14",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 20:13",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:13",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 20:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "20:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 20:03",
+          "project": "遠端",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "20:03",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 20:01",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "20:01",
           "repo": "root"
         },
@@ -29514,6 +29649,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-19T20:05+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "20:05",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-19T19:03+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -29694,7 +29838,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 204 筆 commit 未列（未 push 1、無 Co-Authored-By: Claude 183、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 20）"
+      "notes": "另有 216 筆 commit 未列（未 push 10、無 Co-Authored-By: Claude 185、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 21）"
     }
   ]
 }
