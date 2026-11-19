@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T16:03+08:00",
+  "generated_at": "2026-11-19T17:03+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -27527,27 +27527,27 @@
     },
     {
       "date": "2026-11-19",
-      "commits": 181,
+      "commits": 189,
       "tickets_done": 0,
       "tickets_verify": 1,
       "subagent_runs": 16,
-      "discord_replies": 25,
-      "tokens_main_wan": 692.3,
+      "discord_replies": 26,
+      "tokens_main_wan": 723.2,
       "tokens_sub_wan": 68.8,
-      "tokens_sessions": 86,
-      "tokens_msgs": 2018,
+      "tokens_sessions": 89,
+      "tokens_msgs": 2071,
       "tokens_by_model": {
-        "opus": 490.7,
+        "opus": 510.9,
         "sonnet": 116.7,
         "haiku": 9.6,
-        "fable": 143.9,
+        "fable": 154.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 490.7,
+        "opus": 510.9,
         "sonnet": 52.5,
         "haiku": 5.1,
-        "fable": 143.9,
+        "fable": 154.6,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -27696,16 +27696,82 @@
           "time": "15:32",
           "plain": null,
           "plain_ok": false
+        },
+        {
+          "kind": "commit",
+          "text": "warroom: 驗收員也算在做事（標驗收中）、這行標資料時間；agents_live 有員工的卡一變就踢看板重建",
+          "project": "warroom-board",
+          "by": "未對",
+          "evidence_url": "https://github.com/Jack20773/ai-journal/commit/8368d7fda9ea35f47d130b5b1adf7f15df7e2619",
+          "evidence_label": "commit 8368d7f",
+          "verified": true,
+          "time": "16:32",
+          "plain": null,
+          "plain_ok": false
         }
       ],
-      "items_count": 10,
+      "items_count": 11,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 16:37",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:37",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 16:36",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:36",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 16:34",
+          "project": "遠端",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "16:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 16:29",
+          "project": "遠端",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "16:29",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 16:02",
+          "project": "工具",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "16:02",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 16:01",
+          "project": "遠端",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
+          "time": "16:01",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 15:46",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "15:46",
           "repo": "root"
         },
@@ -27713,8 +27779,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 15:45",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "15:45",
           "repo": "root"
         },
@@ -27722,8 +27788,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 15:45",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "15:45",
           "repo": "root"
         },
@@ -27731,8 +27797,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 15:39",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "15:39",
           "repo": "root"
         },
@@ -27740,8 +27806,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 15:36",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "15:36",
           "repo": "root"
         },
@@ -27749,8 +27815,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 15:35",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "15:35",
           "repo": "root"
         },
@@ -27758,8 +27824,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 15:34",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "15:34",
           "repo": "root"
         },
@@ -27767,8 +27833,8 @@
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 15:33",
           "project": "遠端",
-          "reason": "unpushed",
-          "reason_label": "未 push",
+          "reason": "no_coauthor",
+          "reason_label": "無 Co-Authored-By: Claude",
           "time": "15:33",
           "repo": "root"
         },
@@ -29097,6 +29163,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-19T16:03+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:03",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-19T15:02+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -29241,7 +29316,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 171 筆 commit 未列（未 push 8、無 Co-Authored-By: Claude 147、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16）"
+      "notes": "另有 178 筆 commit 未列（未 push 2、無 Co-Authored-By: Claude 159、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17）"
     }
   ]
 }
