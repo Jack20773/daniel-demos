@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T09:02+08:00",
+  "generated_at": "2026-11-19T10:03+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -27447,27 +27447,27 @@
     },
     {
       "date": "2026-11-19",
-      "commits": 114,
+      "commits": 122,
       "tickets_done": 0,
-      "tickets_verify": 0,
+      "tickets_verify": 1,
       "subagent_runs": 7,
-      "discord_replies": 21,
-      "tokens_main_wan": 408.7,
+      "discord_replies": 22,
+      "tokens_main_wan": 449.3,
       "tokens_sub_wan": 39.2,
-      "tokens_sessions": 46,
-      "tokens_msgs": 1226,
+      "tokens_sessions": 51,
+      "tokens_msgs": 1312,
       "tokens_by_model": {
-        "opus": 304.2,
-        "sonnet": 73.5,
+        "opus": 313.7,
+        "sonnet": 85.0,
         "haiku": 5.1,
-        "fable": 65.0,
+        "fable": 84.7,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 304.2,
-        "sonnet": 34.3,
+        "opus": 313.7,
+        "sonnet": 45.8,
         "haiku": 5.1,
-        "fable": 65.0,
+        "fable": 84.7,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -27510,6 +27510,69 @@
       ],
       "items_count": 1,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 09:32",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 09:30",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:30",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 09:27",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:27",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 09:27",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:27",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 09:26",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:26",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 09:24",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:24",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-19 09:22",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:22",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-19 08:57",
@@ -28448,6 +28511,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-19T09:02+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:02",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-19T08:02+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -28529,7 +28601,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 113 筆 commit 未列（未 push 103、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 9）"
+      "notes": "另有 121 筆 commit 未列（未 push 110、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10）"
     }
   ]
 }
