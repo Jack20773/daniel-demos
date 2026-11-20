@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T09:03+08:00",
+  "generated_at": "2026-11-20T10:07+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -30116,27 +30116,27 @@
     },
     {
       "date": "2026-11-20",
-      "commits": 125,
+      "commits": 142,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 3,
-      "discord_replies": 7,
-      "tokens_main_wan": 318.1,
+      "discord_replies": 9,
+      "tokens_main_wan": 399.4,
       "tokens_sub_wan": 17.4,
-      "tokens_sessions": 43,
-      "tokens_msgs": 826,
+      "tokens_sessions": 51,
+      "tokens_msgs": 1058,
       "tokens_by_model": {
-        "opus": 168.1,
-        "sonnet": 32.2,
+        "opus": 230.3,
+        "sonnet": 40.6,
         "haiku": 8.5,
-        "fable": 126.7,
+        "fable": 137.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 168.1,
-        "sonnet": 26.3,
+        "opus": 230.3,
+        "sonnet": 34.7,
         "haiku": 8.5,
-        "fable": 115.2,
+        "fable": 126.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -30232,6 +30232,159 @@
       ],
       "items_count": 6,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 10:01",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "10:01",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 09:46",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:46",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "warroom: AI 在處理每行標「誰在做、多久了」（綠在做／黃等驗收／紅超過1小時沒人動），金圈說明（卡 good…",
+          "project": "warroom-board",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:46",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 09:44",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:44",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "ops: 背景開程式跳窗盤點＋window_watch 量尺（卡 blackwindow-paths-1120）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:44",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 09:36",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:36",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-health-1120b: 選了「什麼拖住你」給今晚的一招（昨晚頁＋今晚頁），部署 c1ce682b",
+          "project": "health-coach",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:36",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 09:35",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "英文課程站：快速複習表加「考自己」（遮中文／遮英文，點灰霧才攤開、模式記住、↺ 蓋回），帶進 whatsnew 金圈說…",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 09:33",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:33",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "bedtime_nudge: 23:45 帶一行今天好消息件數；撤 23:00 獨立推播（羅盤輕微採納）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:33",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 09:27",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:27",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 09:22",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "remote: 每天 23:00 主動推當天好消息（卡片監管 CEO 問題）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 09:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 09:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:10",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 09:09",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:09",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 08:41",
@@ -31224,6 +31377,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-20T09:03+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:03",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-20T08:03+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -31305,7 +31467,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 119 筆 commit 未列（未 push 50、無 Co-Authored-By: Claude 60、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 9）"
+      "notes": "另有 137 筆 commit 未列（未 push 67、無 Co-Authored-By: Claude 60、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 10）"
     }
   ]
 }
