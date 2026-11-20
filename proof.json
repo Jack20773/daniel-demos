@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T16:06+08:00",
+  "generated_at": "2026-11-20T17:03+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -30116,27 +30116,27 @@
     },
     {
       "date": "2026-11-20",
-      "commits": 202,
+      "commits": 212,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 4,
       "discord_replies": 14,
-      "tokens_main_wan": 602.8,
+      "tokens_main_wan": 634.9,
       "tokens_sub_wan": 25.5,
-      "tokens_sessions": 80,
-      "tokens_msgs": 1646,
+      "tokens_sessions": 85,
+      "tokens_msgs": 1733,
       "tokens_by_model": {
-        "opus": 337.4,
-        "sonnet": 79.9,
+        "opus": 339.7,
+        "sonnet": 96.8,
         "haiku": 8.5,
-        "fable": 202.6,
+        "fable": 215.5,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 337.4,
-        "sonnet": 65.9,
+        "opus": 339.7,
+        "sonnet": 82.8,
         "haiku": 8.5,
-        "fable": 191.1,
+        "fable": 204.0,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -30232,6 +30232,69 @@
       ],
       "items_count": 6,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 16:41",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 16:41",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 16:12",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:12",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 16:11",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 16:11",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "晨讀：部署後驗證 404 退避重試（5/15/30/60s），失敗仍發連結並標註未驗證（卡 morningread-4…",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 16:10",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:10",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 16:02",
@@ -31872,6 +31935,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-20T16:06+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:06",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-20T15:04+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -32016,7 +32088,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 198 筆 commit 未列（未 push 122、無 Co-Authored-By: Claude 60、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16）"
+      "notes": "另有 206 筆 commit 未列（未 push 129、無 Co-Authored-By: Claude 60、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17）"
     }
   ]
 }
