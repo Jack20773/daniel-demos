@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T14:04+08:00",
+  "generated_at": "2026-11-20T15:04+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -30116,27 +30116,27 @@
     },
     {
       "date": "2026-11-20",
-      "commits": 181,
+      "commits": 195,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 4,
-      "discord_replies": 12,
-      "tokens_main_wan": 538.4,
+      "discord_replies": 13,
+      "tokens_main_wan": 576.0,
       "tokens_sub_wan": 25.5,
-      "tokens_sessions": 71,
-      "tokens_msgs": 1474,
+      "tokens_sessions": 76,
+      "tokens_msgs": 1591,
       "tokens_by_model": {
-        "opus": 299.2,
+        "opus": 331.7,
         "sonnet": 68.3,
         "haiku": 8.5,
-        "fable": 187.9,
+        "fable": 193.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 299.2,
+        "opus": 331.7,
         "sonnet": 54.3,
         "haiku": 8.5,
-        "fable": 176.4,
+        "fable": 181.5,
         "other": 0.0
       },
       "tokens_by_model_sub": {
@@ -30232,6 +30232,105 @@
       ],
       "items_count": 6,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 14:45",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:45",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "health-coach: 卡冊照 5 個組合分段排、每段標收到幾張，集齊亮金附故事＋聽睡前故事（卡 goodnews…",
+          "project": "health-coach",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:44",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 14:42",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:42",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 14:41",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 14:41",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 14:17",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:17",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "warroom: 上次打開之後新的等你／好消息／做完標「新」＋頂端一行新幾件、點了跳過去（卡 goodnews-ops…",
+          "project": "warroom-board",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:17",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 14:13",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:13",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-create-1120c: 晨讀頂端分類跳轉鈕＋頁尾前後天／往期",
+          "project": "報告站",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:13",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 14:09",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-20 14:09",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "14:09",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-20 14:01",
@@ -31701,6 +31800,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-20T14:04+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "14:04",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-20T13:05+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -31827,7 +31935,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 177 筆 commit 未列（未 push 103、無 Co-Authored-By: Claude 60、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 14）"
+      "notes": "另有 189 筆 commit 未列（未 push 114、無 Co-Authored-By: Claude 60、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 15）"
     }
   ]
 }
