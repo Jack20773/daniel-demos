@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T09:06+08:00",
+  "generated_at": "2026-11-22T10:05+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -35849,39 +35849,39 @@
     },
     {
       "date": "2026-11-22",
-      "commits": 244,
+      "commits": 259,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 10,
-      "discord_replies": 46,
-      "tokens_main_wan": 1095.8,
-      "tokens_sub_wan": 37.0,
-      "tokens_sessions": 115,
-      "tokens_msgs": 2941,
+      "subagent_runs": 11,
+      "discord_replies": 53,
+      "tokens_main_wan": 1130.5,
+      "tokens_sub_wan": 60.6,
+      "tokens_sessions": 121,
+      "tokens_msgs": 3063,
       "tokens_by_model": {
-        "opus": 626.9,
-        "sonnet": 103.0,
+        "opus": 659.7,
+        "sonnet": 110.8,
         "haiku": 20.3,
-        "fable": 382.4,
+        "fable": 400.2,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 626.9,
-        "sonnet": 81.8,
+        "opus": 636.1,
+        "sonnet": 89.6,
         "haiku": 4.6,
-        "fable": 382.4,
+        "fable": 400.2,
         "other": 0.0
       },
       "tokens_by_model_sub": {
-        "opus": 0.0,
+        "opus": 23.6,
         "sonnet": 21.2,
         "haiku": 15.7,
         "fable": 0.0,
         "other": 0.0
       },
-      "score_avg": 3.2,
-      "score_low": 4,
-      "score_high": 7,
+      "score_avg": 3.34,
+      "score_low": 11,
+      "score_high": 32,
       "scores": [
         {
           "score": 3,
@@ -35916,7 +35916,7 @@
           "time": "2026-11-22 09:00"
         },
         {
-          "score": 4,
+          "score": 3,
           "time": "2026-11-22 09:00"
         },
         {
@@ -35929,6 +35929,18 @@
         },
         {
           "score": 4,
+          "time": "2026-11-22 09:00"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:00"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:00"
+        },
+        {
+          "score": 3,
           "time": "2026-11-22 09:00"
         },
         {
@@ -35942,6 +35954,178 @@
         {
           "score": 2,
           "time": "2026-11-22 09:00"
+        },
+        {
+          "score": 2,
+          "time": "2026-11-22 09:00"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:01"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 2,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 2,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 2,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 4,
+          "time": "2026-11-22 09:02"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:03"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:03"
+        },
+        {
+          "score": 2,
+          "time": "2026-11-22 09:03"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:03"
+        },
+        {
+          "score": 2,
+          "time": "2026-11-22 09:03"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:03"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:03"
+        },
+        {
+          "score": 2,
+          "time": "2026-11-22 09:03"
+        },
+        {
+          "score": 3,
+          "time": "2026-11-22 09:03"
         }
       ],
       "corrections_new": 0,
@@ -35949,6 +36133,132 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:51",
+          "project": "記憶",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:51",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:51",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:51",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:49",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:49",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:47",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:47",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "health-coach: /api/ingest 被擋（401）也留紀錄 ingest_reject",
+          "project": "health-coach",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:47",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:38",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:38",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "health-coach: 細框三款 royal_slim/gloss_slim/lunar_slim（窗面積 44%…",
+          "project": "health-coach",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:37",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:26",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:26",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:25",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:25",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:23",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:23",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:22",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:21",
+          "project": "看板",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:21",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:21",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:21",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-22 09:21",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "09:21",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-22 08:36",
@@ -38075,6 +38385,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-22T09:06+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "09:06",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-22T08:06+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -38147,7 +38466,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 244 筆 commit 未列（未 push 235、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 8）"
+      "notes": "另有 259 筆 commit 未列（未 push 249、無 Co-Authored-By: Claude 1、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 9）"
     }
   ]
 }
