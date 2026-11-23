@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T16:12+08:00",
+  "generated_at": "2026-11-23T17:03+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -39062,24 +39062,24 @@
     },
     {
       "date": "2026-11-23",
-      "commits": 235,
+      "commits": 242,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 9,
-      "discord_replies": 105,
-      "tokens_main_wan": 558.0,
+      "discord_replies": 110,
+      "tokens_main_wan": 568.0,
       "tokens_sub_wan": 57.5,
-      "tokens_sessions": 67,
-      "tokens_msgs": 2211,
+      "tokens_sessions": 68,
+      "tokens_msgs": 2270,
       "tokens_by_model": {
-        "opus": 386.6,
+        "opus": 396.6,
         "sonnet": 187.7,
         "haiku": 23.3,
         "fable": 18.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 386.6,
+        "opus": 396.6,
         "sonnet": 155.6,
         "haiku": 15.8,
         "fable": 0.0,
@@ -39126,6 +39126,51 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-23 16:54",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:54",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "health-coach：殘月名牌縮字不壓左右小圓點（部署 1f822d5f）",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:54",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-23 16:46",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:46",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "health-coach：小潮換漁港新圖（無月場景＋程式貼半月；卡 art-moon-oldart-redo-1123…",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:46",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-23 16:41",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:41",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-23 16:03",
@@ -41108,6 +41153,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-23T16:12+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:12",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-23T15:02+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -41252,7 +41306,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 236 筆 commit 未列（未 push 218、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17、無 Co-Authored-By: Claude 1）"
+      "notes": "另有 242 筆 commit 未列（未 push 223、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 18、無 Co-Authored-By: Claude 1）"
     }
   ]
 }
