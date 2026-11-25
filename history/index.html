@@ -1,0 +1,86 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>你每個時期在忙什麼</title>
+<meta property="og:title" content="你每個時期在忙什麼（6 月→今天）"><meta property="og:description" content="14 條線的時間軸：什麼時候開始、什麼時候最熱、什麼時候停">
+<style>
+:root{--bg:#0c0b0a;--fg:#f3ede6;--mut:#8d857c;--line:#1f1c19;--h1:#4a2c17;--h2:#b8611f;--h3:#ffb04a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,"Noto Sans TC",sans-serif;-webkit-tap-highlight-color:transparent}
+main{max-width:620px;margin:auto;padding:18px 12px 40px}
+h1{font-size:26px;font-weight:800;margin:0;letter-spacing:.5px}
+.sub{color:var(--mut);font-size:13px;margin:4px 0 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.key{display:inline-flex;gap:3px;align-items:center}.key i{width:11px;height:11px;border-radius:2px;display:inline-block}
+.chart{position:relative}
+.axis,.row{display:grid;grid-template-columns:92px 1fr;align-items:center}
+.axis{height:18px;font-size:11px;color:var(--mut)}
+.months{position:relative;height:18px}.months span{position:absolute;top:2px;white-space:nowrap}
+.row{height:27px;cursor:pointer;border-radius:6px}
+.row:active,.row.on{background:#1a1714}
+.lab{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-right:4px}
+.lab b{display:inline-block;width:17px;height:17px;line-height:17px;text-align:center;border-radius:4px;background:#2a2521;color:#d8cfc5;font-size:11px;margin-right:4px}
+.row.hot .lab b{background:var(--h3);color:#1b1006}
+.row.cold .lab{color:var(--mut)}
+.cells{position:relative;display:grid;grid-template-columns:repeat(24,1fr);gap:1.5px;height:17px}
+.cells i{border-radius:2px;background:var(--line);position:relative}
+.cells i.l1{background:var(--h1)}.cells i.l2{background:var(--h2)}.cells i.l3{background:var(--h3);box-shadow:0 0 6px #ff9a3c88}
+.cells i.t::after{content:"";position:absolute;left:50%;top:50%;width:5px;height:5px;margin:-2.5px;border-radius:50%;background:#fff;box-shadow:0 0 0 1.5px var(--bg)}
+.band{position:absolute;top:0;bottom:0;background:#ffffff14;border:1px solid #ffffff33;border-radius:4px;pointer-events:none;display:none}
+.now{position:absolute;top:0;bottom:0;right:0;width:2px;background:#fff6;border-radius:1px}
+h2{font-size:15px;color:var(--mut);font-weight:600;margin:24px 0 6px}
+.per{display:grid;grid-template-columns:96px 1fr;gap:8px;padding:9px 6px;border-radius:8px;cursor:pointer;font-size:14px;border-top:1px solid #1d1a17}
+.per:first-of-type{border-top:0}
+.per span{color:var(--h3);font-size:12.5px;font-weight:600;padding-top:1px}
+.per.on{background:#1a1714}
+.tip{color:var(--mut);font-size:12px;margin-top:6px}
+.sheet{position:fixed;left:0;right:0;bottom:0;background:#171411;border-top:1px solid #3a322b;border-radius:16px 16px 0 0;padding:16px 18px 26px;transform:translateY(105%);transition:transform .22s ease;max-width:620px;margin:auto;box-shadow:0 -10px 30px #000a}
+.sheet.open{transform:none}
+.sheet .x{position:absolute;right:12px;top:8px;font-size:24px;color:var(--mut);background:none;border:0;padding:6px 10px}
+.sheet h3{margin:0 0 6px;font-size:20px}
+.sheet p{margin:0 0 12px;font-size:14.5px;line-height:1.55;color:#ddd4ca}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+.stats div{background:#221d19;border-radius:10px;padding:8px}
+.stats small{display:block;color:var(--mut);font-size:11px}.stats b{font-size:15px}
+.turn{list-style:none;margin:0;padding:0;font-size:13.5px}
+.turn li{display:grid;grid-template-columns:48px 1fr;gap:6px;padding:4px 0;color:#d8cfc5}
+.turn li span{color:var(--h3);font-weight:600}
+.foot{color:#6f6860;font-size:11.5px;margin-top:22px;line-height:1.6}
+.foot a{color:var(--mut)}
+</style></head><body><main>
+<h1>你每個時期在忙什麼</h1>
+<div class="sub"><span>一格＝一週，越亮越忙</span>
+<span class="key"><i style="background:var(--h1)"></i><i style="background:var(--h2)"></i><i style="background:var(--h3)"></i></span>
+<span class="key"><i style="background:#fff;border-radius:50%;width:7px;height:7px"></i>轉折</span></div>
+<div class="chart" id="chart"></div>
+<div class="tip">點任一條看說明</div>
+<h2>每段時期</h2>
+<div id="pers"></div>
+<div class="foot">資料：D:/All claude 與各專案 git commit、每日紀錄（daily）提到幾次、11/12 起的戰情室卡片，11/26 01:3x 統計。熱度＝該週 commit＋提到次數，不是工時。<br><a href="../focus/">← 回選焦點頁</a></div>
+</main>
+<div class="sheet" id="sheet"><button class="x" onclick="closeS()">×</button><div id="sc"></div></div>
+<script>
+const D={"weeks": ["2026-06-15", "2026-06-22", "2026-06-29", "2026-07-06", "2026-07-13", "2026-07-20", "2026-07-27", "2026-08-03", "2026-08-10", "2026-08-17", "2026-08-24", "2026-08-31", "2026-09-07", "2026-09-14", "2026-09-21", "2026-09-28", "2026-10-05", "2026-10-12", "2026-10-19", "2026-10-26", "2026-11-02", "2026-11-09", "2026-11-16", "2026-11-23"], "rows": [{"k": "linebot", "name": "LINE Bot", "letter": "", "heat": [2, 0, 2, 3, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0], "first": "2026-06-15", "last": "2026-10-20", "glast": "2026-09-25", "peak": "2026-07-06", "sent": "最早的專案：LINE 機器人＋管理後台。Railway 額度用完你決定不續費，就停了。", "turn": [["6/15", "第一個 commit"], ["7/27", "Railway 停權，決定不續費"]], "start": "2026-06-15", "short": "LINE Bot"}, {"k": "invest", "name": "投資／股癌", "letter": "E", "heat": [0, 0, 2, 2, 0, 0, 3, 1, 3, 0, 3, 2, 2, 2, 2, 2, 1, 2, 3, 1, 0, 1, 1, 2], "first": "2026-06-23", "last": "2026-11-25", "glast": "2026-11-25", "peak": "2026-08-24", "sent": "股癌逐字稿→分析→網站週報，加回測。斷斷續續一直在跑，是最長壽的線。", "turn": [["6/23", "股癌分析程式起步"], ["9/9", "股癌網站 gooaye-site"], ["10/19", "回測／逐字稿大修那週"]], "start": "2026-06-29", "short": "投資股癌"}, {"k": "system", "name": "分身制度／戰情室", "letter": "G", "heat": [0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 3, 2, 1, 1, 2, 2, 0, 0, 2, 1, 0, 3, 3, 3], "first": "2026-07-04", "last": "2026-11-26", "glast": "2026-11-26", "peak": "2026-11-16", "sent": "分身制度、戰情室、看板。一直都在，11 月中改最兇。", "turn": [["8/13", "戰情室架構草案"], ["11/9", "部門制、看板大改開始"]], "start": "2026-07-06", "short": "分身制度"}, {"k": "rijian", "name": "日見官網／接案", "letter": "J", "heat": [0, 0, 0, 1, 0, 0, 0, 0, 2, 1, 2, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 0, 1, 0], "first": "2026-07-06", "last": "2026-11-24", "glast": "2026-11-24", "peak": "2026-08-10", "sent": "日見創意工作坊官網＋新手包。7 月建、8 月新手包、9/30 改版上線後少動。", "turn": [["7/6", "改名「日見創意工作坊」"], ["8/10", "新手包文案／安裝教學"], ["9/30", "改版上線，你說「上」"]], "start": "2026-07-06", "short": "日見官網"}, {"k": "booking", "name": "又仟／LINE 預約", "letter": "I", "heat": [0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 3, 3, 2, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0], "first": "2026-07-11", "last": "2026-11-25", "glast": "2026-11-23", "peak": "2026-08-31", "sent": "幫又仟做的 LINE 預約系統。8 月底到 9 月底最熱，10 月後只剩零星。", "turn": [["7/12", "又仟案重啟、談規格"], ["8/26", "line-booking 開工"], ["8/30", "上線，你親手預約成功"]], "start": "2026-07-13", "short": "又仟預約"}, {"k": "asr", "name": "逐字稿／語音", "letter": "", "heat": [0, 0, 0, 0, 0, 0, 2, 1, 1, 1, 2, 1, 2, 0, 2, 2, 1, 2, 2, 0, 0, 0, 1, 0], "first": "2026-06-15", "last": "2026-11-24", "glast": "2026-11-23", "peak": "2026-07-27", "sent": "語音輸入、影片逐字稿、短影音旁白這類工具，跟著股癌需要時才熱。", "turn": [["7/26", "語音輸入 voice-claude"], ["7/29", "影片逐字稿 video-transcribe"], ["10/9", "asr-lab 精準逐字稿"]], "start": "2026-07-27", "short": "逐字稿"}, {"k": "trader", "name": "AI 操盤手", "letter": "H", "heat": [0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 2, 0, 2, 0, 2, 3, 0, 1, 1, 0, 0, 0, 0, 0], "first": "2026-08-12", "last": "2026-10-26", "glast": "2026-10-23", "peak": "2026-08-10", "sent": "AI 操盤手：幾組策略比賽。8 月中衝最兇，10/23 財報考試後程式沒再動。", "turn": [["8/12", "你點頭六組→建 repo"], ["9/28", "第二波衝刺"], ["10/23", "最後一次 commit"]], "start": "2026-08-10", "short": "AI操盤手"}, {"k": "classroom", "name": "Discord 教室", "letter": "L", "heat": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "first": "2026-09-13", "last": "2026-09-16", "glast": null, "peak": "2026-09-07", "sent": "Discord 教室：帶朋友在 Discord 跟 AI 做東西。9/13 開，三天後停。", "turn": [["9/13", "教室一問一答開工"], ["9/16", "最後提到"]], "start": "2026-09-07", "short": "DC 教室"}, {"k": "english", "name": "英文課", "letter": "D", "heat": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 2, 0, 0, 0, 1, 3, 3], "first": "2026-07-22", "last": "2026-11-25", "glast": "2026-11-25", "peak": "2026-10-12", "sent": "英文：先是英文筆記，10/9 出第一課，11 月中跟健康打卡一起變熱。", "turn": [["9/15", "「我想做一個可以跟我對話學英文的AI機器人」"], ["10/9", "英文第一課上線"], ["11/9", "打卡機制納入英文"]], "start": "2026-09-14", "short": "英文課"}, {"k": "flight", "name": "航班探索", "letter": "K", "heat": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "first": "2026-09-19", "last": "2026-09-20", "glast": "2026-09-19", "peak": "2026-09-14", "sent": "給空檔抓航班價格。9/19 一晚做完 demo 就停了。", "turn": [["9/19", "「我想要評估做一個新專案：給幾段有空時間→系統抓航班」"]], "start": "2026-09-14", "short": "航班探索"}, {"k": "art", "name": "生圖／月亮卡", "letter": "F", "heat": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 2, 3, 3], "first": "2026-09-20", "last": "2026-11-26", "glast": "2026-11-24", "peak": "2026-11-16", "sent": "本地 ComfyUI 生圖。9/20 裝好，11 月中為了卡冊、月亮卡又熱起來。", "turn": [["9/20", "「幫我裝AI生圖本地端評估一下」"], ["11/11", "夜空／月亮主題"], ["11/12", "「我要的是風格統一」"]], "start": "2026-09-14", "short": "生圖月亮"}, {"k": "health", "name": "健康", "letter": "C", "heat": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 3, 3, 3], "first": "2026-07-06", "last": "2026-11-26", "glast": "2026-11-25", "peak": "2026-11-16", "sent": "睡眠打卡、熱量蛋白質、卡冊抽卡。11/9 一句話開線，之後每天在跑。", "turn": [["11/9", "「做打卡機制，確保每日健康睡眠跟英文有在進行」"]], "start": "2026-10-12", "short": "健康"}, {"k": "music", "name": "音樂／初音", "letter": "B", "heat": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3], "first": "2026-09-20", "last": "2026-11-26", "glast": null, "peak": "2026-11-23", "sent": "初音：9 月只生過圖，11/23 起做歌（千本櫻、OpenUtau）。", "turn": [["9/20", "生初音圖"], ["11/23", "初音唱歌初稿"]], "start": "2026-11-23", "short": "初音音樂"}, {"k": "aix", "name": "AI交流群", "letter": "A", "heat": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3], "first": "2026-11-24", "last": "2026-11-25", "glast": null, "peak": "2026-11-23", "sent": "AI 交流群：你、賈維斯、所羅門在同一群。11/24 開，你說現在先專注這個。", "turn": [["11/24", "「創一個dc群加賈維斯跟新 AI 交流」"], ["11/25", "23:49 說先專注這個"]], "start": "2026-11-23", "short": "AI交流群"}], "per": [[0, 3, "6 月中–7 月初", "LINE Bot、股癌分析起步、日見官網"], [4, 7, "7 月中–8 月初", "語音輸入、影片逐字稿；7/27 LINE Bot 停"], [8, 9, "8 月中", "AI 操盤手衝刺、戰情室成形、新手包"], [10, 12, "8 月底–9 月初", "幫又仟的預約系統上線、股癌回測"], [13, 14, "9 月中下", "一口氣開新線：教室、英文、航班、本地生圖"], [15, 18, "10 月", "日見改版上線；英文第一課；操盤手 10/23 後停"], [19, 20, "10 月底–11 月初", "安靜期：10/27 停電，電腦停了 12 天"], [21, 22, "11 月中", "健康打卡、月亮卡、英文；分身制度大改"], [23, 23, "這週", "AI 交流群、初音唱歌"]]};
+const W=D.weeks, md=s=>{const[y,m,d]=s.split('-');return (+m)+'/'+(+d)};
+const wi=t=>{const[m,d]=t.split('/').map(Number);const x=new Date(2026,m-1,d);for(let i=W.length-1;i>=0;i--){if(x>=new Date(W[i]+'T00:00'))return i}return 0};
+const chart=document.getElementById('chart');
+let ax='<div class="axis"><div></div><div class="months">';
+let lastM='';W.forEach((w,i)=>{const m=+w.split('-')[1];if(m!=lastM){ax+=`<span style="left:${i/24*100}%">${m}月</span>`;lastM=m}});
+chart.innerHTML=ax+'</div></div>';
+D.rows.forEach((r,ri)=>{const tw=new Set(r.turn.map(t=>wi(t[0])));const h=r.heat;
+ const hot=h[23]>=2||h[22]>=3, cold=h.slice(19).every(x=>x==0);
+ const el=document.createElement('div');el.className='row'+(hot?' hot':'')+(cold?' cold':'');
+ el.innerHTML=`<div class="lab"><b>${r.letter||'·'}</b>${r.short}</div><div class="cells">${h.map((x,i)=>`<i class="l${x}${tw.has(i)?' t':''}"></i>`).join('')}</div>`;
+ el.onclick=()=>openS(ri,el);chart.appendChild(el)});
+const band=document.createElement('div');band.className='band';chart.appendChild(band);
+function showBand(a,b){const c=chart.querySelector('.cells').getBoundingClientRect(),o=chart.getBoundingClientRect();const w=c.width/24;
+ band.style.left=(c.left-o.left+a*w-1)+'px';band.style.width=((b-a+1)*w+1)+'px';band.style.top='16px';band.style.display='block'}
+const pers=document.getElementById('pers');
+D.per.forEach(p=>{const e=document.createElement('div');e.className='per';e.innerHTML=`<span>${p[2]}</span><div>${p[3]}</div>`;
+ e.onclick=()=>{const on=e.classList.contains('on');document.querySelectorAll('.per').forEach(x=>x.classList.remove('on'));
+  if(on){band.style.display='none';return}e.classList.add('on');showBand(p[0],p[1]);chart.scrollIntoView({behavior:'smooth',block:'start'})};pers.appendChild(e)});
+function openS(i,el){const r=D.rows[i];document.querySelectorAll('.row').forEach(x=>x.classList.remove('on'));el.classList.add('on');
+ const end=new Date(W[W.indexOf(r.peak)]+'T00:00');end.setDate(end.getDate()+6);
+ document.getElementById('sc').innerHTML=`<h3>${r.letter?r.letter+'　':''}${r.name}</h3><p>${r.sent}</p>
+ <div class="stats"><div><small>開始</small><b>${r.turn[0][0]}</b></div><div><small>最熱那週</small><b>${md(r.peak)}–${end.getMonth()+1}/${end.getDate()}</b></div><div><small>最後一次動</small><b>${md(r.last)}</b></div></div>
+ <ul class="turn">${r.turn.map(t=>`<li><span>${t[0]}</span>${t[1]}</li>`).join('')}</ul>`;
+ document.getElementById('sheet').classList.add('open')}
+function closeS(){document.getElementById('sheet').classList.remove('open');document.querySelectorAll('.row').forEach(x=>x.classList.remove('on'))}
+</script></body></html>
