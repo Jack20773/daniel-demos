@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T06:07+08:00",
+  "generated_at": "2026-11-27T07:08+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -43993,26 +43993,26 @@
     },
     {
       "date": "2026-11-27",
-      "commits": 118,
+      "commits": 125,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 12,
-      "discord_replies": 25,
-      "tokens_main_wan": 542.9,
+      "discord_replies": 26,
+      "tokens_main_wan": 553.6,
       "tokens_sub_wan": 76.3,
-      "tokens_sessions": 72,
-      "tokens_msgs": 1213,
+      "tokens_sessions": 74,
+      "tokens_msgs": 1239,
       "tokens_by_model": {
-        "opus": 83.0,
+        "opus": 85.4,
         "sonnet": 461.3,
-        "haiku": 74.8,
+        "haiku": 83.1,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 83.0,
+        "opus": 85.4,
         "sonnet": 459.8,
-        "haiku": 0.0,
+        "haiku": 8.3,
         "fable": 0.0,
         "other": 0.0
       },
@@ -44032,6 +44032,69 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-27 07:00",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "07:00",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-27 06:43",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:43",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-27 06:31",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-27 06:31",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-27 06:22",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-27 06:21",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:21",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-27 06:20",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "06:20",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-27 05:42",
@@ -45024,6 +45087,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-27T06:07+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "06:07",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-27T05:10+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -45096,7 +45168,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 118 筆 commit 未列（未 push 109、無 Co-Authored-By: Claude 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 6）"
+      "notes": "另有 126 筆 commit 未列（未 push 116、無 Co-Authored-By: Claude 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 7）"
     }
   ]
 }
