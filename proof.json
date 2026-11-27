@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T04:16+08:00",
+  "generated_at": "2026-11-28T05:08+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -44383,25 +44383,25 @@
     },
     {
       "date": "2026-11-28",
-      "commits": 101,
+      "commits": 121,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 13,
       "discord_replies": 16,
-      "tokens_main_wan": 862.8,
+      "tokens_main_wan": 893.0,
       "tokens_sub_wan": 29.4,
-      "tokens_sessions": 99,
-      "tokens_msgs": 1867,
+      "tokens_sessions": 101,
+      "tokens_msgs": 1939,
       "tokens_by_model": {
-        "opus": 133.2,
-        "sonnet": 717.3,
+        "opus": 134.0,
+        "sonnet": 746.8,
         "haiku": 41.8,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 133.2,
-        "sonnet": 700.9,
+        "opus": 134.0,
+        "sonnet": 730.4,
         "haiku": 28.7,
         "fable": 0.0,
         "other": 0.0
@@ -44437,6 +44437,141 @@
       ],
       "items_count": 1,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:59",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:59",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:53",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:53",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "english-lessons: 加 /phonics 練習畫面按鍵不被蓋住的檢查（卡 deploy-btn-9fc1…",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:52",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:42",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:42",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:40",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:40",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:35",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:28",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:28",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:23",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:23",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:23",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:23",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "english-lessons: /phonics 練習畫面開著時收起「換聲音」鈕，不再蓋住「✕ 結束」（卡 depl…",
+          "project": "english-lessons",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:21",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:21",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:11",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 04:11",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "test_1128 修語法錯（上一個 commit 962474c10 的固定索引字串斷行）",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:11",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "test_1128 C 段改用固定索引，回填驗證日後重跑不會壞",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "04:10",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-28 04:02",
@@ -45321,6 +45456,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-28T04:16+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "04:16",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-28T03:17+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -45375,7 +45519,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 104 筆 commit 未列（未 push 97、無 Co-Authored-By: Claude 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
+      "notes": "另有 120 筆 commit 未列（未 push 112、無 Co-Authored-By: Claude 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 5）"
     }
   ]
 }
