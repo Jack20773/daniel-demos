@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-29T02:13+08:00",
+  "generated_at": "2026-11-29T03:10+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -40726,24 +40726,24 @@
     },
     {
       "date": "2026-11-29",
-      "commits": 18,
+      "commits": 25,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 0,
+      "subagent_runs": 2,
       "discord_replies": 0,
-      "tokens_main_wan": 50.3,
-      "tokens_sub_wan": 0.0,
-      "tokens_sessions": 7,
-      "tokens_msgs": 162,
+      "tokens_main_wan": 68.7,
+      "tokens_sub_wan": 3.6,
+      "tokens_sessions": 10,
+      "tokens_msgs": 237,
       "tokens_by_model": {
-        "opus": 18.5,
+        "opus": 36.9,
         "sonnet": 14.2,
-        "haiku": 0.0,
+        "haiku": 3.6,
         "fable": 17.6,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 18.5,
+        "opus": 36.9,
         "sonnet": 14.2,
         "haiku": 0.0,
         "fable": 17.6,
@@ -40752,7 +40752,7 @@
       "tokens_by_model_sub": {
         "opus": 0.0,
         "sonnet": 0.0,
-        "haiku": 0.0,
+        "haiku": 3.6,
         "fable": 0.0,
         "other": 0.0
       },
@@ -40765,6 +40765,51 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 02:56",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:56",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 02:43",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:43",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "learn-zwf 1129: 報告＋12/06 驗證第 8 條（♥ 有寫原因比例，基線 0/7）＋美術總監註明 ga…",
+          "project": "skill",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:43",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "learn-zwf 1129: 圖庫按 ♥ 就跳出「喜歡哪裡」可點的詞（提示詞片段＋看圖基本詞），取代沒人用的空白打字…",
+          "project": "gen-gallery",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 02:41",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "02:41",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-29 02:02",
@@ -40920,6 +40965,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-29T02:13+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "02:13",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-29T01:32+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -40938,7 +40992,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 19 筆 commit 未列（未 push 17、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 2）"
+      "notes": "另有 25 筆 commit 未列（未 push 22、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
     }
   ]
 }
