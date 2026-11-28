@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T18:29+08:00",
+  "generated_at": "2026-11-28T19:18+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -44383,25 +44383,25 @@
     },
     {
       "date": "2026-11-28",
-      "commits": 246,
+      "commits": 256,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 21,
-      "discord_replies": 60,
-      "tokens_main_wan": 1469.6,
-      "tokens_sub_wan": 68.6,
-      "tokens_sessions": 169,
-      "tokens_msgs": 3407,
+      "subagent_runs": 22,
+      "discord_replies": 65,
+      "tokens_main_wan": 1513.0,
+      "tokens_sub_wan": 70.9,
+      "tokens_sessions": 174,
+      "tokens_msgs": 3549,
       "tokens_by_model": {
-        "opus": 298.2,
-        "sonnet": 1151.0,
-        "haiku": 89.1,
+        "opus": 333.8,
+        "sonnet": 1158.8,
+        "haiku": 91.5,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 291.8,
-        "sonnet": 1123.8,
+        "opus": 327.4,
+        "sonnet": 1131.6,
         "haiku": 54.1,
         "fable": 0.0,
         "other": 0.0
@@ -44409,7 +44409,7 @@
       "tokens_by_model_sub": {
         "opus": 6.4,
         "sonnet": 27.2,
-        "haiku": 35.0,
+        "haiku": 37.4,
         "fable": 0.0,
         "other": 0.0
       },
@@ -44446,6 +44446,78 @@
       ],
       "items_count": 1,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 19:05",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "19:05",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 18:56",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:56",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "health-coach: 抽卡預覽 ?good=1 只抽他打 4–5 分＋按上架的卡",
+          "project": "health-coach",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:55",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 18:41",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:41",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 18:39",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:39",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 18:31",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 18:24",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:24",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 18:23",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "18:23",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-28 18:15",
@@ -46491,6 +46563,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-28T18:29+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "18:29",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-28T17:39+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -46671,7 +46752,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 247 筆 commit 未列（未 push 226、無 Co-Authored-By: Claude 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 18）"
+      "notes": "另有 256 筆 commit 未列（未 push 234、無 Co-Authored-By: Claude 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 19）"
     }
   ]
 }
