@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-29T03:10+08:00",
+  "generated_at": "2026-11-29T04:09+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -40726,33 +40726,33 @@
     },
     {
       "date": "2026-11-29",
-      "commits": 25,
+      "commits": 55,
       "tickets_done": 0,
       "tickets_verify": 0,
-      "subagent_runs": 2,
+      "subagent_runs": 3,
       "discord_replies": 0,
-      "tokens_main_wan": 68.7,
-      "tokens_sub_wan": 3.6,
-      "tokens_sessions": 10,
-      "tokens_msgs": 237,
+      "tokens_main_wan": 230.4,
+      "tokens_sub_wan": 5.9,
+      "tokens_sessions": 30,
+      "tokens_msgs": 711,
       "tokens_by_model": {
-        "opus": 36.9,
-        "sonnet": 14.2,
-        "haiku": 3.6,
-        "fable": 17.6,
+        "opus": 128.4,
+        "sonnet": 75.8,
+        "haiku": 10.7,
+        "fable": 21.4,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 36.9,
-        "sonnet": 14.2,
-        "haiku": 0.0,
-        "fable": 17.6,
+        "opus": 128.4,
+        "sonnet": 75.8,
+        "haiku": 4.8,
+        "fable": 21.4,
         "other": 0.0
       },
       "tokens_by_model_sub": {
         "opus": 0.0,
         "sonnet": 0.0,
-        "haiku": 3.6,
+        "haiku": 5.9,
         "fable": 0.0,
         "other": 0.0
       },
@@ -40765,6 +40765,267 @@
       "items": [],
       "items_count": 0,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:49",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:49",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "quota localjob 1128: 三個每日 Claude 工作本機並排都不及格，報告＋可重跑測試腳本（未上線）",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:48",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:47",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:47",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:45",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:45",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:45",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:45",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:45",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:45",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "learn-zwf 1129: 退回後重做的報告（三件）＋改前 10 支驗收原始摘要",
+          "project": "root",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:44",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "learn-zwf 1129 #1: 圖庫程式一改版上線就自動重跑以前每個功能的驗收，不過才開卡",
+          "project": "gen-gallery",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:43",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:40",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:40",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "learn-zwf 1129 #3: 他講『怎麼動』的四句原話補進口味檔，美術總監退件表加會動的圖 V1/V2",
+          "project": "skill",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:39",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:37",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:37",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:35",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:35",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:34",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:34",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:34",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:32",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:32",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:32",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:32",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:32",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:31",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:31",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:30",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:30",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "goodnews-quota-redispatch-cause-1129: 同卡重派分原因報告＋量尺一小時快取＋390…",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:29",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:29",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:29",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "learn-zwf 1129 退回修正: 撤掉圖庫 ♥ 跳出可點詞的面板（連同 check_note.py、galle…",
+          "project": "gen-gallery",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:26",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:24",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:24",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:21",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:21",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "quota dailyjob-diet 1129: 學張衛峰每日卡改成每件派子代理、主 session 只彙整（一份不…",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:19",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:18",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:18",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "quota verifier-dedupe 1129: 量同卡同 evidence 重驗＝7 天 2 次 0.3M（0…",
+          "project": "工具",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:18",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-29 03:14",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "03:14",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-29 02:56",
@@ -40965,6 +41226,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-29T03:10+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "03:10",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-29T02:13+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -40992,7 +41262,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 25 筆 commit 未列（未 push 22、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 3）"
+      "notes": "另有 55 筆 commit 未列（未 push 51、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 4）"
     }
   ]
 }
