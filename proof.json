@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T16:15+08:00",
+  "generated_at": "2026-11-28T17:39+08:00",
   "rules_version": 3,
   "days": [
     {
@@ -44383,26 +44383,26 @@
     },
     {
       "date": "2026-11-28",
-      "commits": 222,
+      "commits": 231,
       "tickets_done": 0,
       "tickets_verify": 0,
       "subagent_runs": 21,
-      "discord_replies": 41,
-      "tokens_main_wan": 1346.8,
+      "discord_replies": 47,
+      "tokens_main_wan": 1376.1,
       "tokens_sub_wan": 68.6,
-      "tokens_sessions": 147,
-      "tokens_msgs": 3106,
+      "tokens_sessions": 149,
+      "tokens_msgs": 3218,
       "tokens_by_model": {
-        "opus": 265.2,
-        "sonnet": 1071.8,
-        "haiku": 78.4,
+        "opus": 277.0,
+        "sonnet": 1078.6,
+        "haiku": 89.1,
         "fable": 0.0,
         "other": 0.0
       },
       "tokens_by_model_main": {
-        "opus": 258.8,
-        "sonnet": 1044.6,
-        "haiku": 43.4,
+        "opus": 270.6,
+        "sonnet": 1051.4,
+        "haiku": 54.1,
         "fable": 0.0,
         "other": 0.0
       },
@@ -44446,6 +44446,141 @@
       ],
       "items_count": 1,
       "skipped": [
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 17:22",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "17:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "health-coach: 藍月名牌中文別名候選 blue_moon_1128z",
+          "project": "health-coach",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "17:22",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 17:18",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "17:18",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "health-coach: 藍月名牌候選 blue_moon_1128n（珍珠白刻字牌＋英文別名）",
+          "project": "health-coach",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "17:18",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 17:08",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "17:08",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 17:08",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "17:08",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 17:07",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "17:07",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 16:53",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:53",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 16:52",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:52",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 16:52",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:52",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 16:45",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:45",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 16:43",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:43",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 16:24",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:24",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 16:09",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:09",
+          "repo": "root"
+        },
+        {
+          "kind": "commit",
+          "text": "institution: session 自動存檔 2026-11-28 16:08",
+          "project": "遠端",
+          "reason": "unpushed",
+          "reason_label": "未 push",
+          "time": "16:08",
+          "repo": "root"
+        },
         {
           "kind": "commit",
           "text": "institution: session 自動存檔 2026-11-28 15:58",
@@ -46275,6 +46410,15 @@
         },
         {
           "kind": "commit",
+          "text": "proof.json auto-refresh 2026-11-28T16:15+08:00 (days=14 ite…",
+          "project": "工作證明頁",
+          "reason": "automated",
+          "reason_label": "自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步）",
+          "time": "16:15",
+          "repo": "daniel-demos"
+        },
+        {
+          "kind": "commit",
           "text": "proof.json auto-refresh 2026-11-28T15:18+08:00 (days=14 ite…",
           "project": "工作證明頁",
           "reason": "automated",
@@ -46437,7 +46581,7 @@
         }
       ],
       "selfreport": [],
-      "notes": "另有 221 筆 commit 未列（未 push 202、無 Co-Authored-By: Claude 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 16）"
+      "notes": "另有 237 筆 commit 未列（未 push 217、無 Co-Authored-By: Claude 3、自動化（收工/BOOT_BRIEF/daily log/liveness/proof.json/自動同步） 17）"
     }
   ]
 }
